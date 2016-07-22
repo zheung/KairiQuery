@@ -1,0 +1,12 @@
+{
+  "name": "krisdb-parser",
+  "version": "0.0.1",
+  "description": "Game <Kairisei Million Arthur> Database Parser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "DanoR",
+  "license": "ISC"
+}
