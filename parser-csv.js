@@ -1,52 +1,92 @@
 let parsePath = (obj, paths, value) => {
-	paths.forEach((path, index) => {
-		if(index < paths.length-1) {
-			if(!obj[path]) {
-				obj[path] = {};
+		paths.forEach((path, index) => {
+			if(index < paths.length-1) {
+				if(!obj[path]) {
+					obj[path] = {};
+				}
+
+				obj = obj[path];
 			}
+			else {
+				obj[path] = value;
+			}
+		});
+	},
+	parseEmpty = (obj, paths, value) => {
+		paths.forEach((path, index) => {
+			if(index < paths.length - 1) {
+				if(!obj[path]) {
+					obj[path] = {};
+				}
 
-			obj = obj[path];
-		}
-		else {
-			obj[path] = value;
-		}
-	});
-};
+				obj = obj[path];
+			}
+			else if(value) {
+				obj[path] = (obj[path] ? obj[path]+1 : 1);
+			}
+		});
+	},
+	parseParam = (param, name, pathFile, type) => {
+		if(!param) return {};
 
-module.exports = (type, start) => {
-	let str = fs.readFileSync(path.join(dir, 'raw1', type+'.csv')).toString(),
-		header = require(path.join(dir, 'raw1', type+'.json'));
+		if(typeof param == 'boolean')
+			param = require(path.join(pathFile, name+'-'+type+'.js'));
+		else if(typeof param == 'string')
+			param = require(param);
 
-	let rows = str.split('\r\n');
+		return param;
+	};
 
-	if(header.length) {
+module.exports = (name, pathFile, start, header, parser, dicter) => {
+	let str = fs.readFileSync(path.join(pathFile, name+'.csv')).toString(),
+		rows = str.split('\r\n');
+
+	header = parseParam(header, name, pathFile, 'header');
+	parser = parseParam(parser, name, pathFile, 'parser');
+	dicter = parseParam(dicter, name, pathFile, 'dicter');
+
+	if(header && header.length) {
 		let result = [], empty = {};
+
+		header.push('i');
 
 		rows.forEach((row, index) => {
 			if(index+1 >= start && row.trim()) {
 				let cells = row.split(','), rowObj = {};
 
-				cells.forEach((cell, index) => {
-					let heads = header[index].split('.');
+				if(parser.filter && parser.filter(cells)) {
+					cells.forEach((cell, index) => {
+						let heads = header[index].split('.'),
+							option = heads.shift();
 
-					if(/^\*/.test(heads[0])) {
-						if(heads[0] == '*empty') {
-							if(cell) {
-								heads.shift();
-								parsePath(empty, heads);
-							}
-						}
-						else if(heads[0] == '*ignore') {
+						if(option == 's')
+							parsePath(rowObj, heads, cell);
+						else if(option == 'n')
+							parsePath(rowObj, heads, ~~cell);
+						else if(option == 'b')
+							parsePath(rowObj, heads, !!cell);
+
+						else if(option == 'p')
+							parseEmpty(rowObj, heads, parser[heads.shift()](cell));
+						else if(option == 'd')
+							parseEmpty(rowObj, heads, (dicter[heads.shift()][cell]) || 0);
+
+						else if(option == 'i')
 							return;
-						}
-					}
+						else if(option == 'e')
+							parseEmpty(empty, heads, !!cell);
+					});
 
-				});
+					result.push(rowObj);
+				}
 			}
 		});
+
+		ll(empty);
+
+		return result;
 	}
 	else {
 		return rows;
 	}
-
 };
