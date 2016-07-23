@@ -46,7 +46,7 @@ module.exports = (name, pathFile, start, header, parser, dicter) => {
 	dicter = parseParam(dicter, name, pathFile, 'dicter');
 
 	if(header && header.length) {
-		let result = [], empty = {};
+		let result = [], counter = {};
 
 		header.push('i');
 
@@ -73,8 +73,8 @@ module.exports = (name, pathFile, start, header, parser, dicter) => {
 
 						else if(option == 'i')
 							return;
-						else if(option == 'e')
-							parseEmpty(empty, heads, !!cell);
+						else if(option == 'c')
+							parseEmpty(counter, heads, !!cell);
 					});
 
 					result.push(rowObj);
@@ -82,7 +82,8 @@ module.exports = (name, pathFile, start, header, parser, dicter) => {
 			}
 		});
 
-		ll(empty);
+		ll(name+' counter:');
+		ll(counter);
 
 		return result;
 	}
