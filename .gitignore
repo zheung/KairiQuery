@@ -1,2 +1,5 @@
 #Visual Studio Code
 .vscode
+jsconfig.json
+#Node Modules Folder
+node_modules

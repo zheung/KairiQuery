@@ -1,9 +1,20 @@
 {
 	"env": {
-		"node": true,
-		"es6": true
+		"node": true
 	},
 	"extends": "eslint:recommended",
+	// "parserOptions": {
+	// 	"ecmaVersion": 7,
+	// 	"sourceType": "module",
+	// 	"ecmaFeatures": {
+	// 		"jsx": true
+	// 	}
+	// },
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"sourceType": "module",
+		"allowImportExportEverywhere": false
+	},
 	"rules": {
 		"indent": [
 			"warn",
@@ -33,6 +44,8 @@
 		"fs": true,
 		"path": true,
 
-		"dir": true
+		"dir": true,
+
+		"Promise": true
 	}
 }
