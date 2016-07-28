@@ -1,0 +1,5 @@
+#Visual Studio Code
+.vscode
+
+#Node Modules Folder
+node_modules
