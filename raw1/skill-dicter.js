@@ -1,5 +1,5 @@
 module.exports =  {
-	skillType: {// 技能中类
+	skillType: {
 		'ATTACK': 1,
 		'HEAL': 2,
 		'REGENERATE': 3,
@@ -11,7 +11,7 @@ module.exports =  {
 		'PER_DOWN': 9,
 		'PER_SUCCESS': 10
 	},
-	skillKind: {// 技能大类
+	skillKind: {
 		'ATTACK': 1,
 		'SORCERY': 2,
 		'RECOVERY': 3,
@@ -20,7 +20,7 @@ module.exports =  {
 		'JAMMING': 6,
 		'SPECIAL': 7
 	},
-	attr: {// 属性
+	attr: {
 		'FIRE': 1,
 		'ICE': 2,
 		'WIND': 3,
