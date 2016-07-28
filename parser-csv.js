@@ -12,7 +12,7 @@ let parsePath = (obj, paths, value) => {
 			}
 		});
 	},
-	parseEmpty = (obj, paths, value) => {
+	parseCount = (obj, paths, value) => {
 		paths.forEach((path, index) => {
 			if(index < paths.length - 1) {
 				if(!obj[path]) {
@@ -67,14 +67,13 @@ module.exports = (name, pathFile, start, header, parser, dicter) => {
 							parsePath(rowObj, heads, !!cell);
 
 						else if(option == 'p')
-							parseEmpty(rowObj, heads, parser[heads.shift()](cell));
+							parsePath(rowObj, heads, parser[heads.shift()](cell));
 						else if(option == 'd')
-							parseEmpty(rowObj, heads, (dicter[heads.shift()][cell]) || 0);
-
+							parsePath(rowObj, heads, ((dicter[heads.shift()][cell]) || 0));
 						else if(option == 'i')
 							return;
 						else if(option == 'c')
-							parseEmpty(counter, heads, !!cell);
+							parseCount(counter, heads, !!cell);
 					});
 
 					result.push(rowObj);

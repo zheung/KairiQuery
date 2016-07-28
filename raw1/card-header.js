@@ -46,7 +46,7 @@ module.exports = [
 	'n.profile.hip',
 	'n.profile.height',
 	'n.profile.weight',
-	'd.sex.profile.hand',
+	'd.hand.profile.hand',
 	'c.p1',
 	'c.p2',
 	'c.p3',

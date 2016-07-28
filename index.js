@@ -8,7 +8,7 @@ fs.writeFileSync(path.join(dir, 'raw2', 'card.json'), JSON.stringify(card2, null
 let skill2 = csv('skill', path.join(dir, 'raw1'), 1, true, true, true);
 fs.writeFileSync(path.join(dir, 'raw2', 'skill.json'), JSON.stringify(skill2, null, '\t'));
 
-let role2 = csv('skill_role', path.join(dir, 'raw1'), 1, true, true, true);
+let role2 = csv('role', path.join(dir, 'raw1'), 1, true, true, true);
 fs.writeFileSync(path.join(dir, 'raw2', 'role.json'), JSON.stringify(role2, null, '\t'));
 
 // let l1 = role2[0].split(','), l2 = role2[1].split(','), hs = [];
