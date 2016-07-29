@@ -1,4 +1,4 @@
-module.exports = (data = {}, { page, name = '' }) => {
+module.exports = (data = {}, { page, name = '' } = {}) => {
 	let result = [];
 
 	for(let d of data) {
