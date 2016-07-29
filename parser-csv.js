@@ -26,24 +26,32 @@ let parsePath = (obj, paths, value) => {
 			}
 		});
 	},
-	parseParam = (param, name, pathFile, type) => {
+	parseParam = (param, name, dir, type) => {
 		if(!param) return {};
 
-		if(typeof param == 'boolean')
-			param = require(path.join(pathFile, name+'-'+type+'.js'));
-		else if(typeof param == 'string')
-			param = require(param);
+		try {
+			if(typeof param == 'boolean')
+				param = require(path.join(dir, name+'-'+type+'.js'));
+			else if(typeof param == 'string')
+				param = require(param);
+		}
+		catch(err) {
+			if(type == 'parser' || type == 'dicter')
+				param = require(path.join(dir, '_'+type+'.js'));
+			else
+				throw err;
+		}
 
 		return param;
 	};
 
-module.exports = (name, pathFile, start, header, parser, dicter) => {
-	let str = fs.readFileSync(path.join(pathFile, name+'.csv')).toString(),
+module.exports = (name, dir, start, header, parser, dicter) => {
+	let str = fs.readFileSync(path.join(dir, name+'.csv')).toString(),
 		rows = str.split('\r\n');
 
-	header = parseParam(header, name, pathFile, 'header');
-	parser = parseParam(parser, name, pathFile, 'parser');
-	dicter = parseParam(dicter, name, pathFile, 'dicter');
+	header = parseParam(header, name, dir, 'header');
+	parser = parseParam(parser, name, dir, 'parser');
+	dicter = parseParam(dicter, name, dir, 'dicter');
 
 	if(header && header.length) {
 		let result = [], counter = {};
