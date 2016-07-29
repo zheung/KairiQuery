@@ -1,7 +1,9 @@
 global._c = console;
 
-global.ll = _c.log;
+global._l = _c.log;
 
-global.dir = __dirname;
+global._dir = __dirname;
 
-ll('init');
+global.co = require('co');
+
+global.qs = require('querystring');

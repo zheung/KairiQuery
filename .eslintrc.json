@@ -28,11 +28,11 @@
 	},
 	"globals": {
 		"_c": true,
-		"ll": true,
+		"_l": true,
+		"_dir": true,
 
 		"fs": true,
 		"path": true,
-
-		"dir": true
+		"qs": true
 	}
 }
