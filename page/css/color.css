@@ -1,67 +1,8 @@
-.obsidian {
-	color: #293134; /*背景色*/
-	color: #E0E2E4; /*普通文字*/
-	color: #FFCD22; /*数字*/
-	color: #93C763; /*关键词*/
-	color: #EC7600; /*字符串*/
-	color: #E8E2B7; /*符号*/
-	color: #D39745; /*正则*/
-	color: #818E96; /*注释*/
-	color: #6C788C; /*文档*/
-}
+.clrBack { color: #293134; }
+.blrBack { background-color: #293134; }
 
-.colorBack {
-	color: #293134; /*背景色*/
-}
-.colorFont {
-	color: #E0E2E4; /*普通文字*/
-}
-.colorNumber {
-	color: #FFCD22; /*数字*/
-}
-.colorKey {
-	color: #93C763; /*关键词*/
-}
-.colorString {
-	color: #EC7600; /*字符串*/
-}
-.colorSymbol {
-	color: #E8E2B7; /*符号*/
-}
-.colorRegex {
-	color: #D39745; /*正则*/
-}
-.colorComment {
-	color: #818E96; /*注释*/
-}
-.colorDoc {
-	color: #6C788C; /*文档*/
-}
+.clrFont { color: #E0E2E4; }
+.blrFont { background-color: #E0E2E4; }
 
-.bolorBack {
-	background-color: #293134; /*背景色*/
-}
-.bolorFont {
-	background-color: #E0E2E4; /*普通文字*/
-}
-.bolorNumber {
-	background-color: #FFCD22; /*数字*/
-}
-.bolorKey {
-	background-color: #93C763; /*关键词*/
-}
-.bolorString {
-	background-color: #EC7600; /*字符串*/
-}
-.bolorSymbol {
-	background-color: #E8E2B7; /*符号*/
-}
-.bolorRegex {
-	background-color: #D39745; /*正则*/
-}
-.bolorComment {
-	background-color: #818E96; /*注释*/
-}
-.bolorDoc {
-	background-color: #6C788C; /*文档*/
-}
+.clrNavi { color: #0D1C22; }
+.blrNavi { background-color: #0D1C22; }

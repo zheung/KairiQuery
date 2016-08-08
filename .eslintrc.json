@@ -1,7 +1,8 @@
 {
 	"env": {
 		"node": true,
-		"es6": true
+		"es6": true,
+		"browser": true
 	},
 	"extends": "eslint:recommended",
 	"rules": {
@@ -33,6 +34,8 @@
 
 		"fs": true,
 		"path": true,
-		"qs": true
+		"qs": true,
+
+		"$": true
 	}
 }

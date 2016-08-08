@@ -4,15 +4,75 @@
 		<title>Flex</title>
 		<link href="./css/style.css" rel="stylesheet">
 		<link href="./css/color.css" rel="stylesheet">
+		<link href="./css/flex.css" rel="stylesheet">
+		<link href="./css/small.css" rel="stylesheet">
 		<script type="text/javascript" src="./js/jquery.js"></script>
 	</head>
 	<body>
-		<div class="container colorFont">
-			<div class="boxNavi bolorDoc">abcd<br>中国</div>
-			<div class="boxMain bolorBack">213</div>
+		<div class="Frame clrFont flex drr wpn jcs aic wpw">
+			<div class="Navi blrNavi">
+				<div class="flex drc aic wpw">
+					<div class="NaviColumn flex jcs aic wpw">KrisDB</div>
+					<div class="NaviColumnSpace flex jcs aic wpw"></div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<span>职业</span>
+						<div class="CondBar flex jca aic wpw">
+							<a class="Button On">佣兵</a>
+							<a class="Button On">富豪</a>
+							<a class="Button On">盗贼</a>
+							<a class="Button On">歌姬</a>
+							<a class="Button On">通用</a>
+						</div>
+					</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<span>属性</span>
+						<div class="CondBar flex jca aic wpw">
+							<a class="Button On">火</a>
+							<a class="Button On">冰</a>
+							<a class="Button On">风</a>
+							<a class="Button On">光</a>
+							<a class="Button On">暗</a>
+						</div>
+					</div>
+					<div class="NaviColumn hr flex jcs aic wpw">技能筛选</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<span>大类</span>
+						<div class="CondBar flex jca aic wpw">
+							<a class="Button On">物理</a>
+							<a class="Button On">魔法</a>
+							<a class="Button On">治疗</a>
+							<a class="Button On">支援</a>
+							<a class="Button On">防御</a>
+							<a class="Button On">弱化</a>
+						</div>
+					</div>
+					<div class="NaviColumn2x flex jcb aic wpw">
+						<span>目标</span>
+						<div class="CondBar flex drc jca aic wpw">
+							<div class="wf flex jcc aic wpw">
+								<a class="wf Button On flex jcc">自身</a>
+							</div>
+							<div class="wf m3 flex jca aic wpw">
+								<div class="wf m3 flex jca aic wpw">
+									<a class="w3 tc Button Text">己方</a>
+									<a class="w3 tc Button On">单体</a>
+									<a class="w3 tc Button On">全体</a>
+								</div>
+								<div class="wf m3 flex jca aic wpw">
+									<a class="w3 tc Button Text">敌方</a>
+									<a class="w3 tc Button On">单体</a>
+									<a class="w3 tc Button On">全体</a>
+								</div>
+							</div>
+							<div class="wf flex jca aic wpw">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="Main blrBack flex"></div>
 		</div>
 
-		<script type="text/javascript">
-		</script>
+		<script type="text/javascript" src="./js/main.js"></script>
 	</body>
 </html>
