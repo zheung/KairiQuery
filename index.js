@@ -24,4 +24,4 @@ router.get('/q', function *() {
 
 app.use(router.routes()).use(router.allowedMethods());
 
-app.listen(3000);
+app.listen('0.0.0.0', 80);
