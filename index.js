@@ -4,13 +4,11 @@ let card = require('./data/card.json'),
 	skill = require('./data/skill.json'),
 	role = require('./data/role.json');
 
-let app = require('koa')(), router = require('koa-router')();
+let app = require('koa')(), router = require('koa-router')(), static = require('koa-static');
 
 let filter = require('./filter'), render = require('./render');
 
-router.get('/', function *() {
-	this.body = 'quick';
-});
+app.use(static('./page'));
 
 router.get('/q', function *() {
 	let query;
