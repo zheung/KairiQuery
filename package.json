@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "DanoR",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^1.2.1",
+    "koa-router": "^5.4.0",
+    "thunkify": "^2.1.2"
+  }
 }
