@@ -3,6 +3,8 @@ body {
 
 	cursor: default;
 
+	overflow: hidden;
+
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
@@ -15,16 +17,16 @@ body {
 	font-family: "Microsoft YaHei";
 }
 
+.Main {
+	width: 66%;
+	height: 100%;
+}
 .Navi {
 	width: 34%;
 	height: 100%;
 
 	overflow-x: hidden;
 	overflow-y: auto;
-}
-.Main {
-	width: 66%;
-	height: 100%;
 }
 
 .NaviColumnSpace {
@@ -52,39 +54,57 @@ body {
 	margin: 3px;
 	min-width: 30px;
 
+	border: 2px solid #34495e;
+
+	padding: 4px;
+	padding-left: 3px;
+	padding-right: 3px;
+
+	border-radius: 4px;
+
 	text-align: center;
-}
-.Button.Text {
-	border: 2px solid #0D1C22;
-	border-radius: 4px;
-
-	padding: 5px;
-	padding-left: 3px;
-	padding-right: 3px;
-}
-.Button.On {
-	border: 2px solid #88959A;
-	border-radius: 4px;
-
-	padding: 4px;
-	padding-left: 3px;
-	padding-right: 3px;
-
-	cursor: pointer;
-
-	color: #212527;
-	background-color: #88959A;
-}
-.Button.Off {
-	border: 2px dashed gray;
-	border-radius: 4px;
-
-	padding: 4px;
-	padding-left: 3px;
-	padding-right: 3px;
 
 	cursor: pointer;
 }
+.Button.on {
+	border: 2px solid #5f7f9f;
+
+	color: #E0E2E4;
+	background-color: #5f7f9f;
+}
+.Button.off {
+	color: #5f7f9f;
+}
+.Button.min {
+	min-width: 14px;
+}
+
+.TabHeader {
+	width: 100%;
+	height: 45px;
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+
+	background-color: #34495e;
+}
+.TabHead {
+	border: 2px solid #34495e;
+
+	margin: 0;
+	margin-right: 2px;
+
+	color: #E0E2E4;
+
+	cursor: pointer;
+}
+.TabHead:hover {
+	border-bottom: 2px solid #1ABC9C;
+}
+.TabHead.active {
+	border-radius: 4px;
+	border: 2px solid #1ABC9C;
+	background-color: #1ABC9C;
+}
+
 
 .CondBar {
 	width: 77%;

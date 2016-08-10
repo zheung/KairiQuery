@@ -13,3 +13,8 @@
 .tc { text-align: center; }
 
 .mw { min-height: 0px; }
+
+.hide { display: none; }
+
+.fs24 { font-size: 24px; }
+.fs20 { font-size: 20px; }

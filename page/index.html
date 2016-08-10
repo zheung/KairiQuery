@@ -9,104 +9,139 @@
 		<script type="text/javascript" src="./js/jquery.js"></script>
 	</head>
 	<body>
-		<div class="Frame clrFont flex drr wpn jcs aic wpw">
+		<div class="Frame clrFont flex drr wpn jcs aic wpn">
+			<div class="Main blrBack flex"></div>
 			<div class="Navi blrNavi">
-				<div class="flex drc aic wpw">
-					<div class="NaviColumn flex jcs aic wpw">KrisDB</div>
-					<div class="NaviColumnSpace flex jcs aic wpw"></div>
+				<div class="TabHeader flex jca aih wpw">
+					<a class="w3 TabHead active flex jcc aic" data-id="Basic">基本信息</a>
+					<a class="w3 TabHead flex jcc aic" data-id="Skill">详细技能</a>
+					<a class="w3 TabHead flex jcc aic" data-id="About">关于</a>
+				</div>
+				<div id="NaviBasic" class="TabItem flex drc aic wpw">
 					<div class="NaviColumn hr flex jcs aic wpw">基本属性</div>
 					<div class="NaviColumn flex jcb aic wpw">
-						<a class="w4 Button On">职业</a>
+						<a class="w4 Button on">职业</a>
 						<div class="CondBar flex jca aic wpw">
-							<a class="Button On">佣兵</a>
-							<a class="Button On">富豪</a>
-							<a class="Button On">盗贼</a>
-							<a class="Button On">歌姬</a>
-							<a class="Button On">通用</a>
+							<a class="Button on">佣兵</a>
+							<a class="Button on">富豪</a>
+							<a class="Button on">盗贼</a>
+							<a class="Button on">歌姬</a>
+							<a class="Button on">通用</a>
 						</div>
 					</div>
-					<div class="NaviColumn2x flex jcb aic wpw">
-						<a class="w4 Button On">属性</a>
-						<div class="CondBar flex jca aic wpw">
-							<div class="wf flex jca aic wpw">
-								<a class="Button On flex jcc">火</a>
-								<a class="Button On flex jcc">冰</a>
-								<a class="Button On flex jcc">风</a>
-								<a class="Button On flex jcc">光</a>
-								<a class="Button On flex jcc">暗</a>
-							</div>
-							<div class="wf flex jca aic wpw">
-								<a class="Button On flex jcc">火冰</a>
-								<a class="Button On flex jcc">火风</a>
-								<a class="Button On flex jcc">火光</a>
-								<a class="Button On flex jcc">火暗</a>
-								<a class="Button On flex jcc">光暗</a>
-							</div>
-							<div class="wf flex jca aic wpw">
-								<a class="Button On flex jcc">冰风</a>
-								<a class="Button On flex jcc">冰光</a>
-								<a class="Button On flex jcc">冰暗</a>
-								<a class="Button On flex jcc">风光</a>
-								<a class="Button On flex jcc">风暗</a>
-							</div>
-						</div>
-					</div>
-					<div class="NaviColumn hr flex jcs aic wpw">技能信息</div>
 					<div class="NaviColumn flex jcb aic wpw">
-						<a class="w4 Button On" title="等于卡面右上角一个字的技能">大类</a>
+						<a class="w4 Button on">COST</a>
 						<div class="CondBar flex jca aic wpw">
-							<a class="Button On">物理</a>
-							<a class="Button On">魔法</a>
-							<a class="Button On">治疗</a>
-							<a class="Button On">支援</a>
-							<a class="Button On">防御</a>
-							<a class="Button On">弱化</a>
+							<a class="Button on min">1</a>
+							<a class="Button on min">2</a>
+							<a class="Button on min">3</a>
+							<a class="Button on min">4</a>
+							<a class="Button on min">5</a>
+							<a class="Button on min">9</a>
+							<a class="Button on min">11</a>
 						</div>
 					</div>
 					<div class="NaviColumn2x flex jcb aic wpw">
-						<a class="w4 Button On">目标</a>
+						<a class="w4 Button on">属性</a>
+						<div class="CondBar flex jca aic wpw">
+							<div class="wf flex jca aic wpw">
+								<a class="Button on flex jcc">火</a>
+								<a class="Button on flex jcc">冰</a>
+								<a class="Button on flex jcc">风</a>
+								<a class="Button on flex jcc">光</a>
+								<a class="Button on flex jcc">暗</a>
+							</div>
+							<div class="wf flex jca aic wpw">
+								<a class="Button on flex jcc">火冰</a>
+								<a class="Button on flex jcc">火风</a>
+								<a class="Button on flex jcc">火光</a>
+								<a class="Button on flex jcc">火暗</a>
+								<a class="Button on flex jcc">光暗</a>
+							</div>
+							<div class="wf flex jca aic wpw">
+								<a class="Button on flex jcc">冰风</a>
+								<a class="Button on flex jcc">冰光</a>
+								<a class="Button on flex jcc">冰暗</a>
+								<a class="Button on flex jcc">风光</a>
+								<a class="Button on flex jcc">风暗</a>
+							</div>
+						</div>
+					</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Button on" title="等于卡面右上角一个字的技能">技能</a>
+						<div class="CondBar flex jca aic wpw">
+							<a class="Button on">物理</a>
+							<a class="Button on">魔法</a>
+							<a class="Button on">治疗</a>
+							<a class="Button on">支援</a>
+							<a class="Button on">防御</a>
+							<a class="Button on">弱化</a>
+						</div>
+					</div>
+					<div class="NaviColumn hr flex jcs aic wpw">常见技能</div>
+					<div class="NaviColumn flex jca aic wpw">
+						<a class="Button on">AOE</a>
+						<a class="Button on">嘲讽</a>
+						<a class="Button on">单人支</a>
+						<a class="Button on">欧洲剑</a>
+						<a class="Button on">妨支</a>
+						<a class="Button on">大盾</a>
+						<a class="Button on">+2</a>
+						<a class="Button on">解状态</a>
+						<a class="Button on">限定</a>
+						<a class="Button on">联动</a>
+						<a class="Button on">圣杯</a>
+						<a class="Button on">特典</a>
+						<a class="Button on">Bug奶</a>
+					</div>
+				</div>
+				<div id="NaviSkill" class="hide TabItem flex drc aic wpw">
+					<div class="NaviColumn hr flex jcs aic wpw">基本属性</div>
+					<div class="NaviColumn2x flex jcb aic wpw">
+						<a class="w4 Button on">目标</a>
 						<div class="CondBar flex drc jca aic wpw">
 							<div class="wf flex jcc aic wpw">
-								<a class="wf Button On flex jcc">自身</a>
+								<a class="wf Button on flex jcc">自身</a>
 							</div>
 							<div class="wf flex jca aic wpw">
 								<div class="wf flex jca aic wpw">
-									<a class="w3 tc Button Text">己方</a>
-									<a class="w3 tc Button On">单体</a>
-									<a class="w3 tc Button On">全体</a>
+									<a class="w3 tc Button">己方</a>
+									<a class="w3 tc Button on">单体</a>
+									<a class="w3 tc Button on">全体</a>
 								</div>
 								<div class="wf flex jca aic wpw">
-									<a class="w3 tc Button Text">敌方</a>
-									<a class="w3 tc Button On">单体</a>
-									<a class="w3 tc Button On">全体</a>
+									<a class="w3 tc Button">敌方</a>
+									<a class="w3 tc Button on">单体</a>
+									<a class="w3 tc Button on">全体</a>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="NaviColumn hr flex jcs aic wpw">技能类型</div>
 					<div class="NaviColumn2x flex jcb aic wpw">
-						<a class="w4 Button On">普通<br>攻击</a>
+						<a class="w4 Button on">普通<br>攻击</a>
 						<div class="CondBar flex drc jca aic wpw">
 							<div class="wf flex jca aic wpw">
 								<div class="wf flex jca aic wpw">
-									<a class="tc mw Button Text">攻击<br>次数</a>
-									<a class="tc mw Button On">1</a>
-									<a class="tc mw Button On">2</a>
-									<a class="tc mw Button On">3</a>
-									<a class="tc mw Button On">4</a>
-									<a class="tc mw Button On">5</a>
+									<a class="tc mw Button">攻击<br>次数</a>
+									<a class="tc mw Button on">1</a>
+									<a class="tc mw Button on">2</a>
+									<a class="tc mw Button on">3</a>
+									<a class="tc mw Button on">4</a>
+									<a class="tc mw Button on">5</a>
 								</div>
 								<div class="wf flex jca aic wpw">
-									<a class="w3 tc Button Text">伤害类型</a>
-									<a class="w3 tc Button On">物理</a>
-									<a class="w3 tc Button On">魔法</a>
+									<a class="w3 tc Button">伤害类型</a>
+									<a class="w3 tc Button on">物理</a>
+									<a class="w3 tc Button on">魔法</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				<div id="NaviAbout" class="hide TabItem flex drc aic wpw">
+				</div>
 			</div>
-			<div class="Main blrBack flex"></div>
 		</div>
 
 		<script type="text/javascript" src="./js/main.js"></script>
