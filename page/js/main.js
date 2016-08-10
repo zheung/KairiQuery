@@ -31,3 +31,5 @@ $(document).keydown(function(e) {
 		return false;
 	}
 });
+
+tabHeads.filter('.active').click();
