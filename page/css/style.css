@@ -50,7 +50,7 @@ body {
 	min-height: 135px;
 }
 
-.Button {
+.Toggle {
 	margin: 3px;
 	min-width: 30px;
 
@@ -66,17 +66,58 @@ body {
 
 	cursor: pointer;
 }
-.Button.on {
+.Toggle.on {
 	border: 2px solid #5f7f9f;
 
 	color: #E0E2E4;
 	background-color: #5f7f9f;
 }
-.Button.off {
+.Toggle.off {
 	color: #5f7f9f;
 }
-.Button.min {
+.Toggle.min {
 	min-width: 14px;
+}
+
+.Button {
+	margin: 3px;
+	min-width: 30px;
+
+	border: 2px solid #5f7f9f;
+
+	padding: 4px;
+	padding-left: 3px;
+	padding-right: 3px;
+
+	border-radius: 4px;
+
+	text-align: center;
+
+	color: #E0E2E4;
+	background-color: #5f7f9f;
+
+	cursor: pointer;
+}
+
+.Input {
+	margin: 3px;
+
+	min-width: 30px;
+	height: 33px;
+
+	border: 2px solid #5f7f9f;
+
+	padding: 4px;
+	padding-left: 3px;
+	padding-right: 3px;
+
+	border-radius: 4px;
+
+	text-align: center;
+	color: #5f7f9f;
+	font-size: 17px;
+
+	cursor: auto;
 }
 
 .TabHeader {
@@ -109,4 +150,58 @@ body {
 	width: 77%;
 	height: auto;
 	border-left: 2px solid #E0E2E4;
+}
+.CondBar2 {
+	width: 77%;
+	height: auto;
+}
+
+.Conds {
+	width: 100%;
+	height: 14%;
+
+}
+.Cards {
+	width: 100%;
+	height: 79%;
+
+}
+.Pager {
+	width: 100%;
+	height: 7%;
+}
+
+.Card {
+	border: 2px solid transparent;
+	border-radius: 4px;
+	box-shadow: 0 1px 10px rgba(95,127,159,0.3);
+
+	width: 32.86%;
+	height: 33%;
+}
+.ImageLeft {
+	width: 45%;
+}
+.InfoRight {
+	width: 55%;
+}
+.ImgThumb {
+	width: 85%;
+	height: auto;
+}
+
+.NameBox {
+	width: 100%;
+	height: 14%;
+}
+
+.InfoBox {
+	width: 100%;
+	height: 85%;
+}
+
+.Info {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }

@@ -1,21 +1,34 @@
-module.exports = (data = {}, paths = []) => {
+let renderer = require('./renderer');
+
+module.exports = (datas = [], paths = []) => {
 	let result = [];
 
-	for(let d of data) {
-		let rd = {};
+	for(let data of datas) {
+		let rData = {};
 
 		for(let path of paths) {
-			let nodes = path.split('.'), index = 1, length = nodes.length,
-				tmpd = d, tmpr = rd;
+			let dNodes, rNodes;
 
-			for(let node of nodes)
+			if(typeof path == 'string')
+				dNodes = rNodes = path.split('.');
+			else if(path instanceof Array)
+				[dNodes, rNodes] = [path[0].split('.'), (path[1] || '').split('.')];
+			else
+				continue;
+
+			let index = 1, length = rNodes.length, dPointer = data, rPointer = rData;
+
+			for(let node of dNodes)
+				dPointer = dPointer[node];
+
+			for(let node of rNodes)
 				if(index++ < length)
-					[tmpd, tmpr]  = [tmpd[node], tmpr[node] || (tmpr[node] = {})];
+					rPointer = rPointer[node] || (rPointer[node] = {});
 				else
-					tmpr[node] = tmpd[node];
+					rPointer[node] = path[2] ? renderer(path[2], dPointer) : dPointer;
 		}
 
-		result.push(rd);
+		result.push(rData);
 	}
 
 	return result;
