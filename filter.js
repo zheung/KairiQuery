@@ -2,7 +2,7 @@ let slice = (data = {}, page = 1) => {
 	return data.slice(9 * (page - 1), 9 * page);
 };
 
-module.exports = (data = {}, { page, name = '' } = {}) => {
+module.exports = (data = {}, { page = 1, name = '' } = {}) => {
 	if((name = name.trim())) {
 		let result = [];
 
@@ -11,8 +11,8 @@ module.exports = (data = {}, { page, name = '' } = {}) => {
 				result.push(d);
 		}
 
-		return slice(result, page);
+		return [slice(result, page), page, ~~(result.length / 9)+1];
 	}
 
-	return slice(data, page);
+	return [slice(data, page), page, ~~(data.length / 9)+1];
 };

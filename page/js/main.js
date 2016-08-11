@@ -36,6 +36,35 @@ $(document).keydown(function(e) {
 	}
 });
 
+var sPage = $('.sPage'), sPageMax = $('.sPageMax');
+
+var deal = function(result) {
+	var i, datas = result[0];
+
+	sPage.html(window.page = ~~result[1]);
+	sPageMax.html(window.pageMax = ~~result[2]);
+
+	for(i in cards)
+		cards[i].addClass('hide');
+
+	for(i in datas) {
+		var card = cards[i], data = datas[i];
+
+		card[0].dataset.id = data.id;
+
+		card.find('.sTitle').html('<'+data.title+'>'+data.name);
+		card.find('.sCost').html(data.cost);
+		card.find('.sJob').html(data.job);
+		card.find('.sAttr').html(data.attr);
+		card.find('.sHP').html(data.hp);
+		card.find('.sAD').html(data.ad);
+		card.find('.sAP').html(data.ap);
+		card.find('.sHQ').html(data.hq);
+
+		card.removeClass('hide');
+	}
+};
+
 var condName = $('#CondName'), cards = [], search = $('#Search');
 
 $('.Card').each(function() { cards.push($(this)); });
@@ -43,31 +72,41 @@ $('.Card').each(function() { cards.push($(this)); });
 search.click(function() {
 	$.get({
 		url: 'q',
-		data: { name: condName.val() },
-		success: function(datas) {
-			var i;
-
-			for(i in cards)
-				cards[i].addClass('hide');
-
-			for(i in datas) {
-				var card = cards[i], data = datas[i];
-
-				card[0].dataset.id = data.id;
-
-				card.find('.sTitle').html('<'+data.title+'>'+data.name);
-				card.find('.sHP').html(data.hp);
-				card.find('.sAD').html(data.ad);
-				card.find('.sAP').html(data.ap);
-				card.find('.sHQ').html(data.hq);
-				card.find('.sCost').html(data.cost);
-				card.find('.sJob').html(data.job);
-				card.find('.sAttr').html(data.attr);
-
-				card.removeClass('hide');
-			}
-		}
+		data: { name: condName.val(), page: window.page || 1 },
+		success: deal
 	});
+});
+
+window.prevUnlock = true;
+window.nextUnlock = true;
+
+$('.PagePrev').click(function() {
+	if(window.page > 1 && window.prevUnlock) {
+		window.prevUnlock = false;
+		$.get({
+			url: 'q',
+			data: { name: condName.val(), page: window.page - 1 },
+			success: function(result) {
+				deal(result);
+
+				window.prevUnlock = true;
+			}
+		});
+	}
+});
+$('.PageNext').click(function() {
+	if(window.page < window.pageMax && window.nextUnlock) {
+		window.nextUnlock = false;
+		$.get({
+			url: 'q',
+			data: { name: condName.val(), page: window.page+1 },
+			success: function(result) {
+				deal(result);
+
+				window.nextUnlock = true;
+			}
+		});
+	}
 });
 
 tabHeads.filter('.active').click();

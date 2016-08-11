@@ -205,3 +205,12 @@ body {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
+
+.PagePrev, .PageNext {
+	width: 33%;
+
+	cursor: pointer;
+}
+.PageCount, {
+	width: 33%;
+}

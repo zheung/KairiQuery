@@ -17,7 +17,9 @@ router.get('/q', function *() {
 	if(this.originalUrl != this._matchedRoute)
 		query = qs.parse(qs.unescape(this.originalUrl.replace('/q\?', '')));
 
-	this.body = render(filter(data, query), [
+	let result = filter(data, query);
+
+	result[0] = render(result[0], [
 		'id',
 		['info.name', 'name'],
 		['info.title', 'title'],
@@ -25,10 +27,12 @@ router.get('/q', function *() {
 		['figure.ad.max', 'ad'],
 		['figure.ap.max', 'ap'],
 		['figure.hq.max', 'hq'],
-		['skill.awaken.0.info.cost', 'cost'],
-		['skill.awaken.0.info.job', 'job', 'job'],
-		['skill.awaken.0.info.attr', 'attr', 'attr']
+		['skill.normal.0.info.cost', 'cost'],
+		['skill.normal.0.info.job', 'job', 'job'],
+		['skill.normal.0.info.attr', 'attr', 'attr']
 	]);
+
+	this.body = result;
 });
 
 app.use(router.routes()).use(router.allowedMethods());
