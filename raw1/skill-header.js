@@ -26,5 +26,5 @@ module.exports = [
 	's.cond.param4',
 	's.cond.param5',
 	'n.cond.priority',
-	's.cond.roleid'
+	's.role'
 ];
