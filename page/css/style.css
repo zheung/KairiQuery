@@ -163,7 +163,7 @@ body {
 }
 .Cards {
 	width: 100%;
-	height: 79%;
+	height: 93%;
 
 }
 .Pager {
@@ -174,7 +174,7 @@ body {
 .Card {
 	border: 2px solid transparent;
 	border-radius: 4px;
-	box-shadow: 0 1px 10px rgba(95,127,159,0.3);
+	box-shadow: 0 1px 10px rgba(41, 49, 52, 0.3);
 
 	width: 32.86%;
 	height: 33%;

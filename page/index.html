@@ -11,12 +11,9 @@
 	<body>
 		<div class="Frame clrFont flex drr wpn jcs aic wpn">
 			<div class="Main blrBack flex drc jcc aic wpn">
-				<div class="Conds">
-
-				</div>
 				<div class="Cards flex drr jcs ais acs wpw">
 					<div class="hide Card flex drr jcc aic wpw">
-						<div class="NameBox flex jcc"><a class="Info sTitle"></a></div>
+						<div class="NameBox flex jcc aie"><a class="Info sTitle"></a></div>
 						<div class="InfoBox flex drr jcc aih wpw">
 							<div class="ImageLeft flex jcc aic"><img class="ImgThumb" src="./img/default.jpg">
 							</div>
@@ -65,11 +62,11 @@
 					<div class="NaviColumn flex jcb aic wpw">
 						<a class="w4 Toggle on">职业</a>
 						<div class="CondBar flex jca aic wpw">
-							<a class="Toggle on">佣兵</a>
-							<a class="Toggle on">富豪</a>
-							<a class="Toggle on">盗贼</a>
-							<a class="Toggle on">歌姬</a>
-							<a class="Toggle on">通用</a>
+							<a class="Toggle on" data-cond="job" data-val="1">佣兵</a>
+							<a class="Toggle on" data-cond="job" data-val="2">富豪</a>
+							<a class="Toggle on" data-cond="job" data-val="4">盗贼</a>
+							<a class="Toggle on" data-cond="job" data-val="8">歌姬</a>
+							<a class="Toggle on" data-cond="job" data-val="16">通用</a>
 						</div>
 					</div>
 					<div class="NaviColumn flex jcb aic wpw">
@@ -226,6 +223,7 @@
 			</div>
 		</div>
 
-		<script type="text/javascript" src="./js/main.js"></script>
+		<script type="text/javascript" src="./js/kq.js"></script>
+		<script type="text/javascript" src="./js/init.js"></script>
 	</body>
 </html>

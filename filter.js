@@ -2,17 +2,25 @@ let slice = (data = {}, page = 1) => {
 	return data.slice(9 * (page - 1), 9 * page);
 };
 
-module.exports = (data = {}, { page = 1, name = '' } = {}) => {
-	if((name = name.trim())) {
-		let result = [];
+let bitValid = function(switcher, value) {
+	//TODO
+};
 
-		for(let d of data) {
-			if(d.info.name.indexOf(name) + 1)
-				result.push(d);
-		}
+let valid = function(data, conds) {
+	var r = 0;
 
-		return [slice(result, page), page, ~~(result.length / 9)+1];
-	}
+	if(data.info.name.indexOf(conds.name.trim()) + 1) r++;
 
-	return [slice(data, page), page, ~~(data.length / 9)+1];
+	if(conds.job >= 0 && bitValid(conds.job, data.skill.normal[0].info.job)) r++;
+
+	return r ? true : false;
+};
+
+module.exports = (data = {}, conds = {}) => {
+	let result = [];
+
+	for(let d of data)
+		if(valid(d, conds)) result.push(d);
+
+	return [slice(result, conds.page), conds.page, ~~(result.length / 9)+1];
 };
