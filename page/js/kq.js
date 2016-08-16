@@ -68,8 +68,8 @@
 (function() {
 	window.kq = {
 		conds: {
-			job: 0b111111,
-			cost: 0b11111111
+			job: 63,
+			cost: 255
 		},
 		param: function(moder) {
 			var result = $.extend({}, kq.conds, {
