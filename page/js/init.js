@@ -2,21 +2,49 @@
 	// Toggles Events
 	kqe.toggles.mouseenter(function(e) {
 		if(e.altKey) $(this).click();
+
 	});
 
-	kqe.toggles.click(function() {
-		var $this = $(this), cond = this.dataset.cond, val = this.dataset.val;
+	kqe.toggles.click(function(e) {
+		var $this = $(this), cond = this.dataset.cond, val = ~~this.dataset.val;
 
-		$this.toggleClass('on').toggleClass('off');
+		if(e.ctrlKey) {
+			if(val != 0) {
+				kqd.dynmSearch = false;
 
-		if(cond && val) {
-			if($this.hasClass('on'))
-				kq.conds[this.dataset.cond] += ~~this.dataset.val;
-			else
-				kq.conds[this.dataset.cond] -= ~~this.dataset.val;
+				$('[data-cond='+cond+']:not([data-val='+val+']):not([data-val=0])').each(function() {
+					$(this).addClass('on').removeClass('off').click();
+				});
+
+				kqd.dynmSearch = true;
+
+				$this.removeClass('on').addClass('off').click();
+
+			}
+			else {
+				kqd.dynmSearch = false;
+
+				$('[data-cond='+cond+']:not([data-val=0])').each(function() {
+					$(this).removeClass('on').addClass('off').click();
+				});
+
+				kqd.dynmSearch = true;
+
+				$this.removeClass('on').addClass('off').click();
+			}
 		}
+		else {
+			$this.toggleClass('on').toggleClass('off');
 
-		if(kqd.dynmSearch) kq.query(function(param) { param.page = 1; }, kqf.dealer);
+			if(cond && val) {
+				if($this.hasClass('on'))
+					kq.conds[this.dataset.cond] |= 1<<val;
+				else
+					kq.conds[this.dataset.cond] &= ~(1<<val);
+			}
+
+			if(kqd.dynmSearch) kq.query(function(param) { param.page = 1; }, kqf.dealer);
+		}
 	});
 })();
 
