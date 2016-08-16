@@ -1,4 +1,4 @@
-let dicter = {
+module.exports = {
 	job: {// 觉醒职业
 		0: '通用',
 		1: '佣兵',
@@ -27,8 +27,4 @@ let dicter = {
 		305: '风光',
 		405: '光暗'
 	}
-};
-
-module.exports = function(type, data) {
-	return data ? dicter[type][data] : dicter[type][0];
 };

@@ -3,7 +3,9 @@
 		page: 0,
 		pageMax: 0,
 		prevUnlock: true,
-		nextUnlock: true
+		nextUnlock: true,
+
+		dynmSearch: true
 	};
 
 	window.kqe = {
@@ -66,7 +68,8 @@
 (function() {
 	window.kq = {
 		conds: {
-			job: 31
+			job: 0b111111,
+			cost: 0b11111111
 		},
 		param: function(moder) {
 			var result = $.extend({}, kq.conds, {

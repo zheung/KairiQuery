@@ -15,6 +15,8 @@
 			else
 				kq.conds[this.dataset.cond] -= ~~this.dataset.val;
 		}
+
+		if(kqd.dynmSearch) kq.query(function(param) { param.page = 1; }, kqf.dealer);
 	});
 })();
 

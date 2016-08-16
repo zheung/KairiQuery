@@ -7,7 +7,7 @@ let card = require('./data/card.json'),
 
 let app = require('koa')(), router = require('koa-router')(), static = require('koa-static');
 
-let filter = require('./filter'), render = require('./render');
+let filter = require('./filter');
 
 app.use(static('./page'));
 
@@ -17,9 +17,7 @@ router.get('/q', function *() {
 	if(this.originalUrl != this._matchedRoute)
 		query = qs.parse(qs.unescape(this.originalUrl.replace('/q\?', '')));
 
-	let result = filter(data, query);
-
-	result[0] = render(result[0], [
+	let result = filter(data, query, [
 		'id',
 		['info.name', 'name'],
 		['info.title', 'title'],
