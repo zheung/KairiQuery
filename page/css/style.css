@@ -10,6 +10,10 @@ body {
 	-webkit-user-select: none;
 }
 
+input, span {
+	outline: none;
+}
+
 .Frame {
 	width: 100%;
 	height: 100%;
@@ -176,7 +180,7 @@ body {
 	border-radius: 4px;
 	box-shadow: 0 1px 10px rgba(41, 49, 52, 0.3);
 
-	width: 32.86%;
+	width: 32%;
 	height: 33%;
 }
 .ImageLeft {
@@ -213,4 +217,12 @@ body {
 }
 .PageCount, {
 	width: 33%;
+}
+.Page {
+	width: 40px;
+
+	text-align: center;
+	color: #E0E2E4;
+
+	cursor: auto;
 }
