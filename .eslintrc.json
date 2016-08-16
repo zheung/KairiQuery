@@ -25,6 +25,9 @@
 		"no-unused-vars": [
 			"warn",
 			{ "vars": "all", "args": "after-used" }
+		],
+		"no-console": [
+			"warn"
 		]
 	},
 	"globals": {
