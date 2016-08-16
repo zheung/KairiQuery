@@ -31,7 +31,7 @@
 				cards[i].addClass('hide');
 
 			for(i in datas) {
-				var card = cards[i], data = datas[i];
+				var card = cards[i], data = datas[i], img = data.imgs ? data.imgs[0] : '627ab2d1gw1f6vnh1qehxj2053074gly';
 
 				card[0].dataset.id = data.id;
 
@@ -43,6 +43,8 @@
 				card.find('.sAD').html(data.ad);
 				card.find('.sAP').html(data.ap);
 				card.find('.sHQ').html(data.hq);
+
+				card.find('.sThumb').attr('src', 'http://ww1.sinaimg.cn/large/'+img);
 
 				card.removeClass('hide');
 			}

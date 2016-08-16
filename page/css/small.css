@@ -25,3 +25,9 @@
 .fs24 { font-size: 24px; }
 
 .cud { cursor: default; }
+
+.selable {
+	user-select: text;
+	-moz-user-select: text;
+	-webkit-user-select: text;
+}

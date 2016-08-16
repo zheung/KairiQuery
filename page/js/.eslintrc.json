@@ -27,6 +27,7 @@
 	},
 	"globals": {
 		"$": true,
+
 		"kq": true,
 		"kqe": true,
 		"kqs": true,

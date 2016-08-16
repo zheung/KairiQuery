@@ -1,5 +1,6 @@
 // dict for card's value to filter's bits
-let dictBits = require('./dict/bits'), dictRender = require('./dict/render');
+let dictBits = require('./dict/bits'), dictRender = require('./dict/render'),
+	dictPict = require('./dict/pict');
 
 // pager slice
 let slice = (data = {}, page = 1) => {
@@ -20,6 +21,8 @@ let bitParse = function(bits) {
 
 // make bits from number
 let condsParse = function(conds) {
+	conds.name = conds.name? conds.name.trim() : '';
+
 	conds.job = bitParse(conds.job);
 	conds.cost = bitParse(conds.cost);
 };
@@ -30,7 +33,7 @@ let condCheck = function(bits = [], value = 0, type = '') {
 };
 
 let valid = function(data, conds) {
-	if(!(data.info.name.indexOf(conds.name.trim())+1)) return;
+	if(!(data.info.name.indexOf(conds.name)+1)) return;
 
 	if(condCheck(conds.job, data.skill.normal[0].info.job)) return;
 
@@ -76,6 +79,8 @@ let render = (data = {}, paths = []) => {
 				rPointer[node] = value;
 			}
 	}
+
+	rData.imgs = dictPict[data.id];
 
 	return rData;
 };
