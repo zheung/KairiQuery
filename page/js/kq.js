@@ -2,8 +2,8 @@
 	window.kqd = {
 		page: 0,
 		pageMax: 0,
-		prevUnlock: true,
-		nextUnlock: true,
+
+		xhrUnlock: true,
 
 		dynmSearch: true
 	};
@@ -31,11 +31,11 @@
 				cards[i].addClass('hide');
 
 			for(i in datas) {
-				var card = cards[i], data = datas[i], img = data.imgs ? data.imgs[0] : '627ab2d1gw1f6vnh1qehxj2053074gly';
+				var card = cards[i], data = datas[i];
 
 				card[0].dataset.id = data.id;
 
-				card.find('.sTitle').html('<'+data.title+'>'+data.name);
+				card.find('.sTitle').html('&lt;'+data.title+'&gt;'+data.name);
 				card.find('.sCost').html(data.cost);
 				card.find('.sJob').html(data.job);
 				card.find('.sAttr').html(data.attr);
@@ -44,7 +44,7 @@
 				card.find('.sAP').html(data.ap);
 				card.find('.sHQ').html(data.hq);
 
-				// card.find('.sThumb').attr('src', 'http://ww1.sinaimg.cn/large/'+img);
+				card.find('.sThumb').attr('src', '');
 				card.find('.sThumb').attr('src', 'https://raw.githubusercontent.com/kairiquery/tcip20/master/chr20/'+data.id+'.png');
 
 				card.removeClass('hide');
@@ -71,8 +71,10 @@
 (function() {
 	window.kq = {
 		conds: {
-			job: 63,
-			cost: 255
+			job: (1<<6)-1,
+			cost: (1<<8)-1,
+			attr: (1<<16)-1,
+			skillType: (1<<7)-1
 		},
 		param: function(moder) {
 			var result = $.extend({}, kq.conds, {
@@ -85,11 +87,20 @@
 			return result;
 		},
 		query: function(moder, success, fail, always) {
-			return $.get({
-				url: 'q',
-				data: kq.param(moder),
-				success: success
-			}).fail(fail).always(always);
+			if(kqd.xhrUnlock) {
+				kqd.xhrUnlock = false;
+
+				return $.get({
+					url: 'q',
+					data: kq.param(moder),
+					success: success
+				}).fail(fail).always(function() {
+					kqd.xhrUnlock = true;
+
+					if(always) always();
+				});
+			}
+
 		}
 	};
 })();

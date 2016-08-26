@@ -1,6 +1,5 @@
 // dict for card's value to filter's bits
-let dictBits = require('./dict/bits'), dictRender = require('./dict/render'),
-	dictPict = require('./dict/pict');
+let dictBits = require('./dict/bits'), dictRender = require('./dict/render');
 
 // pager slice
 let slice = (data = {}, page = 1) => {
@@ -25,11 +24,13 @@ let condsParse = function(conds) {
 
 	conds.job = bitParse(conds.job);
 	conds.cost = bitParse(conds.cost);
+	conds.attr = bitParse(conds.attr);
+	conds.skillType = bitParse(conds.skillType);
 };
 
 // cond checker based bits
 let condCheck = function(bits = [], value = 0, type = '') {
-	return bits[0] && !bits[(dictBits[type]? dictBits[type][value] : value) + 1];
+	return bits[0] && !bits[(dictBits[type]? dictBits[type][value] : value)];
 };
 
 let valid = function(data, conds) {
@@ -38,6 +39,10 @@ let valid = function(data, conds) {
 	if(condCheck(conds.job, data.skill.normal[0].info.job)) return;
 
 	if(condCheck(conds.cost, data.skill.normal[0].info.cost, 'cost')) return;
+
+	if(condCheck(conds.attr, data.skill.normal[0].info.attr, 'attr')) return;
+
+	if(condCheck(conds.skillType, data.skill.normal[0].info.type)) return;
 
 	return true;
 };
@@ -80,8 +85,6 @@ let render = (data = {}, paths = []) => {
 			}
 	}
 
-	// rData.imgs = dictPict[data.pict.awaken.id];
-
 	return rData;
 };
 
@@ -91,7 +94,8 @@ module.exports = (data = {}, conds = {}, paths = []) => {
 	condsParse(conds);
 
 	for(let d of data)
-		if(valid(d, conds)) result.push(render(d, paths));
+		if(valid(d, conds))
+			result.push(render(d, paths));
 
 	return [slice(result, conds.page), conds.page, ~~(result.length / 9)+1];
 };

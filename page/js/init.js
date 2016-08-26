@@ -12,19 +12,18 @@
 			if(val != 0) {
 				kqd.dynmSearch = false;
 
-				$('[data-cond='+cond+']:not([data-val='+val+']):not([data-val=0])').each(function() {
+				$('[data-cond='+cond+']:not([data-val='+val+']):not([data-val=1])').each(function() {
 					$(this).addClass('on').removeClass('off').click();
 				});
 
 				kqd.dynmSearch = true;
 
 				$this.removeClass('on').addClass('off').click();
-
 			}
 			else {
 				kqd.dynmSearch = false;
 
-				$('[data-cond='+cond+']:not([data-val=0])').each(function() {
+				$('[data-cond='+cond+']:not([data-val=1])').each(function() {
 					$(this).removeClass('on').addClass('off').click();
 				});
 
@@ -38,12 +37,12 @@
 
 			if(cond && val) {
 				if($this.hasClass('on'))
-					kq.conds[this.dataset.cond] |= 1<<val;
+					kq.conds[cond] |= 1<<(val-1);
 				else
-					kq.conds[this.dataset.cond] &= ~(1<<val);
-			}
+					kq.conds[cond] &= ~(1<<(val-1));
 
-			if(kqd.dynmSearch) kq.query(function(param) { param.page = 1; }, kqf.dealer);
+				if(kqd.dynmSearch) kq.query(function(param) { param.page = 1; }, kqf.dealer);
+			}
 		}
 	});
 })();
@@ -83,31 +82,28 @@
 	kqe.search.click(function() {
 		kq.query(function(param) { param.page = 1; }, kqf.dealer);
 	});
+	kqe.search.keydown(function() { kqe.search.click(); });
 })();
 
 (function() {
 	$('.PagePrev').click(function() {
-		if(kqd.page > 1 && kqd.prevUnlock) {
-			kqd.prevUnlock = false;
-
-			kq.query(
-				function(param) { param.page--; },
-				kqf.dealer,
-				null,
-				function() { kqd.prevUnlock = true; }
-			);
-		}
+		if(kqd.page > 1)
+			kq.query(function(param) { param.page--; }, kqf.dealer);
 	});
 	$('.PageNext').click(function() {
-		if(kqd.page < kqd.pageMax && kqd.nextUnlock) {
-			kqd.nextUnlock = false;
+		if(kqd.page < kqd.pageMax)
+			kq.query(function(param) { param.page++; }, kqf.dealer);
+	});
+	$('.sPage').keydown(function(e) {
+		if(e.keyCode == 13) {
+			var $this = $(e.target), page = $this.html();
 
-			kq.query(
-				function(param) { param.page++; },
-				kqf.dealer,
-				null,
-				function() { kqd.nextUnlock = true; }
-			);
+			if(page > 0 && page <= kqd.pageMax)
+				kq.query(function(param) { param.page = page; },kqf.dealer);
+			else
+				$this.html(kqd.page);
+
+			return false;
 		}
 	});
 })();
