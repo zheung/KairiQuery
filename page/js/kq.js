@@ -44,7 +44,8 @@
 				card.find('.sAP').html(data.ap);
 				card.find('.sHQ').html(data.hq);
 
-				card.find('.sThumb').attr('src', 'http://ww1.sinaimg.cn/large/'+img);
+				// card.find('.sThumb').attr('src', 'http://ww1.sinaimg.cn/large/'+img);
+				card.find('.sThumb').attr('src', 'https://raw.githubusercontent.com/kairiquery/tcip20/master/chr20/'+data.id+'.png');
 
 				card.removeClass('hide');
 			}

@@ -80,7 +80,7 @@ let render = (data = {}, paths = []) => {
 			}
 	}
 
-	rData.imgs = dictPict[data.pict.awaken.id];
+	// rData.imgs = dictPict[data.pict.awaken.id];
 
 	return rData;
 };
