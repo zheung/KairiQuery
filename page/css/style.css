@@ -218,6 +218,9 @@ input, span {
 .PageCount, {
 	width: 33%;
 }
+.PageCount>span {
+	padding-top: 1px;
+}
 .Page {
 	width: 40px;
 
