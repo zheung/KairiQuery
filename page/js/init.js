@@ -9,7 +9,7 @@
 		var $this = $(this), cond = this.dataset.cond, val = ~~this.dataset.val;
 
 		if(e.ctrlKey) {
-			if(val != 0) {
+			if(val != 1) {
 				kqd.dynmSearch = false;
 
 				$('[data-cond='+cond+']:not([data-val='+val+']):not([data-val=1])').each(function() {
@@ -75,6 +75,8 @@
 
 			return false;
 		}
+		else if(e.keyCode == 33) { kqe.pagePrev.click(); }
+		else if(e.keyCode == 34) { kqe.pageNext.click(); }
 	});
 })();
 
@@ -86,11 +88,11 @@
 })();
 
 (function() {
-	$('.PagePrev').click(function() {
+	kqe.pagePrev.click(function() {
 		if(kqd.page > 1)
 			kq.query(function(param) { param.page--; }, kqf.dealer);
 	});
-	$('.PageNext').click(function() {
+	kqe.pageNext.click(function() {
 		if(kqd.page < kqd.pageMax)
 			kq.query(function(param) { param.page++; }, kqf.dealer);
 	});

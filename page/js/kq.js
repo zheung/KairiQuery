@@ -12,7 +12,9 @@
 		toggles: $('.Toggle.on, .Toggle.off'),
 		tabs: $('.TabHead'),
 		condName: $('#CondName'),
-		search: $('#Search')
+		search: $('#Search'),
+		pagePrev: $('.PagePrev'),
+		pageNext: $('.PageNext')
 	};
 
 	window.kqs = {
@@ -54,11 +56,11 @@
 })();
 
 (function() {
-	// Clone 9 Info Div
+	// Clone 10 Info Div
 	var cCards = $('.Cards'), cCard = cCards.children('.Card'),
 		cards = [$(cCard)], card;
 
-	for(var i=0; i<8; i++) {
+	for(var i=0; i<9; i++) {
 		card = cCard.clone();
 
 		cCards.append(card);

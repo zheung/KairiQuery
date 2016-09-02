@@ -1,0 +1,30 @@
+.Popup {
+	display: none;
+	position: fixed;
+
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	height: 500px;
+	width: 500px;
+
+	background-color: black;
+}
+
+.Imgbox {
+	width: 20%;
+	height: 100%;
+	/*background-color: darkred;*/
+}
+.Databox {
+	width: 80%;
+	height: 100%;
+	/*background-color: darkblue;*/
+}
+
+td {
+	text-align: center;
+}

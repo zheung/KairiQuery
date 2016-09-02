@@ -1,7 +1,8 @@
 <!html>
 <html>
 	<head>
-		<title>[08.16]Kairi Query Alpha</title>
+		<title>Kairi Query - Alpha0902</title>
+		<link href="./css/test.css" rel="stylesheet">
 		<link href="./css/style.css" rel="stylesheet">
 		<link href="./css/color.css" rel="stylesheet">
 		<link href="./css/flex.css" rel="stylesheet">
@@ -11,16 +12,19 @@
 	<body>
 		<div class="Frame clrFont flex drr wpn jcs aic wpn">
 			<div class="Main blrBack flex drc jcc aic wpn">
-				<div class="Cards flex drr jcs ais acs wpw">
-					<div class="hide Card flex drr jcc aic wpw">
-						<div class="NameBox flex jcc aie"><a class="selable Info sTitle"></a></div>
-						<div class="InfoBox flex drr jcc aih wpw">
-							<div class="ImageLeft flex jcc aic"><img class="ImgThumb sThumb" src="http://ww1.sinaimg.cn/large/627ab2d1gw1f6vebtgh87j20a60e8jsz.jpg">
-							</div>
-							<div class="InfoRight flex drc jca ais">
-								<div>COST：<span class="sCost"></span></div>
-								<div>职业：<span class="sJob"></span></div>
-								<div>属性：<span class="sAttr"></span></div>
+				<div class="Cards flex drr jcc ais acs wpw">
+					<div class="hide Card flex drc jcc aic wpw">
+						<div class="ImgBox flex jcc aic">
+							<img class="ImgThumb sThumb" src="">
+						</div>
+						<div class="DataBox">
+							<div class="NameBox flex jcc aie"><a class="selable Info sTitle"></a></div>
+							<div class="InfoBox flex drc jca aic">
+								<div>
+									<span class="sJob"></span>&nbsp;
+									<span class="sAttr"></span>&nbsp;
+									COST&nbsp;<span class="sCost"></span>
+								</div>
 								<table width="100%" class="clrFont" align="center">
 									<tr>
 										<td width="25%">HP</td><td width="25%" class="sHP"></td>
@@ -32,7 +36,12 @@
 									</tr>
 								</table>
 							</div>
-							<div class="hide InfoRight flex drc jca aic"></div>
+						</div>
+						<div style="display:none">
+
+							<div class="InfoBox flex drr jcc aih wpw">
+								<div class="hide InfoRight flex drc jca aic"></div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -225,6 +234,9 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="Popup">
+
 		</div>
 
 		<script type="text/javascript" src="./js/kq.js"></script>

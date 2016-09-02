@@ -3,7 +3,7 @@ let dictBits = require('./dict/bits'), dictRender = require('./dict/render');
 
 // pager slice
 let slice = (data = {}, page = 1) => {
-	return data.slice(9 * (page - 1), 9 * page);
+	return data.slice(10 * (page - 1), 10 * page);
 };
 
 // make bits
@@ -97,5 +97,5 @@ module.exports = (data = {}, conds = {}, paths = []) => {
 		if(valid(d, conds))
 			result.push(render(d, paths));
 
-	return [slice(result, conds.page), conds.page, ~~(result.length / 9)+1];
+	return [slice(result, conds.page), conds.page, ~~(result.length / 10)+1];
 };

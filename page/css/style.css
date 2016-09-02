@@ -180,8 +180,8 @@ input, span {
 	border-radius: 4px;
 	box-shadow: 0 1px 10px rgba(41, 49, 52, 0.3);
 
-	width: 32%;
-	height: 33%;
+	width: 48%;
+	height: 19.5%;
 }
 .ImageLeft {
 	width: 45%;
@@ -190,13 +190,13 @@ input, span {
 	width: 55%;
 }
 .ImgThumb {
-	width: 85%;
+	width: 100%;
 	height: auto;
 }
 
 .NameBox {
 	width: 100%;
-	height: 14%;
+	height: 17%;
 }
 
 .InfoBox {
