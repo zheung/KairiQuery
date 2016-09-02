@@ -97,5 +97,5 @@ module.exports = (data = {}, conds = {}, paths = []) => {
 		if(valid(d, conds))
 			result.push(render(d, paths));
 
-	return [slice(result, conds.page), conds.page, ~~(result.length / 10)+1];
+	return [slice(result, conds.page), ~~conds.page, ~~(result.length / 10)];
 };
