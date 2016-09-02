@@ -77,6 +77,12 @@
 		}
 		else if(e.keyCode == 33) { kqe.pagePrev.click(); }
 		else if(e.keyCode == 34) { kqe.pageNext.click(); }
+		else if(e.keyCode == 35) {
+			kq.query(function(param) { param.page = kqd.pageMax; }, kqf.dealer);
+		}
+		else if(e.keyCode == 36) {
+			kq.query(function(param) { param.page = 1; }, kqf.dealer);
+		}
 	});
 })();
 
