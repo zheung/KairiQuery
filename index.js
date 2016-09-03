@@ -1,9 +1,6 @@
 require('./init');
 
-let card = require('./data/card.json'),
-	skill = require('./data/skill.json'),
-	role = require('./data/role.json'),
-	data = require('./merge')(card, skill, role);
+let data = require('./data.json');
 
 let app = require('koa')(), router = require('koa-router')(), static = require('koa-static');
 
@@ -27,8 +24,8 @@ router.get('/q', function *() {
 		['figure.hq.max', 'hq'],
 		['skill.normal.0.info.cost', 'cost'],
 		['skill.normal.0.info.job', 'job', 'd.show.job'],
-		['skill.normal.0.info.attr', 'attr', 'd.show.attr']
-		// ['skill.normal', 'attr', 'f.skill']
+		['skill.normal.0.info.attr', 'attr', 'd.show.attr'],
+		['skill.normal', 'skill', 'f.skill']
 	]);
 
 	this.body = result;
