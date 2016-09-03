@@ -78,7 +78,8 @@ module.exports = {
 		'MERCENARY': 1,
 		'MILLIONAIRE': 2,
 		'THIEF': 3,
-		'SINGER': 4
+		'SINGER': 4,
+		'NULL': 5
 	},
 	porm: {// 伤害类型
 		'PHYSICS': 1,
@@ -136,7 +137,7 @@ module.exports = {
 		'TARGET_BUFF': 38,
 		'SELF_ENCHANT_DAMAGE': 39
 	},
-	role: {// 技能作用
+	skillRole: {// 技能作用
 		'ATTACK_AA': 1,
 		'ATTACK_AP': 2,
 		'ATTACK_PA': 3,
@@ -245,6 +246,11 @@ module.exports = {
 		'DEF_UP_FIXED_SUPPORT': 106,
 		'ENCHANT': 107,
 		'ENEMY_AWAKE_FLAG_SET': 108,
-		'FORCE_BATTLE_END': 109
+		'FORCE_BATTLE_END': 109,
+		'ATTR_DEF_UP': 110,
+		'ATTR_DEF_DOWN': 111,
+		'ATTR_DEF_UP_SUPPORT': 112,
+		'REFLECTION': 113,
+		'ATK_OP_REFLECTION_INVALID': 114
 	}
 };
