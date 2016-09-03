@@ -1,5 +1,5 @@
 // dict for card's value to filter's bits
-let dictBits = require('./dict/bits'), dictRender = require('./dict/render');
+let convert = require('./convert');
 
 let pageEvery = 5;
 
@@ -32,7 +32,11 @@ let condsParse = function(conds) {
 
 // cond checker based bits
 let condCheck = function(bits = [], value = 0, type = '') {
-	return bits[0] && !bits[(dictBits[type]? dictBits[type][value] : value)];
+	if(type) {
+		return bits[0] && !bits[convert('d.bits', type)[value]];
+	}
+	else
+		return bits[0] && !bits[value];
 };
 
 let valid = function(data, conds) {
@@ -71,20 +75,8 @@ let render = (data = {}, paths = []) => {
 		for(let node of rNodes)
 			if(index++ < length)
 				rPointer = rPointer[node] || (rPointer[node] = {});
-			else {
-				let value;
-
-				if(path[2]) {
-					if(dPointer)
-						value = dictRender[path[2]][dPointer];
-					else
-						value = dictRender[path[2]][0];
-				}
-				else
-					value = dPointer;
-
-				rPointer[node] = value;
-			}
+			else
+				rPointer[node] = path[2] ? convert(path[2], dPointer || 0) : dPointer;
 	}
 
 	return rData;

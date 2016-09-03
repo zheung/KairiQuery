@@ -26,8 +26,9 @@ router.get('/q', function *() {
 		['figure.ap.max', 'ap'],
 		['figure.hq.max', 'hq'],
 		['skill.normal.0.info.cost', 'cost'],
-		['skill.normal.0.info.job', 'job', 'job'],
-		['skill.normal.0.info.attr', 'attr', 'attr']
+		['skill.normal.0.info.job', 'job', 'd.show.job'],
+		['skill.normal.0.info.attr', 'attr', 'd.show.attr']
+		// ['skill.normal', 'attr', 'f.skill']
 	]);
 
 	this.body = result;
