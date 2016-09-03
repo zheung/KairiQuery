@@ -1,6 +1,6 @@
 require('./init');
 
-let csv = require('./parser-csv');
+let csv = require('./parser-csv'), merge = require('./merge');
 
 let dirRaw1 = path.join(dir, 'raw1'), dirRaw2 = path.join(dir, 'raw2');
 
@@ -12,6 +12,9 @@ fs.writeFileSync(path.join(dirRaw2, 'skill.json'), JSON.stringify(skill2, null, 
 
 let role2 = csv('role', dirRaw1, 1, true, true, true);
 fs.writeFileSync(path.join(dirRaw2, 'role.json'), JSON.stringify(role2, null, '\t'));
+
+let data = merge(card2, skill2, role2);
+fs.writeFileSync(path.join(dirRaw2, 'data.json'), JSON.stringify(data, null, '\t'));
 
 // let l1 = role2[0].split(','), l2 = role2[1].split(','), hs = [];
 
