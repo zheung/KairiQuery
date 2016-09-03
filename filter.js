@@ -1,9 +1,11 @@
 // dict for card's value to filter's bits
 let dictBits = require('./dict/bits'), dictRender = require('./dict/render');
 
+let pageEvery = 5;
+
 // pager slice
 let slice = (data = {}, page = 1) => {
-	return data.slice(10 * (page - 1), 10 * page);
+	return data.slice(pageEvery * (page - 1), pageEvery * page);
 };
 
 // make bits
@@ -97,5 +99,5 @@ module.exports = (data = {}, conds = {}, paths = []) => {
 		if(valid(d, conds))
 			result.push(render(d, paths));
 
-	return [slice(result, conds.page), ~~conds.page, ~~(result.length / 10)];
+	return [slice(result, conds.page), ~~conds.page, ~~(result.length / pageEvery)];
 };

@@ -56,11 +56,11 @@
 })();
 
 (function() {
-	// Clone 10 Info Div
+	// Clone 5 Info Div
 	var cCards = $('.Cards'), cCard = cCards.children('.Card'),
 		cards = [$(cCard)], card;
 
-	for(var i=0; i<9; i++) {
+	for(var i=0; i<4; i++) {
 		card = cCard.clone();
 
 		cCards.append(card);

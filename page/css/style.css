@@ -178,10 +178,10 @@ input, span {
 .Card {
 	border: 2px solid transparent;
 	border-radius: 4px;
-	box-shadow: 0 1px 10px rgba(41, 49, 52, 0.3);
+	box-shadow: 200px 0px 200px -45px rgba(60, 90, 100, 0.4) inset;
 
-	width: 48%;
-	height: 19.5%;
+	width: 99%;
+	height: 19%;
 }
 .ImageLeft {
 	width: 45%;
@@ -190,8 +190,8 @@ input, span {
 	width: 55%;
 }
 .ImgThumb {
-	width: 100%;
-	height: auto;
+	width: auto;
+	height: 100%;
 }
 
 .NameBox {
