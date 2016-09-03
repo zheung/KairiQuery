@@ -1,0 +1,245 @@
+<!html>
+<html>
+	<head>
+		<title>Kairi Query - Alpha0903</title>
+		<link href="./css/test.css" rel="stylesheet">
+		<link href="./css/style.css" rel="stylesheet">
+		<link href="./css/color.css" rel="stylesheet">
+		<link href="./css/flex.css" rel="stylesheet">
+		<link href="./css/small.css" rel="stylesheet">
+		<script type="text/javascript" src="./js/jquery.js"></script>
+	</head>
+	<body>
+		<div class="Frame clrFont flex drr wpn jcs aic wpn">
+			<div class="Main blrBack flex drc jcc aic wpn">
+				<div class="Cards flex drc jcs ais acs wpw">
+					<div class="hide Card flex drc jcs ais acs wpw">
+						<div class="ImgBox flex jcc aic">
+							<img class="ImgThumb sThumb" src="">
+						</div>
+						<div class="DataBox">
+							<div class="NameBox flex jcc aie"><a class="selable Info sTitle"></a></div>
+							<div class="InfoBox flex drc jca aic">
+								<div>
+									<span class="sJob"></span>&nbsp;
+									<span class="sAttr"></span>&nbsp;
+									COST&nbsp;<span class="sCost"></span>
+								</div>
+								<table width="100%" class="clrFont" align="center">
+									<tr>
+										<td width="25%">HP</td><td width="25%" class="sHP"></td>
+										<td width="25%">AD</td><td width="25%" class="sAD"></td>
+									</tr>
+									<tr>
+										<td width="25%">AP</td><td width="25%" class="sAP"></td>
+										<td width="25%">HQ</td><td width="25%" class="sHQ"></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<div style="display:none">
+
+							<div class="InfoBox flex drr jcc aih wpw">
+								<div class="hide InfoRight flex drc jca aic"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="Pager flex jcb aic">
+					<a class="PagePrev flex jcc aic">上一页</a>
+					<div class="PageCount flex jcc aic">
+						第<span class="Page sPage" contenteditable="true"></span>/&nbsp;<span class="sPageMax"></span>&nbsp;页
+					</div>
+					<a class="PageNext flex jcc aic">下一页</a>
+				</div>
+			</div>
+			<div class="Navi blrNavi">
+				<div class="TabHeader flex jca aih wpw">
+					<a class="w3 TabHead active flex jcc aic" data-id="Basic">属性筛选</a>
+					<a class="w3 TabHead flex jcc aic" data-id="Skill">技能筛选</a>
+					<a class="w3 TabHead flex jcc aic" data-id="About">关于</a>
+				</div>
+				<div id="NaviBasic" class="TabItem flex drc aic wpw">
+					<div class="NaviColumn hr flex jcs aic wpw">名称</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<div class="CondBar2 flex jca aic wpw">
+							<input id="CondName" class="wf Input" type="text" />
+						</div>
+						<a id="Search" class="w4 Button">搜索</a>
+					</div>
+					<div class="NaviColumn hr flex jcs aic wpw">基础属性</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle on" data-cond="job" data-val="1">职业</a>
+						<div class="CondBar flex jca aic wpw">
+							<a class="Toggle on" data-cond="job" data-val="2">佣兵</a>
+							<a class="Toggle on" data-cond="job" data-val="3">富豪</a>
+							<a class="Toggle on" data-cond="job" data-val="4">盗贼</a>
+							<a class="Toggle on" data-cond="job" data-val="5">歌姬</a>
+							<a class="Toggle on" data-cond="job" data-val="6">通用</a>
+						</div>
+					</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle on" data-cond="cost" data-val="1">COST</a>
+						<div class="CondBar flex jca aic wpw">
+							<a class="Toggle on min" data-cond="cost" data-val="2">1</a>
+							<a class="Toggle on min" data-cond="cost" data-val="3">2</a>
+							<a class="Toggle on min" data-cond="cost" data-val="4">3</a>
+							<a class="Toggle on min" data-cond="cost" data-val="5">4</a>
+							<a class="Toggle on min" data-cond="cost" data-val="6">5</a>
+							<a class="Toggle on min" data-cond="cost" data-val="7">9</a>
+							<a class="Toggle on min" data-cond="cost" data-val="8">11</a>
+						</div>
+					</div>
+					<div class="NaviColumn2x flex jcb aic wpw">
+						<a class="w4 Toggle on" data-cond="attr" data-val="1">属性</a>
+						<div class="CondBar flex jca aic wpw">
+							<div class="wf flex jca aic wpw">
+								<a class="Toggle on flex jcc" data-cond="attr" data-val="2">火</a>
+								<a class="Toggle on flex jcc" data-cond="attr" data-val="3">冰</a>
+								<a class="Toggle on flex jcc" data-cond="attr" data-val="4">风</a>
+								<a class="Toggle on flex jcc" data-cond="attr" data-val="5">光</a>
+								<a class="Toggle on flex jcc" data-cond="attr" data-val="6">暗</a>
+							</div>
+							<div class="wf flex jca aic wpw">
+								<a class="Toggle on flex jcc" data-cond="attr" data-val="7">火冰</a>
+								<a class="Toggle on flex jcc" data-cond="attr" data-val="8">火风</a>
+								<a class="Toggle on flex jcc" data-cond="attr" data-val="9">火光</a>
+								<a class="Toggle on flex jcc" data-cond="attr" data-val="10">火暗</a>
+								<a class="Toggle on flex jcc" data-cond="attr" data-val="11">光暗</a>
+							</div>
+							<div class="wf flex jca aic wpw">
+								<a class="Toggle on flex jcc" data-cond="attr" data-val="12">冰风</a>
+								<a class="Toggle on flex jcc" data-cond="attr" data-val="13">冰光</a>
+								<a class="Toggle on flex jcc" data-cond="attr" data-val="14">冰暗</a>
+								<a class="Toggle on flex jcc" data-cond="attr" data-val="15">风光</a>
+								<a class="Toggle on flex jcc" data-cond="attr" data-val="16">风暗</a>
+							</div>
+						</div>
+					</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle on" title="等于卡面右上角一个字的技能" data-cond="skillType" data-val="1">技能</a>
+						<div class="CondBar flex jca aic wpw">
+							<a class="Toggle on" data-cond="skillType" data-val="2">物理</a>
+							<a class="Toggle on" data-cond="skillType" data-val="3">魔法</a>
+							<a class="Toggle on" data-cond="skillType" data-val="4">治疗</a>
+							<a class="Toggle on" data-cond="skillType" data-val="5">支援</a>
+							<a class="Toggle on" data-cond="skillType" data-val="6">防御</a>
+							<a class="Toggle on" data-cond="skillType" data-val="7">弱化</a>
+						</div>
+					</div>
+					<div class="NaviColumn hr flex jcs aic wpw">常见技能</div>
+					<div class="NaviColumn flex jca aic wpw">
+						<a class="Toggle off">AOE</a>
+						<a class="Toggle off">嘲讽</a>
+						<a class="Toggle off">单人支</a>
+						<a class="Toggle off">欧洲剑</a>
+						<a class="Toggle off">妨支</a>
+						<a class="Toggle off">大盾</a>
+						<a class="Toggle off">+2</a>
+						<a class="Toggle off">解状态</a>
+						<a class="Toggle off">限定</a>
+						<a class="Toggle off">联动</a>
+						<a class="Toggle off">圣杯</a>
+						<a class="Toggle off">特典</a>
+						<a class="Toggle off">Bug奶</a>
+					</div>
+				</div>
+				<div id="NaviSkill" class="hide TabItem flex drc aic wpw">
+					<div class="NaviColumn hr fs11 flex jcs aic wpw">
+						你知道吗？在原始数据中，“卡牌”本身没有COST、属性和职业的。<br>卡面上显示COST、属性和职业实际上是属于“技能”的。
+					</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle on">目标</a>
+						<div class="CondBar flex drc jca aic wpw">
+							<div class="wf flex jcc aic wpw">
+								<a class="wf Toggle on flex jcc">自身</a>
+							</div>
+							<div class="wf flex jca aic wpw">
+								<div class="wf flex jca aic wpw">
+									<a class="w3 tc cud Toggle">己方</a>
+									<a class="w3 tc cud Toggle on">单体</a>
+									<a class="w3 tc cud Toggle on">全体</a>
+								</div>
+								<div class="wf flex jca aic wpw">
+									<a class="w3 tc cud Toggle">敌方</a>
+									<a class="w3 tc Toggle on">单体</a>
+									<a class="w3 tc Toggle on">全体</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="NaviColumn hr flex jcs aic wpw">技能类型</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle on">攻击</a>
+						<div class="CondBar flex drc jca aic wpw">
+							<div class="wf flex jca aic wpw">
+								<div class="wf flex jca aic wpw">
+									<a class="tc mw cud Toggle">攻击<br>次数</a>
+									<a class="tc mw Toggle on">1</a>
+									<a class="tc mw Toggle on">2</a>
+									<a class="tc mw Toggle on">3</a>
+									<a class="tc mw Toggle on">4</a>
+									<a class="tc mw Toggle on">5</a>
+								</div>
+								<div class="wf flex jca aic wpw">
+									<a class="w3 tc cud Toggle">伤害类型</a>
+									<a class="w3 tc Toggle on">物理</a>
+									<a class="w3 tc Toggle on">魔法</a>
+								</div>
+								<div class="NaviColumn hr flex jca aic wpw">
+									<a class="tc mw cud Toggle">附加特效</a>
+								</div>
+								<div class="wf flex jca aic wpw">
+									<a class="w2 tc Toggle on">吸血</a>
+									<a class="w2 tc Toggle on">伤害累积</a>
+									<a class="w2 tc Toggle on">防御穿透</a>
+									<a class="w2 tc Toggle on">属性附加</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="NaviAbout" class="TabItem hide h90p clrFontDark fs20 flex drc jcb aic wpw">
+					<div>
+						<span class="fs24 fsb clrFont">K</span>airi&nbsp;
+						<span class="fs24 fsb clrFont">Q</span>uery
+					</div>
+					<div>
+						乖离型MA的
+						<span class="fs24 fsb clrFont">坑</span>
+					</div>
+					<div>
+						查卡牌数据的
+						<span class="fs24 fsb clrFont">工具</span>
+					</div>
+					<div>
+						基于文件解包的
+						<span class="fs24 fsb clrFont">数据</span>
+					</div>
+					<div>
+						强迫症患者的
+						<span class="fs24 fsb clrFont">制作</span>
+					</div>
+					<div>
+						毫无艺术细胞的
+						<span class="fs24 fsb clrFont">页面设计</span>
+					</div>
+					<div>
+						<span class="fs24 fsb clrFont">无耻地</span>
+						使用<span class="fs24 fsb clrFont">Github</span>作为图片服务器
+					</div>
+					<div>
+						Make&nbsp;by&nbsp;
+						<span class="fs24 fsb clrFont">DanoR</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="Popup">
+
+		</div>
+
+		<script type="text/javascript" src="./js/kq.js"></script>
+		<script type="text/javascript" src="./js/init.js"></script>
+	</body>
+</html>

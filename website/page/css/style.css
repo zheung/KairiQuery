@@ -1,0 +1,231 @@
+body {
+	margin: 0;
+
+	cursor: default;
+
+	overflow: hidden;
+
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+input, span {
+	outline: none;
+}
+
+.Frame {
+	width: 100%;
+	height: 100%;
+
+	font-family: "Microsoft YaHei";
+}
+
+.Main {
+	width: 66%;
+	height: 100%;
+}
+.Navi {
+	width: 34%;
+	height: 100%;
+
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.NaviColumnSpace {
+	width: 90%;
+	height: 24px;
+	min-height: 24px;
+}
+.NaviColumn {
+	width: 90%;
+	height: auto;
+	min-height: 45px;
+}
+.NaviColumn2x {
+	width: 90%;
+	height: auto;
+	min-height: 90px;
+}
+.NaviColumn3x {
+	width: 90%;
+	height: auto;
+	min-height: 135px;
+}
+
+.Toggle {
+	margin: 3px;
+	min-width: 30px;
+
+	border: 2px solid #34495e;
+
+	padding: 4px;
+	padding-left: 3px;
+	padding-right: 3px;
+
+	border-radius: 4px;
+
+	text-align: center;
+
+	cursor: pointer;
+}
+.Toggle.on {
+	border: 2px solid #5f7f9f;
+
+	color: #E0E2E4;
+	background-color: #5f7f9f;
+}
+.Toggle.off {
+	color: #5f7f9f;
+}
+.Toggle.min {
+	min-width: 14px;
+}
+
+.Button {
+	margin: 3px;
+	min-width: 30px;
+
+	border: 2px solid #5f7f9f;
+
+	padding: 4px;
+	padding-left: 3px;
+	padding-right: 3px;
+
+	border-radius: 4px;
+
+	text-align: center;
+
+	color: #E0E2E4;
+	background-color: #5f7f9f;
+
+	cursor: pointer;
+}
+
+.Input {
+	margin: 3px;
+
+	min-width: 30px;
+	height: 33px;
+
+	border: 2px solid #5f7f9f;
+
+	padding: 4px;
+	padding-left: 3px;
+	padding-right: 3px;
+
+	border-radius: 4px;
+
+	text-align: center;
+	color: #5f7f9f;
+	font-size: 17px;
+
+	cursor: auto;
+}
+
+.TabHeader {
+	width: 100%;
+	height: 45px;
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+
+	background-color: #34495e;
+}
+.TabHead {
+	border: 2px solid #34495e;
+
+	margin: 0;
+	margin-right: 2px;
+
+	color: #E0E2E4;
+
+	cursor: pointer;
+}
+.TabHead:hover {
+	border-bottom: 2px solid #1ABC9C;
+}
+.TabHead.active {
+	border-radius: 4px;
+	border: 2px solid #1ABC9C;
+	background-color: #1ABC9C;
+}
+
+.CondBar {
+	width: 77%;
+	height: auto;
+	border-left: 2px solid #E0E2E4;
+}
+.CondBar2 {
+	width: 77%;
+	height: auto;
+}
+
+.Conds {
+	width: 100%;
+	height: 14%;
+
+}
+.Cards {
+	width: 100%;
+	height: 93%;
+
+}
+.Pager {
+	width: 100%;
+	height: 7%;
+}
+
+.Card {
+	border: 2px solid transparent;
+	border-radius: 4px;
+	box-shadow: 200px 0px 200px -45px rgba(60, 90, 100, 0.4) inset;
+
+	width: 99%;
+	height: 19%;
+}
+.ImageLeft {
+	width: 45%;
+}
+.InfoRight {
+	width: 55%;
+}
+.ImgThumb {
+	width: auto;
+	height: 100%;
+}
+
+.NameBox {
+	width: 100%;
+	height: 17%;
+}
+
+.InfoBox {
+	width: 100%;
+	height: 85%;
+}
+
+.Info {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.PagePrev, .PageNext {
+	width: 33%;
+
+	cursor: pointer;
+}
+.PageCount, {
+	width: 33%;
+}
+.PageCount>span {
+	padding-top: 1px;
+}
+.Page {
+	width: 40px;
+
+	text-align: center;
+	color: #E0E2E4;
+
+	cursor: auto;
+}
