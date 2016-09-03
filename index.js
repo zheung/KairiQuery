@@ -13,6 +13,9 @@ fs.writeFileSync(path.join(dirRaw2, 'skill.json'), JSON.stringify(skill2, null, 
 let role2 = csv('role', dirRaw1, 1, true, true, true);
 fs.writeFileSync(path.join(dirRaw2, 'role.json'), JSON.stringify(role2, null, '\t'));
 
+let rule2 = csv('rule', dirRaw1, 1, true, true, true);
+fs.writeFileSync(path.join(dirRaw2, 'rule.json'), JSON.stringify(rule2, null, '\t'));
+
 let data = merge(card2, skill2, role2);
 fs.writeFileSync(path.join(dirRaw2, 'data.json'), JSON.stringify(data, null, '\t'));
 
