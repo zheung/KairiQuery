@@ -7,7 +7,7 @@ module.exports = [
 	'i.anime.landing.position',
 	'i.anime.playlist',
 	'd.skillRole.info.type',
-	's.info.target',
+	'd.roleTarget.info.target',
 	'c.self',
 	'i.attr.fire',
 	'i.attr.ice',

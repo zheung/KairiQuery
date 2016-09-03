@@ -15,7 +15,7 @@ module.exports = [
 	'n.info.cost',
 	'n.priority.pve',
 	'n.priority.pvp',
-	's.priority.rank',
+	'd.skillRank.info.rank',
 	'n.info.hate',
 	'd.skillTarget.info.target',
 	's.delay.timing',
