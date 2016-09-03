@@ -1,8 +1,21 @@
-module.exports = (cards = [], skills = [], roles = []) => {
-	let dictSkill = {}, dictRole = {};
+module.exports = (cards = [], skills = [], roles = [], rules = []) => {
+	let dictSkill = {}, dictRole = {}, dictRule = {};
 
-	for(let role of roles)
+	for(let rule of rules) {
+		dictRule[rule.id] = rule;
+	}
+
+	for(let role of roles) {
+		let rule = dictRule[role.info.type];
+
+		for(let type of rule.types) {
+			if(type && type != 1) {
+
+			}
+		}
+
 		(dictRole[role.id] || (dictRole[role.id] = [])).push(role);
+	}
 
 	for(let skill of skills) {
 		skill.role = dictRole[skill.role] || [];

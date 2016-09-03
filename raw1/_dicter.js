@@ -281,5 +281,17 @@ module.exports = {
 		'SELF_INVOLVE_DEAD': 13,
 		'FRIEND_ALL_INVOLVE_DEAD': 14,
 		'ENEMY_ALL_INVOLVE_DEAD': 15
+	},
+	'roleParam': {
+		'VALUE': 1,
+		'SKILL_KIND': 2,
+		'SKILL_KIND_BIT': 3,
+		'ATTR': 4,
+		'ATTR_BIT': 5,
+		'SKILL_ROLE_BATTLE_PARAM': 6,
+		'SKILL_PHYSICS_TYPE': 7,
+		'SKILL_ROLE_KIND_DEBUFF': 8,
+		'SKILL_ROLE_KIND_BUFF': 9,
+		'DOT': 10
 	}
 };

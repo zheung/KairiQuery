@@ -1,15 +1,15 @@
 module.exports = [
-	'd.skillRole.role',
+	'd.skillRole.id',
 	'n.rate',
 	'i.upper',
-	's.types.1',
-	's.types.2',
-	's.types.3',
-	's.types.4',
-	's.types.5',
-	's.types.6',
-	's.types.7',
-	's.types.8',
-	's.types.9',
-	's.types.10'
+	'd.roleParam.types.1',
+	'd.roleParam.types.2',
+	'd.roleParam.types.3',
+	'd.roleParam.types.4',
+	'd.roleParam.types.5',
+	'd.roleParam.types.6',
+	'd.roleParam.types.7',
+	'd.roleParam.types.8',
+	'd.roleParam.types.9',
+	'd.roleParam.types.10'
 ];
