@@ -1,10 +1,8 @@
 global._c = console;
-
-global.ll = _c.log;
+global._l = _c.log;
+global._d = __dirname;
 
 global.fs = require('fs');
 global.path = require('path');
 
-global.dir = __dirname;
-
-ll('init');
+_l('init');

@@ -89,8 +89,8 @@ module.exports = (name, dir, start, header, parser, dicter) => {
 			}
 		});
 
-		ll(name+' counter:');
-		ll(counter);
+		_l(name+' counter:');
+		_l(counter);
 
 		return result;
 	}

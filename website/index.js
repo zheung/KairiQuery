@@ -6,9 +6,9 @@ let app = require('koa')(), router = require('koa-router')(), static = require('
 
 let filter = require('./filter');
 
-app.use(static('./page'));
+app.use(static('./website/page'));
 
-router.get('/q', function *() {
+router.get('/q', function () {
 	let query;
 
 	if(this.originalUrl != this._matchedRoute)

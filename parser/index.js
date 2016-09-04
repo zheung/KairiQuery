@@ -2,7 +2,7 @@ require('./init');
 
 let csv = require('./parser-csv'), merge = require('./merge');
 
-let dirRaw1 = path.join(dir, 'raw1'), dirRaw2 = path.join(dir, 'raw2');
+let dirRaw1 = path.join(_d, 'raw1'), dirRaw2 = path.join(_d, 'raw2');
 
 let card2 = csv('card', dirRaw1, 11, true, true, true);
 fs.writeFileSync(path.join(dirRaw2, 'card.json'), JSON.stringify(card2, null, '\t'));
@@ -25,4 +25,4 @@ fs.writeFileSync(path.join(dirRaw2, 'data.json'), JSON.stringify(data, null, '\t
 // 	hs.push(c1+l2[i]);
 // });
 
-ll('done');
+_l('done');
