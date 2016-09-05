@@ -33,4 +33,6 @@ module.exports = () => {
 	app.use(router.routes()).use(router.allowedMethods());
 
 	app.listen(80, '0.0.0.0');
+
+	_l('website start on 0.0.0.0:80');
 };

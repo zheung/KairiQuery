@@ -1,6 +1,6 @@
 let dict = {
-		bits: require('./render/dict/bits'),
-		show: require('./render/dict/show')
+		bits: require(path.join(_d, 'data', 'dict', 'bits.js')),
+		show: require(path.join(_d, 'data', 'dict', 'show.js'))
 	},
 	func = {
 		skill: require('./render/func/skill')

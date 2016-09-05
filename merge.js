@@ -1,4 +1,4 @@
-module.exports = (cards = [], skills = [], roles = [], rules = []) => {
+module.exports = (cards = [], skills = [], roles = [], rules = [], dicter = {}) => {
 	let dictSkill = {}, dictRole = {}, dictRule = {};
 
 	for(let rule of rules) {
@@ -13,7 +13,7 @@ module.exports = (cards = [], skills = [], roles = [], rules = []) => {
 				let type = rule.types[index];
 
 				if(type && type != 1) {
-					true;
+					role.params[index] = dicter.value[type][role.params[index]];
 				}
 			}
 		}
