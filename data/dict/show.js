@@ -288,13 +288,13 @@ module.exports = {
 		roleDot: 'DOT'
 	},
 	battleParam: {
-		1: 'HP',
-		2: 'MAX_HP',
-		3: 'ATK',
-		4: 'INT',
-		5: 'MND',
-		6: 'DEF',
-		7: 'MDEF'
+		1: '血量',
+		2: '最大血量',
+		3: '物理攻击力',
+		4: '魔法攻击力',
+		5: '恢复量',
+		6: '物理防御',
+		7: '魔法防御'
 	},
 	roleDebuff: {
 		1: 'ATK_BREAK_BY_ATK',

@@ -5,10 +5,10 @@ module.exports = () => {
 	let dirData = path.join(_d, 'data'), dirRaw = path.join(dirData, 'raw');
 
 	let header = {
-		card: require(path.join(dirData, 'header', 'card-header.js')),
-		skill: require(path.join(dirData, 'header', 'skill-header.js')),
-		role: require(path.join(dirData, 'header', 'role-header.js')),
-		rule: require(path.join(dirData, 'header', 'rule-header.js'))
+		card: require(path.join(dirData, 'header', 'card-header')),
+		skill: require(path.join(dirData, 'header', 'skill-header')),
+		role: require(path.join(dirData, 'header', 'role-header')),
+		rule: require(path.join(dirData, 'header', 'rule-header'))
 	};
 
 	let render = {

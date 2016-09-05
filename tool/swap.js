@@ -1,4 +1,4 @@
-	let value = require('./data/dict/value.js');
+	let value = require('./data/dict/value');
 	let r = {};
 
 	for(let i in value) {

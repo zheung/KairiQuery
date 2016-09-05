@@ -1,16 +1,12 @@
-let dict = {
-		bits: require(path.join(_d, 'data', 'dict', 'bits.js')),
-		show: require(path.join(_d, 'data', 'dict', 'show.js'))
-	},
-	func = {
-		skill: require(path.join(_d, 'render', 'skill.js'))
-	};
+let func = {
+	skill: require(path.join(_d, 'render', 'skill'))
+};
 
 module.exports = (type, value) => {
 	if(type) {
 		let types = type.split('.'), object;
 
-		if(types[0] == 'd') object = dict;
+		if(types[0] == 'd') object = dicter;
 		else if(types[0] == 'f') object = func;
 
 		for(let i=1; i< types.length; i++)

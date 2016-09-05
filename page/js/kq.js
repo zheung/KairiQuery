@@ -45,6 +45,7 @@
 				card.find('.sAD').html(data.ad);
 				card.find('.sAP').html(data.ap);
 				card.find('.sHQ').html(data.hq);
+				card.find('.sSkill').html(data.skill);
 
 				card.find('.sThumb').attr('src', '');
 				card.find('.sThumb').attr('src', 'https://raw.githubusercontent.com/kairiquery/tcip20/master/chr20/'+data.id+'.png');
