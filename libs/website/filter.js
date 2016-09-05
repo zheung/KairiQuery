@@ -75,6 +75,8 @@ let render = (data = {}, paths = []) => {
 		for(let node of rNodes)
 			if(index++ < length)
 				rPointer = rPointer[node] || (rPointer[node] = {});
+			else if(path[0] == 'this')
+				rPointer[node] = path[2] ? convert(path[2], data) : dPointer;
 			else
 				rPointer[node] = path[2] ? convert(path[2], dPointer || 0) : dPointer;
 	}
@@ -91,5 +93,5 @@ module.exports = (data = {}, conds = {}, paths = []) => {
 		if(valid(d, conds))
 			result.push(render(d, paths));
 
-	return [slice(result, conds.page), ~~conds.page, ~~(result.length / pageEvery)];
+	return [slice(result, conds.page), ~~conds.page, Math.round(result.length / pageEvery)];
 };

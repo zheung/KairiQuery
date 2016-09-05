@@ -1,4 +1,23 @@
 (function() {
+	// Clone 5 Info Div
+	var cCards = $('.Cards'), cCard = cCards.children('.Card'),
+		cards = [$(cCard)], card;
+
+	for(var i=0; i<4; i++) {
+		card = cCard.clone();
+
+		card.find('.SkillTab, .TabSkill').each(function() {
+			this.dataset.id = i+2;
+		});
+
+		cCards.append(card);
+		cards.push($(card));
+	}
+
+	window.cards = cards;
+})();
+
+(function() {
 	window.kqd = {
 		page: 0,
 		pageMax: 0,
@@ -14,13 +33,17 @@
 		condName: $('#CondName'),
 		search: $('#Search'),
 		pagePrev: $('.PagePrev'),
-		pageNext: $('.PageNext')
+		pageNext: $('.PageNext'),
+		skillAwaken: $('.SkillTab[data-val=awaken]')
 	};
 
 	window.kqs = {
 		page: $('.sPage'),
 		pageMax: $('.sPageMax')
 	};
+
+	kqs.cards = window.cards;
+	delete window.cards;
 
 	window.kqf = {
 		dealer : function(result) {
@@ -41,34 +64,26 @@
 				card.find('.sCost').html(data.cost);
 				card.find('.sJob').html(data.job);
 				card.find('.sAttr').html(data.attr);
+				card.find('.sKind').html(data.kind);
+				card.find('.sRare').html(data.rare);
 				card.find('.sHP').html(data.hp);
 				card.find('.sAD').html(data.ad);
 				card.find('.sAP').html(data.ap);
 				card.find('.sHQ').html(data.hq);
-				card.find('.sSkill').html(data.skill);
+
+				card.find('.sSkillAwaken').html(data.skill.awaken);
+				card.find('.sSkillNormal').html(data.skill.normal);
+				card.find('.sSkillSupport').html(data.skill.support);
 
 				card.find('.sThumb').attr('src', '');
 				card.find('.sThumb').attr('src', 'https://raw.githubusercontent.com/kairiquery/tcip20/master/chr20/'+data.id+'.png');
 
 				card.removeClass('hide');
 			}
+
+			kqe.skillAwaken.click();
 		}
 	};
-})();
-
-(function() {
-	// Clone 5 Info Div
-	var cCards = $('.Cards'), cCard = cCards.children('.Card'),
-		cards = [$(cCard)], card;
-
-	for(var i=0; i<4; i++) {
-		card = cCard.clone();
-
-		cCards.append(card);
-		cards.push($(card));
-	}
-
-	kqs.cards = cards;
 })();
 
 (function() {

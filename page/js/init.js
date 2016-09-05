@@ -90,7 +90,13 @@
 	kqe.search.click(function() {
 		kq.query(function(param) { param.page = 1; }, kqf.dealer);
 	});
-	kqe.search.keydown(function() { kqe.search.click(); });
+	kqe.condName.keydown(function(e) {
+		if(e.keyCode == 13) {
+			kqe.search.click();
+
+			return false;
+		}
+	});
 })();
 
 (function() {
@@ -113,6 +119,18 @@
 
 			return false;
 		}
+	});
+})();
+
+(function() {
+	$('.SkillTab').click(function() {
+		var id = this.dataset.id, val = this.dataset.val;
+
+		$('.SkillTab[data-id='+id+']:not([data-val='+val+'])').removeClass('active');
+		$('.TabSkill[data-id='+id+']:not([data-val='+val+'])').addClass('hide');
+
+		$(this).addClass('active');
+		$('.TabSkill[data-id='+id+'][data-val='+val+']').removeClass('hide');
 	});
 })();
 

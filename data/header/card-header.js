@@ -27,7 +27,7 @@ module.exports = [
 	's.skill.awaken',
 	's.skill.support',
 	'n.skill.level',
-	'n.skill.what',
+	'i.skill.what',
 	's.pict.normal.id',
 	'n.pict.normal.type',
 	's.pict.awaken.id',

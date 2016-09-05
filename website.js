@@ -23,8 +23,10 @@ module.exports = () => {
 			['figure.hq.max', 'hq'],
 			['skill.normal.0.info.cost', 'cost'],
 			['skill.normal.0.info.job', 'job', 'd.show.job'],
+			['skill.normal.0.info.type', 'kind', 'd.show.skillKind'],
+			['info.rare', 'rare'],
 			['skill.normal.0.info.attr', 'attr', 'd.show.attr'],
-			['skill.normal', 'skill', 'f.skill']
+			['this', 'skill', 'f.skill']
 		]);
 
 		this.body = result;
