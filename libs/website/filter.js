@@ -1,5 +1,5 @@
 // dict for card's value to filter's bits
-let convert = require('./convert');
+let convert = require(path.join(_d, 'libs', 'website', 'convert'));
 
 let pageEvery = 5;
 

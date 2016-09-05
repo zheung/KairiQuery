@@ -1,4 +1,4 @@
-module.exports = (cards = [], skills = [], roles = [], rules = [], dicter = {}) => {
+module.exports = (cards = [], skills = [], roles = [], rules = []) => {
 	let dictSkill = {}, dictRole = {}, dictRule = {};
 
 	for(let rule of rules) {

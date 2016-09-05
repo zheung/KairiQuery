@@ -19,6 +19,8 @@
 
 		"fs": true,
 		"path": true,
-		"qs": true
+		"qs": true,
+
+		"dicter": true
 	}
 }

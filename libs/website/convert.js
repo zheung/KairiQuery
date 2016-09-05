@@ -3,7 +3,7 @@ let dict = {
 		show: require(path.join(_d, 'data', 'dict', 'show.js'))
 	},
 	func = {
-		skill: require('./render/func/skill')
+		skill: require(path.join(_d, 'render', 'skill.js'))
 	};
 
 module.exports = (type, value) => {

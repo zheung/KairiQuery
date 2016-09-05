@@ -3,9 +3,9 @@ module.exports = () => {
 
 	let app = require('koa')(), router = require('koa-router')(), static = require('koa-static');
 
-	let filter = require('./filter');
+	let filter = require(path.join(_d, 'libs', 'website', 'filter'));
 
-	app.use(static(path.join(_d, 'website', 'page')));
+	app.use(static(path.join(_d, 'page')));
 
 	router.get('/q', function () {
 		let query;

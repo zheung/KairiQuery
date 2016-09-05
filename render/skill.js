@@ -10,8 +10,11 @@ module.exports = (skills) => {
 			true;
 		}
 
+
 		for(let role of skill.role) {
-			role;
+			if(role.info.type == 1) {
+				true;
+			}
 		}
 	}
 

@@ -1,78 +1,28 @@
-let parsePath = (obj, paths, value) => {
-		paths.forEach((path, index) => {
-			if(index < paths.length - 1) {
-				if(!obj[path]) {
-					obj[path] = {};
-				}
+module.exports = () => {
+	let parser = require(path.join(_d, 'libs', 'parser', 'parser')),
+		merge = require(path.join(_d, 'libs', 'parser', 'merge'));
 
-				obj = obj[path];
-			}
-			else {
-				obj[path] = value;
-			}
-		});
-	},
-	parseCount = (obj, paths, value) => {
-		paths.forEach((path, index) => {
-			if(index < paths.length - 1) {
-				if(!obj[path]) {
-					obj[path] = {};
-				}
+	let dirData = path.join(_d, 'data'), dirRaw = path.join(dirData, 'raw');
 
-				obj = obj[path];
-			}
-			else if(value) {
-				obj[path] = (obj[path] ? obj[path]+1 : 1);
-			}
-		});
+	let header = {
+		card: require(path.join(dirData, 'header', 'card-header.js')),
+		skill: require(path.join(dirData, 'header', 'skill-header.js')),
+		role: require(path.join(dirData, 'header', 'role-header.js')),
+		rule: require(path.join(dirData, 'header', 'rule-header.js'))
 	};
 
-module.exports = (dir, name, start, header, dicter, parser) => {
-	let str = fs.readFileSync(path.join(dir, name+'.csv')).toString(),
-		rows = str.split('\r\n');
+	let render = {
+		filter: (cells) => { return !/^#/.test(cells[0]); }
+	};
 
-	if(header && header.length) {
-		let result = [], counter = {};
+	let data = merge(
+		parser(dirRaw, 'card', 11, header.card, dicter.value, render),
+		parser(dirRaw, 'skill', 7, header.skill, dicter.value, render),
+		parser(dirRaw, 'role', 8, header.role, dicter.value, render),
+		parser(dirRaw, 'rule', 3, header.rule, dicter.value, render)
+	);
 
-		rows.forEach((row, index) => {
-			if(index+1 >= start && row.trim()) {
-				let cells = row.split(','), rowObj = {};
+	fs.writeFileSync(path.join(dirData, 'data.json'), JSON.stringify(data, null, '\t'));
 
-				if(parser.filter && parser.filter(cells)) {
-					cells.forEach((cell, index) => {
-						let heads = header[index].split('.'),
-							option = heads.shift();
-
-						if(option == 's')
-							parsePath(rowObj, heads, cell);
-						else if(option == 'n')
-							parsePath(rowObj, heads, ~~cell);
-						else if(option == 'b')
-							parsePath(rowObj, heads, !!cell);
-
-						else if(option == 'p')
-							parsePath(rowObj, heads, parser[heads.shift()](cell));
-						else if(option == 'd')
-							parsePath(rowObj, heads, ((dicter[heads.shift()][cell]) || 0));
-						else if(option == 'i')
-							return;
-						else if(option == 'c')
-							parseCount(counter, heads, !!cell);
-					});
-
-					result.push(rowObj);
-				}
-			}
-		});
-
-		if(Object.keys(counter).length) {
-			_l(name+' counter:');
-			_l(counter);
-		}
-
-		return result;
-	}
-	else {
-		return rows;
-	}
+	_l('parser complete');
 };
