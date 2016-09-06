@@ -95,20 +95,22 @@
 
 				var types = ['awaken', 'normal', 'support'];
 
-				for(var type of types) {
-					var skill = data.skill[type], j = 0;
-					var panel = card.find('.TabItem.Skill[data-val='+type+']');
-					var header = panel.find('.TabHeader.SkillContent').empty();
-					var box = panel.find('.TabBox.SkillContent').empty();
+				for(var ti in types) {
+					var type = types[ti],
+						skill = data.skill[type], j = 0,
+						panel = card.find('.TabItem.Skill[data-val='+type+']'),
+						header = panel.find('.TabHeader.SkillContent').empty(), box = panel.find('.TabBox.SkillContent').empty();
 
 					if(!skill.length) skill.push({cond:'&nbsp;', content: '无'});
 
-					for(var s of skill) {
+					for(var si in skill) {
+						var s = skill[si];
+
 						var head = $('<a>').addClass('TabHead').addClass('SkillContent').html(s.cond || '无条件').appendTo(header);
 						head[0].dataset.tab = 'Skill'+i+type; head[0].dataset.val = j;
 
 						var content = '';
-						for(var c of s.content) content += '<p class="TextRole">'+(c || '无')+'</p>';
+						for(var ci in s.content) content += '<p class="TextRole">'+(s.content[ci] || '无')+'</p>';
 
 						var item = $('<div>').addClass('TabItem').addClass('SkillContent').html(content).appendTo(box);
 						item[0].dataset.tab = 'Skill'+i+type; item[0].dataset.val = j++;
