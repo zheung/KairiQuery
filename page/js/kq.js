@@ -93,24 +93,24 @@
 				card.find('.sThumb').attr('src', '');
 				card.find('.sThumb').attr('src', 'https://raw.githubusercontent.com/kairiquery/tcip20/master/chr20/'+data.id+'.png');
 
-				let types = ['awaken', 'normal', 'support'];
+				var types = ['awaken', 'normal', 'support'];
 
-				for(let type of types) {
-					let skill = data.skill[type], j = 0;
-					let panel = card.find('.TabItem.Skill[data-val='+type+']');
-					let header = panel.find('.TabHeader.SkillContent').empty();
-					let box = panel.find('.TabBox.SkillContent').empty();
+				for(var type of types) {
+					var skill = data.skill[type], j = 0;
+					var panel = card.find('.TabItem.Skill[data-val='+type+']');
+					var header = panel.find('.TabHeader.SkillContent').empty();
+					var box = panel.find('.TabBox.SkillContent').empty();
 
 					if(!skill.length) skill.push({cond:'&nbsp;', content: '无'});
 
-					for(let s of skill) {
-						let head = $('<a>').addClass('TabHead').addClass('SkillContent').html(s.cond || '无条件').appendTo(header);
+					for(var s of skill) {
+						var head = $('<a>').addClass('TabHead').addClass('SkillContent').html(s.cond || '无条件').appendTo(header);
 						head[0].dataset.tab = 'Skill'+i+type; head[0].dataset.val = j;
 
-						let content = '';
-						for(let c of s.content) content += '<p class="TextRole">'+(c || '无')+'</p>';
+						var content = '';
+						for(var c of s.content) content += '<p class="TextRole">'+(c || '无')+'</p>';
 
-						let item = $('<div>').addClass('TabItem').addClass('SkillContent').html(content).appendTo(box);
+						var item = $('<div>').addClass('TabItem').addClass('SkillContent').html(content).appendTo(box);
 						item[0].dataset.tab = 'Skill'+i+type; item[0].dataset.val = j++;
 					}
 
