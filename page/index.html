@@ -24,10 +24,10 @@
 							<div class="NameBox flex jcc aie"><a class="selable Info sTitle"></a></div>
 							<div class="InfoBox flex drc jca aic">
 								<div>
-									<span class="sJob"></span>&nbsp;
-									<span class="sKind"></span>&nbsp;
-									<span class="sAttr"></span>&nbsp;
-									<span class="sRare"></span>★&nbsp;
+									<span class="sJob"></span>&nbsp;&nbsp;
+									<span class="sKind"></span>&nbsp;&nbsp;
+									<span class="sAttr"></span>&nbsp;&nbsp;
+									<span class="sRare"></span>★&nbsp;&nbsp;
 									<span class="sCost"></span>C
 								</div>
 								<table width="100%" class="clrFont" align="center">
@@ -43,24 +43,47 @@
 							</div>
 						</div>
 						<div class="SkillBox flex drr jca aic">
-							<div class="TabHeaderSkill flex drc jcc aic">
-								<a class="SkillTab active" data-id="1" data-val="awaken">觉醒</a>
-								<a class="SkillTab" data-id="1" data-val="normal">普通</a>
-								<a class="SkillTab" data-id="1" data-val="support">支援</a>
+							<div class="TabHeader Skill flex drc jcc aic">
+								<a class="TabHead Skill active" data-tab="Skill1" data-val="Awaken">觉醒</a>
+								<a class="TabHead Skill" data-tab="Skill1" data-val="Normal">普通</a>
+								<a class="TabHead Skill" data-tab="Skill1" data-val="Support">支援</a>
 							</div>
-							<div class="TabSkill" data-id="1" data-val="awaken">
+							<div class="TabItem Skill" data-tab="Skill1" data-val="Awaken">
 								<div class="" style="padding: 5px 14px;">
-									<span class="sSkillAwaken selable"></span>
+									<div class="sSkillAwaken selable"></div>
 								</div>
 							</div>
-							<div class="hide TabSkill" data-id="1" data-val="normal">
-								<div style="padding: 5px 14px;">
-									<span class="sSkillNormal selable"></span>
+							<div class="TabItem Skill flex drc jcs aic" data-tab="Skill1" data-val="Normal">
+								<div class="TabHeader SkillContent flex drr jca aic wpn">
+									<a class="TabHead SkillContent active" data-tab="Skill0" data-val="Awaken">无条件</a>
+									<a class="TabHead SkillContent" data-tab="Skill0" data-val="Normal">3回合或以上</a>
+									<a class="TabHead SkillContent" data-tab="Skill0" data-val="Support">4回合或以上</a>
 								</div>
+								<div style="width:97%; height:70%; padding: 1px; 1px;">
+									<div class="TabItem SkillContent" data-tab="Skill0" data-val="Awaken">
+										<div style="padding: 5px 14px;">
+											<div class="sSkillAwaken selable"></div>
+										</div>
+									</div>
+									<div class="TabItem SkillContent" data-tab="Skill0" data-val="Normal">
+										<div style="padding: 5px 14px;">
+											<div class="sSkillNormal selable"></div>
+										</div>
+									</div>
+									<div class="TabItem SkillContent" data-tab="Skill0" data-val="Support">
+										<div style="padding: 5px 14px;">
+											<div class="sSkillSupport selable"></div>
+										</div>
+									</div>
+
+								</div>
+								<!--<div style="padding: 5px 14px;">
+									<div class="sSkillNormal selable"></div>
+								</div>-->
 							</div>
-							<div class="hide TabSkill" data-id="1" data-val="support">
+							<div class="TabItem Skill" data-tab="Skill1" data-val="Support">
 								<div style="padding: 5px 14px;">
-									<span class="sSkillSupport selable"></span>
+									<div class="sSkillSupport selable"></div>
 								</div>
 							</div>
 						</div>
@@ -75,12 +98,12 @@
 				</div>
 			</div>
 			<div class="Navi blrNavi">
-				<div class="TabHeader flex jca aih wpw">
-					<a class="w3 TabHead active flex jcc aic" data-id="Basic">属性筛选</a>
-					<a class="w3 TabHead flex jcc aic" data-id="Skill">技能筛选</a>
-					<a class="w3 TabHead flex jcc aic" data-id="About">关于</a>
+				<div class="TabHeader RightNavi flex jca aih wpw">
+					<a class="w3 TabHead RightNavi active flex jcc aic" data-tab="RightNavi" data-val="Basic">属性筛选</a>
+					<a class="w3 TabHead RightNavi flex jcc aic" data-tab="RightNavi" data-val="Skill">技能筛选</a>
+					<a class="w3 TabHead RightNavi flex jcc aic" data-tab="RightNavi" data-val="About">关于</a>
 				</div>
-				<div id="NaviBasic" class="TabItem flex drc aic wpw">
+				<div class="TabItem RightNavi flex drc aic wpw" data-tab="RightNavi" data-val="Basic">
 					<div class="NaviColumn hr flex jcs aic wpw">名称</div>
 					<div class="NaviColumn flex jcb aic wpw">
 						<div class="CondBar2 flex jca aic wpw">
@@ -176,7 +199,7 @@
 						<a class="Toggle off">Bug奶</a>
 					</div>
 				</div>
-				<div id="NaviSkill" class="hide TabItem flex drc aic wpw">
+				<div class="TabItem RightNavi flex drc aic wpw" data-tab="RightNavi" data-val="Skill">
 					<div class="NaviColumn hr fs11 flex jcs aic wpw">
 						你知道吗？在原始数据中，“卡牌”本身没有COST、属性和职业的。<br>卡面上显示COST、属性和职业实际上是属于“技能”的。
 					</div>
@@ -231,7 +254,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="NaviAbout" class="TabItem hide h90p clrFontDark fs20 flex drc jcb aic wpw">
+				<div class="TabItem h90p clrFontDark fs20 flex drc jcb aic wpw" data-tab="RightNavi" data-val="About">
 					<div>
 						<span class="fs24 fsb clrFont">K</span>airi&nbsp;
 						<span class="fs24 fsb clrFont">Q</span>uery

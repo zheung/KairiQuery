@@ -14,8 +14,26 @@
 	background-color: black;
 }
 
-tud {
-	border-bottom: 0.5px dashed #5f7f9f;
-	cursor: text;
+.TabHeader.SkillContent {
+	box-shadow: 0 1px 4px rgba(255,255,255,0.1);
+	width: 100%;
+}
+.TabHead.SkillContent {
+	width: 100%;
 
+	border: 2px solid transparent;
+	border-radius: 4px 0px 0px 0px;
+
+	text-align: center;
+}
+.TabHead.SkillContent.active {
+	border: 2px solid #1ABC9C;
+
+	background-color: #1ABC9C;
+}
+.TabItem.SkillContent {
+	border: 2px dashed #5f7f9f;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
 }

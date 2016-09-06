@@ -49,16 +49,23 @@
 
 (function() {
 	// Tabs Event
-	var tabItems = $('.TabItem'), tabHeads = kqe.tabs;
+	var tabHeads = $('.TabHead');
 
 	tabHeads.click(function() {
-		var id = this.dataset.id;
-		if(id) {
-			tabHeads.removeClass('active');
+		var tab = this.dataset.tab, val = this.dataset.val, heads, items;
+
+		if(tab) {
+			heads = $('.TabHead[data-tab='+tab+']');
+			items = $('.TabItem[data-tab='+tab+']');
+		}
+		else return false;
+
+		if(val) {
+			heads.filter(':not([data-val='+val+'])').removeClass('active');
 			$(this).addClass('active');
 
-			tabItems.addClass('hide');
-			tabItems.filter('#Navi'+id).removeClass('hide');
+			items.filter(':not([data-val='+val+'])').addClass('hide');
+			items.filter('[data-val='+val+']').removeClass('hide');
 		}
 	});
 })();
@@ -67,9 +74,9 @@
 	// Global Key Event
 	$(document).keydown(function(e) {
 		if(e.keyCode == 9) {
-			var next = kqe.tabs.filter('.active')[e.shiftKey?'prev':'next']();
+			var next = kqe.rightNavi.filter('.active')[e.shiftKey?'prev':'next']();
 
-			if(!next.length) next = kqe.tabs[e.shiftKey?'last':'first']();
+			if(!next.length) next = kqe.rightNavi[e.shiftKey?'last':'first']();
 
 			next.click();
 
@@ -122,20 +129,8 @@
 	});
 })();
 
-(function() {
-	$('.SkillTab').click(function() {
-		var id = this.dataset.id, val = this.dataset.val;
-
-		$('.SkillTab[data-id='+id+']:not([data-val='+val+'])').removeClass('active');
-		$('.TabSkill[data-id='+id+']:not([data-val='+val+'])').addClass('hide');
-
-		$(this).addClass('active');
-		$('.TabSkill[data-id='+id+'][data-val='+val+']').removeClass('hide');
-	});
-})();
-
 // Init
 (function() {
-	kqe.tabs.filter('.active').click();
+	$('.TabHead').filter('.active').click();
 	kqe.search.click();
 })();

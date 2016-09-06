@@ -6,8 +6,8 @@
 	for(var i=0; i<4; i++) {
 		card = cCard.clone();
 
-		card.find('.SkillTab, .TabSkill').each(function() {
-			this.dataset.id = i+2;
+		card.find('.TabHead, .TabItem').each(function() {
+			this.dataset.tab = 'SKill'+(i+2);
 		});
 
 		cCards.append(card);
@@ -29,12 +29,12 @@
 
 	window.kqe = {
 		toggles: $('.Toggle.on, .Toggle.off'),
-		tabs: $('.TabHead'),
+		rightNavi: $('.TabHead.RightNavi'),
 		condName: $('#CondName'),
 		search: $('#Search'),
 		pagePrev: $('.PagePrev'),
 		pageNext: $('.PageNext'),
-		skillAwaken: $('.SkillTab[data-val=awaken]')
+		skillAwaken: $('.TabHead.Skill[data-val=Awaken]')
 	};
 
 	window.kqs = {
