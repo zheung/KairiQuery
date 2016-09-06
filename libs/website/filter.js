@@ -28,6 +28,7 @@ let condsParse = function(conds) {
 	conds.cost = bitParse(conds.cost);
 	conds.attr = bitParse(conds.attr);
 	conds.skillType = bitParse(conds.skillType);
+	conds.rare = bitParse(conds.rare);
 };
 
 // cond checker based bits
@@ -47,6 +48,8 @@ let valid = function(data, conds) {
 	if(condCheck(conds.cost, data.skill.normal[0].info.cost, 'cost')) return;
 
 	if(condCheck(conds.attr, data.skill.normal[0].info.attr, 'attr')) return;
+
+	if(condCheck(conds.rare, data.info.rare)) return;
 
 	if(condCheck(conds.skillType, data.skill.normal[0].info.type)) return;
 
