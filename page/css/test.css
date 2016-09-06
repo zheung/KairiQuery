@@ -13,3 +13,9 @@
 
 	background-color: black;
 }
+
+tud {
+	border-bottom: 0.5px dashed #5f7f9f;
+	cursor: text;
+
+}
