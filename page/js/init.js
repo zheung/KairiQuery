@@ -48,29 +48,6 @@
 })();
 
 (function() {
-	// Tabs Event
-	var tabHeads = $('.TabHead');
-
-	tabHeads.click(function() {
-		var tab = this.dataset.tab, val = this.dataset.val, heads, items;
-
-		if(tab) {
-			heads = $('.TabHead[data-tab='+tab+']');
-			items = $('.TabItem[data-tab='+tab+']');
-		}
-		else return false;
-
-		if(val) {
-			heads.filter(':not([data-val='+val+'])').removeClass('active');
-			$(this).addClass('active');
-
-			items.filter(':not([data-val='+val+'])').addClass('hide');
-			items.filter('[data-val='+val+']').removeClass('hide');
-		}
-	});
-})();
-
-(function() {
 	// Global Key Event
 	$(document).keydown(function(e) {
 		if(e.keyCode == 9) {
@@ -131,6 +108,7 @@
 
 // Init
 (function() {
+	kqf.retab();
 	$('.TabHead').filter('.active').click();
 	kqe.search.click();
 })();

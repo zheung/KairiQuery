@@ -46,7 +46,26 @@
 	delete window.cards;
 
 	window.kqf = {
-		dealer : function(result) {
+		retab: function() {
+			$('.TabHead').unbind('click').click(function() {
+				var tab = this.dataset.tab, val = this.dataset.val, heads, items;
+
+				if(tab) {
+					heads = $('.TabHead[data-tab='+tab+']');
+					items = $('.TabItem[data-tab='+tab+']');
+				}
+				else return false;
+
+				if(val) {
+					heads.filter(':not([data-val='+val+'])').removeClass('active');
+					$(this).addClass('active');
+
+					items.filter(':not([data-val='+val+'])').addClass('hide');
+					items.filter('[data-val='+val+']').removeClass('hide');
+				}
+			});
+		},
+		dealer: function(result) {
 			var i, datas = result[0], cards = kqs.cards;
 
 			kqs.page.html(kqd.page = ~~result[1]);
@@ -71,12 +90,36 @@
 				card.find('.sAP').html(data.ap);
 				card.find('.sHQ').html(data.hq);
 
-				card.find('.sSkillAwaken').html(data.skill.awaken);
-				card.find('.sSkillNormal').html(data.skill.normal);
-				card.find('.sSkillSupport').html(data.skill.support);
-
 				card.find('.sThumb').attr('src', '');
 				card.find('.sThumb').attr('src', 'https://raw.githubusercontent.com/kairiquery/tcip20/master/chr20/'+data.id+'.png');
+
+				let types = ['awaken', 'normal', 'support'];
+
+				for(let type of types) {
+					let skill = data.skill[type], j = 0;
+					let panel = card.find('.TabItem.Skill[data-val='+type+']');
+					let header = panel.find('.TabHeader.SkillContent').empty();
+					let box = panel.find('.TabBox.SkillContent').empty();
+
+					if(!skill.length) skill.push({cond:'&nbsp;', content: '无'});
+
+					for(let s of skill) {
+						let head = $('<a>').addClass('TabHead').addClass('SkillContent').html(s.cond || '无条件').appendTo(header);
+						head[0].dataset.tab = 'Skill'+i+type; head[0].dataset.val = j;
+
+						let content = '';
+						for(let c of s.content) content += '<p class="TextRole">'+(c || '无')+'</p>';
+
+						let item = $('<div>').addClass('TabItem').addClass('SkillContent').html(content).appendTo(box);
+						item[0].dataset.tab = 'Skill'+i+type; item[0].dataset.val = j++;
+					}
+
+
+
+					header.find(':first-child').addClass('active');
+				}
+
+				kqf.retab();
 
 				card.removeClass('hide');
 			}
