@@ -28,17 +28,17 @@ module.exports = {
 		return `${target} | 回复HP | 造成伤害的${p[1]}%`;
 	},
 	6: (card, skill, role) => {
-		let p = role.params, target = showTarget(skill, role);
+		let p = role.params;
 
 		return `附加伤害 | <kqud title="最大值：${show(p[3])}的${p[4]}%">每回合累计损失HP的${p[1]}%</kqud>`;
 	},
 	7: (card, skill, role) => {
-		let p = role.params, target = showTarget(skill, role);
+		let p = role.params;
 
 		return `附加伤害 | <kqud title="等价于 无视目标对应防御的${p[1]}%">目标对应防御的${p[1]}%</kqud>`;
 	},
 	8: (card, skill, role) => {
-		let p = role.params, target = showTarget(skill, role);
+		let p = role.params;
 
 		return `附加伤害 | 当前${show(p[5])}的${p[3]/10}%`;
 	},
@@ -85,12 +85,12 @@ module.exports = {
 		return `${target} | ${p[1]}回合 | ${show(p[2])}提升
 			 | <kqud title="基础提升：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
 	},
-	20: (card, skill, role) => {
-		let p = role.params, target = showTarget(skill, role);
+	// 20: (card, skill, role) => {
+	// 	let p = role.params, target = showTarget(skill, role);
 
-		return '';
-	},
-	// 20: 'DAMAGE_UP',
+	// 	return '';
+	// },
+	20: 'DAMAGE_UP',
 	21: 'DEBUFF_RELEASE',
 	22: 'DAMAGE_CUT',
 	23: 'DEF_UP_BY_SELF_PARAM',
