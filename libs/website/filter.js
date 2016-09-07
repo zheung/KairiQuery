@@ -95,9 +95,11 @@ module.exports = (data = {}, conds = {}, paths = []) => {
 	for(let d of data)
 		if(valid(d, conds))
 			resultAll.push(d);
+			// resultAll.push(render(d, paths));
 
 	for(let d of slice(resultAll, conds.page))
 		result.push(render(d, paths));
+		// result.push(d);
 
 	return [result, ~~conds.page, Math.ceil(resultAll.length / pageEvery)];
 };

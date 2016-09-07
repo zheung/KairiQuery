@@ -11,19 +11,31 @@ module.exports = (card) => {
 
 		for(let skill of skills[st]) {
 			let s = { prio: skill.cond.priority, content: [] },
-				condType = skill.cond.type;
+				condType = skill.cond.type, delayType = skill.delay.type;
 
 			if(condType) {
 				let render = rdrCond[condType];
 
 				if(render)
 					s.cond = render(card, skill, skill.cond).replace(/\t|\n/g, '');
-				else
+				else {
+					_l('New Cond', condType, 'Card', card.id, 'Skill', skill.id);
+
 					s.cond = '~未渲染条件' + condType;
+				}
 			}
 
-			if(skill.delay.cond) {
-				true;
+			if(delayType) {
+				let render = rdrCond[delayType];
+
+				if(render)
+					s.cond = render(card, skill, skill.delay).replace(/\t|\n/g, '') +
+						(skill.delay.timing==2 ? ' | <kqud title="在敌方行动后判定条件，满足条件则发动技能">敌方行动后</kqud>' : '');
+				else {
+					_l('New Delay', delayType, 'Card', card.id, 'Skill', skill.id);
+
+					s.cond = '~未渲染条件' + delayType;
+				}
 			}
 
 			for(let role of skill.role) {
@@ -31,8 +43,11 @@ module.exports = (card) => {
 
 				if(render)
 					s.content.push(render(card, skill, role).replace(/\t|\n/g, ''));
-				else
+				else {
+					// _l('New Cond', delayType, 'Card', card.id, 'Skill', skill.id);
+
 					s.content.push('~未渲染技能' + role.info.type);
+				}
 			}
 
 			ss.push(s);
