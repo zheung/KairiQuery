@@ -33,7 +33,7 @@ module.exports = () => {
 	});
 
 	router.post('/webhook', () => {
-		_l('webhook');
+		_l('webhook1');
 	});
 
 	app.use(router.routes()).use(router.allowedMethods());
