@@ -7,7 +7,7 @@ module.exports = () => {
 
 	app.use(static(path.join(_d, 'page')));
 
-	router.get('/q', function () {
+	router.get('/q', () => {
 		let query;
 
 		if(this.originalUrl != this._matchedRoute)
@@ -30,6 +30,10 @@ module.exports = () => {
 		]);
 
 		this.body = result;
+	});
+
+	router.post('/webhook', () => {
+		_l('webhook');
 	});
 
 	app.use(router.routes()).use(router.allowedMethods());
