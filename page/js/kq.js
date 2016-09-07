@@ -108,6 +108,8 @@
 						var head = $('<a>').addClass('TabHead').addClass('SkillContent').html(s.cond || '无条件').appendTo(header);
 						head[0].dataset.tab = 'Skill'+i+type; head[0].dataset.val = j;
 
+						if(head.html()=='无条件' && si > 0) head.css('width', '20%');
+
 						var content = '';
 						for(var ci in s.content) content += '<p class="TextRole">'+(s.content[ci] || '无')+'</p>';
 
@@ -123,6 +125,7 @@
 
 			kqf.retab();
 			kqe.skillAwaken.click();
+			$('.TabHead').filter('.active').click();
 		}
 	};
 })();

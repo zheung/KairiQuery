@@ -34,12 +34,17 @@
 	background-color: #148474;
 }
 .TabItem.SkillContent {
+	width: 94%;
 	height: 100%;
-	width: 100%;
-	overflow: hidden;
+
 	padding: 5px 14px;
+
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 .TabBox.SkillContent {
-    width: 93%;
-	height: 66%;
+	width: 99%;
+	height: 82%;
+
+	overflow: hidden;
 }
