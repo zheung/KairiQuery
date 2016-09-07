@@ -7,7 +7,7 @@ module.exports = () => {
 
 	app.use(static(path.join(_d, 'page')));
 
-	router.get('/q', () => {
+	router.get('/q', function() {
 		let query;
 
 		if(this.originalUrl != this._matchedRoute)
@@ -32,9 +32,16 @@ module.exports = () => {
 		this.body = result;
 	});
 
-	router.post('/webhook', () => {
-		_l('webhook1');
+	router.post('/wh', function() {
+		_l('webhook');
+
+		require('child_process').spawn('sh', ['./webhook.sh']);
+
+		this.body = 'webhook';
 	});
+
+	let time = new Date();
+	router.get('/t', function() { this.body = time; });
 
 	app.use(router.routes()).use(router.allowedMethods());
 
