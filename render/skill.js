@@ -41,8 +41,9 @@ module.exports = (card) => {
 			for(let role of skill.role) {
 				let render = rdrRole[role.info.type];
 
-				if(render)
+				if(render instanceof Function){
 					s.content.push(render(card, skill, role).replace(/\t|\n/g, ''));
+				}
 				else {
 					// _l('New Cond', delayType, 'Card', card.id, 'Skill', skill.id);
 
