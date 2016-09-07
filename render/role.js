@@ -17,7 +17,7 @@ module.exports = {
 
 		return `${target} | ${p[5]}回${show(p[8])}属性的
 			<kqud title="${p[7]}%暴击率${skill.info.chain}%Chain威力">${show(p[9])}攻击</kqud>
-			 | <kqud title="基础伤害：${p[1]}+${p[2]/1000}*等级">${base}</kqud> + ${p[3]/10}%${show(p[6])}`;
+			 | <kqud title="基础伤害：${p[1]}+${p[2]/1000}*等级">${base}</kqud>+${p[3]/10}%${show(p[6])}`;
 	},
 	2: false,
 	3: false,
@@ -73,7 +73,7 @@ module.exports = {
 	17: (card, skill, role) => {
 		let p = role.params, target = showTarget(skill, role);
 
-		return `${target} | ${p[1]}回合 | ${show(p[2])}提升
+		return `${target} | ${p[1]}回合 | 提升${show(p[2])}
 			 | ${p[6]}+${p[4]/10}%${show(p[3])}点`;
 	},
 	18: false,
@@ -82,7 +82,7 @@ module.exports = {
 
 		let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
-		return `${target} | ${p[1]}回合 | ${show(p[2])}提升
+		return `${target} | ${p[1]}回合 | 提升${show(p[2])}
 			 | <kqud title="基础提升：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
 	},
 	20: false,
@@ -91,7 +91,7 @@ module.exports = {
 	23: (card, skill, role) => {
 		let p = role.params, target = showTarget(skill, role);
 
-		return `${target} | ${p[1]}回合 | ${show(p[2])}提升
+		return `${target} | ${p[1]}回合 | 提升${show(p[2])}
 			 | ${p[6]}+${p[4]/10}%${show(p[3])}`;
 	},
 	24: 'DEF_UP_BY_TARGET_PARAM',
@@ -100,30 +100,69 @@ module.exports = {
 
 		let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
-		return `${target} | ${p[1]}回合 | ${show(p[2])}提升
+		return `${target} | ${p[1]}回合 | 提升${show(p[2])}
 			 | <kqud title="基础提升：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
 	},
-	// 26: (card, skill, role) => {
-	// 	let p = role.params, target = showTarget(skill, role);
+	26: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
 
-	// 	return '';
-	// },
-	// 26: 'HP_CUT',
+
+		return `${target} | 血量降低 | 当前HP的${p[1]}%`;
+	},
 	27: 'BUFF_RELEASE',
-	28: 'ATK_BREAK_BY_SELF_PARAM',
-	29: 'ATK_BREAK_FIXED',
+	28: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		return `${target} | ${p[1]}回合 | 降低${show(p[2])}
+			 | ${p[6]}+${p[4]/10}%${show(p[3])}`;
+	},
+	29: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+
+		return `${target} | ${p[1]}回合 | 降低${show(p[2])}
+			 | <kqud title="基础提升：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
+	},
 	30: 'GUARD_BREAK_BY_SELF_PARAM',
 	31: 'GUARD_BREAK_BY_TARGET_PARAM',
-	32: 'GUARD_BREAK_FIXED',
+	32: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+
+		return `${target} | ${p[1]}回合 | 降低${show(p[2])}
+			 | <kqud title="基础提升：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
+	},
 	33: 'DAMAGE_DOWN',
 	34: 'UNDERMINE',
-	35: 'STAN',
+	35: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		return `${target} | 打断行动 | 机率${p[2]}%`;
+	},
 	36: 'SILENCE',
 	37: 'CHARM',
-	38: 'POISON',
-	39: 'BURN',
-	40: 'FREEZE',
-	41: 'BLEED',
+	38: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		return `${target} | ${p[1]}回合 | 毒 | ${p[5]/10}+${p[6]/10}%${show(p[8])}`;
+	},
+	39: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		return `${target} | ${p[1]}回合 | 燃烧 | ${p[5]/10}+${p[6]/10}%${show(p[8])}`;
+	},
+	40: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		return `${target} | ${p[1]}回合 | 冻结 | ${p[5]/10}+${p[6]/10}%${show(p[8])}`;
+	},
+	41: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		return `${target} | ${p[1]}回合 | 裂风 | ${p[5]/10}+${p[6]/10}%${show(p[8])}`;
+	},
 	42: 'STEAL',
 	43: 'REWRITE',
 	44: (card, skill, role) => {
@@ -174,7 +213,11 @@ module.exports = {
 	85: 'ATK_OP_NOW_TURN_REVENGE',
 	86: 'CRITICAL_UP',
 	87: 'DEAL_PENALTY',
-	88: 'ELECTRIC',
+	88: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		return `${target} | ${p[1]}回合 | 感电 | ${p[5]/10}+${p[6]/10}%${show(p[8])}`;
+	},
 	89: 'DARKNESS_RANDOM',
 	90: 'DARKNESS_APPOINT',
 	91: 'DARKNESS_REGIST',
