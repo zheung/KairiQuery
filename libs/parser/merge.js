@@ -13,7 +13,7 @@ module.exports = (cards = [], skills = [], roles = [], rules = []) => {
 				let type = rule.types[index];
 
 				if(type && type != 1) {
-					role.params[index] = [type, dicter.value[type][role.params[index]]];
+					role.params[index] = [type, dicter.valuer[type][role.params[index]]];
 				}
 			}
 		}

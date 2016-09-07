@@ -88,13 +88,16 @@ let render = (data = {}, paths = []) => {
 };
 
 module.exports = (data = {}, conds = {}, paths = []) => {
-	let result = [];
+	let resultAll = [], result = [];
 
 	condsParse(conds);
 
 	for(let d of data)
 		if(valid(d, conds))
-			result.push(render(d, paths));
+			resultAll.push(d);
 
-	return [slice(result, conds.page), ~~conds.page, Math.round(result.length / pageEvery)];
+	for(let d of slice(resultAll, conds.page))
+		result.push(render(d, paths));
+
+	return [result, ~~conds.page, Math.round(resultAll.length / pageEvery)];
 };

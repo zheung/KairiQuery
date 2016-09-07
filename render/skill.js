@@ -1,12 +1,3 @@
-let show = (p) => { return dicter.show[p[0]][p[1]]; };
-
-let showTarget = (tarS, tarR) => {
-	if(tarR == 1)
-		return dicter.show.skillTarget[tarS];
-	else
-		return dicter.show.roleTarget[tarR];
-};
-
 let rdrCond = require(path.join(_d, 'render', 'cond')),
 	rdrRole = require(path.join(_d, 'render', 'role'));
 
@@ -26,7 +17,7 @@ module.exports = (card) => {
 				let render = rdrCond[condType];
 
 				if(render)
-					s.cond = render(skill);
+					s.cond = render(card, skill, skill.cond).replace(/\t|\n/g, '');
 				else
 					s.cond = '~未渲染条件' + condType;
 			}
@@ -39,7 +30,7 @@ module.exports = (card) => {
 				let render = rdrRole[role.info.type];
 
 				if(render)
-					s.content.push(render(card, skill, role));
+					s.content.push(render(card, skill, role).replace(/\t|\n/g, ''));
 				else
 					s.content.push('~未渲染技能' + role.info.type);
 			}

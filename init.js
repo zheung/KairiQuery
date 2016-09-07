@@ -8,8 +8,8 @@ module.exports = () => {
 	global.qs = require('querystring');
 
 	global.dicter = {
-		value: require(path.join(_d, 'data', 'dict', 'value')),
-		show: require(path.join(_d, 'data', 'dict', 'show')),
+		valuer: require(path.join(_d, 'data', 'dict', 'value')),
+		shower: require(path.join(_d, 'data', 'dict', 'show')),
 		bits: require(path.join(_d, 'data', 'dict', 'bits'))
 	};
 };

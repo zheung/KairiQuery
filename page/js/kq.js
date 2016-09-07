@@ -34,7 +34,7 @@
 		search: $('#Search'),
 		pagePrev: $('.PagePrev'),
 		pageNext: $('.PageNext'),
-		skillAwaken: $('.TabHead.Skill[data-val=Awaken]')
+		skillAwaken: $('.TabHead.Skill[data-val=awaken]')
 	};
 
 	window.kqs = {
@@ -71,8 +71,7 @@
 			kqs.page.html(kqd.page = ~~result[1]);
 			kqs.pageMax.html(kqd.pageMax = ~~result[2]);
 
-			for(i in cards)
-				cards[i].addClass('hide');
+			for(i in cards) cards[i].addClass('hide');
 
 			for(i in datas) {
 				var card = cards[i], data = datas[i];
@@ -116,16 +115,13 @@
 						item[0].dataset.tab = 'Skill'+i+type; item[0].dataset.val = j++;
 					}
 
-
-
 					header.find(':first-child').addClass('active');
 				}
-
-				kqf.retab();
 
 				card.removeClass('hide');
 			}
 
+			kqf.retab();
 			kqe.skillAwaken.click();
 		}
 	};

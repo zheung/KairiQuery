@@ -16,10 +16,10 @@ module.exports = () => {
 	};
 
 	let data = merge(
-		parser(dirRaw, 'card', 11, header.card, dicter.value, render),
-		parser(dirRaw, 'skill', 7, header.skill, dicter.value, render),
-		parser(dirRaw, 'role', 8, header.role, dicter.value, render),
-		parser(dirRaw, 'rule', 3, header.rule, dicter.value, render)
+		parser(dirRaw, 'card', 11, header.card, dicter.valuer, render),
+		parser(dirRaw, 'skill', 7, header.skill, dicter.valuer, render),
+		parser(dirRaw, 'role', 8, header.role, dicter.valuer, render),
+		parser(dirRaw, 'rule', 3, header.rule, dicter.valuer, render)
 	);
 
 	fs.writeFileSync(path.join(dirData, 'data.json'), JSON.stringify(data, null, '\t'));

@@ -22,10 +22,10 @@ module.exports = () => {
 			['figure.ap.max', 'ap'],
 			['figure.hq.max', 'hq'],
 			['skill.normal.0.info.cost', 'cost'],
-			['skill.normal.0.info.job', 'job', 'd.show.job'],
-			['skill.normal.0.info.type', 'kind', 'd.show.skillKind'],
+			['skill.normal.0.info.job', 'job', 'd.shower.job'],
+			['skill.normal.0.info.type', 'kind', 'd.shower.skillKind'],
 			['info.rare', 'rare'],
-			['skill.normal.0.info.attr', 'attr', 'd.show.attr'],
+			['skill.normal.0.info.attr', 'attr', 'd.shower.attr'],
 			['this', 'skill', 'f.skill']
 		]);
 
