@@ -94,14 +94,21 @@ module.exports = {
 		return `${target} | ${p[1]}回合 | ${show(p[2])}提升
 			 | ${p[6]}+${p[4]/10}%${show(p[3])}`;
 	},
-	// 24: (card, skill, role) => {
+	24: 'DEF_UP_BY_TARGET_PARAM',
+	25: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+
+		return `${target} | ${p[1]}回合 | ${show(p[2])}提升
+			 | <kqud title="基础提升：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
+	},
+	// 26: (card, skill, role) => {
 	// 	let p = role.params, target = showTarget(skill, role);
 
 	// 	return '';
 	// },
-	24: 'DEF_UP_BY_TARGET_PARAM',
-	25: 'DEF_UP_FIXED',
-	26: 'HP_CUT',
+	// 26: 'HP_CUT',
 	27: 'BUFF_RELEASE',
 	28: 'ATK_BREAK_BY_SELF_PARAM',
 	29: 'ATK_BREAK_FIXED',
