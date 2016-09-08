@@ -39,15 +39,15 @@ module.exports = (card) => {
 			}
 
 			for(let role of skill.role) {
-				let render = rdrRole[role.info.type];
+				let skillType = role.info.type, render = rdrRole[skillType];
 
 				if(render instanceof Function){
 					s.content.push(render(card, skill, role).replace(/\t|\n/g, ''));
 				}
 				else {
-					// _l('New Cond', delayType, 'Card', card.id, 'Skill', skill.id);
+					_l('New Skill', skillType, 'Card', card.id, 'Skill', skill.id);
 
-					s.content.push('~未渲染技能' + role.info.type);
+					s.content.push('~未渲染技能' + skillType);
 				}
 			}
 

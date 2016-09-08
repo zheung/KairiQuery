@@ -88,7 +88,7 @@ module.exports = {
 	porm: {
 		1: '物理',
 		2: '魔法',
-		3: '物理魔法任意'
+		3: '物魔'
 	},
 	skillTarget: {
 		1: '自身',
@@ -384,12 +384,12 @@ module.exports = {
 		46: 'DAMAGE_CUT_ORDER_TARGET_DEBUFF'
 	},
 	roleDot: {
-		1: 'POISON',
-		2: 'BURN',
-		3: 'FREEZE',
-		4: 'BLEED',
-		5: 'ELECTRIC',
-		6: 'TRAP'
+		1: '毒',
+		2: '燃烧',
+		3: '冻结',
+		4: '裂风',
+		5: '感电',
+		6: '陷阱'
 	},
 	skillTiming: {
 		1: 'NORMAL',

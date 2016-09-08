@@ -15,9 +15,9 @@ module.exports = {
 
 		let base = Math.ceil(~~p[1]+~~p[2]/1000*card.info.max.level);
 
-		return `${target} | ${p[5]}回${show(p[8])}属性的
+		return `${target} | ${p[5]}回${show(p[8])}元素的
 			<kqud title="${p[7]}%暴击率${skill.info.chain}%Chain威力">${show(p[9])}攻击</kqud>
-			 | <kqud title="基础伤害：${p[1]}+${p[2]/1000}*等级">${base}</kqud>+${p[3]/10}%${show(p[6])}`;
+			 | <kqud title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</kqud>+${p[3]/10}%${show(p[6])}`;
 	},
 	2: false,
 	3: false,
@@ -47,7 +47,7 @@ module.exports = {
 
 		let base = Math.ceil(~~p[1]+~~p[2]/1000*card.info.max.level);
 
-		return `${target} | 回复HP | <kqud title="基础回复：${p[1]}+${p[2]/1000}*等级">${base}</kqud>+
+		return `${target} | 回复HP | <kqud title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</kqud>+
 			${p[3]/10}%${show(p[5])}`;
 	},
 	10: false,
@@ -64,7 +64,7 @@ module.exports = {
 
 		return `${target} | ${p[1]}回合
 			 | <kqud title="发动时机：回合开始前">持续回复HP</kqud>
-			 | <kqud title="基础回复：${p[2]}+${p[3]/1000}*等级">${base}</kqud>+
+			 | <kqud title="等级成长：${p[2]}+${p[3]/1000}*等级">${base}</kqud>+
 			${p[4]/10}%${show(p[6])}`;
 	},
 	14: false,
@@ -83,7 +83,7 @@ module.exports = {
 		let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
 		return `${target} | ${p[1]}回合 | 提升${show(p[2])}
-			 | <kqud title="基础提升：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
+			 | <kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
 	},
 	20: false,
 	21:	false,
@@ -101,7 +101,7 @@ module.exports = {
 		let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
 		return `${target} | ${p[1]}回合 | 提升${show(p[2])}
-			 | <kqud title="基础提升：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
+			 | <kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
 	},
 	26: (card, skill, role) => {
 		let p = role.params, target = showTarget(skill, role);
@@ -122,7 +122,7 @@ module.exports = {
 		let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
 		return `${target} | ${p[1]}回合 | 降低${show(p[2])}
-			 | <kqud title="基础提升：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
+			 | <kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
 	},
 	30: 'GUARD_BREAK_BY_SELF_PARAM',
 	31: 'GUARD_BREAK_BY_TARGET_PARAM',
@@ -132,7 +132,7 @@ module.exports = {
 		let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
 		return `${target} | ${p[1]}回合 | 降低${show(p[2])}
-			 | <kqud title="基础提升：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
+			 | <kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
 	},
 	33: 'DAMAGE_DOWN',
 	34: 'UNDERMINE',
@@ -181,21 +181,13 @@ module.exports = {
 
 		return `${target} | 解除${db}状态`;
 	},
-	47: (card, skill, role) => {
+	47: 'BUFF_RELEASE_ONE',
+	48: 'CARD_SEAL',
+	49: (card, skill, role) => {
 		let p = role.params, target = showTarget(skill, role);
 
-		let db, db1 = show(p[3]) , db2 = show(p[4]);
-
-		if(db2 && db1 != db2)
-			db = `${db1}、${db2}`;
-		else
-			db = db1;
-
-		return `${target} | 解除${db}状态`;
+		return `${target} | ${p[1]}回合 | 提升封印抗性 | ${p[2]}%`;
 	},
-	// 47: 'BUFF_RELEASE_ONE',
-	48: 'CARD_SEAL',
-	49: 'CARD_SEAL_REGIST',
 	50: 'CARD_SEAL_RECOVERY',
 	51: 'OUTPUT_TEXT',
 	52: 'BUFF_RELEASE_RANDOM',
@@ -206,11 +198,23 @@ module.exports = {
 	57: 'REVIVE',
 	58: 'ATTR_RATE_DOWN_INVALID',
 	59: 'ATTR_HIDE',
-	60: 'ATK_OP_ATTR_RATE_DOWN_INVALID',
-	61: 'ATTR_SEE',
+	60: () => { return '免疫元素克制'; },
+	61: (card, skill, role) => {
+		let target = showTarget(skill, role);
+
+		if(role.params[1] != 9999) _l('New Params Skill 61');
+
+		return `${target} | 显示自身的元素`;
+	},
 	62: 'ENEMY_AI_TRIGGER_FLAG_SET',
 	63: 'ATTACK_BARRIER',
-	64: 'COVERING',
+	64: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		if(p[4][1] || p[5][1] != 3) _l('New Params Skill 64');
+
+		return `${target} | ${p[1]}回合 | 使敌方攻击指向自身 | 减免所受伤害的${p[2]/10}%`;
+	},
 	65: 'ROLE_OP_COMBO',
 	66: 'ATK_UP_FIXED_ATTR_BONUS',
 	67: 'DEF_UP_FIXED_ATTR_BONUS',
@@ -221,18 +225,31 @@ module.exports = {
 	72: 'FIELD_HEAL_DOWN',
 	73: 'FIELD_JAMMING_UP',
 	74: 'FIELD_SUPPORT_DEFENCE_UP',
-	75: 'WEAKNESS',
+	75: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		return `${target} | ${p[1]}回合 | 附加伤害 | 所受伤害的${p[2]/10}%`;
+	},
 	76: 'BUFF_RELEASE_ONE_NUM',
 	77: 'DEBUFF_RELEASE_ONE_NUM',
 	78: 'PARAM_UP_BUFF_CONVERT',
-	79: 'DOT_VALUE_UP',
+	79: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		return `${target} | <kqud title="发动条件：处于${show(p[6])}状态">${show(p[6])}</kqud>
+			 | 回合+${p[1]} | 伤害提升${p[2]}%`;
+	},
 	80: 'HEAL_REVERSE',
 	81: 'ATK_UP_BY_NOW_TURN_DAMAGE',
 	82: 'DEF_UP_BY_NOW_TURN_DAMAGE',
 	83: 'ATK_BREAK_BY_NOW_TURN_DAMAGE',
 	84: 'GUARD_BREAK_BY_NOW_TURN_DAMAGE',
 	85: 'ATK_OP_NOW_TURN_REVENGE',
-	86: 'CRITICAL_UP',
+	86: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		return `${target} | ${p[1]}回合 | 提升暴击率 | ${p[2]}%`;
+	},
 	87: 'DEAL_PENALTY',
 	88: (card, skill, role) => {
 		let p = role.params, target = showTarget(skill, role);
@@ -241,8 +258,21 @@ module.exports = {
 	},
 	89: 'DARKNESS_RANDOM',
 	90: 'DARKNESS_APPOINT',
-	91: 'DARKNESS_REGIST',
-	92: 'CARD_TRAP_DAMAGE',
+	91: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		return `${target} | ${p[1]}回合 | 提升黑暗抗性 | ${p[2]}%`;
+	},
+	92: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		let num = (p[2] == p[3] ? p[2]: p[2]+'~'+p[3]);
+
+		if(p[5] || p[6] || p[7]) _l('');
+
+		return `${target} | ${p[1]}回合 | 陷阱 | ${num}张
+			 | <kqud title="时机：我方卡牌全部发动后，敌方行动前">使用后受到伤害${p[4]}点</kqud>`;
+	},
 	93: 'CARD_TRAP_DOT',
 	94: 'COST_BLOCK',
 	95: 'DEAL_PENALTY_TURN_APPOINT',
@@ -257,12 +287,40 @@ module.exports = {
 	104: 'DEF_UP_FIXED_PARAM_UNIQUE',
 	105: 'ATK_UP_FIXED_SUPPORT',
 	106: 'DEF_UP_FIXED_SUPPORT',
-	107: 'ENCHANT',
+	107: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		let base = Math.ceil(~~p[2] + ~~p[5] * card.info.max.level);
+
+		return `${target} | ${p[1]}回合 | 追加${show(p[6])}元素伤害
+			 | <kqud title="等级成长：${p[2]}+${p[5]}*等级">${base}</kqud>点`;
+	},
 	108: 'ENEMY_AWAKE_FLAG_SET',
 	109: 'FORCE_BATTLE_END',
-	110: 'ATTR_DEF_UP',
-	111: 'ATTR_DEF_DOWN',
+	110: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		let base = Math.ceil(~~p[4] + ~~p[5] / 1000 * card.info.max.level);
+
+		return `${target} | ${p[1]}回合 | 提升${show(p[6])}元素耐性
+			 | <kqud title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</kqud>点`;
+	},
+	111: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		let base = Math.ceil(~~p[4] + ~~p[5] / 1000 * card.info.max.level);
+
+		return `${target} | ${p[1]}回合 | 降低${show(p[6])}元素耐性
+			 | <kqud title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</kqud>点`;
+	},
 	112: 'ATTR_DEF_UP_SUPPORT',
-	113: 'REFLECTION',
+	113: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		let base = Math.ceil(~~p[2] / 100 + ~~p[3] / 100 * card.info.max.level);
+
+		return `${target} | ${p[1]}回合 | 反射伤害
+			 | 所受伤害的<kqud title="等级成长：${p[2]/100}+${p[3]/100}*等级">${base}</kqud>%`;
+	},
 	114: 'ATK_OP_REFLECTION_INVALID'
 };
