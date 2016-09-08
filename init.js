@@ -7,6 +7,8 @@ module.exports = () => {
 	global.path = require('path');
 	global.qs = require('querystring');
 
+	global.koa = require('koa');
+
 	global.dicter = {
 		valuer: require(path.join(_d, 'data', 'dict', 'value')),
 		shower: require(path.join(_d, 'data', 'dict', 'show')),

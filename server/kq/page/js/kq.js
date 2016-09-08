@@ -154,7 +154,7 @@
 				kqd.xhrUnlock = false;
 
 				return $.get({
-					url: 'q',
+					url: 'kq/q',
 					data: kq.param(moder),
 					success: success
 				}).fail(fail).always(function() {

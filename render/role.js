@@ -171,8 +171,29 @@ module.exports = {
 		return `${target} | 抽卡+${p[1]}`;
 	},
 	45: 'NONE',
-	46: 'DEBUFF_RELEASE_ONE',
-	47: 'BUFF_RELEASE_ONE',
+	46: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		let db, db1 = show(p[3]) , db2 = show(p[4]);
+
+		if(db2 && db1 != db2) db = `${db1}、${db2}`;
+		else db = db1;
+
+		return `${target} | 解除${db}状态`;
+	},
+	47: (card, skill, role) => {
+		let p = role.params, target = showTarget(skill, role);
+
+		let db, db1 = show(p[3]) , db2 = show(p[4]);
+
+		if(db2 && db1 != db2)
+			db = `${db1}、${db2}`;
+		else
+			db = db1;
+
+		return `${target} | 解除${db}状态`;
+	},
+	// 47: 'BUFF_RELEASE_ONE',
 	48: 'CARD_SEAL',
 	49: 'CARD_SEAL_REGIST',
 	50: 'CARD_SEAL_RECOVERY',

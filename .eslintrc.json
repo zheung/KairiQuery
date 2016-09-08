@@ -21,6 +21,8 @@
 		"path": true,
 		"qs": true,
 
+		"koa": true,
+
 		"dicter": true
 	}
 }
