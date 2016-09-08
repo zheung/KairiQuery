@@ -11,7 +11,7 @@ module.exports = () => {
 		let query;
 
 		if(this.originalUrl != this._matchedRoute)
-			query = qs.parse(qs.unescape(this.originalUrl.replace('/q\?', '')));
+			query = qs.parse(qs.unescape(this.originalUrl.replace('/kq/q\?', '')));
 
 		let result = filter(data, query, [
 			'id',
