@@ -1,6 +1,6 @@
 require('./init')();
 
-require('./parser')();
+// require('./parser')();
 
 require('./server')([
 	['/', require('./server/_')()],

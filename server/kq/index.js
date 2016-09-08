@@ -3,7 +3,7 @@ module.exports = () => {
 
 	let app = koa(), router = require('koa-router')(), static = require('koa-static');
 
-	let filter = require(path.join(_d, 'libs', 'website', 'filter'));
+	let filter = require(path.join(_d, 'server', 'kq', 'filter'));
 
 	app.use(static(path.join(_d, 'server', 'kq', 'page')));
 

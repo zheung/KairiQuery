@@ -33,8 +33,7 @@
 		condName: $('#CondName'),
 		search: $('#Search'),
 		pagePrev: $('.PagePrev'),
-		pageNext: $('.PageNext'),
-		skillAwaken: $('.TabHead.Skill[data-val=awaken]')
+		pageNext: $('.PageNext')
 	};
 
 	window.kqs = {
@@ -120,12 +119,14 @@
 					header.find(':first-child').addClass('active');
 				}
 
+				card.find('.TabHead.Skill').removeClass('primary')
+					.filter('[data-val='+types[(data.job != '通用' ? 0 : 1)]+']').addClass('primary');
+
 				card.removeClass('hide');
 			}
 
 			kqf.retab();
-			kqe.skillAwaken.click();
-			$('.TabHead').filter('.active').click();
+			$('.TabHead.Skill.primary').click();
 		}
 	};
 })();
