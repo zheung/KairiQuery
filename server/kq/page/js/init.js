@@ -50,36 +50,37 @@
 (function() {
 	// Global Key Event
 	$(document).keydown(function(e) {
-		if(e.keyCode == 9) {
-			var next = kqe.rightNavi.filter('.active')[e.shiftKey?'prev':'next']();
+		if(document.activeElement.id != 'CondName') {
+			if(e.keyCode == 9) {
+				var next = kqe.rightNavi.filter('.active')[e.shiftKey?'prev':'next']();
 
-			if(!next.length) next = kqe.rightNavi[e.shiftKey?'last':'first']();
+				if(!next.length) next = kqe.rightNavi[e.shiftKey?'last':'first']();
 
-			next.click();
+				next.click();
 
-			return false;
+				return false;
+			}
+			else if(e.keyCode == 33) { kqe.pagePrev.click(); }
+			else if(e.keyCode == 34) { kqe.pageNext.click(); }
+			else if(e.keyCode == 35) {
+				kq.query(function(param) { param.page = kqd.pageMax; }, kqf.dealer);
+			}
+			else if(e.keyCode == 36) {
+				kq.query(function(param) { param.page = 1; }, kqf.dealer);
+			}
 		}
-		else if(e.keyCode == 33) { kqe.pagePrev.click(); }
-		else if(e.keyCode == 34) { kqe.pageNext.click(); }
-		else if(e.keyCode == 35) {
-			kq.query(function(param) { param.page = kqd.pageMax; }, kqf.dealer);
-		}
-		else if(e.keyCode == 36) {
-			kq.query(function(param) { param.page = 1; }, kqf.dealer);
+		else {
+			if(e.keyCode == 13) {
+
+				kqe.search.click();
+
+				return false;
+			}
 		}
 	});
-})();
-
-(function() {
 	kqe.search.click(function() {
+		kq.conds.name = kqe.condName.val();
 		kq.query(function(param) { param.page = 1; }, kqf.dealer);
-	});
-	kqe.condName.keydown(function(e) {
-		if(e.keyCode == 13) {
-			kqe.search.click();
-
-			return false;
-		}
 	});
 })();
 

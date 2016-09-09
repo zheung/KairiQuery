@@ -134,6 +134,7 @@
 (function() {
 	window.kq = {
 		conds: {
+			name: '',
 			job: (1<<6)-1,
 			cost: (1<<8)-1,
 			attr: (1<<16)-1,
@@ -142,7 +143,6 @@
 		},
 		param: function(moder) {
 			var result = $.extend({}, kq.conds, {
-				name: kqe.condName.val(),
 				page: kqd.page
 			});
 
