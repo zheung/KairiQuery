@@ -7,7 +7,7 @@ module.exports = (card) => {
 		skills = card.skill;
 
 	for(let st of skillTypes) {
-		let ss = [];
+		let ss = [], skillFirst = skills[st][0];
 
 		for(let skill of skills[st]) {
 			let s = { prio: skill.cond.priority, content: [] },
@@ -46,7 +46,7 @@ module.exports = (card) => {
 				let skillType = role.info.type, render = rdrRole[skillType];
 
 				if(render instanceof Function){
-					s.content.push(render(card, skill, role).replace(/\t|\n/g, ''));
+					s.content.push(render(card, skill, role, skillFirst).replace(/\t|\n/g, ''));
 				}
 				else {
 					_l('New Skill', skillType, 'Card', card.id, 'Skill', skill.id);
