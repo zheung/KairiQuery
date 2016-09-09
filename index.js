@@ -1,9 +1,9 @@
 require('./init')();
 
-require('./parser')();
+// require('./parser')();
 
 require('./server')([
-	['/', require('./server/_')()],
-	['/kq', require('./server/kq')()],
-	['/wh', require('./server/wh')()]
+	['/', rm('server', '_')()],
+	['/kq', rm('server', 'kq')()],
+	['/wh', rm('server', 'wh')()]
 ]);

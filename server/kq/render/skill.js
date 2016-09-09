@@ -1,5 +1,5 @@
-let rdrCond = require(path.join(_d, 'render', 'cond')),
-	rdrRole = require(path.join(_d, 'render', 'role'));
+let rdrCond = require('./cond'),
+	rdrRole = require('./role');
 
 module.exports = (card) => {
 	let result = {},

@@ -1,5 +1,5 @@
 module.exports = () => {
-	let app = koa(), router = require('koa-router')();
+	let app = koa(), router = koaRouter();
 
 	let time = new Date();
 

@@ -1,5 +1,5 @@
 module.exports = (servers = []) => {
-	let app = koa(), router = require('koa-router')(), mount = require('koa-mount');
+	let app = koa(), mount = require('koa-mount');
 
 	for(let s of servers)
 		app.use(mount(s[0], s[1]));

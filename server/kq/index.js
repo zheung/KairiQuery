@@ -1,13 +1,13 @@
 module.exports = () => {
-	let data = require(path.join(_d, 'data', 'data.json'));
+	let data = rm('data', 'data.json');
 
-	let app = koa(), router = require('koa-router')(), static = require('koa-static');
+	let app = koa(), router = koaRouter(), static = require('koa-static');
 
-	let filter = require(path.join(_d, 'server', 'kq', 'filter'));
+	let filter = require('./filter');
 
-	app.use(static(path.join(_d, 'server', 'kq', 'page')));
+	app.use(static(path.join(rm('server'), 'kq', 'page')));
 
-	router.get('/q', function() {
+	router.get('/q', function*() {
 		let query;
 
 		if(this.originalUrl != this._matchedRoute)

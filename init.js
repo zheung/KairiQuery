@@ -8,10 +8,13 @@ module.exports = () => {
 	global.qs = require('querystring');
 
 	global.koa = require('koa');
+	global.koaRouter = require('koa-router');
+
+	global.rm = require(path.join(_d, 'libs', 'path'));
 
 	global.dicter = {
-		valuer: require(path.join(_d, 'data', 'dict', 'value')),
-		shower: require(path.join(_d, 'data', 'dict', 'show')),
-		bits: require(path.join(_d, 'data', 'dict', 'bits'))
+		valuer: rm('dataDict', 'valuer'),
+		shower: rm('dataDict', 'shower'),
+		biters: rm('dataDict', 'biters')
 	};
 };

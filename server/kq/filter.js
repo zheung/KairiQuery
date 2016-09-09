@@ -1,5 +1,5 @@
 // dict for card's value to filter's bits
-let convert = require(path.join(_d, 'server', 'kq', 'convert'));
+let convert = require('./convert');
 
 let pageEvery = 5;
 
@@ -34,7 +34,7 @@ let condsParse = function(conds) {
 // cond checker based bits
 let condCheck = function(bits = [], value = 0, type = '') {
 	if(type) {
-		return bits[0] && !bits[convert('d.bits', type)[value]];
+		return bits[0] && !bits[convert('d.biters', type)[value]];
 	}
 	else
 		return bits[0] && !bits[value];

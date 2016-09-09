@@ -1,5 +1,5 @@
 let func = {
-	skill: require(path.join(_d, 'render', 'skill'))
+	skill: require('./render/skill')
 };
 
 module.exports = (type, value) => {

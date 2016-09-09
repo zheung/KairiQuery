@@ -1,14 +1,14 @@
 module.exports = () => {
-	let parser = require(path.join(_d, 'libs', 'parser', 'parser')),
-		merge = require(path.join(_d, 'libs', 'parser', 'merge'));
+	let parser = rm('libsParser', 'parser'),
+		merge = rm('libsParser', 'merge');
 
-	let dirData = path.join(_d, 'data'), dirRaw = path.join(dirData, 'raw');
+	let dirRaw = path.join(rm('data'), 'raw');
 
 	let header = {
-		card: require(path.join(dirData, 'header', 'card-header')),
-		skill: require(path.join(dirData, 'header', 'skill-header')),
-		role: require(path.join(dirData, 'header', 'role-header')),
-		rule: require(path.join(dirData, 'header', 'rule-header'))
+		card: rm('dataHeader', 'card-header'),
+		skill: rm('dataHeader', 'skill-header'),
+		role: rm('dataHeader', 'role-header'),
+		rule: rm('dataHeader', 'rule-header')
 	};
 
 	let render = {
@@ -22,7 +22,7 @@ module.exports = () => {
 		parser(dirRaw, 'rule', 3, header.rule, dicter.valuer, render)
 	);
 
-	fs.writeFileSync(path.join(dirData, 'data.json'), JSON.stringify(data, null, '\t'));
+	fs.writeFileSync(path.join(rm('data'), 'data.json'), JSON.stringify(data, null, '\t'));
 
 	_l('parser complete');
 };
