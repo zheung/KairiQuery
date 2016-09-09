@@ -15,9 +15,9 @@ module.exports = {
 
 		let base = Math.ceil(~~p[1]+~~p[2]/1000*card.info.max.level);
 
-		return `${target} | ${p[5]}回${show(p[8])}元素的
-			<kqud title="${p[7]}%暴击率${skill.info.chain}%Chain威力">${show(p[9])}攻击</kqud>
-			 | <kqud title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</kqud>+${p[3]/10}%${show(p[6])}`;
+		return `${target} | ${p[5]}回${show(p[8])}元素的${show(p[9])}攻击
+			 | <kqud title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</kqud>+${p[3]/10}%${show(p[6])}
+			${(p[7] != 15 ? ' | '+p[7]+'%高暴击率' : '')}`;
 	},
 	2: false,
 	3: false,

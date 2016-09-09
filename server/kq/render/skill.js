@@ -38,6 +38,10 @@ module.exports = (card) => {
 				}
 			}
 
+			let chain = skill.info.chain;
+			if(chain && chain != 20)
+				s.content.push(`Chain威力提高 | <kqud title="与HP相关的技能(物魔治)增加${chain}%威力 | 与属性相关的技能(防弱支)增加${chain}点威力">${chain}</>`);
+
 			for(let role of skill.role) {
 				let skillType = role.info.type, render = rdrRole[skillType];
 

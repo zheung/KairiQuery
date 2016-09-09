@@ -110,7 +110,7 @@
 						if(head.html()=='无条件' && si > 0) head.css('width', '20%');
 
 						var content = '';
-						for(var ci in s.content) content += '<p class="TextRole">'+(s.content[ci] || '无')+'</p>';
+						for(var ci in s.content) content += '<span class="TextRole">'+(s.content[ci] || '无')+'</span>';
 
 						var item = $('<div>').addClass('TabItem').addClass('SkillContent').html(content).appendTo(box);
 						item[0].dataset.tab = 'Skill'+i+type; item[0].dataset.val = j++;
