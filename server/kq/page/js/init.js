@@ -4,10 +4,12 @@
 	// 	if(e.altKey) $(this).click();
 	// });
 
-	kqe.toggles.click(function(e) {
+	kqe.toggles.click(function(eve, man) {
 		var $this = $(this), cond = this.dataset.cond, val = ~~this.dataset.val;
 
-		if(e.ctrlKey && !e.shiftKey) {
+		if(man) eve = man;
+
+		if(eve.ctrlKey && !eve.shiftKey) {
 			if(val != 1) {
 				kqd.dynmSearch = false;
 
@@ -15,7 +17,7 @@
 					$(this).addClass('on').removeClass('off').click();
 				});
 
-				kqd.dynmSearch = true;
+				if(!man) kqd.dynmSearch = true;
 
 				$this.removeClass('on').addClass('off').click();
 			}
@@ -26,12 +28,12 @@
 					$(this).removeClass('on').addClass('off').click();
 				});
 
-				kqd.dynmSearch = true;
+				if(!man) kqd.dynmSearch = true;
 
 				$this.removeClass('on').addClass('off').click();
 			}
 		}
-		else if(!e.ctrlKey && e.shiftKey) {
+		else if(!eve.ctrlKey && eve.shiftKey) {
 			if(val != 1) {
 				kqd.dynmSearch = false;
 
@@ -39,7 +41,7 @@
 					$(this).addClass('off').removeClass('on').click();
 				});
 
-				kqd.dynmSearch = true;
+				if(!man) kqd.dynmSearch = true;
 
 				$this.removeClass('off').addClass('on').click();
 			}
@@ -50,7 +52,7 @@
 					$(this).removeClass('off').addClass('on').click();
 				});
 
-				kqd.dynmSearch = true;
+				if(!man) kqd.dynmSearch = true;
 
 				$this.removeClass('off').addClass('on').click();
 			}
@@ -67,6 +69,8 @@
 				if(kqd.dynmSearch) kq.query(function(param) { param.page = 1; }, kqf.dealer);
 			}
 		}
+
+		if(man) kqd.dynmSearch = true;
 	});
 })();
 
@@ -76,6 +80,8 @@
 		var ae = document.activeElement;
 		if(ae.id == 'CondName') {
 			if(e.keyCode == 13) {
+				if(e.ctrlKey)
+					$('[data-cond][data-val=1]').trigger('click', { ctrlKey: true });
 
 				kqe.search.click();
 
