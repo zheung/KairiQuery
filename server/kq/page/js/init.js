@@ -50,7 +50,29 @@
 (function() {
 	// Global Key Event
 	$(document).keydown(function(e) {
-		if(document.activeElement.id != 'CondName') {
+		var ae = document.activeElement;
+		if(ae.id == 'CondName') {
+			if(e.keyCode == 13) {
+
+				kqe.search.click();
+
+				return false;
+			}
+
+		}
+		else if(ae == $('.sPage')[0]) {
+			if(e.keyCode == 13) {
+				var $this = $(e.target), page = $this.html();
+
+				if(page > 0 && page <= kqd.pageMax)
+					kq.query(function(param) { param.page = page; },kqf.dealer);
+				else
+					$this.html(kqd.page);
+
+				return false;
+			}
+		}
+		else {
 			if(e.keyCode == 9) {
 				var next = kqe.rightNavi.filter('.active')[e.shiftKey?'prev':'next']();
 
@@ -69,14 +91,6 @@
 				kq.query(function(param) { param.page = 1; }, kqf.dealer);
 			}
 		}
-		else {
-			if(e.keyCode == 13) {
-
-				kqe.search.click();
-
-				return false;
-			}
-		}
 	});
 	kqe.search.click(function() {
 		kq.conds.name = kqe.condName.val();
@@ -92,18 +106,6 @@
 	kqe.pageNext.click(function() {
 		if(kqd.page < kqd.pageMax)
 			kq.query(function(param) { param.page++; }, kqf.dealer);
-	});
-	$('.sPage').keydown(function(e) {
-		if(e.keyCode == 13) {
-			var $this = $(e.target), page = $this.html();
-
-			if(page > 0 && page <= kqd.pageMax)
-				kq.query(function(param) { param.page = page; },kqf.dealer);
-			else
-				$this.html(kqd.page);
-
-			return false;
-		}
 	});
 })();
 
