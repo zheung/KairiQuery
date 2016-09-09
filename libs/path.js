@@ -4,7 +4,7 @@ let dictPath = {
 	dataHeader: path.join(_d, 'data', 'header'),
 	dataraw: path.join(_d, 'data', 'raw'),
 	libs: path.join(_d, 'libs'),
-	libsParser: path.join(_d, 'libs', 'paser'),
+	libsParser: path.join(_d, 'libs', 'parser'),
 	server: path.join(_d, 'server')
 };
 

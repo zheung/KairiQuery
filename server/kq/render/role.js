@@ -27,17 +27,17 @@ module.exports = {
 
 		return `${target} | 回复HP | 造成伤害的${p[1]}%`;
 	},
-	6: (card, skill, role, skillFirst) => {
+	6: (card, skill, role) => {
 		let p = role.params;
 
 		return `附加伤害 | <kqud title="最大值：${show(p[3])}的${p[4]}%">每回合累计损失HP的${p[1]}%</kqud>`;
 	},
-	7: (card, skill, role, skillFirst) => {
+	7: (card, skill, role) => {
 		let p = role.params;
 
 		return `附加伤害 | <kqud title="等价于 无视目标对应防御的${p[1]}%">目标对应防御的${p[1]}%</kqud>`;
 	},
-	8: (card, skill, role, skillFirst) => {
+	8: (card, skill, role) => {
 		let p = role.params;
 
 		return `附加伤害 | 当前${show(p[5])}的${p[3]/10}%`;
