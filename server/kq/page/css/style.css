@@ -8,6 +8,8 @@ body {
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
+
+	font-family: "Microsoft YaHei";
 }
 
 input, span {
@@ -17,8 +19,6 @@ input, span {
 .Frame {
 	width: 100%;
 	height: 100%;
-
-	font-family: "Microsoft YaHei";
 }
 
 .Main {
@@ -296,4 +296,16 @@ kqud {
 
 .TextRole {
 	display: block;
+}
+
+.Tips {
+	position: absolute;
+
+	right: 0;
+	bottom: 0;
+
+	width: 32%;
+
+	font-size: 14px;
+	color: #E0E2E4;
 }

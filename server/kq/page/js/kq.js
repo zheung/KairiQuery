@@ -33,7 +33,8 @@
 		condName: $('#CondName'),
 		search: $('#Search'),
 		pagePrev: $('.PagePrev'),
-		pageNext: $('.PageNext')
+		pageNext: $('.PageNext'),
+		tips: $('.Tips')
 	};
 
 	window.kqs = {
