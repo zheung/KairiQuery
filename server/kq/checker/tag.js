@@ -1,12 +1,17 @@
 module.exports = {
 	parse:	(tags) => {
-		return tags ? tags.split(';') : [];
+		return tags ? tags.split(' ') : [];
 	},
 	check: (tags = [], id = '') => {
 		if(tags.length) {
+			let count = 0, tagser = dicter.tagser[id];
+
 			for(let tag of tags)
-				if(dicter.tagser[id][tag])
-					return false;
+				if(tagser[tag])
+					count++;
+
+			if(tags.length == count)
+				return false;
 
 			return true;
 		}

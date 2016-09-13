@@ -1,7 +1,7 @@
-let tagList  = [
-	'f.aoe',
-	'f.db2'
-];
+let func = rm('dataTag', 'func'),
+	tagList = [
+		'f.aoe', 'f.db2', 'f.covering', 'f.buffone'
+	];
 
 module.exports = () => {
 	let result = {};
@@ -14,7 +14,7 @@ module.exports = () => {
 			let tag = tagRaw.split('.'), isExist = false;
 
 			if(tag[0] == 'f')
-				isExist = rm('dataTag', tag[1])(card);
+				isExist = func[tag[1]](card);
 			else if(tag[1] == 'd')
 				isExist = rm('dataTag', tag[1])[card];
 

@@ -175,7 +175,9 @@
 	kqe.tips.html('(1/'+length+')'+tips[0]);
 
 	setInterval(function() {
-		kqe.tips.html('('+(i+1)+'/'+length+')'+tips[(i++ < length-1 ? i : i=0)]);
+		kqe.tips.html('('+(i+1)+'/'+length+')'+tips[i]);
+
+		if(++i == length) i=0;
 	}, 5214);
 })();
 
