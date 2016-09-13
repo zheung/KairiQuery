@@ -1,6 +1,6 @@
 require('./init')();
 
-// require('./parser')();
+require('./parser')();
 require('./tagser')();
 
 require('./dicter')();

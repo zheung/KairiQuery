@@ -59,5 +59,14 @@ module.exports = {
 						return true;
 
 		return false;
+	},
+	debuffre: (card) => {
+		for(let st of skillTypes)
+			for(let skill of card.skill[st])
+				for(let role of skill.role)
+					if(role.info.type == 46)
+						return true;
+
+		return false;
 	}
 };
