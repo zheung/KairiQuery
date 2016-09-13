@@ -1,6 +1,6 @@
 let func = rm('dataTag', 'func'),
 	tagList = [
-		'f.aoe', 'f.db2', 'f.covering', 'f.buffone'
+		'f.aoe', 'f.db2', 'f.covering', 'f.buffone', 'f.stan'
 	];
 
 module.exports = () => {
