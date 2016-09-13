@@ -1,27 +1,12 @@
-// dict for card's value to filter's bits
-let convert = require('./convert');
+let render = require('./render'),
+	checker = {
+		bit: require('./checker/bit'),
+		tag: require('./checker/tag')
+	};
 
-let pageEvery = 5;
-
-// pager slice
-let slice = (data = {}, page = 1) => {
-	return data.slice(pageEvery * (page - 1), pageEvery * page);
-};
-
-// make bits
-let bitParse = function(bits) {
-	var result = [];
-
-	while(bits) {
-		result.push(!!(bits & 1));
-		bits = bits >> 1;
-	}
-
-	return result;
-};
-
-// make bits from number
 let condsParse = function(conds) {
+	let bitParse = checker.bit.parse, tagParse = checker.tag.parse;
+
 	conds.name = conds.name? conds.name.trim() : '';
 
 	conds.job = bitParse(conds.job);
@@ -29,77 +14,37 @@ let condsParse = function(conds) {
 	conds.attr = bitParse(conds.attr);
 	conds.skillType = bitParse(conds.skillType);
 	conds.rare = bitParse(conds.rare);
-};
 
-// cond checker based bits
-let condCheck = function(bits = [], value = 0, type = '') {
-	if(type) {
-		return bits[0] && !bits[convert('d.biters', type)[value]];
-	}
-	else
-		return bits[0] && !bits[value];
+	conds.tags = tagParse(conds.tags);
 };
 
 let valid = function(data, conds) {
-	if(!(data.info.name.indexOf(conds.name)+1)) return;
+	let bitCheck = checker.bit.check, tagCheck = checker.tag.check;
 
-	if(condCheck(conds.job, data.skill.normal[0].info.job)) return;
+	if(!(data.info.name.indexOf(conds.name)+1)) return false;
 
-	if(condCheck(conds.cost, data.skill.normal[0].info.cost, 'cost')) return;
+	if(bitCheck(conds.rare, data.info.rare)) return false;
+	if(bitCheck(conds.job, data.skill.normal[0].info.job)) return false;
+	if(bitCheck(conds.cost, data.skill.normal[0].info.cost, 'cost')) return false;
+	if(bitCheck(conds.attr, data.skill.normal[0].info.attr, 'attr')) return false;
+	if(bitCheck(conds.skillType, data.skill.normal[0].info.type)) return false;
 
-	if(condCheck(conds.attr, data.skill.normal[0].info.attr, 'attr')) return;
-
-	if(condCheck(conds.rare, data.info.rare)) return;
-
-	if(condCheck(conds.skillType, data.skill.normal[0].info.type)) return;
+	if(tagCheck(conds.tags, data.id)) return false;
 
 	return true;
 };
 
-// render data
-let render = (data = {}, paths = []) => {
-	let rData = {};
-
-	for(let path of paths) {
-		let dNodes, rNodes;
-
-		if(typeof path == 'string')
-			dNodes = rNodes = path.split('.');
-		else if(path instanceof Array)
-			[dNodes, rNodes] = [path[0].split('.'), (path[1] || '').split('.')];
-		else
-			continue;
-
-		let index = 1, length = rNodes.length, dPointer = data, rPointer = rData;
-
-		for(let node of dNodes)
-			dPointer = dPointer[node];
-
-		for(let node of rNodes)
-			if(index++ < length)
-				rPointer = rPointer[node] || (rPointer[node] = {});
-			else if(path[0] == 'this')
-				rPointer[node] = path[2] ? convert(path[2], data) : dPointer;
-			else
-				rPointer[node] = path[2] ? convert(path[2], dPointer || 0) : dPointer;
-	}
-
-	return rData;
-};
-
 module.exports = (data = {}, conds = {}, paths = []) => {
+	let renderAll = false, pageEvery = 5;
 	let resultAll = [], result = [];
 
 	condsParse(conds);
 
-	for(let d of data)
-		if(valid(d, conds))
-			resultAll.push(d);
-			// resultAll.push(render(d, paths));
+	for(let d of data) if(valid(d, conds))
+		resultAll.push(renderAll ? render(d, paths) : d);
 
-	for(let d of slice(resultAll, conds.page))
-		result.push(render(d, paths));
-		// result.push(d);
+	for(let d of resultAll.slice(pageEvery * (conds.page - 1), pageEvery * conds.page))
+		result.push(renderAll ? d : render(d, paths));
 
 	return [result, ~~conds.page, Math.ceil(resultAll.length / pageEvery)];
 };

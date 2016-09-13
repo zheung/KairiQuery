@@ -2,7 +2,8 @@ let dictPath = {
 	data: path.join(_d, 'data'),
 	dataDict: path.join(_d, 'data', 'dict'),
 	dataHeader: path.join(_d, 'data', 'header'),
-	dataraw: path.join(_d, 'data', 'raw'),
+	dataRaw: path.join(_d, 'data', 'raw'),
+	dataTag: path.join(_d, 'data', 'tag'),
 	libs: path.join(_d, 'libs'),
 	libsParser: path.join(_d, 'libs', 'parser'),
 	server: path.join(_d, 'server')

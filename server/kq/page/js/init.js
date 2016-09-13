@@ -72,6 +72,19 @@
 
 		if(man) kqd.dynmSearch = true;
 	});
+
+	kqe.tagers.click(function() {
+		var $this = $(this), tager = this.dataset.tager;
+
+		$this.toggleClass('on').toggleClass('off');
+
+		if($this.hasClass('on'))
+			kqs.tags.addClass(tager);
+		else
+			kqs.tags.removeClass(tager);
+
+		if(kqd.dynmSearch) kq.query(function(param) { param.page = 1; }, kqf.dealer);
+	});
 })();
 
 (function() {
