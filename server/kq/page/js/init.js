@@ -164,10 +164,12 @@
 		tips = [
 			'Ctrl+单击：快速单选某个属性的喵～～',
 			'Shift+单击：快速单不选某一个属性的喵～～',
+			'Ctrl+S：聚焦到搜索框的汪～～',
 			'回车：在搜索框直接搜索的喵～～',
 			'Shift+回车：会重置全部条件并搜索的喵～～',
-			'Ctrl+S：聚焦到搜索框的汪～～',
-			'任何报错和意见，欢迎提交到<a style="color:#E0E2E4;text-decoration:initial;" target="_blank" href="https://github.com/zheung/KairiQuery/issues">[Github]</a>啊哈'
+			'页码：可以点击页面快速跳页的喵～～',
+			'Home|End|PageUp|PageDown：跳到第一页|最后一页|上一页|下一页的喵～～',
+			'任何报错和意见，欢迎提交到<a style="color:#E0E2E4;text-decoration:initial;" target="_blank" href="https://github.com/zheung/KairiQuery/issues">[Gayhub]</a>喵'
 		], length = tips.length;
 
 	kqe.tips.html('(1/'+length+')'+tips[0]);
