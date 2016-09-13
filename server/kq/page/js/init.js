@@ -153,14 +153,14 @@
 			'Shift+单击：快速单不选某一个属性的喵～～',
 			'回车：在搜索框直接搜索的喵～～',
 			'Shift+回车：会重置全部条件并搜索的喵～～',
-			'Ctril+S：聚焦到搜索框的汪～～',
+			'Ctrl+S：聚焦到搜索框的汪～～',
 			'任何报错和意见，欢迎提交到<a style="color:#E0E2E4;text-decoration:initial;" target="_blank" href="https://github.com/zheung/KairiQuery/issues">[Github]</a>啊哈'
-		];
+		], length = tips.length;
 
-	kqe.tips.html(tips[0]);
+	kqe.tips.html('(1/'+length+')'+tips[0]);
 
 	setInterval(function() {
-		kqe.tips.html(tips[(i++ < tips.length-1 ? i : i=0)]);
+		kqe.tips.html('('+(i+1)+'/'+length+')'+tips[(i++ < length-1 ? i : i=0)]);
 	}, 5214);
 })();
 
