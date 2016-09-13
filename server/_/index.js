@@ -1,7 +1,9 @@
 module.exports = () => {
 	let app = koa(), router = koaRouter();
 
-	router.get('/', function() {
+	router.get('/', function*(next) {
+		yield next;
+
 		this.status = 301;
 		this.redirect('/kq');
 	});

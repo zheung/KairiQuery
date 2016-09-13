@@ -5,9 +5,11 @@ module.exports = () => {
 
 	let filter = require('./filter');
 
-	app.use(static(path.join(rm('server'), 'kq', 'page')));
+	app.use(static(path.join(rm('server'), 'kq', 'asset')));
 
-	router.get('/q', function*() {
+	router.get('/q', function*(next) {
+		yield next;
+
 		let query;
 
 		if(this.originalUrl != this._matchedRoute)

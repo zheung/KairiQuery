@@ -3,7 +3,9 @@ module.exports = () => {
 
 	let time = new Date();
 
-	router.post('/p', function() {
+	router.post('/p', function*(next) {
+		yield next;
+
 		_l('webhook');
 
 		require('child_process').spawn('sh', ['./webhook.sh']);
@@ -11,7 +13,9 @@ module.exports = () => {
 		this.body = 'webhook';
 	});
 
-	router.get('/t', function() {
+	router.get('/t', function*(next) {
+		yield next;
+
 		this.body = Math.round((new Date().getTime() - time.getTime()) / 1000);
 	});
 
