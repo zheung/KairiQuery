@@ -162,10 +162,11 @@
 		tips = [
 			'Ctrl+单击：快速单选某个属性的喵～～',
 			'Shift+单击：快速单不选某一个属性的喵～～',
+			'单击“COST”：快速全（不）选所有COST，其他同理的喵～～',
 			'Ctrl+S：聚焦到搜索框的汪～～',
 			'Shift+回车：会重置全部条件并搜索的喵～～',
-			'页码：点击并输入页码,然后回车就可以快速跳页的喵～～',
-			'Home|End|PageUp|PageDown：跳到第一页|最后一页|上一页|下一页的喵～～',
+			'单击页码，输入然后回车：快速翻页的喵～～',
+			'Home|End|PageUp|PageDown：各种姿势翻页的喵～～',
 			'任何报错和意见，欢迎提交到<a style="color:#E0E2E4;text-decoration:initial;" target="_blank" href="https://github.com/zheung/KairiQuery/issues">[Gayhub]</a>喵'
 		], length = tips.length;
 
