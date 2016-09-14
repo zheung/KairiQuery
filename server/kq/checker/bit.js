@@ -2,7 +2,7 @@ let convert = require('../render/convert');
 
 module.exports = {
 	parse:	(bits) => {
-		var result = [];
+		var result = [true];
 
 		while(bits) {
 			result.push(!!(bits & 1));
@@ -11,10 +11,12 @@ module.exports = {
 
 		return result;
 	},
-	check: (bits = [], value = 0, type = '') => {
-		if(type)
-			return bits[0] && !bits[convert('d.biters', type)[value]];
+	valid: (bits = [], value = 0, type = '') => {
+		if(bits.length == 1)
+			return true;
+		else if(type)
+			return bits[convert('d.biters', type)[value]];
 		else
-			return bits[0] && !bits[value];
+			return bits[value];
 	}
 };

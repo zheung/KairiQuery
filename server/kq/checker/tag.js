@@ -2,7 +2,7 @@ module.exports = {
 	parse:	(tags) => {
 		return tags ? tags.split(' ') : [];
 	},
-	check: (tags = [], id = '') => {
+	valid: (tags = [], id = '') => {
 		if(tags.length) {
 			let count = 0, tagser = dicter.tagser[id];
 
@@ -11,11 +11,11 @@ module.exports = {
 					count++;
 
 			if(tags.length == count)
-				return false;
+				return true;
 
-			return true;
+			return false;
 		}
 		else
-			return false;
+			return true;
 	}
 };

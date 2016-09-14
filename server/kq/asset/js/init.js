@@ -5,15 +5,28 @@
 	// });
 
 	kqe.toggles.click(function(eve, man) {
-		var $this = $(this), cond = this.dataset.cond, val = ~~this.dataset.val;
+		var $this = $(this), cond = this.dataset.cond, val = this.dataset.val, isON = $this.hasClass('on');
 
-		if(man) eve = man;
+		if(man) isON = !man.fourceON;
 
-		if(eve.ctrlKey && !eve.shiftKey) {
-			if(val != 1) {
+		if(val == 's') {
+			kqd.dynmSearch = false;
+
+			kqe.toggles.filter('[data-cond='+cond+']:not([data-val=s])').each(function() {
+				$(this).addClass(isON ? 'on' : 'off').removeClass(isON ? 'off' : 'on').click();
+			});
+
+			if(!man) kqd.dynmSearch = true;
+
+			$this.addClass(isON ? 'off' : 'on').removeClass(isON ? 'on' : 'off');
+
+			if(!man) kq.query(function(param) { param.page = 1; }, kqf.dealer);
+		}
+		else {
+			if(eve.ctrlKey && !eve.shiftKey) {
 				kqd.dynmSearch = false;
 
-				$('[data-cond='+cond+']:not([data-val='+val+']):not([data-val=1])').each(function() {
+				$('[data-cond='+cond+']:not([data-val='+val+']):not([data-val=s])').each(function() {
 					$(this).addClass('on').removeClass('off').click();
 				});
 
@@ -21,23 +34,10 @@
 
 				$this.removeClass('on').addClass('off').click();
 			}
-			else {
+			else if(!eve.ctrlKey && eve.shiftKey) {
 				kqd.dynmSearch = false;
 
-				$('[data-cond='+cond+']:not([data-val=1])').each(function() {
-					$(this).removeClass('on').addClass('off').click();
-				});
-
-				if(!man) kqd.dynmSearch = true;
-
-				$this.removeClass('on').addClass('off').click();
-			}
-		}
-		else if(!eve.ctrlKey && eve.shiftKey) {
-			if(val != 1) {
-				kqd.dynmSearch = false;
-
-				$('[data-cond='+cond+']:not([data-val='+val+']):not([data-val=1])').each(function() {
+				$('[data-cond='+cond+']:not([data-val='+val+']):not([data-val=s])').each(function() {
 					$(this).addClass('off').removeClass('on').click();
 				});
 
@@ -46,31 +46,20 @@
 				$this.removeClass('off').addClass('on').click();
 			}
 			else {
-				kqd.dynmSearch = false;
+				$this.toggleClass('on').toggleClass('off');
 
-				$('[data-cond='+cond+']:not([data-val=1])').each(function() {
-					$(this).removeClass('off').addClass('on').click();
-				});
+				if(cond && val) {
+					if($this.hasClass('on'))
+						kq.conds[cond] |= 1<<(~~val-1);
+					else
+						kq.conds[cond] &= ~(1<<(~~val-1));
 
-				if(!man) kqd.dynmSearch = true;
-
-				$this.removeClass('off').addClass('on').click();
+					if(kqd.dynmSearch) kq.query(function(param) { param.page = 1; }, kqf.dealer);
+				}
 			}
+
+			if(man) kqd.dynmSearch = true;
 		}
-		else {
-			$this.toggleClass('on').toggleClass('off');
-
-			if(cond && val) {
-				if($this.hasClass('on'))
-					kq.conds[cond] |= 1<<(val-1);
-				else
-					kq.conds[cond] &= ~(1<<(val-1));
-
-				if(kqd.dynmSearch) kq.query(function(param) { param.page = 1; }, kqf.dealer);
-			}
-		}
-
-		if(man) kqd.dynmSearch = true;
 	});
 
 	kqe.tagers.click(function() {
@@ -93,8 +82,8 @@
 		var ae = document.activeElement;
 		if(ae.id == 'CondName') {
 			if(e.keyCode == 13) {
-				if(e.ctrlKey)
-					$('[data-cond][data-val=1]').trigger('click', { ctrlKey: true });
+				if(e.shiftKey)
+					$('[data-cond][data-val=s]').trigger('click', { fourceON: true });
 
 				kqe.search.click();
 
@@ -140,12 +129,21 @@
 
 				return false;
 			}
+			else if(e.keyCode == 13 && e.shiftKey) {
+				$('[data-cond][data-val=s]').trigger('click', { fourceON: true });
+
+				kqe.search.click();
+
+				return false;
+			}
 		}
 	});
 })();
 
 (function() {
 	kqe.search.click(function() {
+		kqd.dynmSearch = true;
+
 		kq.conds.name = kqe.condName.val();
 		kq.query(function(param) { param.page = 1; }, kqf.dealer);
 	});
@@ -165,9 +163,8 @@
 			'Ctrl+单击：快速单选某个属性的喵～～',
 			'Shift+单击：快速单不选某一个属性的喵～～',
 			'Ctrl+S：聚焦到搜索框的汪～～',
-			'回车：在搜索框直接搜索的喵～～',
 			'Shift+回车：会重置全部条件并搜索的喵～～',
-			'页码：可以点击页面快速跳页的喵～～',
+			'页码：点击并输入页码,然后回车就可以快速跳页的喵～～',
 			'Home|End|PageUp|PageDown：跳到第一页|最后一页|上一页|下一页的喵～～',
 			'任何报错和意见，欢迎提交到<a style="color:#E0E2E4;text-decoration:initial;" target="_blank" href="https://github.com/zheung/KairiQuery/issues">[Gayhub]</a>喵'
 		], length = tips.length;

@@ -138,11 +138,11 @@
 	window.kq = {
 		conds: {
 			name: '',
-			job: (1<<6)-1,
-			cost: (1<<8)-1,
-			attr: (1<<16)-1,
-			skillType: (1<<7)-1,
-			rare: (1<<7)-1
+			job: (1<<5)-1,
+			cost: (1<<7)-1,
+			attr: (1<<15)-1,
+			skillType: (1<<6)-1,
+			rare: (1<<6)-1
 		},
 		param: function(moder) {
 			var result = $.extend({}, kq.conds, {
