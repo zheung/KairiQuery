@@ -10,6 +10,6 @@ let tagserConvert = (tagser) => {
 	return tagser;
 };
 
-module.exports = () => {
-	global.dicter.tagser = tagserConvert(rm('data', 'tagser.json'));
+module.exports = (ctx) => {
+	ctx.dicter.tagser = tagserConvert(require(path.join(ctx._d, 'data', 'tagser.json')));
 };

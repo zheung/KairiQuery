@@ -1,4 +1,6 @@
-module.exports = () => {
+module.exports = (ctx) => {
+	require('./init')(ctx);
+
 	let data = rm('data', 'data.json');
 
 	let app = koa(), router = koaRouter(), static = require('koa-static');
