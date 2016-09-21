@@ -137,6 +137,7 @@
 (function() {
 	window.kq = {
 		conds: {
+			serv: 'cn',
 			name: '',
 			job: (1<<5)-1,
 			cost: (1<<7)-1,
@@ -159,7 +160,7 @@
 				kqd.xhrUnlock = false;
 
 				return $.get({
-					url: 'kq/qcn',
+					url: 'q',
 					data: kq.param(moder),
 					success: success
 				}).fail(fail).always(function() {

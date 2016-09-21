@@ -1,4 +1,4 @@
-let condsParse = function(serv, checker, conds) {
+let condsParse = function(checker, conds) {
 	let bitParse = checker.bit.parse, tagParse = checker.tag.parse;
 
 	conds.name = conds.name? conds.name.trim() : '';
@@ -12,7 +12,7 @@ let condsParse = function(serv, checker, conds) {
 	conds.tags = tagParse(conds.tags);
 };
 
-let valid = function(serv, checker, data, conds) {
+let valid = function(checker, data, conds) {
 	let bitValid = checker.bit.valid, tagValid = checker.tag.valid;
 
 	if(!(data.info.name.indexOf(conds.name)+1)) return false;
@@ -23,7 +23,7 @@ let valid = function(serv, checker, data, conds) {
 	if(!bitValid(conds.attr, data.skill.normal[0].info.attr, 'attr')) return false;
 	if(!bitValid(conds.skillType, data.skill.normal[0].info.type)) return false;
 
-	if(!tagValid(serv, conds.tags, data.id)) return false;
+	if(!tagValid(conds.serv, conds.tags, data.id)) return false;
 
 	return true;
 };
@@ -35,13 +35,13 @@ module.exports = ($) => {
 			tag: $.rq('checker/tag')
 		};
 
-	return (serv = 'cn', data = {}, conds = {}, paths = []) => {
+	return (data = {}, conds = {}, paths = []) => {
 		let renderAll = false, pageEvery = 5;
 		let resultAll = [], result = [];
 
-		condsParse(serv, checker, conds);
+		condsParse(checker, conds);
 
-		for(let d of data[serv]) if(valid(serv, checker, d, conds))
+		for(let d of data[conds.serv]) if(valid(checker, d, conds))
 			resultAll.push(renderAll ? render(d, paths) : d);
 
 		for(let d of resultAll.slice(pageEvery * (conds.page - 1), pageEvery * conds.page))
