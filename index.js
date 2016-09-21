@@ -1,6 +1,6 @@
-require('./init')();
+require('./libs/init')();
 
-require('./server')([
+require('./libs/server')([
 	['/', '_'],
 	['/kq', 'kq'],
 	['/wh', 'wh']

@@ -17,9 +17,11 @@ module.exports = (servers = []) => {
 		};
 
 		app.use(mount(s[0], sub.koa = require(path.join(_d, 'server', s[1]))(sub)));
+
+		_l('subServer', s[1], 'loaded, path is', s[0]);
 	}
 
 	app.listen(80, '0.0.0.0');
 
-	_l('website start on 0.0.0.0:80');
+	_l('website started on 0.0.0.0:80');
 };

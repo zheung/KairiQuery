@@ -29,5 +29,5 @@ module.exports = ($) => {
 
 	fs.writeFileSync($.pa('data/tagser.json'), JSON.stringify(result, null, '\t'));
 
-	_l('tagser complete');
+	_l('tagser completed');
 };

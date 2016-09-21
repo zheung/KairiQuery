@@ -23,7 +23,7 @@ module.exports = ($) => {
 
 	fs.writeFileSync($.pa('data/data.json'), JSON.stringify(data, null, '\t'));
 
-	_l('parser complete');
+	_l('parser completed');
 
 	return data;
 };
