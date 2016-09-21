@@ -107,10 +107,10 @@
 					for(var si in skill) {
 						var s = skill[si];
 
-						var head = $('<a>').addClass('TabHead').addClass('SkillContent').html(s.cond || '无条件').appendTo(header);
+						var head = $('<a>').addClass('TabHead').addClass('SkillContent').html(s.cond || '无').appendTo(header);
 						head[0].dataset.tab = 'Skill'+i+type; head[0].dataset.val = j;
 
-						if(head.html()=='无条件' && si > 0) head.css('width', '20%');
+						if(head.html()=='无' && si > 0) head.css('width', '20%');
 
 						var content = '';
 						for(var ci in s.content) content += '<span class="TextRole">'+(s.content[ci] || '无')+'</span>';
@@ -159,7 +159,7 @@
 				kqd.xhrUnlock = false;
 
 				return $.get({
-					url: 'qjp',
+					url: 'kq/qcn',
 					data: kq.param(moder),
 					success: success
 				}).fail(fail).always(function() {

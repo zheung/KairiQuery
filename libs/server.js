@@ -1,22 +1,22 @@
-module.exports = (servers = []) => {
+module.exports = (servs = []) => {
 	let app = koa(), mount = require('koa-mount');
 
 	let subs = {};
 
 	app.use(require('koa-gzip')());
 
-	for(let s of servers) {
+	for(let s of servs) {
 		let sub = subs[s[1]] = {
 			pa: function(paths) {
-				return path.join.apply(this, [_d, 'server', s[0]].concat(paths.split('/')));
+				return path.join.apply(this, [_d, 'serv', s[0]].concat(paths.split('/')));
 			},
 			rq: function(paths) {
-				let obj = require(path.join.apply(this, [_d, 'server', s[0]].concat(paths.split('/'))));
+				let obj = require(path.join.apply(this, [_d, 'serv', s[0]].concat(paths.split('/'))));
 				return (obj instanceof Function)? obj(sub) : obj;
 			}
 		};
 
-		app.use(mount(s[0], sub.koa = require(path.join(_d, 'server', s[1]))(sub)));
+		app.use(mount(s[0], sub.koa = require(path.join(_d, 'serv', s[1]))(sub)));
 
 		_l('subServer', s[1], 'loaded, path is', s[0]);
 	}
