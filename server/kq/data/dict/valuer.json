@@ -392,5 +392,12 @@
 	"skillTiming": {
 		"NORMAL": 1,
 		"ENEMY_ACTION_END": 2
+	},
+	"matType": {
+		"FUSION": 1,
+		"EVOLUTION": 2,
+		"GOLD": 3,
+		"FAME": 4,
+		"KNIGHTS": 5
 	}
 }

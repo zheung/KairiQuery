@@ -1,0 +1,38 @@
+{
+	"env": {
+		"browser": true,
+		"es6": false
+	},
+	"extends": "eslint:recommended",
+	"rules": {
+		"indent": [
+			"warn",
+			"tab"
+		],
+		"linebreak-style": [
+			"error",
+			"windows"
+		],
+		"quotes": [
+			"error",
+			"single"
+		],
+		"semi": [
+			"error",
+			"always"
+		],
+		"no-unused-vars": [
+			"warn",
+			{ "vars": "all", "args": "after-used" }
+		]
+	},
+	"globals": {
+		"$": true,
+
+		"kq": true,
+		"kqe": true,
+		"kqs": true,
+		"kqd": true,
+		"kqf": true
+	}
+}

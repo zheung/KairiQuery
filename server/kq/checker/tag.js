@@ -3,9 +3,9 @@ module.exports = ($) => {
 		parse: (tags) => {
 			return tags ? tags.split(' ') : [];
 		},
-		valid: (tags = [], id = '') => {
+		valid: (serv, tags = [], id = '') => {
 			if(tags.length) {
-				let count = 0, tagser = $.dicter.tagser[id];
+				let count = 0, tagser = $.tags[serv][id];
 
 				for(let tag of tags)
 					if(tagser[tag])

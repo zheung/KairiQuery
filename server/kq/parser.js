@@ -1,29 +1,39 @@
 let render = {
-	filter: (cells) => { return !/^#/.test(cells[0]); }
+	filter: (cells) => { return !/^#/.test(cells[0]) && (~~cells[0] > 1000 || /^[A-Z_]+$/.test(cells[0])); }
 };
 
 module.exports = ($) => {
-	let parser = $.rq('libs/parser/parser'),
-		merger = $.rq('libs/parser/merger');
+	let datas = {};
 
-	let header = {
-		card: $.rq('data/header/card.json'),
-		skill: $.rq('data/header/skill.json'),
-		role: $.rq('data/header/role.json'),
-		rule: $.rq('data/header/rule.json')
-	};
+	if($.conf.parser) {
+		let parser = $.rq('libs/parser/parser'), merger = $.rq('libs/parser/merger');
 
-	let rawPath = $.pa('data/raw'),
-		data = merger(
-			parser(rawPath, 'card', 11, header.card, $.dicter.valuer, render),
-			parser(rawPath, 'skill', 7, header.skill, $.dicter.valuer, render),
-			parser(rawPath, 'role', 8, header.role, $.dicter.valuer, render),
-			parser(rawPath, 'rule', 3, header.rule, $.dicter.valuer, render)
-		);
+		for(let serv of $.conf.servs) {
+			let header = {
+				card: $.rq(`data/header/card.${serv}.json`),
+				skill: $.rq(`data/header/skill.${serv}.json`),
+				role: $.rq(`data/header/role.${serv}.json`),
+				rule: $.rq(`data/header/rule.${serv}.json`)
+			};
 
-	fs.writeFileSync($.pa('data/data.json'), JSON.stringify(data, null, '\t'));
+			let rawPath = $.pa('data/raw'),
+				data = merger(
+					parser(rawPath, `card.${serv}`, 1, header.card, $.dicter.valuer, render),
+					parser(rawPath, `skill.${serv}`, 1, header.skill, $.dicter.valuer, render),
+					parser(rawPath, `role.${serv}`, 1, header.role, $.dicter.valuer, render),
+					parser(rawPath, `rule.${serv}`, 1, header.rule, $.dicter.valuer, render)
+				);
 
-	_l('parser completed');
+			fs.writeFileSync($.pa(`data/data.${serv}.json`), JSON.stringify(data, null, '\t'));
 
-	return data;
+			datas[serv] = data;
+		}
+
+		_l('reparser completed');
+	}
+	else
+		for(let serv of $.conf.servs)
+			datas[serv] = $.rq(`data/data.${serv}.json`);
+
+	return datas;
 };
