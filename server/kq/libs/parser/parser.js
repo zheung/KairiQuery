@@ -27,52 +27,54 @@ let parsePath = (obj, paths, value) => {
 		});
 	};
 
-module.exports = (dir, name, start, header, dicter, parser) => {
-	let str = fs.readFileSync(path.join(dir, name+'.csv')).toString(),
-		rows = str.split('\r\n');
+module.exports = () => {
+	return (dir, name, start, header, dicter, parser) => {
+		let str = fs.readFileSync(path.join(dir, name+'.csv')).toString(),
+			rows = str.split('\r\n');
 
-	if(header && header.length) {
-		let result = [], counter = {};
+		if(header && header.length) {
+			let result = [], counter = {};
 
-		rows.forEach((row, index) => {
-			if(index+1 >= start && row.trim()) {
-				let cells = row.split(','), rowObj = {};
+			rows.forEach((row, index) => {
+				if(index+1 >= start && row.trim()) {
+					let cells = row.split(','), rowObj = {};
 
-				if(parser.filter && parser.filter(cells)) {
-					cells.forEach((cell, index) => {
-						let heads = header[index].split('.'),
-							option = heads.shift();
+					if(parser.filter && parser.filter(cells)) {
+						cells.forEach((cell, index) => {
+							let heads = header[index].split('.'),
+								option = heads.shift();
 
-						if(option == 's')
-							parsePath(rowObj, heads, cell);
-						else if(option == 'n')
-							parsePath(rowObj, heads, ~~cell);
-						else if(option == 'b')
-							parsePath(rowObj, heads, !!cell);
+							if(option == 's')
+								parsePath(rowObj, heads, cell);
+							else if(option == 'n')
+								parsePath(rowObj, heads, ~~cell);
+							else if(option == 'b')
+								parsePath(rowObj, heads, !!cell);
 
-						else if(option == 'p')
-							parsePath(rowObj, heads, parser[heads.shift()](cell));
-						else if(option == 'd')
-							parsePath(rowObj, heads, ((dicter[heads.shift()][cell]) || 0));
-						else if(option == 'i')
-							return;
-						else if(option == 'c')
-							parseCount(counter, heads, !!cell);
-					});
+							else if(option == 'p')
+								parsePath(rowObj, heads, parser[heads.shift()](cell));
+							else if(option == 'd')
+								parsePath(rowObj, heads, ((dicter[heads.shift()][cell]) || 0));
+							else if(option == 'i')
+								return;
+							else if(option == 'c')
+								parseCount(counter, heads, !!cell);
+						});
 
-					result.push(rowObj);
+						result.push(rowObj);
+					}
 				}
+			});
+
+			if(Object.keys(counter).length) {
+				_l(name+' counter:');
+				_l(counter);
 			}
-		});
 
-		if(Object.keys(counter).length) {
-			_l(name+' counter:');
-			_l(counter);
+			return result;
 		}
-
-		return result;
-	}
-	else {
-		return rows;
-	}
+		else {
+			return rows;
+		}
+	};
 };

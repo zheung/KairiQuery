@@ -1,13 +1,15 @@
-module.exports = (ctx) => {
-	require('./init')(ctx);
+let static = require('koa-static');
 
-	let data = rm('data', 'data.json');
+module.exports = ($) => {
+	$.rq('init');
 
-	let app = koa(), router = koaRouter(), static = require('koa-static');
+	let data = $.rq('data/data.json');
 
-	let filter = require('./filter');
+	let app = koa(), router = koaRouter();
 
-	app.use(static(path.join(rm('server'), 'kq', 'asset')));
+	let filter = $.rq('filter');
+
+	app.use(static($.pa('asset')));
 
 	router.get('/q', function*(next) {
 		yield next;

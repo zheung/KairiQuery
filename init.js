@@ -9,6 +9,4 @@ module.exports = () => {
 
 	global.koa = require('koa');
 	global.koaRouter = require('koa-router');
-
-	global.rm = require(path.join(_d, 'libs', 'path'));
 };

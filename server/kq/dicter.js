@@ -1,4 +1,6 @@
-let tagserConvert = (tagser) => {
+module.exports = ($) => {
+	let tagser = $.rq('data/tagser.json');
+
 	for(let ri in tagser) {
 		let n = {};
 
@@ -7,9 +9,5 @@ let tagserConvert = (tagser) => {
 		tagser[ri] = n;
 	}
 
-	return tagser;
-};
-
-module.exports = (ctx) => {
-	ctx.dicter.tagser = tagserConvert(require(path.join(ctx._d, 'data', 'tagser.json')));
+	$.dicter.tagser = tagser;
 };

@@ -1,11 +1,11 @@
-module.exports = (ctx) => {
-	ctx.dicter = {
-		valuer: require('./data/dict/valuer'),
-		shower: require('./data/dict/shower'),
-		biters: require('./data/dict/biters')
+module.exports = ($) => {
+	$.dicter = {
+		valuer: $.rq('data/dict/valuer.json'),
+		shower: $.rq('data/dict/shower'),
+		biters: $.rq('data/dict/biters')
 	};
 
-	require('./parser')(ctx);
-	require('./tagser')(ctx);
-	require('./dicter')(ctx);
+	$.rq('parser');
+	$.rq('tagser');
+	$.rq('dicter');
 };

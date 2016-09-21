@@ -1,10 +1,4 @@
-let render = require('./render'),
-	checker = {
-		bit: require('./checker/bit'),
-		tag: require('./checker/tag')
-	};
-
-let condsParse = function(conds) {
+let condsParse = function(checker, conds) {
 	let bitParse = checker.bit.parse, tagParse = checker.tag.parse;
 
 	conds.name = conds.name? conds.name.trim() : '';
@@ -18,7 +12,7 @@ let condsParse = function(conds) {
 	conds.tags = tagParse(conds.tags);
 };
 
-let valid = function(data, conds) {
+let valid = function(checker, data, conds) {
 	let bitValid = checker.bit.valid, tagValid = checker.tag.valid;
 
 	if(!(data.info.name.indexOf(conds.name)+1)) return false;
@@ -34,17 +28,25 @@ let valid = function(data, conds) {
 	return true;
 };
 
-module.exports = (data = {}, conds = {}, paths = []) => {
-	let renderAll = false, pageEvery = 5;
-	let resultAll = [], result = [];
+module.exports = ($) => {
+	let render = $.rq('render'),
+		checker = {
+			bit: $.rq('checker/bit'),
+			tag: $.rq('checker/tag')
+		};
 
-	condsParse(conds);
+	return (data = {}, conds = {}, paths = []) => {
+		let renderAll = false, pageEvery = 5;
+		let resultAll = [], result = [];
 
-	for(let d of data) if(valid(d, conds))
-		resultAll.push(renderAll ? render(d, paths) : d);
+		condsParse(checker, conds);
 
-	for(let d of resultAll.slice(pageEvery * (conds.page - 1), pageEvery * conds.page))
-		result.push(renderAll ? d : render(d, paths));
+		for(let d of data) if(valid(checker, d, conds))
+			resultAll.push(renderAll ? render(d, paths) : d);
 
-	return [result, ~~conds.page, Math.ceil(resultAll.length / pageEvery)];
+		for(let d of resultAll.slice(pageEvery * (conds.page - 1), pageEvery * conds.page))
+			result.push(renderAll ? d : render(d, paths));
+
+		return [result, ~~conds.page, Math.ceil(resultAll.length / pageEvery)];
+	};
 };

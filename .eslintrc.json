@@ -22,10 +22,6 @@
 		"qs": true,
 
 		"koa": true,
-		"koaRouter": true,
-
-		"rm": true,
-
-		"dicter": true
+		"koaRouter": true
 	}
 }
