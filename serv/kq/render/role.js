@@ -247,9 +247,9 @@ module.exports = ($) => {
 		84: 'GUARD_BREAK_BY_NOW_TURN_DAMAGE',
 		85: 'ATK_OP_NOW_TURN_REVENGE',
 		86: (serv, card, skill, role, skillFirst) => {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+			let p = role.params, target = showTarget(skill, role, skillFirst), crit = (serv == 'jp'? p[2] / 10: p[2]);
 
-			return `${target} | ${p[1]}回合 | 提升暴击率 | ${p[2]}%`;
+			return `${target} | ${p[1]}回合 | 提升暴击率 | ${crit}%`;
 		},
 		87: 'DEAL_PENALTY',
 		88: (serv, card, skill, role, skillFirst) => {
