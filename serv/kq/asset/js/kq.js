@@ -49,8 +49,8 @@
 
 	window.kqf = {
 		retab: function() {
-			$('.TabHead').unbind('click').click(function() {
-				var tab = this.dataset.tab, val = this.dataset.val, heads, items;
+			$('.TabHead[data-tab]').unbind('click').click(function() {
+				var tab = this.dataset.tab, page = this.dataset.page, func = this.dataset.func, heads, items;
 
 				if(tab) {
 					heads = $('.TabHead[data-tab='+tab+']');
@@ -58,12 +58,19 @@
 				}
 				else return false;
 
-				if(val) {
-					heads.filter(':not([data-val='+val+'])').removeClass('active');
+				if(page) {
+					heads.filter(':not([data-page='+page+'])').removeClass('active');
 					$(this).addClass('active');
 
-					items.filter(':not([data-val='+val+'])').addClass('hide');
-					items.filter('[data-val='+val+']').removeClass('hide');
+					items.filter(':not([data-page='+page+'])').addClass('hide');
+					items.filter('[data-page='+page+']').removeClass('hide');
+				}
+
+				if(func) {
+					heads.filter(':not([data-func='+func+'])').removeClass('active');
+					$(this).addClass('active');
+
+					kqf['tab'+tab](func);
 				}
 			});
 		},
@@ -99,7 +106,7 @@
 				for(var ti in types) {
 					var type = types[ti],
 						skill = data.skill[type], j = 0,
-						panel = card.find('.TabItem.Skill[data-val='+type+']'),
+						panel = card.find('.TabItem.Skill[data-page='+type+']'),
 						header = panel.find('.TabHeader.SkillContent').empty(), box = panel.find('.TabBox.SkillContent').empty();
 
 					if(!skill.length) skill.push({cond:'&nbsp;', content: '无'});
@@ -130,6 +137,10 @@
 
 			kqf.retab();
 			$('.TabHead.Skill.primary').click();
+		},
+		tabServ: function(serv) {
+			kq.conds.serv = serv;
+			kqe.search.click();
 		}
 	};
 })();
@@ -160,7 +171,7 @@
 				kqd.xhrUnlock = false;
 
 				return $.get({
-					url: 'q',
+					url: 'kq/q',
 					data: kq.param(moder),
 					success: success
 				}).fail(fail).always(function() {

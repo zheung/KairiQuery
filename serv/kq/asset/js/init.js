@@ -1,9 +1,4 @@
 (function() {
-	// Toggles Events
-	// kqe.toggles.mouseenter(function(e) {
-	// 	if(e.altKey) $(this).click();
-	// });
-
 	kqe.toggles.click(function(eve, man) {
 		var $this = $(this), cond = this.dataset.cond, val = this.dataset.val, isON = $this.hasClass('on');
 

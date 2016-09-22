@@ -7,11 +7,20 @@ module.exports = ($) => {
 
 	let filter = $.rq('filter');
 
+	app.use(static($.pa('asset')));
+
 	router.get('/', function*(next) {
 		yield next;
 
-		this.status = 301;
-		this.redirect('/kq/cn');
+		let query;
+
+		if(this.originalUrl != this._matchedRoute)
+			query = qs.parse(qs.unescape(this.originalUrl.replace('/kq\?', '')));
+
+		if(query.serv == 'jp')
+			this.body = fs.readFileSync($.pa('asset/html/index.html')).toString().replace('${serv-jp}', ' active').replace('${serv-cn}', '');
+		else
+			this.body = fs.readFileSync($.pa('asset/html/index.html')).toString().replace('${serv-cn}', ' active').replace('${serv-jp}', '');
 	});
 
 	router.get('/q', function*(next) {
@@ -41,8 +50,6 @@ module.exports = ($) => {
 		else
 			this.body = '';
 	});
-
-	app.use(static($.pa('asset')));
 
 	app.use(router.routes()).use(router.allowedMethods());
 
