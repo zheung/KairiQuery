@@ -3,7 +3,7 @@ module.exports = ($) => {
 		skill: $.rq('render/skill')
 	};
 
-	return (type, value) => {
+	return (serv, type, value) => {
 		if(type) {
 			let types = type.split('.'), object;
 
@@ -13,7 +13,7 @@ module.exports = ($) => {
 			for(let i=1; i< types.length; i++)
 				object = object[types[i]];
 
-			return object instanceof Function ? object(value) : object[value];
+			return object instanceof Function ? object(serv, value) : object[value];
 		}
 
 		return '';

@@ -2,7 +2,7 @@ module.exports = ($) => {
 	let rdrCond = $.rq('render/cond'),
 		rdrRole = $.rq('render/role');
 
-	return (card) => {
+	return (serv, card) => {
 		let result = {},
 			skillTypes = ['awaken', 'normal', 'support'],
 			skills = card.skill;
@@ -47,7 +47,7 @@ module.exports = ($) => {
 					let skillType = role.info.type, render = rdrRole[skillType];
 
 					if(render instanceof Function){
-						s.content.push(render(card, skill, role, skillFirst).replace(/\t|\n/g, ''));
+						s.content.push(render(serv, card, skill, role, skillFirst).replace(/\t|\n/g, ''));
 					}
 					else {
 						_l('New Skill', skillType, 'Card', card.id, 'Skill', skill.id);
