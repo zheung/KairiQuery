@@ -115,7 +115,7 @@
 						var s = skill[si];
 
 						var head = $('<a>').addClass('TabHead').addClass('SkillContent').html(s.cond || '无').appendTo(header);
-						head[0].dataset.tab = 'Skill'+i+type; head[0].dataset.val = j;
+						head[0].dataset.tab = 'Skill'+i+type; head[0].dataset.page = j;
 
 						if(head.html()=='无' && si > 0) head.css('width', '20%');
 
@@ -123,14 +123,14 @@
 						for(var ci in s.content) content += '<span class="TextRole">'+(s.content[ci] || '无')+'</span>';
 
 						var item = $('<div>').addClass('TabItem').addClass('SkillContent').html(content).appendTo(box);
-						item[0].dataset.tab = 'Skill'+i+type; item[0].dataset.val = j++;
+						item[0].dataset.tab = 'Skill'+i+type; item[0].dataset.page = j++;
 					}
 
 					header.find(':first-child').addClass('active');
 				}
 
 				card.find('.TabHead.Skill').removeClass('primary')
-					.filter('[data-val='+types[(data.job != '通用' ? 0 : 1)]+']').addClass('primary');
+					.filter('[data-page='+types[(data.job != '通用' ? 0 : 1)]+']').addClass('primary');
 
 				card.removeClass('hide');
 			}
