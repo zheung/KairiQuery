@@ -65,7 +65,7 @@ module.exports = ($) => {
 			if(~~cond.param3) _l('Cond 23 Double');
 
 			return `我方 | ${shower.roleDebuff[valuer.roleDebuff[cond.param1]]}
-				${cond.param2 ? '或'+shower.roleDebuff[valuer.roleDebuff[cond.param2]] : ''}
+				${cond.param2 ? `或${shower.roleDebuff[valuer.roleDebuff[cond.param2]]}` : ''}
 				状态`;
 		},
 		24: (card, skill, cond) => {

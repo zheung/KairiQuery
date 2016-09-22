@@ -18,7 +18,7 @@ module.exports = ($) => {
 
 			return `${target} | ${p[5]}回${show(p[8])}元素的${show(p[9])}攻击
 				| <kqud title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</kqud>+${p[3]/10}%${show(p[6])}
-				${(crit != 15 ? ' | '+~~crit+'%高暴击率' : '')}`;
+				${(crit != 15 ? ` | ${~~crit}%高暴击率` : '')}`;
 		},
 		2: false,
 		3: false,
@@ -267,7 +267,7 @@ module.exports = ($) => {
 		92: (serv, card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let num = (p[2] == p[3] ? p[2]: p[2]+'~'+p[3]);
+			let num = (p[2] == p[3] ? p[2]: `${p[2]}~${p[3]}`);
 
 			if(p[5] || p[6] || p[7]) _l('');
 
