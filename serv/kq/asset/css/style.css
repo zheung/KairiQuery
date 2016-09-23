@@ -132,6 +132,8 @@ input, span {
 	background-color: #34495e;
 }
 .TabHead.RightNavi {
+	width: 23%;
+
 	border: 2px solid #34495e;
 
 	margin: 0;
@@ -217,7 +219,7 @@ input, span {
 
 	cursor: pointer;
 }
-.PageCount, {
+.PageCount {
 	width: 33%;
 }
 .PageCount>span {
