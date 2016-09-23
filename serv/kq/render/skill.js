@@ -30,8 +30,8 @@ module.exports = ($) => {
 					let render = rdrCond[delayType];
 
 					if(render)
-						s.cond = render(card, skill, skill.delay).replace(/\t|\n/g, '') +
-							(skill.delay.timing==2 ? ' | <kqud title="在敌方行动后判定条件，满足条件则发动技能">敌方行动后</kqud>' : '');
+						s.cond = (skill.delay.timing==2 ? '<kqud title="在敌方行动后判定条件，满足条件则发动技能">敌方行动后</kqud> | ' : '')+
+							render(card, skill, skill.delay).replace(/\t|\n/g, '');
 					else {
 						_l('New Delay', delayType, 'Card', card.id, 'Skill', skill.id);
 

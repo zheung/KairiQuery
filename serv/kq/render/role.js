@@ -147,22 +147,22 @@ module.exports = ($) => {
 		38: (serv, card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${p[1]}回合 | 毒 | ${p[5]/10}+${p[6]/10}%${show(p[8])}`;
+			return `${target} | ${p[1]}回合 | 毒 | ${Math.ceil(p[5]/10)}+${p[6]/10}%${show(p[8])}`;
 		},
 		39: (serv, card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${p[1]}回合 | 燃烧 | ${p[5]/10}+${p[6]/10}%${show(p[8])}`;
+			return `${target} | ${p[1]}回合 | 燃烧 | ${Math.ceil(p[5]/10)}+${p[6]/10}%${show(p[8])}`;
 		},
 		40: (serv, card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${p[1]}回合 | 冻结 | ${p[5]/10}+${p[6]/10}%${show(p[8])}`;
+			return `${target} | ${p[1]}回合 | 冻结 | ${Math.ceil(p[5]/10)}+${p[6]/10}%${show(p[8])}`;
 		},
 		41: (serv, card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${p[1]}回合 | 裂风 | ${p[5]/10}+${p[6]/10}%${show(p[8])}`;
+			return `${target} | ${p[1]}回合 | 裂风 | ${Math.ceil(p[5]/10)}+${p[6]/10}%${show(p[8])}`;
 		},
 		42: 'STEAL',
 		43: 'REWRITE',
@@ -255,7 +255,7 @@ module.exports = ($) => {
 		88: (serv, card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${p[1]}回合 | 感电 | ${p[5]/10}+${p[6]/10}%${show(p[8])}`;
+			return `${target} | ${p[1]}回合 | 感电 | ${Math.ceil(p[5]/10)}+${p[6]/10}%${show(p[8])}`;
 		},
 		89: 'DARKNESS_RANDOM',
 		90: 'DARKNESS_APPOINT',
