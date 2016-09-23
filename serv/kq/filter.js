@@ -17,11 +17,11 @@ let valid = function(checker, data, conds) {
 
 	if(!(data.info.name.indexOf(conds.name)+1)) return false;
 
-	if(!bitValid(conds.serv, conds.rare, data.info.rare)) return false;
-	if(!bitValid(conds.serv, conds.job, data.skill.normal[0].info.job)) return false;
-	if(!bitValid(conds.serv, conds.cost, data.skill.normal[0].info.cost, 'cost')) return false;
-	if(!bitValid(conds.serv, conds.attr, data.skill.normal[0].info.attr, 'attr')) return false;
-	if(!bitValid(conds.serv, conds.skillType, data.skill.normal[0].info.type)) return false;
+	if(!bitValid(conds.rare, data.info.rare)) return false;
+	if(!bitValid(conds.job, data.skill.normal[0].info.job)) return false;
+	if(!bitValid(conds.cost, data.skill.normal[0].info.cost, 'cost')) return false;
+	if(!bitValid(conds.attr, data.skill.normal[0].info.attr, 'attr')) return false;
+	if(!bitValid(conds.skillType, data.skill.normal[0].info.type)) return false;
 
 	if(!tagValid(conds.serv, conds.tags, data.id)) return false;
 
@@ -42,10 +42,10 @@ module.exports = ($) => {
 		condsParse(checker, conds);
 
 		for(let d of data[conds.serv]) if(valid(checker, d, conds))
-			resultAll.push(renderAll ? render(conds.serv, d, paths) : d);
+			resultAll.push(renderAll ? render(d, paths) : d);
 
 		for(let d of resultAll.slice(pageEvery * (conds.page - 1), pageEvery * conds.page))
-			result.push(renderAll ? d : render(conds.serv, d, paths));
+			result.push(renderAll ? d : render(d, paths));
 
 		return [result, ~~conds.page, Math.ceil(resultAll.length / pageEvery)];
 	};
