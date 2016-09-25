@@ -21,7 +21,7 @@ module.exports = (servs = []) => {
 		_l('subServer', s[1], 'loaded, path is', s[0]);
 	}
 
-	app.listen(80, '0.0.0.0');
+	app.listen(5214, '0.0.0.0');
 
-	_l('website started on 0.0.0.0:80');
+	_l('website started on 0.0.0.0:5214');
 };

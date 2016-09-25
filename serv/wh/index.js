@@ -1,4 +1,4 @@
-module.exports = () => {
+module.exports = ($) => {
 	let app = koa(), router = koaRouter();
 
 	let time = new Date();
@@ -8,7 +8,7 @@ module.exports = () => {
 
 		_l('webhook');
 
-		require('child_process').spawn('sh', ['./webhook.sh']);
+		require('child_process').spawn('sh', [$.pa('webhook.sh')]);
 
 		this.body = 'webhook';
 	});
