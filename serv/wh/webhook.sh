@@ -1,4 +1,3 @@
-#!/bin/bash
 cd ~/kq
 forever stop index.js
 git pull github master
