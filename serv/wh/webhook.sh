@@ -1,4 +1,4 @@
 cd ~/kq
-forever stop index.js
+fr stop index.js
 git pull github master
-forever start -o log/out.log -e log/err.log index.js
+fr start -o log/out.log -e log/err.log index.js
