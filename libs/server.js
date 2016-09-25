@@ -21,7 +21,17 @@ module.exports = (servs = []) => {
 		_l('subServer', s[1], 'loaded, path is', s[0]);
 	}
 
-	app.listen(5214, '0.0.0.0');
+	app.listen(80, '0.0.0.0', null, () => {
+		try {
+			let env = process.env,
+				uid = parseInt(env['SUDO_UID'] || process.getuid(), 10),
+				gid = parseInt(env['SUDO_GID'] || process.getgid(), 10);
 
-	_l('website started on 0.0.0.0:5214');
+			process.setgid(gid);
+			process.setuid(uid);
+		}
+		catch(e) { true; }
+	});
+
+	_l('website started on 0.0.0.0:80');
 };
