@@ -16,7 +16,7 @@ module.exports = ($) => {
 
 	if($.conf.tagser)
 		tagList = [
-			'f.aoe', 'f.db2', 'f.covering', 'f.buffone', 'f.stan', 'f.debuffre',
+			'f.aoe', 'f.db2', 'f.covering', 'f.buffone', 'f.stan', 'f.debuffre', 'f.bug',
 			'd.5331', 'd.linkage', 'd.limited', 'd.speical', 'd.regicide'
 		];
 

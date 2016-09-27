@@ -68,5 +68,30 @@ module.exports = {
 						return true;
 
 		return false;
+	},
+	bug: (card) => {
+		for(let st of skillTypes) {
+			let first = card.skill[st][0];
+
+			for(let skill of card.skill[st]) {
+				let heal = false, healAll = false, up = false;
+
+				for(let role of skill.role) {
+					let t = { r: role.info.target, s: skill.info.target || first.info.target };
+
+					if(t.r == 3 || (t.r == 1 && t.s == 3))
+						healAll = true;
+
+					if(role.info.type == 9)
+						heal = true;
+					else if(role.info.type == 19 && role.params[2][1] == 5)
+						up = true;
+				}
+
+				if(heal && healAll && up) return true;
+			}
+		}
+
+		return false;
 	}
 };

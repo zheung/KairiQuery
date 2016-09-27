@@ -68,5 +68,16 @@ module.exports = {
 						return true;
 
 		return false;
+	},
+	bug: (card) => {
+		let c = 2;
+
+		for(let st of skillTypes)
+			for(let skill of card.skill[st])
+				for(let role of skill.role)
+					if(role.info.type == 9 || role.info.type == 17)
+						c--;
+
+		return c < 0;
 	}
 };

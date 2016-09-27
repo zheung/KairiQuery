@@ -24,7 +24,7 @@ module.exports = ($) => {
 					parser(rawPath, `rule.${serv}`, 1, header.rule, $.dicter.valuer, render)
 				);
 
-			fs.writeFileSync($.pa(`data/data.${serv}.json`), JSON.stringify(data, null, '\t'));
+			fs.writeFileSync($.pa(`data/data.${serv}.json`), JSON.stringify(data, null, '\t').replace(/侠客/g, '盗贼'));
 
 			datas[serv] = data;
 		}
