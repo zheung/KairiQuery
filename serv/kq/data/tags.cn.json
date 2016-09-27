@@ -378,52 +378,44 @@
 		"5331",
 		"aoe",
 		"linkage",
-		"limited",
 		"speical"
 	],
 	"10108002": [
 		"5331",
 		"aoe",
 		"linkage",
-		"limited",
 		"speical"
 	],
 	"10108003": [
 		"5331",
 		"linkage",
-		"limited",
 		"speical"
 	],
 	"10108004": [
 		"5331",
 		"linkage",
-		"limited",
 		"speical"
 	],
 	"10108005": [
 		"5331",
 		"aoe",
 		"linkage",
-		"limited",
 		"speical"
 	],
 	"10108006": [
 		"5331",
 		"aoe",
 		"linkage",
-		"limited",
 		"speical"
 	],
 	"10108007": [
 		"5331",
 		"linkage",
-		"limited",
 		"speical"
 	],
 	"10108008": [
 		"5331",
 		"linkage",
-		"limited",
 		"speical"
 	],
 	"10108009": [
@@ -518,18 +510,40 @@
 	],
 	"10109023": [],
 	"10109024": [],
-	"10109027": [],
-	"10109028": [],
-	"10109029": [],
-	"10109030": [],
+	"10109027": [
+		"limited:fire1",
+		"limited"
+	],
+	"10109028": [
+		"limited:fire1",
+		"limited"
+	],
+	"10109029": [
+		"limited:fire1",
+		"limited"
+	],
+	"10109030": [
+		"limited:fire1",
+		"limited"
+	],
 	"10109031": [
-		"aoe"
+		"aoe",
+		"limited:fire1",
+		"limited"
 	],
 	"10109032": [
-		"aoe"
+		"aoe",
+		"limited:fire1",
+		"limited"
 	],
-	"10109033": [],
-	"10109034": [],
+	"10109033": [
+		"limited:fire1",
+		"limited"
+	],
+	"10109034": [
+		"limited:fire1",
+		"limited"
+	],
 	"10109035": [],
 	"10109036": [],
 	"10109037": [],

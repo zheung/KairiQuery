@@ -1,24 +1,55 @@
 let check = ($, dict, serv, tag, id) => {
-	let d = dict[serv][tag];
+	let ts = tag.split(':'), d;
 
-	if(!d) {
-		d = dict[serv][tag] = {};
+	if(ts.length > 1) {
+		let tpri = ts[0], tsub = ts[1];
 
-		for(let i of $.rq(`data/tag/dict/${serv}/${tag}.json`)) d[i] = true;
+		d = dict[serv][tpri];
+
+		if(!d) {
+			let raw = $.rq(`data/tag/dict/${serv}/${tpri}.json`);
+
+			d = dict[serv][tpri] = { _: {} };
+
+			for(let traw in raw) {
+				d[traw] = {};
+
+				for(let i of raw[traw])
+					d[traw][i] = d._[i] = true;
+			}
+		}
+
+		return d[tsub][id];
 	}
+	else {
+		d = dict[serv][tag];
 
-	return d[id];
+		if(!d) {
+			let raw = $.rq(`data/tag/dict/${serv}/${tag}.json`);
+			d = dict[serv][tag] = {};
+
+			for(let i of raw) d[i] = true;
+		}
+
+		return (d._ ? d._[id] : d[id]);
+	}
 };
-
 
 module.exports = ($) => {
 	let tags = {}, tagList;
 
 	if($.conf.tagser)
-		tagList = [
-			'f.aoe', 'f.db2', 'f.covering', 'f.buffone', 'f.stan', 'f.debuffre', 'f.bug',
-			'd.5331', 'd.linkage', 'd.limited', 'd.speical', 'd.regicide'
-		];
+		tagList = {
+			cn: [
+				'f.aoe', 'f.db2', 'f.covering', 'f.buffone', 'f.stan', 'f.debuffre', 'f.bug',
+				'd.5331', 'd.linkage', 'd.speical', 'd.regicide',
+				'd.limited:fire1', 'd.limited'
+			],
+			jp: [
+				'f.aoe', 'f.db2', 'f.covering', 'f.buffone', 'f.stan', 'f.debuffre', 'f.bug',
+				'd.5331', 'd.linkage', 'd.speical', 'd.regicide'
+			]
+		};
 
 	let dict = {
 		cn: {},
@@ -36,7 +67,7 @@ module.exports = ($) => {
 			for(let card of $.data[serv]) {
 				let tags = {};
 
-				for(let tagRaw of tagList) {
+				for(let tagRaw of tagList[serv]) {
 					let tagRaws = tagRaw.split('.'), type = tagRaws[0], tag = tagRaws[1],
 						isExist = false;
 
