@@ -4,6 +4,5 @@ require('./libs/server')([
 	['/', '_'],
 	['/pub', 'pub'],
 	['/wh', 'wh'],
-	['/kq', 'kq'],
-	['/mgr', 'mgr']
+	['/kq', 'kq']
 ]);
