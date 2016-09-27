@@ -1,3 +1,16 @@
+let check = ($, dict, serv, tag, id) => {
+	let d = dict[serv][tag];
+
+	if(!d) {
+		d = dict[serv][tag] = {};
+
+		for(let i of $.rq(`data/tag/dict/${serv}/${tag}.json`)) d[i] = true;
+	}
+
+	return d[id];
+};
+
+
 module.exports = ($) => {
 	let tags = {}, tagList;
 
@@ -6,6 +19,11 @@ module.exports = ($) => {
 			'f.aoe', 'f.db2', 'f.covering', 'f.buffone', 'f.stan', 'f.debuffre',
 			'd.5331', 'd.linkage', 'd.limited', 'd.speical'
 		];
+
+	let dict = {
+		cn: {},
+		jp: {}
+	};
 
 	for(let serv of $.conf.servs) {
 		let tagser, result = {};
@@ -25,7 +43,7 @@ module.exports = ($) => {
 					if(type == 'f')
 						isExist = func[tag](card);
 					else if(type == 'd')
-						isExist = $.rq(`data/tag/dict/${serv}/${tag}.json`)[card.id];
+						isExist = check($, dict , serv, tag, card.id);
 
 					if(isExist)
 						tags[tag] = true;
