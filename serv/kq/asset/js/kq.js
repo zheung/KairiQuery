@@ -87,6 +87,7 @@
 
 				card[0].dataset.id = data.id;
 
+				// card.find('.sTitle').html(data.id);
 				card.find('.sTitle').html('&lt;'+data.title+'&gt;'+data.name);
 				card.find('.sCost').html(data.cost);
 				card.find('.sJob').html(data.job);
