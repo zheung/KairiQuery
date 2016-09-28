@@ -1,86 +1,81 @@
+let loadTag = ($, serv, tag) => {
+	let d = {}, raw = $.rq(`data/tag/dict/${serv}/${tag}.json`);
+
+	if(raw instanceof Array) {
+		d._ = true;
+
+		for(let i of raw) d[i] = true;
+	}
+	else {
+		for(let tsub in raw) {
+			d[tsub] = {};
+
+			for(let i of raw[tsub])
+				d[tsub][i] = true;
+		}
+	}
+
+	return d;
+};
+
 let check = ($, dict, serv, tag, id) => {
 	let ts = tag.split(':'), d;
 
 	if(ts.length > 1) {
-		let tpri = ts[0], tsub = ts[1];
+		d = dict[serv][ts[0]];
 
-		d = dict[serv][tpri];
-
-		if(!d) {
-			let raw = $.rq(`data/tag/dict/${serv}/${tpri}.json`);
-
-			d = dict[serv][tpri] = { _: {} };
-
-			for(let traw in raw) {
-				d[traw] = {};
-
-				for(let i of raw[traw])
-					d[traw][i] = d._[i] = true;
-			}
-		}
-
-		return d[tsub][id];
+		if(!d) d = dict[serv][ts[0]] = loadTag($, serv, tag);
 	}
 	else {
 		d = dict[serv][tag];
 
-		if(!d) {
-			let raw = $.rq(`data/tag/dict/${serv}/${tag}.json`);
-			d = dict[serv][tag] = {};
-
-			for(let i of raw) d[i] = true;
-		}
-
-		return (d._ ? d._[id] : d[id]);
+		if(!d) d = dict[serv][tag] = loadTag($, serv, tag);
 	}
+
+	let result = [];
+
+	if(ts.length > 1) {
+		if(d[ts[1]][id]) result.push(tag);
+	}
+	else {
+		if(d._) {
+			if(d[id]) result.push(tag);
+		}
+		else {
+			for(let tsub in d)
+				if(d[tsub][id]) result.push(`${tag}:${tsub}`);
+
+			if(result.length) result.push(tag);
+		}
+	}
+
+	return result;
 };
 
 module.exports = ($) => {
-	let tags = {}, tagList;
-
-	if($.conf.tagser)
-		tagList = {
-			cn: [
-				'f.aoe', 'f.db2', 'f.covering', 'f.buffone', 'f.stan', 'f.debuffre', 'f.bug',
-				'd.5331', 'd.linkage', 'd.speical', 'd.regicide',
-				'd.limited:fire1', 'd.limited'
-			],
-			jp: [
-				'f.aoe', 'f.db2', 'f.covering', 'f.buffone', 'f.stan', 'f.debuffre', 'f.bug',
-				'd.5331', 'd.linkage', 'd.speical', 'd.regicide'
-			]
-		};
-
-	let dict = {
-		cn: {},
-		jp: {}
-	};
+	let tags = {}, dict = { cn: {}, jp: {} };
 
 	for(let serv of $.conf.servs) {
 		let tagser, result = {};
 
 		if($.conf.tagser) {
-			let func = $.rq(`data/tag/func.${serv}`);
+			let func = $.rq(`data/tag/func.${serv}`),
+				tagDicts = fs.readdirSync($.pa(`data/tag/dict/${serv}`));
 
 			tagser = {};
 
 			for(let card of $.data[serv]) {
-				let tags = {};
+				let tags = [];
 
-				for(let tagRaw of tagList[serv]) {
-					let tagRaws = tagRaw.split('.'), type = tagRaws[0], tag = tagRaws[1],
-						isExist = false;
+				for(let tagFunc in func)
+					if(func[tagFunc](card))
+						tags.push(tagFunc);
 
-					if(type == 'f')
-						isExist = func[tag](card);
-					else if(type == 'd')
-						isExist = check($, dict , serv, tag, card.id);
+				for(let tagDict of tagDicts)
+					for(let t of check($, dict, serv, tagDict.replace(/\.json$/, ''), card.id))
+						tags.push(t);
 
-					if(isExist)
-						tags[tag] = true;
-				}
-
-				tagser[card.id] = Object.keys(tags);
+				tagser[card.id] = tags;
 			}
 
 			fs.writeFileSync($.pa(`data/tags.${serv}.json`), JSON.stringify(tagser, null, '\t'));
