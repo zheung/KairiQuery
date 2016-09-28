@@ -93,5 +93,14 @@ module.exports = {
 		}
 
 		return false;
+	},
+	enchant: (card) => {
+		for(let st of skillTypes)
+			for(let skill of card.skill[st])
+				for(let role of skill.role)
+					if(role.info.type == 107)
+						return true;
+
+		return false;
 	}
 };

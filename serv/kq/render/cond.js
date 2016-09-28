@@ -30,7 +30,10 @@ module.exports = ($) => {
 			return `自身 | <kqud title="除此卡外，打出的所有卡牌">其他</kqud> | ${shower.skillKind2[valuer.skillKind[cond.param1]]} | ${cond.param2}张以上`;
 		},
 		7: (card, skill, cond) => {
-			return `自身 | <kqud title="除此卡外，打出的所有卡牌">其他</kqud> | ${valuer.rare[cond.param1]}★+ | ${cond.param2}张以上`;
+			let rare = valuer.rare[cond.param1],
+				star = (rare == 1? '' : `${rare}★+ | ` );
+
+			return `自身 | <kqud title="除此卡外，打出的所有卡牌">其他</kqud> | ${star}${cond.param2}张以上`;
 		},
 		8: (card, skill, cond) => {
 			if(~~cond.param1 > 0 && cond.param2 > 0) _l('Cond 8 Double');
