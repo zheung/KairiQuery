@@ -92,8 +92,10 @@ module.exports = ($) => {
 		23: (card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
+			let base = Math.ceil(~~p[5]/1000+~~p[6]*card.info.max.level);
+
 			return `${target} | ${p[1]}回合 | 提升${show(p[2])}
-				| ${p[6]}+${p[4]/10}%${show(p[3])}`;
+				 | <kqud title="等级成长：${p[5]/1000}+${p[6]}*等级">${base}</kqud>+${p[4]/10}%${show(p[3])}`;
 		},
 		24: 'DEF_UP_BY_TARGET_PARAM',
 		25: (card, skill, role, skillFirst) => {
@@ -102,7 +104,7 @@ module.exports = ($) => {
 			let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
 			return `${target} | ${p[1]}回合 | 提升${show(p[2])}
-				| <kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
+				 | <kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
 		},
 		26: (card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
