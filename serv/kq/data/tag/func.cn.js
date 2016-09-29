@@ -102,5 +102,13 @@ module.exports = {
 						return true;
 
 		return false;
+	},
+	chain: (card) => {
+		for(let st of skillTypes)
+			for(let skill of card.skill[st])
+				if(skill.info.chain && (skill.info.chain != 20 && skill.info.chain != 1))
+					return true;
+
+		return false;
 	}
 };

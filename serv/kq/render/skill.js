@@ -40,8 +40,8 @@ module.exports = ($) => {
 				}
 
 				let chain = skill.info.chain;
-				if(chain && chain != 20)
-					s.content.push(`Chain威力提高 | <kqud title="与HP相关的技能(物魔治)增加${chain}%威力 | 与属性相关的技能(防弱支)增加${chain}点威力">${chain}</>`);
+				if(chain && (chain != 20 && chain != 1))
+					s.content.push(`Chain威力 | <kqud title="Chain威力计算规则：\r\n1、影响HP的技能(物理、魔法、治疗)：每Chain增加总数值的${chain}%点\r\n2、影响属性的技能(防御、弱化、支援)：每Chain增加${chain}点\r\n3、根据某属性A影响属性的技能：每Chain增加${chain}%该属性数值">${chain}</>`);
 
 				for(let role of skill.role) {
 					let skillType = role.info.type, render = rdrRole[skillType];

@@ -56,7 +56,7 @@ module.exports = ($) => {
 		12: (card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | 回复HP | ${show(p[1])}的${p[2]/10}%`;
+			return `${target} | 回复HP | ${p[2]/10}%${show(p[1])}`;
 		},
 		13: (card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
