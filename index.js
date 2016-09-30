@@ -6,3 +6,5 @@ require('./libs/server')([
 	['/wh', 'wh'],
 	['/kq', 'kq']
 ]);
+
+_l(`server pid: ${process.pid}`);
