@@ -271,13 +271,17 @@ module.exports = ($) => {
 
 			let num = (p[2] == p[3] ? p[2]: `${p[2]}~${p[3]}`);
 
-			if(p[5] || p[6] || p[7]) _l('');
+			if(~~p[5] || ~~p[6] || ~~p[7]) _l('miao?');
 
 			return `${target} | ${p[1]}回合 | 陷阱 | ${num}张
 				| <kqud title="时机：我方卡牌全部发动后，敌方行动前">使用后受到伤害${p[4]}点</kqud>`;
 		},
 		93: 'CARD_TRAP_DOT',
-		94: 'COST_BLOCK',
+		94: (card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			return `${target} | ${p[1]}回合 | COST封印 | ${p[2]}点`;
+		},
 		95: 'DEAL_PENALTY_TURN_APPOINT',
 		96: 'CRITICAL_UP_BY_SUPPORT',
 		97: 'ROLE_VALUE_UP_BY_ROLE_OP',

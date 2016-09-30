@@ -36,7 +36,7 @@ module.exports = ($) => {
 		};
 
 	return (data = {}, conds = {}, paths = []) => {
-		let renderAll = false, pageEvery = 5;
+		let renderAll = $.conf.renderAll, pageEvery = 5;
 		let resultAll = [], result = [];
 
 		condsParse(checker, conds);

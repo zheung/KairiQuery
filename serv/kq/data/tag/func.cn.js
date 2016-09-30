@@ -110,5 +110,14 @@ module.exports = {
 					return true;
 
 		return false;
+	},
+	crit: (card) => {
+		for(let st of skillTypes)
+			for(let skill of card.skill[st])
+				for(let role of skill.role)
+					if(role.info.type == 86)
+						return true;
+
+		return false;
 	}
 };
