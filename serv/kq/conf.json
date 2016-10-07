@@ -1,7 +1,7 @@
 {
-	"renderAll": false,
-	"parser": false,
-	"tagser": false,
+	"renderAll": true,
+	"parser": true,
+	"tagser": true,
 
 	"servs": [ "cn", "jp" ]
 }
