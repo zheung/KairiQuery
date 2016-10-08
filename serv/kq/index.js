@@ -32,7 +32,7 @@ module.exports = ($) => {
 			query = qs.parse(qs.unescape(this.originalUrl.replace('/kq/q\?', '')));
 
 		if(query.serv)
-			this.body = filter($.data, query, [
+			this.body = filter(query, [
 				'id',
 				['info.name', 'name'],
 				['info.title', 'title'],
@@ -42,7 +42,7 @@ module.exports = ($) => {
 				['figure.hq.max', 'hq'],
 				['skill.normal.0.info.cost', 'cost'],
 				['skill.normal.0.info.job', 'job', 'd.shower.job'],
-				['skill.normal.0.info.type', 'kind', 'd.shower.skillKind'],
+				['this', 'kind', 'f.skillKind'],
 				['info.rare', 'rare'],
 				['skill.normal.0.info.attr', 'attr', 'd.shower.attr'],
 				['this', 'skill', 'f.skill']

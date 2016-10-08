@@ -8,5 +8,5 @@ module.exports = ($) => {
 	$.conf = $.rq('conf.json'),
 
 	$.data = $.rq('parser');
-	$.tags = $.rq('tagser');
+	$.tags = $.rq('tagser')();
 };

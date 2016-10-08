@@ -1,6 +1,6 @@
 module.exports = ($) => {
 	return (cards = [], skills = [], roles = [], rules = []) => {
-		let dictSkill = {}, dictRole = {}, dictRule = {};
+		let result = {}, dictSkill = {}, dictRole = {}, dictRule = {};
 
 		for(let rule of rules)
 			dictRule[rule.id] = rule;
@@ -31,8 +31,10 @@ module.exports = ($) => {
 			card.skill.normal = dictSkill[card.skill.normal] || [];
 			card.skill.awaken = dictSkill[card.skill.awaken] || [];
 			card.skill.support = dictSkill[card.skill.support] || [];
+
+			result[card.id] = card;
 		}
 
-		return cards;
+		return result;
 	};
 };

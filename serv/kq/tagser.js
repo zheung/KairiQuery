@@ -53,50 +53,48 @@ let check = ($, dict, serv, tag, id) => {
 };
 
 module.exports = ($) => {
-	let tags = {}, dict = { cn: {}, jp: {} };
+	return () => {
+		let tags = {}, dict = { cn: {}, jp: {} };
 
-	for(let serv of $.conf.servs) {
-		let tagser, result = {};
+		for(let serv of $.conf.servs) {
+			let tagser, result = {};
 
-		if($.conf.tagser) {
-			let func = $.rq(`data/tag/func.${serv}`),
-				tagDicts = fs.readdirSync($.pa(`data/tag/dict/${serv}`));
+			if($.conf.tagser) {
+				let func = $.rq(`data/tag/func.${serv}`),
+					tagDicts = fs.readdirSync($.pa(`data/tag/dict/${serv}`)),
+					cards = $.data[serv];
 
-			tagser = {};
+				tagser = {};
 
-			for(let card of $.data[serv]) {
-				let tags = [];
+				for(let ci in cards) {
+					let card = cards[ci], tags = [];
 
-				for(let tagFunc in func)
-					if(func[tagFunc](card))
-						tags.push(tagFunc);
+					for(let tagFunc in func)
+						if(func[tagFunc](card))
+							tags.push(tagFunc);
 
-				for(let tagDict of tagDicts)
-					for(let t of check($, dict, serv, tagDict.replace(/\.json$/, ''), card.id))
-						tags.push(t);
+					for(let tagDict of tagDicts)
+						for(let t of check($, dict, serv, tagDict.replace(/\.json$/, ''), card.id))
+							tags.push(t);
 
-				tagser[card.id] = tags;
+					tagser[card.id] = tags;
+				}
+
+				fs.writeFileSync($.pa(`data/tags.${serv}.json`), JSON.stringify(tagser, null, '\t'));
 			}
+			else
+				tagser = $.rq(`data/tags.${serv}.json`);
 
-			fs.writeFileSync($.pa(`data/tags.${serv}.json`), JSON.stringify(tagser, null, '\t'));
-		}
-		else
-			tagser = $.rq(`data/tags.${serv}.json`);
+			for(let ri in tagser)
+				for(let t of tagser[ri])
+					(result[t] || (result[t] = [])).push(ri);
 
-		for(let ri in tagser) {
-			let n = {};
-
-			for(let t of tagser[ri])
-				n[t] = true;
-
-			result[ri] = n;
+			tags[serv] = result;
 		}
 
-		tags[serv] = result;
-	}
+		if($.conf.tagser)
+			_l('retagser completed');
 
-	if($.conf.tagser)
-		_l('retagser completed');
-
-	return tags;
+		return tags;
+	};
 };

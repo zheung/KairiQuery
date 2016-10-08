@@ -1,6 +1,7 @@
 module.exports = ($) => {
 	let func = {
-		skill: $.rq('render/skill')
+		skill: $.rq('render/skill'),
+		skillKind: $.rq('render/skillKind')
 	};
 
 	return (type, value) => {

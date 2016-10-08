@@ -1,7 +1,9 @@
 {
 	"renderAll": true,
-	"parser": true,
-	"tagser": true,
+	"parser": false,
+	"tagser": false,
+
+	"pageEvery": 5,
 
 	"servs": [ "cn", "jp" ]
 }
