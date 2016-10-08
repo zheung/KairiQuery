@@ -3,7 +3,7 @@
 	"parser": false,
 	"tagser": true,
 
-	"pageEvery": 5,
+	"pageEvery": 4,
 
 	"servs": [ "cn", "jp" ]
 }

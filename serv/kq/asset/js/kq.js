@@ -3,7 +3,7 @@
 	var cCards = $('.Cards'), cCard = cCards.children('.Card'),
 		cards = [$(cCard)], card;
 
-	for(var i=0; i<4; i++) {
+	for(var i=0; i<3; i++) {
 		card = cCard.clone();
 
 		card.find('.TabHead, .TabItem').each(function() {
