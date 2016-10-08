@@ -1,4 +1,4 @@
-let condsParse = function(checker, conds) {
+let condsParse = (checker, conds) => {
 	let bitParse = checker.bit.parse, tagParse = checker.tag.parse;
 
 	conds.name = conds.name? conds.name.trim() : '';
@@ -12,7 +12,7 @@ let condsParse = function(checker, conds) {
 	conds.tags = tagParse(conds.tags);
 };
 
-let valid = function(checker, data, conds) {
+let valid = (checker, data, conds) => {
 	let bitValid = checker.bit.valid;
 
 	if(!(data.info.name.indexOf(conds.name)+1)) return false;
@@ -28,6 +28,21 @@ let valid = function(checker, data, conds) {
 	return true;
 };
 
+let insec = (data, tags) => {
+	let counter = {}, result = {};
+
+	for(let tag of tags) {
+		for(let id of tag) {
+			counter[id] = counter[id] ? counter[id]+1 : 1;
+
+			if(counter[id] == length)
+				result[id] = data[id];
+		}
+	}
+
+	return result;
+};
+
 module.exports = ($) => {
 	let render = $.rq('render'),
 		checker = {
@@ -41,24 +56,15 @@ module.exports = ($) => {
 
 		condsParse(checker, conds);
 
-		let length = conds.tags.length, serv = conds.serv,
-			counter = {}, data;
+		let length = conds.tags.length, serv = conds.serv, data = $.data[serv];
 
-		if(!length)
-			data = $.data[serv];
-		else {
-			data = {};
+		if(length) {
+			let tags = {};
 
-			for(let tag of conds.tags) {
-				let tagArray = $.tags[conds.serv][tag];
+			for(let tag of conds.tags)
+				tags[tag] = $.tags[serv][tag];
 
-				for(let id of tagArray) {
-					counter[id] = counter[id] ? counter[id]+1 : 1;
-
-					if(counter[id] == length)
-						data[id] = $.data[serv][id];
-				}
-			}
+			data = insec(data, tags);
 		}
 
 		for(let id in data) {
