@@ -80,11 +80,29 @@ module.exports = {
 
 		return c < 0;
 	},
+	enchant: (card) => {
+		for(let st of skillTypes)
+			for(let skill of card.skill[st])
+				for(let role of skill.role)
+					if(role.info.type == 107)
+						return true;
+
+		return false;
+	},
 	chain: (card) => {
 		for(let st of skillTypes)
 			for(let skill of card.skill[st])
 				if(skill.info.chain && (skill.info.chain != 20 && skill.info.chain != 1))
 					return true;
+
+		return false;
+	},
+	crit: (card) => {
+		for(let st of skillTypes)
+			for(let skill of card.skill[st])
+				for(let role of skill.role)
+					if(role.info.type == 86)
+						return true;
 
 		return false;
 	}

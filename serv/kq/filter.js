@@ -29,16 +29,15 @@ let valid = (checker, data, conds) => {
 };
 
 let insec = (data, tags) => {
-	let counter = {}, result = {};
+	let counter = {}, result = {}, length = tags.length;
 
-	for(let tag of tags) {
+	for(let tag of tags)
 		for(let id of tag) {
 			counter[id] = counter[id] ? counter[id]+1 : 1;
 
 			if(counter[id] == length)
 				result[id] = data[id];
 		}
-	}
 
 	return result;
 };
@@ -59,10 +58,11 @@ module.exports = ($) => {
 		let length = conds.tags.length, serv = conds.serv, data = $.data[serv];
 
 		if(length) {
-			let tags = {};
+			let tags = [];
 
 			for(let tag of conds.tags)
-				tags[tag] = $.tags[serv][tag];
+				if($.tags[serv][tag])
+					tags.push($.tags[serv][tag]);
 
 			data = insec(data, tags);
 		}
