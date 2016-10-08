@@ -58,7 +58,7 @@
 	});
 
 	kqe.tagers.click(function() {
-		var $this = $(this), tager = this.dataset.tager;
+		var tager = this.dataset.tager, $this = kqe.tagers.filter('[data-tager='+tager+']');
 
 		$this.toggleClass('on').toggleClass('off');
 
