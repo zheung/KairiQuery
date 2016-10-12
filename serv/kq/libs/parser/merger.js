@@ -1,5 +1,5 @@
-module.exports = ($) => {
-	return (cards = [], skills = [], roles = [], rules = []) => {
+module.exports = () => {
+	return (valuer, cards, skills, roles, rules) => {
 		let result = {}, dictSkill = {}, dictRole = {}, dictRule = {};
 
 		for(let rule of rules)
@@ -13,7 +13,7 @@ module.exports = ($) => {
 					let type = rule.types[index];
 
 					if(type && type != 1) {
-						role.params[index] = [type, $.dicter.valuer[type][role.params[index]]];
+						role.params[index] = [type, valuer[type][role.params[index]]];
 					}
 				}
 			}

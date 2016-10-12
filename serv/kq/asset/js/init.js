@@ -63,9 +63,9 @@
 		$this.toggleClass('on').toggleClass('off');
 
 		if($this.hasClass('on'))
-			kqs.tags.addClass(tager);
+			kqs.marks.addClass(tager);
 		else
-			kqs.tags.removeClass(tager);
+			kqs.marks.removeClass(tager);
 
 		if(kqd.dynmSearch) kq.query(function(param) { param.page = 1; }, kqf.dealer);
 	});

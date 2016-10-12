@@ -1,6 +1,6 @@
 {
 	"renderAll": true,
-	"parser": false,
+	"parser": true,
 	"tagser": true,
 
 	"pageEvery": 4,

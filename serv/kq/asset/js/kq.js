@@ -41,7 +41,7 @@
 	window.kqs = {
 		page: $('.sPage'),
 		pageMax: $('.sPageMax'),
-		tags: $('<a>')
+		marks: $('<a>')
 	};
 
 	kqs.cards = window.cards;
@@ -160,7 +160,7 @@
 		param: function(moder) {
 			var result = $.extend({}, kq.conds, {
 				page: kqd.page,
-				tags: kqs.tags.attr('class')
+				marks: kqs.marks.attr('class')
 			});
 
 			if(moder) moder(result);

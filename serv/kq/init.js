@@ -1,12 +1,7 @@
 module.exports = ($) => {
-	$.dicter = {
-		valuer: $.rq('data/dict/valuer.json'),
-		shower: $.rq('data/dict/shower.json'),
-		biters: $.rq('data/dict/biters.json')
-	};
+	$.conf = $.rq('conf.json');
 
-	$.conf = $.rq('conf.json'),
-
-	$.data = $.rq('parser');
-	$.tags = $.rq('tagser')();
+	$.dicts = $.rq('loader/dict')();
+	$.datas = $.rq('loader/data')();
+	$.marks = $.rq('loader/mark')();
 };
