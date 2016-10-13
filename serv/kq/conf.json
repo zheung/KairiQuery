@@ -1,8 +1,8 @@
 {
 	"renderAll": false,
 
-	"renderDate": true,
-	"renderMark": true,
+	"renderDate": false,
+	"renderMark": false,
 
 	"pageEvery": 4,
 

@@ -100,7 +100,7 @@
 				card.find('.sHQ').html(data.hq);
 
 				card.find('.sThumb').attr('src', '');
-				card.find('.sThumb').attr('src', 'https://raw.githubusercontent.com/kairiquery/tcip20/master/'+kq.conds.serv+'20/'+data.id+'.png');
+				card.find('.sThumb').attr('src', 'https://raw.githubusercontent.com/kairiquery/tcipqk/master/'+kq.conds.serv+'20/'+data.id+'.png');
 
 				var types = ['awaken', 'normal', 'support'];
 

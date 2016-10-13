@@ -174,6 +174,23 @@
 	}, 5214);
 })();
 
+(function() {
+	$('.sThumb').bind('error', function() {
+		var src = this.src;
+
+		if(/20\//.test(src)) {
+			this.src = src.replace(/20\//g, '21/');
+
+			return;
+		}
+		debugger; if(/21\//.test(src)) {
+			this.src = './kq/img/no20.png';
+
+			return;
+		}
+	});
+})();
+
 // Init
 (function() {
 	kqf.retab();
