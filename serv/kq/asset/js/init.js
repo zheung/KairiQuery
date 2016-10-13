@@ -183,7 +183,7 @@
 
 			return;
 		}
-		debugger; if(/21\//.test(src)) {
+		if(/21\//.test(src)) {
 			this.src = './kq/img/no20.png';
 
 			return;
