@@ -43,19 +43,21 @@ let insec = (datas, marks) => {
 };
 
 module.exports = ($) => {
-	let render = $.rq('render'),
-		checker = {
+	let checker = {
 			bit: $.rq('checker/bit'),
 			mark: $.rq('checker/mark')
 		};
 
 	return (conds = {}, paths = []) => {
-		let renderAll = $.conf.renderAll, pageEvery = $.conf.pageEvery;
-		let resultAll = [], result = [];
+		let serv = conds.serv, data = $.datas[serv];
 
 		condsParse(checker, conds);
 
-		let length = conds.mark.length, serv = conds.serv, data = $.datas[serv];
+		let length = conds.mark.length;
+
+		let rend = $.rends[serv],
+			renderAll = $.conf.renderAll, pageEvery = $.conf.pageEvery,
+			resultAll = [], result = [];
 
 		if(length) {
 			let marks = [];
@@ -71,11 +73,11 @@ module.exports = ($) => {
 			let d = data[id];
 
 			if(valid(serv, checker, d, conds))
-				resultAll.push(renderAll ? render(serv, d, paths) : d);
+				resultAll.push(renderAll ? rend(serv, d, paths) : d);
 		}
 
 		for(let d of resultAll.slice(pageEvery * (conds.page - 1), pageEvery * conds.page))
-			result.push(renderAll ? d : render(serv, d, paths));
+			result.push(renderAll ? d : rend(serv, d, paths));
 
 		return [result, ~~conds.page, Math.ceil(resultAll.length / pageEvery)];
 	};

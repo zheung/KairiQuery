@@ -18,9 +18,11 @@ module.exports = ($) => {
 			query = qs.parse(qs.unescape(this.originalUrl.replace('/kq\?', '')));
 
 		if(query.serv == 'jp')
-			this.body = fs.readFileSync($.pa('asset/html/index.html')).toString().replace('${serv-jp}', ' active').replace('${serv-cn}', '');
+			this.body = fs.readFileSync($.pa('asset/html/index.html')).toString().replace('${serv-jp}', ' active').replace('${serv-cn}', '').replace('${serv-ps}', '');
+		if(query.serv == 'ps')
+			this.body = fs.readFileSync($.pa('asset/html/index.html')).toString().replace('${serv-ps}', ' active').replace('${serv-cn}', '').replace('${serv-jp}', '');
 		else
-			this.body = fs.readFileSync($.pa('asset/html/index.html')).toString().replace('${serv-cn}', ' active').replace('${serv-jp}', '');
+			this.body = fs.readFileSync($.pa('asset/html/index.html')).toString().replace('${serv-cn}', ' active').replace('${serv-jp}', '').replace('${serv-ps}', '');
 	});
 
 	router.get('/q', function*(next) {

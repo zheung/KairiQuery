@@ -1,8 +1,9 @@
 module.exports = ($) => {
-	let rdrCond = $.rq('render/cond'),
-		rdrRole = $.rq('render/role');
 
 	return (serv, card) => {
+		let rdrCond = $.rq(`data/${serv}/rend/cond`),
+			rdrRole = $.rq(`data/${serv}/rend/role`);
+
 		let result = {},
 			skillTypes = ['awaken', 'normal', 'support'],
 			skills = card.skill;
@@ -12,30 +13,17 @@ module.exports = ($) => {
 
 			for(let skill of skills[st]) {
 				let s = { prio: skill.cond.priority, content: [] },
-					condType = skill.cond.type, delayType = skill.delay.type;
+					condType = skill.cond.type;
 
 				if(condType) {
-					let render = rdrCond(serv)[condType];
+					let rend = rdrCond(serv)[condType];
 
-					if(render)
-						s.cond = render(card, skill, skill.cond).replace(/\t|\n/g, '');
+					if(rend)
+						s.cond = rend(card, skill, skill.cond).replace(/\t|\n/g, '');
 					else {
 						_l('New Cond', condType, 'Card', card.id, 'Skill', skill.id);
 
 						s.cond = '~未渲染条件' + condType;
-					}
-				}
-
-				if(delayType) {
-					let render = rdrCond(serv)[delayType];
-
-					if(render)
-						s.cond = (skill.delay.timing==2 ? '<kqud title="在敌方行动后判定条件，满足条件则发动技能">敌方行动后</kqud> | ' : '')+
-							render(card, skill, skill.delay).replace(/\t|\n/g, '');
-					else {
-						_l('New Delay', delayType, 'Card', card.id, 'Skill', skill.id);
-
-						s.cond = '~未渲染条件' + delayType;
 					}
 				}
 
@@ -46,10 +34,10 @@ module.exports = ($) => {
 					s.content.push(`<kqud title="发动等级越低越先发动，相同则随机发动">发动等级</kqud> | ${skill.priority.pve}`);
 
 				for(let role of skill.role) {
-					let skillType = role.info.type, render = rdrRole(serv)[skillType];
+					let skillType = role.info.type, rend = rdrRole(serv)[skillType];
 
-					if(render instanceof Function){
-						s.content.push(render(card, skill, role, skillFirst).replace(/\t|\n/g, ''));
+					if(rend instanceof Function){
+						s.content.push(rend(card, skill, role, skillFirst).replace(/\t|\n/g, ''));
 					}
 					else {
 						_l('New Skill', skillType, 'Card', card.id, 'Skill', skill.id);

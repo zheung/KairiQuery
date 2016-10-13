@@ -1,8 +1,7 @@
 module.exports = ($) => {
-	let convert = $.rq('render/convert');
 
 	return (serv, data, paths) => {
-		let rData = {};
+		let convert = $.rq(`data/${serv}/rend/convert`), rData = {};
 
 		for(let path of paths) {
 			let dNodes, rNodes;

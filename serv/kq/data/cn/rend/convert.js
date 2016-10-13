@@ -1,10 +1,10 @@
 module.exports = ($) => {
-	let func = {
-		skill: $.rq('render/skill'),
-		skillKind: $.rq('render/skillKind')
-	};
-
 	return (serv, type, value) => {
+		let func = {
+			skill: $.rq(`data/${serv}/rend/skill`),
+			skillKind: $.rq(`data/${serv}/rend/skillKind`)
+		};
+
 		if(type) {
 			let types = type.split('.'), object;
 

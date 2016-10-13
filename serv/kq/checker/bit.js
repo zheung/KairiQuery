@@ -1,6 +1,4 @@
 module.exports = ($) => {
-	let convert = $.rq('render/convert');
-
 	return {
 		parse: (bits) => {
 			var result = [true];
@@ -13,6 +11,8 @@ module.exports = ($) => {
 			return result;
 		},
 		valid: (serv, bits = [], value = 0, type = '') => {
+			let convert = $.rq(`data/${serv}/rend/convert`);
+
 			if(bits.length == 1)
 				return true;
 			else if(type)
