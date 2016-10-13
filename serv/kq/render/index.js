@@ -1,7 +1,7 @@
 module.exports = ($) => {
 	let convert = $.rq('render/convert');
 
-	return (data = {}, paths = []) => {
+	return (serv, data, paths) => {
 		let rData = {};
 
 		for(let path of paths) {
@@ -23,9 +23,9 @@ module.exports = ($) => {
 				if(index++ < length)
 					rPointer = rPointer[node] || (rPointer[node] = {});
 				else if(path[0] == 'this')
-					rPointer[node] = path[2] ? convert(path[2], data) : dPointer;
+					rPointer[node] = path[2] ? convert(serv, path[2], data) : dPointer;
 				else
-					rPointer[node] = path[2] ? convert(path[2], dPointer || 0) : dPointer;
+					rPointer[node] = path[2] ? convert(serv, path[2], dPointer || 0) : dPointer;
 		}
 
 		return rData;

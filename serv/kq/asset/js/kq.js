@@ -29,7 +29,7 @@
 
 	window.kqe = {
 		toggles: $('.Toggle[data-cond][data-val]'),
-		tagers: $('.Toggle[data-tager]'),
+		marks: $('.Toggle[data-mark]'),
 		rightNavi: $('.TabHead.RightNavi'),
 		condName: $('#CondName'),
 		search: $('#Search'),
@@ -160,7 +160,7 @@
 		param: function(moder) {
 			var result = $.extend({}, kq.conds, {
 				page: kqd.page,
-				marks: kqs.marks.attr('class')
+				mark: kqs.marks.attr('class')
 			});
 
 			if(moder) moder(result);

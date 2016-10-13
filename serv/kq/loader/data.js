@@ -6,7 +6,7 @@ module.exports = ($) => {
 	return () => {
 		let datas = {};
 
-		if($.conf.parser) {
+		if($.conf.renderDate) {
 			let parser = $.rq('libs/parser/parser'), merger = $.rq('libs/parser/merger');
 
 			for(let serv of $.conf.servs) {
@@ -32,7 +32,7 @@ module.exports = ($) => {
 				datas[serv] = data;
 			}
 
-			_l('reparser completed');
+			_l('render data completed');
 		}
 		else
 			for(let serv of $.conf.servs)

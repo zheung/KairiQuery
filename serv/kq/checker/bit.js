@@ -12,11 +12,11 @@ module.exports = ($) => {
 
 			return result;
 		},
-		valid: (bits = [], value = 0, type = '') => {
+		valid: (serv, bits = [], value = 0, type = '') => {
 			if(bits.length == 1)
 				return true;
 			else if(type)
-				return bits[convert('d.biters', type)[value]];
+				return bits[convert(serv, 'd.bitser', type)[value]];
 			else
 				return bits[value];
 		}

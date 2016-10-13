@@ -1,7 +1,8 @@
 {
 	"renderAll": true,
-	"parser": true,
-	"tagser": true,
+
+	"renderDate": false,
+	"renderMark": false,
 
 	"pageEvery": 4,
 

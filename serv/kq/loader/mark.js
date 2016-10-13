@@ -1,6 +1,6 @@
 module.exports = ($) => {
-	let loadTag = (serv, tag) => {
-		let d = {}, raw = $.rq(`data/tag/dict/${serv}/${tag}.json`);
+	let loadMark = (serv, mark) => {
+		let d = {}, raw = $.rq(`data/${serv}/mark/dict/${mark}.json`);
 
 		if(raw instanceof Array) {
 			d._ = true;
@@ -19,83 +19,81 @@ module.exports = ($) => {
 		return d;
 	};
 
-	let check = (dict, serv, tag, id) => {
-		let ts = tag.split(':'), d;
+	let check = (dict, serv, mark, id) => {
+		let marks = mark.split(':'), d;
 
-		if(ts.length > 1) {
-			d = dict[serv][ts[0]];
+		if(marks.length > 1) {
+			d = dict[serv][marks[0]];
 
-			if(!d) d = dict[serv][ts[0]] = loadTag($, serv, tag);
+			if(!d) d = dict[serv][marks[0]] = loadMark(serv, mark);
 		}
 		else {
-			d = dict[serv][tag];
+			d = dict[serv][mark];
 
-			if(!d) d = dict[serv][tag] = loadTag($, serv, tag);
+			if(!d) d = dict[serv][mark] = loadMark(serv, mark);
 		}
 
 		let result = [];
 
-		if(ts.length > 1) {
-			if(d[ts[1]][id]) result.push(tag);
+		if(marks.length > 1) {
+			if(d[marks[1]][id]) result.push(mark);
 		}
 		else {
 			if(d._) {
-				if(d[id]) result.push(tag);
+				if(d[id]) result.push(mark);
 			}
 			else {
 				for(let tsub in d)
-					if(d[tsub][id]) result.push(`${tag}:${tsub}`);
+					if(d[tsub][id]) result.push(`${mark}:${tsub}`);
 
-				if(result.length) result.push(tag);
+				if(result.length) result.push(mark);
 			}
 		}
 
 		return result;
 	};
 
-
 	return () => {
-		let tags = {}, dict = { cn: {}, jp: {} };
+		let marks = {}, dict = { cn: {}, jp: {} };
 
 		for(let serv of $.conf.servs) {
-			let tagser, result = {};
+			let markServs, result = {};
 
-			if($.conf.tagser) {
-				let func = $.rq(`data/tag/func.${serv}`),
-					tagDicts = fs.readdirSync($.pa(`data/tag/dict/${serv}`)),
-					cards = $.data[serv];
+			if($.conf.renderMark) {
+				let func = $.rq(`data/${serv}/mark/func`),
+					markDicts = fs.readdirSync($.pa(`data/${serv}/mark/dict`)),
+					cards = $.datas[serv];
 
-				tagser = {};
+				markServs = {};
 
 				for(let ci in cards) {
-					let card = cards[ci], tags = [];
+					let card = cards[ci], markCards = [];
 
-					for(let tagFunc in func)
-						if(func[tagFunc](card))
-							tags.push(tagFunc);
+					for(let markFunc in func)
+						if(func[markFunc](card))
+							markCards.push(markFunc);
 
-					for(let tagDict of tagDicts)
-						for(let t of check($, dict, serv, tagDict.replace(/\.json$/, ''), card.id))
-							tags.push(t);
+					for(let markDict of markDicts)
+						for(let t of check(dict, serv, markDict.replace(/\.json$/, ''), card.id))
+							markCards.push(t);
 
-					tagser[card.id] = tags;
+					markServs[card.id] = markCards;
 				}
 
-				fs.writeFileSync($.pa(`data/tags.${serv}.json`), JSON.stringify(tagser, null, '\t'));
+				fs.writeFileSync($.pa(`data/${serv}/mark.json`), JSON.stringify(markServs, null, '\t'));
 			}
 			else
-				tagser = $.rq(`data/tags.${serv}.json`);
+				markServs = $.rq(`data/${serv}/mark.json`);
 
-			for(let ri in tagser)
-				for(let t of tagser[ri])
+			for(let ri in markServs)
+				for(let t of markServs[ri])
 					(result[t] || (result[t] = [])).push(ri);
 
-			tags[serv] = result;
+			marks[serv] = result;
 		}
 
-		if($.conf.tagser)
-			_l('retagser completed');
+		if($.conf.renderMark) _l('render mark completed');
 
-		return tags;
+		return marks;
 	};
 };
