@@ -54,10 +54,12 @@ module.exports = ($) => {
 	};
 
 	return () => {
-		let marks = {}, dict = { cn: {}, jp: {} };
+		let marks = {}, dict = {};
 
 		for(let serv of $.conf.servs) {
 			let markServs, result = {};
+
+			dict[serv] = {};
 
 			if($.conf.renderMark) {
 				let func = $.rq(`data/${serv}/mark/func`),
