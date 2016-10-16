@@ -1,6 +1,7 @@
 module.exports = ($) => {
 	let render = {
-		filter: (cells) => { return !/^#/.test(cells[0]) && (~~cells[0] > 1000 || /^[A-Z_]+$/.test(cells[0])); }
+		filter: (cells) => { return !/^#/.test(cells[0]) && (~~cells[0] > 1000 || /^[A-Z_]+$/.test(cells[0])); },
+		rare: (cell, cells, dicter) => { return dicter.rare[`${cells[7]}${cells[22]}`]; }
 	};
 
 	return () => {

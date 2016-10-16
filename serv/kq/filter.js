@@ -19,7 +19,10 @@ let valid = (serv, checker, data, conds) => {
 
 	let skillType = data.skill.awaken && data.skill.awaken[0] ? data.skill.awaken[0].info.type : data.skill.normal[0].info.type;
 
-	if(!bitValid(serv, conds.rare, data.info.rare)) return false;
+	if(data.info.name.indexOf('浸食型')+1)
+		true;
+
+	if(!bitValid(serv, conds.rare, data.info.rare, 'rare')) return false;
 	if(!bitValid(serv, conds.job, data.skill.normal[0].info.job)) return false;
 	if(!bitValid(serv, conds.cost, data.skill.normal[0].info.cost, 'cost')) return false;
 	if(!bitValid(serv, conds.attr, data.skill.normal[0].info.attr, 'attr')) return false;

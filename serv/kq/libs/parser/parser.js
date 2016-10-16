@@ -52,7 +52,7 @@ module.exports = () => {
 								parsePath(rowObj, heads, !!cell);
 
 							else if(option == 'p')
-								parsePath(rowObj, heads, parser[heads.shift()](cell));
+								parsePath(rowObj, heads, parser[heads.shift()](cell, cells, dicter));
 							else if(option == 'd')
 								parsePath(rowObj, heads, ((dicter[heads.shift()][cell]) || 0));
 							else if(option == 'i')

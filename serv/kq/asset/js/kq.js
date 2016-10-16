@@ -155,7 +155,7 @@
 			cost: (1<<7)-1,
 			attr: (1<<15)-1,
 			skillType: (1<<6)-1,
-			rare: (1<<6)-1
+			rare: (1<<9)-1
 		},
 		param: function(moder) {
 			var result = $.extend({}, kq.conds, {

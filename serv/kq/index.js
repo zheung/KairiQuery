@@ -45,7 +45,7 @@ module.exports = ($) => {
 				['skill.normal.0.info.cost', 'cost'],
 				['skill.normal.0.info.job', 'job', 'd.shower.job'],
 				['this', 'kind', 'f.skillKind'],
-				['info.rare', 'rare'],
+				['info.rare', 'rare', 'd.shower.rare'],
 				['skill.normal.0.info.attr', 'attr', 'd.shower.attr'],
 				['this', 'skill', 'f.skill']
 			]);
