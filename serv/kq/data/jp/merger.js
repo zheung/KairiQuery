@@ -1,10 +1,29 @@
+let hasMega = (cards, id, lastRare) => {
+	let card = cards[id], rare = card.info.rare;
+
+	if(!lastRare && (rare == 61 || rare == 62 || rare == 7))
+		return false;
+	else if(card.info.rare == 7)
+		return true;
+	else if(lastRare == card.info.rare)
+		return false;
+
+	for(let evol of card.evol)
+		if(evol.type == 'NORMAL' || evol.type == 'LIMIT')
+			if(hasMega(cards, evol.target, card.info.rare))
+				return true;
+
+	return false;
+};
+
 module.exports = () => {
 	return (valuer, cards, skils, roles, rules, supss, suprs, evols) => {
 		let result = {},
-			dictSkil = {}, dictRole = {}, dictRule = {},
+			dictSkil = {}, dictRole = {}, dictRule = {}, dictCard = {},
 			dictSups = {}, dictSupr = {}, dictEvol = {};
 
 		for(let rule of rules) dictRule[rule.id] = rule;
+		for(let card of cards) dictCard[card.id] = card;
 
 		for(let role of roles) {
 			if(role.info.type) {
@@ -71,6 +90,10 @@ module.exports = () => {
 
 			result[card.id] = card;
 		}
+
+		for(let card of cards)
+			if(hasMega(dictCard, card.id))
+				card.info.rare = card.info.rare+'0';
 
 		return result;
 	};

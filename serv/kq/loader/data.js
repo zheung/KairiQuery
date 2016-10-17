@@ -8,7 +8,7 @@ module.exports = ($) => {
 	return () => {
 		let datas = {};
 
-		if($.conf.renderDate) {
+		if($.conf.renderData) {
 			let parser = $.rq('libs/parser/parser');
 
 			for(let serv of $.conf.servs) {
