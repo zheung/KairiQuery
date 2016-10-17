@@ -30,7 +30,7 @@
 	window.kqe = {
 		toggles: $('.Toggle[data-cond][data-val]'),
 		marks: $('.Toggle[data-mark]'),
-		rightNavi: $('.TabHead.RightNavi'),
+		rightNavi: $('.TabHead.RightNavi[data-tab=RightNavi]'),
 		condName: $('#CondName'),
 		search: $('#Search'),
 		pagePrev: $('.PagePrev'),

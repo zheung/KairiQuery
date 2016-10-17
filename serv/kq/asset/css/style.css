@@ -151,6 +151,46 @@ input, span {
 	border: 2px solid #148474;
 	background-color: #148474;
 }
+.TabItem.RightNavi {
+	height: 92%;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: visible;
+}
+
+.TabHeader.RightNavi2 {
+	width: 90%;
+	height: 34px;
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+
+	background-color: #34495e;
+}
+.TabHead.RightNavi2 {
+	width: 100%;
+
+	border: 2px solid #34495e;
+
+	margin: 0;
+	margin-right: 2px;
+
+	color: #E0E2E4;
+
+	cursor: pointer;
+}
+.TabHead.RightNavi2:hover {
+	border-top: 2px solid #148474;
+}
+.TabHead.RightNavi2.active {
+	border-radius: 4px;
+	border: 2px solid #148474;
+	background-color: #148474;
+}
+.TabItem.RightNavi2 {
+	height: 92%;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: visible;
+}
 
 .CondBar {
 	width: 77%;
@@ -289,12 +329,6 @@ td {
 	border-radius: 4px;
 	overflow: hidden;
 	font-size: 14px;
-}
-.TabItem.RightNavi {
-	height: 93%;
-	width: 100%;
-	overflow-x: hidden;
-	overflow-y: visible;
 }
 kqud {
 	border-bottom: 0.5px dashed #E0E2E4;
