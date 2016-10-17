@@ -50,6 +50,8 @@
 	window.kqf = {
 		retab: function() {
 			$('.TabHead[data-tab]').unbind('click').click(function() {
+				if(this.dataset.stop) return false;
+
 				var tab = this.dataset.tab, page = this.dataset.page, func = this.dataset.func, heads, items;
 
 				if(tab) {
@@ -130,8 +132,9 @@
 					header.find(':first-child').addClass('active');
 				}
 
-				card.find('.TabHead.Skill').removeClass('primary')
-					.filter('[data-page='+types[(data.job != '通用' ? 0 : 1)]+']').addClass('primary');
+				var primary = (kqs.marks.hasClass('ex') ? 2 : (data.job != '通用' ? 0 : 1));
+
+				card.find('.TabHead.Skill').removeClass('primary').filter('[data-page='+types[primary]+']').addClass('primary');
 
 				card.removeClass('hide');
 			}

@@ -84,17 +84,21 @@
 				</div>
 				<div class="TabItem RightNavi flex drc aic wpw" data-tab="RightNavi" data-page="Basic">
 					<div class="NaviColumn hr flex jcb aic wpw">
-						<span>名称</span>
+						<div>
+							<a class="Toggle off" data-mark="ex">EX技能模式</a>
+						</div>
 						<div>
 							<span>服务器：</span>
-							<a class="TabHead Serv${serv-cn}" data-tab="Serv" data-func="cn">国服</a>
-							<a class="TabHead Serv${serv-jp}" data-tab="Serv" data-func="jp">日服</a>
-							<a class="TabHead Serv${serv-ps}" data-tab="Serv" data-func="ps">PS服</a>
+							<a class="TabHead Serv${serv-cn}" data-tab="Serv" data-func="cn">国</a>
+							<a class="TabHead Serv${serv-jp}" data-tab="Serv" data-func="jp">日</a>
+							<a class="TabHead Serv${serv-ps}" data-tab="Serv" data-func="ps">PS</a>
+							<a class="TabHead Serv${serv-kr}" data-tab="Serv" data-func="kr" data-stop="1">韩</a>
+							<a class="TabHead Serv${serv-tw}" data-tab="Serv" data-func="tw" data-stop="1">台</a>
 						</div>
 					</div>
 					<div class="NaviColumn flex jcb aic wpw">
 						<div class="CondBar2 flex jca aic wpw">
-							<input id="CondName" class="wf Input" type="text" />
+							<input id="CondName" class="wf Input" type="text" placeholder="骑士名称"/>
 						</div>
 						<a id="Search" class="w4 Button">搜索</a>
 					</div>
@@ -182,8 +186,8 @@
 						<a class="Toggle off" data-mark="db2">抽卡+2</a>
 						<a class="Toggle off" data-mark="covering">嘲讽</a>
 						<a class="Toggle off" data-mark="buffone">单人支</a>
-						<a class="Toggle off" data-mark="ex">EX</a>
 						<a class="Toggle off" data-mark="debuffre">解状态</a>
+						<a class="Toggle off" data-mark="enchant">追伤</a>
 						<a class="Toggle off" data-mark="bug">Bug奶</a>
 						<a class="Toggle off" data-mark="5331">圣杯</a>
 						<a class="Toggle off" data-mark="regicide">天剋</a>
