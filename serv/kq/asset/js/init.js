@@ -75,6 +75,7 @@
 	// Global Key Event
 	$(document).keydown(function(e) {
 		var ae = document.activeElement;
+
 		if(ae.id == 'CondName') {
 			if(e.keyCode == 13) {
 				if(e.shiftKey)
@@ -99,9 +100,16 @@
 		}
 		else {
 			if(e.keyCode == 9) {
-				var next = kqe.rightNavi.filter('.active')[e.shiftKey?'prev':'next']();
+				var next = kqe.rightNavi.filter('.active'), notFind = true;
 
-				if(!next.length) next = kqe.rightNavi[e.shiftKey?'last':'first']();
+				while(notFind) {
+					next = next[e.shiftKey?'prev':'next']();
+
+					if(!next.length) next = kqe.rightNavi[e.shiftKey?'last':'first']();
+
+					if(next[0].dataset.notab !== '')
+						notFind = false;
+				}
 
 				next.click();
 

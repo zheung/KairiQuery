@@ -290,7 +290,12 @@ td {
 	overflow: hidden;
 	font-size: 14px;
 }
-
+.TabItem.RightNavi {
+	height: 93%;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: visible;
+}
 kqud {
 	border-bottom: 0.5px dashed #E0E2E4;
 	cursor: text;
