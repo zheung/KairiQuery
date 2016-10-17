@@ -73,8 +73,8 @@
 		"ICE_WIND": 203,
 		"ICE_LIGHT": 204,
 		"ICE_DARK": 205,
-		"WIND_DARK": 304,
-		"WIND_LIGHT": 305,
+		"WIND_DARK": 305,
+		"WIND_LIGHT": 304,
 		"LIGHT_DARK": 405
 	},
 	"job": {

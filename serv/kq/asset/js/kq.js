@@ -50,7 +50,7 @@
 	window.kqf = {
 		retab: function() {
 			$('.TabHead[data-tab]').unbind('click').click(function() {
-				if(this.dataset.stop) return false;
+				if(this.dataset.stop == '') return false;
 
 				var tab = this.dataset.tab, page = this.dataset.page, func = this.dataset.func,
 					heads, items;

@@ -105,7 +105,8 @@
 				while(notFind) {
 					next = next[e.shiftKey?'prev':'next']();
 
-					if(!next.length) next = kqe.rightNavi[e.shiftKey?'last':'first']();
+					if(!next.length)
+						next = kqe.rightNavi[e.shiftKey?'last':'first']();
 
 					if(next[0].dataset.notab !== '')
 						notFind = false;
