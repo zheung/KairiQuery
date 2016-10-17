@@ -330,7 +330,53 @@ module.exports = ($) => {
 				return `${target} | ${p[1]}回合 | 反射伤害
 					| 所受伤害的<kqud title="等级成长：${p[2]/100}+${p[3]/100}*等级">${base}</kqud>%`;
 			},
-			114: 'ATK_OP_REFLECTION_INVALID'
+			114: 'ATK_OP_REFLECTION_INVALID',
+			115: 'DEBUFF_REGIST_LIMIT',
+			116: 'DEBUFF_REGIST_CARD_LIMIT',
+			117: 'TRANCE_GAUGE_STATE_CHANGE',
+			118: 'TRANCE_GAUGE_VALUE_UP',
+			119: 'TRANCE_GAUGE_VALUE_DOWN',
+			120: 'TRANCE_GAUGE_OVER_HEAT_TURN_ADD',
+			121: 'ENDURE',
+			122: 'CRITICAL_DOWN',
+			123: (card, skill, role, skillFirst) => {
+				let p = role.params, target = showTarget(skill, role, skillFirst);
+
+				return `${target} | ${show(p[6]) || '任意'}元素<kqud title="技能元素等价于卡面显示的元素">技能</kqud> | 提升${show(p[7])}伤害 | ${p[2] / 10}%`;
+			},
+			124: (card, skill, role, skillFirst) => {
+				let p = role.params, target = showTarget(skill, role, skillFirst);
+
+				return `${target} | ${show(p[6]) || '任意'}元素<kqud title="技能元素等价于卡面显示的元素">技能</kqud> | 提升${show(p[7])}支援效果 | ${p[4] / 10}%`;
+			},
+			125: (card, skill, role, skillFirst) => {
+				let p = role.params, target = showTarget(skill, role, skillFirst);
+
+				return `${target} | ${show(p[6]) || '任意'}元素<kqud title="技能元素等价于卡面显示的元素">技能</kqud> | 提升${show(p[7])}效果 | ${p[4] / 10}%`;
+			},
+			126: (card, skill, role, skillFirst) => {
+				let p = role.params, target = showTarget(skill, role, skillFirst);
+
+				return `${target} | ${show(p[6]) || '任意'}元素<kqud title="技能元素等价于卡面显示的元素">技能</kqud> | 提升${show(p[7])}弱化效果 | ${p[4] / 10}%`;
+			},
+			127: (card, skill, role, skillFirst) => {
+				let p = role.params, target = showTarget(skill, role, skillFirst);
+
+				return `${target} | ${show(p[6]) || '任意'}元素<kqud title="技能元素等价于卡面显示的元素">技能</kqud> | 提升${show(p[7])}弱化效果 | ${p[4] / 10}%`;
+			},
+			128: (card, skill, role, skillFirst) => {
+				let p = role.params, target = showTarget(skill, role, skillFirst);
+
+				return `${target} | ${show(p[6]) || '任意'}元素<kqud title="技能元素等价于卡面显示的元素">技能</kqud> | 提升治疗效果 | ${p[4] / 10}%`;
+			},
+			129: (card, skill, role, skillFirst) => {
+				let p = role.params, target = showTarget(skill, role, skillFirst);
+
+				return `${target} | ${show(p[4]) || '任意'}元素<kqud title="技能元素等价于卡面显示的元素">技能</kqud> | 提升${show(p[5])}伤害暴击率 | ${p[2] / 10}%`;
+			},
+			130: 'DAMAGE_CUT2',
+			131: 'DAMAGE_BOOST_ORDER_TARGET_DEBUFF',
+			132: 'DAMAGE_CUT_ORDER_TARGET_DEBUFF'
 		};
 	};
 };

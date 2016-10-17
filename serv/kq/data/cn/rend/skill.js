@@ -5,7 +5,7 @@ module.exports = ($) => {
 			rdrRole = $.rq(`data/${serv}/rend/role`);
 
 		let result = {},
-			skillTypes = ['awaken', 'normal', 'support'],
+			skillTypes = ['awaken', 'normal', 'suport3'],
 			skills = card.skill;
 
 		for(let st of skillTypes) {
@@ -49,9 +49,8 @@ module.exports = ($) => {
 				for(let role of skill.role) {
 					let skillType = role.info.type, rend = rdrRole(serv)[skillType];
 
-					if(rend instanceof Function){
+					if(rend instanceof Function)
 						s.content.push(rend(card, skill, role, skillFirst).replace(/\t|\n/g, ''));
-					}
 					else {
 						_l('New Skill', skillType, 'Card', card.id, 'Skill', skill.id);
 

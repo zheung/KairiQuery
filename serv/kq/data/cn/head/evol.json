@@ -1,0 +1,20 @@
+[
+	"s.id",
+	"s.type",
+	"n.inherit",
+	"n.price",
+	"s.target",
+	"s.matter.1.id",
+	"n.matter.1.fame",
+	"s.matter.2.id",
+	"n.matter.2.fame",
+	"s.matter.3.id",
+	"n.matter.3.fame",
+	"s.matter.4.id",
+	"n.matter.4.fame",
+	"s.matter.5.id",
+	"n.matter.5.fame",
+	"s.matter.6.id",
+	"n.matter.6.fame",
+	"i"
+]

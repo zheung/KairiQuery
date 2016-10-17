@@ -102,11 +102,11 @@
 				card.find('.sThumb').attr('src', '');
 				card.find('.sThumb').attr('src', 'https://raw.githubusercontent.com/kairiquery/tcipqk/master/'+kq.conds.serv+'20/'+data.id+'.png');
 
-				var types = ['awaken', 'normal', 'support'];
+				var types = ['awaken', 'normal', 'suport3'];
 
 				for(var ti in types) {
 					var type = types[ti],
-						skill = data.skill[type], j = 0,
+						skill = data.skill[type] || [], j = 0,
 						panel = card.find('.TabItem.Skill[data-page='+type+']'),
 						header = panel.find('.TabHeader.SkillContent').empty(), box = panel.find('.TabBox.SkillContent').empty();
 

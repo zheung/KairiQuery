@@ -47,9 +47,9 @@ let insec = (datas, marks) => {
 
 module.exports = ($) => {
 	let checker = {
-			bit: $.rq('checker/bit'),
-			mark: $.rq('checker/mark')
-		};
+		bit: $.rq('checker/bit'),
+		mark: $.rq('checker/mark')
+	};
 
 	return (conds = {}, paths = []) => {
 		let serv = conds.serv, data = $.datas[serv];

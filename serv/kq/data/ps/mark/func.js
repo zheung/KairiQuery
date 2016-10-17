@@ -1,4 +1,4 @@
-let skillTypes = ['awaken', 'normal', 'support'];
+let skillTypes = ['awaken', 'normal'];
 
 module.exports = {
 	aoe: (card) => {
