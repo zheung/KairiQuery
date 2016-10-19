@@ -6,8 +6,8 @@ module.exports = () => {
 		for(let rule of rules) dictRule[rule.id] = rule;
 
 		for(let role of roles) {
-			if(role.info.type) {
-				let rule = dictRule[role.info.type];
+			if(role.type) {
+				let rule = dictRule[role.type];
 
 				for(let index in rule.types) {
 					let type = rule.types[index];

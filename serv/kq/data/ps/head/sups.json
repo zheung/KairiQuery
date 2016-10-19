@@ -6,7 +6,7 @@
 	"n.show.id",
 	"n.show.role",
 	"i",
-	"d.skillType.show.kind",
+	"d.skillType.info.kind",
 	"s.other.voiceid",
 	"i.show.skillStyle",
 	"d.skillKind.info.type",

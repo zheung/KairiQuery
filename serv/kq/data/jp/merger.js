@@ -26,8 +26,8 @@ module.exports = () => {
 		for(let card of cards) dictCard[card.id] = card;
 
 		for(let role of roles) {
-			if(role.info.type) {
-				let rule = dictRule[role.info.type];
+			if(role.type) {
+				let rule = dictRule[role.type];
 
 				for(let index in rule.types) {
 					let type = rule.types[index];
@@ -41,8 +41,8 @@ module.exports = () => {
 		}
 
 		for(let supr of suprs) {
-			if(supr.info.type) {
-				let rule = dictRule[supr.info.type];
+			if(supr.type) {
+				let rule = dictRule[supr.type];
 
 				for(let index in rule.types) {
 					let type = rule.types[index];

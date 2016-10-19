@@ -34,7 +34,7 @@ module.exports = ($) => {
 					s.content.push(`<kqud title="发动等级越低越先发动，相同则随机发动">发动等级</kqud> | ${skill.priority.pve}`);
 
 				for(let role of skill.role) {
-					let skillType = role.info.type, rend = rdrRole(serv)[skillType];
+					let skillType = role.type, rend = rdrRole(serv)[skillType];
 
 					if(rend instanceof Function)
 						s.content.push(rend(card, skill, role, skillFirst).replace(/\t|\n/g, ''));

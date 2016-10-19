@@ -5,10 +5,10 @@ module.exports = ($) => {
 		let show = (p) => { return shower[p[0]][p[1]]; };
 
 		let showTarget = (skill, role, sf) => {
-			if(role.info.target == 1)
+			if(role.target == 1)
 				return shower.skillTarget[skill.info.target || sf.info.target];
 			else
-				return shower.roleTarget[role.info.target];
+				return shower.roleTarget[role.target];
 		};
 
 		return {

@@ -7,9 +7,9 @@ module.exports = {
 
 			for(let skill of card.skill[st])
 				for(let role of skill.role) {
-					let t = { r: role.info.target, s: skill.info.target || first.info.target };
+					let t = { r: role.target, s: skill.info.target || first.info.target };
 
-					if(role.info.type == 1)
+					if(role.type == 1)
 						if(t.r == 4 || (t.r == 1 && t.s == 5))
 							return true;
 				}
@@ -21,7 +21,7 @@ module.exports = {
 		for(let st of skillTypes)
 			for(let skill of card.skill[st])
 				for(let role of skill.role)
-					if(role.info.type == 44 && role.params[1] == '2')
+					if(role.type == 44 && role.params[1] == '2')
 						return true;
 
 		return false;
@@ -30,7 +30,7 @@ module.exports = {
 		for(let st of skillTypes)
 			for(let skill of card.skill[st])
 				for(let role of skill.role)
-					if(role.info.type == 64)
+					if(role.type == 64)
 						return true;
 
 		return false;
@@ -41,9 +41,9 @@ module.exports = {
 
 			for(let skill of card.skill[st])
 				for(let role of skill.role) {
-					let t = { r: role.info.target, s: skill.info.target || first.info.target };
+					let t = { r: role.target, s: skill.info.target || first.info.target };
 
-					if(role.info.type == 19)
+					if(role.type == 19)
 						if(t.r == 1 && t.s == 2)
 							return true;
 				}
@@ -55,7 +55,7 @@ module.exports = {
 		for(let st of skillTypes)
 			for(let skill of card.skill[st])
 				for(let role of skill.role)
-					if(role.info.type == 35)
+					if(role.type == 35)
 						return true;
 
 		return false;
@@ -64,7 +64,7 @@ module.exports = {
 		for(let st of skillTypes)
 			for(let skill of card.skill[st])
 				for(let role of skill.role)
-					if(role.info.type == 46)
+					if(role.type == 46)
 						return true;
 
 		return false;
@@ -75,7 +75,7 @@ module.exports = {
 		for(let st of skillTypes)
 			for(let skill of card.skill[st])
 				for(let role of skill.role)
-					if(role.info.type == 9 || role.info.type == 17)
+					if(role.type == 9 || role.type == 17)
 						c--;
 
 		return c < 0;
@@ -84,7 +84,7 @@ module.exports = {
 		for(let st of skillTypes)
 			for(let skill of card.skill[st])
 				for(let role of skill.role)
-					if(role.info.type == 107)
+					if(role.type == 107)
 						return true;
 
 		return false;
@@ -101,7 +101,7 @@ module.exports = {
 		for(let st of skillTypes)
 			for(let skill of card.skill[st])
 				for(let role of skill.role)
-					if(role.info.type == 86)
+					if(role.type == 86)
 						return true;
 
 		return false;

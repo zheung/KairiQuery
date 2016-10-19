@@ -7,14 +7,20 @@ module.exports = () => {
 		for(let rule of rules) dictRule[rule.id] = rule;
 
 		for(let role of roles) {
-			if(role.info.type) {
-				let rule = dictRule[role.info.type];
+			if(role.type) {
+				let rule = dictRule[role.type];
 
 				for(let index in rule.types) {
 					let type = rule.types[index];
 
-					if(type && type != 1)
-						role.params[index] = [type, valuer[type][role.params[index]]];
+					if(type) {
+						if(type == 1)
+							role.params[index] = ~~role.params[index];
+						else
+							role.params[index] = [type, valuer[type][role.params[index]]];
+					}
+					else if(type !== 0)
+						_l('Bad Rule', role.type, index);
 				}
 			}
 
@@ -22,8 +28,8 @@ module.exports = () => {
 		}
 
 		for(let supr of suprs) {
-			if(supr.info.type) {
-				let rule = dictRule[supr.info.type];
+			if(supr.type) {
+				let rule = dictRule[supr.type];
 
 				for(let index in rule.types) {
 					let type = rule.types[index];

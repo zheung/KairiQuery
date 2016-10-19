@@ -49,7 +49,7 @@ module.exports = ($) => {
 				}
 
 				for(let role of skill.role) {
-					let skillType = role.info.type, rend = rdrRole(serv)[skillType];
+					let skillType = role.type, rend = rdrRole(serv)[skillType];
 
 					if(rend instanceof Function)
 						s.content.push(rend(card, skill, role, skillFirst).replace(/\t|\n/g, ''));
