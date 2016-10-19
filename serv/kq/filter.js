@@ -7,7 +7,7 @@ let condsParse = (checker, conds) => {
 	conds.job = bitParse(~~conds.job);
 	conds.cost = bitParse(~~conds.cost);
 	conds.attr = bitParse(~~conds.attr);
-	conds.skillType = bitParse(~~conds.skillType);
+	conds.skillKind = bitParse(~~conds.skillKind);
 
 	conds.mark = markParse(conds.mark);
 };
@@ -17,13 +17,13 @@ let valid = (serv, checker, data, conds) => {
 
 	if(!(data.info.name.indexOf(conds.name)+1)) return false;
 
-	let skillType = (data.skill.awaken[0] || data.skill.normal[0]).info.kind;
+	let skillKind = (data.skill.awaken[0] || data.skill.normal[0]).info.kind;
 
 	if(!bitValid(serv, conds.rare, data.info.rare, 'rare')) return false;
 	if(!bitValid(serv, conds.job, data.skill.normal[0].info.job)) return false;
 	if(!bitValid(serv, conds.cost, data.skill.normal[0].info.cost, 'cost')) return false;
 	if(!bitValid(serv, conds.attr, data.skill.normal[0].info.attr, 'attr')) return false;
-	if(!bitValid(serv, conds.skillType, skillType)) return false;
+	if(!bitValid(serv, conds.skillKind, skillKind)) return false;
 
 	return true;
 };
