@@ -122,5 +122,14 @@ module.exports = {
 	},
 	ex: (card) => {
 		return !!card.skill['suport3'].length;
+	},
+	pierce: (card) => {
+		for(let st of skillTypes)
+			for(let skill of card.skill[st])
+				for(let role of skill.role)
+					if(role.type == 7)
+						return true;
+
+		return false;
 	}
 };
