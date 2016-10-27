@@ -1,4 +1,14 @@
 module.exports = ($) => {
+	let loadDarr = (serv) => {
+		let xyMap = {}, raw = $.rq(`${''}data/cn/mark/markRaw.json`);
+
+		raw.forEach((tag, index) => {
+			xyMap[tag] = `${Math.floor(index/16)}:${1<<index%16}`;
+		});
+
+		return xyMap;
+	};
+
 	let loadMark = (serv, mark) => {
 		let d = {}, raw = $.rq(`data/${serv}/mark/dict/${mark}.json`);
 
@@ -57,7 +67,7 @@ module.exports = ($) => {
 		let marks = {}, dict = {};
 
 		for(let serv of $.conf.servs) {
-			let markServs, result = {};
+			let markServs, result = {}, xyMap = loadDarr(serv), xlen = Math.floor((Object.keys(xyMap).length-1)/16);
 
 			dict[serv] = {};
 
@@ -72,24 +82,35 @@ module.exports = ($) => {
 					let card = cards[ci], markCards = [];
 
 					for(let markFunc in func)
-						if(func[markFunc](card))
-							markCards.push(markFunc);
+						for(let m of func[markFunc](card))
+							markCards.push(m);
 
 					for(let markDict of markDicts)
-						for(let t of check(dict, serv, markDict.replace(/\.json$/, ''), card.id))
-							markCards.push(t);
+						for(let m of check(dict, serv, markDict.replace(/\.json$/, ''), card.id))
+							markCards.push(m);
 
 					markServs[card.id] = markCards;
 				}
 
 				fs.writeFileSync($.pa(`data/${serv}/mark.json`), JSON.stringify(markServs, null, '\t'));
+				fs.writeFileSync($.pa(`data/${serv}/mark/dict/markMap.json`), JSON.stringify(xyMap, null, '\t'));
 			}
 			else
 				markServs = $.rq(`data/${serv}/mark.json`);
 
-			for(let ri in markServs)
-				for(let t of markServs[ri])
-					(result[t] || (result[t] = [])).push(ri);
+			for(let ri in markServs) {
+				let xy = (result[ri] || (result[ri] = []));
+
+				for(let i=0; i < xlen; i++) xy.push(0);
+
+				for(let mark of markServs[ri]) {
+					let xySplit = xyMap[mark].split(':'), x = ~~xySplit[0], y = ~~xySplit[1];
+
+					xy[x] += y;
+				}
+			}
+
+			Object.defineProperty(result, 'xlen', {enumerable: false, value: xlen});
 
 			marks[serv] = result;
 		}

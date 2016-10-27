@@ -1,14 +1,12 @@
 {
 	"renderAll": false,
 
-	"renderData": true,
+	"renderData": false,
 	"renderMark": true,
 
 	"pageEvery": 4,
 
 	"servs": [
-		"cn",
-		"jp",
-		"ps"
+		"cn"
 	]
 }
