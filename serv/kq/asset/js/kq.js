@@ -28,7 +28,7 @@
 	};
 
 	window.kqe = {
-		toggles: $('.Toggle[data-cond][data-val]'),
+		toggles: $('.Toggle[data-x][data-y]'),
 		marks: $('.Toggle[data-mark]'),
 		rightNavi: $('.TabHead.RightNavi[data-tab=RightNavi]'),
 		condName: $('#CondName'),
@@ -155,16 +155,21 @@
 		conds: {
 			serv: 'cn',
 			name: '',
-			job: (1<<5)-1,
-			cost: (1<<7)-1,
-			attr: (1<<15)-1,
-			skillKind: (1<<6)-1,
-			rare: (1<<9)-1
+			mark: [0, 0, 0, 0, 0, 0]
 		},
 		param: function(moder) {
 			var result = $.extend({}, kq.conds, {
 				page: kqd.page,
-				mark: kqs.marks.attr('class')
+				mark: kq.conds.mark.toString(),
+				zero: (function() {
+					var mark = kq.conds.mark;
+
+					for(var i=0; i < mark.length; i++)
+						if(mark[i]>0)
+							return 0;
+
+					return 1;
+				})()
 			});
 
 			if(moder) moder(result);

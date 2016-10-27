@@ -1,13 +1,13 @@
 (function() {
 	kqe.toggles.click(function(eve, man) {
-		var $this = $(this), cond = this.dataset.cond, val = this.dataset.val, isON = $this.hasClass('on');
+		var $this = $(this), cond = this.dataset.cond, x = this.dataset.x, y = this.dataset.y, isON = $this.hasClass('on');
 
 		if(man) isON = !man.fourceON;
 
-		if(val == 's') {
+		if(x == 's') {
 			kqd.dynmSearch = false;
 
-			kqe.toggles.filter('[data-cond='+cond+']:not([data-val=s])').each(function() {
+			kqe.toggles.filter('[data-cond='+cond+']:not([data-x=s])').each(function() {
 				$(this).addClass(isON ? 'on' : 'off').removeClass(isON ? 'off' : 'on').click();
 			});
 
@@ -21,7 +21,7 @@
 			if(eve.ctrlKey && !eve.shiftKey) {
 				kqd.dynmSearch = false;
 
-				$('[data-cond='+cond+']:not([data-val='+val+']):not([data-val=s])').each(function() {
+				$('[data-cond='+cond+']:not([data-x='+x+'][data-y='+y+']):not([data-x=s])').each(function() {
 					$(this).addClass('on').removeClass('off').click();
 				});
 
@@ -32,7 +32,7 @@
 			else if(!eve.ctrlKey && eve.shiftKey) {
 				kqd.dynmSearch = false;
 
-				$('[data-cond='+cond+']:not([data-val='+val+']):not([data-val=s])').each(function() {
+				$('[data-cond='+cond+']:not([data-x='+x+'][data-y='+y+']):not([data-x=s])').each(function() {
 					$(this).addClass('off').removeClass('on').click();
 				});
 
@@ -43,11 +43,11 @@
 			else {
 				$this.toggleClass('on').toggleClass('off');
 
-				if(cond && val) {
+				if(cond && x && y) {
 					if($this.hasClass('on'))
-						kq.conds[cond] |= 1<<(~~val-1);
+						kq.conds.mark[x] |= y;
 					else
-						kq.conds[cond] &= ~(1<<(~~val-1));
+						kq.conds.mark[x] &= ~y;
 
 					if(kqd.dynmSearch) kq.query(function(param) { param.page = 1; }, kqf.dealer);
 				}

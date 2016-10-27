@@ -2696,8 +2696,7 @@
 	"10108001": [
 		"ur",
 		"cost4",
-		"light",
-		"dark",
+		"lightdark",
 		"mercenary",
 		"attack",
 		"aoe",
@@ -2710,8 +2709,7 @@
 	"10108002": [
 		"mr",
 		"cost4",
-		"light",
-		"dark",
+		"lightdark",
 		"mercenary",
 		"attack",
 		"aoe",
@@ -2724,8 +2722,7 @@
 	"10108003": [
 		"ur",
 		"cost5",
-		"wind",
-		"dark",
+		"winddark",
 		"millionaire",
 		"defense",
 		"ex",
@@ -2736,8 +2733,7 @@
 	"10108004": [
 		"mr",
 		"cost5",
-		"wind",
-		"dark",
+		"winddark",
 		"millionaire",
 		"defense",
 		"ex",
@@ -2748,8 +2744,7 @@
 	"10108005": [
 		"ur",
 		"cost5",
-		"fire",
-		"dark",
+		"firedark",
 		"thief",
 		"sorcery",
 		"aoe",
@@ -2761,8 +2756,7 @@
 	"10108006": [
 		"mr",
 		"cost5",
-		"fire",
-		"dark",
+		"firedark",
 		"thief",
 		"sorcery",
 		"aoe",
@@ -2774,8 +2768,7 @@
 	"10108007": [
 		"ur",
 		"cost5",
-		"fire",
-		"dark",
+		"firedark",
 		"singer",
 		"recovery",
 		"chain",
@@ -2787,8 +2780,7 @@
 	"10108008": [
 		"mr",
 		"cost5",
-		"fire",
-		"dark",
+		"firedark",
 		"singer",
 		"recovery",
 		"chain",
@@ -5821,8 +5813,7 @@
 	"10117035": [
 		"ur",
 		"cost4",
-		"light",
-		"dark",
+		"lightdark",
 		"mercenary",
 		"sorcery",
 		"aoe",
@@ -5832,8 +5823,7 @@
 	"10117036": [
 		"mr",
 		"cost4",
-		"light",
-		"dark",
+		"lightdark",
 		"mercenary",
 		"sorcery",
 		"aoe",
@@ -5843,8 +5833,7 @@
 	"10117037": [
 		"ur",
 		"cost3",
-		"fire",
-		"light",
+		"firelight",
 		"millionaire",
 		"defense",
 		"cup"
@@ -5852,8 +5841,7 @@
 	"10117038": [
 		"mr",
 		"cost3",
-		"fire",
-		"light",
+		"firelight",
 		"millionaire",
 		"defense",
 		"cup"
@@ -5861,8 +5849,7 @@
 	"10117039": [
 		"ur",
 		"cost3",
-		"ice",
-		"wind",
+		"icewind",
 		"thief",
 		"support",
 		"crit",
@@ -5871,8 +5858,7 @@
 	"10117040": [
 		"mr",
 		"cost3",
-		"ice",
-		"wind",
+		"icewind",
 		"thief",
 		"support",
 		"crit",
@@ -5881,8 +5867,7 @@
 	"10117041": [
 		"ur",
 		"cost3",
-		"wind",
-		"dark",
+		"winddark",
 		"singer",
 		"recovery",
 		"bug",
@@ -5891,8 +5876,7 @@
 	"10117042": [
 		"mr",
 		"cost3",
-		"wind",
-		"dark",
+		"winddark",
 		"singer",
 		"recovery",
 		"bug",
@@ -7591,8 +7575,7 @@
 	"10122047": [
 		"ur",
 		"cost3",
-		"light",
-		"dark",
+		"lightdark",
 		"thief",
 		"jamming",
 		"cup"
@@ -7600,8 +7583,7 @@
 	"10122048": [
 		"mr",
 		"cost3",
-		"light",
-		"dark",
+		"lightdark",
 		"thief",
 		"jamming",
 		"cup"
@@ -7609,8 +7591,7 @@
 	"10122049": [
 		"mr",
 		"cost4",
-		"light",
-		"dark",
+		"lightdark",
 		"singer",
 		"support",
 		"cup"
@@ -7618,8 +7599,7 @@
 	"10122050": [
 		"ur",
 		"cost3",
-		"fire",
-		"wind",
+		"firewind",
 		"mercenary",
 		"support",
 		"crit",
@@ -7628,8 +7608,7 @@
 	"10122051": [
 		"mr",
 		"cost3",
-		"fire",
-		"wind",
+		"firewind",
 		"mercenary",
 		"support",
 		"crit",
@@ -7638,8 +7617,7 @@
 	"10122052": [
 		"mr",
 		"cost3",
-		"ice",
-		"dark",
+		"icedark",
 		"millionaire",
 		"defense",
 		"cup"
@@ -8090,8 +8068,7 @@
 	"10124003": [
 		"ur",
 		"cost3",
-		"light",
-		"dark",
+		"lightdark",
 		"mercenary",
 		"sorcery",
 		"crit"
@@ -8099,8 +8076,7 @@
 	"10124004": [
 		"mr",
 		"cost3",
-		"light",
-		"dark",
+		"lightdark",
 		"mercenary",
 		"sorcery",
 		"crit"
@@ -8170,16 +8146,14 @@
 	"10124013": [
 		"ur",
 		"cost3",
-		"light",
-		"dark",
+		"lightdark",
 		"thief",
 		"sorcery"
 	],
 	"10124014": [
 		"mr",
 		"cost3",
-		"light",
-		"dark",
+		"lightdark",
 		"thief",
 		"sorcery"
 	],
@@ -8480,16 +8454,14 @@
 	"10125004": [
 		"ur",
 		"cost3",
-		"ice",
-		"light",
+		"icelight",
 		"mercenary",
 		"attack"
 	],
 	"10125005": [
 		"mr",
 		"cost3",
-		"ice",
-		"light",
+		"icelight",
 		"mercenary",
 		"attack"
 	],
@@ -9017,8 +8989,7 @@
 	"10126023": [
 		"ur",
 		"cost3",
-		"fire",
-		"wind",
+		"firewind",
 		"mercenary",
 		"attack",
 		"pierce"
@@ -9026,8 +8997,7 @@
 	"10126024": [
 		"mr",
 		"cost3",
-		"fire",
-		"wind",
+		"firewind",
 		"mercenary",
 		"attack",
 		"pierce"
@@ -9903,8 +9873,7 @@
 	"10128037": [
 		"ur",
 		"cost2",
-		"fire",
-		"dark",
+		"firedark",
 		"mercenary",
 		"support",
 		"crit",
@@ -9913,8 +9882,7 @@
 	"10128038": [
 		"mr",
 		"cost2",
-		"fire",
-		"dark",
+		"firedark",
 		"mercenary",
 		"support",
 		"crit",
@@ -9923,8 +9891,7 @@
 	"10128039": [
 		"ur",
 		"cost1",
-		"wind",
-		"light",
+		"windlight",
 		"millionaire",
 		"defense",
 		"db2",
@@ -9933,8 +9900,7 @@
 	"10128040": [
 		"mr",
 		"cost1",
-		"wind",
-		"light",
+		"windlight",
 		"millionaire",
 		"defense",
 		"db2",
@@ -9943,8 +9909,7 @@
 	"10128041": [
 		"ur",
 		"cost2",
-		"ice",
-		"wind",
+		"icewind",
 		"thief",
 		"jamming",
 		"cup"
@@ -9952,8 +9917,7 @@
 	"10128042": [
 		"mr",
 		"cost2",
-		"ice",
-		"wind",
+		"icewind",
 		"thief",
 		"jamming",
 		"cup"
@@ -9961,8 +9925,7 @@
 	"10128043": [
 		"ur",
 		"cost2",
-		"fire",
-		"light",
+		"firelight",
 		"singer",
 		"recovery",
 		"debuffre",
@@ -9972,8 +9935,7 @@
 	"10128044": [
 		"mr",
 		"cost2",
-		"fire",
-		"light",
+		"firelight",
 		"singer",
 		"recovery",
 		"debuffre",
@@ -9999,8 +9961,7 @@
 	"10128047": [
 		"mr",
 		"cost1",
-		"light",
-		"dark",
+		"lightdark",
 		"null",
 		"sorcery",
 		"aoe"
@@ -10008,8 +9969,7 @@
 	"10128048": [
 		"mr",
 		"cost1",
-		"fire",
-		"ice",
+		"fireice",
 		"null",
 		"attack",
 		"aoe"
@@ -11893,16 +11853,14 @@
 	"10134001": [
 		"ur",
 		"cost3",
-		"fire",
-		"dark",
+		"firedark",
 		"mercenary",
 		"sorcery"
 	],
 	"10134002": [
 		"mr",
 		"cost3",
-		"fire",
-		"dark",
+		"firedark",
 		"mercenary",
 		"sorcery"
 	],
@@ -11951,16 +11909,14 @@
 	"10134011": [
 		"ur",
 		"cost3",
-		"fire",
-		"dark",
+		"firedark",
 		"mercenary",
 		"sorcery"
 	],
 	"10134012": [
 		"mr",
 		"cost3",
-		"fire",
-		"dark",
+		"firedark",
 		"mercenary",
 		"sorcery"
 	],
@@ -12227,8 +12183,7 @@
 	"10134050": [
 		"ur",
 		"cost2",
-		"wind",
-		"light",
+		"windlight",
 		"mercenary",
 		"support",
 		"crit",
@@ -12237,8 +12192,7 @@
 	"10134051": [
 		"mr",
 		"cost2",
-		"wind",
-		"light",
+		"windlight",
 		"mercenary",
 		"support",
 		"crit",
@@ -12247,8 +12201,7 @@
 	"10134052": [
 		"ur",
 		"cost4",
-		"ice",
-		"dark",
+		"icedark",
 		"millionaire",
 		"defense",
 		"covering",
@@ -12257,8 +12210,7 @@
 	"10134053": [
 		"mr",
 		"cost4",
-		"ice",
-		"dark",
+		"icedark",
 		"millionaire",
 		"defense",
 		"covering",
@@ -12267,8 +12219,7 @@
 	"10134054": [
 		"ur",
 		"cost2",
-		"fire",
-		"dark",
+		"firedark",
 		"thief",
 		"jamming",
 		"cup"
@@ -12276,8 +12227,7 @@
 	"10134055": [
 		"mr",
 		"cost2",
-		"fire",
-		"dark",
+		"firedark",
 		"thief",
 		"jamming",
 		"cup"
@@ -12285,8 +12235,7 @@
 	"10134056": [
 		"ur",
 		"cost3",
-		"wind",
-		"dark",
+		"winddark",
 		"singer",
 		"support",
 		"cup"
@@ -12294,8 +12243,7 @@
 	"10134057": [
 		"mr",
 		"cost3",
-		"wind",
-		"dark",
+		"winddark",
 		"singer",
 		"support",
 		"cup"
@@ -12871,8 +12819,7 @@
 	"10136015": [
 		"ur",
 		"cost5",
-		"light",
-		"dark",
+		"lightdark",
 		"thief",
 		"sorcery",
 		"aoe"
@@ -12880,8 +12827,7 @@
 	"10136016": [
 		"mr",
 		"cost5",
-		"light",
-		"dark",
+		"lightdark",
 		"thief",
 		"sorcery",
 		"aoe"
@@ -12889,16 +12835,14 @@
 	"10136017": [
 		"ur",
 		"cost1",
-		"fire",
-		"ice",
+		"fireice",
 		"singer",
 		"support"
 	],
 	"10136018": [
 		"mr",
 		"cost1",
-		"fire",
-		"ice",
+		"fireice",
 		"singer",
 		"support"
 	],
@@ -14212,8 +14156,7 @@
 	"10140023": [
 		"ur",
 		"cost3",
-		"light",
-		"dark",
+		"lightdark",
 		"mercenary",
 		"sorcery",
 		"aoe",
@@ -14222,8 +14165,7 @@
 	"10140024": [
 		"mr",
 		"cost3",
-		"light",
-		"dark",
+		"lightdark",
 		"mercenary",
 		"sorcery",
 		"aoe",
@@ -14409,8 +14351,7 @@
 	"10140049": [
 		"ur",
 		"cost3",
-		"ice",
-		"light",
+		"icelight",
 		"mercenary",
 		"support",
 		"db2",
@@ -14419,8 +14360,7 @@
 	"10140050": [
 		"mr",
 		"cost3",
-		"ice",
-		"light",
+		"icelight",
 		"mercenary",
 		"support",
 		"db2",
@@ -14429,8 +14369,7 @@
 	"10140051": [
 		"ur",
 		"cost3",
-		"ice",
-		"dark",
+		"icedark",
 		"millionaire",
 		"defense",
 		"covering",
@@ -14439,8 +14378,7 @@
 	"10140052": [
 		"mr",
 		"cost3",
-		"ice",
-		"dark",
+		"icedark",
 		"millionaire",
 		"defense",
 		"covering",
@@ -14449,8 +14387,7 @@
 	"10140053": [
 		"ur",
 		"cost2",
-		"fire",
-		"dark",
+		"firedark",
 		"thief",
 		"jamming",
 		"cup"
@@ -14458,8 +14395,7 @@
 	"10140054": [
 		"mr",
 		"cost2",
-		"fire",
-		"dark",
+		"firedark",
 		"thief",
 		"jamming",
 		"cup"
@@ -14467,8 +14403,7 @@
 	"10140055": [
 		"ur",
 		"cost2",
-		"wind",
-		"light",
+		"windlight",
 		"singer",
 		"recovery",
 		"debuffre",
@@ -14478,8 +14413,7 @@
 	"10140056": [
 		"mr",
 		"cost2",
-		"wind",
-		"light",
+		"windlight",
 		"singer",
 		"recovery",
 		"debuffre",
@@ -14715,8 +14649,7 @@
 	"10141031": [
 		"ur",
 		"cost3",
-		"wind",
-		"light",
+		"windlight",
 		"mercenary",
 		"attack",
 		"aoe"
@@ -14724,8 +14657,7 @@
 	"10141032": [
 		"mr",
 		"cost3",
-		"wind",
-		"light",
+		"windlight",
 		"mercenary",
 		"attack",
 		"aoe"
@@ -14795,8 +14727,7 @@
 	"10141041": [
 		"ur",
 		"cost4",
-		"fire",
-		"light",
+		"firelight",
 		"thief",
 		"sorcery",
 		"aoe",
@@ -14805,8 +14736,7 @@
 	"10141042": [
 		"mr",
 		"cost4",
-		"fire",
-		"light",
+		"firelight",
 		"thief",
 		"sorcery",
 		"aoe",
@@ -14831,8 +14761,7 @@
 	"10141045": [
 		"ur",
 		"cost2",
-		"ice",
-		"light",
+		"icelight",
 		"singer",
 		"recovery",
 		"bug",
@@ -14841,8 +14770,7 @@
 	"10141046": [
 		"mr",
 		"cost2",
-		"ice",
-		"light",
+		"icelight",
 		"singer",
 		"recovery",
 		"bug",
@@ -14890,8 +14818,7 @@
 	"10142005": [
 		"ur",
 		"cost4",
-		"fire",
-		"dark",
+		"firedark",
 		"mercenary",
 		"sorcery",
 		"aoe",
@@ -14900,8 +14827,7 @@
 	"10142006": [
 		"mr",
 		"cost4",
-		"fire",
-		"dark",
+		"firedark",
 		"mercenary",
 		"sorcery",
 		"aoe",
@@ -14910,8 +14836,7 @@
 	"10142007": [
 		"ur",
 		"cost3",
-		"fire",
-		"wind",
+		"firewind",
 		"singer",
 		"support",
 		"buffone",
@@ -14920,8 +14845,7 @@
 	"10142008": [
 		"mr",
 		"cost3",
-		"fire",
-		"wind",
+		"firewind",
 		"singer",
 		"support",
 		"buffone",
@@ -15076,16 +15000,14 @@
 	"10142029": [
 		"ur",
 		"cost2",
-		"ice",
-		"dark",
+		"icedark",
 		"thief",
 		"sorcery"
 	],
 	"10142030": [
 		"mr",
 		"cost2",
-		"ice",
-		"dark",
+		"icedark",
 		"thief",
 		"sorcery"
 	],
@@ -15387,16 +15309,14 @@
 	"10143025": [
 		"ur",
 		"cost1",
-		"ice",
-		"wind",
+		"icewind",
 		"singer",
 		"support"
 	],
 	"10143026": [
 		"mr",
 		"cost1",
-		"ice",
-		"wind",
+		"icewind",
 		"singer",
 		"support"
 	],
@@ -15453,8 +15373,7 @@
 	"10143033": [
 		"mr",
 		"cost1",
-		"wind",
-		"light",
+		"windlight",
 		"null",
 		"attack",
 		"aoe"
@@ -15462,8 +15381,7 @@
 	"10143034": [
 		"mr",
 		"cost1",
-		"ice",
-		"wind",
+		"icewind",
 		"null",
 		"sorcery",
 		"aoe"
@@ -15517,8 +15435,7 @@
 	"10143049": [
 		"ur",
 		"cost3",
-		"ice",
-		"light",
+		"icelight",
 		"mercenary",
 		"support",
 		"db2",
@@ -15527,8 +15444,7 @@
 	"10143050": [
 		"mr",
 		"cost3",
-		"ice",
-		"light",
+		"icelight",
 		"mercenary",
 		"support",
 		"db2",
@@ -15537,8 +15453,7 @@
 	"10143051": [
 		"ur",
 		"cost2",
-		"fire",
-		"wind",
+		"firewind",
 		"millionaire",
 		"defense",
 		"cup"
@@ -15546,8 +15461,7 @@
 	"10143052": [
 		"mr",
 		"cost2",
-		"fire",
-		"wind",
+		"firewind",
 		"millionaire",
 		"defense",
 		"cup"
@@ -15555,8 +15469,7 @@
 	"10143053": [
 		"ur",
 		"cost2",
-		"ice",
-		"light",
+		"icelight",
 		"thief",
 		"jamming",
 		"cup"
@@ -15564,8 +15477,7 @@
 	"10143054": [
 		"mr",
 		"cost2",
-		"ice",
-		"light",
+		"icelight",
 		"thief",
 		"jamming",
 		"cup"
@@ -15573,8 +15485,7 @@
 	"10143055": [
 		"ur",
 		"cost2",
-		"fire",
-		"wind",
+		"firewind",
 		"singer",
 		"support",
 		"buffone",
@@ -15584,8 +15495,7 @@
 	"10143056": [
 		"mr",
 		"cost2",
-		"fire",
-		"wind",
+		"firewind",
 		"singer",
 		"support",
 		"buffone",
@@ -15595,8 +15505,7 @@
 	"10143057": [
 		"ur",
 		"cost2",
-		"ice",
-		"light",
+		"icelight",
 		"mercenary",
 		"support",
 		"regicide"
@@ -15604,8 +15513,7 @@
 	"10143058": [
 		"mr",
 		"cost2",
-		"ice",
-		"light",
+		"icelight",
 		"mercenary",
 		"support",
 		"regicide"
@@ -15613,8 +15521,7 @@
 	"10143059": [
 		"ur",
 		"cost3",
-		"ice",
-		"dark",
+		"icedark",
 		"millionaire",
 		"support",
 		"buffone",
@@ -15623,8 +15530,7 @@
 	"10143060": [
 		"mr",
 		"cost3",
-		"ice",
-		"dark",
+		"icedark",
 		"millionaire",
 		"support",
 		"buffone",
@@ -15633,8 +15539,7 @@
 	"10143061": [
 		"ur",
 		"cost2",
-		"wind",
-		"dark",
+		"winddark",
 		"thief",
 		"support",
 		"buffone",
@@ -15643,8 +15548,7 @@
 	"10143062": [
 		"mr",
 		"cost2",
-		"wind",
-		"dark",
+		"winddark",
 		"thief",
 		"support",
 		"buffone",
@@ -15653,8 +15557,7 @@
 	"10143063": [
 		"ur",
 		"cost2",
-		"ice",
-		"wind",
+		"icewind",
 		"singer",
 		"recovery",
 		"bug",
@@ -15663,8 +15566,7 @@
 	"10143064": [
 		"mr",
 		"cost2",
-		"ice",
-		"wind",
+		"icewind",
 		"singer",
 		"recovery",
 		"bug",
@@ -15701,8 +15603,7 @@
 	"10143072": [
 		"ur",
 		"cost2",
-		"ice",
-		"dark",
+		"icedark",
 		"millionaire",
 		"defense",
 		"db2"
@@ -15710,8 +15611,7 @@
 	"10143073": [
 		"mr",
 		"cost2",
-		"ice",
-		"dark",
+		"icedark",
 		"millionaire",
 		"defense",
 		"db2"
@@ -16502,8 +16402,7 @@
 	"10145046": [
 		"ur",
 		"cost3",
-		"fire",
-		"light",
+		"firelight",
 		"singer",
 		"support",
 		"buffone",
@@ -16513,8 +16412,7 @@
 	"10145047": [
 		"mr",
 		"cost3",
-		"fire",
-		"light",
+		"firelight",
 		"singer",
 		"support",
 		"buffone",
@@ -16524,8 +16422,7 @@
 	"10145048": [
 		"ur",
 		"cost2",
-		"fire",
-		"light",
+		"firelight",
 		"millionaire",
 		"defense",
 		"ex"
@@ -16533,8 +16430,7 @@
 	"10145049": [
 		"mr",
 		"cost2",
-		"fire",
-		"light",
+		"firelight",
 		"millionaire",
 		"defense",
 		"ex"
@@ -16580,8 +16476,7 @@
 	"10145054": [
 		"ur",
 		"cost4",
-		"fire",
-		"light",
+		"firelight",
 		"mercenary",
 		"attack",
 		"aoe",
@@ -16590,8 +16485,7 @@
 	"10145055": [
 		"mr",
 		"cost4",
-		"fire",
-		"light",
+		"firelight",
 		"mercenary",
 		"attack",
 		"aoe",
@@ -16600,8 +16494,7 @@
 	"10145056": [
 		"ur",
 		"cost1",
-		"fire",
-		"light",
+		"firelight",
 		"millionaire",
 		"defense",
 		"covering",
@@ -16610,8 +16503,7 @@
 	"10145057": [
 		"mr",
 		"cost1",
-		"fire",
-		"light",
+		"firelight",
 		"millionaire",
 		"defense",
 		"covering",
@@ -16620,8 +16512,7 @@
 	"10145058": [
 		"ur",
 		"cost2",
-		"wind",
-		"dark",
+		"winddark",
 		"thief",
 		"jamming",
 		"ex"
@@ -16629,8 +16520,7 @@
 	"10145059": [
 		"mr",
 		"cost2",
-		"wind",
-		"dark",
+		"winddark",
 		"thief",
 		"jamming",
 		"ex"
@@ -16638,8 +16528,7 @@
 	"10145060": [
 		"ur",
 		"cost1",
-		"fire",
-		"dark",
+		"firedark",
 		"singer",
 		"support",
 		"buffone",
@@ -16648,8 +16537,7 @@
 	"10145061": [
 		"mr",
 		"cost1",
-		"fire",
-		"dark",
+		"firedark",
 		"singer",
 		"support",
 		"buffone",
@@ -16994,8 +16882,7 @@
 	"10146040": [
 		"ur",
 		"cost1",
-		"wind",
-		"light",
+		"windlight",
 		"singer",
 		"support",
 		"ex"
@@ -17003,8 +16890,7 @@
 	"10146041": [
 		"mr",
 		"cost1",
-		"wind",
-		"light",
+		"windlight",
 		"singer",
 		"support",
 		"ex"
@@ -18005,16 +17891,14 @@
 	"99960033": [
 		"ur",
 		"cost3",
-		"light",
-		"dark",
+		"lightdark",
 		"singer",
 		"recovery"
 	],
 	"99960034": [
 		"mr",
 		"cost3",
-		"light",
-		"dark",
+		"lightdark",
 		"singer",
 		"recovery"
 	],
@@ -18321,8 +18205,7 @@
 	"99970037": [
 		"ur",
 		"cost2",
-		"fire",
-		"light",
+		"firelight",
 		"mercenary",
 		"support",
 		"crit",
@@ -18331,8 +18214,7 @@
 	"99970038": [
 		"mr",
 		"cost2",
-		"fire",
-		"light",
+		"firelight",
 		"mercenary",
 		"support",
 		"crit",
@@ -18341,8 +18223,7 @@
 	"99970039": [
 		"ur",
 		"cost2",
-		"ice",
-		"light",
+		"icelight",
 		"millionaire",
 		"defense",
 		"covering",
@@ -18351,8 +18232,7 @@
 	"99970040": [
 		"mr",
 		"cost2",
-		"ice",
-		"light",
+		"icelight",
 		"millionaire",
 		"defense",
 		"covering",
@@ -18361,8 +18241,7 @@
 	"99970041": [
 		"ur",
 		"cost2",
-		"light",
-		"dark",
+		"lightdark",
 		"thief",
 		"jamming",
 		"cup"
@@ -18370,8 +18249,7 @@
 	"99970042": [
 		"mr",
 		"cost2",
-		"light",
-		"dark",
+		"lightdark",
 		"thief",
 		"jamming",
 		"cup"
@@ -18379,8 +18257,7 @@
 	"99970043": [
 		"ur",
 		"cost2",
-		"wind",
-		"light",
+		"windlight",
 		"singer",
 		"recovery",
 		"cup"
@@ -18388,8 +18265,7 @@
 	"99970044": [
 		"mr",
 		"cost2",
-		"wind",
-		"light",
+		"windlight",
 		"singer",
 		"recovery",
 		"cup"
@@ -18397,16 +18273,14 @@
 	"99980001": [
 		"ur",
 		"cost3",
-		"fire",
-		"light",
+		"firelight",
 		"mercenary",
 		"support"
 	],
 	"99980002": [
 		"mr",
 		"cost3",
-		"fire",
-		"light",
+		"firelight",
 		"mercenary",
 		"support"
 	],
@@ -18431,16 +18305,14 @@
 	"99980005": [
 		"ur",
 		"cost2",
-		"fire",
-		"dark",
+		"firedark",
 		"thief",
 		"sorcery"
 	],
 	"99980006": [
 		"mr",
 		"cost2",
-		"fire",
-		"dark",
+		"firedark",
 		"thief",
 		"sorcery"
 	],
@@ -18461,8 +18333,7 @@
 	"99980009": [
 		"ur",
 		"cost2",
-		"wind",
-		"dark",
+		"winddark",
 		"mercenary",
 		"sorcery",
 		"aoe"
@@ -18470,8 +18341,7 @@
 	"99980010": [
 		"mr",
 		"cost2",
-		"wind",
-		"dark",
+		"winddark",
 		"mercenary",
 		"sorcery",
 		"aoe"
@@ -18521,8 +18391,7 @@
 	"99980017": [
 		"ur",
 		"cost3",
-		"wind",
-		"dark",
+		"winddark",
 		"mercenary",
 		"attack",
 		"aoe"
@@ -18530,8 +18399,7 @@
 	"99980018": [
 		"mr",
 		"cost3",
-		"wind",
-		"dark",
+		"winddark",
 		"mercenary",
 		"attack",
 		"aoe"
@@ -18587,40 +18455,35 @@
 	"99980025": [
 		"ur",
 		"cost3",
-		"ice",
-		"dark",
+		"icedark",
 		"mercenary",
 		"support"
 	],
 	"99980026": [
 		"mr",
 		"cost3",
-		"ice",
-		"dark",
+		"icedark",
 		"mercenary",
 		"support"
 	],
 	"99980027": [
 		"ur",
 		"cost2",
-		"ice",
-		"dark",
+		"icedark",
 		"millionaire",
 		"defense"
 	],
 	"99980028": [
 		"mr",
 		"cost2",
-		"ice",
-		"dark",
+		"icedark",
 		"millionaire",
 		"defense"
 	],
 	"99980029": [
 		"ur",
 		"cost2",
-		"fire",
-		"light",
+		"firelight",
 		"singer",
 		"recovery",
 		"bug"
@@ -18628,8 +18491,7 @@
 	"99980030": [
 		"mr",
 		"cost2",
-		"fire",
-		"light",
+		"firelight",
 		"singer",
 		"recovery",
 		"bug"
@@ -18747,8 +18609,7 @@
 	"99980045": [
 		"ur",
 		"cost3",
-		"fire",
-		"wind",
+		"firewind",
 		"mercenary",
 		"sorcery",
 		"pierce"
@@ -18756,8 +18617,7 @@
 	"99980046": [
 		"mr",
 		"cost3",
-		"fire",
-		"wind",
+		"firewind",
 		"mercenary",
 		"sorcery",
 		"pierce"
@@ -18841,16 +18701,14 @@
 	"99980057": [
 		"ur",
 		"cost1",
-		"light",
-		"dark",
+		"lightdark",
 		"null",
 		"jamming"
 	],
 	"99980058": [
 		"mr",
 		"cost1",
-		"light",
-		"dark",
+		"lightdark",
 		"null",
 		"jamming"
 	],
@@ -20160,8 +20018,7 @@
 	"99990173": [
 		"ur",
 		"cost3",
-		"fire",
-		"wind",
+		"firewind",
 		"mercenary",
 		"attack",
 		"pierce"
@@ -20169,8 +20026,7 @@
 	"99990174": [
 		"mr",
 		"cost3",
-		"fire",
-		"wind",
+		"firewind",
 		"mercenary",
 		"attack",
 		"pierce"

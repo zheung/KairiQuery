@@ -3,6 +3,8 @@ let condsParse = (conds, xlen) => {
 
 	conds.page = conds.page || 1;
 
+	conds.zero = !!~~conds.zero;
+
 	conds.mark = conds.mark.split(',');
 
 	while(conds.mark.length < xlen) conds.mark.push(0);
@@ -15,6 +17,11 @@ let valid = (serv, markCards, markConds, xlen) => {
 			return false;
 
 	return true;
+	// for(let i=0; i<xlen; i++)
+	// 	if(markCards[i] & markConds[i])
+	// 		return true;
+
+	// return false;
 };
 
 module.exports = ($) => {
@@ -29,8 +36,7 @@ module.exports = ($) => {
 
 		for(let id in datas) {
 			let data = datas[id], mark = marks[id];
-
-			if(valid(serv, mark, conds.mark, marks.xlen))
+			if(conds.zero || valid(serv, mark, conds.mark, marks.xlen))
 				resultAll.push(renderAll ? rend(serv, data, paths) : data);
 		}
 

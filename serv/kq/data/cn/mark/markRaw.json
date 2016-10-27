@@ -1,8 +1,10 @@
 [
 	"n", "hn", "r", "sr", "ur", "mr", "mr+", "mr++", "mmr",
+	"mercenary", "millionaire", "thief", "singer", "null",
 	"cost1", "cost2", "cost3", "cost4", "cost5", "cost9", "cost11",
 	"fire", "ice", "wind", "light", "dark",
-	"mercenary", "millionaire", "thief", "singer", "null",
+	"fireice", "firewind", "firelight", "firedark",
+	"icewind", "icelight", "icedark", "windlight", "winddark", "lightdark",
 	"attack", "sorcery", "recovery", "support", "defense", "jamming", "special",
 
 	"map", "linkage", "speical",

@@ -25,11 +25,21 @@ module.exports = {
 	attr: (card) => {
 		let result = [], attr = (card.skill.awaken[0] || card.skill.normal[0]).info.attr;
 
-		if(1+(attr+'').indexOf('1')) result.push('fire');
-		if(1+(attr+'').indexOf('2')) result.push('ice');
-		if(1+(attr+'').indexOf('3')) result.push('wind');
-		if(1+(attr+'').indexOf('4')) result.push('light');
-		if(1+(attr+'').indexOf('5')) result.push('dark');
+		if(attr==1) result.push('fire');
+		if(attr==2) result.push('ice');
+		if(attr==3) result.push('wind');
+		if(attr==4) result.push('light');
+		if(attr==5) result.push('dark');
+		if(attr==102) result.push('fireice');
+		if(attr==103) result.push('firewind');
+		if(attr==104) result.push('firelight');
+		if(attr==105) result.push('firedark');
+		if(attr==203) result.push('icewind');
+		if(attr==204) result.push('icelight');
+		if(attr==205) result.push('icedark');
+		if(attr==304) result.push('windlight');
+		if(attr==305) result.push('winddark');
+		if(attr==405) result.push('lightdark');
 
 		return result;
 	},

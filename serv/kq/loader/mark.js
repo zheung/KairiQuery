@@ -1,6 +1,6 @@
 module.exports = ($) => {
 	let loadDarr = (serv) => {
-		let xyMap = {}, raw = $.rq(`${''}data/cn/mark/markRaw.json`);
+		let xyMap = {}, raw = $.rq(`${''}data/${serv}/mark/markRaw.json`);
 
 		raw.forEach((tag, index) => {
 			xyMap[tag] = `${Math.floor(index/16)}:${1<<index%16}`;
@@ -93,7 +93,7 @@ module.exports = ($) => {
 				}
 
 				fs.writeFileSync($.pa(`data/${serv}/mark.json`), JSON.stringify(markServs, null, '\t'));
-				fs.writeFileSync($.pa(`data/${serv}/mark/dict/markMap.json`), JSON.stringify(xyMap, null, '\t'));
+				fs.writeFileSync($.pa(`data/${serv}/mark/markMap.json`), JSON.stringify(xyMap, null, '\t'));
 			}
 			else
 				markServs = $.rq(`data/${serv}/mark.json`);
