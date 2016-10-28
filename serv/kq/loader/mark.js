@@ -1,12 +1,14 @@
 module.exports = ($) => {
 	let loadDarr = (serv) => {
-		let xyMap = {}, raw = $.rq(`${''}data/${serv}/mark/markRaw.json`);
+		let space = {}, raw = $.rq(`${''}data/${serv}/mark/markRaw.json`);
 
-		raw.forEach((tag, index) => {
-			xyMap[tag] = `${Math.floor(index/16)}:${1<<index%16}`;
+		raw.forEach((group, x) => {
+			group.forEach((mark, y) => {
+				space[mark] = `${x}:${Math.floor(y/16)}:${1<<y%16}:`;
+			});
 		});
 
-		return xyMap;
+		return space;
 	};
 
 	let loadMark = (serv, mark) => {
@@ -69,6 +71,8 @@ module.exports = ($) => {
 		for(let serv of $.conf.servs) {
 			let markServs, result = {}, xyMap = loadDarr(serv), xlen = Math.floor((Object.keys(xyMap).length-1)/16);
 
+			console.log(result);
+
 			dict[serv] = {};
 
 			if($.conf.renderMark) {
@@ -99,14 +103,14 @@ module.exports = ($) => {
 				markServs = $.rq(`data/${serv}/mark.json`);
 
 			for(let ri in markServs) {
-				let xy = (result[ri] || (result[ri] = []));
-
-				for(let i=0; i < xlen; i++) xy.push(0);
+				let space = (result[ri] || (result[ri] = []));
 
 				for(let mark of markServs[ri]) {
-					let xySplit = xyMap[mark].split(':'), x = ~~xySplit[0], y = ~~xySplit[1];
+					let xySplit = xyMap[mark].split(':'), x = ~~xySplit[0], y = ~~xySplit[1], z = ~~xySplit[2];
 
-					xy[x] += y;
+					let dx = (space[x] || (space[x] = [])), dy = (dx[y] || (dx[y] = 0));
+
+					dy += z;
 				}
 			}
 
