@@ -14,7 +14,7 @@ let condsParse = (conds, xlen, ylen) => {
 			let x = [];
 
 			for(let j=0; j < ylen; j++)
-				x.push(~~mark[index++]);
+				x.push(~~conds.mark[index++]);
 
 			return x;
 		})());
@@ -24,10 +24,12 @@ let condsParse = (conds, xlen, ylen) => {
 
 let valid = (serv, mcas, mcos, xlen, ylen) => {
 	for(let y=0; y < ylen; y++) {
-		let pass = false;
+		let pass = false, xysum = 0;
 
 		for(let x=0; x < xlen; x++) {
 			let mca = mcas[x][y], mco = mcos[x][y];
+
+			xysum += mco;
 
 			if(mca & mco) {
 				pass = true;
@@ -36,7 +38,7 @@ let valid = (serv, mcas, mcos, xlen, ylen) => {
 			}
 		}
 
-		if(!pass) return false;
+		if(xysum && !pass) return false;
 	}
 
 	return true;

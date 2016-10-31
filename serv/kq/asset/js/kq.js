@@ -28,8 +28,7 @@
 	};
 
 	window.kqe = {
-		toggles: $('.Toggle[data-x][data-y]'),
-		marks: $('.Toggle[data-mark]'),
+		toggles: $('.Toggle[data-x]'),
 		rightNavi: $('.TabHead.RightNavi[data-tab=RightNavi]'),
 		condName: $('#CondName'),
 		search: $('#Search'),
@@ -40,8 +39,7 @@
 
 	window.kqs = {
 		page: $('.sPage'),
-		pageMax: $('.sPageMax'),
-		marks: $('<a>')
+		pageMax: $('.sPageMax')
 	};
 
 	kqs.cards = window.cards;
@@ -133,7 +131,7 @@
 					header.find(':first-child').addClass('active');
 				}
 
-				var primary = (kqs.marks.hasClass('ex') ? 2 : (data.job != '通用' ? 0 : 1));
+				var primary = (kq.conds.mark[0][9] ? 2 : (data.job != '通用' ? 0 : 1));
 
 				card.find('.TabHead.Skill').removeClass('primary').filter('[data-page='+types[primary]+']').addClass('primary');
 
@@ -164,15 +162,7 @@
 			var result = $.extend({}, kq.conds, {
 				page: kqd.page,
 				mark: kq.conds.mark.toString().replace(/\,/g, '~'),
-				zero: (function() {
-					var mark = kq.conds.mark;
-
-					for(var i=0; i < mark.length; i++)
-						if(mark[i]>0)
-							return 0;
-
-					return 1;
-				})()
+				zero: (/[1-9]/.test(kq.conds.mark.toString()))?0:1
 			});
 
 			if(moder) moder(result);

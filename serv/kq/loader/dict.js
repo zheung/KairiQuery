@@ -1,5 +1,5 @@
 module.exports = ($) => {
-	let dictNames = ['valuer', 'shower', 'bitser'];
+	let dictNames = ['valuer', 'shower'];
 
 	return () => {
 		let dicts = {};

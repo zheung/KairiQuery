@@ -59,6 +59,7 @@ input, span {
 	min-width: 30px;
 
 	border: 2px solid #34495e;
+	color: #E0E2E4;
 
 	padding: 4px;
 	padding-left: 3px;
@@ -71,13 +72,13 @@ input, span {
 	cursor: pointer;
 }
 .Toggle.on {
-	border: 2px solid #557799;
+	border-color: #557799;
 
-	color: #E0E2E4;
 	background-color: #557799;
 }
 .Toggle.off {
-	color: #557799;
+	border-color: #557799;
+	border-style: dotted;
 }
 .Toggle.min {
 	min-width: 14px;

@@ -58,19 +58,6 @@
 			if(man) kqd.dynmSearch = true;
 		}
 	});
-
-	kqe.marks.click(function() {
-		var mark = this.dataset.mark, $this = kqe.marks.filter('[data-mark='+mark+']');
-
-		$this.toggleClass('on').toggleClass('off');
-
-		if($this.hasClass('on'))
-			kqs.marks.addClass(mark);
-		else
-			kqs.marks.removeClass(mark);
-
-		if(kqd.dynmSearch) kq.query(function(param) { param.page = 1; }, kqf.dealer);
-	});
 })();
 
 (function() {

@@ -1,1152 +1,4072 @@
 {
 	"10000010": [
-		"4:16",
-		"2:1"
+		"hn",
+		"cost3",
+		"fire",
+		"mercenary",
+		"attack",
+		"map:9-1",
+		"map"
 	],
-	"10000011": [],
-	"10000012": [],
-	"10000013": [],
+	"10000011": [
+		"r",
+		"cost3",
+		"fire",
+		"mercenary",
+		"attack"
+	],
+	"10000012": [
+		"sr",
+		"cost3",
+		"fire",
+		"mercenary",
+		"attack"
+	],
+	"10000013": [
+		"ur",
+		"cost3",
+		"fire",
+		"mercenary",
+		"attack"
+	],
 	"10000018": [
-		"5:8192",
-		"2:1"
+		"hn",
+		"cost4",
+		"fire",
+		"mercenary",
+		"attack",
+		"map:18-1",
+		"map"
 	],
-	"10000019": [],
-	"10000020": [],
-	"10000021": [],
+	"10000019": [
+		"r",
+		"cost4",
+		"fire",
+		"mercenary",
+		"attack"
+	],
+	"10000020": [
+		"sr",
+		"cost4",
+		"fire",
+		"mercenary",
+		"attack"
+	],
+	"10000021": [
+		"ur",
+		"cost4",
+		"fire",
+		"mercenary",
+		"attack"
+	],
 	"10000022": [
-		"3:4",
-		"3:8",
-		"3:16",
-		"3:256",
-		"3:512",
-		"3:1024",
-		"3:2048",
-		"3:4096",
-		"3:8192",
-		"4:2048",
-		"4:4096",
-		"4:8192",
-		"5:128",
-		"5:256",
-		"5:512",
-		"5:1024",
-		"5:2048",
-		"5:4096",
-		"2:1"
+		"hn",
+		"cost2",
+		"fire",
+		"millionaire",
+		"attack",
+		"map:3-1",
+		"map:3-2",
+		"map:3-3",
+		"map:5-1",
+		"map:5-2",
+		"map:5-3",
+		"map:6-1",
+		"map:6-2",
+		"map:6-3",
+		"map:12-1",
+		"map:12-2",
+		"map:12-3",
+		"map:16-1",
+		"map:16-2",
+		"map:16-3",
+		"map:17-1",
+		"map:17-2",
+		"map:17-3",
+		"map"
 	],
-	"10000023": [],
-	"10000024": [],
-	"10000025": [],
+	"10000023": [
+		"r",
+		"cost2",
+		"fire",
+		"millionaire",
+		"attack"
+	],
+	"10000024": [
+		"sr",
+		"cost2",
+		"fire",
+		"millionaire",
+		"attack"
+	],
+	"10000025": [
+		"ur",
+		"cost2",
+		"fire",
+		"millionaire",
+		"attack"
+	],
 	"10000026": [
-		"3:2048",
-		"3:8192",
-		"2:1"
+		"n",
+		"cost1",
+		"fire",
+		"mercenary",
+		"support",
+		"map:6-1",
+		"map:6-3",
+		"map"
 	],
-	"10000027": [],
+	"10000027": [
+		"hn",
+		"cost1",
+		"fire",
+		"mercenary",
+		"support"
+	],
 	"10000030": [
-		"4:16",
-		"2:1"
+		"hn",
+		"cost3",
+		"wind",
+		"thief",
+		"sorcery",
+		"map:9-1",
+		"map"
 	],
-	"10000031": [],
-	"10000032": [],
-	"10000033": [],
+	"10000031": [
+		"r",
+		"cost3",
+		"wind",
+		"thief",
+		"sorcery"
+	],
+	"10000032": [
+		"sr",
+		"cost3",
+		"wind",
+		"thief",
+		"sorcery"
+	],
+	"10000033": [
+		"ur",
+		"cost3",
+		"wind",
+		"thief",
+		"sorcery"
+	],
 	"10000034": [
-		"5:8192",
-		"2:1"
+		"hn",
+		"cost4",
+		"light",
+		"singer",
+		"recovery",
+		"map:18-1",
+		"map"
 	],
-	"10000035": [],
-	"10000036": [],
-	"10000037": [],
+	"10000035": [
+		"r",
+		"cost4",
+		"light",
+		"singer",
+		"recovery"
+	],
+	"10000036": [
+		"sr",
+		"cost4",
+		"light",
+		"singer",
+		"recovery"
+	],
+	"10000037": [
+		"ur",
+		"cost4",
+		"light",
+		"singer",
+		"recovery"
+	],
 	"10000038": [
-		"4:16",
-		"2:1"
+		"hn",
+		"cost3",
+		"ice",
+		"singer",
+		"sorcery",
+		"map:9-1",
+		"map"
 	],
-	"10000039": [],
-	"10000040": [],
-	"10000041": [],
+	"10000039": [
+		"r",
+		"cost3",
+		"ice",
+		"singer",
+		"sorcery"
+	],
+	"10000040": [
+		"sr",
+		"cost3",
+		"ice",
+		"singer",
+		"sorcery"
+	],
+	"10000041": [
+		"ur",
+		"cost3",
+		"ice",
+		"singer",
+		"sorcery"
+	],
 	"10000042": [
-		"4:32",
-		"4:64",
-		"4:128",
-		"2:1"
+		"hn",
+		"cost4",
+		"wind",
+		"mercenary",
+		"attack",
+		"map:10-1",
+		"map:10-2",
+		"map:10-3",
+		"map"
 	],
-	"10000043": [],
-	"10000044": [],
-	"10000045": [],
+	"10000043": [
+		"r",
+		"cost4",
+		"wind",
+		"mercenary",
+		"attack"
+	],
+	"10000044": [
+		"sr",
+		"cost4",
+		"wind",
+		"mercenary",
+		"attack"
+	],
+	"10000045": [
+		"ur",
+		"cost4",
+		"wind",
+		"mercenary",
+		"attack"
+	],
 	"10000046": [
-		"2:32768",
-		"3:1",
-		"3:2",
-		"3:32",
-		"3:64",
-		"3:128",
-		"3:256",
-		"3:512",
-		"3:1024",
-		"4:256",
-		"4:512",
-		"4:1024",
-		"5:16",
-		"5:32",
-		"5:64",
-		"5:128",
-		"5:256",
-		"5:512",
-		"2:1"
+		"hn",
+		"cost2",
+		"ice",
+		"millionaire",
+		"attack",
+		"map:2-1",
+		"map:2-2",
+		"map:2-3",
+		"map:4-1",
+		"map:4-2",
+		"map:4-3",
+		"map:5-1",
+		"map:5-2",
+		"map:5-3",
+		"map:11-1",
+		"map:11-2",
+		"map:11-3",
+		"map:15-1",
+		"map:15-2",
+		"map:15-3",
+		"map:16-1",
+		"map:16-2",
+		"map:16-3",
+		"map"
 	],
-	"10000047": [],
-	"10000048": [],
-	"10000049": [],
-	"10000050": [],
-	"10000051": [],
-	"10000052": [],
-	"10000053": [],
-	"10000054": [],
-	"10000055": [],
-	"10000056": [],
-	"10000057": [],
-	"10000058": [],
-	"10000059": [],
-	"10000061": [],
-	"10000062": [],
-	"10000063": [],
-	"10000064": [],
+	"10000047": [
+		"r",
+		"cost2",
+		"ice",
+		"millionaire",
+		"attack"
+	],
+	"10000048": [
+		"sr",
+		"cost2",
+		"ice",
+		"millionaire",
+		"attack"
+	],
+	"10000049": [
+		"ur",
+		"cost2",
+		"ice",
+		"millionaire",
+		"attack"
+	],
+	"10000050": [
+		"r",
+		"cost3",
+		"light",
+		"mercenary",
+		"attack"
+	],
+	"10000051": [
+		"sr",
+		"cost3",
+		"light",
+		"mercenary",
+		"attack"
+	],
+	"10000052": [
+		"ur",
+		"cost5",
+		"ice",
+		"singer",
+		"defense"
+	],
+	"10000053": [
+		"mr",
+		"cost5",
+		"ice",
+		"singer",
+		"defense"
+	],
+	"10000054": [
+		"r",
+		"cost3",
+		"ice",
+		"thief",
+		"sorcery"
+	],
+	"10000055": [
+		"sr",
+		"cost3",
+		"ice",
+		"thief",
+		"sorcery"
+	],
+	"10000056": [
+		"ur",
+		"cost4",
+		"wind",
+		"mercenary",
+		"attack"
+	],
+	"10000057": [
+		"mr",
+		"cost4",
+		"wind",
+		"mercenary",
+		"attack"
+	],
+	"10000058": [
+		"sr",
+		"cost3",
+		"wind",
+		"thief",
+		"support"
+	],
+	"10000059": [
+		"ur",
+		"cost3",
+		"wind",
+		"thief",
+		"support"
+	],
+	"10000061": [
+		"r",
+		"cost3",
+		"wind",
+		"millionaire",
+		"attack"
+	],
+	"10000062": [
+		"sr",
+		"cost3",
+		"wind",
+		"millionaire",
+		"attack"
+	],
+	"10000063": [
+		"ur",
+		"cost5",
+		"light",
+		"singer",
+		"recovery"
+	],
+	"10000064": [
+		"mr",
+		"cost5",
+		"light",
+		"singer",
+		"recovery"
+	],
 	"10000065": [
-		"4:4",
-		"4:8",
-		"5:2",
-		"5:4",
-		"5:8",
-		"2:1"
+		"r",
+		"cost2",
+		"dark",
+		"thief",
+		"jamming",
+		"map:8-2",
+		"map:8-3",
+		"map:14-1",
+		"map:14-2",
+		"map:14-3",
+		"map"
 	],
-	"10000066": [],
-	"10000067": [],
+	"10000066": [
+		"sr",
+		"cost2",
+		"dark",
+		"thief",
+		"jamming"
+	],
+	"10000067": [
+		"ur",
+		"cost2",
+		"dark",
+		"thief",
+		"jamming"
+	],
 	"10000068": [
-		"5:32768",
-		"5:8192",
-		"2:1"
+		"hn",
+		"cost5",
+		"dark",
+		"singer",
+		"sorcery",
+		"aoe",
+		"map:18-1",
+		"map"
 	],
 	"10000069": [
-		"5:32768"
+		"r",
+		"cost5",
+		"dark",
+		"singer",
+		"sorcery",
+		"aoe"
 	],
 	"10000070": [
-		"5:32768"
+		"sr",
+		"cost5",
+		"dark",
+		"singer",
+		"sorcery",
+		"aoe"
 	],
 	"10000071": [
-		"5:32768"
+		"ur",
+		"cost5",
+		"dark",
+		"singer",
+		"sorcery",
+		"aoe"
 	],
-	"10000072": [],
-	"10000073": [],
-	"10000074": [],
+	"10000072": [
+		"r",
+		"cost2",
+		"wind",
+		"thief",
+		"jamming"
+	],
+	"10000073": [
+		"sr",
+		"cost2",
+		"wind",
+		"thief",
+		"jamming"
+	],
+	"10000074": [
+		"ur",
+		"cost2",
+		"wind",
+		"thief",
+		"jamming"
+	],
 	"10000075": [
-		"4:2",
-		"4:4",
-		"4:8",
-		"5:2",
-		"5:4",
-		"5:8",
-		"2:1"
+		"hn",
+		"cost2",
+		"dark",
+		"mercenary",
+		"attack",
+		"map:8-1",
+		"map:8-2",
+		"map:8-3",
+		"map:14-1",
+		"map:14-2",
+		"map:14-3",
+		"map"
 	],
-	"10000076": [],
-	"10000077": [],
+	"10000076": [
+		"r",
+		"cost2",
+		"dark",
+		"mercenary",
+		"attack"
+	],
+	"10000077": [
+		"sr",
+		"cost2",
+		"dark",
+		"mercenary",
+		"attack"
+	],
 	"10000078": [
-		"4:2",
-		"4:4",
-		"4:8",
-		"5:2",
-		"5:4",
-		"5:8",
-		"2:1"
+		"hn",
+		"cost2",
+		"dark",
+		"singer",
+		"sorcery",
+		"map:8-1",
+		"map:8-2",
+		"map:8-3",
+		"map:14-1",
+		"map:14-2",
+		"map:14-3",
+		"map"
 	],
-	"10000079": [],
-	"10000080": [],
+	"10000079": [
+		"r",
+		"cost2",
+		"dark",
+		"singer",
+		"sorcery"
+	],
+	"10000080": [
+		"sr",
+		"cost2",
+		"dark",
+		"singer",
+		"sorcery"
+	],
 	"10000081": [
-		"3:512",
-		"3:1024",
-		"4:256",
-		"4:512",
-		"4:1024",
-		"5:16",
-		"5:64",
-		"5:128",
-		"5:256",
-		"5:512",
-		"2:1"
+		"r",
+		"cost4",
+		"ice",
+		"millionaire",
+		"defense",
+		"map:5-2",
+		"map:5-3",
+		"map:11-1",
+		"map:11-2",
+		"map:11-3",
+		"map:15-1",
+		"map:15-3",
+		"map:16-1",
+		"map:16-2",
+		"map:16-3",
+		"map"
 	],
-	"10000082": [],
-	"10000083": [],
-	"10000084": [],
-	"10000085": [],
-	"10000087": [],
-	"10000088": [],
+	"10000082": [
+		"sr",
+		"cost4",
+		"ice",
+		"millionaire",
+		"defense"
+	],
+	"10000083": [
+		"ur",
+		"cost4",
+		"ice",
+		"millionaire",
+		"defense"
+	],
+	"10000084": [
+		"r",
+		"cost3",
+		"fire",
+		"thief",
+		"sorcery"
+	],
+	"10000085": [
+		"sr",
+		"cost3",
+		"fire",
+		"thief",
+		"sorcery"
+	],
+	"10000087": [
+		"sr",
+		"cost2",
+		"dark",
+		"thief",
+		"jamming"
+	],
+	"10000088": [
+		"ur",
+		"cost2",
+		"dark",
+		"thief",
+		"jamming"
+	],
 	"10000090": [
-		"4:16",
-		"2:1"
+		"hn",
+		"cost3",
+		"dark",
+		"millionaire",
+		"attack",
+		"map:9-1",
+		"map"
 	],
-	"10000091": [],
-	"10000092": [],
+	"10000091": [
+		"sr",
+		"cost3",
+		"dark",
+		"millionaire",
+		"attack"
+	],
+	"10000092": [
+		"ur",
+		"cost3",
+		"dark",
+		"millionaire",
+		"attack"
+	],
 	"10000093": [
-		"3:4096",
-		"3:8192",
-		"4:2048",
-		"4:4096",
-		"4:8192",
-		"5:128",
-		"5:512",
-		"5:1024",
-		"5:2048",
-		"5:4096",
-		"2:1"
+		"r",
+		"cost2",
+		"fire",
+		"mercenary",
+		"support",
+		"map:6-2",
+		"map:6-3",
+		"map:12-1",
+		"map:12-2",
+		"map:12-3",
+		"map:16-1",
+		"map:16-3",
+		"map:17-1",
+		"map:17-2",
+		"map:17-3",
+		"map"
 	],
-	"10000094": [],
-	"10000095": [],
+	"10000094": [
+		"sr",
+		"cost2",
+		"fire",
+		"mercenary",
+		"support"
+	],
+	"10000095": [
+		"ur",
+		"cost2",
+		"fire",
+		"mercenary",
+		"support"
+	],
 	"10000096": [
-		"3:64",
-		"3:128",
-		"4:32",
-		"4:64",
-		"4:128",
-		"5:16",
-		"5:32",
-		"5:64",
-		"5:1024",
-		"5:4096",
-		"2:1"
+		"r",
+		"cost2",
+		"wind",
+		"thief",
+		"support",
+		"map:4-2",
+		"map:4-3",
+		"map:10-1",
+		"map:10-2",
+		"map:10-3",
+		"map:15-1",
+		"map:15-2",
+		"map:15-3",
+		"map:17-1",
+		"map:17-3",
+		"map"
 	],
-	"10000097": [],
-	"10000098": [],
-	"10000099": [],
-	"10000100": [],
-	"10000101": [],
+	"10000097": [
+		"sr",
+		"cost2",
+		"wind",
+		"thief",
+		"support"
+	],
+	"10000098": [
+		"ur",
+		"cost2",
+		"wind",
+		"thief",
+		"support"
+	],
+	"10000099": [
+		"sr",
+		"cost5",
+		"wind",
+		"mercenary",
+		"attack"
+	],
+	"10000100": [
+		"ur",
+		"cost5",
+		"wind",
+		"mercenary",
+		"attack"
+	],
+	"10000101": [
+		"mr",
+		"cost5",
+		"wind",
+		"mercenary",
+		"attack"
+	],
 	"10000102": [
-		"3:32768",
-		"4:1",
-		"4:16384",
-		"4:32768",
-		"5:1",
-		"2:1"
+		"hn",
+		"cost2",
+		"light",
+		"millionaire",
+		"attack",
+		"map:7-2",
+		"map:7-3",
+		"map:13-1",
+		"map:13-2",
+		"map:13-3",
+		"map"
 	],
-	"10000103": [],
-	"10000104": [],
+	"10000103": [
+		"r",
+		"cost2",
+		"light",
+		"millionaire",
+		"attack"
+	],
+	"10000104": [
+		"sr",
+		"cost2",
+		"light",
+		"millionaire",
+		"attack"
+	],
 	"10000105": [
-		"2:32768",
-		"3:1",
-		"3:2",
-		"3:32",
-		"3:64",
-		"3:128",
-		"3:256",
-		"3:512",
-		"3:1024",
-		"4:256",
-		"4:512",
-		"4:1024",
-		"5:16",
-		"5:32",
-		"5:64",
-		"5:128",
-		"5:256",
-		"5:512",
-		"2:1"
+		"hn",
+		"cost2",
+		"ice",
+		"mercenary",
+		"attack",
+		"map:2-1",
+		"map:2-2",
+		"map:2-3",
+		"map:4-1",
+		"map:4-2",
+		"map:4-3",
+		"map:5-1",
+		"map:5-2",
+		"map:5-3",
+		"map:11-1",
+		"map:11-2",
+		"map:11-3",
+		"map:15-1",
+		"map:15-2",
+		"map:15-3",
+		"map:16-1",
+		"map:16-2",
+		"map:16-3",
+		"map"
 	],
-	"10000106": [],
-	"10000107": [],
+	"10000106": [
+		"r",
+		"cost2",
+		"ice",
+		"mercenary",
+		"attack"
+	],
+	"10000107": [
+		"sr",
+		"cost2",
+		"ice",
+		"mercenary",
+		"attack"
+	],
 	"10000108": [
-		"3:256",
-		"3:1024",
-		"2:1"
+		"hn",
+		"cost2",
+		"ice",
+		"millionaire",
+		"defense",
+		"map:5-1",
+		"map:5-3",
+		"map"
 	],
 	"10000109": [
-		"6:8"
+		"r",
+		"cost4",
+		"dark",
+		"mercenary",
+		"attack",
+		"stan"
 	],
 	"10000110": [
-		"6:8"
+		"sr",
+		"cost4",
+		"dark",
+		"mercenary",
+		"attack",
+		"stan"
 	],
-	"10000111": [],
-	"10000112": [],
+	"10000111": [
+		"sr",
+		"cost3",
+		"light",
+		"singer",
+		"recovery"
+	],
+	"10000112": [
+		"ur",
+		"cost3",
+		"light",
+		"singer",
+		"recovery"
+	],
 	"10000114": [
-		"4:2048",
-		"4:4096",
-		"4:8192",
-		"2:1"
+		"r",
+		"cost2",
+		"fire",
+		"millionaire",
+		"jamming",
+		"map:12-1",
+		"map:12-2",
+		"map:12-3",
+		"map"
 	],
-	"10000115": [],
-	"10000116": [],
+	"10000115": [
+		"sr",
+		"cost2",
+		"fire",
+		"millionaire",
+		"jamming"
+	],
+	"10000116": [
+		"ur",
+		"cost2",
+		"fire",
+		"millionaire",
+		"jamming"
+	],
 	"10000117": [
-		"4:256",
-		"4:512",
-		"4:1024",
-		"2:1"
+		"hn",
+		"cost4",
+		"ice",
+		"thief",
+		"sorcery",
+		"map:11-1",
+		"map:11-2",
+		"map:11-3",
+		"map"
 	],
-	"10000118": [],
-	"10000119": [],
+	"10000118": [
+		"r",
+		"cost4",
+		"ice",
+		"thief",
+		"sorcery"
+	],
+	"10000119": [
+		"sr",
+		"cost4",
+		"ice",
+		"thief",
+		"sorcery"
+	],
 	"10000123": [
-		"3:32",
-		"3:128",
-		"2:1"
+		"n",
+		"cost1",
+		"wind",
+		"thief",
+		"support",
+		"map:4-1",
+		"map:4-3",
+		"map"
 	],
-	"10000124": [],
+	"10000124": [
+		"hn",
+		"cost1",
+		"wind",
+		"thief",
+		"support"
+	],
 	"10000125": [
-		"5:256",
-		"5:512",
-		"2:1"
+		"r",
+		"cost4",
+		"ice",
+		"millionaire",
+		"defense",
+		"map:16-2",
+		"map:16-3",
+		"map"
 	],
-	"10000126": [],
-	"10000129": [],
-	"10000130": [],
+	"10000126": [
+		"sr",
+		"cost4",
+		"ice",
+		"millionaire",
+		"defense"
+	],
+	"10000129": [
+		"sr",
+		"cost4",
+		"ice",
+		"mercenary",
+		"attack"
+	],
+	"10000130": [
+		"ur",
+		"cost4",
+		"ice",
+		"mercenary",
+		"attack"
+	],
 	"10000131": [
-		"3:1024",
-		"2:1"
+		"r",
+		"cost3",
+		"ice",
+		"singer",
+		"defense",
+		"map:5-3",
+		"map"
 	],
-	"10000132": [],
-	"10000133": [],
+	"10000132": [
+		"sr",
+		"cost3",
+		"ice",
+		"singer",
+		"defense"
+	],
+	"10000133": [
+		"sr",
+		"cost4",
+		"fire",
+		"millionaire",
+		"attack"
+	],
 	"10000134": [
-		"6:1"
+		"ur",
+		"cost4",
+		"fire",
+		"millionaire",
+		"attack",
+		"db2"
 	],
 	"10000151": [
-		"5:32768"
+		"ur",
+		"cost5",
+		"fire",
+		"mercenary",
+		"attack",
+		"aoe"
 	],
 	"10000152": [
-		"5:32768"
+		"mr",
+		"cost5",
+		"fire",
+		"mercenary",
+		"attack",
+		"aoe"
 	],
 	"10000153": [
-		"3:16384",
-		"3:32768",
-		"4:1",
-		"4:16384",
-		"4:32768",
-		"5:1",
-		"2:1"
+		"r",
+		"cost2",
+		"light",
+		"singer",
+		"recovery",
+		"map:7-1",
+		"map:7-2",
+		"map:7-3",
+		"map:13-1",
+		"map:13-2",
+		"map:13-3",
+		"map"
 	],
-	"10000154": [],
-	"10000155": [],
+	"10000154": [
+		"sr",
+		"cost2",
+		"light",
+		"singer",
+		"recovery"
+	],
+	"10000155": [
+		"ur",
+		"cost2",
+		"light",
+		"singer",
+		"recovery"
+	],
 	"10000156": [
-		"4:16384",
-		"4:32768",
-		"5:1",
-		"2:1"
+		"r",
+		"cost3",
+		"light",
+		"singer",
+		"recovery",
+		"map:13-1",
+		"map:13-2",
+		"map:13-3",
+		"map"
 	],
-	"10000157": [],
-	"10000158": [],
-	"10000162": [],
-	"10000163": [],
-	"10000164": [],
-	"10000165": [],
+	"10000157": [
+		"sr",
+		"cost3",
+		"light",
+		"singer",
+		"recovery"
+	],
+	"10000158": [
+		"ur",
+		"cost3",
+		"light",
+		"singer",
+		"recovery"
+	],
+	"10000162": [
+		"r",
+		"cost3",
+		"dark",
+		"singer",
+		"sorcery"
+	],
+	"10000163": [
+		"sr",
+		"cost3",
+		"dark",
+		"singer",
+		"sorcery"
+	],
+	"10000164": [
+		"ur",
+		"cost3",
+		"dark",
+		"millionaire",
+		"attack"
+	],
+	"10000165": [
+		"mr",
+		"cost3",
+		"dark",
+		"millionaire",
+		"attack"
+	],
 	"10000166": [
-		"3:16384",
-		"3:32768",
-		"4:1",
-		"4:16384",
-		"4:32768",
-		"5:1",
-		"2:1"
+		"hn",
+		"cost2",
+		"light",
+		"singer",
+		"sorcery",
+		"map:7-1",
+		"map:7-2",
+		"map:7-3",
+		"map:13-1",
+		"map:13-2",
+		"map:13-3",
+		"map"
 	],
-	"10000167": [],
-	"10000168": [],
+	"10000167": [
+		"r",
+		"cost2",
+		"light",
+		"singer",
+		"sorcery"
+	],
+	"10000168": [
+		"sr",
+		"cost2",
+		"light",
+		"singer",
+		"sorcery"
+	],
 	"10000169": [
-		"5:32",
-		"5:64",
-		"2:1"
+		"r",
+		"cost3",
+		"wind",
+		"singer",
+		"support",
+		"map:15-2",
+		"map:15-3",
+		"map"
 	],
-	"10000170": [],
-	"10000171": [],
-	"10000172": [],
+	"10000170": [
+		"sr",
+		"cost3",
+		"wind",
+		"singer",
+		"support"
+	],
+	"10000171": [
+		"sr",
+		"cost4",
+		"dark",
+		"mercenary",
+		"attack"
+	],
+	"10000172": [
+		"ur",
+		"cost4",
+		"dark",
+		"mercenary",
+		"attack"
+	],
 	"10000173": [
-		"3:16384",
-		"3:32768",
-		"4:1",
-		"4:16384",
-		"4:32768",
-		"5:1",
-		"2:1"
+		"hn",
+		"cost2",
+		"light",
+		"mercenary",
+		"attack",
+		"map:7-1",
+		"map:7-2",
+		"map:7-3",
+		"map:13-1",
+		"map:13-2",
+		"map:13-3",
+		"map"
 	],
-	"10000174": [],
-	"10000175": [],
+	"10000174": [
+		"r",
+		"cost2",
+		"light",
+		"mercenary",
+		"attack"
+	],
+	"10000175": [
+		"sr",
+		"cost2",
+		"light",
+		"mercenary",
+		"attack"
+	],
 	"10000176": [
-		"5:2",
-		"5:4",
-		"5:8",
-		"2:1"
+		"r",
+		"cost2",
+		"dark",
+		"millionaire",
+		"jamming",
+		"map:14-1",
+		"map:14-2",
+		"map:14-3",
+		"map"
 	],
-	"10000177": [],
-	"10000178": [],
+	"10000177": [
+		"sr",
+		"cost2",
+		"dark",
+		"millionaire",
+		"jamming"
+	],
+	"10000178": [
+		"ur",
+		"cost2",
+		"dark",
+		"millionaire",
+		"jamming"
+	],
 	"10000179": [
-		"3:4",
-		"3:8",
-		"3:16",
-		"3:256",
-		"3:512",
-		"3:1024",
-		"3:2048",
-		"3:4096",
-		"3:8192",
-		"4:2048",
-		"4:4096",
-		"4:8192",
-		"5:128",
-		"5:256",
-		"5:512",
-		"5:1024",
-		"5:2048",
-		"5:4096",
-		"2:1"
+		"hn",
+		"cost2",
+		"fire",
+		"mercenary",
+		"attack",
+		"map:3-1",
+		"map:3-2",
+		"map:3-3",
+		"map:5-1",
+		"map:5-2",
+		"map:5-3",
+		"map:6-1",
+		"map:6-2",
+		"map:6-3",
+		"map:12-1",
+		"map:12-2",
+		"map:12-3",
+		"map:16-1",
+		"map:16-2",
+		"map:16-3",
+		"map:17-1",
+		"map:17-2",
+		"map:17-3",
+		"map"
 	],
-	"10000180": [],
-	"10000181": [],
+	"10000180": [
+		"r",
+		"cost2",
+		"fire",
+		"mercenary",
+		"attack"
+	],
+	"10000181": [
+		"sr",
+		"cost2",
+		"fire",
+		"mercenary",
+		"attack"
+	],
 	"10000182": [
-		"3:4",
-		"3:8",
-		"3:16",
-		"3:256",
-		"3:512",
-		"3:1024",
-		"3:2048",
-		"3:4096",
-		"3:8192",
-		"4:2048",
-		"4:4096",
-		"4:8192",
-		"5:128",
-		"5:256",
-		"5:512",
-		"5:1024",
-		"5:2048",
-		"5:4096",
-		"2:1"
+		"hn",
+		"cost2",
+		"fire",
+		"thief",
+		"sorcery",
+		"map:3-1",
+		"map:3-2",
+		"map:3-3",
+		"map:5-1",
+		"map:5-2",
+		"map:5-3",
+		"map:6-1",
+		"map:6-2",
+		"map:6-3",
+		"map:12-1",
+		"map:12-2",
+		"map:12-3",
+		"map:16-1",
+		"map:16-2",
+		"map:16-3",
+		"map:17-1",
+		"map:17-2",
+		"map:17-3",
+		"map"
 	],
-	"10000183": [],
-	"10000184": [],
-	"10000185": [],
-	"10000186": [],
+	"10000183": [
+		"r",
+		"cost2",
+		"fire",
+		"thief",
+		"sorcery"
+	],
+	"10000184": [
+		"sr",
+		"cost2",
+		"fire",
+		"thief",
+		"sorcery"
+	],
+	"10000185": [
+		"r",
+		"cost3",
+		"light",
+		"singer",
+		"recovery"
+	],
+	"10000186": [
+		"sr",
+		"cost3",
+		"light",
+		"singer",
+		"recovery"
+	],
 	"10000187": [
-		"2:4096",
-		"2:8192",
-		"2:16384",
-		"3:32",
-		"3:64",
-		"3:128",
-		"3:2048",
-		"3:4096",
-		"3:8192",
-		"4:32",
-		"4:64",
-		"4:128",
-		"5:16",
-		"5:32",
-		"5:64",
-		"5:1024",
-		"5:2048",
-		"5:4096",
-		"2:1"
+		"hn",
+		"cost2",
+		"wind",
+		"mercenary",
+		"attack",
+		"map:1-1",
+		"map:1-2",
+		"map:1-3",
+		"map:4-1",
+		"map:4-2",
+		"map:4-3",
+		"map:6-1",
+		"map:6-2",
+		"map:6-3",
+		"map:10-1",
+		"map:10-2",
+		"map:10-3",
+		"map:15-1",
+		"map:15-2",
+		"map:15-3",
+		"map:17-1",
+		"map:17-2",
+		"map:17-3",
+		"map"
 	],
-	"10000188": [],
-	"10000189": [],
+	"10000188": [
+		"r",
+		"cost2",
+		"wind",
+		"mercenary",
+		"attack"
+	],
+	"10000189": [
+		"sr",
+		"cost2",
+		"wind",
+		"mercenary",
+		"attack"
+	],
 	"10000197": [
-		"2:4096",
-		"2:8192",
-		"2:16384",
-		"3:32",
-		"3:64",
-		"3:128",
-		"3:2048",
-		"3:4096",
-		"3:8192",
-		"4:32",
-		"4:64",
-		"4:128",
-		"5:16",
-		"5:32",
-		"5:64",
-		"5:1024",
-		"5:2048",
-		"5:4096",
-		"2:1"
+		"hn",
+		"cost2",
+		"wind",
+		"thief",
+		"sorcery",
+		"map:1-1",
+		"map:1-2",
+		"map:1-3",
+		"map:4-1",
+		"map:4-2",
+		"map:4-3",
+		"map:6-1",
+		"map:6-2",
+		"map:6-3",
+		"map:10-1",
+		"map:10-2",
+		"map:10-3",
+		"map:15-1",
+		"map:15-2",
+		"map:15-3",
+		"map:17-1",
+		"map:17-2",
+		"map:17-3",
+		"map"
 	],
-	"10000198": [],
-	"10000199": [],
-	"10000206": [],
-	"10000207": [],
-	"10000208": [],
-	"10000209": [],
+	"10000198": [
+		"r",
+		"cost2",
+		"wind",
+		"thief",
+		"sorcery"
+	],
+	"10000199": [
+		"sr",
+		"cost2",
+		"wind",
+		"thief",
+		"sorcery"
+	],
+	"10000206": [
+		"ur",
+		"cost4",
+		"dark",
+		"thief",
+		"sorcery"
+	],
+	"10000207": [
+		"mr",
+		"cost4",
+		"dark",
+		"thief",
+		"sorcery"
+	],
+	"10000208": [
+		"sr",
+		"cost4",
+		"wind",
+		"mercenary",
+		"attack"
+	],
+	"10000209": [
+		"ur",
+		"cost4",
+		"wind",
+		"mercenary",
+		"attack"
+	],
 	"10000214": [
-		"4:16",
-		"2:1"
+		"sr",
+		"cost5",
+		"light",
+		"singer",
+		"recovery",
+		"map:9-1",
+		"map"
 	],
-	"10000215": [],
+	"10000215": [
+		"ur",
+		"cost5",
+		"light",
+		"singer",
+		"recovery"
+	],
 	"10000216": [
-		"5:8192",
-		"2:1"
+		"sr",
+		"cost3",
+		"dark",
+		"thief",
+		"jamming",
+		"map:18-1",
+		"map"
 	],
-	"10000217": [],
-	"10000231": [],
-	"10000238": [],
-	"10000245": [],
-	"10000252": [],
-	"10000258": [],
-	"10000303": [],
-	"10000304": [],
-	"10000305": [],
-	"10000306": [],
-	"10000308": [],
+	"10000217": [
+		"ur",
+		"cost3",
+		"dark",
+		"thief",
+		"jamming"
+	],
+	"10000231": [
+		"n",
+		"cost2",
+		"fire",
+		"null",
+		"attack"
+	],
+	"10000238": [
+		"n",
+		"cost2",
+		"ice",
+		"null",
+		"attack"
+	],
+	"10000245": [
+		"n",
+		"cost2",
+		"wind",
+		"null",
+		"attack"
+	],
+	"10000252": [
+		"n",
+		"cost2",
+		"light",
+		"null",
+		"recovery"
+	],
+	"10000258": [
+		"n",
+		"cost2",
+		"light",
+		"null",
+		"recovery"
+	],
+	"10000303": [
+		"r",
+		"cost3",
+		"dark",
+		"millionaire",
+		"attack"
+	],
+	"10000304": [
+		"n",
+		"cost2",
+		"ice",
+		"millionaire",
+		"defense"
+	],
+	"10000305": [
+		"ur",
+		"cost4",
+		"ice",
+		"thief",
+		"sorcery"
+	],
+	"10000306": [
+		"ur",
+		"cost4",
+		"ice",
+		"millionaire",
+		"defense"
+	],
+	"10000308": [
+		"ur",
+		"cost2",
+		"light",
+		"millionaire",
+		"attack"
+	],
 	"10001001": [
-		"2:8192",
-		"2:16384",
-		"3:32",
-		"3:64",
-		"3:128",
-		"3:2048",
-		"3:4096",
-		"3:8192",
-		"4:32",
-		"4:64",
-		"4:128",
-		"5:16",
-		"5:32",
-		"5:64",
-		"5:1024",
-		"5:2048",
-		"5:4096",
-		"2:1"
+		"hn",
+		"cost2",
+		"wind",
+		"millionaire",
+		"attack",
+		"map:1-2",
+		"map:1-3",
+		"map:4-1",
+		"map:4-2",
+		"map:4-3",
+		"map:6-1",
+		"map:6-2",
+		"map:6-3",
+		"map:10-1",
+		"map:10-2",
+		"map:10-3",
+		"map:15-1",
+		"map:15-2",
+		"map:15-3",
+		"map:17-1",
+		"map:17-2",
+		"map:17-3",
+		"map"
 	],
-	"10001002": [],
-	"10001003": [],
-	"10001004": [],
+	"10001002": [
+		"r",
+		"cost2",
+		"wind",
+		"millionaire",
+		"attack"
+	],
+	"10001003": [
+		"sr",
+		"cost2",
+		"wind",
+		"millionaire",
+		"attack"
+	],
+	"10001004": [
+		"ur",
+		"cost2",
+		"wind",
+		"millionaire",
+		"attack"
+	],
 	"10001005": [
-		"2:32768",
-		"3:1",
-		"3:2",
-		"3:32",
-		"3:64",
-		"3:128",
-		"3:256",
-		"3:512",
-		"3:1024",
-		"4:256",
-		"4:512",
-		"4:1024",
-		"5:16",
-		"5:32",
-		"5:64",
-		"5:128",
-		"5:256",
-		"5:512",
-		"2:1"
+		"hn",
+		"cost2",
+		"ice",
+		"thief",
+		"sorcery",
+		"map:2-1",
+		"map:2-2",
+		"map:2-3",
+		"map:4-1",
+		"map:4-2",
+		"map:4-3",
+		"map:5-1",
+		"map:5-2",
+		"map:5-3",
+		"map:11-1",
+		"map:11-2",
+		"map:11-3",
+		"map:15-1",
+		"map:15-2",
+		"map:15-3",
+		"map:16-1",
+		"map:16-2",
+		"map:16-3",
+		"map"
 	],
-	"10001006": [],
-	"10001007": [],
-	"10001008": [],
-	"10001009": [],
-	"10001014": [],
-	"10001015": [],
-	"10001023": [],
-	"10001024": [],
-	"10001025": [],
-	"10001026": [],
-	"10001029": [],
-	"10001030": [],
-	"10001031": [],
-	"10001032": [],
+	"10001006": [
+		"r",
+		"cost2",
+		"ice",
+		"thief",
+		"sorcery"
+	],
+	"10001007": [
+		"sr",
+		"cost2",
+		"ice",
+		"thief",
+		"sorcery"
+	],
+	"10001008": [
+		"sr",
+		"cost3",
+		"fire",
+		"mercenary",
+		"support"
+	],
+	"10001009": [
+		"ur",
+		"cost3",
+		"fire",
+		"mercenary",
+		"support"
+	],
+	"10001014": [
+		"sr",
+		"cost3",
+		"ice",
+		"millionaire",
+		"support"
+	],
+	"10001015": [
+		"ur",
+		"cost3",
+		"ice",
+		"millionaire",
+		"support"
+	],
+	"10001023": [
+		"sr",
+		"cost3",
+		"wind",
+		"mercenary",
+		"attack",
+		"pierce"
+	],
+	"10001024": [
+		"ur",
+		"cost3",
+		"wind",
+		"mercenary",
+		"attack",
+		"pierce"
+	],
+	"10001025": [
+		"sr",
+		"cost4",
+		"wind",
+		"singer",
+		"sorcery"
+	],
+	"10001026": [
+		"ur",
+		"cost4",
+		"wind",
+		"singer",
+		"sorcery"
+	],
+	"10001029": [
+		"ur",
+		"cost3",
+		"dark",
+		"thief",
+		"sorcery"
+	],
+	"10001030": [
+		"mr",
+		"cost3",
+		"dark",
+		"thief",
+		"sorcery"
+	],
+	"10001031": [
+		"ur",
+		"cost3",
+		"ice",
+		"millionaire",
+		"attack"
+	],
+	"10001032": [
+		"mr",
+		"cost3",
+		"ice",
+		"millionaire",
+		"attack"
+	],
 	"10001033": [
-		"5:32768"
+		"ur",
+		"cost5",
+		"light",
+		"millionaire",
+		"attack",
+		"aoe"
 	],
 	"10001034": [
-		"5:32768"
+		"mr",
+		"cost5",
+		"light",
+		"millionaire",
+		"attack",
+		"aoe"
 	],
 	"10001035": [
-		"5:32768"
+		"ur",
+		"cost5",
+		"wind",
+		"thief",
+		"sorcery",
+		"aoe"
 	],
 	"10001036": [
-		"5:32768"
+		"mr",
+		"cost5",
+		"wind",
+		"thief",
+		"sorcery",
+		"aoe"
 	],
-	"10001039": [],
-	"10001040": [],
-	"10001045": [],
-	"10001046": [],
-	"10001047": [],
-	"10001048": [],
-	"10001049": [],
-	"10001050": [],
-	"10002001": [],
-	"10002002": [],
-	"10002005": [],
-	"10002006": [],
+	"10001039": [
+		"sr",
+		"cost3",
+		"dark",
+		"millionaire",
+		"defense"
+	],
+	"10001040": [
+		"ur",
+		"cost3",
+		"dark",
+		"millionaire",
+		"defense"
+	],
+	"10001045": [
+		"sr",
+		"cost5",
+		"fire",
+		"thief",
+		"sorcery"
+	],
+	"10001046": [
+		"ur",
+		"cost5",
+		"fire",
+		"thief",
+		"sorcery"
+	],
+	"10001047": [
+		"sr",
+		"cost4",
+		"wind",
+		"singer",
+		"support"
+	],
+	"10001048": [
+		"ur",
+		"cost4",
+		"wind",
+		"singer",
+		"support"
+	],
+	"10001049": [
+		"sr",
+		"cost4",
+		"light",
+		"mercenary",
+		"attack"
+	],
+	"10001050": [
+		"ur",
+		"cost4",
+		"light",
+		"mercenary",
+		"attack"
+	],
+	"10002001": [
+		"sr",
+		"cost4",
+		"light",
+		"thief",
+		"sorcery"
+	],
+	"10002002": [
+		"ur",
+		"cost4",
+		"light",
+		"thief",
+		"sorcery"
+	],
+	"10002005": [
+		"ur",
+		"cost5",
+		"fire",
+		"singer",
+		"support"
+	],
+	"10002006": [
+		"mr",
+		"cost5",
+		"fire",
+		"singer",
+		"support"
+	],
 	"10002011": [
-		"5:2048",
-		"5:4096",
-		"2:1"
+		"r",
+		"cost3",
+		"fire",
+		"singer",
+		"support",
+		"map:17-2",
+		"map:17-3",
+		"map"
 	],
-	"10002012": [],
+	"10002012": [
+		"sr",
+		"cost3",
+		"fire",
+		"singer",
+		"support"
+	],
 	"10002013": [
-		"5:32768"
+		"ur",
+		"cost3",
+		"ice",
+		"millionaire",
+		"attack",
+		"aoe"
 	],
 	"10002014": [
-		"5:32768"
+		"mr",
+		"cost3",
+		"ice",
+		"millionaire",
+		"attack",
+		"aoe"
 	],
-	"10002017": [],
-	"10002018": [],
-	"10002019": [],
-	"10002020": [],
-	"10003001": [],
-	"10003002": [],
-	"10003003": [],
-	"10003004": [],
-	"10003007": [],
-	"10003008": [],
-	"10003009": [],
-	"10003010": [],
-	"10107001": [],
-	"10107002": [],
-	"10107003": [],
-	"10107004": [],
-	"10107005": [],
-	"10107006": [],
+	"10002017": [
+		"ur",
+		"cost3",
+		"light",
+		"singer",
+		"recovery"
+	],
+	"10002018": [
+		"mr",
+		"cost3",
+		"light",
+		"singer",
+		"recovery"
+	],
+	"10002019": [
+		"sr",
+		"cost3",
+		"fire",
+		"singer",
+		"sorcery"
+	],
+	"10002020": [
+		"ur",
+		"cost3",
+		"fire",
+		"singer",
+		"sorcery"
+	],
+	"10003001": [
+		"sr",
+		"cost3",
+		"ice",
+		"thief",
+		"jamming"
+	],
+	"10003002": [
+		"ur",
+		"cost3",
+		"ice",
+		"thief",
+		"jamming"
+	],
+	"10003003": [
+		"ur",
+		"cost4",
+		"fire",
+		"mercenary",
+		"attack"
+	],
+	"10003004": [
+		"mr",
+		"cost4",
+		"fire",
+		"mercenary",
+		"attack"
+	],
+	"10003007": [
+		"ur",
+		"cost3",
+		"wind",
+		"mercenary",
+		"attack"
+	],
+	"10003008": [
+		"mr",
+		"cost3",
+		"wind",
+		"mercenary",
+		"attack"
+	],
+	"10003009": [
+		"ur",
+		"cost3",
+		"ice",
+		"thief",
+		"sorcery"
+	],
+	"10003010": [
+		"mr",
+		"cost3",
+		"ice",
+		"thief",
+		"sorcery"
+	],
+	"10107001": [
+		"ur",
+		"cost3",
+		"ice",
+		"thief",
+		"jamming"
+	],
+	"10107002": [
+		"mr",
+		"cost3",
+		"ice",
+		"thief",
+		"jamming"
+	],
+	"10107003": [
+		"ur",
+		"cost1",
+		"fire",
+		"singer",
+		"support"
+	],
+	"10107004": [
+		"mr",
+		"cost1",
+		"fire",
+		"singer",
+		"support"
+	],
+	"10107005": [
+		"sr",
+		"cost3",
+		"wind",
+		"millionaire",
+		"jamming"
+	],
+	"10107006": [
+		"ur",
+		"cost3",
+		"wind",
+		"millionaire",
+		"jamming"
+	],
 	"10107007": [
-		"5:32768"
+		"sr",
+		"cost2",
+		"light",
+		"singer",
+		"sorcery",
+		"aoe"
 	],
 	"10107008": [
-		"5:32768"
+		"ur",
+		"cost2",
+		"light",
+		"singer",
+		"sorcery",
+		"aoe"
 	],
-	"10107009": [],
-	"10107010": [],
-	"10109001": [],
-	"10109002": [],
+	"10107009": [
+		"ur",
+		"cost2",
+		"dark",
+		"mercenary",
+		"attack"
+	],
+	"10107010": [
+		"mr",
+		"cost2",
+		"dark",
+		"mercenary",
+		"attack"
+	],
+	"10109001": [
+		"sr",
+		"cost2",
+		"fire",
+		"thief",
+		"jamming"
+	],
+	"10109002": [
+		"ur",
+		"cost2",
+		"fire",
+		"thief",
+		"jamming"
+	],
 	"10109003": [
-		"5:32768"
+		"sr",
+		"cost3",
+		"ice",
+		"singer",
+		"sorcery",
+		"aoe"
 	],
 	"10109004": [
-		"5:32768"
+		"ur",
+		"cost3",
+		"ice",
+		"singer",
+		"sorcery",
+		"aoe"
 	],
-	"10109005": [],
-	"10109006": [],
+	"10109005": [
+		"ur",
+		"cost3",
+		"wind",
+		"mercenary",
+		"attack"
+	],
+	"10109006": [
+		"mr",
+		"cost3",
+		"wind",
+		"mercenary",
+		"attack"
+	],
 	"10109007": [
-		"5:32768"
+		"ur",
+		"cost2",
+		"light",
+		"millionaire",
+		"attack",
+		"aoe"
 	],
 	"10109008": [
-		"5:32768"
+		"mr",
+		"cost2",
+		"light",
+		"millionaire",
+		"attack",
+		"aoe"
 	],
 	"10109009": [
-		"5:32768"
+		"ur",
+		"cost4",
+		"dark",
+		"singer",
+		"sorcery",
+		"aoe"
 	],
 	"10109010": [
-		"5:32768"
+		"mr",
+		"cost4",
+		"dark",
+		"singer",
+		"sorcery",
+		"aoe"
 	],
 	"10109027": [
-		"6:128"
+		"ur",
+		"cost2",
+		"fire",
+		"millionaire",
+		"attack",
+		"chain"
 	],
 	"10109028": [
-		"6:128"
+		"mr",
+		"cost2",
+		"fire",
+		"millionaire",
+		"attack",
+		"chain"
 	],
-	"10110001": [],
-	"10110002": [],
-	"10110003": [],
-	"10110004": [],
-	"10110005": [],
-	"10110006": [],
+	"10110001": [
+		"sr",
+		"cost3",
+		"fire",
+		"millionaire",
+		"defense"
+	],
+	"10110002": [
+		"ur",
+		"cost3",
+		"fire",
+		"millionaire",
+		"defense"
+	],
+	"10110003": [
+		"ur",
+		"cost3",
+		"ice",
+		"millionaire",
+		"attack"
+	],
+	"10110004": [
+		"mr",
+		"cost3",
+		"ice",
+		"millionaire",
+		"attack"
+	],
+	"10110005": [
+		"ur",
+		"cost2",
+		"wind",
+		"thief",
+		"sorcery"
+	],
+	"10110006": [
+		"mr",
+		"cost2",
+		"wind",
+		"thief",
+		"sorcery"
+	],
 	"10110007": [
-		"6:32"
+		"ur",
+		"cost2",
+		"light",
+		"singer",
+		"recovery",
+		"bug"
 	],
 	"10110008": [
-		"6:32"
+		"mr",
+		"cost2",
+		"light",
+		"singer",
+		"recovery",
+		"bug"
 	],
-	"10110009": [],
-	"10110010": [],
-	"10110011": [],
-	"10110012": [],
-	"10110013": [],
-	"10110014": [],
-	"10110015": [],
-	"10110016": [],
-	"10110019": [],
-	"10110020": [],
-	"10110023": [],
-	"10110024": [],
-	"10111021": [],
-	"10111022": [],
-	"10113041": [],
-	"10113042": [],
+	"10110009": [
+		"ur",
+		"cost3",
+		"dark",
+		"mercenary",
+		"attack"
+	],
+	"10110010": [
+		"mr",
+		"cost3",
+		"dark",
+		"mercenary",
+		"attack"
+	],
+	"10110011": [
+		"ur",
+		"cost3",
+		"fire",
+		"millionaire",
+		"defense"
+	],
+	"10110012": [
+		"mr",
+		"cost3",
+		"fire",
+		"millionaire",
+		"defense"
+	],
+	"10110013": [
+		"sr",
+		"cost2",
+		"ice",
+		"thief",
+		"sorcery"
+	],
+	"10110014": [
+		"ur",
+		"cost2",
+		"ice",
+		"thief",
+		"sorcery"
+	],
+	"10110015": [
+		"sr",
+		"cost2",
+		"wind",
+		"mercenary",
+		"attack"
+	],
+	"10110016": [
+		"ur",
+		"cost2",
+		"wind",
+		"mercenary",
+		"attack"
+	],
+	"10110019": [
+		"sr",
+		"cost3",
+		"dark",
+		"singer",
+		"recovery"
+	],
+	"10110020": [
+		"ur",
+		"cost3",
+		"dark",
+		"singer",
+		"recovery"
+	],
+	"10110023": [
+		"ur",
+		"cost3",
+		"ice",
+		"singer",
+		"recovery"
+	],
+	"10110024": [
+		"mr",
+		"cost3",
+		"ice",
+		"singer",
+		"recovery"
+	],
+	"10111021": [
+		"ur",
+		"cost4",
+		"ice",
+		"mercenary",
+		"attack"
+	],
+	"10111022": [
+		"mr",
+		"cost4",
+		"ice",
+		"mercenary",
+		"attack"
+	],
+	"10113041": [
+		"ur",
+		"cost4",
+		"fire",
+		"singer",
+		"recovery"
+	],
+	"10113042": [
+		"mr",
+		"cost4",
+		"fire",
+		"singer",
+		"recovery"
+	],
 	"10113043": [
-		"6:4"
+		"sr",
+		"cost2",
+		"ice",
+		"singer",
+		"recovery",
+		"buffone"
 	],
 	"10113044": [
-		"6:4"
+		"ur",
+		"cost2",
+		"ice",
+		"singer",
+		"recovery",
+		"buffone"
 	],
-	"10113045": [],
-	"10113046": [],
-	"10113047": [],
-	"10113048": [],
-	"10113049": [],
-	"10113050": [],
-	"10113061": [],
-	"10113062": [],
-	"10116013": [],
-	"10116014": [],
+	"10113045": [
+		"ur",
+		"cost3",
+		"wind",
+		"thief",
+		"sorcery"
+	],
+	"10113046": [
+		"mr",
+		"cost3",
+		"wind",
+		"thief",
+		"sorcery"
+	],
+	"10113047": [
+		"sr",
+		"cost2",
+		"light",
+		"mercenary",
+		"sorcery"
+	],
+	"10113048": [
+		"ur",
+		"cost2",
+		"light",
+		"mercenary",
+		"sorcery"
+	],
+	"10113049": [
+		"sr",
+		"cost4",
+		"dark",
+		"millionaire",
+		"attack"
+	],
+	"10113050": [
+		"ur",
+		"cost4",
+		"dark",
+		"millionaire",
+		"attack"
+	],
+	"10113061": [
+		"ur",
+		"cost3",
+		"light",
+		"thief",
+		"sorcery"
+	],
+	"10113062": [
+		"mr",
+		"cost3",
+		"light",
+		"thief",
+		"sorcery"
+	],
+	"10116013": [
+		"sr",
+		"cost3",
+		"fire",
+		"millionaire",
+		"attack"
+	],
+	"10116014": [
+		"ur",
+		"cost3",
+		"fire",
+		"millionaire",
+		"attack"
+	],
 	"10116015": [
-		"6:128"
+		"ur",
+		"cost2",
+		"ice",
+		"thief",
+		"sorcery",
+		"chain"
 	],
 	"10116016": [
-		"6:128"
+		"mr",
+		"cost2",
+		"ice",
+		"thief",
+		"sorcery",
+		"chain"
 	],
-	"10116017": [],
-	"10116018": [],
-	"10116019": [],
-	"10116020": [],
-	"10116021": [],
-	"10116022": [],
+	"10116017": [
+		"sr",
+		"cost2",
+		"wind",
+		"thief",
+		"sorcery"
+	],
+	"10116018": [
+		"ur",
+		"cost2",
+		"wind",
+		"thief",
+		"sorcery"
+	],
+	"10116019": [
+		"ur",
+		"cost2",
+		"light",
+		"singer",
+		"recovery"
+	],
+	"10116020": [
+		"mr",
+		"cost2",
+		"light",
+		"singer",
+		"recovery"
+	],
+	"10116021": [
+		"sr",
+		"cost3",
+		"dark",
+		"mercenary",
+		"attack"
+	],
+	"10116022": [
+		"ur",
+		"cost3",
+		"dark",
+		"mercenary",
+		"attack"
+	],
 	"10118023": [
-		"6:1"
+		"ur",
+		"cost2",
+		"wind",
+		"millionaire",
+		"defense",
+		"db2"
 	],
 	"10118024": [
-		"6:1"
+		"mr",
+		"cost2",
+		"wind",
+		"millionaire",
+		"defense",
+		"db2"
 	],
-	"10118026": [],
-	"10118027": [],
-	"10118029": [],
-	"10118030": [],
-	"10118031": [],
-	"10118032": [],
-	"10119005": [],
-	"10119006": [],
-	"10119007": [],
-	"10119008": [],
-	"10119009": [],
-	"10119010": [],
+	"10118026": [
+		"ur",
+		"cost2",
+		"fire",
+		"thief",
+		"support"
+	],
+	"10118027": [
+		"mr",
+		"cost2",
+		"fire",
+		"thief",
+		"support"
+	],
+	"10118029": [
+		"ur",
+		"cost2",
+		"ice",
+		"mercenary",
+		"sorcery"
+	],
+	"10118030": [
+		"mr",
+		"cost2",
+		"ice",
+		"mercenary",
+		"sorcery"
+	],
+	"10118031": [
+		"ur",
+		"cost2",
+		"fire",
+		"singer",
+		"recovery"
+	],
+	"10118032": [
+		"mr",
+		"cost2",
+		"fire",
+		"singer",
+		"recovery"
+	],
+	"10119005": [
+		"ur",
+		"cost2",
+		"ice",
+		"thief",
+		"jamming"
+	],
+	"10119006": [
+		"mr",
+		"cost2",
+		"ice",
+		"thief",
+		"jamming"
+	],
+	"10119007": [
+		"ur",
+		"cost4",
+		"light",
+		"millionaire",
+		"attack"
+	],
+	"10119008": [
+		"mr",
+		"cost4",
+		"light",
+		"millionaire",
+		"attack"
+	],
+	"10119009": [
+		"ur",
+		"cost2",
+		"light",
+		"mercenary",
+		"attack"
+	],
+	"10119010": [
+		"mr",
+		"cost2",
+		"light",
+		"mercenary",
+		"attack"
+	],
 	"10119011": [
-		"5:32768"
+		"ur",
+		"cost4",
+		"ice",
+		"singer",
+		"sorcery",
+		"aoe"
 	],
 	"10119012": [
-		"5:32768"
+		"mr",
+		"cost4",
+		"ice",
+		"singer",
+		"sorcery",
+		"aoe"
 	],
-	"10119013": [],
-	"10119014": [],
+	"10119013": [
+		"sr",
+		"cost3",
+		"light",
+		"thief",
+		"jamming"
+	],
+	"10119014": [
+		"ur",
+		"cost3",
+		"light",
+		"thief",
+		"jamming"
+	],
 	"10120027": [
-		"6:128"
+		"ur",
+		"cost2",
+		"wind",
+		"singer",
+		"recovery",
+		"chain"
 	],
 	"10120028": [
-		"6:128"
+		"mr",
+		"cost2",
+		"wind",
+		"singer",
+		"recovery",
+		"chain"
 	],
-	"10120029": [],
-	"10120030": [],
-	"10120031": [],
-	"10120032": [],
-	"10120033": [],
-	"10120034": [],
-	"10120035": [],
-	"10120036": [],
+	"10120029": [
+		"ur",
+		"cost3",
+		"light",
+		"millionaire",
+		"defense"
+	],
+	"10120030": [
+		"mr",
+		"cost3",
+		"light",
+		"millionaire",
+		"defense"
+	],
+	"10120031": [
+		"sr",
+		"cost3",
+		"dark",
+		"millionaire",
+		"defense"
+	],
+	"10120032": [
+		"ur",
+		"cost3",
+		"dark",
+		"millionaire",
+		"defense"
+	],
+	"10120033": [
+		"sr",
+		"cost3",
+		"fire",
+		"thief",
+		"jamming"
+	],
+	"10120034": [
+		"ur",
+		"cost3",
+		"fire",
+		"thief",
+		"jamming"
+	],
+	"10120035": [
+		"sr",
+		"cost2",
+		"ice",
+		"mercenary",
+		"attack"
+	],
+	"10120036": [
+		"ur",
+		"cost2",
+		"ice",
+		"mercenary",
+		"attack"
+	],
 	"10121001": [
-		"5:32768"
+		"ur",
+		"cost3",
+		"wind",
+		"thief",
+		"sorcery",
+		"aoe",
+		"pierce"
 	],
 	"10121002": [
-		"5:32768"
+		"mr",
+		"cost3",
+		"wind",
+		"thief",
+		"sorcery",
+		"aoe",
+		"pierce"
 	],
 	"10121004": [
-		"5:32768"
+		"ur",
+		"cost2",
+		"light",
+		"mercenary",
+		"attack",
+		"aoe"
 	],
 	"10121005": [
-		"5:32768"
+		"mr",
+		"cost2",
+		"light",
+		"mercenary",
+		"attack",
+		"aoe"
 	],
-	"10121006": [],
-	"10121007": [],
+	"10121006": [
+		"ur",
+		"cost3",
+		"light",
+		"millionaire",
+		"attack"
+	],
+	"10121007": [
+		"mr",
+		"cost3",
+		"light",
+		"millionaire",
+		"attack"
+	],
 	"10121008": [
-		"6:128"
+		"ur",
+		"cost2",
+		"ice",
+		"mercenary",
+		"attack",
+		"chain"
 	],
 	"10121009": [
-		"6:128"
+		"mr",
+		"cost2",
+		"ice",
+		"mercenary",
+		"attack",
+		"chain"
 	],
-	"10121011": [],
-	"10121012": [],
-	"10121013": [],
-	"10121014": [],
+	"10121011": [
+		"ur",
+		"cost2",
+		"wind",
+		"millionaire",
+		"defense"
+	],
+	"10121012": [
+		"mr",
+		"cost2",
+		"wind",
+		"millionaire",
+		"defense"
+	],
+	"10121013": [
+		"ur",
+		"cost3",
+		"wind",
+		"singer",
+		"recovery"
+	],
+	"10121014": [
+		"mr",
+		"cost3",
+		"wind",
+		"singer",
+		"recovery"
+	],
 	"10121015": [
-		"6:128"
+		"ur",
+		"cost3",
+		"dark",
+		"thief",
+		"sorcery",
+		"chain"
 	],
 	"10121016": [
-		"6:128"
+		"mr",
+		"cost3",
+		"dark",
+		"thief",
+		"sorcery",
+		"chain"
 	],
-	"10121018": [],
-	"10121019": [],
-	"10121020": [],
-	"10121021": [],
+	"10121018": [
+		"ur",
+		"cost2",
+		"fire",
+		"singer",
+		"recovery"
+	],
+	"10121019": [
+		"mr",
+		"cost2",
+		"fire",
+		"singer",
+		"recovery"
+	],
+	"10121020": [
+		"ur",
+		"cost3",
+		"light",
+		"millionaire",
+		"defense"
+	],
+	"10121021": [
+		"mr",
+		"cost3",
+		"light",
+		"millionaire",
+		"defense"
+	],
 	"10121022": [
-		"6:1"
+		"ur",
+		"cost3",
+		"ice",
+		"millionaire",
+		"defense",
+		"db2"
 	],
 	"10121023": [
-		"6:1"
+		"mr",
+		"cost3",
+		"ice",
+		"millionaire",
+		"defense",
+		"db2"
 	],
-	"10121024": [],
-	"10121025": [],
+	"10121024": [
+		"ur",
+		"cost2",
+		"fire",
+		"mercenary",
+		"attack"
+	],
+	"10121025": [
+		"mr",
+		"cost2",
+		"fire",
+		"mercenary",
+		"attack"
+	],
 	"10121026": [
-		"6:128"
+		"sr",
+		"cost3",
+		"ice",
+		"singer",
+		"recovery",
+		"chain"
 	],
 	"10121027": [
-		"6:128"
+		"ur",
+		"cost3",
+		"ice",
+		"singer",
+		"recovery",
+		"chain"
 	],
-	"10121028": [],
-	"10121029": [],
-	"10121030": [],
-	"10121031": [],
-	"10121032": [],
-	"10121033": [],
-	"10121034": [],
-	"10121035": [],
-	"10121036": [],
-	"10121037": [],
-	"10121038": [],
-	"10121039": [],
-	"10121040": [],
-	"10121041": [],
-	"10122043": [],
-	"10122044": [],
-	"10123056": [],
-	"10123057": [],
-	"10124031": [],
-	"10124032": [],
-	"10124034": [],
-	"10124035": [],
-	"10124037": [],
-	"10124038": [],
-	"10124039": [],
-	"10124040": [],
-	"10126001": [],
-	"10126002": [],
-	"10126003": [],
-	"10126004": [],
+	"10121028": [
+		"sr",
+		"cost3",
+		"wind",
+		"thief",
+		"sorcery"
+	],
+	"10121029": [
+		"ur",
+		"cost3",
+		"wind",
+		"thief",
+		"sorcery"
+	],
+	"10121030": [
+		"sr",
+		"cost2",
+		"dark",
+		"mercenary",
+		"attack"
+	],
+	"10121031": [
+		"ur",
+		"cost2",
+		"dark",
+		"mercenary",
+		"attack"
+	],
+	"10121032": [
+		"ur",
+		"cost3",
+		"dark",
+		"millionaire",
+		"attack"
+	],
+	"10121033": [
+		"mr",
+		"cost3",
+		"dark",
+		"millionaire",
+		"attack"
+	],
+	"10121034": [
+		"ur",
+		"cost3",
+		"ice",
+		"mercenary",
+		"attack"
+	],
+	"10121035": [
+		"mr",
+		"cost3",
+		"ice",
+		"mercenary",
+		"attack"
+	],
+	"10121036": [
+		"ur",
+		"cost3",
+		"wind",
+		"singer",
+		"recovery"
+	],
+	"10121037": [
+		"mr",
+		"cost3",
+		"wind",
+		"singer",
+		"recovery"
+	],
+	"10121038": [
+		"ur",
+		"cost3",
+		"light",
+		"thief",
+		"jamming"
+	],
+	"10121039": [
+		"mr",
+		"cost3",
+		"light",
+		"thief",
+		"jamming"
+	],
+	"10121040": [
+		"sr",
+		"cost2",
+		"dark",
+		"thief",
+		"jamming"
+	],
+	"10121041": [
+		"ur",
+		"cost2",
+		"dark",
+		"thief",
+		"jamming"
+	],
+	"10122043": [
+		"ur",
+		"cost2",
+		"dark",
+		"millionaire",
+		"defense"
+	],
+	"10122044": [
+		"mr",
+		"cost2",
+		"dark",
+		"millionaire",
+		"defense"
+	],
+	"10123056": [
+		"ur",
+		"cost2",
+		"ice",
+		"thief",
+		"jamming"
+	],
+	"10123057": [
+		"mr",
+		"cost2",
+		"ice",
+		"thief",
+		"jamming"
+	],
+	"10124031": [
+		"ur",
+		"cost3",
+		"ice",
+		"thief",
+		"jamming"
+	],
+	"10124032": [
+		"mr",
+		"cost3",
+		"ice",
+		"thief",
+		"jamming"
+	],
+	"10124034": [
+		"ur",
+		"cost3",
+		"dark",
+		"singer",
+		"recovery"
+	],
+	"10124035": [
+		"mr",
+		"cost3",
+		"dark",
+		"singer",
+		"recovery"
+	],
+	"10124037": [
+		"ur",
+		"cost4",
+		"fire",
+		"millionaire",
+		"defense"
+	],
+	"10124038": [
+		"mr",
+		"cost4",
+		"fire",
+		"millionaire",
+		"defense"
+	],
+	"10124039": [
+		"ur",
+		"cost3",
+		"wind",
+		"mercenary",
+		"support"
+	],
+	"10124040": [
+		"mr",
+		"cost3",
+		"wind",
+		"mercenary",
+		"support"
+	],
+	"10126001": [
+		"ur",
+		"cost2",
+		"light",
+		"thief",
+		"jamming"
+	],
+	"10126002": [
+		"mr",
+		"cost2",
+		"light",
+		"thief",
+		"jamming"
+	],
+	"10126003": [
+		"ur",
+		"cost2",
+		"light",
+		"singer",
+		"recovery"
+	],
+	"10126004": [
+		"mr",
+		"cost2",
+		"light",
+		"singer",
+		"recovery"
+	],
 	"10126005": [
-		"6:1"
+		"ur",
+		"cost3",
+		"light",
+		"millionaire",
+		"defense",
+		"db2"
 	],
 	"10126006": [
-		"6:1"
+		"mr",
+		"cost3",
+		"light",
+		"millionaire",
+		"defense",
+		"db2"
 	],
-	"10126007": [],
-	"10126008": [],
-	"10126009": [],
-	"10126010": [],
-	"10126025": [],
-	"10126026": [],
+	"10126007": [
+		"ur",
+		"cost3",
+		"light",
+		"mercenary",
+		"attack"
+	],
+	"10126008": [
+		"mr",
+		"cost3",
+		"light",
+		"mercenary",
+		"attack"
+	],
+	"10126009": [
+		"sr",
+		"cost3",
+		"light",
+		"millionaire",
+		"defense"
+	],
+	"10126010": [
+		"ur",
+		"cost3",
+		"light",
+		"millionaire",
+		"defense"
+	],
+	"10126025": [
+		"sr",
+		"cost2",
+		"ice",
+		"singer",
+		"recovery"
+	],
+	"10126026": [
+		"ur",
+		"cost2",
+		"ice",
+		"singer",
+		"recovery"
+	],
 	"10126027": [
-		"5:32768",
-		"6:128"
+		"sr",
+		"cost2",
+		"dark",
+		"thief",
+		"sorcery",
+		"aoe",
+		"chain"
 	],
 	"10126028": [
-		"5:32768",
-		"6:128"
+		"ur",
+		"cost2",
+		"dark",
+		"thief",
+		"sorcery",
+		"aoe",
+		"chain"
 	],
-	"10126029": [],
-	"10126030": [],
-	"10129019": [],
-	"10129020": [],
+	"10126029": [
+		"sr",
+		"cost3",
+		"wind",
+		"millionaire",
+		"defense"
+	],
+	"10126030": [
+		"ur",
+		"cost3",
+		"wind",
+		"millionaire",
+		"defense"
+	],
+	"10129019": [
+		"ur",
+		"cost2",
+		"fire",
+		"millionaire",
+		"defense"
+	],
+	"10129020": [
+		"mr",
+		"cost2",
+		"fire",
+		"millionaire",
+		"defense"
+	],
 	"10200001": [
-		"6:128"
+		"ur",
+		"cost5",
+		"ice",
+		"mercenary",
+		"attack",
+		"chain"
 	],
 	"10200002": [
-		"6:128"
+		"mr",
+		"cost5",
+		"ice",
+		"mercenary",
+		"attack",
+		"chain"
 	],
-	"10200003": [],
-	"10200004": [],
-	"10200005": [],
-	"10200006": [],
+	"10200003": [
+		"ur",
+		"cost3",
+		"light",
+		"millionaire",
+		"defense"
+	],
+	"10200004": [
+		"mr",
+		"cost3",
+		"light",
+		"millionaire",
+		"defense"
+	],
+	"10200005": [
+		"ur",
+		"cost4",
+		"fire",
+		"thief",
+		"jamming"
+	],
+	"10200006": [
+		"mr",
+		"cost4",
+		"fire",
+		"thief",
+		"jamming"
+	],
 	"10200007": [
-		"6:128"
+		"ur",
+		"cost2",
+		"wind",
+		"singer",
+		"recovery",
+		"chain"
 	],
 	"10200008": [
-		"6:128"
+		"mr",
+		"cost2",
+		"wind",
+		"singer",
+		"recovery",
+		"chain"
 	],
-	"10200009": [],
-	"10200010": [],
-	"10200011": [],
-	"10200012": [],
+	"10200009": [
+		"ur",
+		"cost3",
+		"wind",
+		"millionaire",
+		"attack"
+	],
+	"10200010": [
+		"mr",
+		"cost3",
+		"wind",
+		"millionaire",
+		"attack"
+	],
+	"10200011": [
+		"ur",
+		"cost3",
+		"fire",
+		"singer",
+		"recovery"
+	],
+	"10200012": [
+		"mr",
+		"cost3",
+		"fire",
+		"singer",
+		"recovery"
+	],
 	"10200013": [
-		"5:32768"
+		"sr",
+		"cost2",
+		"ice",
+		"thief",
+		"sorcery",
+		"aoe"
 	],
 	"10200014": [
-		"5:32768"
+		"ur",
+		"cost2",
+		"ice",
+		"thief",
+		"sorcery",
+		"aoe"
 	],
-	"10200015": [],
-	"10200016": [],
-	"10200017": [],
-	"10200018": [],
-	"10200019": [],
-	"10200020": [],
-	"10200021": [],
-	"10200022": [],
-	"10200023": [],
-	"10200024": [],
-	"10200025": [],
-	"10200026": [],
-	"10200027": [],
-	"10200028": [],
-	"10200029": [],
-	"10200030": [],
-	"10200031": [],
-	"10200032": [],
-	"10200033": [],
-	"10200034": [],
-	"10200035": [],
-	"10200036": [],
-	"10200037": [],
-	"10200038": [],
-	"10200039": [],
-	"10200040": [],
-	"10200041": [],
-	"10201001": [],
-	"10201002": [],
-	"10202001": [],
-	"10202002": [],
+	"10200015": [
+		"sr",
+		"cost2",
+		"light",
+		"mercenary",
+		"attack",
+		"pierce"
+	],
+	"10200016": [
+		"ur",
+		"cost2",
+		"light",
+		"mercenary",
+		"attack",
+		"pierce"
+	],
+	"10200017": [
+		"sr",
+		"cost2",
+		"dark",
+		"singer",
+		"recovery"
+	],
+	"10200018": [
+		"ur",
+		"cost2",
+		"dark",
+		"singer",
+		"recovery"
+	],
+	"10200019": [
+		"ur",
+		"cost4",
+		"fire",
+		"mercenary",
+		"attack"
+	],
+	"10200020": [
+		"mr",
+		"cost4",
+		"fire",
+		"mercenary",
+		"attack"
+	],
+	"10200021": [
+		"ur",
+		"cost4",
+		"light",
+		"millionaire",
+		"attack"
+	],
+	"10200022": [
+		"mr",
+		"cost4",
+		"light",
+		"millionaire",
+		"attack"
+	],
+	"10200023": [
+		"ur",
+		"cost4",
+		"light",
+		"mercenary",
+		"attack"
+	],
+	"10200024": [
+		"mr",
+		"cost4",
+		"light",
+		"mercenary",
+		"attack"
+	],
+	"10200025": [
+		"ur",
+		"cost5",
+		"ice",
+		"millionaire",
+		"attack"
+	],
+	"10200026": [
+		"mr",
+		"cost5",
+		"ice",
+		"millionaire",
+		"attack"
+	],
+	"10200027": [
+		"ur",
+		"cost4",
+		"ice",
+		"thief",
+		"sorcery"
+	],
+	"10200028": [
+		"mr",
+		"cost4",
+		"ice",
+		"thief",
+		"sorcery"
+	],
+	"10200029": [
+		"ur",
+		"cost3",
+		"fire",
+		"singer",
+		"recovery"
+	],
+	"10200030": [
+		"mr",
+		"cost3",
+		"fire",
+		"singer",
+		"recovery"
+	],
+	"10200031": [
+		"ur",
+		"cost3",
+		"light",
+		"thief",
+		"jamming"
+	],
+	"10200032": [
+		"mr",
+		"cost3",
+		"light",
+		"thief",
+		"jamming"
+	],
+	"10200033": [
+		"ur",
+		"cost3",
+		"fire",
+		"singer",
+		"recovery"
+	],
+	"10200034": [
+		"mr",
+		"cost3",
+		"fire",
+		"singer",
+		"recovery"
+	],
+	"10200035": [
+		"sr",
+		"cost2",
+		"dark",
+		"thief",
+		"jamming"
+	],
+	"10200036": [
+		"ur",
+		"cost2",
+		"dark",
+		"thief",
+		"jamming"
+	],
+	"10200037": [
+		"mr",
+		"cost2",
+		"dark",
+		"thief",
+		"jamming"
+	],
+	"10200038": [
+		"ur",
+		"cost2",
+		"wind",
+		"singer",
+		"recovery"
+	],
+	"10200039": [
+		"mr",
+		"cost2",
+		"wind",
+		"singer",
+		"recovery"
+	],
+	"10200040": [
+		"ur",
+		"cost4",
+		"ice",
+		"null",
+		"jamming"
+	],
+	"10200041": [
+		"mr",
+		"cost4",
+		"ice",
+		"null",
+		"jamming"
+	],
+	"10201001": [
+		"ur",
+		"cost3",
+		"light",
+		"mercenary",
+		"attack"
+	],
+	"10201002": [
+		"mr",
+		"cost3",
+		"light",
+		"mercenary",
+		"attack"
+	],
+	"10202001": [
+		"ur",
+		"cost3",
+		"ice",
+		"millionaire",
+		"defense"
+	],
+	"10202002": [
+		"mr",
+		"cost3",
+		"ice",
+		"millionaire",
+		"defense"
+	],
 	"10202003": [
-		"5:32768"
+		"ur",
+		"cost4",
+		"ice",
+		"mercenary",
+		"attack",
+		"aoe"
 	],
 	"10202004": [
-		"5:32768"
+		"mr",
+		"cost4",
+		"ice",
+		"mercenary",
+		"attack",
+		"aoe"
 	],
-	"10202005": [],
-	"10202006": [],
-	"10203001": [],
-	"10203002": [],
-	"10203003": [],
-	"10203004": [],
-	"10203005": [],
-	"10203006": [],
-	"10203007": [],
-	"10203008": [],
-	"10203009": [],
-	"10203010": [],
-	"10203011": [],
-	"10203012": [],
-	"10203013": [],
-	"10203014": [],
-	"10203015": [],
-	"10203016": [],
-	"10203017": [],
-	"10203018": [],
+	"10202005": [
+		"ur",
+		"cost3",
+		"light",
+		"mercenary",
+		"attack",
+		"pierce"
+	],
+	"10202006": [
+		"mr",
+		"cost3",
+		"light",
+		"mercenary",
+		"attack",
+		"pierce"
+	],
+	"10203001": [
+		"ur",
+		"cost3",
+		"light",
+		"mercenary",
+		"sorcery"
+	],
+	"10203002": [
+		"mr",
+		"cost3",
+		"light",
+		"mercenary",
+		"sorcery"
+	],
+	"10203003": [
+		"ur",
+		"cost3",
+		"fire",
+		"millionaire",
+		"defense"
+	],
+	"10203004": [
+		"mr",
+		"cost3",
+		"fire",
+		"millionaire",
+		"defense"
+	],
+	"10203005": [
+		"ur",
+		"cost2",
+		"dark",
+		"thief",
+		"sorcery"
+	],
+	"10203006": [
+		"mr",
+		"cost2",
+		"dark",
+		"thief",
+		"sorcery"
+	],
+	"10203007": [
+		"ur",
+		"cost3",
+		"wind",
+		"thief",
+		"jamming"
+	],
+	"10203008": [
+		"mr",
+		"cost3",
+		"wind",
+		"thief",
+		"jamming"
+	],
+	"10203009": [
+		"ur",
+		"cost3",
+		"ice",
+		"singer",
+		"recovery"
+	],
+	"10203010": [
+		"mr",
+		"cost3",
+		"ice",
+		"singer",
+		"recovery"
+	],
+	"10203011": [
+		"ur",
+		"cost3",
+		"fire",
+		"thief",
+		"sorcery"
+	],
+	"10203012": [
+		"mr",
+		"cost3",
+		"fire",
+		"thief",
+		"sorcery"
+	],
+	"10203013": [
+		"ur",
+		"cost2",
+		"fire",
+		"mercenary",
+		"attack"
+	],
+	"10203014": [
+		"mr",
+		"cost2",
+		"fire",
+		"mercenary",
+		"attack"
+	],
+	"10203015": [
+		"ur",
+		"cost3",
+		"dark",
+		"mercenary",
+		"attack"
+	],
+	"10203016": [
+		"mr",
+		"cost3",
+		"dark",
+		"mercenary",
+		"attack"
+	],
+	"10203017": [
+		"ur",
+		"cost4",
+		"ice",
+		"millionaire",
+		"defense"
+	],
+	"10203018": [
+		"mr",
+		"cost4",
+		"ice",
+		"millionaire",
+		"defense"
+	],
 	"10203019": [
-		"6:1"
+		"ur",
+		"cost2",
+		"fire",
+		"millionaire",
+		"jamming",
+		"db2"
 	],
 	"10203020": [
-		"6:1"
+		"mr",
+		"cost2",
+		"fire",
+		"millionaire",
+		"jamming",
+		"db2"
 	],
 	"10203021": [
-		"6:128"
+		"ur",
+		"cost2",
+		"wind",
+		"thief",
+		"jamming",
+		"chain"
 	],
 	"10203022": [
-		"6:128"
+		"mr",
+		"cost2",
+		"wind",
+		"thief",
+		"jamming",
+		"chain"
 	],
-	"10203023": [],
-	"10203024": [],
-	"10203025": [],
-	"10203026": [],
-	"10203027": [],
-	"10203028": [],
-	"10203029": [],
-	"10203030": [],
-	"10203031": [],
-	"10203032": [],
-	"10203033": [],
-	"10203034": [],
-	"10203035": [],
-	"10203036": [],
+	"10203023": [
+		"ur",
+		"cost2",
+		"fire",
+		"thief",
+		"sorcery"
+	],
+	"10203024": [
+		"mr",
+		"cost2",
+		"fire",
+		"thief",
+		"sorcery"
+	],
+	"10203025": [
+		"ur",
+		"cost4",
+		"light",
+		"singer",
+		"recovery"
+	],
+	"10203026": [
+		"mr",
+		"cost4",
+		"light",
+		"singer",
+		"recovery"
+	],
+	"10203027": [
+		"ur",
+		"cost2",
+		"dark",
+		"singer",
+		"sorcery"
+	],
+	"10203028": [
+		"mr",
+		"cost2",
+		"dark",
+		"singer",
+		"sorcery"
+	],
+	"10203029": [
+		"ur",
+		"cost3",
+		"wind",
+		"mercenary",
+		"attack"
+	],
+	"10203030": [
+		"mr",
+		"cost3",
+		"wind",
+		"mercenary",
+		"attack"
+	],
+	"10203031": [
+		"ur",
+		"cost4",
+		"dark",
+		"thief",
+		"sorcery"
+	],
+	"10203032": [
+		"mr",
+		"cost4",
+		"dark",
+		"thief",
+		"sorcery"
+	],
+	"10203033": [
+		"sr",
+		"cost4",
+		"fire",
+		"mercenary",
+		"attack"
+	],
+	"10203034": [
+		"ur",
+		"cost4",
+		"fire",
+		"mercenary",
+		"attack"
+	],
+	"10203035": [
+		"sr",
+		"cost3",
+		"light",
+		"millionaire",
+		"defense"
+	],
+	"10203036": [
+		"ur",
+		"cost3",
+		"light",
+		"millionaire",
+		"defense"
+	],
 	"10203037": [
-		"6:128"
+		"sr",
+		"cost3",
+		"ice",
+		"singer",
+		"recovery",
+		"chain"
 	],
 	"10203038": [
-		"6:128"
+		"ur",
+		"cost3",
+		"ice",
+		"singer",
+		"recovery",
+		"chain"
 	],
 	"10203039": [
-		"6:128"
+		"ur",
+		"cost2",
+		"light",
+		"mercenary",
+		"attack",
+		"chain"
 	],
 	"10203040": [
-		"6:128"
+		"mr",
+		"cost2",
+		"light",
+		"mercenary",
+		"attack",
+		"chain"
 	],
-	"10204001": [],
-	"10204002": [],
-	"10204003": [],
-	"10204004": [],
+	"10204001": [
+		"ur",
+		"cost2",
+		"ice",
+		"mercenary",
+		"support"
+	],
+	"10204002": [
+		"mr",
+		"cost2",
+		"ice",
+		"mercenary",
+		"support"
+	],
+	"10204003": [
+		"ur",
+		"cost3",
+		"dark",
+		"thief",
+		"jamming"
+	],
+	"10204004": [
+		"mr",
+		"cost3",
+		"dark",
+		"thief",
+		"jamming"
+	],
 	"10204005": [
-		"6:16"
+		"ur",
+		"cost2",
+		"dark",
+		"singer",
+		"recovery",
+		"debuffre"
 	],
 	"10204006": [
-		"6:16"
+		"mr",
+		"cost2",
+		"dark",
+		"singer",
+		"recovery",
+		"debuffre"
 	],
 	"20000001": [
-		"2:16384",
-		"3:2",
-		"3:16",
-		"3:128",
-		"3:1024",
-		"3:8192",
-		"4:1",
-		"4:8",
-		"4:16",
-		"4:128",
-		"4:1024",
-		"4:8192",
-		"5:1",
-		"5:512",
-		"5:4096",
-		"5:8192",
-		"2:1"
+		"r",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"map:1-3",
+		"map:2-3",
+		"map:3-3",
+		"map:4-3",
+		"map:5-3",
+		"map:6-3",
+		"map:7-3",
+		"map:8-3",
+		"map:9-1",
+		"map:10-3",
+		"map:11-3",
+		"map:12-3",
+		"map:13-3",
+		"map:16-3",
+		"map:17-3",
+		"map:18-1",
+		"map"
 	],
-	"20000002": [],
-	"20000003": [],
-	"20000004": [],
+	"20000002": [
+		"sr",
+		"cost9",
+		"light",
+		"null",
+		"sorcery"
+	],
+	"20000003": [
+		"ur",
+		"cost9",
+		"light",
+		"null",
+		"sorcery"
+	],
+	"20000004": [
+		"mr",
+		"cost9",
+		"light",
+		"null",
+		"sorcery"
+	],
 	"20000005": [
-		"3:4",
-		"3:8",
-		"3:16",
-		"3:256",
-		"3:512",
-		"3:1024",
-		"3:2048",
-		"3:4096",
-		"3:8192",
-		"4:16",
-		"4:2048",
-		"4:4096",
-		"4:8192",
-		"5:128",
-		"5:256",
-		"5:512",
-		"5:1024",
-		"5:2048",
-		"5:4096",
-		"5:8192",
-		"2:1"
+		"hn",
+		"cost9",
+		"fire",
+		"null",
+		"sorcery",
+		"map:3-1",
+		"map:3-2",
+		"map:3-3",
+		"map:5-1",
+		"map:5-2",
+		"map:5-3",
+		"map:6-1",
+		"map:6-2",
+		"map:6-3",
+		"map:9-1",
+		"map:12-1",
+		"map:12-2",
+		"map:12-3",
+		"map:16-1",
+		"map:16-2",
+		"map:16-3",
+		"map:17-1",
+		"map:17-2",
+		"map:17-3",
+		"map:18-1",
+		"map"
 	],
 	"20000006": [
-		"2:32768",
-		"3:1",
-		"3:2",
-		"3:32",
-		"3:64",
-		"3:128",
-		"3:256",
-		"3:512",
-		"3:1024",
-		"4:16",
-		"4:256",
-		"4:512",
-		"4:1024",
-		"5:16",
-		"5:32",
-		"5:64",
-		"5:128",
-		"5:256",
-		"5:512",
-		"2:1"
+		"hn",
+		"cost9",
+		"ice",
+		"null",
+		"sorcery",
+		"map:2-1",
+		"map:2-2",
+		"map:2-3",
+		"map:4-1",
+		"map:4-2",
+		"map:4-3",
+		"map:5-1",
+		"map:5-2",
+		"map:5-3",
+		"map:9-1",
+		"map:11-1",
+		"map:11-2",
+		"map:11-3",
+		"map:15-1",
+		"map:15-2",
+		"map:15-3",
+		"map:16-1",
+		"map:16-2",
+		"map:16-3",
+		"map"
 	],
 	"20000007": [
-		"2:4096",
-		"2:8192",
-		"2:16384",
-		"3:32",
-		"3:64",
-		"3:128",
-		"3:2048",
-		"3:4096",
-		"3:8192",
-		"4:16",
-		"4:32",
-		"4:64",
-		"4:128",
-		"5:16",
-		"5:32",
-		"5:64",
-		"5:1024",
-		"5:2048",
-		"5:4096",
-		"2:1"
+		"hn",
+		"cost9",
+		"wind",
+		"null",
+		"sorcery",
+		"map:1-1",
+		"map:1-2",
+		"map:1-3",
+		"map:4-1",
+		"map:4-2",
+		"map:4-3",
+		"map:6-1",
+		"map:6-2",
+		"map:6-3",
+		"map:9-1",
+		"map:10-1",
+		"map:10-2",
+		"map:10-3",
+		"map:15-1",
+		"map:15-2",
+		"map:15-3",
+		"map:17-1",
+		"map:17-2",
+		"map:17-3",
+		"map"
 	],
 	"20000008": [
-		"3:16384",
-		"3:32768",
-		"4:1",
-		"4:16384",
-		"4:32768",
-		"5:1",
-		"5:8192",
-		"2:1"
+		"hn",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"map:7-1",
+		"map:7-2",
+		"map:7-3",
+		"map:13-1",
+		"map:13-2",
+		"map:13-3",
+		"map:18-1",
+		"map"
 	],
 	"20000009": [
-		"4:2",
-		"4:4",
-		"4:8",
-		"4:16",
-		"5:2",
-		"5:4",
-		"5:8",
-		"2:1"
+		"hn",
+		"cost9",
+		"dark",
+		"null",
+		"sorcery",
+		"map:8-1",
+		"map:8-2",
+		"map:8-3",
+		"map:9-1",
+		"map:14-1",
+		"map:14-2",
+		"map:14-3",
+		"map"
 	],
-	"20000010": [],
-	"20000011": [],
-	"20000012": [],
-	"20000013": [],
-	"20000014": [],
-	"20000015": [],
-	"20000016": [],
-	"20000017": [],
-	"20000018": [],
-	"20000019": [],
-	"20000020": [],
-	"20000021": [],
-	"20000022": [],
-	"20000023": [],
-	"20000024": [],
-	"20000025": [],
+	"20000010": [
+		"r",
+		"cost9",
+		"fire",
+		"null",
+		"sorcery"
+	],
+	"20000011": [
+		"r",
+		"cost9",
+		"ice",
+		"null",
+		"sorcery"
+	],
+	"20000012": [
+		"r",
+		"cost9",
+		"wind",
+		"null",
+		"sorcery"
+	],
+	"20000013": [
+		"r",
+		"cost9",
+		"light",
+		"null",
+		"sorcery"
+	],
+	"20000014": [
+		"r",
+		"cost9",
+		"dark",
+		"null",
+		"sorcery"
+	],
+	"20000015": [
+		"sr",
+		"cost9",
+		"fire",
+		"null",
+		"sorcery"
+	],
+	"20000016": [
+		"sr",
+		"cost9",
+		"ice",
+		"null",
+		"sorcery"
+	],
+	"20000017": [
+		"sr",
+		"cost9",
+		"wind",
+		"null",
+		"sorcery"
+	],
+	"20000018": [
+		"sr",
+		"cost9",
+		"light",
+		"null",
+		"sorcery"
+	],
+	"20000019": [
+		"sr",
+		"cost9",
+		"dark",
+		"null",
+		"sorcery"
+	],
+	"20000020": [
+		"ur",
+		"cost9",
+		"fire",
+		"null",
+		"sorcery"
+	],
+	"20000021": [
+		"ur",
+		"cost9",
+		"ice",
+		"null",
+		"sorcery"
+	],
+	"20000022": [
+		"ur",
+		"cost9",
+		"wind",
+		"null",
+		"sorcery"
+	],
+	"20000023": [
+		"ur",
+		"cost9",
+		"light",
+		"null",
+		"sorcery"
+	],
+	"20000024": [
+		"ur",
+		"cost9",
+		"dark",
+		"null",
+		"sorcery"
+	],
+	"20000025": [
+		"mr",
+		"cost9",
+		"light",
+		"null",
+		"sorcery"
+	],
 	"20000026": [
-		"2:4096",
-		"2:8192",
-		"2:16384",
-		"2:32768",
-		"3:1",
-		"3:2",
-		"3:4",
-		"3:8",
-		"3:16",
-		"3:32",
-		"3:64",
-		"3:128",
-		"3:256",
-		"3:512",
-		"3:1024",
-		"3:2048",
-		"3:4096",
-		"3:8192",
-		"3:16384",
-		"3:32768",
-		"4:1",
-		"4:2",
-		"4:4",
-		"4:8",
-		"4:16",
-		"4:32",
-		"4:64",
-		"4:128",
-		"4:256",
-		"4:512",
-		"4:1024",
-		"4:2048",
-		"4:4096",
-		"4:8192",
-		"4:16384",
-		"4:32768",
-		"5:1",
-		"5:2",
-		"5:4",
-		"5:8",
-		"5:16",
-		"5:32",
-		"5:64",
-		"5:128",
-		"5:256",
-		"5:512",
-		"5:1024",
-		"5:2048",
-		"5:4096",
-		"5:8192",
-		"2:1"
+		"r",
+		"cost9",
+		"dark",
+		"null",
+		"sorcery",
+		"map:1-1",
+		"map:1-2",
+		"map:1-3",
+		"map:2-1",
+		"map:2-2",
+		"map:2-3",
+		"map:3-1",
+		"map:3-2",
+		"map:3-3",
+		"map:4-1",
+		"map:4-2",
+		"map:4-3",
+		"map:5-1",
+		"map:5-2",
+		"map:5-3",
+		"map:6-1",
+		"map:6-2",
+		"map:6-3",
+		"map:7-1",
+		"map:7-2",
+		"map:7-3",
+		"map:8-1",
+		"map:8-2",
+		"map:8-3",
+		"map:9-1",
+		"map:10-1",
+		"map:10-2",
+		"map:10-3",
+		"map:11-1",
+		"map:11-2",
+		"map:11-3",
+		"map:12-1",
+		"map:12-2",
+		"map:12-3",
+		"map:13-1",
+		"map:13-2",
+		"map:13-3",
+		"map:14-1",
+		"map:14-2",
+		"map:14-3",
+		"map:15-1",
+		"map:15-2",
+		"map:15-3",
+		"map:16-1",
+		"map:16-2",
+		"map:16-3",
+		"map:17-1",
+		"map:17-2",
+		"map:17-3",
+		"map:18-1",
+		"map"
 	],
-	"20000027": [],
-	"20000028": [],
-	"20000029": [],
+	"20000027": [
+		"sr",
+		"cost9",
+		"dark",
+		"null",
+		"sorcery"
+	],
+	"20000028": [
+		"ur",
+		"cost9",
+		"dark",
+		"null",
+		"sorcery"
+	],
+	"20000029": [
+		"mr",
+		"cost9",
+		"dark",
+		"null",
+		"sorcery"
+	],
 	"40000001": [
-		"5:32768"
+		"mr",
+		"cost1",
+		"dark",
+		"null",
+		"sorcery",
+		"aoe"
 	]
 }
