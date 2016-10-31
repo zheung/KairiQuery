@@ -1,12 +1,20 @@
 module.exports = ($) => {
 	let loadDarr = (serv) => {
-		let space = {}, raw = $.rq(`${''}data/${serv}/mark/markRaw.json`);
+		let	space = {}, raw = $.rq(`${''}data/${serv}/mark/markRaw.json`), xlen = 0;
 
 		raw.forEach((group, x) => {
+			let ylength = Math.floor((group.length-1)/16)+1;
+
+			if(ylength > xlen) xlen = ylength;
+
 			group.forEach((mark, y) => {
-				space[mark] = `${x}:${Math.floor(y/16)}:${1<<y%16}:`;
+				space[mark] = `${Math.floor(y/16)}:${x}:${1<<y%16}`;
+
 			});
 		});
+
+		Object.defineProperty(space, 'xlen', { enumerable: false, value: xlen });
+		Object.defineProperty(space, 'ylen', { enumerable: false, value: raw.length });
 
 		return space;
 	};
@@ -69,9 +77,7 @@ module.exports = ($) => {
 		let marks = {}, dict = {};
 
 		for(let serv of $.conf.servs) {
-			let markServs, result = {}, xyMap = loadDarr(serv), xlen = Math.floor((Object.keys(xyMap).length-1)/16);
-
-			console.log(result);
+			let markServs, result = {}, xyMap = loadDarr(serv), xlen = xyMap.xlen, ylen = xyMap.ylen;
 
 			dict[serv] = {};
 
@@ -105,16 +111,28 @@ module.exports = ($) => {
 			for(let ri in markServs) {
 				let space = (result[ri] || (result[ri] = []));
 
+				for(let i=0; i < xlen; i++)
+					space.push((() => {
+						let x = [];
+
+						for(let j=0; j < ylen; j++) x.push(0);
+
+						return x;
+					})());
+
 				for(let mark of markServs[ri]) {
-					let xySplit = xyMap[mark].split(':'), x = ~~xySplit[0], y = ~~xySplit[1], z = ~~xySplit[2];
+					let cord = xyMap[mark];
 
-					let dx = (space[x] || (space[x] = [])), dy = (dx[y] || (dx[y] = 0));
+					if(!cord) continue;
 
-					dy += z;
+					let xyzSplit = cord.split(':'), x = ~~xyzSplit[0], y = ~~xyzSplit[1], z = ~~xyzSplit[2];
+
+					space[x][y] += z;
 				}
 			}
 
-			Object.defineProperty(result, 'xlen', {enumerable: false, value: xlen});
+			Object.defineProperty(result, 'xlen', { enumerable: false, value: xlen });
+			Object.defineProperty(result, 'ylen', { enumerable: false, value: ylen });
 
 			marks[serv] = result;
 		}

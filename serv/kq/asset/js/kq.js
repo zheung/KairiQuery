@@ -155,12 +155,15 @@
 		conds: {
 			serv: 'cn',
 			name: '',
-			mark: [0, 0, 0, 0, 0, 0]
+			mark: [
+				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			]
 		},
 		param: function(moder) {
 			var result = $.extend({}, kq.conds, {
 				page: kqd.page,
-				mark: kq.conds.mark.toString(),
+				mark: kq.conds.mark.toString().replace(/\,/g, '~'),
 				zero: (function() {
 					var mark = kq.conds.mark;
 

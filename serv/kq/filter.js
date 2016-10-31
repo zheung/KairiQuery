@@ -1,34 +1,52 @@
-let condsParse = (conds, xlen) => {
+let condsParse = (conds, xlen, ylen) => {
 	conds.name = conds.name? conds.name.trim() : '';
 
 	conds.page = conds.page || 1;
 
 	conds.zero = !!~~conds.zero;
 
-	conds.mark = conds.mark.split(',');
+	conds.mark = conds.mark.split('~');
 
-	while(conds.mark.length < xlen) conds.mark.push(0);
-	for(let i=0; i< conds.mark.length; i++) conds.mark[i] = ~~conds.mark[i];
+	let mark = [], index = 0;
+
+	for(let i=0; i< xlen; i++)
+		mark.push((() => {
+			let x = [];
+
+			for(let j=0; j < ylen; j++)
+				x.push(~~mark[index++]);
+
+			return x;
+		})());
+
+	conds.mark = mark;
 };
 
-let valid = (serv, markCards, markConds, xlen) => {
-	for(let i=0; i<xlen; i++)
-		if((markCards[i] & markConds[i]) != markConds[i])
-			return false;
+let valid = (serv, mcas, mcos, xlen, ylen) => {
+	for(let y=0; y < ylen; y++) {
+		let pass = false;
+
+		for(let x=0; x < xlen; x++) {
+			let mca = mcas[x][y], mco = mcos[x][y];
+
+			if(mca & mco) {
+				pass = true;
+
+				break;
+			}
+		}
+
+		if(!pass) return false;
+	}
 
 	return true;
-	// for(let i=0; i<xlen; i++)
-	// 	if(markCards[i] & markConds[i])
-	// 		return true;
-
-	// return false;
 };
 
 module.exports = ($) => {
 	return (conds = {}, paths = []) => {
 		let serv = conds.serv, datas = $.datas[serv], marks = $.marks[serv];
 
-		condsParse(conds, marks.xlen);
+		condsParse(conds, marks.xlen, marks.ylen);
 
 		let rend = $.rends[serv],
 			renderAll = $.conf.renderAll, pageEvery = $.conf.pageEvery,
@@ -36,7 +54,7 @@ module.exports = ($) => {
 
 		for(let id in datas) {
 			let data = datas[id], mark = marks[id];
-			if(conds.zero || valid(serv, mark, conds.mark, marks.xlen))
+			if(conds.zero || valid(serv, mark, conds.mark, marks.xlen, marks.ylen))
 				resultAll.push(renderAll ? rend(serv, data, paths) : data);
 		}
 

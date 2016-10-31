@@ -30,8 +30,10 @@
 	[
 		"limited:fire1"
 	],
+	[ "linkage" ],
+	[ "ex" ],
 	[
-		"linkage", "aoe", "db2", "covering", "buffone", "stan", "debuffre", "bug",
-		"enchant", "chain", "crit", "ex", "pierce"
+		"aoe", "db2", "covering", "buffone", "stan", "debuffre", "bug",
+		"enchant", "chain", "crit", "pierce"
 	]
 ]

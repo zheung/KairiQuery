@@ -1,6 +1,8 @@
 (function() {
 	kqe.toggles.click(function(eve, man) {
-		var $this = $(this), cond = this.dataset.cond, x = this.dataset.x, y = this.dataset.y, isON = $this.hasClass('on');
+		var $this = $(this), cond = this.dataset.cond,
+			x = this.dataset.x, y = this.dataset.y, z = this.dataset.z,
+			isON = $this.hasClass('on');
 
 		if(man) isON = !man.fourceON;
 
@@ -21,7 +23,7 @@
 			if(eve.ctrlKey && !eve.shiftKey) {
 				kqd.dynmSearch = false;
 
-				$('[data-cond='+cond+']:not([data-x='+x+'][data-y='+y+']):not([data-x=s])').each(function() {
+				$('[data-cond='+cond+']:not([data-x='+x+'][data-y='+y+'][data-z='+z+']):not([data-x=s])').each(function() {
 					$(this).addClass('on').removeClass('off').click();
 				});
 
@@ -32,7 +34,7 @@
 			else if(!eve.ctrlKey && eve.shiftKey) {
 				kqd.dynmSearch = false;
 
-				$('[data-cond='+cond+']:not([data-x='+x+'][data-y='+y+']):not([data-x=s])').each(function() {
+				$('[data-cond='+cond+']:not([data-x='+x+'][data-y='+y+'][data-z='+z+']):not([data-x=s])').each(function() {
 					$(this).addClass('off').removeClass('on').click();
 				});
 
@@ -43,11 +45,11 @@
 			else {
 				$this.toggleClass('on').toggleClass('off');
 
-				if(cond && x && y) {
+				if(cond && x && y && z) {
 					if($this.hasClass('on'))
-						kq.conds.mark[x] |= y;
+						kq.conds.mark[x][y] |= z;
 					else
-						kq.conds.mark[x] &= ~y;
+						kq.conds.mark[x][y] &= ~z;
 
 					if(kqd.dynmSearch) kq.query(function(param) { param.page = 1; }, kqf.dealer);
 				}
