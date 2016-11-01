@@ -52,7 +52,6 @@ module.exports = ($) => {
 	});
 
 	let cleancss = new CleanCSS({restructuring:false});
-
 	fs.writeFileSync($.pa('asset/css/kq.all.min.css'),
 		cleancss.minify(fs.readFileSync($.pa('../pub/asset/css/flex.css')).toString()).styles+
 		cleancss.minify(fs.readFileSync($.pa('../pub/asset/css/small.css')).toString()).styles+
@@ -60,7 +59,6 @@ module.exports = ($) => {
 		cleancss.minify(fs.readFileSync($.pa('asset/css/test.css')).toString()).styles+
 		cleancss.minify(fs.readFileSync($.pa('asset/css/color.css')).toString()).styles
 	);
-
 	fs.writeFileSync($.pa('asset/js/kq.all.min.js'),
 		UglifyJS.minify($.pa('asset/js/kq.js')).code+
 		UglifyJS.minify($.pa('asset/js/init.js')).code
