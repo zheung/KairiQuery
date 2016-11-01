@@ -91,9 +91,7 @@ module.exports = ($) => {
 				for(let ci in cards) {
 					let card = cards[ci], markCards = [];
 
-					for(let markFunc in func)
-						for(let m of func[markFunc](card))
-							markCards.push(m);
+					for(let m of func(card)) markCards.push(m);
 
 					for(let markDict of markDicts)
 						for(let m of check(dict, serv, markDict.replace(/\.json$/, ''), card.id))

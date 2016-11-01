@@ -1855,14 +1855,16 @@
 		"cost3",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10107002": [
 		"mr",
 		"cost3",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10107003": [
 		"ur",
@@ -3061,14 +3063,16 @@
 		"cost4",
 		"fire",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10200006": [
 		"mr",
 		"cost4",
 		"fire",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10200007": [
 		"ur",
@@ -3312,14 +3316,16 @@
 		"cost4",
 		"ice",
 		"null",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10200041": [
 		"mr",
 		"cost4",
 		"ice",
 		"null",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10201001": [
 		"ur",
@@ -3428,14 +3434,16 @@
 		"cost3",
 		"wind",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10203008": [
 		"mr",
 		"cost3",
 		"wind",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10203009": [
 		"ur",

@@ -1,202 +1,82 @@
-let skillTypes = ['awaken', 'normal'];
+module.exports = () => {
+	return (card) => {
+		let set = new Set();
 
-module.exports = {
-	rare: (card) => {
 		let rare = card.info.rare;
+		if(rare == 1) set.add('n');
+		if(rare == 2) set.add('hn');
+		if(rare == 3) set.add('r');
+		if(rare == 4) set.add('sr');
+		if(rare == 5) set.add('ur');
+		if(rare == 50) set.add('ur');
+		if(rare == 6) set.add('mr');
+		if(rare == 60) set.add('mr');
+		if(rare == 61) set.add('mr+');
+		if(rare == 62) set.add('mr++');
+		if(rare == 7) set.add('mmr');
 
-		if(rare==1) return ['n'];
-		if(rare==2) return ['hn'];
-		if(rare==3) return ['r'];
-		if(rare==4) return ['sr'];
-		if(rare==5) return ['ur'];
-		if(rare==50) return ['ur'];
-		if(rare==6) return ['mr'];
-		if(rare==60) return ['mr'];
-		if(rare==61) return ['mr+'];
-		if(rare==62) return ['mr++'];
-		if(rare==7) return ['mmr'];
-	},
-	cost: (card) => {
-		let cost = (card.skill.awaken[0] || card.skill.normal[0]).info.cost;
+		let skillMain = (card.skill.awaken[0] || card.skill.normal[0]);
 
-		if(cost > 0)
-			return ['cost'+cost];
-		else
-			return [];
-	},
-	attr: (card) => {
-		let result = [], attr = (card.skill.awaken[0] || card.skill.normal[0]).info.attr;
+		let cost = skillMain.info.cost;
+		if(cost > 0) set.add('cost'+cost);
 
-		if(attr==1) result.push('fire');
-		if(attr==2) result.push('ice');
-		if(attr==3) result.push('wind');
-		if(attr==4) result.push('light');
-		if(attr==5) result.push('dark');
-		if(attr==102) result.push('fireice');
-		if(attr==103) result.push('firewind');
-		if(attr==104) result.push('firelight');
-		if(attr==105) result.push('firedark');
-		if(attr==203) result.push('icewind');
-		if(attr==204) result.push('icelight');
-		if(attr==205) result.push('icedark');
-		if(attr==304) result.push('windlight');
-		if(attr==305) result.push('winddark');
-		if(attr==405) result.push('lightdark');
+		let attr = skillMain.info.attr;
+		if(attr == 1) set.add('fire');
+		if(attr == 2) set.add('ice');
+		if(attr == 3) set.add('wind');
+		if(attr == 4) set.add('light');
+		if(attr == 5) set.add('dark');
+		if(attr == 102) set.add('fireice');
+		if(attr == 103) set.add('firewind');
+		if(attr == 104) set.add('firelight');
+		if(attr == 105) set.add('firedark');
+		if(attr == 203) set.add('icewind');
+		if(attr == 204) set.add('icelight');
+		if(attr == 205) set.add('icedark');
+		if(attr == 304) set.add('windlight');
+		if(attr == 305) set.add('winddark');
+		if(attr == 405) set.add('lightdark');
 
-		return result;
-	},
-	job: (card) => {
-		let job = (card.skill.awaken[0] || card.skill.normal[0]).info.job;
+		set.add(['mercenary', 'millionaire', 'thief', 'singer', 'null'][skillMain.info.job-1]);
+		set.add(['attack', 'sorcery', 'recovery', 'support', 'defense', 'jamming', 'special'][skillMain.info.kind-1]);
 
-		if(job==1) return ['mercenary'];
-		if(job==2) return ['millionaire'];
-		if(job==3) return ['thief'];
-		if(job==4) return ['singer'];
-		if(job==5) return ['null'];
-	},
-	skillKind: (card) => {
-		let skillKind = (card.skill.awaken[0] || card.skill.normal[0]).info.kind;
-
-		if(skillKind==1) return ['attack'];
-		if(skillKind==2) return ['sorcery'];
-		if(skillKind==3) return ['recovery'];
-		if(skillKind==4) return ['support'];
-		if(skillKind==5) return ['defense'];
-		if(skillKind==6) return ['jamming'];
-		if(skillKind==7) return ['special'];
-	},
-	aoe: (card) => {
-		for(let st of skillTypes) {
-			let first = card.skill[st][0];
-
-			for(let skill of card.skill[st])
-				for(let role of skill.role) {
-					let t = { r: role.target, s: skill.info.target || first.info.target };
-
-					if(role.type == 1)
-						if(t.r == 4 || (t.r == 1 && t.s == 5))
-							return ['aoe'];
-				}
-		}
-
-		return [];
-	},
-	db2: (card) => {
-		for(let st of skillTypes)
-			for(let skill of card.skill[st])
-				for(let role of skill.role)
-					if(role.type == 44 && role.params[1] == '2')
-						return ['db2'];
-
-		return [];
-	},
-	covering: (card) => {
-		for(let st of skillTypes)
-			for(let skill of card.skill[st])
-				for(let role of skill.role)
-					if(role.type == 64)
-						return ['covering'];
-
-		return [];
-	},
-	buffone: (card) => {
-		for(let st of skillTypes) {
-			let first = card.skill[st][0];
-
-			for(let skill of card.skill[st])
-				for(let role of skill.role) {
-					let t = { r: role.target, s: skill.info.target || first.info.target };
-
-					if(role.type == 19)
-						if(t.r == 1 && t.s == 2)
-							return ['buffone'];
-				}
-		}
-
-		return [];
-	},
-	stan: (card) => {
-		for(let st of skillTypes)
-			for(let skill of card.skill[st])
-				for(let role of skill.role)
-					if(role.type == 35)
-						return ['stan'];
-
-		return [];
-	},
-	debuffre: (card) => {
-		for(let st of skillTypes)
-			for(let skill of card.skill[st])
-				for(let role of skill.role)
-					if(role.type == 46)
-						return ['debuffre'];
-
-		return [];
-	},
-	bug: (card) => {
+		let skillTypes = ['awaken', 'normal'];
 		for(let st of skillTypes) {
 			let first = card.skill[st][0];
 
 			for(let skill of card.skill[st]) {
-				let heal = false, healAll = false, up = false;
+				let heal = false, healAll = false, up = false, chain = skill.info.chain;
 
 				for(let role of skill.role) {
-					let t = { r: role.target, s: skill.info.target || first.info.target };
+					let target = { r: role.target, s: skill.info.target || first.info.target }, roleType = role.type;
 
-					if(t.r == 3 || (t.r == 1 && t.s == 3))
+					if(target.r == 4 || (target.r == 1 && target.s == 5)) set.add('aoe');
+					if(roleType == 19) if(target.r == 1 && target.s == 2) set.add('buffone');
+
+					if(roleType == 7) set.add('pierce');
+					if(roleType == 35) set.add('stan');
+					if(roleType == 44 && role.params[1] == '2') set.add('db2');
+					if(roleType == 46) set.add('debuffre');
+					if(roleType == 64) set.add('covering');
+					if(roleType == 86) set.add('crit');
+					if(roleType == 107) set.add('enchant');
+
+					if(target.r == 3 || (target.r == 1 && target.s == 3))
 						healAll = true;
 
-					if(role.type == 9)
+					if(roleType == 9)
 						heal = true;
-					else if(role.type == 19 && role.params[2][1] == 5)
+					else if(roleType == 19 && role.params[2][1] == 5)
 						up = true;
 				}
 
-				if(heal && healAll && up) return ['bug'];
+				if(heal && healAll && up) set.add('bug');
+				if(chain && (chain != 20 && chain != 1)) set.add('chain');
 			}
 		}
 
-		return [];
-	},
-	enchant: (card) => {
-		for(let st of skillTypes)
-			for(let skill of card.skill[st])
-				for(let role of skill.role)
-					if(role.type == 107)
-						return ['enchant'];
+		if(card.skill['suport3'] && card.skill['suport3'].length) set.add('ex');
 
-		return [];
-	},
-	chain: (card) => {
-		for(let st of skillTypes)
-			for(let skill of card.skill[st])
-				if(skill.info.chain && (skill.info.chain != 20 && skill.info.chain != 1))
-					return ['chain'];
-
-		return [];
-	},
-	crit: (card) => {
-		for(let st of skillTypes)
-			for(let skill of card.skill[st])
-				for(let role of skill.role)
-					if(role.type == 86)
-						return ['crit'];
-
-		return [];
-	},
-	ex: (card) => {
-		if(card.skill['suport3'].length)
-			return ['ex'];
-		else
-			return [];
-	},
-	pierce: (card) => {
-		for(let st of skillTypes)
-			for(let skill of card.skill[st])
-				for(let role of skill.role)
-					if(role.type == 7)
-						return ['pierce'];
-
-		return [];
-	}
+		return Array.from(set);
+	};
 };

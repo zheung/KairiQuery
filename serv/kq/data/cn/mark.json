@@ -2015,6 +2015,7 @@
 		"light",
 		"thief",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10103008": [
@@ -2023,6 +2024,7 @@
 		"light",
 		"thief",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10103009": [
@@ -2489,6 +2491,7 @@
 		"ice",
 		"thief",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10107002": [
@@ -2497,6 +2500,7 @@
 		"ice",
 		"thief",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10107003": [
@@ -3645,8 +3649,8 @@
 		"ice",
 		"mercenary",
 		"sorcery",
-		"ex",
-		"pierce"
+		"pierce",
+		"ex"
 	],
 	"10111002": [
 		"mr",
@@ -3654,8 +3658,8 @@
 		"ice",
 		"mercenary",
 		"sorcery",
-		"ex",
-		"pierce"
+		"pierce",
+		"ex"
 	],
 	"10111003": [
 		"ur",
@@ -3695,8 +3699,8 @@
 		"ice",
 		"thief",
 		"sorcery",
-		"ex",
-		"pierce"
+		"pierce",
+		"ex"
 	],
 	"10111008": [
 		"mr",
@@ -3704,8 +3708,8 @@
 		"ice",
 		"thief",
 		"sorcery",
-		"ex",
-		"pierce"
+		"pierce",
+		"ex"
 	],
 	"10111009": [
 		"sr",
@@ -3855,6 +3859,7 @@
 		"fire",
 		"thief",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10111028": [
@@ -3863,6 +3868,7 @@
 		"fire",
 		"thief",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10111029": [
@@ -4098,14 +4104,16 @@
 		"cost3",
 		"fire",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10113012": [
 		"mr",
 		"cost3",
 		"fire",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10113013": [
 		"ur",
@@ -4437,8 +4445,8 @@
 		"dark",
 		"thief",
 		"sorcery",
-		"ex",
-		"pierce"
+		"pierce",
+		"ex"
 	],
 	"10113058": [
 		"mr",
@@ -4446,8 +4454,8 @@
 		"dark",
 		"thief",
 		"sorcery",
-		"ex",
-		"pierce"
+		"pierce",
+		"ex"
 	],
 	"10113059": [
 		"ur",
@@ -5164,6 +5172,7 @@
 		"wind",
 		"millionaire",
 		"defense",
+		"aoe",
 		"ex"
 	],
 	"10115026": [
@@ -5173,8 +5182,8 @@
 		"mercenary",
 		"sorcery",
 		"aoe",
-		"ex",
-		"pierce"
+		"pierce",
+		"ex"
 	],
 	"10115027": [
 		"mr",
@@ -5183,8 +5192,8 @@
 		"mercenary",
 		"sorcery",
 		"aoe",
-		"ex",
-		"pierce"
+		"pierce",
+		"ex"
 	],
 	"10115028": [
 		"mr",
@@ -5217,8 +5226,8 @@
 		"light",
 		"mercenary",
 		"attack",
-		"ex",
-		"pierce"
+		"pierce",
+		"ex"
 	],
 	"10115032": [
 		"mr",
@@ -5226,8 +5235,8 @@
 		"light",
 		"mercenary",
 		"attack",
-		"ex",
-		"pierce"
+		"pierce",
+		"ex"
 	],
 	"10115033": [
 		"mr",
@@ -5267,6 +5276,7 @@
 		"fire",
 		"null",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10116001": [
@@ -5932,8 +5942,8 @@
 		"fire",
 		"millionaire",
 		"defense",
-		"db2",
-		"covering"
+		"covering",
+		"db2"
 	],
 	"10118008": [
 		"mr",
@@ -5941,8 +5951,8 @@
 		"fire",
 		"millionaire",
 		"defense",
-		"db2",
-		"covering"
+		"covering",
+		"db2"
 	],
 	"10118009": [
 		"ur",
@@ -5977,14 +5987,16 @@
 		"cost3",
 		"fire",
 		"millionaire",
-		"defense"
+		"defense",
+		"aoe"
 	],
 	"10118014": [
 		"mr",
 		"cost3",
 		"fire",
 		"millionaire",
-		"defense"
+		"defense",
+		"aoe"
 	],
 	"10118015": [
 		"sr",
@@ -6227,14 +6239,16 @@
 		"cost3",
 		"light",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10119014": [
 		"ur",
 		"cost3",
 		"light",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10119015": [
 		"ur",
@@ -7226,7 +7240,8 @@
 		"cost1",
 		"ice",
 		"null",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10122001": [
 		"ur",
@@ -7294,8 +7309,8 @@
 		"ice",
 		"millionaire",
 		"defense",
-		"db2",
-		"covering"
+		"covering",
+		"db2"
 	],
 	"10122010": [
 		"mr",
@@ -7303,8 +7318,8 @@
 		"ice",
 		"millionaire",
 		"defense",
-		"db2",
-		"covering"
+		"covering",
+		"db2"
 	],
 	"10122011": [
 		"ur",
@@ -7343,14 +7358,16 @@
 		"cost2",
 		"ice",
 		"mercenary",
-		"sorcery"
+		"sorcery",
+		"aoe"
 	],
 	"10122016": [
 		"mr",
 		"cost2",
 		"ice",
 		"mercenary",
-		"sorcery"
+		"sorcery",
+		"aoe"
 	],
 	"10122017": [
 		"ur",
@@ -7683,14 +7700,16 @@
 		"cost3",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10123007": [
 		"mr",
 		"cost3",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10123008": [
 		"ur",
@@ -7755,14 +7774,16 @@
 		"cost3",
 		"fire",
 		"thief",
-		"support"
+		"support",
+		"aoe"
 	],
 	"10123018": [
 		"mr",
 		"cost3",
 		"fire",
 		"thief",
-		"support"
+		"support",
+		"aoe"
 	],
 	"10123019": [
 		"ur",
@@ -8428,7 +8449,8 @@
 		"cost1",
 		"dark",
 		"null",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10125001": [
 		"ur",
@@ -8518,14 +8540,16 @@
 		"cost2",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10125013": [
 		"mr",
 		"cost2",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10125014": [
 		"ur",
@@ -8776,14 +8800,16 @@
 		"cost3",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10125049": [
 		"mr",
 		"cost3",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10125050": [
 		"ur",
@@ -8804,7 +8830,8 @@
 		"cost1",
 		"light",
 		"null",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10125054": [
 		"ur",
@@ -8825,14 +8852,16 @@
 		"cost3",
 		"light",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10126002": [
 		"mr",
 		"cost3",
 		"light",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10126003": [
 		"ur",
@@ -9243,7 +9272,8 @@
 		"cost3",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10127004": [
 		"ur",
@@ -9347,14 +9377,16 @@
 		"cost3",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10127018": [
 		"ur",
 		"cost3",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10127019": [
 		"ur",
@@ -9453,14 +9485,16 @@
 		"cost3",
 		"fire",
 		"thief",
-		"support"
+		"support",
+		"aoe"
 	],
 	"10127032": [
 		"mr",
 		"cost3",
 		"fire",
 		"thief",
-		"support"
+		"support",
+		"aoe"
 	],
 	"10127033": [
 		"ur",
@@ -9623,14 +9657,16 @@
 		"cost3",
 		"wind",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10128004": [
 		"mr",
 		"cost3",
 		"wind",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10128005": [
 		"ur",
@@ -10023,14 +10059,16 @@
 		"cost2",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10129004": [
 		"mr",
 		"cost2",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10129005": [
 		"ur",
@@ -10106,14 +10144,16 @@
 		"cost3",
 		"ice",
 		"thief",
-		"support"
+		"support",
+		"aoe"
 	],
 	"10129015": [
 		"mr",
 		"cost3",
 		"ice",
 		"thief",
-		"support"
+		"support",
+		"aoe"
 	],
 	"10129016": [
 		"mr",
@@ -10214,6 +10254,7 @@
 		"light",
 		"thief",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10129030": [
@@ -10261,6 +10302,7 @@
 		"fire",
 		"mercenary",
 		"support",
+		"aoe",
 		"db2"
 	],
 	"10129036": [
@@ -10401,14 +10443,16 @@
 		"cost3",
 		"light",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10130007": [
 		"mr",
 		"cost3",
 		"light",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10130008": [
 		"sr",
@@ -10626,6 +10670,7 @@
 		"fire",
 		"mercenary",
 		"support",
+		"aoe",
 		"db2"
 	],
 	"10130038": [
@@ -10634,6 +10679,7 @@
 		"fire",
 		"mercenary",
 		"support",
+		"aoe",
 		"db2"
 	],
 	"10130039": [
@@ -10734,14 +10780,16 @@
 		"cost3",
 		"light",
 		"thief",
-		"support"
+		"support",
+		"aoe"
 	],
 	"10130052": [
 		"mr",
 		"cost3",
 		"light",
 		"thief",
-		"support"
+		"support",
+		"aoe"
 	],
 	"10131001": [
 		"ur",
@@ -10774,14 +10822,16 @@
 		"cost3",
 		"wind",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10131005": [
 		"mr",
 		"cost3",
 		"wind",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10131006": [
 		"ur",
@@ -11010,7 +11060,8 @@
 		"cost3",
 		"wind",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10131037": [
 		"mr",
@@ -11034,14 +11085,16 @@
 		"cost3",
 		"wind",
 		"singer",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10131040": [
 		"mr",
 		"cost3",
 		"wind",
 		"singer",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10131041": [
 		"ur",
@@ -11111,14 +11164,16 @@
 		"cost3",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10132004": [
 		"mr",
 		"cost3",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10132005": [
 		"ur",
@@ -11229,14 +11284,16 @@
 		"cost3",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10132020": [
 		"mr",
 		"cost3",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10132021": [
 		"sr",
@@ -11740,14 +11797,16 @@
 		"cost2",
 		"wind",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10133038": [
 		"mr",
 		"cost2",
 		"wind",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10133039": [
 		"ur",
@@ -11784,14 +11843,16 @@
 		"cost3",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10133044": [
 		"mr",
 		"cost3",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10133045": [
 		"ur",
@@ -11815,6 +11876,7 @@
 		"light",
 		"thief",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10133048": [
@@ -11831,8 +11893,8 @@
 		"ice",
 		"millionaire",
 		"support",
-		"db2",
-		"buffone"
+		"buffone",
+		"db2"
 	],
 	"10133050": [
 		"ur",
@@ -12300,7 +12362,8 @@
 		"cost3",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10135001": [
 		"ur",
@@ -12605,7 +12668,8 @@
 		"cost3",
 		"fire",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10135042": [
 		"ur",
@@ -12708,7 +12772,8 @@
 		"cost1",
 		"wind",
 		"null",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10136001": [
 		"ur",
@@ -12749,14 +12814,16 @@
 		"cost3",
 		"ice",
 		"singer",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10136006": [
 		"mr",
 		"cost3",
 		"ice",
 		"singer",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10136007": [
 		"ur",
@@ -12777,14 +12844,16 @@
 		"cost2",
 		"fire",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10136010": [
 		"mr",
 		"cost2",
 		"fire",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10136011": [
 		"ur",
@@ -12867,14 +12936,16 @@
 		"cost3",
 		"light",
 		"thief",
-		"support"
+		"support",
+		"aoe"
 	],
 	"10136022": [
 		"mr",
 		"cost3",
 		"light",
 		"thief",
-		"support"
+		"support",
+		"aoe"
 	],
 	"10136023": [
 		"sr",
@@ -12943,14 +13014,16 @@
 		"cost3",
 		"wind",
 		"thief",
-		"support"
+		"support",
+		"aoe"
 	],
 	"10136032": [
 		"mr",
 		"cost3",
 		"wind",
 		"thief",
-		"support"
+		"support",
+		"aoe"
 	],
 	"10136033": [
 		"ur",
@@ -13107,7 +13180,8 @@
 		"cost1",
 		"ice",
 		"null",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10137001": [
 		"ur",
@@ -13202,14 +13276,16 @@
 		"cost2",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10137014": [
 		"mr",
 		"cost2",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10137015": [
 		"ur",
@@ -13393,6 +13469,7 @@
 		"ice",
 		"mercenary",
 		"support",
+		"aoe",
 		"db2"
 	],
 	"10137040": [
@@ -13401,6 +13478,7 @@
 		"ice",
 		"mercenary",
 		"support",
+		"aoe",
 		"db2"
 	],
 	"10137041": [
@@ -13456,7 +13534,8 @@
 		"ice",
 		"thief",
 		"support",
-		"enchant"
+		"enchant",
+		"aoe"
 	],
 	"10137048": [
 		"mr",
@@ -13464,7 +13543,8 @@
 		"ice",
 		"thief",
 		"support",
-		"enchant"
+		"enchant",
+		"aoe"
 	],
 	"10137049": [
 		"ur",
@@ -13524,14 +13604,16 @@
 		"cost2",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10137057": [
 		"mr",
 		"cost2",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10137058": [
 		"ur",
@@ -13588,7 +13670,8 @@
 		"cost1",
 		"light",
 		"null",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10139001": [
 		"ur",
@@ -13703,14 +13786,16 @@
 		"cost2",
 		"dark",
 		"mercenary",
-		"support"
+		"support",
+		"aoe"
 	],
 	"10139016": [
 		"mr",
 		"cost2",
 		"dark",
 		"mercenary",
-		"support"
+		"support",
+		"aoe"
 	],
 	"10139017": [
 		"ur",
@@ -13747,14 +13832,16 @@
 		"cost3",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10139022": [
 		"mr",
 		"cost3",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10139023": [
 		"ur",
@@ -13948,14 +14035,16 @@
 		"cost3",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10139049": [
 		"mr",
 		"cost3",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10139050": [
 		"sr",
@@ -14606,8 +14695,8 @@
 		"wind",
 		"millionaire",
 		"defense",
-		"db2",
-		"covering"
+		"covering",
+		"db2"
 	],
 	"10141026": [
 		"mr",
@@ -14615,8 +14704,8 @@
 		"wind",
 		"millionaire",
 		"defense",
-		"db2",
-		"covering"
+		"covering",
+		"db2"
 	],
 	"10141027": [
 		"ur",
@@ -14898,14 +14987,16 @@
 		"cost2",
 		"dark",
 		"mercenary",
-		"sorcery"
+		"sorcery",
+		"aoe"
 	],
 	"10142016": [
 		"mr",
 		"cost2",
 		"dark",
 		"mercenary",
-		"sorcery"
+		"sorcery",
+		"aoe"
 	],
 	"10142017": [
 		"ur",
@@ -14988,14 +15079,16 @@
 		"cost2",
 		"light",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10142028": [
 		"mr",
 		"cost2",
 		"light",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10142029": [
 		"ur",
@@ -15076,6 +15169,7 @@
 		"dark",
 		"thief",
 		"jamming",
+		"aoe",
 		"enchant"
 	],
 	"10142042": [
@@ -15084,6 +15178,7 @@
 		"dark",
 		"thief",
 		"jamming",
+		"aoe",
 		"enchant"
 	],
 	"10142043": [
@@ -15407,14 +15502,16 @@
 		"cost2",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10143038": [
 		"mr",
 		"cost2",
 		"ice",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"10143039": [
 		"ur",
@@ -15472,6 +15569,7 @@
 		"icelight",
 		"thief",
 		"jamming",
+		"aoe",
 		"cup"
 	],
 	"10143054": [
@@ -15480,6 +15578,7 @@
 		"icelight",
 		"thief",
 		"jamming",
+		"aoe",
 		"cup"
 	],
 	"10143055": [
@@ -15488,8 +15587,8 @@
 		"firewind",
 		"singer",
 		"support",
-		"buffone",
 		"bug",
+		"buffone",
 		"cup"
 	],
 	"10143056": [
@@ -15498,8 +15597,8 @@
 		"firewind",
 		"singer",
 		"support",
-		"buffone",
 		"bug",
+		"buffone",
 		"cup"
 	],
 	"10143057": [
@@ -15760,7 +15859,8 @@
 		"light",
 		"thief",
 		"sorcery",
-		"chain"
+		"chain",
+		"aoe"
 	],
 	"10144018": [
 		"mr",
@@ -15768,7 +15868,8 @@
 		"light",
 		"thief",
 		"sorcery",
-		"chain"
+		"chain",
+		"aoe"
 	],
 	"10144019": [
 		"sr",
@@ -15882,6 +15983,7 @@
 		"fire",
 		"mercenary",
 		"support",
+		"aoe",
 		"db2"
 	],
 	"10144034": [
@@ -15890,6 +15992,7 @@
 		"fire",
 		"mercenary",
 		"support",
+		"aoe",
 		"db2"
 	],
 	"10144035": [
@@ -16105,6 +16208,7 @@
 		"thief",
 		"support",
 		"enchant",
+		"aoe",
 		"ex"
 	],
 	"10145012": [
@@ -16114,6 +16218,7 @@
 		"thief",
 		"support",
 		"enchant",
+		"aoe",
 		"ex"
 	],
 	"10145013": [
@@ -16282,6 +16387,7 @@
 		"fire",
 		"thief",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10145033": [
@@ -16371,6 +16477,7 @@
 		"ice",
 		"null",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10145043": [
@@ -16379,6 +16486,7 @@
 		"ice",
 		"null",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10145044": [
@@ -16515,6 +16623,7 @@
 		"winddark",
 		"thief",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10145059": [
@@ -16523,6 +16632,7 @@
 		"winddark",
 		"thief",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10145060": [
@@ -16549,6 +16659,7 @@
 		"dark",
 		"null",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10146001": [
@@ -16558,8 +16669,8 @@
 		"mercenary",
 		"sorcery",
 		"aoe",
-		"ex",
-		"pierce"
+		"pierce",
+		"ex"
 	],
 	"10146002": [
 		"mr",
@@ -16568,8 +16679,8 @@
 		"mercenary",
 		"sorcery",
 		"aoe",
-		"ex",
-		"pierce"
+		"pierce",
+		"ex"
 	],
 	"10146003": [
 		"ur",
@@ -16639,8 +16750,8 @@
 		"wind",
 		"millionaire",
 		"support",
-		"db2",
 		"buffone",
+		"db2",
 		"ex"
 	],
 	"10146012": [
@@ -16649,8 +16760,8 @@
 		"wind",
 		"millionaire",
 		"support",
-		"db2",
 		"buffone",
+		"db2",
 		"ex"
 	],
 	"10146013": [
@@ -16832,6 +16943,7 @@
 		"ice",
 		"thief",
 		"support",
+		"aoe",
 		"ex"
 	],
 	"10146035": [
@@ -16901,8 +17013,8 @@
 		"wind",
 		"thief",
 		"support",
-		"buffone",
 		"enchant",
+		"buffone",
 		"ex"
 	],
 	"10146043": [
@@ -16911,8 +17023,8 @@
 		"wind",
 		"thief",
 		"support",
-		"buffone",
 		"enchant",
+		"buffone",
 		"ex"
 	],
 	"10146044": [
@@ -16921,6 +17033,7 @@
 		"wind",
 		"thief",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10146045": [
@@ -16929,6 +17042,7 @@
 		"wind",
 		"thief",
 		"jamming",
+		"aoe",
 		"ex"
 	],
 	"10146046": [
@@ -17657,28 +17771,32 @@
 		"cost2",
 		"wind",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99960002": [
 		"mr",
 		"cost2",
 		"wind",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99960003": [
 		"ur",
 		"cost3",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99960004": [
 		"mr",
 		"cost3",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99960005": [
 		"ur",
@@ -17907,7 +18025,8 @@
 		"cost1",
 		"ice",
 		"null",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99960036": [
 		"mr",
@@ -17952,8 +18071,8 @@
 		"ice",
 		"millionaire",
 		"defense",
-		"db2",
-		"covering"
+		"covering",
+		"db2"
 	],
 	"99970004": [
 		"mr",
@@ -17961,8 +18080,8 @@
 		"ice",
 		"millionaire",
 		"defense",
-		"db2",
-		"covering"
+		"covering",
+		"db2"
 	],
 	"99970005": [
 		"ur",
@@ -17983,14 +18102,16 @@
 		"cost3",
 		"dark",
 		"singer",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99970008": [
 		"mr",
 		"cost3",
 		"dark",
 		"singer",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99970009": [
 		"ur",
@@ -18103,14 +18224,16 @@
 		"cost3",
 		"wind",
 		"singer",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99970024": [
 		"mr",
 		"cost3",
 		"wind",
 		"singer",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99970025": [
 		"ur",
@@ -18244,6 +18367,7 @@
 		"lightdark",
 		"thief",
 		"jamming",
+		"aoe",
 		"cup"
 	],
 	"99970042": [
@@ -18252,6 +18376,7 @@
 		"lightdark",
 		"thief",
 		"jamming",
+		"aoe",
 		"cup"
 	],
 	"99970043": [
@@ -18290,8 +18415,8 @@
 		"fire",
 		"millionaire",
 		"defense",
-		"db2",
-		"covering"
+		"covering",
+		"db2"
 	],
 	"99980004": [
 		"mr",
@@ -18299,8 +18424,8 @@
 		"fire",
 		"millionaire",
 		"defense",
-		"db2",
-		"covering"
+		"covering",
+		"db2"
 	],
 	"99980005": [
 		"ur",
@@ -18365,14 +18490,16 @@
 		"cost3",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99980014": [
 		"mr",
 		"cost3",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99980015": [
 		"ur",
@@ -18731,7 +18858,8 @@
 		"cost1",
 		"light",
 		"null",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99990001": [
 		"ur",
@@ -18819,14 +18947,16 @@
 		"cost3",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99990013": [
 		"mr",
 		"cost3",
 		"dark",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99990014": [
 		"ur",
@@ -19468,7 +19598,8 @@
 		"cost1",
 		"dark",
 		"null",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99990100": [
 		"ur",
@@ -19492,8 +19623,8 @@
 		"dark",
 		"millionaire",
 		"defense",
-		"db2",
-		"covering"
+		"covering",
+		"db2"
 	],
 	"99990103": [
 		"mr",
@@ -19501,22 +19632,24 @@
 		"dark",
 		"millionaire",
 		"defense",
-		"db2",
-		"covering"
+		"covering",
+		"db2"
 	],
 	"99990104": [
 		"ur",
 		"cost2",
 		"fire",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99990105": [
 		"mr",
 		"cost2",
 		"fire",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99990106": [
 		"ur",
@@ -19855,14 +19988,16 @@
 		"cost2",
 		"wind",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99990151": [
 		"mr",
 		"cost2",
 		"wind",
 		"thief",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99990152": [
 		"ur",
@@ -19999,7 +20134,8 @@
 		"cost1",
 		"light",
 		"null",
-		"jamming"
+		"jamming",
+		"aoe"
 	],
 	"99990171": [
 		"ur",
