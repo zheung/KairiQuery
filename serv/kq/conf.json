@@ -2,7 +2,7 @@
 	"renderAll": false,
 
 	"renderData": false,
-	"renderMark": true,
+	"renderMark": false,
 
 	"pageEvery": 4,
 
