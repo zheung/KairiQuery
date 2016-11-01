@@ -11,4 +11,5 @@ module.exports = () => {
 	global.koaRouter = require('koa-router');
 
 	global.CleanCSS = require('clean-css');
+	global.UglifyJS = require('uglify-js');
 };

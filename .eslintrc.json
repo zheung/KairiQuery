@@ -24,6 +24,7 @@
 		"koa": true,
 		"koaRouter": true,
 
-		"CleanCSS": true
+		"CleanCSS": true,
+		"UglifyJS": true
 	}
 }
