@@ -4,6 +4,8 @@
 			x = this.dataset.x, y = this.dataset.y, z = this.dataset.z,
 			isAll = $this.hasClass('all');
 
+		if(man) isAll = true;
+
 		if(x == 's') {
 			kqd.dynmSearch = false;
 
@@ -121,7 +123,7 @@
 				return false;
 			}
 			else if(e.keyCode == 13 && e.shiftKey) {
-				$('[data-cond][data-val=s]').trigger('click', { fourceON: true });
+				$('[data-cond][data-x=s]').trigger('click', {});
 
 				kqe.search.click();
 

@@ -153,9 +153,7 @@
 		conds: {
 			serv: 'cn',
 			name: '',
-			mark: [
-				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-			]
+			mark: [[]]
 		},
 		param: function(moder) {
 			var result = $.extend({}, kq.conds, {

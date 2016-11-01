@@ -75,5 +75,17 @@
 	"attack:time2": "0:11:2",
 	"attack:time3": "0:11:4",
 	"attack:time4": "0:11:8",
-	"attack:time5": "0:11:16"
+	"attack:time5": "0:11:16",
+	"heal:aoe": "0:12:1",
+	"heal:soe": "0:12:2",
+	"heal:slf": "0:12:4",
+	"heal:hq": "0:13:1",
+	"heal:hpm": "0:13:2",
+	"regen:aoe": "0:14:1",
+	"regen:soe": "0:14:2",
+	"regen:slf": "0:14:4",
+	"regen:turn2": "0:15:1",
+	"regen:turn3": "0:15:2",
+	"regen:turn4": "0:15:4",
+	"regen:turn5": "0:15:8"
 }

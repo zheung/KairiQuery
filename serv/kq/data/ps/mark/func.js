@@ -82,6 +82,37 @@ module.exports = () => {
 								set.add('attack:soe');
 						}
 					}
+
+					if(rt == 9 || rt == 12) {
+						if(st == 'awaken') {
+							if((target.r == 3 || (target.r == 1 && target.s == 3)))
+								set.add('heal:aoe');
+							if(target.r == 1 && target.s == 2)
+								set.add('heal:soe');
+							if(target.r == 2 || (target.r == 1 && target.s == 1))
+								set.add('heal:slf');
+						}
+
+						if(rt == 12 || rp[5][1] == 2)
+							set.add('heal:hpm');
+						else
+							set.add('heal:hq');
+					}
+
+					if(rt == 13) {
+						if(st == 'awaken') {
+							if((target.r == 3 || (target.r == 1 && target.s == 3)))
+								set.add('regen:aoe');
+							if(target.r == 1 && target.s == 2)
+								set.add('regen:soe');
+							if(target.r == 2 || (target.r == 1 && target.s == 1))
+								set.add('regen:slf');
+
+							if(rp[1]) set.add('regen:turn'+rp[1]);
+						}
+					}
+
+
 					if(rt == 5) set.add('drain');
 					if(rt == 6) set.add('revenge');
 					if(rt == 7) set.add('pierce');

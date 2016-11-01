@@ -207,6 +207,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"map:18-1",
 		"map"
 	],
@@ -215,21 +217,27 @@
 		"cost4",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10000036": [
 		"sr",
 		"cost4",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10000037": [
 		"ur",
 		"cost4",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10000038": [
 		"hn",
@@ -494,6 +502,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10000064": [
@@ -502,6 +512,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10000065": [
@@ -990,6 +1002,9 @@
 		"light",
 		"singer",
 		"recovery",
+		"regen:soe",
+		"regen:turn5",
+		"heal:hq",
 		"ex"
 	],
 	"10000112": [
@@ -998,6 +1013,9 @@
 		"light",
 		"singer",
 		"recovery",
+		"regen:soe",
+		"regen:turn5",
+		"heal:hq",
 		"ex"
 	],
 	"10000114": [
@@ -1202,6 +1220,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"map:7-1",
 		"map:7-2",
 		"map:7-3",
@@ -1215,14 +1235,18 @@
 		"cost2",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:soe",
+		"heal:hq"
 	],
 	"10000155": [
 		"ur",
 		"cost2",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:soe",
+		"heal:hq"
 	],
 	"10000156": [
 		"r",
@@ -1230,6 +1254,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"map:13-1",
 		"map:13-2",
 		"map:13-3",
@@ -1240,14 +1266,18 @@
 		"cost3",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:soe",
+		"heal:hq"
 	],
 	"10000158": [
 		"ur",
 		"cost3",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:soe",
+		"heal:hq"
 	],
 	"10000162": [
 		"r",
@@ -1530,14 +1560,20 @@
 		"cost3",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"regen:soe",
+		"regen:turn3",
+		"heal:hq"
 	],
 	"10000186": [
 		"sr",
 		"cost3",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"regen:soe",
+		"regen:turn3",
+		"heal:hq"
 	],
 	"10000187": [
 		"hn",
@@ -1685,6 +1721,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"map:9-1",
 		"map"
 	],
@@ -1693,7 +1731,9 @@
 		"cost5",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10000216": [
 		"sr",
@@ -1743,14 +1783,16 @@
 		"cost2",
 		"light",
 		"null",
-		"recovery"
+		"recovery",
+		"heal:hq"
 	],
 	"10000258": [
 		"n",
 		"cost2",
 		"light",
 		"null",
-		"recovery"
+		"recovery",
+		"heal:hq"
 	],
 	"10000300": [
 		"ur",
@@ -2262,6 +2304,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10002018": [
@@ -2270,6 +2314,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10002019": [
@@ -2280,7 +2326,9 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"regen:slf",
+		"regen:turn2"
 	],
 	"10002020": [
 		"ur",
@@ -2290,7 +2338,9 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"regen:slf",
+		"regen:turn2"
 	],
 	"10002029": [
 		"ur",
@@ -2351,14 +2401,18 @@
 		"cost2",
 		"ice",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10003006": [
 		"ur",
 		"cost2",
 		"ice",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10003007": [
 		"ur",
@@ -2409,14 +2463,18 @@
 		"cost2",
 		"fire",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10103002": [
 		"ur",
 		"cost2",
 		"fire",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10103003": [
 		"sr",
@@ -2522,6 +2580,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"chain",
 		"ex"
 	],
@@ -2531,6 +2591,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"chain",
 		"ex"
 	],
@@ -2539,14 +2601,18 @@
 		"cost3",
 		"wind",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:soe",
+		"heal:hq"
 	],
 	"10104006": [
 		"ur",
 		"cost3",
 		"wind",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:soe",
+		"heal:hq"
 	],
 	"10104007": [
 		"sr",
@@ -2592,6 +2658,9 @@
 		"dark",
 		"singer",
 		"recovery",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq",
 		"ex"
 	],
 	"10104012": [
@@ -2600,6 +2669,9 @@
 		"dark",
 		"singer",
 		"recovery",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq",
 		"ex"
 	],
 	"10105001": [
@@ -2629,14 +2701,18 @@
 		"cost2",
 		"ice",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:soe",
+		"heal:hq"
 	],
 	"10105005": [
 		"ur",
 		"cost2",
 		"ice",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:soe",
+		"heal:hq"
 	],
 	"10105006": [
 		"sr",
@@ -3034,6 +3110,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10106012": [
@@ -3042,6 +3120,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10107001": [
@@ -3176,6 +3256,10 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
+		"regen:slf",
+		"regen:turn2",
 		"ex"
 	],
 	"10107017": [
@@ -3184,6 +3268,10 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
+		"regen:slf",
+		"regen:turn2",
 		"ex"
 	],
 	"10107018": [
@@ -3388,6 +3476,10 @@
 		"firedark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2",
 		"chain",
 		"ex",
 		"5331",
@@ -3400,6 +3492,10 @@
 		"firedark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2",
 		"chain",
 		"ex",
 		"5331",
@@ -3482,6 +3578,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"chain",
 		"ex"
 	],
@@ -3491,6 +3589,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"chain",
 		"ex"
 	],
@@ -3546,6 +3646,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10108022": [
@@ -3554,6 +3656,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10108023": [
@@ -3562,7 +3666,10 @@
 		"wind",
 		"singer",
 		"recovery",
-		"buffone"
+		"regen:soe",
+		"regen:turn2",
+		"buffone",
+		"heal:hq"
 	],
 	"10108024": [
 		"ur",
@@ -3570,7 +3677,10 @@
 		"wind",
 		"singer",
 		"recovery",
-		"buffone"
+		"regen:soe",
+		"regen:turn2",
+		"buffone",
+		"heal:hq"
 	],
 	"10108025": [
 		"sr",
@@ -3742,6 +3852,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10109010": [
@@ -3754,6 +3866,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10109011": [
@@ -3988,6 +4102,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"chain",
 		"ex",
 		"limited:fire1",
@@ -3999,6 +4115,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"chain",
 		"ex",
 		"limited:fire1",
@@ -4152,6 +4270,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10110008": [
@@ -4160,6 +4280,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10110009": [
@@ -4271,14 +4393,18 @@
 		"cost3",
 		"dark",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:soe",
+		"heal:hq"
 	],
 	"10110020": [
 		"ur",
 		"cost3",
 		"dark",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:soe",
+		"heal:hq"
 	],
 	"10110023": [
 		"ur",
@@ -4286,6 +4412,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"ex"
 	],
@@ -4295,6 +4423,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"ex"
 	],
@@ -4374,6 +4504,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10110032": [
@@ -4382,6 +4514,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10110033": [
@@ -4454,6 +4588,10 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2",
 		"ex"
 	],
 	"10110040": [
@@ -4462,6 +4600,10 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2",
 		"ex"
 	],
 	"10111001": [
@@ -4494,6 +4636,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10111004": [
@@ -4502,6 +4646,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10111005": [
@@ -4550,6 +4696,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"chain"
 	],
 	"10111010": [
@@ -4558,6 +4706,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"chain"
 	],
 	"10111011": [
@@ -4622,6 +4772,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10111018": [
@@ -4630,6 +4782,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10111019": [
@@ -4742,6 +4896,9 @@
 		"light",
 		"singer",
 		"recovery",
+		"regen:aoe",
+		"regen:turn2",
+		"heal:hq",
 		"ex"
 	],
 	"10111030": [
@@ -4750,6 +4907,9 @@
 		"light",
 		"singer",
 		"recovery",
+		"regen:aoe",
+		"regen:turn2",
+		"heal:hq",
 		"ex"
 	],
 	"10111031": [
@@ -4893,14 +5053,18 @@
 		"cost2",
 		"wind",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10112006": [
 		"ur",
 		"cost2",
 		"wind",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10112007": [
 		"sr",
@@ -4942,6 +5106,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10113004": [
@@ -4954,6 +5120,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10113005": [
@@ -4962,6 +5130,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10113006": [
@@ -4970,6 +5140,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10113007": [
@@ -5249,14 +5421,18 @@
 		"cost3",
 		"ice",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:soe",
+		"heal:hq"
 	],
 	"10113034": [
 		"ur",
 		"cost3",
 		"ice",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:soe",
+		"heal:hq"
 	],
 	"10113035": [
 		"sr",
@@ -5322,6 +5498,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10113042": [
@@ -5330,6 +5508,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10113043": [
@@ -5582,6 +5762,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10113068": [
@@ -5590,6 +5772,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10113069": [
@@ -5658,6 +5842,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10113076": [
@@ -5666,6 +5852,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10113077": [
@@ -5778,6 +5966,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -5787,6 +5977,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -5888,6 +6080,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10114020": [
@@ -5896,6 +6090,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10114021": [
@@ -5994,6 +6190,9 @@
 		"fire",
 		"singer",
 		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq",
 		"ex"
 	],
 	"10114030": [
@@ -6002,6 +6201,9 @@
 		"fire",
 		"singer",
 		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq",
 		"ex"
 	],
 	"10114031": [
@@ -6128,6 +6330,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -6137,6 +6341,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -6217,6 +6423,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -6226,6 +6434,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -6291,6 +6501,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10115012": [
@@ -6299,6 +6511,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10115013": [
@@ -6349,6 +6563,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10115018": [
@@ -6357,6 +6573,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10115019": [
@@ -6468,6 +6686,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -6595,6 +6815,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -6638,6 +6860,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10116008": [
@@ -6646,6 +6870,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10116009": [
@@ -6756,6 +6982,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10116020": [
@@ -6764,6 +6992,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10116021": [
@@ -6821,6 +7051,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10116027": [
@@ -6829,6 +7061,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10116028": [
@@ -6969,6 +7203,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10117005": [
@@ -6977,6 +7213,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10117006": [
@@ -7034,14 +7272,18 @@
 		"cost2",
 		"dark",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10117012": [
 		"ur",
 		"cost2",
 		"dark",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10117013": [
 		"sr",
@@ -7099,6 +7341,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10117020": [
@@ -7107,6 +7351,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10117021": [
@@ -7170,6 +7416,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10117027": [
@@ -7178,6 +7426,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10117028": [
@@ -7249,6 +7499,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"ex"
 	],
@@ -7324,6 +7576,8 @@
 		"winddark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"ex",
 		"5331"
@@ -7334,6 +7588,8 @@
 		"winddark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"ex",
 		"5331"
@@ -7376,6 +7632,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"chain",
 		"ex"
 	],
@@ -7385,6 +7643,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"chain",
 		"ex"
 	],
@@ -7536,6 +7796,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10118022": [
@@ -7544,6 +7806,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10118023": [
@@ -7628,6 +7892,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10118032": [
@@ -7636,6 +7902,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10118033": [
@@ -7664,6 +7932,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10119002": [
@@ -7672,6 +7942,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10119003": [
@@ -7758,6 +8030,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10119012": [
@@ -7770,6 +8044,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10119013": [
@@ -7914,6 +8190,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10119029": [
@@ -7922,6 +8200,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10119030": [
@@ -7958,6 +8238,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -7967,6 +8249,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -7987,6 +8271,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -8096,6 +8382,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -8105,6 +8393,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -8118,6 +8408,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10120010": [
@@ -8130,6 +8422,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10120011": [
@@ -8250,6 +8544,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10120022": [
@@ -8258,6 +8554,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10120023": [
@@ -8266,6 +8564,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"chain",
 		"ex"
 	],
@@ -8275,6 +8575,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"chain",
 		"ex"
 	],
@@ -8300,6 +8602,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre",
 		"chain",
 		"ex"
@@ -8310,6 +8614,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre",
 		"chain",
 		"ex"
@@ -8490,6 +8796,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"buffone",
 		"ex"
 	],
@@ -8499,6 +8807,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"buffone",
 		"ex"
 	],
@@ -8601,6 +8911,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -8713,6 +9025,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10121014": [
@@ -8721,6 +9035,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10121015": [
@@ -8762,6 +9078,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10121019": [
@@ -8770,6 +9088,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10121020": [
@@ -8834,6 +9154,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"chain"
 	],
 	"10121027": [
@@ -8842,6 +9164,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"chain"
 	],
 	"10121028": [
@@ -8938,6 +9262,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10121037": [
@@ -8946,6 +9272,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10121038": [
@@ -8992,6 +9320,10 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2",
 		"ex"
 	],
 	"10121044": [
@@ -9079,6 +9411,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10121054": [
@@ -9128,6 +9462,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"ex"
 	],
@@ -9137,6 +9473,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"ex"
 	],
@@ -9216,6 +9554,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"buffone",
 		"ex"
 	],
@@ -9225,6 +9565,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"buffone",
 		"ex"
 	],
@@ -9304,6 +9646,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -9313,6 +9657,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -9355,14 +9701,22 @@
 		"cost3",
 		"wind",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2"
 	],
 	"10122028": [
 		"ur",
 		"cost3",
 		"wind",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2"
 	],
 	"10122029": [
 		"ur",
@@ -9432,6 +9786,9 @@
 		"ice",
 		"singer",
 		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq",
 		"ex"
 	],
 	"10122036": [
@@ -9440,6 +9797,9 @@
 		"ice",
 		"singer",
 		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq",
 		"ex"
 	],
 	"10122037": [
@@ -9471,6 +9831,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10122040": [
@@ -9479,6 +9841,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10122041": [
@@ -9571,6 +9935,8 @@
 		"lightdark",
 		"singer",
 		"support",
+		"heal:aoe",
+		"heal:hq",
 		"ex",
 		"5331"
 	],
@@ -9639,6 +10005,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10123002": [
@@ -9647,6 +10015,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10123004": [
@@ -9711,6 +10081,9 @@
 		"wind",
 		"singer",
 		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq",
 		"ex"
 	],
 	"10123011": [
@@ -9719,6 +10092,9 @@
 		"wind",
 		"singer",
 		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq",
 		"ex"
 	],
 	"10123013": [
@@ -9893,6 +10269,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10123033": [
@@ -9901,6 +10279,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10123034": [
@@ -10009,6 +10389,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10123045": [
@@ -10017,6 +10399,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10123046": [
@@ -10037,6 +10421,8 @@
 		"fire",
 		"singer",
 		"jamming",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10123048": [
@@ -10211,6 +10597,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -10220,6 +10608,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -10333,6 +10723,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -10342,6 +10734,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -10351,6 +10745,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10124022": [
@@ -10359,6 +10755,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10124023": [
@@ -10403,6 +10801,10 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2",
 		"ex"
 	],
 	"10124028": [
@@ -10411,6 +10813,10 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2",
 		"ex"
 	],
 	"10124029": [
@@ -10522,6 +10928,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10124042": [
@@ -10594,6 +11002,8 @@
 		"light",
 		"singer",
 		"jamming",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10124050": [
@@ -10602,6 +11012,8 @@
 		"light",
 		"singer",
 		"jamming",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10124051": [
@@ -10665,6 +11077,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -10674,6 +11088,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -10683,6 +11099,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10125009": [
@@ -10691,6 +11109,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10125010": [
@@ -10743,6 +11163,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10125015": [
@@ -10751,6 +11173,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10125016": [
@@ -10857,6 +11281,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10125027": [
@@ -10865,6 +11291,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10125028": [
@@ -10955,6 +11383,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -10964,6 +11394,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10125039": [
@@ -10972,6 +11404,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10125040": [
@@ -11084,6 +11518,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10125051": [
@@ -11092,6 +11528,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10125053": [
@@ -11109,6 +11547,7 @@
 		"wind",
 		"null",
 		"recovery",
+		"heal:hq",
 		"ex"
 	],
 	"10125055": [
@@ -11117,6 +11556,7 @@
 		"wind",
 		"null",
 		"recovery",
+		"heal:hq",
 		"ex"
 	],
 	"10126001": [
@@ -11220,6 +11660,8 @@
 		"millionaire",
 		"defense",
 		"covering",
+		"regen:slf",
+		"regen:turn4",
 		"ex"
 	],
 	"10126012": [
@@ -11229,6 +11671,8 @@
 		"millionaire",
 		"defense",
 		"covering",
+		"regen:slf",
+		"regen:turn4",
 		"ex"
 	],
 	"10126013": [
@@ -11263,6 +11707,10 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2",
 		"ex"
 	],
 	"10126016": [
@@ -11271,6 +11719,10 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2",
 		"ex"
 	],
 	"10126017": [
@@ -11369,6 +11821,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10126026": [
@@ -11377,6 +11831,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10126027": [
@@ -11447,6 +11903,8 @@
 		"dark",
 		"singer",
 		"defense",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10126036": [
@@ -11455,6 +11913,8 @@
 		"dark",
 		"singer",
 		"defense",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10126037": [
@@ -11717,6 +12177,9 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
+		"heal:aoe",
 		"bug"
 	],
 	"10127011": [
@@ -11725,6 +12188,9 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
+		"heal:aoe",
 		"bug"
 	],
 	"10127012": [
@@ -11802,6 +12268,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"chain",
 		"ex"
 	],
@@ -11811,6 +12279,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"chain",
 		"ex"
 	],
@@ -11856,6 +12326,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10127028": [
@@ -11864,6 +12336,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10127029": [
@@ -11962,6 +12436,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"ex"
 	],
@@ -11995,14 +12471,20 @@
 		"cost1",
 		"light",
 		"singer",
-		"support"
+		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq"
 	],
 	"10127044": [
 		"mr",
 		"cost1",
 		"light",
 		"singer",
-		"support"
+		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq"
 	],
 	"10127045": [
 		"ur",
@@ -12071,14 +12553,18 @@
 		"cost3",
 		"wind",
 		"singer",
-		"defense"
+		"defense",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10128002": [
 		"mr",
 		"cost3",
 		"wind",
 		"singer",
-		"defense"
+		"defense",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10128003": [
 		"ur",
@@ -12140,6 +12626,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10128010": [
@@ -12148,6 +12636,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10128011": [
@@ -12360,6 +12850,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -12369,6 +12861,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -12446,6 +12940,8 @@
 		"firelight",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"chain",
 		"5331"
@@ -12456,6 +12952,8 @@
 		"firelight",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"chain",
 		"5331"
@@ -12593,6 +13091,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10129009": [
@@ -12601,6 +13101,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10129010": [
@@ -12609,6 +13111,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug"
 	],
 	"10129011": [
@@ -12617,6 +13121,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug"
 	],
 	"10129012": [
@@ -12755,14 +13261,18 @@
 		"cost3",
 		"dark",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10129028": [
 		"ur",
 		"cost3",
 		"dark",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10129029": [
 		"mr",
@@ -12788,6 +13298,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -12797,6 +13309,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -12832,6 +13346,9 @@
 		"dark",
 		"singer",
 		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq",
 		"ex"
 	],
 	"10129037": [
@@ -12840,6 +13357,9 @@
 		"dark",
 		"singer",
 		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq",
 		"ex"
 	],
 	"10129038": [
@@ -12937,6 +13457,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug"
 	],
 	"10130002": [
@@ -12945,6 +13467,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug"
 	],
 	"10130003": [
@@ -13026,6 +13550,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10130013": [
@@ -13096,6 +13622,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"ex"
 	],
@@ -13105,6 +13633,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"ex"
 	],
@@ -13144,6 +13674,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10130026": [
@@ -13152,6 +13684,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10130027": [
@@ -13226,6 +13760,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10130035": [
@@ -13352,14 +13888,18 @@
 		"cost3",
 		"light",
 		"singer",
-		"support"
+		"support",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10130048": [
 		"mr",
 		"cost3",
 		"light",
 		"singer",
-		"support"
+		"support",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10130049": [
 		"ur",
@@ -13444,14 +13984,18 @@
 		"cost3",
 		"light",
 		"singer",
-		"defense"
+		"defense",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10131007": [
 		"mr",
 		"cost3",
 		"light",
 		"singer",
-		"defense"
+		"defense",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10131008": [
 		"sr",
@@ -13539,14 +14083,18 @@
 		"cost3",
 		"dark",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10131018": [
 		"ur",
 		"cost3",
 		"dark",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10131019": [
 		"ur",
@@ -13578,6 +14126,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -13587,6 +14137,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -13618,6 +14170,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug"
 	],
 	"10131026": [
@@ -13626,6 +14180,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug"
 	],
 	"10131027": [
@@ -13672,6 +14228,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10131032": [
@@ -13680,6 +14238,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"ex"
 	],
 	"10131033": [
@@ -13727,6 +14287,9 @@
 		"light",
 		"singer",
 		"support",
+		"regen:aoe",
+		"regen:turn4",
+		"heal:hq",
 		"ex"
 	],
 	"10131038": [
@@ -13744,7 +14307,9 @@
 		"wind",
 		"singer",
 		"jamming",
-		"aoe"
+		"aoe",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10131040": [
 		"mr",
@@ -13752,7 +14317,9 @@
 		"wind",
 		"singer",
 		"jamming",
-		"aoe"
+		"aoe",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10131041": [
 		"ur",
@@ -13913,6 +14480,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"chain"
 	],
 	"10132014": [
@@ -13921,6 +14490,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"chain"
 	],
 	"10132015": [
@@ -14015,6 +14586,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10132024": [
@@ -14023,6 +14596,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10132025": [
@@ -14053,6 +14628,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -14062,6 +14639,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -14133,6 +14712,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10132036": [
@@ -14141,6 +14722,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10132037": [
@@ -14172,6 +14755,8 @@
 		"attack:magic",
 		"attack:time3",
 		"attack:aoe",
+		"heal:aoe",
+		"heal:hq",
 		"attack:time1"
 	],
 	"10132040": [
@@ -14184,6 +14769,8 @@
 		"attack:magic",
 		"attack:time3",
 		"attack:aoe",
+		"heal:aoe",
+		"heal:hq",
 		"attack:time1"
 	],
 	"10132041": [
@@ -14340,6 +14927,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10133010": [
@@ -14348,6 +14937,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10133011": [
@@ -14461,14 +15052,18 @@
 		"cost3",
 		"dark",
 		"singer",
-		"support"
+		"support",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10133024": [
 		"mr",
 		"cost3",
 		"dark",
 		"singer",
-		"support"
+		"support",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10133025": [
 		"sr",
@@ -14666,6 +15261,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -14675,6 +15272,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -14841,14 +15440,20 @@
 		"cost2",
 		"wind",
 		"singer",
-		"support"
+		"support",
+		"regen:aoe",
+		"regen:turn4",
+		"heal:hq"
 	],
 	"10134016": [
 		"mr",
 		"cost2",
 		"wind",
 		"singer",
-		"support"
+		"support",
+		"regen:aoe",
+		"regen:turn4",
+		"heal:hq"
 	],
 	"10134017": [
 		"ur",
@@ -14975,14 +15580,18 @@
 		"cost3",
 		"ice",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10134030": [
 		"ur",
 		"cost3",
 		"ice",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10134031": [
 		"ur",
@@ -15016,6 +15625,8 @@
 		"wind",
 		"singer",
 		"defense",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10134034": [
@@ -15024,6 +15635,8 @@
 		"wind",
 		"singer",
 		"defense",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10134035": [
@@ -15111,14 +15724,18 @@
 		"cost2",
 		"ice",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10134047": [
 		"mr",
 		"cost2",
 		"ice",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10134048": [
 		"ur",
@@ -15192,6 +15809,8 @@
 		"winddark",
 		"singer",
 		"support",
+		"regen:aoe",
+		"regen:turn4",
 		"5331"
 	],
 	"10134057": [
@@ -15200,6 +15819,8 @@
 		"winddark",
 		"singer",
 		"support",
+		"regen:aoe",
+		"regen:turn4",
 		"5331"
 	],
 	"10134058": [
@@ -15242,6 +15863,7 @@
 		"ice",
 		"null",
 		"recovery",
+		"heal:hq",
 		"ex"
 	],
 	"10134064": [
@@ -15343,14 +15965,18 @@
 		"cost2",
 		"fire",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10135010": [
 		"ur",
 		"cost2",
 		"fire",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10135011": [
 		"ur",
@@ -15377,14 +16003,22 @@
 		"cost2",
 		"fire",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2"
 	],
 	"10135014": [
 		"mr",
 		"cost2",
 		"fire",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2"
 	],
 	"10135015": [
 		"ur",
@@ -15444,6 +16078,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -15453,6 +16089,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -15486,6 +16124,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10135026": [
@@ -15494,6 +16134,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10135027": [
@@ -15606,6 +16248,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10135040": [
@@ -15629,14 +16273,18 @@
 		"cost3",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10135043": [
 		"mr",
 		"cost3",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10135044": [
 		"ur",
@@ -15690,7 +16338,10 @@
 		"light",
 		"singer",
 		"recovery",
+		"regen:soe",
+		"regen:turn5",
 		"buffone",
+		"heal:hq",
 		"ex"
 	],
 	"10135051": [
@@ -15770,7 +16421,9 @@
 		"ice",
 		"singer",
 		"jamming",
-		"aoe"
+		"aoe",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10136006": [
 		"mr",
@@ -15778,7 +16431,9 @@
 		"ice",
 		"singer",
 		"jamming",
-		"aoe"
+		"aoe",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10136007": [
 		"ur",
@@ -15869,14 +16524,20 @@
 		"cost1",
 		"fireice",
 		"singer",
-		"support"
+		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq"
 	],
 	"10136018": [
 		"mr",
 		"cost1",
 		"fireice",
 		"singer",
-		"support"
+		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq"
 	],
 	"10136019": [
 		"ur",
@@ -15948,6 +16609,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10136026": [
@@ -15956,6 +16619,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10136027": [
@@ -15984,6 +16649,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -15993,6 +16660,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -16044,6 +16713,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10136036": [
@@ -16052,6 +16723,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10136037": [
@@ -16092,6 +16765,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -16249,14 +16924,20 @@
 		"cost1",
 		"dark",
 		"singer",
-		"support"
+		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq"
 	],
 	"10137008": [
 		"mr",
 		"cost1",
 		"dark",
 		"singer",
-		"support"
+		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq"
 	],
 	"10137009": [
 		"ur",
@@ -16396,6 +17077,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug"
 	],
 	"10137026": [
@@ -16404,6 +17087,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug"
 	],
 	"10137027": [
@@ -16466,6 +17151,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10137034": [
@@ -16474,6 +17161,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10137035": [
@@ -16697,7 +17386,9 @@
 		"light",
 		"singer",
 		"support",
-		"buffone"
+		"buffone",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10137059": [
 		"mr",
@@ -16705,7 +17396,9 @@
 		"light",
 		"singer",
 		"support",
-		"buffone"
+		"buffone",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10137060": [
 		"ur",
@@ -16729,6 +17422,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"bug"
 	],
@@ -16738,6 +17433,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"bug"
 	],
@@ -16792,7 +17489,9 @@
 		"dark",
 		"singer",
 		"support",
-		"buffone"
+		"buffone",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10139006": [
 		"mr",
@@ -16800,7 +17499,9 @@
 		"dark",
 		"singer",
 		"support",
-		"buffone"
+		"buffone",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10139007": [
 		"ur",
@@ -16900,6 +17601,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"chain"
 	],
 	"10139020": [
@@ -16908,6 +17611,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"chain"
 	],
 	"10139021": [
@@ -16934,6 +17639,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug"
 	],
 	"10139024": [
@@ -16942,6 +17649,8 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug"
 	],
 	"10139025": [
@@ -17070,6 +17779,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug"
 	],
 	"10139040": [
@@ -17078,6 +17789,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug"
 	],
 	"10139041": [
@@ -17167,14 +17880,22 @@
 		"cost3",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2"
 	],
 	"10139051": [
 		"ur",
 		"cost3",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2"
 	],
 	"10139052": [
 		"sr",
@@ -17228,6 +17949,9 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
+		"heal:aoe",
 		"bug"
 	],
 	"10140004": [
@@ -17236,6 +17960,9 @@
 		"fire",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
+		"heal:aoe",
 		"bug"
 	],
 	"10140005": [
@@ -17294,7 +18021,11 @@
 		"dark",
 		"singer",
 		"recovery",
-		"chain"
+		"heal:aoe",
+		"heal:hq",
+		"chain",
+		"regen:aoe",
+		"regen:turn2"
 	],
 	"10140012": [
 		"mr",
@@ -17302,7 +18033,11 @@
 		"dark",
 		"singer",
 		"recovery",
-		"chain"
+		"heal:aoe",
+		"heal:hq",
+		"chain",
+		"regen:aoe",
+		"regen:turn2"
 	],
 	"10140013": [
 		"ur",
@@ -17422,6 +18157,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10140026": [
@@ -17430,6 +18167,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10140027": [
@@ -17538,6 +18277,8 @@
 		"ice",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -17611,7 +18352,9 @@
 		"fire",
 		"singer",
 		"support",
-		"buffone"
+		"buffone",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10140048": [
 		"mr",
@@ -17619,7 +18362,9 @@
 		"fire",
 		"singer",
 		"support",
-		"buffone"
+		"buffone",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10140049": [
 		"ur",
@@ -17679,6 +18424,8 @@
 		"windlight",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"chain",
 		"5331"
@@ -17689,6 +18436,8 @@
 		"windlight",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"chain",
 		"5331"
@@ -17742,14 +18491,18 @@
 		"cost2",
 		"light",
 		"singer",
-		"defense"
+		"defense",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10141008": [
 		"mr",
 		"cost2",
 		"light",
 		"singer",
-		"defense"
+		"defense",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10141009": [
 		"ur",
@@ -17789,6 +18542,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"bug"
 	],
@@ -17798,6 +18553,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"bug"
 	],
@@ -17922,14 +18679,18 @@
 		"cost2",
 		"dark",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10141028": [
 		"mr",
 		"cost2",
 		"dark",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10141029": [
 		"ur",
@@ -17972,14 +18733,22 @@
 		"cost2",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2"
 	],
 	"10141034": [
 		"mr",
 		"cost2",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn2"
 	],
 	"10141035": [
 		"ur",
@@ -18088,6 +18857,8 @@
 		"icelight",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"chain"
 	],
@@ -18097,6 +18868,8 @@
 		"icelight",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"chain"
 	],
@@ -18258,14 +19031,22 @@
 		"cost4",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn3"
 	],
 	"10142018": [
 		"mr",
 		"cost4",
 		"light",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn3"
 	],
 	"10142019": [
 		"ur",
@@ -18487,28 +19268,36 @@
 		"cost2",
 		"dark",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10142046": [
 		"mr",
 		"cost2",
 		"dark",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10142047": [
 		"ur",
 		"cost2",
 		"dark",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10142048": [
 		"mr",
 		"cost2",
 		"dark",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10143001": [
 		"ur",
@@ -18549,14 +19338,18 @@
 		"cost3",
 		"ice",
 		"singer",
-		"defense"
+		"defense",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10143006": [
 		"mr",
 		"cost3",
 		"ice",
 		"singer",
-		"defense"
+		"defense",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10143007": [
 		"ur",
@@ -18630,6 +19423,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10143016": [
@@ -18638,6 +19433,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10143017": [
@@ -18711,14 +19508,20 @@
 		"cost1",
 		"icewind",
 		"singer",
-		"support"
+		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq"
 	],
 	"10143026": [
 		"mr",
 		"cost1",
 		"icewind",
 		"singer",
-		"support"
+		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq"
 	],
 	"10143027": [
 		"ur",
@@ -18914,6 +19717,8 @@
 		"firewind",
 		"singer",
 		"support",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"buffone",
 		"5331"
@@ -18924,6 +19729,8 @@
 		"firewind",
 		"singer",
 		"support",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"buffone",
 		"5331"
@@ -18986,6 +19793,10 @@
 		"icewind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn3",
 		"bug",
 		"regicide"
 	],
@@ -18995,6 +19806,10 @@
 		"icewind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn3",
 		"bug",
 		"regicide"
 	],
@@ -19308,6 +20123,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10144028": [
@@ -19316,6 +20133,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre"
 	],
 	"10144029": [
@@ -19401,14 +20220,18 @@
 		"cost2",
 		"fire",
 		"singer",
-		"defense"
+		"defense",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10144040": [
 		"mr",
 		"cost2",
 		"fire",
 		"singer",
-		"defense"
+		"defense",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10144041": [
 		"ur",
@@ -19639,6 +20462,7 @@
 		"singer",
 		"support",
 		"debuffre",
+		"heal:hq",
 		"ex"
 	],
 	"10145016": [
@@ -19648,6 +20472,7 @@
 		"singer",
 		"support",
 		"debuffre",
+		"heal:hq",
 		"ex"
 	],
 	"10145017": [
@@ -19696,6 +20521,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"ex"
 	],
@@ -19705,6 +20532,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"ex"
 	],
@@ -19742,6 +20571,9 @@
 		"fire",
 		"singer",
 		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq",
 		"ex"
 	],
 	"10145027": [
@@ -19750,6 +20582,9 @@
 		"fire",
 		"singer",
 		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq",
 		"ex"
 	],
 	"10145028": [
@@ -19842,6 +20677,8 @@
 		"singer",
 		"support",
 		"buffone",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10145037": [
@@ -19851,6 +20688,8 @@
 		"singer",
 		"support",
 		"buffone",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10145038": [
@@ -20166,6 +21005,8 @@
 		"wind",
 		"singer",
 		"defense",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10146006": [
@@ -20174,6 +21015,8 @@
 		"wind",
 		"singer",
 		"defense",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10146007": [
@@ -20197,14 +21040,18 @@
 		"cost2",
 		"wind",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10146010": [
 		"ur",
 		"cost2",
 		"wind",
 		"singer",
-		"recovery"
+		"recovery",
+		"heal:aoe",
+		"heal:hq"
 	],
 	"10146011": [
 		"ur",
@@ -20361,6 +21208,7 @@
 		"singer",
 		"support",
 		"db2",
+		"heal:hq",
 		"ex"
 	],
 	"10146028": [
@@ -20370,6 +21218,7 @@
 		"singer",
 		"support",
 		"db2",
+		"heal:hq",
 		"ex"
 	],
 	"10146029": [
@@ -20442,6 +21291,8 @@
 		"attack:magic",
 		"attack:time2",
 		"attack:aoe",
+		"heal:aoe",
+		"heal:hq",
 		"attack:time1",
 		"ex"
 	],
@@ -20495,6 +21346,9 @@
 		"windlight",
 		"singer",
 		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq",
 		"ex"
 	],
 	"10146041": [
@@ -20503,6 +21357,9 @@
 		"windlight",
 		"singer",
 		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq",
 		"ex"
 	],
 	"10146042": [
@@ -20681,6 +21538,8 @@
 		"ice",
 		"singer",
 		"defense",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10147010": [
@@ -20689,6 +21548,8 @@
 		"ice",
 		"singer",
 		"defense",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10147011": [
@@ -20715,6 +21576,8 @@
 		"ice",
 		"singer",
 		"jamming",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10147014": [
@@ -20723,6 +21586,8 @@
 		"ice",
 		"singer",
 		"jamming",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10147015": [
@@ -20877,6 +21742,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"bug",
 		"ex"
@@ -20887,6 +21754,8 @@
 		"wind",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"bug",
 		"ex"
@@ -20932,6 +21801,8 @@
 		"singer",
 		"support",
 		"buffone",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10147036": [
@@ -20973,6 +21844,8 @@
 		"singer",
 		"support",
 		"crit",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10147041": [
@@ -20982,6 +21855,8 @@
 		"singer",
 		"support",
 		"crit",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10147042": [
@@ -21049,6 +21924,8 @@
 		"singer",
 		"support",
 		"buffone",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10147049": [
@@ -21058,6 +21935,8 @@
 		"singer",
 		"support",
 		"buffone",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10147050": [
@@ -21394,6 +22273,8 @@
 		"icelight",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"chain"
 	],
@@ -21403,6 +22284,8 @@
 		"icelight",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"chain"
 	],
@@ -21411,14 +22294,20 @@
 		"cost1",
 		"fireice",
 		"singer",
-		"support"
+		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq"
 	],
 	"10147087": [
 		"mr",
 		"cost1",
 		"fireice",
 		"singer",
-		"support"
+		"support",
+		"regen:aoe",
+		"regen:turn3",
+		"heal:hq"
 	],
 	"10148001": [
 		"ur",
@@ -21481,6 +22370,8 @@
 		"singer",
 		"support",
 		"buffone",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10148008": [
@@ -21490,6 +22381,8 @@
 		"singer",
 		"support",
 		"buffone",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10148009": [
@@ -21516,6 +22409,10 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn3",
 		"ex"
 	],
 	"10148012": [
@@ -21524,6 +22421,10 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"regen:aoe",
+		"regen:turn3",
 		"ex"
 	],
 	"10148013": [
@@ -21712,6 +22613,8 @@
 		"fire",
 		"singer",
 		"support",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10148032": [
@@ -21813,6 +22716,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -21822,6 +22727,8 @@
 		"light",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"ex"
 	],
@@ -21888,6 +22795,7 @@
 		"singer",
 		"support",
 		"debuffre",
+		"heal:hq",
 		"ex"
 	],
 	"10148059": [
@@ -21897,6 +22805,7 @@
 		"singer",
 		"support",
 		"debuffre",
+		"heal:hq",
 		"ex"
 	],
 	"10148060": [
@@ -22055,6 +22964,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"bug",
 		"ex"
@@ -22065,6 +22976,8 @@
 		"dark",
 		"singer",
 		"recovery",
+		"heal:aoe",
+		"heal:hq",
 		"debuffre",
 		"bug",
 		"ex"
@@ -22134,6 +23047,8 @@
 		"singer",
 		"jamming",
 		"aoe",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10149024": [
@@ -22192,6 +23107,9 @@
 		"icedark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
+		"heal:aoe",
 		"bug",
 		"ex"
 	],
@@ -22201,6 +23119,9 @@
 		"icedark",
 		"singer",
 		"recovery",
+		"heal:soe",
+		"heal:hq",
+		"heal:aoe",
 		"bug",
 		"ex"
 	],
@@ -22410,6 +23331,8 @@
 		"singer",
 		"support",
 		"buffone",
+		"heal:aoe",
+		"heal:hq",
 		"ex",
 		"5331"
 	],
@@ -22420,6 +23343,8 @@
 		"singer",
 		"support",
 		"buffone",
+		"heal:aoe",
+		"heal:hq",
 		"ex",
 		"5331"
 	],
@@ -22430,6 +23355,7 @@
 		"singer",
 		"support",
 		"debuffre",
+		"heal:hq",
 		"ex"
 	],
 	"10149054": [
@@ -22439,6 +23365,7 @@
 		"singer",
 		"support",
 		"debuffre",
+		"heal:hq",
 		"ex"
 	],
 	"10149055": [
@@ -22485,6 +23412,7 @@
 		"singer",
 		"support",
 		"debuffre",
+		"heal:hq",
 		"ex"
 	],
 	"10150007": [
@@ -22494,6 +23422,7 @@
 		"singer",
 		"support",
 		"debuffre",
+		"heal:hq",
 		"ex"
 	],
 	"10150011": [
@@ -22810,6 +23739,8 @@
 		"singer",
 		"support",
 		"buffone",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10150053": [
@@ -23103,6 +24034,8 @@
 		"fire",
 		"singer",
 		"support",
+		"heal:aoe",
+		"heal:hq",
 		"ex"
 	],
 	"10150113": [
@@ -23323,6 +24256,8 @@
 		"wind",
 		"singer",
 		"support",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"buffone",
 		"ex"
@@ -23333,6 +24268,8 @@
 		"wind",
 		"singer",
 		"support",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"buffone",
 		"ex"
@@ -23343,6 +24280,8 @@
 		"wind",
 		"singer",
 		"support",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"buffone",
 		"ex"
@@ -23353,6 +24292,8 @@
 		"wind",
 		"singer",
 		"support",
+		"heal:aoe",
+		"heal:hq",
 		"bug",
 		"buffone",
 		"ex"

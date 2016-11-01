@@ -17,13 +17,13 @@
 		"enchant", "chain", "crit", "drain", "revenge", "pierce", "attrach"
 	],
 
-	[
-		"attack:aoe", "attack:soe"
-	],
-	[
-		"attack:physical", "attack:magic"
-	],
-	[
-		"attack:time1", "attack:time2", "attack:time3", "attack:time4", "attack:time5"
-	]
+	[ "attack:aoe", "attack:soe" ],
+	[ "attack:physical", "attack:magic" ],
+	[ "attack:time1", "attack:time2", "attack:time3", "attack:time4", "attack:time5" ],
+
+	[ "heal:aoe", "heal:soe", "heal:slf" ],
+	[ "heal:hq", "heal:hpm" ],
+
+	[ "regen:aoe", "regen:soe", "regen:slf" ],
+	[ "regen:turn2", "regen:turn3", "regen:turn4", "regen:turn5" ]
 ]

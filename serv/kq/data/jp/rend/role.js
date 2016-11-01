@@ -17,8 +17,9 @@ module.exports = ($) => {
 
 				let base = Math.ceil(~~p[1]+~~p[2]/1000*card.info.max.level);
 
-				return `${target} | ${p[5]}回${show(p[8])}元素的${show(p[9])}攻击
-					| <kqud title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</kqud>+${p[3]/10}%${show(p[6])}
+				return `${target} | ${p[5]}回${show(p[8])}元素的${show(p[9])}攻击 |\x20
+					${base ? `<kqud title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</kqud>+` : ''}
+					${show(p[6])}的${p[3]/10}%
 					${(p[7] / 10 != 15 ? ` | ${~~p[7] / 10}%高暴击率` : '')}`;
 			},
 			2: false,
@@ -27,12 +28,12 @@ module.exports = ($) => {
 			5: (card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
-				return `${target} | 回复HP | 造成伤害的${p[1]}%`;
+				return `${target} | 恢复生命 | 造成伤害的${p[1]}%`;
 			},
 			6: (card, skill, role) => {
 				let p = role.params;
 
-				return `附加伤害 | <kqud title="最大值：${show(p[3])}的${p[4]}%">每回合累计损失HP的${p[1]}%</kqud>`;
+				return `附加伤害 | <kqud title="最大值：${show(p[3])}的${p[4]}%">每回合累计损失生命的${p[1]}%</kqud>`;
 			},
 			7: (card, skill, role) => {
 				let p = role.params;
@@ -42,31 +43,33 @@ module.exports = ($) => {
 			8: (card, skill, role) => {
 				let p = role.params;
 
-				return `附加伤害 | 当前${show(p[5])}的${p[3]/10}%`;
+				return `附加伤害 | ${show(p[5])}的${p[3]/10}%`;
 			},
 			9: (card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
 				let base = Math.ceil(~~p[1]+~~p[2]/1000*card.info.max.level);
 
-				return `${target} | 回复HP | <kqud title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</kqud>+
-					${p[3]/10}%${show(p[5])}`;
+
+
+				return `${target} | 恢复生命 | ${base ? `<kqud title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</kqud>+` : ''}
+					${show(p[5])}的${p[3]/10}%`;
 			},
 			10: false,
 			11: false,
 			12: (card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
-				return `${target} | 回复HP | ${p[2]/10}%${show(p[1])}`;
+				return `${target} | 恢复生命 | ${show(p[1])}的${p[2]/10}%`;
 			},
 			13: (card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
 				let base = Math.ceil(~~p[2]+~~p[3]/1000*card.info.max.level);
 
-				return `${target} | ${p[1]}回合
-					| <kqud title="发动时机：回合开始前">持续回复HP</kqud>
-					| <kqud title="等级成长：${p[2]}+${p[3]/1000}*等级">${base}</kqud>+
+				return `${target} | ${p[1]}回合 |\x20
+					<kqud title="发动时机：回合开始前">持续恢复生命</kqud> |\x20
+					<kqud title="等级成长：${p[2]}+${p[3]/1000}*等级">${base}</kqud>+
 					${p[4]/10}%${show(p[6])}`;
 			},
 			14: false,
@@ -111,7 +114,7 @@ module.exports = ($) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
 
-				return `${target} | 血量降低 | 当前HP的${p[1]}%`;
+				return `${target} | 血量降低 | 当前生命的${p[1]}%`;
 			},
 			27: 'BUFF_RELEASE',
 			28: (card, skill, role, skillFirst) => {

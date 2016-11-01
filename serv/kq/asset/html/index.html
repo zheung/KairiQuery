@@ -207,36 +207,76 @@
 				</div>
 				<div class="TabItem RightNavi flex drc aic wpw" data-tab="RightNavi" data-page="Skill">
 					<div class="NaviColumn hr fs11 flex jcs aic wpw">
-						你知道吗？在原始数据中，卡面上显示COST、属性和职业实际上是属于“技能”而不是“卡牌”的。从歌姬使用B叔时是支援卡，其他职业使用时是治疗卡可以印证。
+						你知道吗？在原始数据中，COST、属性和职业实际上属于“技能”而不是“卡牌”的。从歌姬使用B叔时是支援卡，其他职业使用时是治疗卡可以印证。
 					</div>
-					<div class="NaviColumn hr flex jcs aic wpw">技能</div>
+					<div class="NaviColumn hr flex jcs aic wpw">攻击</div>
 					<div class="NaviColumn flex jcb aic wpw">
-						<a class="w4 Toggle on">攻击</a>
-						<div class="CondBar flex drc jca aic wpw">
-							<div class="wf flex jca aic wpw">
-								<div class="wf flex jcb aic wpw">
-									<a class="w3 tc cud Toggle" data-cond="attatcktarget" data-x="s">目标</a>
-									<a class="w3 tc Toggle off" data-cond="attatcktarget" data-x="0" data-y="9" data-z="1">全体</a>
-									<a class="w3 tc Toggle off" data-cond="attatcktarget" data-x="0" data-y="9" data-z="2">单体</a>
-									<a class="w3 tc cud Toggle" data-cond="attacktype" data-x="s">类型</a>
-									<a class="w3 tc Toggle off" data-cond="attacktype" data-x="0" data-y="10" data-z="1">物理</a>
-									<a class="w3 tc Toggle off" data-cond="attacktype" data-x="0" data-y="10" data-z="2">魔法</a>
-								</div>
-								<div class="wf flex jca aic wpw">
-									<a class="tc mw cud Toggle" data-cond="attacktime" data-x="s">次数</a>
-									<a class="tc mw Toggle off" data-cond="attacktime" data-x="0" data-y="11" data-z="1">1</a>
-									<a class="tc mw Toggle off" data-cond="attacktime" data-x="0" data-y="11" data-z="2">2</a>
-									<a class="tc mw Toggle off" data-cond="attacktime" data-x="0" data-y="11" data-z="4">3</a>
-									<a class="tc mw Toggle off" data-cond="attacktime" data-x="0" data-y="11" data-z="8">4</a>
-									<a class="tc mw Toggle off" data-cond="attacktime" data-x="0" data-y="11" data-z="16">5</a>
-								</div>
-								<div class="wf flex jca aic wpw">
-									<a class="w2 tc Toggle off" data-cond="attackeffect" data-x="0" data-y="8" data-z="1024">吸血</a>
-									<a class="w2 tc Toggle off" data-cond="attackeffect" data-x="0" data-y="8" data-z="2048">伤害累积</a>
-									<a class="w2 tc Toggle off" data-cond="attackeffect" data-x="0" data-y="8" data-z="4096">防御穿透</a>
-									<a class="w2 tc Toggle off" data-cond="attackeffect" data-x="0" data-y="8" data-z="8192">属性附加</a>
-								</div>
-							</div>
+						<a class="w4 Toggle" data-cond="attacktarget" data-x="s">目标</a>
+						<div class="CondBar flex jca aic wpn">
+							<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="9" data-z="1">全体</a>
+							<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="9" data-z="2">单体</a>
+						</div>
+					</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle" data-cond="attacktype" data-x="s">类型</a>
+						<div class="CondBar flex jca aic wpn">
+							<a class="wf Toggle off" data-cond="attacktype" data-x="0" data-y="10" data-z="1">物理</a>
+							<a class="wf Toggle off" data-cond="attacktype" data-x="0" data-y="10" data-z="2">魔法</a>
+						</div>
+					</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle" data-cond="attacktime" data-x="s">次数</a>
+						<div class="CondBar flex jca aic wpn">
+							<a class="wf Toggle off" data-cond="attacktime" data-x="0" data-y="11" data-z="1">1</a>
+							<a class="wf Toggle off" data-cond="attacktime" data-x="0" data-y="11" data-z="2">2</a>
+							<a class="wf Toggle off" data-cond="attacktime" data-x="0" data-y="11" data-z="4">3</a>
+							<a class="wf Toggle off" data-cond="attacktime" data-x="0" data-y="11" data-z="8">4</a>
+							<a class="wf Toggle off" data-cond="attacktime" data-x="0" data-y="11" data-z="16">5</a>
+						</div>
+					</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle" data-cond="attackeffect" data-x="s">特效</a>
+						<div class="CondBar flex jca aic wpn">
+							<a class="wf Toggle off" data-cond="attackeffect" data-x="0" data-y="8" data-z="1024">吸血</a>
+							<a class="wf Toggle off" data-cond="attackeffect" data-x="0" data-y="8" data-z="2048">伤害累积</a>
+							<a class="wf Toggle off" data-cond="attackeffect" data-x="0" data-y="8" data-z="4096">防御穿透</a>
+							<a class="wf Toggle off" data-cond="attackeffect" data-x="0" data-y="8" data-z="8192">属性附加</a>
+						</div>
+					</div>
+
+					<div class="NaviColumn hr flex jcs aic wpw">治疗</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle" data-cond="" data-x="s">目标</a>
+						<div class="CondBar flex jca aic wpn">
+							<a class="wf Toggle off" data-cond="healtarget" data-x="0" data-y="12" data-z="1">全体</a>
+							<a class="wf Toggle off" data-cond="healtarget" data-x="0" data-y="12" data-z="2">单体</a>
+							<a class="wf Toggle off" data-cond="healtarget" data-x="0" data-y="12" data-z="4">自身</a>
+						</div>
+					</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle" data-cond="healparam" data-x="s">参数</a>
+						<div class="CondBar flex jca aic wpn">
+							<a class="wf Toggle off" data-cond="healparam" data-x="0" data-y="13" data-z="1">恢复量</a>
+							<a class="wf Toggle off" data-cond="healparam" data-x="0" data-y="13" data-z="2">最大生命</a>
+						</div>
+					</div>
+
+					<div class="NaviColumn hr flex jcs aic wpw">缓回</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle" data-cond="regentarget" data-x="s">目标</a>
+						<div class="CondBar flex jca aic wpn">
+							<a class="wf Toggle off" data-cond="regentarget" data-x="0" data-y="14" data-z="1">全体</a>
+							<a class="wf Toggle off" data-cond="regentarget" data-x="0" data-y="14" data-z="2">单体</a>
+							<a class="wf Toggle off" data-cond="regentarget" data-x="0" data-y="14" data-z="4">自身</a>
+						</div>
+					</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle" data-cond="regenturn" data-x="s">回合</a>
+						<div class="CondBar flex jca aic wpn">
+							<a class="wf Toggle off" data-cond="regenturn" data-x="0" data-y="15" data-z="1">2</a>
+							<a class="wf Toggle off" data-cond="regenturn" data-x="0" data-y="15" data-z="2">3</a>
+							<a class="wf Toggle off" data-cond="regenturn" data-x="0" data-y="15" data-z="4">4</a>
+							<a class="wf Toggle off" data-cond="regenturn" data-x="0" data-y="15" data-z="8">5</a>
 						</div>
 					</div>
 				</div>
@@ -301,9 +341,9 @@
 
 		<script type="text/javascript" src="pub/js/jquery.min.js"></script>
 
-		<script type="text/javascript" src="kq/js/kq.all.min.js"></script>
-		<!--<script type="text/javascript" src="kq/js/kq.js"></script>-->
-		<!--<script type="text/javascript" src="kq/js/init.js"></script>-->
+		<!--<script type="text/javascript" src="kq/js/kq.all.min.js"></script>-->
+		<script type="text/javascript" src="kq/js/kq.js"></script>
+		<script type="text/javascript" src="kq/js/init.js"></script>
 
 		<script type="text/javascript">
 			var duoshuoQuery = { short_name: 'kairiquery' };
