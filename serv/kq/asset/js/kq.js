@@ -131,7 +131,7 @@
 					header.find(':first-child').addClass('active');
 				}
 
-				var primary = (kq.conds.mark[0][9] ? 2 : (data.job != '通用' ? 0 : 1));
+				var primary = (kq.conds.mark[0][7] ? 2 : (data.job != '通用' ? 0 : 1));
 
 				card.find('.TabHead.Skill').removeClass('primary').filter('[data-page='+types[primary]+']').addClass('primary');
 

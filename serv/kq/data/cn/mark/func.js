@@ -48,25 +48,44 @@ module.exports = () => {
 				let heal = false, healAll = false, up = false, chain = skill.info.chain;
 
 				for(let role of skill.role) {
-					let target = { r: role.target, s: skill.info.target || first.info.target }, roleType = role.type;
+					let target = { r: role.target, s: skill.info.target || first.info.target },
+						rt = role.type, rp = role.params;
 
 					if(target.r == 4 || (target.r == 1 && target.s == 5)) set.add('aoe');
-					if(roleType == 19 && target.r == 1 && target.s == 2) set.add('buffone');
+					if(rt == 19 && target.r == 1 && target.s == 2) set.add('buffone');
 
-					if(roleType == 7) set.add('pierce');
-					if(roleType == 35) set.add('stan');
-					if(roleType == 44 && role.params[1] == '2') set.add('db2');
-					if(roleType == 46) set.add('debuffre');
-					if(roleType == 64) set.add('covering');
-					if(roleType == 86) set.add('crit');
-					if(roleType == 107) set.add('enchant');
+					if(rt == 35) set.add('stan');
+					if(rt == 44 && rp[1] == '2') set.add('db2');
+					if(rt == 46) set.add('debuffre');
+					if(rt == 64) set.add('covering');
+					if(rt == 86) set.add('crit');
+					if(rt == 107) set.add('enchant');
 
 					if(target.r == 3 || (target.r == 1 && target.s == 3))
 						healAll = true;
-					if(roleType == 9)
+					if(rt == 9)
 						heal = true;
-					else if(roleType == 19 && role.params[2][1] == 5)
+					else if(rt == 19 && rp[2][1] == 5)
 						up = true;
+
+					// 攻击
+					if(rt == 1) {
+						if(rp[9][1] == 1) set.add('attack:physical');
+						if(rp[9][1] == 2) set.add('attack:magic');
+
+						if(~~rp[5] > 0) set.add('attack:time'+rp[5]);
+
+						if(st == 'awaken') {
+							if((target.r == 4 || (target.r == 1 && target.s == 5)))
+								set.add('attack:aoe');
+							if(target.r == 1 && target.s == 4)
+								set.add('attack:soe');
+						}
+					}
+					if(rt == 5) set.add('drain');
+					if(rt == 6) set.add('revenge');
+					if(rt == 7) set.add('pierce');
+					if(rt == 8) set.add('attrach');
 				}
 
 				if(heal && healAll && up) set.add('bug');

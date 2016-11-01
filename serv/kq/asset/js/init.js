@@ -2,20 +2,18 @@
 	kqe.toggles.click(function(eve, man) {
 		var $this = $(this), cond = this.dataset.cond,
 			x = this.dataset.x, y = this.dataset.y, z = this.dataset.z,
-			isON = $this.hasClass('on');
-
-		if(man) isON = !man.fourceON;
+			isAll = $this.hasClass('all');
 
 		if(x == 's') {
 			kqd.dynmSearch = false;
 
 			kqe.toggles.filter('[data-cond='+cond+']:not([data-x=s])').each(function() {
-				$(this).addClass(isON ? 'on' : 'off').removeClass(isON ? 'off' : 'on').click();
+				$(this).addClass(isAll ? 'on' : 'off').removeClass(isAll ? 'off' : 'on').click();
 			});
 
 			if(!man) kqd.dynmSearch = true;
 
-			$this.addClass(isON ? 'off' : 'on').removeClass(isON ? 'on' : 'off');
+			$this.toggleClass('all');
 
 			if(!man) kq.query(function(param) { param.page = 1; }, kqf.dealer);
 		}
@@ -23,7 +21,7 @@
 			if(eve.ctrlKey && !eve.shiftKey) {
 				kqd.dynmSearch = false;
 
-				kqe.toggles.filter('[data-cond='+cond+']:not([data-x='+x+'][data-y='+y+'][data-z='+z+'])').each(function() {
+				kqe.toggles.filter('[data-cond='+cond+']:not([data-x='+x+'][data-y='+y+'][data-z='+z+']):not([data-x=s])').each(function() {
 					$(this).addClass('on').removeClass('off').click();
 				});
 
@@ -34,7 +32,7 @@
 			else if(!eve.ctrlKey && eve.shiftKey) {
 				kqd.dynmSearch = false;
 
-				kqe.toggles.filter('[data-cond='+cond+']:not([data-x='+x+'][data-y='+y+'][data-z='+z+'])').each(function() {
+				kqe.toggles.filter('[data-cond='+cond+']:not([data-x='+x+'][data-y='+y+'][data-z='+z+']):not([data-x=s])').each(function() {
 					$(this).addClass('off').removeClass('on').click();
 				});
 
