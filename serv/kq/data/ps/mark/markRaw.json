@@ -1,39 +1,29 @@
 [
-	[
-		"n", "hn", "r", "sr", "ur", "mr", "mr+", "mr++", "mmr"
-	],
-	[
-		"mercenary", "millionaire", "thief", "singer", "null"
-	],
-	[
-		"cost1", "cost2", "cost3", "cost4", "cost5", "cost9", "cost11"
-	],
+	[ "n", "hn", "r", "sr", "ur", "mr", "mr+", "mr++", "mmr" ],
+	[ "mercenary", "millionaire", "thief", "singer", "null" ],
+	[ "cost1", "cost2", "cost3", "cost4", "cost5", "cost9", "cost11" ],
 	[
 		"fire", "ice", "wind", "light", "dark",
 		"fireice", "firewind", "firelight", "firedark",
 		"icewind", "icelight", "icedark", "windlight", "winddark", "lightdark"
 	],
-	[
-		"attack", "sorcery", "recovery", "support", "defense", "jamming", "special"
-	],
-	[
-		"map", "fulltime", "super", "boss", "redeem", "regicide", "knight", "limited", "cup"
-	],
-	[
-		"map:1-1", "map:1-2", "map:1-3", "map:2-1", "map:2-2", "map:2-3", "map:3-1", "map:3-2", "map:3-3",
-		"map:4-1", "map:4-2", "map:4-3", "map:5-1", "map:5-2", "map:5-3", "map:6-1", "map:6-2", "map:6-3",
-		"map:7-1", "map:7-2", "map:7-3", "map:8-1", "map:8-2", "map:8-3", "map:9-1",
-		"map:10-1", "map:10-2", "map:10-3", "map:11-1", "map:11-2", "map:11-3", "map:12-1", "map:12-2", "map:12-3",
-		"map:13-1", "map:13-2", "map:13-3", "map:14-1", "map:14-2", "map:14-3", "map:15-1", "map:15-2", "map:15-3",
-		"map:16-1", "map:16-2", "map:16-3", "map:17-1", "map:17-2", "map:17-3", "map:18-1"
-	],
-	[
-		"limited:fire1"
-	],
-	[ "linkage" ],
-	[ "ex" ],
+	[ "attack", "sorcery", "recovery", "support", "defense", "jamming", "special" ],
+
+	[ "map", "fulltime", "super", "boss", "redeem", "regicide", "knight", "limited", "cup" ],
+	[ "linkage" ], [ "ex" ],
+
 	[
 		"aoe", "db2", "covering", "buffone", "stan", "debuffre", "bug",
-		"enchant", "chain", "crit", "pierce"
+		"enchant", "chain", "crit", "drain", "revenge", "pierce", "attrach"
+	],
+
+	[
+		"attack:aoe", "attack:soe"
+	],
+	[
+		"attack:physical", "attack:magic"
+	],
+	[
+		"attack:time1", "attack:time2", "attack:time3", "attack:time4", "attack:time5"
 	]
 ]
