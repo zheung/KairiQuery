@@ -5,6 +5,9 @@
 		"fire",
 		"mercenary",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"map:9-1",
 		"map"
 	],
@@ -13,21 +16,30 @@
 		"cost3",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000012": [
 		"sr",
 		"cost3",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000013": [
 		"ur",
 		"cost3",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000018": [
 		"hn",
@@ -35,6 +47,9 @@
 		"fire",
 		"mercenary",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"map:18-1",
 		"map"
 	],
@@ -43,21 +58,30 @@
 		"cost4",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000020": [
 		"sr",
 		"cost4",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000021": [
 		"ur",
 		"cost4",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000022": [
 		"hn",
@@ -65,6 +89,9 @@
 		"fire",
 		"millionaire",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"map:3-1",
 		"map:3-2",
 		"map:3-3",
@@ -90,21 +117,30 @@
 		"cost2",
 		"fire",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000024": [
 		"sr",
 		"cost2",
 		"fire",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000025": [
 		"ur",
 		"cost2",
 		"fire",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000026": [
 		"n",
@@ -129,6 +165,9 @@
 		"wind",
 		"thief",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
 		"map:9-1",
 		"map"
 	],
@@ -137,21 +176,30 @@
 		"cost3",
 		"wind",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000032": [
 		"sr",
 		"cost3",
 		"wind",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000033": [
 		"ur",
 		"cost3",
 		"wind",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000034": [
 		"hn",
@@ -189,6 +237,9 @@
 		"ice",
 		"singer",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
 		"map:9-1",
 		"map"
 	],
@@ -197,21 +248,30 @@
 		"cost3",
 		"ice",
 		"singer",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000040": [
 		"sr",
 		"cost3",
 		"ice",
 		"singer",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000041": [
 		"ur",
 		"cost3",
 		"ice",
 		"singer",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000042": [
 		"hn",
@@ -219,6 +279,9 @@
 		"wind",
 		"mercenary",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"map:10-1",
 		"map:10-2",
 		"map:10-3",
@@ -229,21 +292,30 @@
 		"cost4",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000044": [
 		"sr",
 		"cost4",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000045": [
 		"ur",
 		"cost4",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000046": [
 		"hn",
@@ -251,6 +323,9 @@
 		"ice",
 		"millionaire",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"map:2-1",
 		"map:2-2",
 		"map:2-3",
@@ -276,35 +351,50 @@
 		"cost2",
 		"ice",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000048": [
 		"sr",
 		"cost2",
 		"ice",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000049": [
 		"ur",
 		"cost2",
 		"ice",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000050": [
 		"r",
 		"cost3",
 		"light",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000051": [
 		"sr",
 		"cost3",
 		"light",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000052": [
 		"ur",
@@ -325,28 +415,40 @@
 		"cost3",
 		"ice",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000055": [
 		"sr",
 		"cost3",
 		"ice",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000056": [
 		"ur",
 		"cost4",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000057": [
 		"mr",
 		"cost4",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000058": [
 		"sr",
@@ -367,14 +469,20 @@
 		"cost3",
 		"wind",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000062": [
 		"sr",
 		"cost3",
 		"wind",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000063": [
 		"ur",
@@ -424,6 +532,9 @@
 		"singer",
 		"sorcery",
 		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe",
 		"map:18-1",
 		"map"
 	],
@@ -433,7 +544,10 @@
 		"dark",
 		"singer",
 		"sorcery",
-		"aoe"
+		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10000070": [
 		"sr",
@@ -441,7 +555,10 @@
 		"dark",
 		"singer",
 		"sorcery",
-		"aoe"
+		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10000071": [
 		"ur",
@@ -449,7 +566,10 @@
 		"dark",
 		"singer",
 		"sorcery",
-		"aoe"
+		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10000072": [
 		"r",
@@ -478,6 +598,9 @@
 		"dark",
 		"mercenary",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"map:8-1",
 		"map:8-2",
 		"map:8-3",
@@ -491,14 +614,20 @@
 		"cost2",
 		"dark",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000077": [
 		"sr",
 		"cost2",
 		"dark",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000078": [
 		"hn",
@@ -506,6 +635,9 @@
 		"dark",
 		"singer",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
 		"map:8-1",
 		"map:8-2",
 		"map:8-3",
@@ -519,14 +651,20 @@
 		"cost2",
 		"dark",
 		"singer",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000080": [
 		"sr",
 		"cost2",
 		"dark",
 		"singer",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000081": [
 		"r",
@@ -565,14 +703,20 @@
 		"cost3",
 		"fire",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000085": [
 		"sr",
 		"cost3",
 		"fire",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000087": [
 		"sr",
@@ -594,6 +738,9 @@
 		"dark",
 		"millionaire",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"map:9-1",
 		"map"
 	],
@@ -602,14 +749,20 @@
 		"cost3",
 		"dark",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000092": [
 		"ur",
 		"cost3",
 		"dark",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000093": [
 		"r",
@@ -680,21 +833,30 @@
 		"cost5",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000100": [
 		"ur",
 		"cost5",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000101": [
 		"mr",
 		"cost5",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000102": [
 		"hn",
@@ -702,6 +864,9 @@
 		"light",
 		"millionaire",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"map:7-2",
 		"map:7-3",
 		"map:13-1",
@@ -714,14 +879,20 @@
 		"cost2",
 		"light",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000104": [
 		"sr",
 		"cost2",
 		"light",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000105": [
 		"hn",
@@ -729,6 +900,9 @@
 		"ice",
 		"mercenary",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"map:2-1",
 		"map:2-2",
 		"map:2-3",
@@ -754,14 +928,20 @@
 		"cost2",
 		"ice",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000107": [
 		"sr",
 		"cost2",
 		"ice",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000108": [
 		"hn",
@@ -779,6 +959,9 @@
 		"dark",
 		"mercenary",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"stan"
 	],
 	"10000110": [
@@ -787,6 +970,9 @@
 		"dark",
 		"mercenary",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"stan"
 	],
 	"10000111": [
@@ -834,6 +1020,9 @@
 		"ice",
 		"thief",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
 		"map:11-1",
 		"map:11-2",
 		"map:11-3",
@@ -844,14 +1033,20 @@
 		"cost4",
 		"ice",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000119": [
 		"sr",
 		"cost4",
 		"ice",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000123": [
 		"n",
@@ -892,14 +1087,20 @@
 		"cost4",
 		"ice",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000130": [
 		"ur",
 		"cost4",
 		"ice",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000131": [
 		"r",
@@ -922,7 +1123,10 @@
 		"cost4",
 		"fire",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000134": [
 		"ur",
@@ -930,6 +1134,9 @@
 		"fire",
 		"millionaire",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"db2"
 	],
 	"10000151": [
@@ -938,7 +1145,10 @@
 		"fire",
 		"mercenary",
 		"attack",
-		"aoe"
+		"aoe",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10000152": [
 		"mr",
@@ -946,7 +1156,10 @@
 		"fire",
 		"mercenary",
 		"attack",
-		"aoe"
+		"aoe",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10000153": [
 		"r",
@@ -1006,28 +1219,40 @@
 		"cost3",
 		"dark",
 		"singer",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000163": [
 		"sr",
 		"cost3",
 		"dark",
 		"singer",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000164": [
 		"ur",
 		"cost3",
 		"dark",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000165": [
 		"mr",
 		"cost3",
 		"dark",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000166": [
 		"hn",
@@ -1035,6 +1260,9 @@
 		"light",
 		"singer",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
 		"map:7-1",
 		"map:7-2",
 		"map:7-3",
@@ -1048,14 +1276,20 @@
 		"cost2",
 		"light",
 		"singer",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000168": [
 		"sr",
 		"cost2",
 		"light",
 		"singer",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000169": [
 		"r",
@@ -1079,14 +1313,20 @@
 		"cost4",
 		"dark",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000172": [
 		"ur",
 		"cost4",
 		"dark",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000173": [
 		"hn",
@@ -1094,6 +1334,9 @@
 		"light",
 		"mercenary",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"map:7-1",
 		"map:7-2",
 		"map:7-3",
@@ -1107,14 +1350,20 @@
 		"cost2",
 		"light",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000175": [
 		"sr",
 		"cost2",
 		"light",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000176": [
 		"r",
@@ -1147,6 +1396,9 @@
 		"fire",
 		"mercenary",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"map:3-1",
 		"map:3-2",
 		"map:3-3",
@@ -1172,14 +1424,20 @@
 		"cost2",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000181": [
 		"sr",
 		"cost2",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000182": [
 		"hn",
@@ -1187,6 +1445,9 @@
 		"fire",
 		"thief",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
 		"map:3-1",
 		"map:3-2",
 		"map:3-3",
@@ -1212,14 +1473,20 @@
 		"cost2",
 		"fire",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000184": [
 		"sr",
 		"cost2",
 		"fire",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000185": [
 		"r",
@@ -1241,6 +1508,9 @@
 		"wind",
 		"mercenary",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"map:1-1",
 		"map:1-2",
 		"map:1-3",
@@ -1266,14 +1536,20 @@
 		"cost2",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000189": [
 		"sr",
 		"cost2",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000197": [
 		"hn",
@@ -1281,6 +1557,9 @@
 		"wind",
 		"thief",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
 		"map:1-1",
 		"map:1-2",
 		"map:1-3",
@@ -1306,42 +1585,60 @@
 		"cost2",
 		"wind",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000199": [
 		"sr",
 		"cost2",
 		"wind",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000206": [
 		"ur",
 		"cost4",
 		"dark",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000207": [
 		"mr",
 		"cost4",
 		"dark",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000208": [
 		"sr",
 		"cost4",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000209": [
 		"ur",
 		"cost4",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000214": [
 		"sr",
@@ -1380,21 +1677,27 @@
 		"cost2",
 		"fire",
 		"null",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1"
 	],
 	"10000238": [
 		"n",
 		"cost2",
 		"ice",
 		"null",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1"
 	],
 	"10000245": [
 		"n",
 		"cost2",
 		"wind",
 		"null",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1"
 	],
 	"10000252": [
 		"n",
@@ -1415,7 +1718,10 @@
 		"cost3",
 		"dark",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000304": [
 		"n",
@@ -1429,7 +1735,10 @@
 		"cost4",
 		"ice",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10000306": [
 		"ur",
@@ -1443,7 +1752,10 @@
 		"cost2",
 		"light",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001001": [
 		"hn",
@@ -1451,6 +1763,9 @@
 		"wind",
 		"millionaire",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"map:1-2",
 		"map:1-3",
 		"map:4-1",
@@ -1475,21 +1790,30 @@
 		"cost2",
 		"wind",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001003": [
 		"sr",
 		"cost2",
 		"wind",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001004": [
 		"ur",
 		"cost2",
 		"wind",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001005": [
 		"hn",
@@ -1497,6 +1821,9 @@
 		"ice",
 		"thief",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
 		"map:2-1",
 		"map:2-2",
 		"map:2-3",
@@ -1522,14 +1849,20 @@
 		"cost2",
 		"ice",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001007": [
 		"sr",
 		"cost2",
 		"ice",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001008": [
 		"sr",
@@ -1565,7 +1898,10 @@
 		"wind",
 		"mercenary",
 		"attack",
-		"pierce"
+		"pierce",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001024": [
 		"ur",
@@ -1573,49 +1909,70 @@
 		"wind",
 		"mercenary",
 		"attack",
-		"pierce"
+		"pierce",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001025": [
 		"sr",
 		"cost4",
 		"wind",
 		"singer",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001026": [
 		"ur",
 		"cost4",
 		"wind",
 		"singer",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001029": [
 		"ur",
 		"cost3",
 		"dark",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001030": [
 		"mr",
 		"cost3",
 		"dark",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001031": [
 		"ur",
 		"cost3",
 		"ice",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001032": [
 		"mr",
 		"cost3",
 		"ice",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001033": [
 		"ur",
@@ -1623,7 +1980,10 @@
 		"light",
 		"millionaire",
 		"attack",
-		"aoe"
+		"aoe",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10001034": [
 		"mr",
@@ -1631,7 +1991,10 @@
 		"light",
 		"millionaire",
 		"attack",
-		"aoe"
+		"aoe",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10001035": [
 		"ur",
@@ -1639,7 +2002,10 @@
 		"wind",
 		"thief",
 		"sorcery",
-		"aoe"
+		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10001036": [
 		"mr",
@@ -1647,7 +2013,10 @@
 		"wind",
 		"thief",
 		"sorcery",
-		"aoe"
+		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10001039": [
 		"sr",
@@ -1668,14 +2037,20 @@
 		"cost5",
 		"fire",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001046": [
 		"ur",
 		"cost5",
 		"fire",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001047": [
 		"sr",
@@ -1696,28 +2071,40 @@
 		"cost4",
 		"light",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10001050": [
 		"ur",
 		"cost4",
 		"light",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10002001": [
 		"sr",
 		"cost4",
 		"light",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10002002": [
 		"ur",
 		"cost4",
 		"light",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10002005": [
 		"ur",
@@ -1756,7 +2143,10 @@
 		"ice",
 		"millionaire",
 		"attack",
-		"aoe"
+		"aoe",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10002014": [
 		"mr",
@@ -1764,7 +2154,10 @@
 		"ice",
 		"millionaire",
 		"attack",
-		"aoe"
+		"aoe",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10002017": [
 		"ur",
@@ -1785,14 +2178,20 @@
 		"cost3",
 		"fire",
 		"singer",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10002020": [
 		"ur",
 		"cost3",
 		"fire",
 		"singer",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10003001": [
 		"sr",
@@ -1813,42 +2212,62 @@
 		"cost4",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"drain",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10003004": [
 		"mr",
 		"cost4",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"drain",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10003007": [
 		"ur",
 		"cost3",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10003008": [
 		"mr",
 		"cost3",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10003009": [
 		"ur",
 		"cost3",
 		"ice",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10003010": [
 		"mr",
 		"cost3",
 		"ice",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10107001": [
 		"ur",
@@ -1900,7 +2319,10 @@
 		"light",
 		"singer",
 		"sorcery",
-		"aoe"
+		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10107008": [
 		"ur",
@@ -1908,21 +2330,30 @@
 		"light",
 		"singer",
 		"sorcery",
-		"aoe"
+		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10107009": [
 		"ur",
 		"cost2",
 		"dark",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10107010": [
 		"mr",
 		"cost2",
 		"dark",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10109001": [
 		"sr",
@@ -1944,7 +2375,10 @@
 		"ice",
 		"singer",
 		"sorcery",
-		"aoe"
+		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10109004": [
 		"ur",
@@ -1952,21 +2386,30 @@
 		"ice",
 		"singer",
 		"sorcery",
-		"aoe"
+		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10109005": [
 		"ur",
 		"cost3",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10109006": [
 		"mr",
 		"cost3",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10109007": [
 		"ur",
@@ -1974,7 +2417,10 @@
 		"light",
 		"millionaire",
 		"attack",
-		"aoe"
+		"aoe",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10109008": [
 		"mr",
@@ -1982,7 +2428,10 @@
 		"light",
 		"millionaire",
 		"attack",
-		"aoe"
+		"aoe",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10109009": [
 		"ur",
@@ -1990,7 +2439,10 @@
 		"dark",
 		"singer",
 		"sorcery",
-		"aoe"
+		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10109010": [
 		"mr",
@@ -1998,7 +2450,10 @@
 		"dark",
 		"singer",
 		"sorcery",
-		"aoe"
+		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10109027": [
 		"ur",
@@ -2006,6 +2461,9 @@
 		"fire",
 		"millionaire",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"chain"
 	],
 	"10109028": [
@@ -2014,6 +2472,9 @@
 		"fire",
 		"millionaire",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"chain"
 	],
 	"10110001": [
@@ -2035,28 +2496,40 @@
 		"cost3",
 		"ice",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10110004": [
 		"mr",
 		"cost3",
 		"ice",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10110005": [
 		"ur",
 		"cost2",
 		"wind",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10110006": [
 		"mr",
 		"cost2",
 		"wind",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10110007": [
 		"ur",
@@ -2079,14 +2552,20 @@
 		"cost3",
 		"dark",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10110010": [
 		"mr",
 		"cost3",
 		"dark",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10110011": [
 		"ur",
@@ -2107,28 +2586,40 @@
 		"cost2",
 		"ice",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10110014": [
 		"ur",
 		"cost2",
 		"ice",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10110015": [
 		"sr",
 		"cost2",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10110016": [
 		"ur",
 		"cost2",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10110019": [
 		"sr",
@@ -2163,14 +2654,20 @@
 		"cost4",
 		"ice",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10111022": [
 		"mr",
 		"cost4",
 		"ice",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10113041": [
 		"ur",
@@ -2207,70 +2704,102 @@
 		"cost3",
 		"wind",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10113046": [
 		"mr",
 		"cost3",
 		"wind",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10113047": [
 		"sr",
 		"cost2",
 		"light",
 		"mercenary",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10113048": [
 		"ur",
 		"cost2",
 		"light",
 		"mercenary",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10113049": [
 		"sr",
 		"cost4",
 		"dark",
 		"millionaire",
-		"attack"
+		"attack",
+		"revenge",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10113050": [
 		"ur",
 		"cost4",
 		"dark",
 		"millionaire",
-		"attack"
+		"attack",
+		"revenge",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10113061": [
 		"ur",
 		"cost3",
 		"light",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10113062": [
 		"mr",
 		"cost3",
 		"light",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10116013": [
 		"sr",
 		"cost3",
 		"fire",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10116014": [
 		"ur",
 		"cost3",
 		"fire",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10116015": [
 		"ur",
@@ -2278,6 +2807,9 @@
 		"ice",
 		"thief",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
 		"chain"
 	],
 	"10116016": [
@@ -2286,6 +2818,9 @@
 		"ice",
 		"thief",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
 		"chain"
 	],
 	"10116017": [
@@ -2293,14 +2828,20 @@
 		"cost2",
 		"wind",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10116018": [
 		"ur",
 		"cost2",
 		"wind",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10116019": [
 		"ur",
@@ -2321,14 +2862,22 @@
 		"cost3",
 		"dark",
 		"mercenary",
-		"attack"
+		"attack",
+		"revenge",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10116022": [
 		"ur",
 		"cost3",
 		"dark",
 		"mercenary",
-		"attack"
+		"attack",
+		"revenge",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10118023": [
 		"ur",
@@ -2365,14 +2914,20 @@
 		"cost2",
 		"ice",
 		"mercenary",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10118030": [
 		"mr",
 		"cost2",
 		"ice",
 		"mercenary",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10118031": [
 		"ur",
@@ -2407,28 +2962,40 @@
 		"cost4",
 		"light",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10119008": [
 		"mr",
 		"cost4",
 		"light",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10119009": [
 		"ur",
 		"cost2",
 		"light",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10119010": [
 		"mr",
 		"cost2",
 		"light",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10119011": [
 		"ur",
@@ -2436,7 +3003,10 @@
 		"ice",
 		"singer",
 		"sorcery",
-		"aoe"
+		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10119012": [
 		"mr",
@@ -2444,7 +3014,10 @@
 		"ice",
 		"singer",
 		"sorcery",
-		"aoe"
+		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10119013": [
 		"sr",
@@ -2523,14 +3096,20 @@
 		"cost2",
 		"ice",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10120036": [
 		"ur",
 		"cost2",
 		"ice",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10121001": [
 		"ur",
@@ -2539,7 +3118,10 @@
 		"thief",
 		"sorcery",
 		"aoe",
-		"pierce"
+		"pierce",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10121002": [
 		"mr",
@@ -2548,7 +3130,10 @@
 		"thief",
 		"sorcery",
 		"aoe",
-		"pierce"
+		"pierce",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10121004": [
 		"ur",
@@ -2556,7 +3141,10 @@
 		"light",
 		"mercenary",
 		"attack",
-		"aoe"
+		"aoe",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10121005": [
 		"mr",
@@ -2564,21 +3152,30 @@
 		"light",
 		"mercenary",
 		"attack",
-		"aoe"
+		"aoe",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10121006": [
 		"ur",
 		"cost3",
 		"light",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10121007": [
 		"mr",
 		"cost3",
 		"light",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10121008": [
 		"ur",
@@ -2586,6 +3183,9 @@
 		"ice",
 		"mercenary",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"chain"
 	],
 	"10121009": [
@@ -2594,6 +3194,9 @@
 		"ice",
 		"mercenary",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"chain"
 	],
 	"10121011": [
@@ -2630,6 +3233,9 @@
 		"dark",
 		"thief",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
 		"chain"
 	],
 	"10121016": [
@@ -2638,6 +3244,9 @@
 		"dark",
 		"thief",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
 		"chain"
 	],
 	"10121018": [
@@ -2689,14 +3298,20 @@
 		"cost2",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10121025": [
 		"mr",
 		"cost2",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10121026": [
 		"sr",
@@ -2719,56 +3334,82 @@
 		"cost3",
 		"wind",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"drain",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10121029": [
 		"ur",
 		"cost3",
 		"wind",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"drain",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10121030": [
 		"sr",
 		"cost2",
 		"dark",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10121031": [
 		"ur",
 		"cost2",
 		"dark",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10121032": [
 		"ur",
 		"cost3",
 		"dark",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10121033": [
 		"mr",
 		"cost3",
 		"dark",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10121034": [
 		"ur",
 		"cost3",
 		"ice",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10121035": [
 		"mr",
 		"cost3",
 		"ice",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10121036": [
 		"ur",
@@ -2945,14 +3586,22 @@
 		"cost3",
 		"light",
 		"mercenary",
-		"attack"
+		"attack",
+		"revenge",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10126008": [
 		"mr",
 		"cost3",
 		"light",
 		"mercenary",
-		"attack"
+		"attack",
+		"revenge",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10126009": [
 		"sr",
@@ -2989,6 +3638,9 @@
 		"thief",
 		"sorcery",
 		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe",
 		"chain"
 	],
 	"10126028": [
@@ -2998,6 +3650,9 @@
 		"thief",
 		"sorcery",
 		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe",
 		"chain"
 	],
 	"10126029": [
@@ -3034,6 +3689,9 @@
 		"ice",
 		"mercenary",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"chain"
 	],
 	"10200002": [
@@ -3042,6 +3700,9 @@
 		"ice",
 		"mercenary",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"chain"
 	],
 	"10200003": [
@@ -3095,14 +3756,20 @@
 		"cost3",
 		"wind",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10200010": [
 		"mr",
 		"cost3",
 		"wind",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10200011": [
 		"ur",
@@ -3124,7 +3791,10 @@
 		"ice",
 		"thief",
 		"sorcery",
-		"aoe"
+		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10200014": [
 		"ur",
@@ -3132,7 +3802,10 @@
 		"ice",
 		"thief",
 		"sorcery",
-		"aoe"
+		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10200015": [
 		"sr",
@@ -3140,7 +3813,10 @@
 		"light",
 		"mercenary",
 		"attack",
-		"pierce"
+		"pierce",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10200016": [
 		"ur",
@@ -3148,7 +3824,10 @@
 		"light",
 		"mercenary",
 		"attack",
-		"pierce"
+		"pierce",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10200017": [
 		"sr",
@@ -3169,70 +3848,102 @@
 		"cost4",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10200020": [
 		"mr",
 		"cost4",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10200021": [
 		"ur",
 		"cost4",
 		"light",
 		"millionaire",
-		"attack"
+		"attack",
+		"drain",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10200022": [
 		"mr",
 		"cost4",
 		"light",
 		"millionaire",
-		"attack"
+		"attack",
+		"drain",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10200023": [
 		"ur",
 		"cost4",
 		"light",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10200024": [
 		"mr",
 		"cost4",
 		"light",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10200025": [
 		"ur",
 		"cost5",
 		"ice",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10200026": [
 		"mr",
 		"cost5",
 		"ice",
 		"millionaire",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10200027": [
 		"ur",
 		"cost4",
 		"ice",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10200028": [
 		"mr",
 		"cost4",
 		"ice",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10200029": [
 		"ur",
@@ -3332,14 +4043,20 @@
 		"cost3",
 		"light",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10201002": [
 		"mr",
 		"cost3",
 		"light",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10202001": [
 		"ur",
@@ -3361,7 +4078,10 @@
 		"ice",
 		"mercenary",
 		"attack",
-		"aoe"
+		"aoe",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10202004": [
 		"mr",
@@ -3369,7 +4089,10 @@
 		"ice",
 		"mercenary",
 		"attack",
-		"aoe"
+		"aoe",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe"
 	],
 	"10202005": [
 		"ur",
@@ -3377,7 +4100,10 @@
 		"light",
 		"mercenary",
 		"attack",
-		"pierce"
+		"pierce",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10202006": [
 		"mr",
@@ -3385,21 +4111,30 @@
 		"light",
 		"mercenary",
 		"attack",
-		"pierce"
+		"pierce",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203001": [
 		"ur",
 		"cost3",
 		"light",
 		"mercenary",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203002": [
 		"mr",
 		"cost3",
 		"light",
 		"mercenary",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203003": [
 		"ur",
@@ -3420,14 +4155,22 @@
 		"cost2",
 		"dark",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"drain",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203006": [
 		"mr",
 		"cost2",
 		"dark",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"drain",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203007": [
 		"ur",
@@ -3464,42 +4207,60 @@
 		"cost3",
 		"fire",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203012": [
 		"mr",
 		"cost3",
 		"fire",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203013": [
 		"ur",
 		"cost2",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203014": [
 		"mr",
 		"cost2",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203015": [
 		"ur",
 		"cost3",
 		"dark",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203016": [
 		"mr",
 		"cost3",
 		"dark",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203017": [
 		"ur",
@@ -3552,14 +4313,20 @@
 		"cost2",
 		"fire",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203024": [
 		"mr",
 		"cost2",
 		"fire",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203025": [
 		"ur",
@@ -3580,56 +4347,82 @@
 		"cost2",
 		"dark",
 		"singer",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203028": [
 		"mr",
 		"cost2",
 		"dark",
 		"singer",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203029": [
 		"ur",
 		"cost3",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203030": [
 		"mr",
 		"cost3",
 		"wind",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203031": [
 		"ur",
 		"cost4",
 		"dark",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"revenge",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203032": [
 		"mr",
 		"cost4",
 		"dark",
 		"thief",
-		"sorcery"
+		"sorcery",
+		"revenge",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203033": [
 		"sr",
 		"cost4",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203034": [
 		"ur",
 		"cost4",
 		"fire",
 		"mercenary",
-		"attack"
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
 	],
 	"10203035": [
 		"sr",
@@ -3667,6 +4460,9 @@
 		"light",
 		"mercenary",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"chain"
 	],
 	"10203040": [
@@ -3675,6 +4471,9 @@
 		"light",
 		"mercenary",
 		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
 		"chain"
 	],
 	"10204001": [
@@ -3727,6 +4526,8 @@
 		"light",
 		"null",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
 		"map:1-3",
 		"map:2-3",
 		"map:3-3",
@@ -3750,21 +4551,27 @@
 		"cost9",
 		"light",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000003": [
 		"ur",
 		"cost9",
 		"light",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000004": [
 		"mr",
 		"cost9",
 		"light",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000005": [
 		"hn",
@@ -3772,6 +4579,8 @@
 		"fire",
 		"null",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
 		"map:3-1",
 		"map:3-2",
 		"map:3-3",
@@ -3800,6 +4609,8 @@
 		"ice",
 		"null",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
 		"map:2-1",
 		"map:2-2",
 		"map:2-3",
@@ -3827,6 +4638,8 @@
 		"wind",
 		"null",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
 		"map:1-1",
 		"map:1-2",
 		"map:1-3",
@@ -3854,6 +4667,8 @@
 		"light",
 		"null",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
 		"map:7-1",
 		"map:7-2",
 		"map:7-3",
@@ -3869,6 +4684,8 @@
 		"dark",
 		"null",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
 		"map:8-1",
 		"map:8-2",
 		"map:8-3",
@@ -3883,112 +4700,144 @@
 		"cost9",
 		"fire",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000011": [
 		"r",
 		"cost9",
 		"ice",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000012": [
 		"r",
 		"cost9",
 		"wind",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000013": [
 		"r",
 		"cost9",
 		"light",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000014": [
 		"r",
 		"cost9",
 		"dark",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000015": [
 		"sr",
 		"cost9",
 		"fire",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000016": [
 		"sr",
 		"cost9",
 		"ice",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000017": [
 		"sr",
 		"cost9",
 		"wind",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000018": [
 		"sr",
 		"cost9",
 		"light",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000019": [
 		"sr",
 		"cost9",
 		"dark",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000020": [
 		"ur",
 		"cost9",
 		"fire",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000021": [
 		"ur",
 		"cost9",
 		"ice",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000022": [
 		"ur",
 		"cost9",
 		"wind",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000023": [
 		"ur",
 		"cost9",
 		"light",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000024": [
 		"ur",
 		"cost9",
 		"dark",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000025": [
 		"mr",
 		"cost9",
 		"light",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000026": [
 		"r",
@@ -3996,6 +4845,8 @@
 		"dark",
 		"null",
 		"sorcery",
+		"attack:magic",
+		"attack:time1",
 		"map:1-1",
 		"map:1-2",
 		"map:1-3",
@@ -4053,21 +4904,27 @@
 		"cost9",
 		"dark",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000028": [
 		"ur",
 		"cost9",
 		"dark",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"20000029": [
 		"mr",
 		"cost9",
 		"dark",
 		"null",
-		"sorcery"
+		"sorcery",
+		"attack:magic",
+		"attack:time1"
 	],
 	"40000001": [
 		"mr",
@@ -4075,6 +4932,9 @@
 		"dark",
 		"null",
 		"sorcery",
-		"aoe"
+		"aoe",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe"
 	]
 }
