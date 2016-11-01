@@ -9,4 +9,6 @@ module.exports = () => {
 
 	global.koa = require('koa');
 	global.koaRouter = require('koa-router');
+
+	global.CleanCSS = require('clean-css');
 };

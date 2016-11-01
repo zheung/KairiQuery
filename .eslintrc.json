@@ -22,6 +22,8 @@
 		"qs": true,
 
 		"koa": true,
-		"koaRouter": true
+		"koaRouter": true,
+
+		"CleanCSS": true
 	}
 }

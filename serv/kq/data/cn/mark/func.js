@@ -51,7 +51,7 @@ module.exports = () => {
 					let target = { r: role.target, s: skill.info.target || first.info.target }, roleType = role.type;
 
 					if(target.r == 4 || (target.r == 1 && target.s == 5)) set.add('aoe');
-					if(roleType == 19) if(target.r == 1 && target.s == 2) set.add('buffone');
+					if(roleType == 19 && target.r == 1 && target.s == 2) set.add('buffone');
 
 					if(roleType == 7) set.add('pierce');
 					if(roleType == 35) set.add('stan');
@@ -63,7 +63,6 @@ module.exports = () => {
 
 					if(target.r == 3 || (target.r == 1 && target.s == 3))
 						healAll = true;
-
 					if(roleType == 9)
 						heal = true;
 					else if(roleType == 19 && role.params[2][1] == 5)
@@ -71,6 +70,7 @@ module.exports = () => {
 				}
 
 				if(heal && healAll && up) set.add('bug');
+
 				if(chain && (chain != 20 && chain != 1)) set.add('chain');
 			}
 		}

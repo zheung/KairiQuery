@@ -51,6 +51,16 @@ module.exports = ($) => {
 			this.body = '';
 	});
 
+	let cleancss = new CleanCSS({restructuring:false}),
+		css =
+			cleancss.minify(fs.readFileSync($.pa('../pub/asset/css/flex.css')).toString()).styles+
+			cleancss.minify(fs.readFileSync($.pa('../pub/asset/css/small.css')).toString()).styles+
+			cleancss.minify(fs.readFileSync($.pa('asset/css/style.css')).toString()).styles+
+			cleancss.minify(fs.readFileSync($.pa('asset/css/test.css')).toString()).styles+
+			cleancss.minify(fs.readFileSync($.pa('asset/css/color.css')).toString()).styles;
+
+	fs.writeFileSync($.pa('asset/css/kq.css'), css);
+
 	app.use(router.routes()).use(router.allowedMethods());
 
 	return app;
