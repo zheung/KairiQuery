@@ -153,10 +153,8 @@ input, span {
 	background-color: #148474;
 }
 .TabItem.RightNavi {
-	height: 92%;
+	height: 93.3%;
 	width: 100%;
-	overflow-x: hidden;
-	overflow-y: visible;
 }
 
 .TabHeader.RightNavi2 {

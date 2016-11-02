@@ -112,22 +112,22 @@ module.exports = ($) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
 
-				return `${target} | 血量降低 | 当前生命的${p[1]}%`;
+				return `${target} | 生命降低 | 当前生命的${p[1]}%`;
 			},
 			27: 'BUFF_RELEASE',
 			28: (card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
-				return `${target} | ${p[1]}回合 | 降低${show(p[2])}
-					| ${p[6]}+${p[4]/10}%${show(p[3])}`;
+				return `${target} | ${p[1]}回合 | 降低${show(p[2])} |\x20
+					${p[6]}+${p[4]/10}%${show(p[3])}`;
 			},
 			29: (card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
 				let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
-				return `${target} | ${p[1]}回合 | 降低${show(p[2])}
-					| <kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
+				return `${target} | ${p[1]}回合 | 降低${show(p[2])} |\x20
+					<kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
 			},
 			30: 'GUARD_BREAK_BY_SELF_PARAM',
 			31: 'GUARD_BREAK_BY_TARGET_PARAM',
@@ -136,8 +136,8 @@ module.exports = ($) => {
 
 				let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
-				return `${target} | ${p[1]}回合 | 降低${show(p[2])}
-					| <kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
+				return `${target} | ${p[1]}回合 | 降低${show(p[2])} |\x20
+					<kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
 			},
 			33: 'DAMAGE_DOWN',
 			34: 'UNDERMINE',
@@ -275,8 +275,8 @@ module.exports = ($) => {
 
 				if(~~p[5] || ~~p[6] || ~~p[7]) _l('miao?');
 
-				return `${target} | ${p[1]}回合 | 陷阱 | ${num}张
-					| <kqud title="时机：我方卡牌全部发动后，敌方行动前">使用后受到伤害${p[4]}点</kqud>`;
+				return `${target} | ${p[1]}回合 | 陷阱 | ${num}张 |\x20
+					<kqud title="时机：我方卡牌全部发动后，敌方行动前">使用后受到伤害${p[4]}点</kqud>`;
 			},
 			93: 'CARD_TRAP_DOT',
 			94: (card, skill, role, skillFirst) => {
@@ -301,8 +301,8 @@ module.exports = ($) => {
 
 				let base = Math.ceil(~~p[2] + ~~p[5] * card.info.max.level);
 
-				return `${target} | ${p[1]}回合 | 追加${show(p[6])}元素伤害
-					| <kqud title="等级成长：${p[2]}+${p[5]}*等级">${base}</kqud>点`;
+				return `${target} | ${p[1]}回合 | 追加${show(p[6])}元素伤害 |\x20
+					<kqud title="等级成长：${p[2]}+${p[5]}*等级">${base}</kqud>点`;
 			},
 			108: 'ENEMY_AWAKE_FLAG_SET',
 			109: 'FORCE_BATTLE_END',
@@ -311,16 +311,16 @@ module.exports = ($) => {
 
 				let base = Math.ceil(~~p[4] + ~~p[5] / 1000 * card.info.max.level);
 
-				return `${target} | ${p[1]}回合 | 提升${show(p[6])}元素耐性
-					| <kqud title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</kqud>点`;
+				return `${target} | ${p[1]}回合 | 提升${show(p[6])}元素耐性 |\x20
+					<kqud title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</kqud>点`;
 			},
 			111: (card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
 				let base = Math.ceil(~~p[4] + ~~p[5] / 1000 * card.info.max.level);
 
-				return `${target} | ${p[1]}回合 | 降低${show(p[6])}元素耐性
-					| <kqud title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</kqud>点`;
+				return `${target} | ${p[1]}回合 | 降低${show(p[6])}元素耐性 |\x20
+					<kqud title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</kqud>点`;
 			},
 			112: 'ATTR_DEF_UP_SUPPORT',
 			113: (card, skill, role, skillFirst) => {
@@ -328,8 +328,8 @@ module.exports = ($) => {
 
 				let base = Math.ceil(~~p[2] / 100 + ~~p[3] / 100 * card.info.max.level);
 
-				return `${target} | ${p[1]}回合 | 反射伤害
-					| 所受伤害的<kqud title="等级成长：${p[2]/100}+${p[3]/100}*等级">${base}</kqud>%`;
+				return `${target} | ${p[1]}回合 | 反射伤害 |\x20
+					所受伤害的<kqud title="等级成长：${p[2]/100}+${p[3]/100}*等级">${base}</kqud>%`;
 			},
 			114: 'ATK_OP_REFLECTION_INVALID',
 			115: 'DEBUFF_REGIST_LIMIT',

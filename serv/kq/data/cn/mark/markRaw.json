@@ -1,5 +1,5 @@
 [
-	[ "n", "hn", "r", "sr", "ur", "mr", "mr+", "mr++", "mmr" ],
+	[ "n", "hn", "r", "sr", "ur", "mr", "mr+", "mr++", "mmr", "test" ],
 	[ "mercenary", "millionaire", "thief", "singer", "null" ],
 	[ "cost1", "cost2", "cost3", "cost4", "cost5", "cost9", "cost11" ],
 	[
@@ -14,15 +14,16 @@
 
 	[
 		"aoe", "db2", "covering", "buffone", "stan", "debuffre", "bug",
-		"enchant", "chain", "crit", "drain", "revenge", "pierce", "attrach"
+		"enchant", "chain", "crit", "autotomy"
 	],
 
 	[ "attack:aoe", "attack:soe" ],
 	[ "attack:physical", "attack:magic" ],
 	[ "attack:time1", "attack:time2", "attack:time3", "attack:time4", "attack:time5" ],
+	[ "attack:drain", "attack:revenge", "attack:pierce", "attack:attrach" ],
 
 	[ "heal:aoe", "heal:soe", "heal:slf" ],
-	[ "heal:hq", "heal:hpm" ],
+	[ "heal:fix", "heal:param" ],
 
 	[ "regen:aoe", "regen:soe", "regen:slf" ],
 	[ "regen:turn2", "regen:turn3", "regen:turn4", "regen:turn5" ],
@@ -32,10 +33,17 @@
 	[ "supo:param2", "supo:param3", "supo:param4", "supo:param5" ],
 	[ "supo:fix", "supo:param" ],
 
-	[ "defn:aoe", "defn:soe", "defn:slf" ],
-	[ "defn:turn1", "defn:turn2", "defn:turn3", "defn:turn4", "defn:turn5" ],
-	[ "defn:param6", "defn:param7", "defn:double" ],
-	[ "defn:fix", "defn:param" ],
+	[ "defe:aoe", "defe:soe", "defe:slf" ],
+	[ "defe:turn1", "defe:turn2", "defe:turn3", "defe:turn4" ],
+	[ "defe:param6", "defe:param7", "defe:double" ],
+	[ "defe:fix", "defe:param" ],
 
-	["test"]
+	[ "jamm:aoe", "jamm:soe" ],
+	[ "jamm:turn1", "jamm:turn2", "jamm:turn3", "jamm:turn4" ],
+	[ "jamm:param3", "jamm:param4", "jamm:double", "jamm:param6", "jamm:param7" ],
+	[ "jamm:fix", "jamm:param" ],
+
+	[ "dot:aoe", "dot:soe" ],
+	[ "dot:poison", "dot:burn", "dot:freeze", "dot:bleed", "dot:electric" ],
+	[ "dot:turn3", "dot:turn4", "dot:turn5", "dot:turn8" ]
 ]

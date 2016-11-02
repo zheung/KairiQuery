@@ -51,6 +51,7 @@ module.exports = () => {
 			if(target.r == 4 || (target.r == 1 && target.s == 5)) set.add('aoe');
 			if(rt == 19 && target.r == 1 && target.s == 2) set.add('buffone');
 
+			if(rt == 26) set.add('autotomy');
 			if(rt == 35) set.add('stan');
 			if(rt == 44 && rp[1] == '2') set.add('db2');
 			if(rt == 46) set.add('debuffre');
@@ -70,10 +71,10 @@ module.exports = () => {
 				if(target.r == 1 && target.s == 4)
 					set.add('attack:soe');
 			}
-			if(rt == 5) set.add('drain');
-			if(rt == 6) set.add('revenge');
-			if(rt == 7) set.add('pierce');
-			if(rt == 8) set.add('attrach');
+			if(rt == 5) set.add('attack:drain');
+			if(rt == 6) set.add('attack:revenge');
+			if(rt == 7) set.add('attack:pierce');
+			if(rt == 8) set.add('attack:attrach');
 			//治疗
 			if(rt == 9 || rt == 12) {
 				if((target.r == 3 || (target.r == 1 && target.s == 3)))
@@ -113,30 +114,61 @@ module.exports = () => {
 
 				if(rt == 17)
 					set.add('supo:param');
-				else
+				if(rt == 19)
 					set.add('supo:fix');
 			}
 			//防御
 			if(rt==23 || rt==25) {
 				if((target.r == 3 || (target.r == 1 && target.s == 3)))
-					set.add('defn:aoe');
+					set.add('defe:aoe');
 				if(target.r == 1 && target.s == 2)
-					set.add('defn:soe');
+					set.add('defe:soe');
 				if(target.r == 2 || (target.r == 1 && target.s == 1))
-					set.add('defn:slf');
+					set.add('defe:slf');
 
-				if(rp[1]) set.add('defn:turn'+rp[1]);
-				if(rp[2][1]) set.add('defn:param'+rp[2][1]);
+				if(rp[1]) set.add('defe:turn'+rp[1]);
+				if(rp[2][1]) set.add('defe:param'+rp[2][1]);
 
 				if(rt == 23)
-					set.add('defn:param');
-				else
-					set.add('defn:fix');
+					set.add('defe:param');
+				if(rt == 25)
+					set.add('defe:fix');
+			}
+			//弱化
+			if(rt == 28 || rt == 29 || rt == 32) {
+				if((target.r == 4 || (target.r == 1 && target.s == 5)))
+					set.add('jamm:aoe');
+				if(target.r == 1 && target.s == 4)
+					set.add('jamm:soe');
+
+				if(rp[1]) set.add('jamm:turn'+rp[1]);
+				if(rp[2][1]) set.add('jamm:param'+rp[2][1]);
+
+				if(rt == 28)
+					set.add('jamm:param');
+				if(rt == 29 || rt == 32)
+					set.add('jamm:fix');
+			}
+			//五毒
+			if(rt == 38 || rt == 39 || rt == 40 || rt == 41 || rt == 88) {
+				if((target.r == 4 || (target.r == 1 && target.s == 5)))
+					set.add('dot:aoe');
+				if(target.r == 1 && target.s == 4)
+					set.add('dot:soe');
+
+				if(rt == 38) set.add('dot:poison');
+				if(rt == 39) set.add('dot:burn');
+				if(rt == 40) set.add('dot:freeze');
+				if(rt == 41) set.add('dot:bleed');
+				if(rt == 88) set.add('dot:electric');
+
+				if(rp[1]) set.add('dot:turn'+rp[1]);
 			}
 		}
 
 		if(set.has('heal:aoe') && set.has('supo:param5')) set.add('bug');
-		if(set.has('defn:param6') && set.has('defn:param7')) set.add('defn:double');
+		if(set.has('defe:param6') && set.has('defe:param7')) set.add('defe:double');
+		if(set.has('jamm:param3') && set.has('jamm:param4')) set.add('jamm:double');
 
 		if(chain && (chain != 20 && chain != 1)) set.add('chain');
 
