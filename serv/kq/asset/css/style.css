@@ -197,6 +197,7 @@ input, span {
 	width: 77%;
 	height: auto;
 	border-left: 2px solid #E0E2E4;
+	padding-left: 4px;
 }
 .CondBar2 {
 	width: 77%;

@@ -33,7 +33,7 @@ module.exports = ($) => {
 			6: (card, skill, role) => {
 				let p = role.params;
 
-				return `附加伤害 | <kqud title="最大值：${show(p[3])}的${p[4]}%">每回合累计损失生命的${p[1]}%</kqud>`;
+				return `附加伤害 | 累计损失生命的${p[1]}% | 上限：${show(p[3])}的${p[4]}%`;
 			},
 			7: (card, skill, role) => {
 				let p = role.params;
@@ -49,8 +49,6 @@ module.exports = ($) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
 				let base = Math.ceil(~~p[1]+~~p[2]/1000*card.info.max.level);
-
-
 
 				return `${target} | 恢复生命 | ${base ? `<kqud title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</kqud>+` : ''}
 					${show(p[5])}的${p[3]/10}%`;
@@ -78,8 +76,8 @@ module.exports = ($) => {
 			17: (card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
-				return `${target} | ${p[1]}回合 | 提升${show(p[2])}
-					| ${p[6]}+${p[4]/10}%${show(p[3])}点`;
+				return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
+					${p[6]}+${show(p[3])}的${p[4]/10}%`;
 			},
 			18: false,
 			19: (card, skill, role, skillFirst) => {
@@ -87,8 +85,8 @@ module.exports = ($) => {
 
 				let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
-				return `${target} | ${p[1]}回合 | 提升${show(p[2])}
-					| <kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
+				return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
+					<kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
 			},
 			20: false,
 			21:	false,
@@ -98,8 +96,8 @@ module.exports = ($) => {
 
 				let base = Math.ceil(~~p[5]/1000+~~p[6]*card.info.max.level);
 
-				return `${target} | ${p[1]}回合 | 提升${show(p[2])}
-					| <kqud title="等级成长：${p[5]/1000}+${p[6]}*等级">${base}</kqud>+${p[4]/10}%${show(p[3])}`;
+				return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
+					<kqud title="等级成长：${p[5]/1000}+${p[6]}*等级">${base}</kqud>+${p[4]/10}%${show(p[3])}`;
 			},
 			24: 'DEF_UP_BY_TARGET_PARAM',
 			25: (card, skill, role, skillFirst) => {
@@ -107,8 +105,8 @@ module.exports = ($) => {
 
 				let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
-				return `${target} | ${p[1]}回合 | 提升${show(p[2])}
-					| <kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
+				return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
+					<kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
 			},
 			26: (card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);

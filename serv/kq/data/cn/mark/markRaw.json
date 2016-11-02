@@ -25,5 +25,17 @@
 	[ "heal:hq", "heal:hpm" ],
 
 	[ "regen:aoe", "regen:soe", "regen:slf" ],
-	[ "regen:turn2", "regen:turn3", "regen:turn4", "regen:turn5" ]
+	[ "regen:turn2", "regen:turn3", "regen:turn4", "regen:turn5" ],
+
+	[ "supo:aoe", "supo:soe", "supo:slf" ],
+	[ "supo:turn1", "supo:turn2", "supo:turn3", "supo:turn4" ],
+	[ "supo:param2", "supo:param3", "supo:param4", "supo:param5" ],
+	[ "supo:fix", "supo:param" ],
+
+	[ "defn:aoe", "defn:soe", "defn:slf" ],
+	[ "defn:turn1", "defn:turn2", "defn:turn3", "defn:turn4", "defn:turn5" ],
+	[ "defn:param6", "defn:param7", "defn:double" ],
+	[ "defn:fix", "defn:param" ],
+
+	["test"]
 ]

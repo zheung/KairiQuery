@@ -87,6 +87,7 @@
 					<div class="NaviColumn hr flex jcb aic wpw">
 						<div>
 							<a class="Toggle off" data-cond="ex" data-x="0" data-y="7" data-z="1">EX技能模式</a>
+							<a class="Toggle off" data-cond="test" data-x="0" data-y="20" data-z="1">测试模式</a>
 						</div>
 						<div>
 							<span>服务器：</span>
@@ -183,29 +184,30 @@
 					</div>
 					<div class="NaviColumn hr flex jcs aic wpw">常见技能</div>
 					<div class="NaviColumn flex jca aic wpw">
-						<a class="Toggle off" data-cond="skill" data-x="0" data-y="8" data-z="1">AOE</a>
-						<a class="Toggle off" data-cond="skill" data-x="0" data-y="8" data-z="2">抽卡+2</a>
-						<a class="Toggle off" data-cond="skill" data-x="0" data-y="8" data-z="4">嘲讽</a>
-						<a class="Toggle off" data-cond="skill" data-x="0" data-y="8" data-z="8">单人支</a>
-						<a class="Toggle off" data-cond="skill" data-x="0" data-y="8" data-z="32">解状态</a>
-						<a class="Toggle off" data-cond="skill" data-x="0" data-y="8" data-z="128">追伤</a>
-						<a class="Toggle off" data-cond="skill" data-x="0" data-y="8" data-z="64">Bug奶</a>
-						<a class="Toggle off" data-cond="skill" data-x="0" data-y="5" data-z="256">圣杯</a>
-						<a class="Toggle off" data-cond="skill" data-x="0" data-y="5" data-z="32">天剋</a>
-						<a class="Toggle off" data-cond="skill" data-x="0" data-y="5" data-z="128">限定</a>
-						<a class="Toggle off" data-cond="skill" data-x="0" data-y="5" data-z="16">特典</a>
-						<a class="Toggle off" data-cond="skill" data-x="0" data-y="5" data-z="1">地图</a>
-						<a class="Toggle off" data-cond="skill" data-x="0" data-y="6" data-z="1">联动</a>
+						<a class="w4 Toggle hide" data-cond="common" data-x="s">技能</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="1">AOE</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="2">抽卡+2</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="4">嘲讽</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="8">单人支</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="32">解状态</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="128">追伤</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="64">Bug奶</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="256">圣杯</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="32">天剋</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="128">限定</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="16">特典</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="1">地图</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="6" data-z="1">联动</a>
 					</div>
 				</div>
 				<div class="TabItem RightNavi flex drc aic wpw" data-tab="RightNavi" data-page="Mark">
 					<div class="NaviColumn flex jca aic wpw">
-						<a class="Toggle off" data-cond="skill" data-x="0" data-y="8" data-z="256">高Chain</a>
-						<a class="Toggle off" data-cond="skill" data-x="0" data-y="8" data-z="512">暴击提升</a>
-						<a class="Toggle off" data-cond="skill" data-x="0" data-y="8" data-z="16">欧洲剑</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="256">高Chain</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="512">暴击提升</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="16">打断</a>
 					</div>
 				</div>
-				<div class="TabItem RightNavi flex drc aic wpw" data-tab="RightNavi" data-page="Skill">
+				<div class="TabItem RightNavi flex drc jcs aic wpn" data-tab="RightNavi" data-page="Skill">
 					<div class="NaviColumn hr fs11 flex jcs aic wpw">
 						你知道吗？在原始数据中，COST、属性和职业实际上属于“技能”而不是“卡牌”的。从歌姬使用B叔时是支援卡，其他职业使用时是治疗卡可以印证。
 					</div>
@@ -246,7 +248,7 @@
 
 					<div class="NaviColumn hr flex jcs aic wpw">治疗</div>
 					<div class="NaviColumn flex jcb aic wpw">
-						<a class="w4 Toggle" data-cond="" data-x="s">目标</a>
+						<a class="w4 Toggle" data-cond="healtarget" data-x="s">目标</a>
 						<div class="CondBar flex jca aic wpn">
 							<a class="wf Toggle off" data-cond="healtarget" data-x="0" data-y="12" data-z="1">全体</a>
 							<a class="wf Toggle off" data-cond="healtarget" data-x="0" data-y="12" data-z="2">单体</a>
@@ -277,6 +279,74 @@
 							<a class="wf Toggle off" data-cond="regenturn" data-x="0" data-y="15" data-z="2">3</a>
 							<a class="wf Toggle off" data-cond="regenturn" data-x="0" data-y="15" data-z="4">4</a>
 							<a class="wf Toggle off" data-cond="regenturn" data-x="0" data-y="15" data-z="8">5</a>
+						</div>
+					</div>
+					<div class="NaviColumn hr flex jcs aic wpw">支援</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle" data-cond="supotarget" data-x="s">目标</a>
+						<div class="CondBar flex jca aic wpn">
+							<a class="wf Toggle off" data-cond="supotarget" data-x="0" data-y="16" data-z="1">全体</a>
+							<a class="wf Toggle off" data-cond="supotarget" data-x="0" data-y="16" data-z="2">单体</a>
+							<a class="wf Toggle off" data-cond="supotarget" data-x="0" data-y="16" data-z="4">自身</a>
+						</div>
+					</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle" data-cond="supoturn" data-x="s">回合</a>
+						<div class="CondBar flex jca aic wpn">
+							<a class="wf Toggle off" data-cond="supoturn" data-x="0" data-y="17" data-z="1">1</a>
+							<a class="wf Toggle off" data-cond="supoturn" data-x="0" data-y="17" data-z="2">2</a>
+							<a class="wf Toggle off" data-cond="supoturn" data-x="0" data-y="17" data-z="4">3</a>
+							<a class="wf Toggle off" data-cond="supoturn" data-x="0" data-y="17" data-z="8">4</a>
+						</div>
+					</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle" data-cond="supoparam" data-x="s">属性</a>
+						<div class="CondBar flex jca aic wpn">
+							<a class="wf Toggle off" data-cond="supoparam" data-x="0" data-y="18" data-z="2">物理伤害</a>
+							<a class="wf Toggle off" data-cond="supoparam" data-x="0" data-y="18" data-z="4">魔法伤害</a>
+							<a class="wf Toggle off" data-cond="supoparam" data-x="0" data-y="18" data-z="8">恢复量</a>
+							<a class="wf Toggle off" data-cond="supoparam" data-x="0" data-y="18" data-z="1">最大生命</a>
+						</div>
+					</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle" data-cond="supotype" data-x="s">类型</a>
+						<div class="CondBar flex jca aic wpn">
+							<a class="wf Toggle off" data-cond="supotype" data-x="0" data-y="19" data-z="1">固定值</a>
+							<a class="wf Toggle off" data-cond="supotype" data-x="0" data-y="19" data-z="2">基于属性</a>
+						</div>
+					</div>
+					<div class="NaviColumn hr flex jcs aic wpw">防御</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle" data-cond="defntarget" data-x="s">目标</a>
+						<div class="CondBar flex jca aic wpn">
+							<a class="wf Toggle off" data-cond="defntarget" data-x="0" data-y="20" data-z="1">全体</a>
+							<a class="wf Toggle off" data-cond="defntarget" data-x="0" data-y="20" data-z="2">单体</a>
+							<a class="wf Toggle off" data-cond="defntarget" data-x="0" data-y="20" data-z="4">自身</a>
+						</div>
+					</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle" data-cond="defnturn" data-x="s">回合</a>
+						<div class="CondBar flex jca aic wpn">
+							<a class="wf Toggle off" data-cond="defnturn" data-x="0" data-y="21" data-z="1">1</a>
+							<a class="wf Toggle off" data-cond="defnturn" data-x="0" data-y="21" data-z="2">2</a>
+							<a class="wf Toggle off" data-cond="defnturn" data-x="0" data-y="21" data-z="4">3</a>
+							<a class="wf Toggle off" data-cond="defnturn" data-x="0" data-y="21" data-z="8">4</a>
+							<a class="wf Toggle off" data-cond="defnturn" data-x="0" data-y="21" data-z="16">5</a>
+						</div>
+					</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle" data-cond="defnparam" data-x="s">属性</a>
+						<div class="CondBar flex jca aic wpn">
+							<a class="wf Toggle off" data-cond="defnparam" data-x="0" data-y="22" data-z="1">物理防御</a>
+							<a class="wf Toggle off" data-cond="defnparam" data-x="0" data-y="22" data-z="2">魔法防御</a>
+							<a class="wf Toggle off" data-cond="defnparam" data-x="0" data-y="22" data-z="4">全防御</a>
+						</div>
+					</div>
+					<div class="NaviColumn flex jcb aic wpw">
+						<a class="w4 Toggle" data-cond="defntype" data-x="s">类型</a>
+						<div class="CondBar flex jca aic wpn">
+							<a class="wf Toggle off" data-cond="defntype" data-x="0" data-y="23" data-z="1">固定值</a>
+							<a class="wf Toggle off" data-cond="defntype" data-x="0" data-y="23" data-z="2">基于属性</a>
 						</div>
 					</div>
 				</div>
