@@ -48,18 +48,7 @@ module.exports = () => {
 			let target = { r: role.target, s: sm.info.target || sf.info.target },
 				rt = role.type, rp = role.params;
 
-			if(target.r == 4 || (target.r == 1 && target.s == 5)) set.add('aoe');
-			if(rt == 19 && target.r == 1 && target.s == 2) set.add('buffone');
-
-			if(rt == 26) set.add('autotomy');
-			if(rt == 35) set.add('stan');
-			if(rt == 44 && rp[1] == '2') set.add('db2');
-			if(rt == 46) set.add('debuffre');
-			if(rt == 64) set.add('covering');
-			if(rt == 86) set.add('crit');
-			if(rt == 107) set.add('enchant');
-
-			// 攻击
+			//攻击
 			if(rt == 1) {
 				if(rp[9][1] == 1) set.add('attack:physical');
 				if(rp[9][1] == 2) set.add('attack:magic');
@@ -164,6 +153,76 @@ module.exports = () => {
 
 				if(rp[1]) set.add('dot:turn'+rp[1]);
 			}
+			//嘲讽
+			if(rt == 64) set.add('cover').add('cover:turn'+rp[1]).add('cover:per'+(rp[2]/10));
+			//追伤
+			if(rt == 107) {
+				if((target.r == 3 || (target.r == 1 && target.s == 3)))
+					set.add('ench:aoe');
+				if(target.r == 1 && target.s == 2)
+					set.add('ench:soe');
+				if(target.r == 2 || (target.r == 1 && target.s == 1))
+					set.add('ench:slf');
+
+				set.add('ench').add('ench:turn'+rp[1]).add('ench:attr'+rp[6][1]);
+			}
+			//耐性
+			if(rt == 110) {
+				if((target.r == 3 || (target.r == 1 && target.s == 3)))
+					set.add('adef:aoe');
+				if(target.r == 1 && target.s == 2)
+					set.add('adef:soe');
+				if(target.r == 2 || (target.r == 1 && target.s == 1))
+					set.add('adef:slf');
+
+				set.add('adef').add('adef:turn'+rp[1]).add('adef:attr'+rp[6][1]);
+			}
+			//减耐
+			if(rt == 111) {
+				if((target.r == 4 || (target.r == 1 && target.s == 5)))
+					set.add('ajam:aoe');
+				if(target.r == 1 && target.s == 4)
+					set.add('ajam:soe');
+
+				set.add('ajam').add('ajam:turn'+rp[1]).add('ajam:attr'+rp[6][1]);
+			}
+			//抗性
+			if(rt == 49) set.add('rsis:seal');
+			if(rt == 91) set.add('rsis:dark');
+			//抽卡
+			if(rt == 44) set.add('deal:+'+rp[1]);
+			//解除
+			if(rt == 46) set.add('rele').add('rele:role'+rp[3][1]);
+			if(rt == 46 && rp[4][1]) set.add('rele:role'+rp[4][1]);
+			//反射
+			if(rt == 113) {
+				if((target.r == 3 || (target.r == 1 && target.s == 3)))
+					set.add('rfle:aoe');
+				if(target.r == 1 && target.s == 2)
+					set.add('rfle:soe');
+				if(target.r == 2 || (target.r == 1 && target.s == 1))
+					set.add('rfle:slf');
+
+				set.add('rfle:turn'+rp[1]);
+			}
+			//自残
+			if(rt == 26) set.add('atos:hp');
+			if(rt == 92) set.add('atos:trap');
+			if(rt == 94) set.add('atos:cost');
+			//暴击
+			if(rt == 86) set.add('crit');
+			//打断
+			if(rt == 35) set.add('stan');
+			//免克制
+			if(rt == 60) set.add('nord');
+			//看破
+			if(rt == 61) set.add('asee');
+			//毒强化
+			if(rt == 79) set.add('dotup');
+
+
+			if(target.r == 4 || (target.r == 1 && target.s == 5)) set.add('aoe');
+			if((rt == 19 || rt == 86) && target.r == 1 && target.s == 2) set.add('buffone');
 		}
 
 		if(set.has('heal:aoe') && set.has('supo:param5')) set.add('bug');

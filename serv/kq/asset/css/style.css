@@ -71,7 +71,7 @@ input, span {
 
 	cursor: pointer;
 }
-.Toggle.on {
+.Toggle.on, .Toggle.on:hover, .Toggle.off:hover {
 	border-color: #557799;
 
 	background-color: #557799;
@@ -164,7 +164,7 @@ input, span {
 
 	background-color: #34495e;
 }
-.TabHead.RightNavi2 {
+.TabHead.RightNavi2, .TabHead.RightNavi3 {
 	width: 100%;
 
 	border: 2px solid #34495e;
@@ -179,13 +179,19 @@ input, span {
 .TabHead.RightNavi2:hover {
 	border-top: 2px solid #148474;
 }
-.TabHead.RightNavi2.active {
+.TabHead.RightNavi2.active, .TabHead.RightNavi3:hover {
 	border-radius: 4px;
 	border: 2px solid #148474;
 	background-color: #148474;
 }
 .TabItem.RightNavi2 {
 	height: 92%;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: visible;
+}
+.TabItem.RightNavi3 {
+	height: 81%;
 	width: 100%;
 	overflow-x: hidden;
 	overflow-y: visible;

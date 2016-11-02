@@ -78,7 +78,6 @@
 			<div class="Navi blrNavi">
 				<div class="TabHeader RightNavi flex jca aih wpn">
 					<a class="TabHead RightNavi active flex jcc aic" data-tab="RightNavi" data-page="Basic">基本筛选</a>
-					<a class="TabHead RightNavi flex jcc aic" data-tab="RightNavi" data-page="Mark">标签筛选</a>
 					<a class="TabHead RightNavi flex jcc aic" data-tab="RightNavi" data-page="Skill">技能筛选</a>
 					<a class="TabHead RightNavi flex jcc aic" data-tab="RightNavi" data-page="Board" data-notab>留言板</a>
 					<a class="TabHead RightNavi flex jcc aic" data-tab="RightNavi" data-page="More" data-notab>摸~</a>
@@ -186,12 +185,13 @@
 					<div class="NaviColumn flex jca aic wpw">
 						<a class="w4 Toggle hide" data-cond="common" data-x="s">技能</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="1">AOE</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="2">抽卡+2</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="4">嘲讽</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="8">单人支</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="32">解状态</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="128">追伤</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="64">Bug奶</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="43" data-z="2">抽卡+2</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="2">嘲讽</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="4">单人支</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="8">解状态</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="16">Bug奶</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="32">追伤</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="33">高Chain</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="256">圣杯</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="32">天剋</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="128">限定</a>
@@ -200,77 +200,69 @@
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="6" data-z="1">联动</a>
 					</div>
 				</div>
-				<div class="TabItem RightNavi flex drc aic wpw" data-tab="RightNavi" data-page="Mark">
-					<div class="NaviColumn flex jca aic wpw">
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="256">高Chain</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="512">暴击提升</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="16">打断</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="1024">自扣血</a>
-					</div>
-				</div>
 				<div class="TabItem RightNavi flex drc jcs aic wpn" data-tab="RightNavi" data-page="Skill">
 					<div class="NaviColumn hr fs11 flex jcs aic wpw">
 						你知道吗？在原始数据中，COST、属性和职业实际上属于“技能”而不是“卡牌”的。从歌姬使用B叔时是支援卡，其他职业使用时是治疗卡可以印证。
 					</div>
 
 					<div class="TabHeader RightNavi2 flex jca aih wpn">
-						<a class="TabHead RightNavi2 active flex jcc aic" data-tab="SkillFilter" data-page="Atta">攻击</a>
-						<a class="TabHead RightNavi2 flex jcc aic" data-tab="SkillFilter" data-page="Heal">治疗</a>
-						<a class="TabHead RightNavi2 flex jcc aic" data-tab="SkillFilter" data-page="Regen">缓回</a>
-						<a class="TabHead RightNavi2 flex jcc aic" data-tab="SkillFilter" data-page="Supo">支援</a>
-						<a class="TabHead RightNavi2 flex jcc aic" data-tab="SkillFilter" data-page="Defe">防御</a>
-						<a class="TabHead RightNavi2 flex jcc aic" data-tab="SkillFilter" data-page="Jamm">弱化</a>
+						<a class="TabHead RightNavi3 active flex jcc aic" data-tab="SkillFilter" data-page="Atta">攻击</a>
+						<a class="TabHead RightNavi3 flex jcc aic" data-tab="SkillFilter" data-page="Heal">治疗</a>
+						<a class="TabHead RightNavi3 flex jcc aic" data-tab="SkillFilter" data-page="Regen">缓回</a>
+						<a class="TabHead RightNavi3 flex jcc aic" data-tab="SkillFilter" data-page="Supo">支援</a>
+						<a class="TabHead RightNavi3 flex jcc aic" data-tab="SkillFilter" data-page="Defe">防御</a>
+						<a class="TabHead RightNavi3 flex jcc aic" data-tab="SkillFilter" data-page="Jamm">弱化</a>
 					</div>
 					<div class="TabHeader RightNavi2 hr flex jca aih wpn">
-						<a class="TabHead RightNavi2 flex jcc aic" data-tab="SkillFilter" data-page="Dot">五毒</a>
-						<a class="TabHead RightNavi2 flex jcc aic" data-tab="SkillFilter" data-page="Crit">暴击</a>
-						<a class="TabHead RightNavi2 flex jcc aic" data-tab="SkillFilter" data-page="Resis">抗性</a>
-						<a class="TabHead RightNavi2 flex jcc aic" data-tab="SkillFilter" data-page="Automy">自残</a>
-						<a class="TabHead RightNavi2 flex jcc aic" data-tab="SkillFilter" data-page="Enchant">追伤</a>
-						<a class="TabHead RightNavi2 flex jcc aic" data-tab="SkillFilter" data-page="Adef">耐性</a>
+						<a class="TabHead RightNavi3 flex jcc aic" data-tab="SkillFilter" data-page="Dot">五毒</a>
+						<a class="TabHead RightNavi3 flex jcc aic" data-tab="SkillFilter" data-page="Cover">嘲讽</a>
+						<a class="TabHead RightNavi3 flex jcc aic" data-tab="SkillFilter" data-page="Ench">追伤</a>
+						<a class="TabHead RightNavi3 flex jcc aic" data-tab="SkillFilter" data-page="Adef">耐性</a>
+						<a class="TabHead RightNavi3 flex jcc aic" data-tab="SkillFilter" data-page="Ajam">减耐</a>
+						<a class="TabHead RightNavi3 flex jcc aic" data-tab="SkillFilter" data-page="Rest">其他</a>
 					</div>
-					<div class="TabItem RightNavi2 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Atta">
-						<div class="NaviColumn flex jcs aic wpw">
-							<a class="w4 Toggle" data-cond="attacktarget" data-x="s">目标</a>
+					<div class=" h81p TabItem RightNavi3 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Atta">
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="attatarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="9" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="9" data-z="2">单体</a>
+								<a class="wf Toggle off" data-cond="attatarget" data-x="0" data-y="9" data-z="1">全体</a>
+								<a class="wf Toggle off" data-cond="attatarget" data-x="0" data-y="9" data-z="2">单体</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="attacktype" data-x="s">类型</a>
+							<a class="w4 Toggle" data-cond="attatype" data-x="s">类型</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="attacktype" data-x="0" data-y="10" data-z="1">物理</a>
-								<a class="wf Toggle off" data-cond="attacktype" data-x="0" data-y="10" data-z="2">魔法</a>
+								<a class="wf Toggle off" data-cond="attatype" data-x="0" data-y="10" data-z="1">物理</a>
+								<a class="wf Toggle off" data-cond="attatype" data-x="0" data-y="10" data-z="2">魔法</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="attacktime" data-x="s">次数</a>
+							<a class="w4 Toggle" data-cond="attatime" data-x="s">次数</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="attacktime" data-x="0" data-y="11" data-z="1">1</a>
-								<a class="wf Toggle off" data-cond="attacktime" data-x="0" data-y="11" data-z="2">2</a>
-								<a class="wf Toggle off" data-cond="attacktime" data-x="0" data-y="11" data-z="4">3</a>
-								<a class="wf Toggle off" data-cond="attacktime" data-x="0" data-y="11" data-z="8">4</a>
-								<a class="wf Toggle off" data-cond="attacktime" data-x="0" data-y="11" data-z="16">5</a>
+								<a class="wf Toggle off" data-cond="attatime" data-x="0" data-y="11" data-z="1">1</a>
+								<a class="wf Toggle off" data-cond="attatime" data-x="0" data-y="11" data-z="2">2</a>
+								<a class="wf Toggle off" data-cond="attatime" data-x="0" data-y="11" data-z="4">3</a>
+								<a class="wf Toggle off" data-cond="attatime" data-x="0" data-y="11" data-z="8">4</a>
+								<a class="wf Toggle off" data-cond="attatime" data-x="0" data-y="11" data-z="16">5</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="attackeffect" data-x="s"><kqud title="这些为攻击特效必须和攻击一起使用">特效</kqud></a>
+							<a class="w4 Toggle" data-cond="attaeffect" data-x="s"><kqud title="这些为攻击特效必须和攻击一起使用">特效</kqud></a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="attackeffect" data-x="0" data-y="12" data-z="1">吸血</a>
-								<a class="wf Toggle off" data-cond="attackeffect" data-x="0" data-y="12" data-z="2">伤害累积</a>
-								<a class="wf Toggle off" data-cond="attackeffect" data-x="0" data-y="12" data-z="4">防御穿透</a>
-								<a class="wf Toggle off" data-cond="attackeffect" data-x="0" data-y="12" data-z="8">属性附加</a>
+								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="1">吸血</a>
+								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="2">伤害累积</a>
+								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="4">防御穿透</a>
+								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="8">属性附加</a>
 							</div>
 						</div>
 					</div>
-					<div class="TabItem RightNavi2 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Heal">
-						<div class="NaviColumn flex jcs aic wpw">
-							<a class="w4 Toggle" data-cond="attacktarget" data-x="s">目标</a>
+					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Heal">
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="healtarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="13" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="13" data-z="2">单体</a>
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="13" data-z="4">自身</a>
+								<a class="wf Toggle off" data-cond="healtarget" data-x="0" data-y="13" data-z="1">全体</a>
+								<a class="wf Toggle off" data-cond="healtarget" data-x="0" data-y="13" data-z="2">单体</a>
+								<a class="wf Toggle off" data-cond="healtarget" data-x="0" data-y="13" data-z="4">自身</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
@@ -281,13 +273,13 @@
 								</div>
 						</div>
 					</div>
-					<div class="TabItem RightNavi2 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Regen">
-						<div class="NaviColumn flex jcs aic wpw">
-							<a class="w4 Toggle" data-cond="attacktarget" data-x="s">目标</a>
+					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Regen">
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="regentarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="15" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="15" data-z="2">单体</a>
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="15" data-z="4">自身</a>
+								<a class="wf Toggle off" data-cond="regentarget" data-x="0" data-y="15" data-z="1">全体</a>
+								<a class="wf Toggle off" data-cond="regentarget" data-x="0" data-y="15" data-z="2">单体</a>
+								<a class="wf Toggle off" data-cond="regentarget" data-x="0" data-y="15" data-z="4">自身</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
@@ -300,13 +292,13 @@
 							</div>
 						</div>
 					</div>
-					<div class="TabItem RightNavi2 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Supo">
-						<div class="NaviColumn flex jcs aic wpw">
-							<a class="w4 Toggle" data-cond="attacktarget" data-x="s">目标</a>
+					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Supo">
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="supotarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="17" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="17" data-z="2">单体</a>
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="17" data-z="4">自身</a>
+								<a class="wf Toggle off" data-cond="supotarget" data-x="0" data-y="17" data-z="1">全体</a>
+								<a class="wf Toggle off" data-cond="supotarget" data-x="0" data-y="17" data-z="2">单体</a>
+								<a class="wf Toggle off" data-cond="supotarget" data-x="0" data-y="17" data-z="4">自身</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
@@ -335,13 +327,13 @@
 							</div>
 						</div>
 					</div>
-					<div class="TabItem RightNavi2 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Defe">
-						<div class="NaviColumn flex jcs aic wpw">
-							<a class="w4 Toggle" data-cond="attacktarget" data-x="s">目标</a>
+					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Defe">
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="defetarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="21" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="21" data-z="2">单体</a>
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="21" data-z="4">自身</a>
+								<a class="wf Toggle off" data-cond="defetarget" data-x="0" data-y="21" data-z="1">全体</a>
+								<a class="wf Toggle off" data-cond="defetarget" data-x="0" data-y="21" data-z="2">单体</a>
+								<a class="wf Toggle off" data-cond="defetarget" data-x="0" data-y="21" data-z="4">自身</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
@@ -369,12 +361,12 @@
 							</div>
 						</div>
 					</div>
-					<div class="TabItem RightNavi2 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Jamm">
-						<div class="NaviColumn hr flex jcs aic wpw">
-							<a class="w4 Toggle" data-cond="attacktarget" data-x="s">目标</a>
+					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Jamm">
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="jammtarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="25" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="25" data-z="2">单体</a>
+								<a class="wf Toggle off" data-cond="jammtarget" data-x="0" data-y="25" data-z="1">全体</a>
+								<a class="wf Toggle off" data-cond="jammtarget" data-x="0" data-y="25" data-z="2">单体</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
@@ -404,12 +396,12 @@
 							</div>
 						</div>
 					</div>
-					<div class="TabItem RightNavi2 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Dot">
-						<div class="NaviColumn flex jcs aic wpw">
-							<a class="w4 Toggle" data-cond="attacktarget" data-x="s">目标</a>
+					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Dot">
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="dottarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="29" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="attacktarget" data-x="0" data-y="29" data-z="2">单体</a>
+								<a class="wf Toggle off" data-cond="dottarget" data-x="0" data-y="29" data-z="1">全体</a>
+								<a class="wf Toggle off" data-cond="dottarget" data-x="0" data-y="29" data-z="2">单体</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
@@ -429,6 +421,173 @@
 								<a class="wf Toggle off" data-cond="dotturn" data-x="0" data-y="31" data-z="2">4</a>
 								<a class="wf Toggle off" data-cond="dotturn" data-x="0" data-y="31" data-z="4">5</a>
 								<a class="wf Toggle off" data-cond="dotturn" data-x="0" data-y="31" data-z="8">8</a>
+							</div>
+						</div>
+					</div>
+					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Cover">
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="coverturn" data-x="s">回合</a>
+							<div class="CondBar flex jca aic wpn">
+								<a class="wf Toggle off" data-cond="coverturn" data-x="0" data-y="32" data-z="1">1</a>
+								<a class="wf Toggle off" data-cond="coverturn" data-x="0" data-y="32" data-z="2">2</a>
+							</div>
+						</div>
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="coverpercent" data-x="s">比例</a>
+							<div class="CondBar flex drc jca aic wpn">
+								<div class="wf flex jca aic wpw">
+									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="1">10</a>
+									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="2">20</a>
+									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="4">25</a>
+									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="8">30</a>
+									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="16">35</a>
+									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="32">40</a>
+								</div>
+								<div class="wf flex jca aic wpw">
+									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="64">45</a>
+									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="128">50</a>
+									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="256">55</a>
+									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="512">60</a>
+									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="1024">65</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Ench">
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="enchtarget" data-x="s">目标</a>
+							<div class="CondBar flex jca aic wpn">
+								<a class="wf Toggle off" data-cond="enchtarget" data-x="0" data-y="34" data-z="1">全体</a>
+								<a class="wf Toggle off" data-cond="enchtarget" data-x="0" data-y="34" data-z="2">单体</a>
+								<a class="wf Toggle off" data-cond="enchtarget" data-x="0" data-y="34" data-z="3">自身</a>
+							</div>
+						</div>
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="enchtype" data-x="s">属性</a>
+							<div class="CondBar flex jca aic wpn">
+								<a class="wf Toggle off" data-cond="enchtype" data-x="0" data-y="35" data-z="1">火</a>
+								<a class="wf Toggle off" data-cond="enchtype" data-x="0" data-y="35" data-z="2">冰</a>
+								<a class="wf Toggle off" data-cond="enchtype" data-x="0" data-y="35" data-z="4">风</a>
+								<a class="wf Toggle off" data-cond="enchtype" data-x="0" data-y="35" data-z="8">光</a>
+								<a class="wf Toggle off" data-cond="enchtype" data-x="0" data-y="35" data-z="16">暗</a>
+							</div>
+						</div>
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="enchturn" data-x="s">回合</a>
+							<div class="CondBar flex jca aic wpn">
+								<a class="wf Toggle off" data-cond="enchturn" data-x="0" data-y="36" data-z="1">1</a>
+								<a class="wf Toggle off" data-cond="enchturn" data-x="0" data-y="36" data-z="2">2</a>
+								<a class="wf Toggle off" data-cond="enchturn" data-x="0" data-y="36" data-z="4">3</a>
+								<a class="wf Toggle off" data-cond="enchturn" data-x="0" data-y="36" data-z="8">4</a>
+							</div>
+						</div>
+					</div>
+					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Adef">
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="adeftarget" data-x="s">目标</a>
+							<div class="CondBar flex jca aic wpn">
+								<a class="wf Toggle off" data-cond="adeftarget" data-x="0" data-y="37" data-z="1">全体</a>
+								<a class="wf Toggle off" data-cond="adeftarget" data-x="0" data-y="37" data-z="2">单体</a>
+								<a class="wf Toggle off" data-cond="adeftarget" data-x="0" data-y="37" data-z="3">自身</a>
+							</div>
+						</div>
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="adeftype" data-x="s">属性</a>
+							<div class="CondBar flex jca aic wpn">
+								<a class="wf Toggle off" data-cond="adeftype" data-x="0" data-y="38" data-z="1">火</a>
+								<a class="wf Toggle off" data-cond="adeftype" data-x="0" data-y="38" data-z="2">冰</a>
+								<a class="wf Toggle off" data-cond="adeftype" data-x="0" data-y="38" data-z="4">风</a>
+								<a class="wf Toggle off" data-cond="adeftype" data-x="0" data-y="38" data-z="8">光</a>
+								<a class="wf Toggle off" data-cond="adeftype" data-x="0" data-y="38" data-z="16">暗</a>
+							</div>
+						</div>
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="adefturn" data-x="s">回合</a>
+							<div class="CondBar flex jca aic wpn">
+								<a class="wf Toggle off" data-cond="adefturn" data-x="0" data-y="39" data-z="1">1</a>
+								<a class="wf Toggle off" data-cond="adefturn" data-x="0" data-y="39" data-z="2">2</a>
+								<a class="wf Toggle off" data-cond="adefturn" data-x="0" data-y="39" data-z="4">3</a>
+							</div>
+						</div>
+					</div>
+					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Ajam">
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="ajamtarget" data-x="s">目标</a>
+							<div class="CondBar flex jca aic wpn">
+								<a class="wf Toggle off" data-cond="ajamtarget" data-x="0" data-y="40" data-z="1">全体</a>
+								<a class="wf Toggle off" data-cond="ajamtarget" data-x="0" data-y="40" data-z="2">单体</a>
+							</div>
+						</div>
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="ajamtype" data-x="s">属性</a>
+							<div class="CondBar flex jca aic wpn">
+								<a class="wf Toggle off" data-cond="ajamtype" data-x="0" data-y="41" data-z="1">火</a>
+								<a class="wf Toggle off" data-cond="ajamtype" data-x="0" data-y="41" data-z="2">冰</a>
+								<a class="wf Toggle off" data-cond="ajamtype" data-x="0" data-y="41" data-z="4">风</a>
+								<a class="wf Toggle off" data-cond="ajamtype" data-x="0" data-y="41" data-z="8">光</a>
+								<a class="wf Toggle off" data-cond="ajamtype" data-x="0" data-y="41" data-z="16">暗</a>
+							</div>
+						</div>
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="ajamturn" data-x="s">回合</a>
+							<div class="CondBar flex jca aic wpn">
+								<a class="wf Toggle off" data-cond="ajamturn" data-x="0" data-y="42" data-z="1">1</a>
+								<a class="wf Toggle off" data-cond="ajamturn" data-x="0" data-y="42" data-z="2">2</a>
+								<a class="wf Toggle off" data-cond="ajamturn" data-x="0" data-y="42" data-z="4">3</a>
+							</div>
+						</div>
+					</div>
+					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" data-tab="SkillFilter" data-page="Rest">
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="atostype" data-x="s">抽卡</a>
+							<div class="CondBar flex jca aic wpn">
+								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="43" data-z="1">+1</a>
+								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="43" data-z="2">+2</a>
+							</div>
+						</div>
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="atostype" data-x="s">解除</a>
+							<div class="CondBar flex jca aic wpn">
+								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="44" data-z="2">封印</a>
+								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="44" data-z="32">封C</a>
+								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="44" data-z="4">标记</a>
+								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="44" data-z="8">黑暗</a>
+								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="44" data-z="16">陷阱</a>
+								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="44" data-z="1">毒</a>
+							</div>
+						</div>
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="atostype" data-x="s">反射</a>
+							<div class="CondBar flex jca aic wpn">
+								<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="45" data-z="1">全体</a>
+								<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="45" data-z="2">自身</a>
+								<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="46" data-z="1">1回合</a>
+								<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="46" data-z="2">2回合</a>
+							</div>
+						</div>
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="rsistype" data-x="s">抗性</a>
+							<div class="CondBar flex jca aic wpn">
+								<a class="wf Toggle off" data-cond="rsistype" data-x="0" data-y="47" data-z="1">封印</a>
+								<a class="wf Toggle off" data-cond="rsistype" data-x="0" data-y="47" data-z="2">黑暗</a>
+							</div>
+						</div>
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="atostype" data-x="s">自残</a>
+							<div class="CondBar flex jca aic wpn">
+								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="48" data-z="1">生命</a>
+								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="48" data-z="2">陷阱</a>
+								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="48" data-z="4">封印</a>
+							</div>
+						</div>
+						<div class="NaviColumn flex jcb aic wpw">
+							<a class="w4 Toggle" data-cond="atostype" data-x="s">其他</a>
+							<div class="CondBar flex jca aic wpn">
+								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="49" data-z="1">暴击</a>
+								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="49" data-z="2">打断</a>
+								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="49" data-z="4">免克制</a>
+								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="49" data-z="8">看破</a>
+								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="49" data-z="16">强化毒</a>
 							</div>
 						</div>
 					</div>

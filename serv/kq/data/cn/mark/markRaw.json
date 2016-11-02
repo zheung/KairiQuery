@@ -12,10 +12,7 @@
 	[ "map", "fulltime", "super", "boss", "redeem", "regicide", "knight", "limited", "cup" ],
 	[ "linkage" ], [ "ex" ],
 
-	[
-		"aoe", "db2", "covering", "buffone", "stan", "debuffre", "bug",
-		"enchant", "chain", "crit", "autotomy"
-	],
+	[ "aoe", "cover", "buffone", "rele", "bug", "ench", "chain" ],
 
 	[ "attack:aoe", "attack:soe" ],
 	[ "attack:physical", "attack:magic" ],
@@ -45,5 +42,37 @@
 
 	[ "dot:aoe", "dot:soe" ],
 	[ "dot:poison", "dot:burn", "dot:freeze", "dot:bleed", "dot:electric" ],
-	[ "dot:turn3", "dot:turn4", "dot:turn5", "dot:turn8" ]
+	[ "dot:turn3", "dot:turn4", "dot:turn5", "dot:turn8" ],
+
+	[ "cover:turn1", "cover:turn2" ],
+	[
+		"cover:per10", "cover:per20", "cover:per25", "cover:per30", "cover:per35",
+		"cover:per40", "cover:per45", "cover:per50", "cover:per55", "cover:per60", "cover:per65"
+	],
+
+	[ "ench:aoe", "ench:soe" ],
+	[ "ench:attr1", "ench:attr2", "ench:attr3", "ench:attr4", "ench:attr5" ],
+	[ "ench:turn1", "ench:turn2", "ench:turn3", "ench:turn4" ],
+
+	[ "adef:aoe", "adef:soe", "adef:slf" ],
+	[ "adef:attr1", "adef:attr2", "adef:attr3", "adef:attr4", "adef:attr5" ],
+	[ "adef:turn1", "adef:turn2", "adef:turn3"],
+
+	[ "ajam:aoe", "ajam:soe" ],
+	[ "ajam:attr1", "ajam:attr2", "ajam:attr3", "ajam:attr4", "ajam:attr5" ],
+	[ "ajam:turn1", "ajam:turn2", "ajam:turn3"],
+
+	[ "deal:+1", "deal:+2" ],
+
+	[ "rele:role7", "rele:role15", "rele:role19", "rele:role23", "rele:role24", "rele:role26" ],
+
+
+	[ "rfle:aoe", "rfle:slf" ],
+	[ "rfle:turn1", "rfle:turn2" ],
+
+	[ "rsis:seal", "rsis:dark" ],
+
+	[ "atos:hp", "atos:trap", "atos:cost" ],
+
+	[ "crit", "stan", "nord", "asee", "dotup" ]
 ]

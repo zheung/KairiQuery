@@ -241,8 +241,8 @@ module.exports = ($) => {
 			79: (card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
-				return `${target} | <kqud title="发动条件：处于${show(p[6])}状态">${show(p[6])}</kqud>
-					| 回合+${p[1]} | 伤害提升${p[2]}%`;
+				return `${target} | <kqud title="发动条件：处于${show(p[6])}状态">${show(p[6])}</kqud> |\x20
+					回合+${p[1]} | 伤害提升${p[2]}%`;
 			},
 			80: 'HEAL_REVERSE',
 			81: 'ATK_UP_BY_NOW_TURN_DAMAGE',
