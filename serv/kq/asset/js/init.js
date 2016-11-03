@@ -68,7 +68,7 @@
 		if(ae.id == 'CondName') {
 			if(e.keyCode == 13) {
 				if(e.shiftKey)
-					$('[data-cond][data-val=s]').trigger('click', { fourceON: true });
+					$('[data-cond][data-x=s]').trigger('click', { fourceON: true });
 
 				kqe.search.click();
 
@@ -105,19 +105,19 @@
 
 				return false;
 			}
-			else if(e.keyCode == 33) { kqe.pagePrev.click(); return false; }
-			else if(e.keyCode == 34) { kqe.pageNext.click(); return false; }
-			else if(e.keyCode == 35) {
+			else if(e.keyCode == 33 || e.keyCode == 74) { kqe.pagePrev.click(); return false; }
+			else if(e.keyCode == 34 || e.keyCode == 75) { kqe.pageNext.click(); return false; }
+			else if(e.keyCode == 35 || e.keyCode == 78) {
 				kq.query(function(param) { param.page = kqd.pageMax; }, kqf.dealer);
 
 				return false;
 			}
-			else if(e.keyCode == 36) {
+			else if(e.keyCode == 36 || e.keyCode == 77) {
 				kq.query(function(param) { param.page = 1; }, kqf.dealer);
 
 				return false;
 			}
-			else if(e.keyCode == 83 && e.ctrlKey) {
+			else if(e.keyCode == 81 && e.ctrlKey) {
 				kqe.condName.focus();
 
 				return false;

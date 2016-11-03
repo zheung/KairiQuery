@@ -99,7 +99,7 @@
 					</div>
 					<div class="NaviColumn flex jcb aic wpw">
 						<div class="CondBar2 flex jca aic wpw">
-							<input id="CondName" class="wf Input" type="text" placeholder="骑士名称"/>
+							<input id="CondName" class="wf Input" type="text" placeholder="名称或称号"/>
 						</div>
 						<a id="Search" class="w4 Button">搜索</a>
 					</div>
@@ -181,30 +181,30 @@
 							<a class="Toggle off" data-cond="skillKind" data-x="0" data-y="4" data-z="32">弱化</a>
 						</div>
 					</div>
-					<div class="NaviColumn hr flex jcs aic wpw">常见技能</div>
+				</div>
+				<div class="TabItem RightNavi flex drc jcs aic wpn" data-tab="RightNavi" data-page="Skill">
+					<div class="NaviColumn hr fs11 flex jcs aic wpw">
+						你知道吗？在原始数据中，COST、属性和职业实际上属于“技能”而不是“卡牌”的。从歌姬使用B叔时是支援卡，其他职业使用时是治疗卡可以印证。
+					</div>
+					<div class="NaviColumn hr flex jcs aic wpw">常用标签</div>
 					<div class="NaviColumn flex jca aic wpw">
-						<a class="w4 Toggle hide" data-cond="common" data-x="s">技能</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="1">AOE</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="256">圣杯</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="32">天剋</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="128">限定</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="31">普池</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="16">特典</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="1">地图</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="6" data-z="1">联动</a>
+					</div>
+					<div class="NaviColumn hr flex jca aic wpw">
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="1">全体技能</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="43" data-z="2">抽卡+2</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="2">嘲讽</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="4">单人支</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="8">解状态</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="16">Bug奶</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="32">追伤</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="33">高Chain</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="256">圣杯</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="32">天剋</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="128">限定</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="16">特典</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="1">地图</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="6" data-z="1">联动</a>
 					</div>
-				</div>
-				<div class="TabItem RightNavi flex drc jcs aic wpn" data-tab="RightNavi" data-page="Skill">
-					<div class="NaviColumn hr fs11 flex jcs aic wpw">
-						你知道吗？在原始数据中，COST、属性和职业实际上属于“技能”而不是“卡牌”的。从歌姬使用B叔时是支援卡，其他职业使用时是治疗卡可以印证。
-					</div>
-
 					<div class="TabHeader RightNavi2 flex jca aih wpn">
 						<a class="TabHead RightNavi3 active flex jcc aic" data-tab="SkillFilter" data-page="Atta">攻击</a>
 						<a class="TabHead RightNavi3 flex jcc aic" data-tab="SkillFilter" data-page="Heal">治疗</a>
@@ -639,7 +639,38 @@
 					</div>
 					<div class="TabItem RightNavi2 clrFont flex drc aic wpw" data-tab="More" data-page="Help">
 						<div class="NaviColumn flex jcs aic wpw">
-							施工中(WORK IN PROGRESS)
+							加入了一些快捷键支持，感觉比较隐蔽干脆来一发教程吧。
+						</div>
+						<div class="NaviColumn hr flex jcs aic wpw">
+							条件筛选<a class="Toggle on" href="http://ww4.sinaimg.cn/large/627ab2d1gw1f9eota2x5fg208w050wgp.gif" target="_blank">演示GIF</a>
+						</div>
+						<div class="NaviColumn flex jcs aic wpw">
+							1、点击“总称”：全选、全反选<br>
+							2、Ctrl+点击：单选<br>
+							3、Shift+点击：单反选<br>
+							4、Shift+回车：重置所有选项（搜索框除外）
+						</div>
+						<div class="NaviColumn hr flex jcs aic wpw">
+							翻页<a class="Toggle on" href="http://ww4.sinaimg.cn/large/627ab2d1gw1f9eota4ck6g208w050q51.gif" target="_blank">演示GIF</a>
+						</div>
+						<div class="NaviColumn flex jcs aic wpw">
+							1、点击当前页码可以输入页码，回车跳页<br>
+							2、J（PageUp）、K（PageDown）上下翻页<br>
+							3、N（Home）、M（End）跳到第一页与最后一页
+						</div>
+						<div class="NaviColumn hr flex jcs aic wpw">
+							搜索框<a class="Toggle on" href="http://ww3.sinaimg.cn/large/627ab2d1gw1f9eota484rg208w050gmc.gif" target="_blank">演示GIF</a>
+						</div>
+						<div class="NaviColumn flex jcs aic wpw">
+							1、Ctrl+Q聚集到搜索框<br>
+							2、回车搜索；Shift+回车清空所有选项后搜索
+						</div>
+						<div class="NaviColumn hr flex jcs aic wpw">
+							切换标签<a class="Toggle on" href="http://ww3.sinaimg.cn/large/627ab2d1gw1f9eotahfqsg208w050tbr.gif" target="_blank">演示GIF</a>
+						</div>
+						<div class="NaviColumn flex jcs aic wpw">
+							1、Tab~Tab~Tab~Tab~Tab~<br>
+							2、Shift+Tab反向（虽然最终只有两个Tab并没有什么卵用o_O）<br>
 						</div>
 					</div>
 					<div class="TabItem RightNavi2 clrFont flex drc aic wpw" data-tab="More" data-page="Friend">
