@@ -182,7 +182,7 @@ a {
 .TabHead.RightNavi2:hover {
 	border-top: 2px solid #148474;
 }
-.TabHead.RightNavi2.active, .TabHead.RightNavi3:hover {
+.TabHead.RightNavi2.active, .TabHead.RightNavi3:hover, .TabHead.RightNavi3.active {
 	border-radius: 4px;
 	border: 2px solid #148474;
 	background-color: #148474;
