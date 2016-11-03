@@ -19,6 +19,7 @@ module.exports = () => {
 
 		let sm = card.skill.awaken.sort(prioSorter).concat(card.skill.normal.sort(prioSorter))[0],
 			sf = (card.skill.awaken[0] || card.skill.normal[0]),
+			chain = sm.info.chain,
 			cost = sf.info.cost, attr = sf.info.attr, job = sf.info.job, kind = sf.info.kind;
 
 		if(cost > 0) set.add('cost'+cost);
@@ -42,8 +43,6 @@ module.exports = () => {
 		set.add(['mercenary', 'millionaire', 'thief', 'singer', 'null'][job-1]);
 		set.add(['attack', 'sorcery', 'recovery', 'support', 'defense', 'jamming', 'special'][kind-1]);
 
-		let chain = sm.info.chain;
-
 		for(let role of sm.role) {
 			let target = { r: role.target, s: sm.info.target || sf.info.target },
 				rt = role.type, rp = role.params;
@@ -59,6 +58,8 @@ module.exports = () => {
 					set.add('attack:aoe');
 				if(target.r == 1 && target.s == 4)
 					set.add('attack:soe');
+
+				if(rp[7] / 10 != 15) set.add('attack:crit');
 			}
 			if(rt == 5) set.add('attack:drain');
 			if(rt == 6) set.add('attack:revenge');

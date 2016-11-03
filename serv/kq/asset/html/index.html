@@ -187,7 +187,7 @@
 						你知道吗？在原始数据中，COST、属性和职业实际上属于“技能”而不是“卡牌”的。从歌姬使用B叔时是支援卡，其他职业使用时是治疗卡可以印证。
 					</div>
 					<div class="NaviColumn hr flex jcs aic wpw">常用标签</div>
-					<div class="NaviColumn flex jca aic wpw">
+					<div class="NaviColumn flex jca aic wpn">
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="256">圣杯</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="32">天剋</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="128">限定</a>
@@ -196,14 +196,14 @@
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="1">地图</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="6" data-z="1">联动</a>
 					</div>
-					<div class="NaviColumn hr flex jca aic wpw">
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="1">全体技能</a>
+					<div class="NaviColumn hr flex jca aic wpn">
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="1">AOE</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="43" data-z="2">抽卡+2</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="2">嘲讽</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="4">单人支</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="8">解状态</a>
 						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="16">Bug奶</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="32">追伤</a>
+						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="64">高Chain</a>
 					</div>
 					<div class="TabHeader RightNavi2 flex jca aih wpn">
 						<a class="TabHead RightNavi3 active flex jcc aic" data-tab="SkillFilter" data-page="Atta">攻击</a>
@@ -247,12 +247,13 @@
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="attaeffect" data-x="s"><kqud title="这些为攻击特效必须和攻击一起使用">特效</kqud></a>
+							<a class="w4 Toggle" data-cond="attaeffect" data-x="s"><kqud title="必须与攻击一起使用的攻击特效">特效</kqud></a>
 							<div class="CondBar flex jca aic wpn">
+								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="16">高爆</a>
 								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="1">吸血</a>
-								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="2">伤害累积</a>
-								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="4">防御穿透</a>
-								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="8">属性附加</a>
+								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="2">反伤</a>
+								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="4">穿防</a>
+								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="8">附属</a>
 							</div>
 						</div>
 					</div>

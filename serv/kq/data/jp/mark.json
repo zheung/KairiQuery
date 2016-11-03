@@ -477,6 +477,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10000057": [
@@ -488,6 +489,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10000058": [
@@ -2512,7 +2514,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10001050": [
 		"ur",
@@ -2522,7 +2525,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10001057": [
 		"sr",
@@ -3356,6 +3360,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10105026": [
@@ -3367,6 +3372,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10105027": [
@@ -5665,6 +5671,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"deal:+1"
 	],
 	"10111016": [
@@ -5676,6 +5683,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"deal:+1"
 	],
 	"10111017": [
@@ -6749,6 +6757,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10113054": [
@@ -6760,6 +6769,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10113055": [
@@ -6843,6 +6853,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10113062": [
@@ -6854,6 +6865,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10113063": [
@@ -7585,6 +7597,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10114036": [
@@ -7596,6 +7609,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10114037": [
@@ -7830,6 +7844,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"attack:crit",
 		"aoe",
 		"ex"
 	],
@@ -8021,6 +8036,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10115022": [
@@ -8033,6 +8049,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10115023": [
@@ -8631,6 +8648,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10116032": [
@@ -8642,6 +8660,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10116033": [
@@ -8820,6 +8839,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"rele",
 		"rele:role7",
 		"ex"
@@ -8833,6 +8853,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"rele",
 		"rele:role7",
 		"ex"
@@ -9064,6 +9085,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10117030": [
@@ -9075,6 +9097,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10117031": [
@@ -9700,6 +9723,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"attack:crit",
 		"aoe",
 		"ex"
 	],
@@ -9941,6 +9965,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10119018": [
@@ -9952,6 +9977,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10119019": [
@@ -10951,6 +10977,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10121001": [
@@ -12513,6 +12540,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"dot:soe",
 		"dot:burn",
 		"dot:turn3",
@@ -12527,6 +12555,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"dot:soe",
 		"dot:burn",
 		"dot:turn3",
@@ -12891,6 +12920,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10123039": [
@@ -12902,6 +12932,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10123040": [
@@ -13604,6 +13635,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10124034": [
@@ -13903,6 +13935,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10125005": [
@@ -13914,6 +13947,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10125006": [
@@ -14420,6 +14454,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10125045": [
@@ -14431,6 +14466,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10125046": [
@@ -14806,7 +14842,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10126018": [
 		"mr",
@@ -14816,7 +14853,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10126019": [
 		"sr",
@@ -16074,7 +16112,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10128012": [
 		"mr",
@@ -16084,7 +16123,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10128013": [
 		"ur",
@@ -16167,6 +16207,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10128020": [
@@ -16178,6 +16219,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10128021": [
@@ -18842,6 +18884,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10132032": [
@@ -18853,6 +18896,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10132033": [
@@ -19802,7 +19846,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10134012": [
 		"mr",
@@ -19812,7 +19857,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10134013": [
 		"ur",
@@ -20189,6 +20235,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"dot:soe",
 		"dot:poison",
 		"dot:turn3",
@@ -21411,6 +21458,7 @@
 		"attack:magic",
 		"attack:time4",
 		"attack:aoe",
+		"attack:crit",
 		"aoe"
 	],
 	"10136016": [
@@ -21422,6 +21470,7 @@
 		"attack:magic",
 		"attack:time4",
 		"attack:aoe",
+		"attack:crit",
 		"aoe"
 	],
 	"10136017": [
@@ -22101,6 +22150,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"dot:soe",
 		"dot:freeze",
 		"dot:turn3"
@@ -22114,6 +22164,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"dot:soe",
 		"dot:freeze",
 		"dot:turn3"
@@ -25077,7 +25128,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10142030": [
 		"mr",
@@ -25087,7 +25139,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10142031": [
 		"ur",
@@ -25232,6 +25285,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"attack:crit",
 		"aoe"
 	],
 	"10142044": [
@@ -25243,6 +25297,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"attack:crit",
 		"aoe"
 	],
 	"10142045": [
@@ -25321,7 +25376,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10143004": [
 		"mr",
@@ -25331,7 +25387,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10143005": [
 		"ur",
@@ -26255,6 +26312,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"dot:soe",
 		"dot:electric",
 		"dot:turn3"
@@ -26268,6 +26326,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"dot:soe",
 		"dot:electric",
 		"dot:turn3"
@@ -26337,6 +26396,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"dotup",
 		"aoe",
 		"chain"
@@ -26350,6 +26410,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"dotup",
 		"aoe",
 		"chain"
@@ -28476,6 +28537,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10147008": [
@@ -28487,6 +28549,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10147009": [
@@ -30493,6 +30556,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10149010": [
@@ -30505,6 +30569,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10149011": [
@@ -30953,6 +31018,7 @@
 		"attack:magic",
 		"attack:time2",
 		"attack:aoe",
+		"attack:crit",
 		"ex",
 		"5331"
 	],
@@ -30967,6 +31033,7 @@
 		"attack:magic",
 		"attack:time2",
 		"attack:aoe",
+		"attack:crit",
 		"ex",
 		"5331"
 	],
@@ -31179,6 +31246,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10150012": [
@@ -31190,6 +31258,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"ex"
 	],
 	"10150016": [
@@ -31509,6 +31578,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"dot:aoe",
 		"dot:freeze",
 		"dot:turn3",
@@ -31525,6 +31595,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
+		"attack:crit",
 		"dot:aoe",
 		"dot:freeze",
 		"dot:turn3",
@@ -32381,6 +32452,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"attack:crit",
 		"aoe",
 		"jamm:aoe",
 		"jamm:turn2",
@@ -32397,6 +32469,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"attack:crit",
 		"aoe",
 		"jamm:aoe",
 		"jamm:turn2",
@@ -32413,6 +32486,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"attack:crit",
 		"aoe",
 		"jamm:aoe",
 		"jamm:turn2",
@@ -32429,6 +32503,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"attack:crit",
 		"aoe",
 		"jamm:aoe",
 		"jamm:turn2",
@@ -34170,6 +34245,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"attack:crit",
 		"aoe"
 	],
 	"40000002": [
@@ -34246,6 +34322,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"attack:crit",
 		"aoe"
 	]
 }

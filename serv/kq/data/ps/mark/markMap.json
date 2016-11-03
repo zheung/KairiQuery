@@ -74,6 +74,7 @@
 	"attack:revenge": "0:12:2",
 	"attack:pierce": "0:12:4",
 	"attack:attrach": "0:12:8",
+	"attack:crit": "0:12:16",
 	"heal:aoe": "0:13:1",
 	"heal:soe": "0:13:2",
 	"heal:slf": "0:13:4",

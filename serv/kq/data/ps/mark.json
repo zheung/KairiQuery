@@ -466,7 +466,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10000057": [
 		"mr",
@@ -476,7 +477,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10000058": [
 		"sr",
@@ -2404,7 +2406,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10001050": [
 		"ur",
@@ -2414,7 +2417,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10002001": [
 		"sr",
@@ -5112,6 +5116,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
+		"attack:crit",
 		"aoe"
 	],
 	"10202004": [
@@ -5123,6 +5128,7 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
+		"attack:crit",
 		"aoe"
 	],
 	"10202005": [
@@ -5323,7 +5329,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10203016": [
 		"mr",
@@ -5333,7 +5340,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10203017": [
 		"ur",
@@ -5485,7 +5493,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10203030": [
 		"mr",
@@ -5495,7 +5504,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"attack:crit"
 	],
 	"10203031": [
 		"ur",
@@ -6115,6 +6125,7 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
+		"attack:crit",
 		"aoe"
 	]
 }

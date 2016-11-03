@@ -17,7 +17,7 @@
 	[ "attack:aoe", "attack:soe" ],
 	[ "attack:physical", "attack:magic" ],
 	[ "attack:time1", "attack:time2", "attack:time3", "attack:time4", "attack:time5" ],
-	[ "attack:drain", "attack:revenge", "attack:pierce", "attack:attrach" ],
+	[ "attack:drain", "attack:revenge", "attack:pierce", "attack:attrach", "attack:crit" ],
 
 	[ "heal:aoe", "heal:soe", "heal:slf" ],
 	[ "heal:fix", "heal:param" ],
