@@ -1,7 +1,7 @@
 {
 	"renderAll": false,
 
-	"renderData": false,
+	"renderData": true,
 	"renderMark": true,
 
 	"pageEvery": 4,

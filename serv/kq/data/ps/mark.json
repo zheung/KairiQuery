@@ -2515,10 +2515,10 @@
 		"light",
 		"singer",
 		"recovery",
-		"heal:aoe",
+		"heal:soe",
 		"heal:hq",
 		"defe:slf",
-		"defe:turn2",
+		"defe:turn3",
 		"defe:param6",
 		"defe:fix"
 	],
@@ -2528,10 +2528,10 @@
 		"light",
 		"singer",
 		"recovery",
-		"heal:aoe",
+		"heal:soe",
 		"heal:hq",
 		"defe:slf",
-		"defe:turn2",
+		"defe:turn3",
 		"defe:param6",
 		"defe:fix"
 	],
@@ -2971,7 +2971,7 @@
 		"attack:time1",
 		"attack:soe",
 		"defe:aoe",
-		"defe:turn2",
+		"defe:turn1",
 		"defe:param7",
 		"defe:fix",
 		"deal:+1"
@@ -2986,7 +2986,7 @@
 		"attack:time1",
 		"attack:soe",
 		"defe:aoe",
-		"defe:turn2",
+		"defe:turn1",
 		"defe:param7",
 		"defe:fix",
 		"deal:+1"
@@ -3161,7 +3161,7 @@
 	],
 	"10110023": [
 		"ur",
-		"cost3",
+		"cost2",
 		"ice",
 		"singer",
 		"recovery",
@@ -3174,7 +3174,7 @@
 	],
 	"10110024": [
 		"mr",
-		"cost3",
+		"cost2",
 		"ice",
 		"singer",
 		"recovery",
@@ -3240,7 +3240,7 @@
 		"heal:soe",
 		"heal:hq",
 		"supo:soe",
-		"supo:turn2",
+		"supo:turn1",
 		"supo:param3",
 		"supo:fix",
 		"buffone"
@@ -3254,7 +3254,7 @@
 		"heal:soe",
 		"heal:hq",
 		"supo:soe",
-		"supo:turn2",
+		"supo:turn1",
 		"supo:param3",
 		"supo:fix",
 		"buffone"
@@ -3498,7 +3498,7 @@
 		"thief",
 		"support",
 		"supo:aoe",
-		"supo:turn2",
+		"supo:turn1",
 		"supo:param4",
 		"supo:fix"
 	],
@@ -3509,7 +3509,7 @@
 		"thief",
 		"support",
 		"supo:aoe",
-		"supo:turn2",
+		"supo:turn1",
 		"supo:param4",
 		"supo:fix"
 	],
@@ -5622,7 +5622,7 @@
 		"mercenary",
 		"support",
 		"supo:slf",
-		"supo:turn1",
+		"supo:turn2",
 		"supo:param3",
 		"supo:fix"
 	],
@@ -5633,7 +5633,7 @@
 		"mercenary",
 		"support",
 		"supo:slf",
-		"supo:turn1",
+		"supo:turn2",
 		"supo:param3",
 		"supo:fix"
 	],
