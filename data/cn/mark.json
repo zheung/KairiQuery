@@ -15734,7 +15734,6 @@
 	],
 	"10128021": [
 		"sr",
-		"cost2",
 		"ice",
 		"mercenary",
 		"sorcery",
@@ -16360,6 +16359,7 @@
 		"dark",
 		"mercenary",
 		"attack",
+		"attack:pierce",
 		"attack:physical",
 		"attack:time1",
 		"attack:soe"
