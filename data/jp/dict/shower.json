@@ -399,5 +399,10 @@
 	"skillTiming": {
 		"1": "NORMAL",
 		"2": "ENEMY_ACTION_END"
+	},
+	"star": {
+		"1": "活动",
+		"2": "蛋池",
+		"3": "蛋池"
 	}
 }

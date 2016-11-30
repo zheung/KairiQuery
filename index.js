@@ -36,6 +36,7 @@ module.exports = ($) => {
 				'id',
 				['info.name', 'name'],
 				['info.title', 'title'],
+				['info.star', 'star', 'd.shower.star'],
 				['figure.hp.max', 'hp'],
 				['figure.ad.max', 'ad'],
 				['figure.ap.max', 'ap'],

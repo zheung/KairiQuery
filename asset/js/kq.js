@@ -91,6 +91,7 @@
 				// card.find('.sTitle').html(data.id);
 				card.find('.sTitle').html('&lt;'+data.title+'&gt;'+data.name);
 				card.find('.sCost').html(data.cost);
+				card.find('.sStar').html(data.star || '');
 				card.find('.sJob').html(data.job);
 				card.find('.sAttr').html(data.attr);
 				card.find('.sKind').html(data.kind);

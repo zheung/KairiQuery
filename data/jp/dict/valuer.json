@@ -420,5 +420,10 @@
 		"GOLD": 3,
 		"FAME": 4,
 		"KNIGHTS": 5
+	},
+	"star": {
+		"": 1,
+		"PURPLE": 2,
+		"WHITE": 3
 	}
 }
