@@ -93,7 +93,7 @@ module.exports = () => {
 
 		for(let card of cards)
 			if(hasMega(dictCard, card.id))
-				card.info.rare = card.info.rare+'0';
+				card.info.rare = ~~(card.info.rare+'0');
 
 		return result;
 	};
