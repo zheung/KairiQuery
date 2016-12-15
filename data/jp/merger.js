@@ -1,4 +1,4 @@
-let hasMega = (cards, id, lastRare) => {
+let hasPlus = (cards, id, lastRare) => {
 	let card = cards[id], rare = card.info.rare;
 
 	if(!lastRare && (rare == 61 || rare == 62 || rare == 7))
@@ -10,7 +10,7 @@ let hasMega = (cards, id, lastRare) => {
 
 	for(let evol of card.evol)
 		if(evol.type == 'NORMAL' || evol.type == 'LIMIT')
-			if(hasMega(cards, evol.target, card.info.rare))
+			if(hasPlus(cards, evol.target, card.info.rare))
 				return true;
 
 	return false;
@@ -92,7 +92,7 @@ module.exports = () => {
 		}
 
 		for(let card of cards)
-			if(hasMega(dictCard, card.id))
+			if(hasPlus(dictCard, card.id))
 				card.info.rare = ~~(card.info.rare+'0');
 
 		return result;
