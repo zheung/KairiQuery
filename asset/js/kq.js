@@ -122,8 +122,9 @@
 
 						if(head.html()=='无' && si > 0) head.css('width', '20%');
 
-						var content = '';
+						var content = '<span class="bfrTextRoles"></span>';
 						for(var ci in s.content) content += '<span class="TextRole">'+(s.content[ci] || '无')+'</span>';
+						content += '<span class="bfrTextRoles"></span>';
 
 						var item = $('<div>').addClass('TabItem').addClass('SkillContent').html(content).appendTo(box);
 						item[0].dataset.tab = 'Skill'+i+type; item[0].dataset.page = j++;

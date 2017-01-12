@@ -1,4 +1,10 @@
 (function() {
+	$(window).resize(function() {
+		$('.Main').width(document.body.clientWidth-450);
+	});
+	$('.Main').width(document.body.clientWidth-450);
+})();
+(function() {
 	kqe.toggles.click(function(eve, man) {
 		var $this = $(this), cond = this.dataset.cond,
 			x = this.dataset.x, y = this.dataset.y, z = this.dataset.z,

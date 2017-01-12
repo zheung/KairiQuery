@@ -26,11 +26,10 @@ a {
 }
 
 .Main {
-	width: 66%;
 	height: 100%;
 }
 .Navi {
-	width: 34%;
+	width: 450px;
 	height: 100%;
 
 	overflow-x: hidden;
@@ -194,7 +193,7 @@ a {
 	overflow-y: visible;
 }
 .TabItem.RightNavi3 {
-	height: 45%;
+	height: 50%;
 	width: 100%;
 	overflow-x: hidden;
 	overflow-y: visible;
@@ -214,25 +213,24 @@ a {
 .Conds {
 	width: 100%;
 	height: 14%;
-
 }
 .Cards {
 	width: 100%;
-	height: 93%;
-
+	height: 95%;
 }
 .Pager {
 	width: 100%;
-	height: 7%;
+	height: 5%;
 }
 
 .Card {
 	border: 2px solid transparent;
+	border-bottom: 2px solid #111111;
 	border-radius: 4px;
-	box-shadow: 200px 0px 200px -45px rgba(60, 90, 100, 0.4) inset;
 
 	width: 99%;
 	height: 24%;
+	max-height: 150px;
 }
 .ImageLeft {
 	width: 45%;
@@ -344,8 +342,14 @@ kqud {
 	cursor: text;
 }
 
+.bfrTextRoles {
+	display: block;
+	height: 4px;
+}
+
 .TextRole {
 	display: block;
+	border-left: 14px solid transparent;
 }
 
 .Tips {
@@ -361,10 +365,8 @@ kqud {
 }
 
 .TabHeader.SkillContent {
-	width: 99%;
-	height: 23%;
-
-	box-shadow: 0 1px 4px rgba(255,255,255,0.1);
+	width: 99.7%;
+	height: 17%;
 }
 .TabHead.SkillContent {
 	width: 100%;
@@ -380,10 +382,8 @@ kqud {
 	background-color: #148474;
 }
 .TabItem.SkillContent {
-	width: 93%;
-	height: 90%;
-
-	padding: 5px 14px;
+	width: 100%;
+	height: 100%;
 
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -391,6 +391,8 @@ kqud {
 .TabBox.SkillContent {
 	width: 99%;
 	height: 82%;
+
+	border: 2px solid #148474;
 
 	overflow: hidden;
 }
