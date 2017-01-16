@@ -5,6 +5,7 @@
 	"i.s.show.text",
 	"i.n.show.id",
 	"i.n.show.role",
+	"i.n.show.multi",
 	"d.skillType.info.type",
 	"i.s.other.voiceid",
 	"i.show.skillStyle",

@@ -3,8 +3,8 @@
 
 	"renderAll": false,
 
-	"renderData": false,
-	"renderMark": false,
+	"renderData": true,
+	"renderMark": true,
 
 	"pageEvery": 4,
 

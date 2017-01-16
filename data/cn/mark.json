@@ -6075,7 +6075,8 @@
 		"supo:aoe",
 		"supo:turn3",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10113002": [
 		"mr",
@@ -6086,7 +6087,8 @@
 		"supo:aoe",
 		"supo:turn3",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10113003": [
 		"ur",
@@ -6099,7 +6101,8 @@
 		"attack:aoe",
 		"aoe",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10113004": [
 		"mr",
@@ -6112,7 +6115,8 @@
 		"attack:aoe",
 		"aoe",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10113005": [
 		"ur",
@@ -6121,7 +6125,8 @@
 		"singer",
 		"recovery",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10113006": [
 		"mr",
@@ -6130,7 +6135,8 @@
 		"singer",
 		"recovery",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10113007": [
 		"ur",
@@ -6144,7 +6150,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10113008": [
 		"mr",
@@ -6158,7 +6165,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10113009": [
 		"ur",
@@ -6173,7 +6181,8 @@
 		"jamm:aoe",
 		"jamm:turn1",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10113010": [
 		"mr",
@@ -6188,7 +6197,8 @@
 		"jamm:aoe",
 		"jamm:turn1",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10113011": [
 		"ur",
@@ -6202,7 +6212,8 @@
 		"jamm:fix",
 		"aoe",
 		"jamm:param4",
-		"jamm:double"
+		"jamm:double",
+		"ex"
 	],
 	"10113012": [
 		"mr",
@@ -6216,7 +6227,8 @@
 		"jamm:fix",
 		"aoe",
 		"jamm:param4",
-		"jamm:double"
+		"jamm:double",
+		"ex"
 	],
 	"10113013": [
 		"ur",
@@ -6231,7 +6243,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10113014": [
 		"mr",
@@ -6246,7 +6259,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10113015": [
 		"ur",
@@ -6258,7 +6272,8 @@
 		"defe:turn1",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10113016": [
 		"mr",
@@ -6270,7 +6285,8 @@
 		"defe:turn1",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10113017": [
 		"ur",
@@ -6285,7 +6301,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10113018": [
 		"mr",
@@ -6300,7 +6317,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10113019": [
 		"ur",
@@ -6312,7 +6330,8 @@
 		"attack:time1",
 		"attack:aoe",
 		"aoe",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10113020": [
 		"mr",
@@ -6324,7 +6343,8 @@
 		"attack:time1",
 		"attack:aoe",
 		"aoe",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10113021": [
 		"ur",
@@ -6338,7 +6358,8 @@
 		"jamm:soe",
 		"jamm:turn2",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10113022": [
 		"mr",
@@ -6352,7 +6373,8 @@
 		"jamm:soe",
 		"jamm:turn2",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10113023": [
 		"ur",
@@ -6366,7 +6388,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10113024": [
 		"mr",
@@ -6380,7 +6403,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10113025": [
 		"ur",
@@ -6394,7 +6418,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10113026": [
 		"mr",
@@ -6408,7 +6433,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10113027": [
 		"sr",
@@ -6825,7 +6851,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
-		"attack:crit"
+		"attack:crit",
+		"ex"
 	],
 	"10113062": [
 		"mr",
@@ -6836,7 +6863,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
-		"attack:crit"
+		"attack:crit",
+		"ex"
 	],
 	"10113063": [
 		"ur",
@@ -6850,7 +6878,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10113064": [
 		"mr",
@@ -6864,7 +6893,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10113065": [
 		"ur",
@@ -6878,7 +6908,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10113066": [
 		"mr",
@@ -6892,7 +6923,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10113067": [
 		"ur",
@@ -6905,7 +6937,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10113068": [
 		"mr",
@@ -6918,7 +6951,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10113069": [
 		"ur",
@@ -7093,7 +7127,8 @@
 		"attack:aoe",
 		"aoe",
 		"rele",
-		"rele:role15"
+		"rele:role15",
+		"ex"
 	],
 	"10114002": [
 		"mr",
@@ -7106,7 +7141,8 @@
 		"attack:aoe",
 		"aoe",
 		"rele",
-		"rele:role15"
+		"rele:role15",
+		"ex"
 	],
 	"10114003": [
 		"ur",
@@ -7119,7 +7155,8 @@
 		"defe:param7",
 		"defe:fix",
 		"rsis:seal",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10114004": [
 		"mr",
@@ -7132,7 +7169,8 @@
 		"defe:param7",
 		"defe:fix",
 		"rsis:seal",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10114005": [
 		"ur",
@@ -7147,7 +7185,8 @@
 		"jamm:turn2",
 		"jamm:param6",
 		"jamm:fix",
-		"jamm:param7"
+		"jamm:param7",
+		"ex"
 	],
 	"10114006": [
 		"mr",
@@ -7162,7 +7201,8 @@
 		"jamm:turn2",
 		"jamm:param6",
 		"jamm:fix",
-		"jamm:param7"
+		"jamm:param7",
+		"ex"
 	],
 	"10114007": [
 		"ur",
@@ -7173,7 +7213,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"rele",
-		"rele:role15"
+		"rele:role15",
+		"ex"
 	],
 	"10114008": [
 		"mr",
@@ -7184,7 +7225,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"rele",
-		"rele:role15"
+		"rele:role15",
+		"ex"
 	],
 	"10114009": [
 		"ur",
@@ -7195,7 +7237,8 @@
 		"supo:aoe",
 		"supo:turn3",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10114010": [
 		"mr",
@@ -7206,7 +7249,8 @@
 		"supo:aoe",
 		"supo:turn3",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10114011": [
 		"ur",
@@ -7220,7 +7264,8 @@
 		"jamm:soe",
 		"jamm:turn2",
 		"jamm:param4",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10114012": [
 		"mr",
@@ -7234,7 +7279,8 @@
 		"jamm:soe",
 		"jamm:turn2",
 		"jamm:param4",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10114013": [
 		"ur",
@@ -7246,7 +7292,8 @@
 		"supo:turn2",
 		"supo:param3",
 		"supo:fix",
-		"supo:param4"
+		"supo:param4",
+		"ex"
 	],
 	"10114014": [
 		"mr",
@@ -7258,7 +7305,8 @@
 		"supo:turn2",
 		"supo:param3",
 		"supo:fix",
-		"supo:param4"
+		"supo:param4",
+		"ex"
 	],
 	"10114015": [
 		"ur",
@@ -7270,7 +7318,8 @@
 		"defe:turn3",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10114016": [
 		"mr",
@@ -7282,7 +7331,8 @@
 		"defe:turn3",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10114017": [
 		"ur",
@@ -7296,7 +7346,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10114018": [
 		"mr",
@@ -7310,7 +7361,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10114019": [
 		"ur",
@@ -7323,7 +7375,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10114020": [
 		"mr",
@@ -7336,7 +7389,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10114021": [
 		"ur",
@@ -7352,7 +7406,8 @@
 		"jamm:param3",
 		"jamm:fix",
 		"jamm:param4",
-		"jamm:double"
+		"jamm:double",
+		"ex"
 	],
 	"10114022": [
 		"mr",
@@ -7368,7 +7423,8 @@
 		"jamm:param3",
 		"jamm:fix",
 		"jamm:param4",
-		"jamm:double"
+		"jamm:double",
+		"ex"
 	],
 	"10114023": [
 		"ur",
@@ -7379,7 +7435,8 @@
 		"attack:drain",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10114024": [
 		"mr",
@@ -7390,7 +7447,8 @@
 		"attack:drain",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10114025": [
 		"ur",
@@ -7405,7 +7463,8 @@
 		"supo:turn2",
 		"supo:param3",
 		"supo:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10114026": [
 		"mr",
@@ -7420,7 +7479,8 @@
 		"supo:turn2",
 		"supo:param3",
 		"supo:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10114027": [
 		"ur",
@@ -7484,7 +7544,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10114032": [
 		"ur",
@@ -7496,7 +7557,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10114033": [
 		"sr",
@@ -7508,7 +7570,8 @@
 		"supo:turn1",
 		"supo:param4",
 		"supo:fix",
-		"rsis:seal"
+		"rsis:seal",
+		"ex"
 	],
 	"10114034": [
 		"ur",
@@ -7520,7 +7583,8 @@
 		"supo:turn1",
 		"supo:param4",
 		"supo:fix",
-		"rsis:seal"
+		"rsis:seal",
+		"ex"
 	],
 	"10114035": [
 		"sr",
@@ -7531,7 +7595,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
-		"attack:crit"
+		"attack:crit",
+		"ex"
 	],
 	"10114036": [
 		"ur",
@@ -7542,7 +7607,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
-		"attack:crit"
+		"attack:crit",
+		"ex"
 	],
 	"10114037": [
 		"ur",
@@ -7708,7 +7774,8 @@
 		"attack:time1",
 		"attack:soe",
 		"rsis:seal",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10115002": [
 		"mr",
@@ -7720,7 +7787,8 @@
 		"attack:time1",
 		"attack:soe",
 		"rsis:seal",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10115003": [
 		"mr",
@@ -7738,7 +7806,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10115004": [
 		"ur",
@@ -7749,7 +7818,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"rele",
-		"rele:role15"
+		"rele:role15",
+		"ex"
 	],
 	"10115005": [
 		"mr",
@@ -7760,7 +7830,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"rele",
-		"rele:role15"
+		"rele:role15",
+		"ex"
 	],
 	"10115006": [
 		"mr",
@@ -7772,7 +7843,8 @@
 		"attack:time1",
 		"attack:aoe",
 		"attack:crit",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10115007": [
 		"ur",
@@ -7787,7 +7859,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10115008": [
 		"mr",
@@ -7802,7 +7875,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10115009": [
 		"ur",
@@ -7816,7 +7890,8 @@
 		"supo:slf",
 		"supo:turn1",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10115010": [
 		"mr",
@@ -7830,7 +7905,8 @@
 		"supo:slf",
 		"supo:turn1",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10115011": [
 		"sr",
@@ -8195,7 +8271,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
-		"stan"
+		"stan",
+		"ex"
 	],
 	"10116002": [
 		"mr",
@@ -8206,7 +8283,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
-		"stan"
+		"stan",
+		"ex"
 	],
 	"10116003": [
 		"mr",
@@ -8217,7 +8295,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"rele",
-		"rele:role15"
+		"rele:role15",
+		"ex"
 	],
 	"10116004": [
 		"ur",
@@ -8228,7 +8307,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10116005": [
 		"mr",
@@ -8239,7 +8319,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10116006": [
 		"mr",
@@ -8253,7 +8334,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10116007": [
 		"ur",
@@ -8266,7 +8348,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10116008": [
 		"mr",
@@ -8279,7 +8362,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10116009": [
 		"sr",
@@ -8316,7 +8400,8 @@
 		"attack:revenge",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10116012": [
 		"mr",
@@ -8327,7 +8412,8 @@
 		"attack:revenge",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10116013": [
 		"sr",
@@ -8643,7 +8729,8 @@
 		"dot:soe",
 		"dot:poison",
 		"dot:turn3",
-		"chain"
+		"chain",
+		"ex"
 	],
 	"10117002": [
 		"mr",
@@ -8657,7 +8744,8 @@
 		"dot:soe",
 		"dot:poison",
 		"dot:turn3",
-		"chain"
+		"chain",
+		"ex"
 	],
 	"10117003": [
 		"mr",
@@ -8672,7 +8760,8 @@
 		"supo:slf",
 		"supo:turn1",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10117004": [
 		"ur",
@@ -8685,7 +8774,8 @@
 		"defe:soe",
 		"defe:turn2",
 		"defe:param6",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10117005": [
 		"mr",
@@ -8698,7 +8788,8 @@
 		"defe:soe",
 		"defe:turn2",
 		"defe:param6",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10117006": [
 		"mr",
@@ -8710,7 +8801,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10117007": [
 		"ur",
@@ -8721,7 +8813,8 @@
 		"cover",
 		"cover:turn2",
 		"cover:per30",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10117008": [
 		"mr",
@@ -8732,7 +8825,8 @@
 		"cover",
 		"cover:turn2",
 		"cover:per30",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10117009": [
 		"ur",
@@ -8745,7 +8839,8 @@
 		"attack:soe",
 		"attack:crit",
 		"rele",
-		"rele:role7"
+		"rele:role7",
+		"ex"
 	],
 	"10117010": [
 		"mr",
@@ -8758,7 +8853,8 @@
 		"attack:soe",
 		"attack:crit",
 		"rele",
-		"rele:role7"
+		"rele:role7",
+		"ex"
 	],
 	"10117011": [
 		"sr",
@@ -9012,7 +9108,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10117032": [
 		"mr",
@@ -9024,7 +9121,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10117033": [
 		"mr",
@@ -9070,6 +9168,7 @@
 		"supo:param4",
 		"supo:fix",
 		"chain",
+		"ex",
 		"cup"
 	],
 	"10117036": [
@@ -9087,6 +9186,7 @@
 		"supo:param4",
 		"supo:fix",
 		"chain",
+		"ex",
 		"cup"
 	],
 	"10117037": [
@@ -9104,6 +9204,7 @@
 		"supo:param3",
 		"supo:fix",
 		"deal:+1",
+		"ex",
 		"cup"
 	],
 	"10117038": [
@@ -9121,6 +9222,7 @@
 		"supo:param3",
 		"supo:fix",
 		"deal:+1",
+		"ex",
 		"cup"
 	],
 	"10117039": [
@@ -9134,6 +9236,7 @@
 		"supo:param4",
 		"supo:fix",
 		"crit",
+		"ex",
 		"cup"
 	],
 	"10117040": [
@@ -9147,6 +9250,7 @@
 		"supo:param4",
 		"supo:fix",
 		"crit",
+		"ex",
 		"cup"
 	],
 	"10117041": [
@@ -9168,6 +9272,7 @@
 		"supo:fix",
 		"bug",
 		"defe:double",
+		"ex",
 		"cup"
 	],
 	"10117042": [
@@ -9189,6 +9294,7 @@
 		"supo:fix",
 		"bug",
 		"defe:double",
+		"ex",
 		"cup"
 	],
 	"10118001": [
@@ -9199,7 +9305,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time2",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10118002": [
 		"mr",
@@ -9209,7 +9316,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time2",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10118003": [
 		"mr",
@@ -9221,7 +9329,8 @@
 		"defe:turn3",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10118004": [
 		"ur",
@@ -9235,7 +9344,8 @@
 		"supo:turn3",
 		"supo:param5",
 		"supo:fix",
-		"chain"
+		"chain",
+		"ex"
 	],
 	"10118005": [
 		"mr",
@@ -9249,7 +9359,8 @@
 		"supo:turn3",
 		"supo:param5",
 		"supo:fix",
-		"chain"
+		"chain",
+		"ex"
 	],
 	"10118006": [
 		"mr",
@@ -9259,7 +9370,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time2",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10118007": [
 		"ur",
@@ -9270,7 +9382,8 @@
 		"cover",
 		"cover:turn1",
 		"cover:per50",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10118008": [
 		"mr",
@@ -9281,7 +9394,8 @@
 		"cover",
 		"cover:turn1",
 		"cover:per50",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10118009": [
 		"ur",
@@ -9297,7 +9411,8 @@
 		"jamm:param3",
 		"jamm:fix",
 		"jamm:param4",
-		"jamm:double"
+		"jamm:double",
+		"ex"
 	],
 	"10118010": [
 		"mr",
@@ -9313,7 +9428,8 @@
 		"jamm:param3",
 		"jamm:fix",
 		"jamm:param4",
-		"jamm:double"
+		"jamm:double",
+		"ex"
 	],
 	"10118011": [
 		"sr",
@@ -9352,7 +9468,8 @@
 		"jamm:param6",
 		"jamm:fix",
 		"aoe",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10118014": [
 		"mr",
@@ -9369,7 +9486,8 @@
 		"jamm:param6",
 		"jamm:fix",
 		"aoe",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10118015": [
 		"sr",
@@ -9452,7 +9570,8 @@
 		"defe:aoe",
 		"defe:turn2",
 		"defe:param6",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10118022": [
 		"mr",
@@ -9465,7 +9584,8 @@
 		"defe:aoe",
 		"defe:turn2",
 		"defe:param6",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10118023": [
 		"ur",
@@ -9477,7 +9597,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10118024": [
 		"mr",
@@ -9489,7 +9610,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10118025": [
 		"mr",
@@ -9500,7 +9622,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10118026": [
 		"ur",
@@ -9511,7 +9634,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10118027": [
 		"mr",
@@ -9522,7 +9646,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10118028": [
 		"mr",
@@ -9534,7 +9659,8 @@
 		"supo:turn3",
 		"supo:param3",
 		"supo:fix",
-		"supo:param4"
+		"supo:param4",
+		"ex"
 	],
 	"10118029": [
 		"ur",
@@ -9544,7 +9670,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10118030": [
 		"mr",
@@ -9554,7 +9681,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10118031": [
 		"ur",
@@ -9567,7 +9695,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10118032": [
 		"mr",
@@ -9580,7 +9709,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10118033": [
 		"mr",
@@ -9619,7 +9749,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10119002": [
 		"mr",
@@ -9632,7 +9763,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10119003": [
 		"ur",
@@ -9644,7 +9776,8 @@
 		"supo:turn2",
 		"supo:param3",
 		"supo:fix",
-		"supo:param4"
+		"supo:param4",
+		"ex"
 	],
 	"10119004": [
 		"mr",
@@ -9656,7 +9789,8 @@
 		"supo:turn2",
 		"supo:param3",
 		"supo:fix",
-		"supo:param4"
+		"supo:param4",
+		"ex"
 	],
 	"10119005": [
 		"ur",
@@ -9671,7 +9805,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10119006": [
 		"mr",
@@ -9686,7 +9821,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10119007": [
 		"ur",
@@ -9698,7 +9834,8 @@
 		"cover:turn1",
 		"cover:per45",
 		"rsis:seal",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10119008": [
 		"mr",
@@ -9710,7 +9847,8 @@
 		"cover:turn1",
 		"cover:per45",
 		"rsis:seal",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10119009": [
 		"ur",
@@ -9721,7 +9859,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10119010": [
 		"mr",
@@ -9732,7 +9871,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10119011": [
 		"ur",
@@ -9745,7 +9885,8 @@
 		"attack:aoe",
 		"aoe",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10119012": [
 		"mr",
@@ -9758,7 +9899,8 @@
 		"attack:aoe",
 		"aoe",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10119013": [
 		"sr",
@@ -9796,7 +9938,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10119016": [
 		"mr",
@@ -9808,7 +9951,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10119017": [
 		"ur",
@@ -9819,7 +9963,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
-		"attack:crit"
+		"attack:crit",
+		"ex"
 	],
 	"10119018": [
 		"mr",
@@ -9830,7 +9975,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
-		"attack:crit"
+		"attack:crit",
+		"ex"
 	],
 	"10119019": [
 		"sr",
@@ -9910,7 +10056,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time2",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10119026": [
 		"mr",
@@ -9920,7 +10067,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time2",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10119027": [
 		"mr",
@@ -9932,7 +10080,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10119028": [
 		"ur",
@@ -9945,7 +10094,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10119029": [
 		"mr",
@@ -9958,7 +10108,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10119030": [
 		"mr",
@@ -9968,7 +10119,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time2",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10119031": [
 		"ur",
@@ -9980,7 +10132,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10119032": [
 		"mr",
@@ -9992,7 +10145,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10119033": [
 		"ur",
@@ -10003,7 +10157,8 @@
 		"heal:soe",
 		"heal:hq",
 		"rele",
-		"rele:role15"
+		"rele:role15",
+		"ex"
 	],
 	"10119034": [
 		"mr",
@@ -10014,7 +10169,8 @@
 		"heal:soe",
 		"heal:hq",
 		"rele",
-		"rele:role15"
+		"rele:role15",
+		"ex"
 	],
 	"10119035": [
 		"mr",
@@ -10056,7 +10212,8 @@
 		"jamm:soe",
 		"jamm:turn1",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10119038": [
 		"mr",
@@ -10067,7 +10224,8 @@
 		"jamm:soe",
 		"jamm:turn1",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10119039": [
 		"ur",
@@ -10078,7 +10236,8 @@
 		"jamm:soe",
 		"jamm:turn1",
 		"jamm:param4",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10119040": [
 		"mr",
@@ -10089,7 +10248,8 @@
 		"jamm:soe",
 		"jamm:turn1",
 		"jamm:param4",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10120001": [
 		"ur",
@@ -10101,7 +10261,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10120002": [
 		"mr",
@@ -10113,7 +10274,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10120003": [
 		"ur",
@@ -10125,7 +10287,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10120004": [
 		"mr",
@@ -10137,7 +10300,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10120005": [
 		"ur",
@@ -10147,7 +10311,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time4",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10120006": [
 		"mr",
@@ -10157,7 +10322,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time4",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10120007": [
 		"ur",
@@ -10168,7 +10334,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"rele",
-		"rele:role19"
+		"rele:role19",
+		"ex"
 	],
 	"10120008": [
 		"mr",
@@ -10179,7 +10346,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"rele",
-		"rele:role19"
+		"rele:role19",
+		"ex"
 	],
 	"10120009": [
 		"ur",
@@ -10192,7 +10360,8 @@
 		"attack:aoe",
 		"aoe",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10120010": [
 		"mr",
@@ -10205,7 +10374,8 @@
 		"attack:aoe",
 		"aoe",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10120011": [
 		"ur",
@@ -10219,7 +10389,8 @@
 		"supo:slf",
 		"supo:turn1",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10120012": [
 		"mr",
@@ -10233,7 +10404,8 @@
 		"supo:slf",
 		"supo:turn1",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10120013": [
 		"ur",
@@ -10247,7 +10419,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10120014": [
 		"mr",
@@ -10261,7 +10434,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10120015": [
 		"ur",
@@ -10271,7 +10445,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time2",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10120016": [
 		"mr",
@@ -10281,7 +10456,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time2",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10120017": [
 		"ur",
@@ -10296,7 +10472,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10120018": [
 		"mr",
@@ -10311,7 +10488,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10120019": [
 		"ur",
@@ -10326,7 +10504,8 @@
 		"attack:aoe",
 		"dot:aoe",
 		"dot:poison",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10120020": [
 		"mr",
@@ -10341,7 +10520,8 @@
 		"attack:aoe",
 		"dot:aoe",
 		"dot:poison",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10120021": [
 		"ur",
@@ -10354,7 +10534,8 @@
 		"defe:aoe",
 		"defe:turn2",
 		"defe:param7",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10120022": [
 		"mr",
@@ -10367,7 +10548,8 @@
 		"defe:aoe",
 		"defe:turn2",
 		"defe:param7",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10120023": [
 		"ur",
@@ -10377,7 +10559,8 @@
 		"recovery",
 		"heal:aoe",
 		"heal:hq",
-		"chain"
+		"chain",
+		"ex"
 	],
 	"10120024": [
 		"mr",
@@ -10387,7 +10570,8 @@
 		"recovery",
 		"heal:aoe",
 		"heal:hq",
-		"chain"
+		"chain",
+		"ex"
 	],
 	"10120025": [
 		"ur",
@@ -10401,7 +10585,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10120026": [
 		"mr",
@@ -10415,7 +10600,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10120027": [
 		"ur",
@@ -10427,7 +10613,8 @@
 		"heal:hq",
 		"rele",
 		"rele:role19",
-		"chain"
+		"chain",
+		"ex"
 	],
 	"10120028": [
 		"mr",
@@ -10439,7 +10626,8 @@
 		"heal:hq",
 		"rele",
 		"rele:role19",
-		"chain"
+		"chain",
+		"ex"
 	],
 	"10120029": [
 		"ur",
@@ -10451,7 +10639,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10120030": [
 		"mr",
@@ -10463,7 +10652,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10120031": [
 		"sr",
@@ -10542,7 +10732,8 @@
 		"jamm:soe",
 		"jamm:turn2",
 		"jamm:param4",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10120038": [
 		"mr",
@@ -10553,7 +10744,8 @@
 		"jamm:soe",
 		"jamm:turn2",
 		"jamm:param4",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10120039": [
 		"ur",
@@ -10567,7 +10759,8 @@
 		"jamm:soe",
 		"jamm:turn1",
 		"jamm:param7",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10120040": [
 		"mr",
@@ -10581,7 +10774,8 @@
 		"jamm:soe",
 		"jamm:turn1",
 		"jamm:param7",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10120041": [
 		"ur",
@@ -10592,7 +10786,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10120042": [
 		"mr",
@@ -10603,7 +10798,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10120043": [
 		"ur",
@@ -10617,7 +10813,8 @@
 		"cover",
 		"cover:turn2",
 		"cover:per20",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10120044": [
 		"mr",
@@ -10631,7 +10828,8 @@
 		"cover",
 		"cover:turn2",
 		"cover:per20",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10120045": [
 		"ur",
@@ -10643,7 +10841,8 @@
 		"attack:pierce",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10120046": [
 		"mr",
@@ -10655,7 +10854,8 @@
 		"attack:pierce",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10120047": [
 		"ur",
@@ -10669,7 +10869,8 @@
 		"supo:turn2",
 		"supo:param4",
 		"supo:fix",
-		"buffone"
+		"buffone",
+		"ex"
 	],
 	"10120048": [
 		"mr",
@@ -10683,7 +10884,8 @@
 		"supo:turn2",
 		"supo:param4",
 		"supo:fix",
-		"buffone"
+		"buffone",
+		"ex"
 	],
 	"10120049": [
 		"mr",
@@ -10723,7 +10925,8 @@
 		"supo:slf",
 		"supo:turn1",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10120052": [
 		"mr",
@@ -10734,7 +10937,8 @@
 		"supo:slf",
 		"supo:turn1",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10120053": [
 		"mr",
@@ -10746,7 +10950,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10120054": [
 		"mr",
@@ -10758,7 +10963,8 @@
 		"supo:turn1",
 		"supo:param4",
 		"supo:fix",
-		"rsis:seal"
+		"rsis:seal",
+		"ex"
 	],
 	"10120055": [
 		"mr",
@@ -10769,7 +10975,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
-		"attack:crit"
+		"attack:crit",
+		"ex"
 	],
 	"10121001": [
 		"ur",
@@ -10781,7 +10988,8 @@
 		"aoe",
 		"attack:magic",
 		"attack:time1",
-		"attack:aoe"
+		"attack:aoe",
+		"ex"
 	],
 	"10121002": [
 		"mr",
@@ -10793,7 +11001,8 @@
 		"aoe",
 		"attack:magic",
 		"attack:time1",
-		"attack:aoe"
+		"attack:aoe",
+		"ex"
 	],
 	"10121003": [
 		"mr",
@@ -10804,7 +11013,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"rele",
-		"rele:role19"
+		"rele:role19",
+		"ex"
 	],
 	"10121004": [
 		"ur",
@@ -10815,7 +11025,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10121005": [
 		"mr",
@@ -10826,7 +11037,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10121006": [
 		"ur",
@@ -10840,7 +11052,8 @@
 		"cover",
 		"cover:turn1",
 		"cover:per30",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10121007": [
 		"mr",
@@ -10854,7 +11067,8 @@
 		"cover",
 		"cover:turn1",
 		"cover:per30",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10121008": [
 		"ur",
@@ -10865,7 +11079,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10121009": [
 		"mr",
@@ -10876,7 +11091,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10121010": [
 		"mr",
@@ -10890,7 +11106,8 @@
 		"jamm:soe",
 		"jamm:turn3",
 		"jamm:param4",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10121011": [
 		"ur",
@@ -10904,7 +11121,8 @@
 		"defe:slf",
 		"defe:turn1",
 		"defe:param6",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10121012": [
 		"mr",
@@ -10918,7 +11136,8 @@
 		"defe:slf",
 		"defe:turn1",
 		"defe:param6",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10121013": [
 		"ur",
@@ -10933,7 +11152,8 @@
 		"defe:param6",
 		"defe:fix",
 		"defe:param7",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10121014": [
 		"mr",
@@ -10948,7 +11168,8 @@
 		"defe:param6",
 		"defe:fix",
 		"defe:param7",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10121015": [
 		"ur",
@@ -10958,7 +11179,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10121016": [
 		"mr",
@@ -10968,7 +11190,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10121017": [
 		"mr",
@@ -10982,7 +11205,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10121018": [
 		"ur",
@@ -10995,7 +11219,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param5",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10121019": [
 		"mr",
@@ -11008,7 +11233,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param5",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10121020": [
 		"ur",
@@ -11023,7 +11249,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10121021": [
 		"mr",
@@ -11038,7 +11265,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10121022": [
 		"ur",
@@ -11049,7 +11277,8 @@
 		"defe:aoe",
 		"defe:turn2",
 		"defe:param6",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10121023": [
 		"mr",
@@ -11060,7 +11289,8 @@
 		"defe:aoe",
 		"defe:turn2",
 		"defe:param6",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10121024": [
 		"ur",
@@ -11074,7 +11304,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10121025": [
 		"mr",
@@ -11088,7 +11319,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10121026": [
 		"sr",
@@ -11165,7 +11397,8 @@
 		"defe:turn1",
 		"defe:param6",
 		"defe:fix",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10121033": [
 		"mr",
@@ -11180,7 +11413,8 @@
 		"defe:turn1",
 		"defe:param6",
 		"defe:fix",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10121034": [
 		"ur",
@@ -11190,7 +11424,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10121035": [
 		"mr",
@@ -11200,7 +11435,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10121036": [
 		"ur",
@@ -11213,7 +11449,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10121037": [
 		"mr",
@@ -11226,7 +11463,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10121038": [
 		"ur",
@@ -11237,7 +11475,8 @@
 		"jamm:soe",
 		"jamm:turn2",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10121039": [
 		"mr",
@@ -11248,7 +11487,8 @@
 		"jamm:soe",
 		"jamm:turn2",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10121040": [
 		"sr",
@@ -11308,7 +11548,8 @@
 		"supo:param5",
 		"supo:fix",
 		"buffone",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10121045": [
 		"mr",
@@ -11321,7 +11562,8 @@
 		"supo:param5",
 		"supo:fix",
 		"buffone",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10121047": [
 		"mr",
@@ -11335,7 +11577,8 @@
 		"jamm:soe",
 		"jamm:turn2",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10121048": [
 		"ur",
@@ -11347,7 +11590,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10121049": [
 		"mr",
@@ -11359,7 +11603,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10121050": [
 		"ur",
@@ -11373,7 +11618,8 @@
 		"jamm:soe",
 		"jamm:turn3",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10121051": [
 		"mr",
@@ -11387,7 +11633,8 @@
 		"jamm:soe",
 		"jamm:turn3",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10121053": [
 		"mr",
@@ -11400,7 +11647,8 @@
 		"attack:aoe",
 		"aoe",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10121054": [
 		"mr",
@@ -11414,7 +11662,8 @@
 		"jamm:fix",
 		"aoe",
 		"jamm:param4",
-		"jamm:double"
+		"jamm:double",
+		"ex"
 	],
 	"10122001": [
 		"ur",
@@ -11429,7 +11678,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10122002": [
 		"mr",
@@ -11444,7 +11694,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10122003": [
 		"ur",
@@ -11455,7 +11706,8 @@
 		"supo:aoe",
 		"supo:turn3",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10122004": [
 		"mr",
@@ -11466,7 +11718,8 @@
 		"supo:aoe",
 		"supo:turn3",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10122005": [
 		"ur",
@@ -11480,7 +11733,8 @@
 		"supo:turn2",
 		"supo:param5",
 		"supo:fix",
-		"bug"
+		"bug",
+		"ex"
 	],
 	"10122006": [
 		"mr",
@@ -11494,7 +11748,8 @@
 		"supo:turn2",
 		"supo:param5",
 		"supo:fix",
-		"bug"
+		"bug",
+		"ex"
 	],
 	"10122007": [
 		"ur",
@@ -11506,7 +11761,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10122008": [
 		"mr",
@@ -11518,7 +11774,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10122009": [
 		"ur",
@@ -11529,7 +11786,8 @@
 		"cover",
 		"cover:turn1",
 		"cover:per50",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10122010": [
 		"mr",
@@ -11540,7 +11798,8 @@
 		"cover",
 		"cover:turn1",
 		"cover:per50",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10122011": [
 		"ur",
@@ -11554,7 +11813,8 @@
 		"aoe",
 		"dot:aoe",
 		"dot:freeze",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10122012": [
 		"mr",
@@ -11568,7 +11828,8 @@
 		"aoe",
 		"dot:aoe",
 		"dot:freeze",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10122013": [
 		"ur",
@@ -11582,7 +11843,8 @@
 		"supo:turn2",
 		"supo:param3",
 		"supo:fix",
-		"buffone"
+		"buffone",
+		"ex"
 	],
 	"10122014": [
 		"mr",
@@ -11596,7 +11858,8 @@
 		"supo:turn2",
 		"supo:param3",
 		"supo:fix",
-		"buffone"
+		"buffone",
+		"ex"
 	],
 	"10122015": [
 		"ur",
@@ -11611,7 +11874,8 @@
 		"jamm:turn3",
 		"jamm:param3",
 		"jamm:fix",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10122016": [
 		"mr",
@@ -11626,7 +11890,8 @@
 		"jamm:turn3",
 		"jamm:param3",
 		"jamm:fix",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10122017": [
 		"ur",
@@ -11638,7 +11903,8 @@
 		"attack:time1",
 		"attack:aoe",
 		"aoe",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10122018": [
 		"mr",
@@ -11650,7 +11916,8 @@
 		"attack:time1",
 		"attack:aoe",
 		"aoe",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10122019": [
 		"ur",
@@ -11660,7 +11927,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10122020": [
 		"mr",
@@ -11670,7 +11938,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10122021": [
 		"ur",
@@ -11681,7 +11950,8 @@
 		"heal:soe",
 		"heal:hq",
 		"rele",
-		"rele:role23"
+		"rele:role23",
+		"ex"
 	],
 	"10122022": [
 		"mr",
@@ -11692,7 +11962,8 @@
 		"heal:soe",
 		"heal:hq",
 		"rele",
-		"rele:role23"
+		"rele:role23",
+		"ex"
 	],
 	"10122023": [
 		"sr",
@@ -11783,7 +12054,8 @@
 		"attack:soe",
 		"dot:soe",
 		"dot:freeze",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10122030": [
 		"mr",
@@ -11796,7 +12068,8 @@
 		"attack:soe",
 		"dot:soe",
 		"dot:freeze",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10122031": [
 		"ur",
@@ -11810,7 +12083,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10122032": [
 		"mr",
@@ -11824,7 +12098,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10122033": [
 		"ur",
@@ -11835,7 +12110,8 @@
 		"attack:attrach",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10122034": [
 		"mr",
@@ -11846,7 +12122,8 @@
 		"attack:attrach",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10122035": [
 		"ur",
@@ -11859,7 +12136,8 @@
 		"supo:param5",
 		"supo:fix",
 		"regen:aoe",
-		"regen:turn3"
+		"regen:turn3",
+		"ex"
 	],
 	"10122036": [
 		"mr",
@@ -11872,7 +12150,8 @@
 		"supo:param5",
 		"supo:fix",
 		"regen:aoe",
-		"regen:turn3"
+		"regen:turn3",
+		"ex"
 	],
 	"10122037": [
 		"mr",
@@ -11886,7 +12165,8 @@
 		"jamm:soe",
 		"jamm:turn2",
 		"jamm:param4",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10122038": [
 		"mr",
@@ -11896,7 +12176,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time3",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10122039": [
 		"ur",
@@ -11909,7 +12190,8 @@
 		"defe:aoe",
 		"defe:turn2",
 		"defe:param6",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10122040": [
 		"mr",
@@ -11922,7 +12204,8 @@
 		"defe:aoe",
 		"defe:turn2",
 		"defe:param6",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10122041": [
 		"ur",
@@ -11934,7 +12217,8 @@
 		"aoe",
 		"attack:magic",
 		"attack:time1",
-		"attack:aoe"
+		"attack:aoe",
+		"ex"
 	],
 	"10122042": [
 		"mr",
@@ -11946,7 +12230,8 @@
 		"aoe",
 		"attack:magic",
 		"attack:time1",
-		"attack:aoe"
+		"attack:aoe",
+		"ex"
 	],
 	"10122043": [
 		"ur",
@@ -11962,7 +12247,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10122044": [
 		"mr",
@@ -11978,7 +12264,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10122045": [
 		"ur",
@@ -11989,7 +12276,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
-		"chain"
+		"chain",
+		"ex"
 	],
 	"10122046": [
 		"mr",
@@ -12000,7 +12288,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
-		"chain"
+		"chain",
+		"ex"
 	],
 	"10122047": [
 		"ur",
@@ -12020,6 +12309,7 @@
 		"defe:param7",
 		"defe:double",
 		"jamm:double",
+		"ex",
 		"cup"
 	],
 	"10122048": [
@@ -12040,6 +12330,7 @@
 		"defe:param7",
 		"defe:double",
 		"jamm:double",
+		"ex",
 		"cup"
 	],
 	"10122049": [
@@ -12055,6 +12346,7 @@
 		"supo:param4",
 		"heal:aoe",
 		"heal:hq",
+		"ex",
 		"cup"
 	],
 	"10122050": [
@@ -12068,6 +12360,7 @@
 		"supo:param3",
 		"supo:fix",
 		"crit",
+		"ex",
 		"cup"
 	],
 	"10122051": [
@@ -12081,6 +12374,7 @@
 		"supo:param3",
 		"supo:fix",
 		"crit",
+		"ex",
 		"cup"
 	],
 	"10122052": [
@@ -12098,6 +12392,7 @@
 		"supo:param3",
 		"supo:fix",
 		"deal:+1",
+		"ex",
 		"cup"
 	],
 	"10122053": [
@@ -12137,7 +12432,8 @@
 		"jamm:soe",
 		"jamm:turn1",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10122056": [
 		"mr",
@@ -12148,7 +12444,8 @@
 		"jamm:soe",
 		"jamm:turn1",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10123001": [
 		"ur",
@@ -12163,7 +12460,8 @@
 		"defe:param6",
 		"defe:fix",
 		"defe:param7",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10123002": [
 		"mr",
@@ -12178,7 +12476,8 @@
 		"defe:param6",
 		"defe:fix",
 		"defe:param7",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10123004": [
 		"ur",
@@ -12189,7 +12488,8 @@
 		"defe:aoe",
 		"defe:turn2",
 		"defe:param7",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10123005": [
 		"mr",
@@ -12200,7 +12500,8 @@
 		"defe:aoe",
 		"defe:turn2",
 		"defe:param7",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10123006": [
 		"ur",
@@ -12212,7 +12513,8 @@
 		"jamm:turn3",
 		"jamm:param4",
 		"jamm:fix",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10123007": [
 		"mr",
@@ -12224,7 +12526,8 @@
 		"jamm:turn3",
 		"jamm:param4",
 		"jamm:fix",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10123008": [
 		"ur",
@@ -12238,7 +12541,8 @@
 		"attack:crit",
 		"dot:soe",
 		"dot:burn",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10123009": [
 		"mr",
@@ -12252,7 +12556,8 @@
 		"attack:crit",
 		"dot:soe",
 		"dot:burn",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10123010": [
 		"ur",
@@ -12265,7 +12570,8 @@
 		"supo:param5",
 		"supo:fix",
 		"regen:aoe",
-		"regen:turn3"
+		"regen:turn3",
+		"ex"
 	],
 	"10123011": [
 		"mr",
@@ -12278,7 +12584,8 @@
 		"supo:param5",
 		"supo:fix",
 		"regen:aoe",
-		"regen:turn3"
+		"regen:turn3",
+		"ex"
 	],
 	"10123013": [
 		"ur",
@@ -12290,7 +12597,8 @@
 		"supo:turn1",
 		"supo:param4",
 		"supo:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10123014": [
 		"mr",
@@ -12302,7 +12610,8 @@
 		"supo:turn1",
 		"supo:param4",
 		"supo:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10123015": [
 		"ur",
@@ -12317,7 +12626,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10123016": [
 		"mr",
@@ -12332,7 +12642,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10123017": [
 		"ur",
@@ -12347,7 +12658,8 @@
 		"dot:aoe",
 		"dot:burn",
 		"dot:turn3",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10123018": [
 		"mr",
@@ -12362,7 +12674,8 @@
 		"dot:aoe",
 		"dot:burn",
 		"dot:turn3",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10123019": [
 		"ur",
@@ -12373,7 +12686,8 @@
 		"jamm:soe",
 		"jamm:turn3",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10123020": [
 		"mr",
@@ -12384,7 +12698,8 @@
 		"jamm:soe",
 		"jamm:turn3",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10123022": [
 		"ur",
@@ -12398,7 +12713,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10123023": [
 		"mr",
@@ -12412,7 +12728,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10123024": [
 		"ur",
@@ -12424,7 +12741,8 @@
 		"supo:turn2",
 		"supo:param3",
 		"supo:fix",
-		"buffone"
+		"buffone",
+		"ex"
 	],
 	"10123025": [
 		"mr",
@@ -12436,7 +12754,8 @@
 		"supo:turn2",
 		"supo:param3",
 		"supo:fix",
-		"buffone"
+		"buffone",
+		"ex"
 	],
 	"10123026": [
 		"ur",
@@ -12451,7 +12770,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10123027": [
 		"mr",
@@ -12466,7 +12786,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10123028": [
 		"ur",
@@ -12479,7 +12800,8 @@
 		"attack:soe",
 		"dot:soe",
 		"dot:burn",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10123029": [
 		"mr",
@@ -12492,7 +12814,8 @@
 		"attack:soe",
 		"dot:soe",
 		"dot:burn",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10123030": [
 		"ur",
@@ -12504,7 +12827,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10123031": [
 		"mr",
@@ -12516,7 +12840,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10123032": [
 		"sr",
@@ -12593,7 +12918,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
-		"attack:crit"
+		"attack:crit",
+		"ex"
 	],
 	"10123039": [
 		"mr",
@@ -12604,7 +12930,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
-		"attack:crit"
+		"attack:crit",
+		"ex"
 	],
 	"10123040": [
 		"ur",
@@ -12619,7 +12946,8 @@
 		"defe:turn1",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10123041": [
 		"mr",
@@ -12634,7 +12962,8 @@
 		"defe:turn1",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10123042": [
 		"ur",
@@ -12648,7 +12977,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10123043": [
 		"mr",
@@ -12662,7 +12992,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10123044": [
 		"ur",
@@ -12675,7 +13006,8 @@
 		"defe:aoe",
 		"defe:turn2",
 		"defe:param7",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10123045": [
 		"mr",
@@ -12688,7 +13020,8 @@
 		"defe:aoe",
 		"defe:turn2",
 		"defe:param7",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10123046": [
 		"mr",
@@ -12700,7 +13033,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10123047": [
 		"mr",
@@ -12727,7 +13061,8 @@
 		"supo:param3",
 		"supo:fix",
 		"buffone",
-		"crit"
+		"crit",
+		"ex"
 	],
 	"10123049": [
 		"mr",
@@ -12740,7 +13075,8 @@
 		"supo:param3",
 		"supo:fix",
 		"buffone",
-		"crit"
+		"crit",
+		"ex"
 	],
 	"10123050": [
 		"ur",
@@ -12751,7 +13087,8 @@
 		"attack:magic",
 		"attack:time2",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10123051": [
 		"mr",
@@ -12762,7 +13099,8 @@
 		"attack:magic",
 		"attack:time2",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10123052": [
 		"ur",
@@ -12777,7 +13115,8 @@
 		"defe:turn1",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10123053": [
 		"mr",
@@ -12792,7 +13131,8 @@
 		"defe:turn1",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10123054": [
 		"ur",
@@ -12803,7 +13143,8 @@
 		"attack:attrach",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10123055": [
 		"mr",
@@ -12814,7 +13155,8 @@
 		"attack:attrach",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10123056": [
 		"ur",
@@ -12825,7 +13167,8 @@
 		"jamm:soe",
 		"jamm:turn3",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10123057": [
 		"mr",
@@ -12836,7 +13179,8 @@
 		"jamm:soe",
 		"jamm:turn3",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10124001": [
 		"ur",
@@ -12852,7 +13196,8 @@
 		"supo:turn2",
 		"supo:param3",
 		"supo:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10124002": [
 		"mr",
@@ -12868,7 +13213,8 @@
 		"supo:turn2",
 		"supo:param3",
 		"supo:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10124003": [
 		"ur",
@@ -12879,7 +13225,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
-		"crit"
+		"crit",
+		"ex"
 	],
 	"10124004": [
 		"mr",
@@ -12890,7 +13237,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
-		"crit"
+		"crit",
+		"ex"
 	],
 	"10124005": [
 		"ur",
@@ -12908,7 +13256,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10124006": [
 		"mr",
@@ -12926,7 +13275,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10124007": [
 		"ur",
@@ -12941,7 +13291,8 @@
 		"defe:param7",
 		"defe:fix",
 		"rele",
-		"rele:role7"
+		"rele:role7",
+		"ex"
 	],
 	"10124008": [
 		"mr",
@@ -12956,7 +13307,8 @@
 		"defe:param7",
 		"defe:fix",
 		"rele",
-		"rele:role7"
+		"rele:role7",
+		"ex"
 	],
 	"10124009": [
 		"ur",
@@ -12968,7 +13320,8 @@
 		"defe:turn3",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10124010": [
 		"mr",
@@ -12980,7 +13333,8 @@
 		"defe:turn3",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10124011": [
 		"ur",
@@ -12993,7 +13347,8 @@
 		"supo:param4",
 		"supo:fix",
 		"buffone",
-		"crit"
+		"crit",
+		"ex"
 	],
 	"10124012": [
 		"mr",
@@ -13006,7 +13361,8 @@
 		"supo:param4",
 		"supo:fix",
 		"buffone",
-		"crit"
+		"crit",
+		"ex"
 	],
 	"10124013": [
 		"ur",
@@ -13074,7 +13430,8 @@
 		"attack:time1",
 		"attack:aoe",
 		"aoe",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10124018": [
 		"mr",
@@ -13086,7 +13443,8 @@
 		"attack:time1",
 		"attack:aoe",
 		"aoe",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10124019": [
 		"ur",
@@ -13097,7 +13455,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"rele",
-		"rele:role7"
+		"rele:role7",
+		"ex"
 	],
 	"10124020": [
 		"mr",
@@ -13108,7 +13467,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"rele",
-		"rele:role7"
+		"rele:role7",
+		"ex"
 	],
 	"10124021": [
 		"sr",
@@ -13189,7 +13549,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"regen:aoe",
-		"regen:turn2"
+		"regen:turn2",
+		"ex"
 	],
 	"10124028": [
 		"mr",
@@ -13200,7 +13561,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"regen:aoe",
-		"regen:turn2"
+		"regen:turn2",
+		"ex"
 	],
 	"10124029": [
 		"ur",
@@ -13215,7 +13577,8 @@
 		"defe:turn1",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10124030": [
 		"mr",
@@ -13230,7 +13593,8 @@
 		"defe:turn1",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10124031": [
 		"ur",
@@ -13241,7 +13605,8 @@
 		"jamm:soe",
 		"jamm:turn2",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10124032": [
 		"mr",
@@ -13252,7 +13617,8 @@
 		"jamm:soe",
 		"jamm:turn2",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10124033": [
 		"mr",
@@ -13263,7 +13629,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
-		"attack:crit"
+		"attack:crit",
+		"ex"
 	],
 	"10124034": [
 		"ur",
@@ -13276,7 +13643,8 @@
 		"supo:param3",
 		"supo:fix",
 		"supo:param4",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10124035": [
 		"mr",
@@ -13289,7 +13657,8 @@
 		"supo:param3",
 		"supo:fix",
 		"supo:param4",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10124036": [
 		"mr",
@@ -13301,7 +13670,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10124037": [
 		"ur",
@@ -13313,7 +13683,8 @@
 		"cover:turn1",
 		"cover:per35",
 		"rsis:dark",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10124038": [
 		"mr",
@@ -13325,7 +13696,8 @@
 		"cover:turn1",
 		"cover:per35",
 		"rsis:dark",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10124039": [
 		"ur",
@@ -13336,7 +13708,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10124040": [
 		"mr",
@@ -13347,7 +13720,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10124041": [
 		"mr",
@@ -13360,7 +13734,8 @@
 		"defe:aoe",
 		"defe:turn2",
 		"defe:param6",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10124042": [
 		"mr",
@@ -13372,7 +13747,8 @@
 		"supo:turn2",
 		"supo:param3",
 		"supo:fix",
-		"supo:param4"
+		"supo:param4",
+		"ex"
 	],
 	"10124043": [
 		"ur",
@@ -13488,7 +13864,8 @@
 		"jamm:fix",
 		"aoe",
 		"jamm:param4",
-		"jamm:double"
+		"jamm:double",
+		"ex"
 	],
 	"10125001": [
 		"ur",
@@ -13749,7 +14126,8 @@
 		"attack:soe",
 		"dot:soe",
 		"dot:freeze",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10125021": [
 		"mr",
@@ -13762,7 +14140,8 @@
 		"attack:soe",
 		"dot:soe",
 		"dot:freeze",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10125022": [
 		"ur",
@@ -13776,7 +14155,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10125023": [
 		"mr",
@@ -13790,7 +14170,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10125024": [
 		"sr",
@@ -13873,7 +14254,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10125031": [
 		"mr",
@@ -13884,7 +14266,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10125032": [
 		"ur",
@@ -13896,7 +14279,8 @@
 		"defe:turn3",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10125033": [
 		"mr",
@@ -13908,7 +14292,8 @@
 		"defe:turn3",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10125034": [
 		"mr",
@@ -13923,7 +14308,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10125035": [
 		"ur",
@@ -13933,7 +14319,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10125036": [
 		"mr",
@@ -13943,7 +14330,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10125037": [
 		"mr",
@@ -13958,7 +14346,8 @@
 		"supo:param3",
 		"supo:fix",
 		"rele",
-		"rele:role15"
+		"rele:role15",
+		"ex"
 	],
 	"10125038": [
 		"ur",
@@ -13967,7 +14356,8 @@
 		"singer",
 		"recovery",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10125039": [
 		"mr",
@@ -13976,7 +14366,8 @@
 		"singer",
 		"recovery",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10125040": [
 		"mr",
@@ -13988,7 +14379,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10125041": [
 		"ur",
@@ -13998,7 +14390,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10125042": [
 		"mr",
@@ -14008,7 +14401,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10125043": [
 		"mr",
@@ -14019,7 +14413,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10125044": [
 		"ur",
@@ -14145,7 +14540,8 @@
 		"jamm:fix",
 		"aoe",
 		"jamm:param4",
-		"jamm:double"
+		"jamm:double",
+		"ex"
 	],
 	"10125054": [
 		"ur",
@@ -14155,7 +14551,8 @@
 		"recovery",
 		"heal:soe",
 		"heal:hq",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10125055": [
 		"mr",
@@ -14165,7 +14562,8 @@
 		"recovery",
 		"heal:soe",
 		"heal:hq",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10126001": [
 		"ur",
@@ -14442,7 +14840,8 @@
 		"jamm:soe",
 		"jamm:turn2",
 		"jamm:param4",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10126022": [
 		"mr",
@@ -14457,7 +14856,8 @@
 		"jamm:soe",
 		"jamm:turn2",
 		"jamm:param4",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10126023": [
 		"ur",
@@ -14468,7 +14868,8 @@
 		"attack:pierce",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10126024": [
 		"mr",
@@ -14479,7 +14880,8 @@
 		"attack:pierce",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10126025": [
 		"sr",
@@ -14560,7 +14962,8 @@
 		"attack:attrach",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10126032": [
 		"mr",
@@ -14571,7 +14974,8 @@
 		"attack:attrach",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10126035": [
 		"ur",
@@ -14584,7 +14988,8 @@
 		"defe:param7",
 		"defe:fix",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10126036": [
 		"mr",
@@ -14597,7 +15002,8 @@
 		"defe:param7",
 		"defe:fix",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10126037": [
 		"ur",
@@ -14608,7 +15014,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10126038": [
 		"mr",
@@ -14619,7 +15026,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10126039": [
 		"ur",
@@ -14633,7 +15041,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10126040": [
 		"mr",
@@ -14647,7 +15056,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10126041": [
 		"ur",
@@ -14658,7 +15068,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10126042": [
 		"mr",
@@ -14669,7 +15080,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10126043": [
 		"ur",
@@ -14683,7 +15095,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10126044": [
 		"mr",
@@ -14697,7 +15110,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10126045": [
 		"mr",
@@ -14711,7 +15125,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10126046": [
 		"mr",
@@ -14726,7 +15141,8 @@
 		"jamm:soe",
 		"jamm:turn2",
 		"jamm:param4",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10126047": [
 		"ur",
@@ -14838,7 +15254,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10126056": [
 		"mr",
@@ -14852,7 +15269,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10127001": [
 		"ur",
@@ -15085,7 +15503,8 @@
 		"defe:turn1",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10127020": [
 		"mr",
@@ -15100,7 +15519,8 @@
 		"defe:turn1",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10127021": [
 		"ur",
@@ -15110,7 +15530,8 @@
 		"recovery",
 		"heal:aoe",
 		"heal:hq",
-		"chain"
+		"chain",
+		"ex"
 	],
 	"10127022": [
 		"mr",
@@ -15120,7 +15541,8 @@
 		"recovery",
 		"heal:aoe",
 		"heal:hq",
-		"chain"
+		"chain",
+		"ex"
 	],
 	"10127023": [
 		"sr",
@@ -15199,7 +15621,8 @@
 		"jamm:soe",
 		"jamm:turn3",
 		"jamm:param4",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10127030": [
 		"mr",
@@ -15210,7 +15633,8 @@
 		"jamm:soe",
 		"jamm:turn3",
 		"jamm:param4",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10127031": [
 		"ur",
@@ -15225,7 +15649,8 @@
 		"dot:aoe",
 		"dot:burn",
 		"dot:turn3",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10127032": [
 		"mr",
@@ -15240,7 +15665,8 @@
 		"dot:aoe",
 		"dot:burn",
 		"dot:turn3",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10127033": [
 		"ur",
@@ -15252,7 +15678,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10127034": [
 		"mr",
@@ -15264,7 +15691,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10127035": [
 		"ur",
@@ -15275,7 +15703,8 @@
 		"supo:aoe",
 		"supo:turn3",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10127036": [
 		"mr",
@@ -15286,7 +15715,8 @@
 		"supo:aoe",
 		"supo:turn3",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10127037": [
 		"ur",
@@ -15297,7 +15727,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10127038": [
 		"mr",
@@ -15308,7 +15739,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10127039": [
 		"mr",
@@ -15460,7 +15892,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10127050": [
 		"mr",
@@ -15472,7 +15905,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10127051": [
 		"mr",
@@ -15486,7 +15920,8 @@
 		"supo:fix",
 		"buffone",
 		"rele",
-		"rele:role15"
+		"rele:role15",
+		"ex"
 	],
 	"10128001": [
 		"ur",
@@ -15696,7 +16131,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10128018": [
 		"mr",
@@ -15708,7 +16144,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10128019": [
 		"ur",
@@ -15719,7 +16156,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
-		"attack:crit"
+		"attack:crit",
+		"ex"
 	],
 	"10128020": [
 		"mr",
@@ -15730,7 +16168,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
-		"attack:crit"
+		"attack:crit",
+		"ex"
 	],
 	"10128021": [
 		"sr",
@@ -15841,7 +16280,8 @@
 		"attack:soe",
 		"dot:soe",
 		"dot:bleed",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10128030": [
 		"mr",
@@ -15854,7 +16294,8 @@
 		"attack:soe",
 		"dot:soe",
 		"dot:bleed",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10128031": [
 		"ur",
@@ -15868,7 +16309,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10128032": [
 		"mr",
@@ -15882,7 +16324,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10128033": [
 		"ur",
@@ -15893,7 +16336,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"rele",
-		"rele:role19"
+		"rele:role19",
+		"ex"
 	],
 	"10128034": [
 		"mr",
@@ -15904,7 +16348,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"rele",
-		"rele:role19"
+		"rele:role19",
+		"ex"
 	],
 	"10128035": [
 		"ur",
@@ -15918,7 +16363,8 @@
 		"jamm:fix",
 		"dot:soe",
 		"dot:burn",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10128036": [
 		"mr",
@@ -15932,7 +16378,8 @@
 		"jamm:fix",
 		"dot:soe",
 		"dot:burn",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10128037": [
 		"ur",
@@ -16094,7 +16541,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10128048": [
 		"mr",
@@ -16106,7 +16554,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10128049": [
 		"ur",
@@ -16119,7 +16568,8 @@
 		"supo:param5",
 		"supo:fix",
 		"buffone",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10128050": [
 		"mr",
@@ -16132,7 +16582,8 @@
 		"supo:param5",
 		"supo:fix",
 		"buffone",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10128051": [
 		"ur",
@@ -16143,7 +16594,8 @@
 		"jamm:soe",
 		"jamm:turn1",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10128052": [
 		"mr",
@@ -16154,7 +16606,8 @@
 		"jamm:soe",
 		"jamm:turn1",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10129001": [
 		"ur",
@@ -16386,7 +16839,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10129020": [
 		"mr",
@@ -16398,7 +16852,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10129021": [
 		"ur",
@@ -16408,7 +16863,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time3",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10129022": [
 		"mr",
@@ -16418,7 +16874,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time3",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10129023": [
 		"sr",
@@ -16534,7 +16991,8 @@
 		"supo:param5",
 		"supo:fix",
 		"rele",
-		"rele:role19"
+		"rele:role19",
+		"ex"
 	],
 	"10129032": [
 		"mr",
@@ -16549,7 +17007,8 @@
 		"supo:param5",
 		"supo:fix",
 		"rele",
-		"rele:role19"
+		"rele:role19",
+		"ex"
 	],
 	"10129033": [
 		"ur",
@@ -16560,7 +17019,8 @@
 		"jamm:soe",
 		"jamm:turn3",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10129034": [
 		"mr",
@@ -16571,7 +17031,8 @@
 		"jamm:soe",
 		"jamm:turn3",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10129035": [
 		"mr",
@@ -16588,7 +17049,8 @@
 		"jamm:param7",
 		"jamm:fix",
 		"aoe",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10129036": [
 		"ur",
@@ -16601,7 +17063,8 @@
 		"supo:param5",
 		"supo:fix",
 		"regen:aoe",
-		"regen:turn3"
+		"regen:turn3",
+		"ex"
 	],
 	"10129037": [
 		"mr",
@@ -16614,7 +17077,8 @@
 		"supo:param5",
 		"supo:fix",
 		"regen:aoe",
-		"regen:turn3"
+		"regen:turn3",
+		"ex"
 	],
 	"10129038": [
 		"mr",
@@ -16626,7 +17090,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10129039": [
 		"ur",
@@ -16985,7 +17450,8 @@
 		"supo:turn2",
 		"supo:param5",
 		"supo:fix",
-		"bug"
+		"bug",
+		"ex"
 	],
 	"10130020": [
 		"mr",
@@ -16999,7 +17465,8 @@
 		"supo:turn2",
 		"supo:param5",
 		"supo:fix",
-		"bug"
+		"bug",
+		"ex"
 	],
 	"10130021": [
 		"ur",
@@ -17010,7 +17477,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10130022": [
 		"mr",
@@ -17021,7 +17489,8 @@
 		"supo:slf",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10130023": [
 		"sr",
@@ -17097,7 +17566,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10130030": [
 		"mr",
@@ -17107,7 +17577,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10130031": [
 		"mr",
@@ -17118,7 +17589,8 @@
 		"supo:slf",
 		"supo:turn3",
 		"supo:param5",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10130032": [
 		"ur",
@@ -17129,7 +17601,8 @@
 		"defe:aoe",
 		"defe:turn2",
 		"defe:param7",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10130033": [
 		"mr",
@@ -17140,7 +17613,8 @@
 		"defe:aoe",
 		"defe:turn2",
 		"defe:param7",
-		"defe:fix"
+		"defe:fix",
+		"ex"
 	],
 	"10130034": [
 		"mr",
@@ -17153,7 +17627,8 @@
 		"supo:aoe",
 		"supo:turn2",
 		"supo:param4",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10130035": [
 		"ur",
@@ -17167,7 +17642,8 @@
 		"jamm:fix",
 		"dot:soe",
 		"dot:electric",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10130036": [
 		"mr",
@@ -17181,7 +17657,8 @@
 		"jamm:fix",
 		"dot:soe",
 		"dot:electric",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10130037": [
 		"ur",
@@ -17198,7 +17675,8 @@
 		"jamm:param6",
 		"jamm:fix",
 		"aoe",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10130038": [
 		"mr",
@@ -17215,7 +17693,8 @@
 		"jamm:param6",
 		"jamm:fix",
 		"aoe",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10130039": [
 		"mr",
@@ -17627,7 +18106,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
-		"chain"
+		"chain",
+		"ex"
 	],
 	"10131020": [
 		"mr",
@@ -17638,7 +18118,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
-		"chain"
+		"chain",
+		"ex"
 	],
 	"10131021": [
 		"ur",
@@ -17649,7 +18130,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"rele",
-		"rele:role7"
+		"rele:role7",
+		"ex"
 	],
 	"10131022": [
 		"mr",
@@ -17660,7 +18142,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"rele",
-		"rele:role7"
+		"rele:role7",
+		"ex"
 	],
 	"10131023": [
 		"sr",
@@ -17742,7 +18225,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10131030": [
 		"mr",
@@ -17754,7 +18238,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10131031": [
 		"ur",
@@ -17767,7 +18252,8 @@
 		"supo:slf",
 		"supo:turn3",
 		"supo:param5",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10131032": [
 		"mr",
@@ -17780,7 +18266,8 @@
 		"supo:slf",
 		"supo:turn3",
 		"supo:param5",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10131033": [
 		"mr",
@@ -17791,7 +18278,8 @@
 		"attack:attrach",
 		"attack:physical",
 		"attack:time1",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10131034": [
 		"ur",
@@ -17803,7 +18291,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10131035": [
 		"mr",
@@ -17815,7 +18304,8 @@
 		"defe:turn2",
 		"defe:param6",
 		"defe:fix",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10131036": [
 		"mr",
@@ -17826,7 +18316,8 @@
 		"dot:aoe",
 		"dot:bleed",
 		"dot:turn3",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10131037": [
 		"mr",
@@ -18167,7 +18658,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time3",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10132018": [
 		"mr",
@@ -18177,7 +18669,8 @@
 		"sorcery",
 		"attack:magic",
 		"attack:time3",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10132019": [
 		"ur",
@@ -18189,7 +18682,8 @@
 		"jamm:turn3",
 		"jamm:param4",
 		"jamm:fix",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10132020": [
 		"mr",
@@ -18201,7 +18695,8 @@
 		"jamm:turn3",
 		"jamm:param4",
 		"jamm:fix",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10132021": [
 		"sr",
@@ -18286,7 +18781,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"rele",
-		"rele:role7"
+		"rele:role7",
+		"ex"
 	],
 	"10132028": [
 		"mr",
@@ -18297,7 +18793,8 @@
 		"heal:aoe",
 		"heal:hq",
 		"rele",
-		"rele:role7"
+		"rele:role7",
+		"ex"
 	],
 	"10132029": [
 		"ur",
@@ -18310,7 +18807,8 @@
 		"attack:soe",
 		"dot:soe",
 		"dot:electric",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10132030": [
 		"mr",
@@ -18323,7 +18821,8 @@
 		"attack:soe",
 		"dot:soe",
 		"dot:electric",
-		"dot:turn3"
+		"dot:turn3",
+		"ex"
 	],
 	"10132031": [
 		"ur",
@@ -18334,7 +18833,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
-		"attack:crit"
+		"attack:crit",
+		"ex"
 	],
 	"10132032": [
 		"mr",
@@ -18345,7 +18845,8 @@
 		"attack:physical",
 		"attack:time1",
 		"attack:soe",
-		"attack:crit"
+		"attack:crit",
+		"ex"
 	],
 	"10132033": [
 		"ur",
@@ -18356,7 +18857,8 @@
 		"cover",
 		"cover:turn1",
 		"cover:per40",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10132034": [
 		"mr",
@@ -18367,7 +18869,8 @@
 		"cover",
 		"cover:turn1",
 		"cover:per40",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10132035": [
 		"ur",
@@ -18376,7 +18879,8 @@
 		"singer",
 		"recovery",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10132036": [
 		"mr",
@@ -18385,7 +18889,8 @@
 		"singer",
 		"recovery",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10132037": [
 		"mr",
@@ -18414,7 +18919,8 @@
 		"supo:slf",
 		"supo:turn3",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10132039": [
 		"ur",
@@ -18881,7 +19387,8 @@
 		"jamm:soe",
 		"jamm:turn3",
 		"jamm:param4",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10133028": [
 		"mr",
@@ -18892,7 +19399,8 @@
 		"jamm:soe",
 		"jamm:turn3",
 		"jamm:param4",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10133029": [
 		"ur",
@@ -18906,7 +19414,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+2",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10133030": [
 		"mr",
@@ -18920,7 +19429,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+2",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10133031": [
 		"sr",
@@ -18998,7 +19508,8 @@
 		"jamm:turn2",
 		"jamm:param3",
 		"jamm:fix",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10133038": [
 		"mr",
@@ -19010,7 +19521,8 @@
 		"jamm:turn2",
 		"jamm:param3",
 		"jamm:fix",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10133039": [
 		"ur",
@@ -19022,7 +19534,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10133040": [
 		"mr",
@@ -19034,7 +19547,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10133041": [
 		"ur",
@@ -19048,7 +19562,8 @@
 		"ench:slf",
 		"ench",
 		"ench:turn2",
-		"ench:attr4"
+		"ench:attr4",
+		"ex"
 	],
 	"10133042": [
 		"mr",
@@ -19062,7 +19577,8 @@
 		"ench:slf",
 		"ench",
 		"ench:turn2",
-		"ench:attr4"
+		"ench:attr4",
+		"ex"
 	],
 	"10133043": [
 		"ur",
@@ -19073,7 +19589,8 @@
 		"dot:aoe",
 		"dot:freeze",
 		"dot:turn3",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10133044": [
 		"mr",
@@ -19084,7 +19601,8 @@
 		"dot:aoe",
 		"dot:freeze",
 		"dot:turn3",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10133045": [
 		"ur",
@@ -19095,7 +19613,8 @@
 		"heal:soe",
 		"heal:hq",
 		"rele",
-		"rele:role26"
+		"rele:role26",
+		"ex"
 	],
 	"10133046": [
 		"mr",
@@ -19106,7 +19625,8 @@
 		"heal:soe",
 		"heal:hq",
 		"rele",
-		"rele:role26"
+		"rele:role26",
+		"ex"
 	],
 	"10133047": [
 		"mr",
@@ -19403,7 +19923,8 @@
 		"supo:turn2",
 		"supo:param2",
 		"supo:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10134022": [
 		"mr",
@@ -19419,7 +19940,8 @@
 		"supo:turn2",
 		"supo:param2",
 		"supo:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10134023": [
 		"ur",
@@ -19433,7 +19955,8 @@
 		"ench:slf",
 		"ench",
 		"ench:turn2",
-		"ench:attr5"
+		"ench:attr5",
+		"ex"
 	],
 	"10134024": [
 		"mr",
@@ -19447,7 +19970,8 @@
 		"ench:slf",
 		"ench",
 		"ench:turn2",
-		"ench:attr5"
+		"ench:attr5",
+		"ex"
 	],
 	"10134025": [
 		"sr",
@@ -19529,7 +20053,8 @@
 		"attack:time1",
 		"attack:soe",
 		"attack:physical",
-		"attack:time2"
+		"attack:time2",
+		"ex"
 	],
 	"10134032": [
 		"mr",
@@ -19541,7 +20066,8 @@
 		"attack:time1",
 		"attack:soe",
 		"attack:physical",
-		"attack:time2"
+		"attack:time2",
+		"ex"
 	],
 	"10134033": [
 		"ur",
@@ -19554,7 +20080,8 @@
 		"defe:param7",
 		"defe:fix",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10134034": [
 		"mr",
@@ -19567,7 +20094,8 @@
 		"defe:param7",
 		"defe:fix",
 		"heal:aoe",
-		"heal:hq"
+		"heal:hq",
+		"ex"
 	],
 	"10134035": [
 		"ur",
@@ -19579,7 +20107,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10134036": [
 		"mr",
@@ -19591,7 +20120,8 @@
 		"defe:turn2",
 		"defe:param7",
 		"defe:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10134037": [
 		"ur",
@@ -19602,7 +20132,8 @@
 		"jamm:soe",
 		"jamm:turn3",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10134038": [
 		"mr",
@@ -19613,7 +20144,8 @@
 		"jamm:soe",
 		"jamm:turn3",
 		"jamm:param3",
-		"jamm:fix"
+		"jamm:fix",
+		"ex"
 	],
 	"10134039": [
 		"mr",
@@ -19624,7 +20156,8 @@
 		"attack:magic",
 		"attack:time1",
 		"attack:soe",
-		"chain"
+		"chain",
+		"ex"
 	],
 	"10134040": [
 		"mr",
@@ -19892,7 +20425,8 @@
 		"recovery",
 		"heal:soe",
 		"heal:hq",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10134064": [
 		"mr",
@@ -20456,7 +20990,8 @@
 		"supo:turn2",
 		"supo:param3",
 		"supo:fix",
-		"supo:param4"
+		"supo:param4",
+		"ex"
 	],
 	"10135041": [
 		"mr",
@@ -21867,7 +22402,8 @@
 		"supo:turn3",
 		"supo:param5",
 		"supo:fix",
-		"atos:hp"
+		"atos:hp",
+		"ex"
 	],
 	"10137042": [
 		"mr",
@@ -21878,7 +22414,8 @@
 		"attack:magic",
 		"attack:time3",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10137043": [
 		"ur",
@@ -22720,7 +23257,8 @@
 		"supo:turn3",
 		"supo:param2",
 		"supo:fix",
-		"deal:+1"
+		"deal:+1",
+		"ex"
 	],
 	"10139043": [
 		"ur",
@@ -23322,7 +23860,8 @@
 		"defe:param6",
 		"defe:fix",
 		"rele",
-		"rele:role7"
+		"rele:role7",
+		"ex"
 	],
 	"10140040": [
 		"mr",
@@ -23988,7 +24527,8 @@
 		"attack",
 		"attack:physical",
 		"attack:time3",
-		"attack:soe"
+		"attack:soe",
+		"ex"
 	],
 	"10141038": [
 		"mr",
@@ -24550,7 +25090,8 @@
 		"attack:magic",
 		"attack:time2",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10142038": [
 		"mr",
@@ -25067,7 +25608,8 @@
 		"defe:fix",
 		"defe:param7",
 		"deal:+1",
-		"defe:double"
+		"defe:double",
+		"ex"
 	],
 	"10143032": [
 		"mr",
@@ -25082,7 +25624,8 @@
 		"defe:aoe",
 		"defe:turn2",
 		"defe:param6",
-		"defe:param"
+		"defe:param",
+		"ex"
 	],
 	"10143033": [
 		"mr",
@@ -25929,7 +26472,8 @@
 		"supo:slf",
 		"supo:turn4",
 		"supo:param3",
-		"supo:fix"
+		"supo:fix",
+		"ex"
 	],
 	"10144032": [
 		"mr",
@@ -25942,7 +26486,8 @@
 		"supo:param3",
 		"supo:fix",
 		"supo:param4",
-		"atos:hp"
+		"atos:hp",
+		"ex"
 	],
 	"10144033": [
 		"ur",
@@ -27483,7 +28028,8 @@
 		"attack:magic",
 		"attack:time4",
 		"attack:aoe",
-		"aoe"
+		"aoe",
+		"ex"
 	],
 	"10146032": [
 		"mr",
@@ -28836,7 +29382,8 @@
 		"cover",
 		"cover:turn1",
 		"cover:per50",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10147075": [
 		"mr",
@@ -28847,7 +29394,8 @@
 		"cover",
 		"cover:turn1",
 		"cover:per50",
-		"deal:+2"
+		"deal:+2",
+		"ex"
 	],
 	"10147076": [
 		"ur",
@@ -28935,7 +29483,8 @@
 		"supo:turn2",
 		"supo:param3",
 		"supo:fix",
-		"buffone"
+		"buffone",
+		"ex"
 	],
 	"10147083": [
 		"mr",
@@ -28947,7 +29496,8 @@
 		"supo:turn2",
 		"supo:param3",
 		"supo:fix",
-		"buffone"
+		"buffone",
+		"ex"
 	],
 	"10147084": [
 		"ur",
@@ -29757,6 +30307,2009 @@
 		"defe:param",
 		"deal:+2",
 		"ex"
+	],
+	"10149001": [
+		"ur",
+		"cost2",
+		"dark",
+		"thief",
+		"support",
+		"crit",
+		"buffone",
+		"supo:soe",
+		"supo:turn2",
+		"supo:param4",
+		"supo:fix",
+		"ex"
+	],
+	"10149002": [
+		"mr",
+		"cost2",
+		"dark",
+		"thief",
+		"support",
+		"crit",
+		"buffone",
+		"supo:soe",
+		"supo:turn2",
+		"supo:param4",
+		"supo:fix",
+		"ex"
+	],
+	"10149003": [
+		"ur",
+		"cost2",
+		"ice",
+		"mercenary",
+		"support",
+		"supo:slf",
+		"supo:turn2",
+		"supo:param3",
+		"supo:fix",
+		"crit",
+		"ex"
+	],
+	"10149004": [
+		"mr",
+		"cost2",
+		"ice",
+		"mercenary",
+		"support",
+		"supo:slf",
+		"supo:turn2",
+		"supo:param3",
+		"supo:fix",
+		"crit",
+		"ex"
+	],
+	"10149005": [
+		"ur",
+		"cost2",
+		"dark",
+		"singer",
+		"support",
+		"supo:soe",
+		"supo:turn2",
+		"supo:param3",
+		"supo:fix",
+		"buffone",
+		"supo:slf",
+		"supo:param5",
+		"ex"
+	],
+	"10149006": [
+		"mr",
+		"cost2",
+		"dark",
+		"singer",
+		"support",
+		"supo:soe",
+		"supo:turn2",
+		"supo:param3",
+		"supo:fix",
+		"buffone",
+		"supo:slf",
+		"supo:param5",
+		"ex"
+	],
+	"10149007": [
+		"ur",
+		"cost3",
+		"dark",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn2",
+		"defe:param6",
+		"defe:param",
+		"defe:param7",
+		"deal:+1",
+		"defe:double",
+		"ex"
+	],
+	"10149008": [
+		"mr",
+		"cost3",
+		"dark",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn2",
+		"defe:param6",
+		"defe:param",
+		"defe:param7",
+		"deal:+1",
+		"defe:double",
+		"ex"
+	],
+	"10149009": [
+		"ur",
+		"cost3",
+		"icedark",
+		"mercenary",
+		"sorcery",
+		"attack:revenge",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"attack:crit",
+		"ex"
+	],
+	"10149010": [
+		"mr",
+		"cost3",
+		"icedark",
+		"mercenary",
+		"sorcery",
+		"attack:revenge",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"attack:crit",
+		"ex"
+	],
+	"10149011": [
+		"ur",
+		"cost2",
+		"dark",
+		"millionaire",
+		"defense",
+		"cover",
+		"cover:turn1",
+		"cover:per20",
+		"defe:aoe",
+		"defe:turn2",
+		"defe:param6",
+		"defe:fix",
+		"deal:+1",
+		"ex"
+	],
+	"10149012": [
+		"mr",
+		"cost2",
+		"dark",
+		"millionaire",
+		"defense",
+		"cover",
+		"cover:turn1",
+		"cover:per20",
+		"defe:aoe",
+		"defe:turn2",
+		"defe:param6",
+		"defe:fix",
+		"deal:+1",
+		"ex"
+	],
+	"10149013": [
+		"ur",
+		"cost2",
+		"dark",
+		"thief",
+		"jamming",
+		"jamm:aoe",
+		"jamm:turn3",
+		"jamm:param3",
+		"jamm:fix",
+		"aoe",
+		"ex"
+	],
+	"10149014": [
+		"mr",
+		"cost2",
+		"dark",
+		"thief",
+		"jamming",
+		"jamm:aoe",
+		"jamm:turn3",
+		"jamm:param3",
+		"jamm:fix",
+		"aoe",
+		"ex"
+	],
+	"10149015": [
+		"ur",
+		"cost2",
+		"dark",
+		"singer",
+		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"supo:slf",
+		"supo:turn3",
+		"supo:param5",
+		"supo:fix",
+		"rele",
+		"rele:role7",
+		"bug",
+		"ex"
+	],
+	"10149016": [
+		"mr",
+		"cost2",
+		"dark",
+		"singer",
+		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"supo:slf",
+		"supo:turn3",
+		"supo:param5",
+		"supo:fix",
+		"rele",
+		"rele:role7",
+		"bug",
+		"ex"
+	],
+	"10149017": [
+		"sr",
+		"cost1",
+		"dark",
+		"thief",
+		"jamming"
+	],
+	"10149018": [
+		"ur",
+		"cost1",
+		"dark",
+		"thief",
+		"jamming"
+	],
+	"10149019": [
+		"mr",
+		"cost2",
+		"dark",
+		"thief",
+		"jamming",
+		"jamm:soe",
+		"jamm:turn2",
+		"jamm:param3",
+		"jamm:fix",
+		"defe:aoe",
+		"defe:turn2",
+		"defe:param7",
+		"defe:param",
+		"ex"
+	],
+	"10149020": [
+		"mr",
+		"cost2",
+		"wind",
+		"mercenary",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
+		"supo:slf",
+		"supo:turn2",
+		"supo:param3",
+		"supo:fix",
+		"ench:slf",
+		"ench",
+		"ench:turn2",
+		"ench:attr3",
+		"chain",
+		"ex"
+	],
+	"10149021": [
+		"mr",
+		"cost2",
+		"wind",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn2",
+		"defe:param6",
+		"defe:fix",
+		"deal:+2",
+		"ex"
+	],
+	"10149022": [
+		"mr",
+		"cost4",
+		"wind",
+		"thief",
+		"sorcery",
+		"attack:magic",
+		"attack:time2",
+		"attack:aoe",
+		"aoe",
+		"chain",
+		"ex"
+	],
+	"10149023": [
+		"mr",
+		"cost3",
+		"wind",
+		"singer",
+		"jamming",
+		"jamm:aoe",
+		"jamm:turn2",
+		"jamm:param3",
+		"jamm:fix",
+		"aoe",
+		"heal:aoe",
+		"heal:hq",
+		"ex"
+	],
+	"10149024": [
+		"ur",
+		"cost2",
+		"dark",
+		"mercenary",
+		"support",
+		"supo:slf",
+		"supo:turn4",
+		"supo:param4",
+		"supo:fix",
+		"ex"
+	],
+	"10149025": [
+		"mr",
+		"cost2",
+		"dark",
+		"mercenary",
+		"support",
+		"supo:slf",
+		"supo:turn4",
+		"supo:param4",
+		"supo:fix",
+		"ex"
+	],
+	"10149026": [
+		"ur",
+		"cost2",
+		"icedark",
+		"millionaire",
+		"jamming",
+		"jamm:soe",
+		"jamm:turn3",
+		"jamm:param3",
+		"jamm:fix",
+		"defe:aoe",
+		"defe:turn3",
+		"defe:param7",
+		"defe:fix",
+		"deal:+1",
+		"ex"
+	],
+	"10149027": [
+		"mr",
+		"cost2",
+		"icedark",
+		"millionaire",
+		"jamming",
+		"jamm:soe",
+		"jamm:turn3",
+		"jamm:param3",
+		"jamm:fix",
+		"defe:aoe",
+		"defe:turn3",
+		"defe:param7",
+		"defe:fix",
+		"deal:+1",
+		"ex"
+	],
+	"10149028": [
+		"ur",
+		"cost3",
+		"icedark",
+		"thief",
+		"jamming",
+		"jamm:aoe",
+		"jamm:turn3",
+		"jamm:param3",
+		"jamm:fix",
+		"aoe",
+		"ex"
+	],
+	"10149029": [
+		"mr",
+		"cost3",
+		"icedark",
+		"thief",
+		"jamming",
+		"jamm:aoe",
+		"jamm:turn3",
+		"jamm:param3",
+		"jamm:fix",
+		"aoe",
+		"ex"
+	],
+	"10149030": [
+		"ur",
+		"cost3",
+		"icedark",
+		"singer",
+		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"supo:slf",
+		"supo:turn3",
+		"supo:param5",
+		"supo:fix",
+		"bug",
+		"ex"
+	],
+	"10149031": [
+		"mr",
+		"cost3",
+		"icedark",
+		"singer",
+		"recovery",
+		"heal:aoe",
+		"heal:hq",
+		"supo:slf",
+		"supo:turn3",
+		"supo:param5",
+		"supo:fix",
+		"bug",
+		"ex"
+	],
+	"10149032": [
+		"ur",
+		"cost9",
+		"dark",
+		"null",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
+		"ex"
+	],
+	"10149033": [
+		"mr",
+		"cost9",
+		"dark",
+		"null",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
+		"ex"
+	],
+	"10149034": [
+		"ur",
+		"cost9",
+		"ice",
+		"null",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
+		"ex"
+	],
+	"10149035": [
+		"mr",
+		"cost9",
+		"ice",
+		"null",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
+		"ex"
+	],
+	"10149036": [
+		"ur",
+		"cost9",
+		"dark",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"ex"
+	],
+	"10149037": [
+		"mr",
+		"cost9",
+		"dark",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"ex"
+	],
+	"10149038": [
+		"ur",
+		"cost9",
+		"dark",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"ex"
+	],
+	"10149039": [
+		"mr",
+		"cost9",
+		"dark",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"ex"
+	],
+	"10149040": [
+		"n",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10149041": [
+		"hn",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10149042": [
+		"r",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10149043": [
+		"sr",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10149044": [
+		"mr",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10149045": [
+		"ur",
+		"cost3",
+		"icedark",
+		"mercenary",
+		"sorcery",
+		"attack:pierce",
+		"aoe",
+		"attack:magic",
+		"attack:time2",
+		"attack:aoe",
+		"attack:crit",
+		"ex"
+	],
+	"10149046": [
+		"mr",
+		"cost3",
+		"icedark",
+		"mercenary",
+		"sorcery",
+		"attack:pierce",
+		"aoe",
+		"attack:magic",
+		"attack:time2",
+		"attack:aoe",
+		"attack:crit",
+		"ex"
+	],
+	"10149047": [
+		"ur",
+		"cost2",
+		"icedark",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn3",
+		"defe:param6",
+		"defe:param",
+		"deal:+1",
+		"ex"
+	],
+	"10149048": [
+		"mr",
+		"cost2",
+		"icedark",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn3",
+		"defe:param6",
+		"defe:param",
+		"deal:+1",
+		"ex"
+	],
+	"10149049": [
+		"ur",
+		"cost4",
+		"icedark",
+		"thief",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe",
+		"aoe",
+		"jamm:aoe",
+		"jamm:turn2",
+		"jamm:param3",
+		"jamm:fix",
+		"jamm:param4",
+		"supo:aoe",
+		"supo:turn2",
+		"supo:param4",
+		"supo:fix",
+		"jamm:double",
+		"ex"
+	],
+	"10149050": [
+		"mr",
+		"cost4",
+		"icedark",
+		"thief",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe",
+		"aoe",
+		"jamm:aoe",
+		"jamm:turn2",
+		"jamm:param3",
+		"jamm:fix",
+		"jamm:param4",
+		"supo:aoe",
+		"supo:turn2",
+		"supo:param4",
+		"supo:fix",
+		"jamm:double",
+		"ex"
+	],
+	"10149051": [
+		"ur",
+		"cost3",
+		"icedark",
+		"singer",
+		"support",
+		"supo:soe",
+		"supo:turn2",
+		"supo:param3",
+		"supo:fix",
+		"buffone",
+		"supo:param4",
+		"heal:aoe",
+		"heal:hq",
+		"ex"
+	],
+	"10149052": [
+		"mr",
+		"cost3",
+		"icedark",
+		"singer",
+		"support",
+		"supo:soe",
+		"supo:turn2",
+		"supo:param3",
+		"supo:fix",
+		"buffone",
+		"supo:param4",
+		"heal:aoe",
+		"heal:hq",
+		"ex"
+	],
+	"10149053": [
+		"ur",
+		"cost1",
+		"dark",
+		"singer",
+		"support",
+		"supo:slf",
+		"supo:turn3",
+		"supo:param5",
+		"supo:fix",
+		"rele",
+		"rele:role7",
+		"ex"
+	],
+	"10149054": [
+		"mr",
+		"cost1",
+		"dark",
+		"singer",
+		"support",
+		"supo:slf",
+		"supo:turn3",
+		"supo:param5",
+		"supo:fix",
+		"rele",
+		"rele:role7",
+		"ex"
+	],
+	"10149055": [
+		"ur",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10150001": [
+		"ur",
+		"cost3",
+		"ice",
+		"mercenary",
+		"attack",
+		"attack:attrach",
+		"attack:physical",
+		"attack:time3",
+		"attack:soe",
+		"chain",
+		"ex"
+	],
+	"10150002": [
+		"mr",
+		"cost3",
+		"ice",
+		"mercenary",
+		"attack",
+		"attack:attrach",
+		"attack:physical",
+		"attack:time3",
+		"attack:soe",
+		"chain",
+		"ex"
+	],
+	"10150006": [
+		"ur",
+		"cost1",
+		"dark",
+		"singer",
+		"support",
+		"supo:slf",
+		"supo:turn3",
+		"supo:param5",
+		"supo:fix",
+		"rele",
+		"rele:role26",
+		"ex"
+	],
+	"10150007": [
+		"mr",
+		"cost1",
+		"dark",
+		"singer",
+		"support",
+		"supo:slf",
+		"supo:turn3",
+		"supo:param5",
+		"supo:fix",
+		"rele",
+		"rele:role26",
+		"ex"
+	],
+	"10150011": [
+		"ur",
+		"cost2",
+		"icedark",
+		"thief",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"attack:crit",
+		"ex"
+	],
+	"10150012": [
+		"mr",
+		"cost2",
+		"icedark",
+		"thief",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"attack:crit",
+		"ex"
+	],
+	"10150016": [
+		"ur",
+		"cost2",
+		"dark",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn2",
+		"defe:param6",
+		"defe:fix",
+		"deal:+1",
+		"ex"
+	],
+	"10150017": [
+		"mr",
+		"cost2",
+		"dark",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn2",
+		"defe:param6",
+		"defe:fix",
+		"deal:+1",
+		"ex"
+	],
+	"10150021": [
+		"mr",
+		"cost5",
+		"dark",
+		"mercenary",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe",
+		"aoe",
+		"dot:aoe",
+		"dot:poison",
+		"dot:turn3",
+		"ex"
+	],
+	"10150022": [
+		"mr+",
+		"cost5",
+		"dark",
+		"mercenary",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe",
+		"aoe",
+		"dot:aoe",
+		"dot:poison",
+		"dot:turn3",
+		"ex"
+	],
+	"10150023": [
+		"mr++",
+		"cost5",
+		"dark",
+		"mercenary",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe",
+		"aoe",
+		"dot:aoe",
+		"dot:poison",
+		"dot:turn3",
+		"ex"
+	],
+	"10150024": [
+		"mmr",
+		"cost5",
+		"dark",
+		"mercenary",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:aoe",
+		"aoe",
+		"dot:aoe",
+		"dot:poison",
+		"dot:turn3",
+		"ex"
+	],
+	"10150026": [
+		"mr",
+		"cost2",
+		"dark",
+		"singer",
+		"support",
+		"supo:aoe",
+		"supo:turn2",
+		"supo:param4",
+		"supo:param",
+		"ex"
+	],
+	"10150027": [
+		"mr+",
+		"cost2",
+		"dark",
+		"singer",
+		"support",
+		"supo:aoe",
+		"supo:turn2",
+		"supo:param4",
+		"supo:param",
+		"ex"
+	],
+	"10150028": [
+		"mr++",
+		"cost2",
+		"dark",
+		"singer",
+		"support",
+		"supo:aoe",
+		"supo:turn2",
+		"supo:param4",
+		"supo:param",
+		"ex"
+	],
+	"10150029": [
+		"mmr",
+		"cost2",
+		"dark",
+		"singer",
+		"support",
+		"supo:aoe",
+		"supo:turn2",
+		"supo:param4",
+		"supo:param",
+		"ex"
+	],
+	"10150031": [
+		"mr",
+		"cost3",
+		"dark",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn3",
+		"defe:param6",
+		"defe:fix",
+		"defe:param7",
+		"rfle:aoe",
+		"rfle:turn3",
+		"deal:+1",
+		"defe:double",
+		"ex"
+	],
+	"10150032": [
+		"mr+",
+		"cost3",
+		"dark",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn3",
+		"defe:param6",
+		"defe:fix",
+		"defe:param7",
+		"rfle:aoe",
+		"rfle:turn3",
+		"deal:+1",
+		"defe:double",
+		"ex"
+	],
+	"10150033": [
+		"mr++",
+		"cost3",
+		"dark",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn3",
+		"defe:param6",
+		"defe:fix",
+		"defe:param7",
+		"rfle:aoe",
+		"rfle:turn3",
+		"deal:+1",
+		"defe:double",
+		"ex"
+	],
+	"10150034": [
+		"mmr",
+		"cost3",
+		"dark",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn3",
+		"defe:param6",
+		"defe:fix",
+		"defe:param7",
+		"rfle:aoe",
+		"rfle:turn3",
+		"deal:+1",
+		"defe:double",
+		"ex"
+	],
+	"10150036": [
+		"mr",
+		"cost2",
+		"dark",
+		"thief",
+		"sorcery",
+		"attack:magic",
+		"attack:time2",
+		"attack:aoe",
+		"aoe",
+		"ex"
+	],
+	"10150037": [
+		"mr+",
+		"cost2",
+		"dark",
+		"thief",
+		"sorcery",
+		"attack:magic",
+		"attack:time2",
+		"attack:aoe",
+		"aoe",
+		"ex"
+	],
+	"10150038": [
+		"mr++",
+		"cost2",
+		"dark",
+		"thief",
+		"sorcery",
+		"attack:magic",
+		"attack:time2",
+		"attack:aoe",
+		"aoe",
+		"ex"
+	],
+	"10150039": [
+		"mmr",
+		"cost2",
+		"dark",
+		"thief",
+		"sorcery",
+		"attack:pierce",
+		"aoe",
+		"attack:magic",
+		"attack:time4",
+		"attack:aoe",
+		"ex"
+	],
+	"10150041": [
+		"ur",
+		"cost2",
+		"ice",
+		"singer",
+		"support",
+		"supo:aoe",
+		"supo:turn2",
+		"supo:param3",
+		"supo:param",
+		"supo:param4",
+		"ex"
+	],
+	"10150042": [
+		"mr",
+		"cost2",
+		"ice",
+		"singer",
+		"support",
+		"supo:aoe",
+		"supo:turn2",
+		"supo:param3",
+		"supo:param",
+		"supo:param4",
+		"ex"
+	],
+	"10150043": [
+		"ur",
+		"cost2",
+		"ice",
+		"millionaire",
+		"defense",
+		"adef:aoe",
+		"adef",
+		"adef:turn2",
+		"adef:attr1",
+		"rfle:aoe",
+		"rfle:turn2",
+		"deal:+1",
+		"ex"
+	],
+	"10150044": [
+		"mr",
+		"cost2",
+		"ice",
+		"millionaire",
+		"defense",
+		"adef:aoe",
+		"adef",
+		"adef:turn2",
+		"adef:attr1",
+		"rfle:aoe",
+		"rfle:turn2",
+		"deal:+1",
+		"ex"
+	],
+	"10150045": [
+		"ur",
+		"cost3",
+		"ice",
+		"thief",
+		"sorcery",
+		"attack:attrach",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"attack:crit",
+		"dot:aoe",
+		"dot:freeze",
+		"dot:turn3",
+		"aoe",
+		"ex"
+	],
+	"10150046": [
+		"mr",
+		"cost3",
+		"ice",
+		"thief",
+		"sorcery",
+		"attack:attrach",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"attack:crit",
+		"dot:aoe",
+		"dot:freeze",
+		"dot:turn3",
+		"aoe",
+		"ex"
+	],
+	"10150047": [
+		"ur",
+		"cost3",
+		"dark",
+		"mercenary",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
+		"atos:cost",
+		"ex"
+	],
+	"10150048": [
+		"mr",
+		"cost3",
+		"dark",
+		"mercenary",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
+		"atos:cost",
+		"ex"
+	],
+	"10150049": [
+		"ur",
+		"cost2",
+		"fire",
+		"thief",
+		"jamming",
+		"jamm:soe",
+		"jamm:turn3",
+		"jamm:param3",
+		"jamm:fix",
+		"ex"
+	],
+	"10150050": [
+		"mr",
+		"cost2",
+		"fire",
+		"thief",
+		"jamming",
+		"jamm:soe",
+		"jamm:turn3",
+		"jamm:param3",
+		"jamm:fix",
+		"ex"
+	],
+	"10150051": [
+		"mr",
+		"cost2",
+		"ice",
+		"mercenary",
+		"support",
+		"supo:slf",
+		"supo:turn4",
+		"supo:param3",
+		"supo:fix",
+		"ex"
+	],
+	"10150052": [
+		"mr",
+		"cost2",
+		"ice",
+		"singer",
+		"support",
+		"supo:soe",
+		"supo:turn2",
+		"supo:param4",
+		"supo:fix",
+		"buffone",
+		"heal:aoe",
+		"heal:hq",
+		"ex"
+	],
+	"10150053": [
+		"ur",
+		"cost9",
+		"ice",
+		"null",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
+		"ex"
+	],
+	"10150054": [
+		"mr",
+		"cost9",
+		"ice",
+		"null",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
+		"ex"
+	],
+	"10150055": [
+		"ur",
+		"cost9",
+		"ice",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"ex"
+	],
+	"10150056": [
+		"mr",
+		"cost9",
+		"ice",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"ex"
+	],
+	"10150057": [
+		"ur",
+		"cost9",
+		"ice",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"ex"
+	],
+	"10150058": [
+		"mr",
+		"cost9",
+		"ice",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"ex"
+	],
+	"10150059": [
+		"ur",
+		"cost9",
+		"ice",
+		"null",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
+		"ex"
+	],
+	"10150060": [
+		"mr",
+		"cost9",
+		"ice",
+		"null",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
+		"ex"
+	],
+	"10150061": [
+		"mr",
+		"cost3",
+		"winddark",
+		"mercenary",
+		"attack",
+		"attack:pierce",
+		"aoe",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe",
+		"ex"
+	],
+	"10150062": [
+		"mr",
+		"cost3",
+		"winddark",
+		"mercenary",
+		"attack",
+		"attack:pierce",
+		"aoe",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe",
+		"ex"
+	],
+	"10150063": [
+		"hn",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10150064": [
+		"r",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10150065": [
+		"sr",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10150066": [
+		"ur",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10150067": [
+		"mr",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10150072": [
+		"sr",
+		"cost2",
+		"light",
+		"mercenary",
+		"attack",
+		"attack:attrach",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10150073": [
+		"ur",
+		"cost2",
+		"light",
+		"mercenary",
+		"attack",
+		"attack:attrach",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10150101": [
+		"mr+",
+		"cost5",
+		"fire",
+		"mercenary",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe",
+		"aoe",
+		"ex"
+	],
+	"10150102": [
+		"mr++",
+		"cost5",
+		"fire",
+		"mercenary",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe",
+		"aoe",
+		"ex"
+	],
+	"10150103": [
+		"mmr",
+		"cost5",
+		"fire",
+		"mercenary",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:aoe",
+		"aoe",
+		"ex"
+	],
+	"10150104": [
+		"mr+",
+		"cost3",
+		"ice",
+		"millionaire",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
+		"defe:aoe",
+		"defe:turn2",
+		"defe:param6",
+		"defe:fix",
+		"deal:+1",
+		"ex"
+	],
+	"10150105": [
+		"mr++",
+		"cost3",
+		"ice",
+		"millionaire",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
+		"defe:aoe",
+		"defe:turn2",
+		"defe:param6",
+		"defe:fix",
+		"deal:+1",
+		"ex"
+	],
+	"10150106": [
+		"mmr",
+		"cost3",
+		"ice",
+		"millionaire",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe",
+		"defe:aoe",
+		"defe:turn2",
+		"defe:param6",
+		"defe:param",
+		"deal:+1",
+		"ex"
+	],
+	"10150107": [
+		"mr+",
+		"cost3",
+		"ice",
+		"thief",
+		"jamming",
+		"jamm:aoe",
+		"jamm:turn2",
+		"jamm:param3",
+		"jamm:fix",
+		"aoe",
+		"jamm:param4",
+		"jamm:double",
+		"ex"
+	],
+	"10150108": [
+		"mr++",
+		"cost3",
+		"ice",
+		"thief",
+		"jamming",
+		"jamm:aoe",
+		"jamm:turn2",
+		"jamm:param3",
+		"jamm:fix",
+		"aoe",
+		"jamm:param4",
+		"jamm:double",
+		"ex"
+	],
+	"10150109": [
+		"mmr",
+		"cost3",
+		"ice",
+		"thief",
+		"jamming",
+		"jamm:aoe",
+		"jamm:turn2",
+		"jamm:param3",
+		"jamm:fix",
+		"aoe",
+		"jamm:param4",
+		"jamm:double",
+		"ex"
+	],
+	"10150110": [
+		"mr+",
+		"cost5",
+		"fire",
+		"singer",
+		"support",
+		"supo:aoe",
+		"supo:turn3",
+		"supo:param3",
+		"supo:fix",
+		"ex"
+	],
+	"10150111": [
+		"mr++",
+		"cost5",
+		"fire",
+		"singer",
+		"support",
+		"supo:aoe",
+		"supo:turn3",
+		"supo:param3",
+		"supo:fix",
+		"ex"
+	],
+	"10150112": [
+		"mmr",
+		"cost5",
+		"fire",
+		"singer",
+		"support",
+		"supo:aoe",
+		"supo:turn3",
+		"supo:param3",
+		"supo:fix",
+		"heal:aoe",
+		"heal:hq",
+		"ex"
+	],
+	"10150113": [
+		"mr",
+		"cost1",
+		"windlight",
+		"null",
+		"jamming",
+		"ajam:soe",
+		"ajam",
+		"ajam:turn2",
+		"ajam:attr3",
+		"ajam:attr4",
+		"ex"
+	],
+	"10151001": [
+		"ur",
+		"cost2",
+		"wind",
+		"thief",
+		"jamming",
+		"jamm:soe",
+		"jamm:turn4",
+		"jamm:param3",
+		"jamm:fix",
+		"ex"
+	],
+	"10151002": [
+		"mr",
+		"cost2",
+		"wind",
+		"thief",
+		"jamming",
+		"jamm:soe",
+		"jamm:turn4",
+		"jamm:param3",
+		"jamm:fix",
+		"ex"
+	],
+	"10151003": [
+		"mr+",
+		"cost2",
+		"wind",
+		"thief",
+		"jamming",
+		"jamm:soe",
+		"jamm:turn4",
+		"jamm:param3",
+		"jamm:fix",
+		"ex"
+	],
+	"10151004": [
+		"mr++",
+		"cost2",
+		"wind",
+		"thief",
+		"jamming",
+		"jamm:soe",
+		"jamm:turn4",
+		"jamm:param3",
+		"jamm:fix",
+		"ex"
+	],
+	"10151021": [
+		"ur",
+		"cost1",
+		"dark",
+		"null",
+		"support",
+		"supo:soe",
+		"supo:turn1",
+		"supo:param4",
+		"supo:fix",
+		"buffone",
+		"ex"
+	],
+	"10151022": [
+		"mr",
+		"cost1",
+		"dark",
+		"null",
+		"support",
+		"supo:soe",
+		"supo:turn1",
+		"supo:param4",
+		"supo:fix",
+		"buffone",
+		"ex"
+	],
+	"10151023": [
+		"ur",
+		"cost2",
+		"dark",
+		"mercenary",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"dotup",
+		"aoe",
+		"ex"
+	],
+	"10151024": [
+		"mr",
+		"cost2",
+		"dark",
+		"mercenary",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"dotup",
+		"aoe",
+		"ex"
+	],
+	"10151025": [
+		"ur",
+		"cost3",
+		"dark",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn2",
+		"defe:param7",
+		"defe:fix",
+		"deal:+1",
+		"ex"
+	],
+	"10151026": [
+		"mr",
+		"cost3",
+		"dark",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn2",
+		"defe:param7",
+		"defe:fix",
+		"deal:+1",
+		"ex"
+	],
+	"10151027": [
+		"ur",
+		"cost2",
+		"dark",
+		"thief",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"supo:slf",
+		"supo:turn2",
+		"supo:param4",
+		"supo:fix",
+		"ex"
+	],
+	"10151028": [
+		"mr",
+		"cost2",
+		"dark",
+		"thief",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe",
+		"supo:slf",
+		"supo:turn2",
+		"supo:param4",
+		"supo:fix",
+		"ex"
+	],
+	"10151029": [
+		"ur",
+		"cost2",
+		"dark",
+		"singer",
+		"support",
+		"supo:soe",
+		"supo:turn2",
+		"supo:param4",
+		"supo:fix",
+		"buffone",
+		"rele",
+		"rele:role24",
+		"ex"
+	],
+	"10151030": [
+		"mr",
+		"cost2",
+		"dark",
+		"singer",
+		"support",
+		"supo:soe",
+		"supo:turn2",
+		"supo:param4",
+		"supo:fix",
+		"buffone",
+		"rele",
+		"rele:role24",
+		"ex"
+	],
+	"10151031": [
+		"ur",
+		"cost3",
+		"wind",
+		"mercenary",
+		"support",
+		"supo:slf",
+		"supo:turn4",
+		"supo:param4",
+		"supo:fix",
+		"crit",
+		"ex"
+	],
+	"10151032": [
+		"mr",
+		"cost3",
+		"wind",
+		"mercenary",
+		"support",
+		"supo:slf",
+		"supo:turn4",
+		"supo:param4",
+		"supo:fix",
+		"crit",
+		"ex"
+	],
+	"10151033": [
+		"mr+",
+		"cost3",
+		"wind",
+		"mercenary",
+		"support",
+		"supo:slf",
+		"supo:turn4",
+		"supo:param4",
+		"supo:fix",
+		"crit",
+		"ex"
+	],
+	"10151034": [
+		"mr++",
+		"cost3",
+		"wind",
+		"mercenary",
+		"support",
+		"supo:slf",
+		"supo:turn4",
+		"supo:param4",
+		"supo:fix",
+		"crit",
+		"ex"
+	],
+	"10151035": [
+		"ur",
+		"cost1",
+		"wind",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn1",
+		"defe:param6",
+		"defe:fix",
+		"deal:+2",
+		"ex"
+	],
+	"10151036": [
+		"mr",
+		"cost1",
+		"wind",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn1",
+		"defe:param6",
+		"defe:fix",
+		"deal:+2",
+		"ex"
+	],
+	"10151037": [
+		"mr+",
+		"cost1",
+		"wind",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn1",
+		"defe:param6",
+		"defe:fix",
+		"deal:+2",
+		"ex"
+	],
+	"10151038": [
+		"mr++",
+		"cost1",
+		"wind",
+		"millionaire",
+		"defense",
+		"defe:aoe",
+		"defe:turn1",
+		"defe:param6",
+		"defe:fix",
+		"deal:+2",
+		"ex"
+	],
+	"10151039": [
+		"ur",
+		"cost3",
+		"wind",
+		"singer",
+		"support",
+		"supo:slf",
+		"supo:turn2",
+		"supo:param5",
+		"supo:fix",
+		"heal:aoe",
+		"heal:hq",
+		"bug",
+		"ex"
+	],
+	"10151040": [
+		"mr",
+		"cost3",
+		"wind",
+		"singer",
+		"support",
+		"supo:slf",
+		"supo:turn2",
+		"supo:param5",
+		"supo:fix",
+		"heal:aoe",
+		"heal:hq",
+		"bug",
+		"ex"
+	],
+	"10151041": [
+		"mr+",
+		"cost3",
+		"wind",
+		"singer",
+		"support",
+		"supo:slf",
+		"supo:turn2",
+		"supo:param5",
+		"supo:fix",
+		"heal:aoe",
+		"heal:hq",
+		"bug",
+		"ex"
+	],
+	"10151042": [
+		"mr++",
+		"cost3",
+		"wind",
+		"singer",
+		"support",
+		"supo:slf",
+		"supo:turn2",
+		"supo:param5",
+		"supo:fix",
+		"heal:aoe",
+		"heal:hq",
+		"bug",
+		"ex"
+	],
+	"10151101": [
+		"hn",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10151102": [
+		"r",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10151103": [
+		"sr",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10151104": [
+		"ur",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"10151105": [
+		"mr",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
 	],
 	"11000001": [
 		"sr",
@@ -30761,6 +33314,196 @@
 	],
 	"20002006": [
 		"r",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002007": [
+		"ur",
+		"cost9",
+		"light",
+		"null",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002008": [
+		"mr",
+		"cost9",
+		"light",
+		"null",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002009": [
+		"ur",
+		"cost9",
+		"light",
+		"null",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002010": [
+		"mr",
+		"cost9",
+		"light",
+		"null",
+		"attack",
+		"attack:physical",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002011": [
+		"ur",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002012": [
+		"mr",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002013": [
+		"ur",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002014": [
+		"mr",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002015": [
+		"sr",
+		"cost9",
+		"fire",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002016": [
+		"ur",
+		"cost9",
+		"fire",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002017": [
+		"sr",
+		"cost9",
+		"ice",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002018": [
+		"ur",
+		"cost9",
+		"ice",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002019": [
+		"sr",
+		"cost9",
+		"wind",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002020": [
+		"ur",
+		"cost9",
+		"wind",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002021": [
+		"sr",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002022": [
+		"ur",
+		"cost9",
+		"light",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002023": [
+		"sr",
+		"cost9",
+		"dark",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002024": [
+		"ur",
+		"cost9",
+		"dark",
+		"null",
+		"sorcery",
+		"attack:magic",
+		"attack:time1",
+		"attack:soe"
+	],
+	"20002025": [
+		"mr",
 		"cost9",
 		"light",
 		"null",
