@@ -22,6 +22,9 @@
 	"d.skillCond.cond.type",
 	"s.cond.param1",
 	"s.cond.param2",
+	"s.cond.param3",
+	"s.cond.param4",
+	"s.cond.param5",
 	"n.cond.priority",
 	"s.role",
 	"i"
