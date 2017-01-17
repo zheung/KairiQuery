@@ -365,7 +365,7 @@ kqud {
 }
 
 .TabHeader.SkillContent {
-	width: 99.7%;
+	width: 99%;
 	height: 17%;
 }
 .TabHead.SkillContent {
@@ -373,6 +373,7 @@ kqud {
 
 	border: 2px solid transparent;
 	border-radius: 4px 4px 0px 0px;
+	margin: -2px;
 
 	text-align: center;
 }
