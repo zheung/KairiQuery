@@ -7,7 +7,7 @@ module.exports = ($) => {
 				if(~~cond.param1 > 0 && cond.param2 > 0) _l('Cond 1 Double');
 
 				if(~~cond.param1 > 0)
-					return `${cond.param1}Chain以上`;
+					return `${cond.param1}Chain或以上`;
 				else
 					return`${cond.param2}Chain以下`;
 			},
@@ -25,22 +25,22 @@ module.exports = ($) => {
 				return `${cond.param1}%机率`;
 			},
 			5: (card, skill, cond) => {
-				return `自身 | <kqud title="除此卡外，打出的所有卡牌">其他</kqud> | ${shower.attr[valuer.attr[cond.param1]]} | ${cond.param2}张以上`;
+				return `${shower.attr[valuer.attr[cond.param1]]} | ${cond.param2}张<kqud title="不包括此卡">或以上</kqud>`;
 			},
 			6: (card, skill, cond) => {
-				return `自身 | <kqud title="除此卡外，打出的所有卡牌">其他</kqud> | ${shower.skillKind2[valuer.skillKind[cond.param1]]} | ${cond.param2}张以上`;
+				return `${shower.skillKind2[valuer.skillKind[cond.param1]]} | ${cond.param2}张<kqud title="不包括此卡">或以上</kqud>`;
 			},
 			7: (card, skill, cond) => {
 				let rare = valuer.rare[cond.param1],
 					star = (rare == 1? '' : `${rare}★+ | ` );
 
-				return `自身 | <kqud title="除此卡外，打出的所有卡牌">其他</kqud> | ${star}${cond.param2}张以上`;
+				return `${star}${cond.param2}张<kqud title="不包括此卡">或以上</kqud>`;
 			},
 			8: (card, skill, cond) => {
 				if(~~cond.param1 > 0 && cond.param2 > 0) _l('Cond 8 Double');
 
 				if(~~cond.param1 > 0)
-					return `自身 | 发动时 | HP${cond.param1}%以上`;
+					return `自身 | 发动时 | HP${cond.param1}%或以上`;
 				else
 					return `自身 | 发动时 | HP${cond.param2}%以下`;
 			},
@@ -49,7 +49,7 @@ module.exports = ($) => {
 				if(~~cond.param1 > 0 && cond.param2 > 0) _l('Cond 10 Double');
 
 				if(~~cond.param1>0)
-					return `${cond.param1}回合以上`;
+					return `${cond.param1}回合或以上`;
 				else
 					return `${cond.param2}回合以下`;
 			},
