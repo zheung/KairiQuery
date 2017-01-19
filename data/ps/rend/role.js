@@ -77,7 +77,7 @@ module.exports = ($) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
 				return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
-					${p[6]}+${show(p[3])}的${p[4]/10}%`;
+					<kqud title="等级成长：${p[6]}*等级">${p[6]*card.info.max.level}</kqud>+${show(p[3])}的${p[4]/10}%`;
 			},
 			18: false,
 			19: (card, skill, role, skillFirst) => {
