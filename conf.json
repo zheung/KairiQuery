@@ -3,8 +3,8 @@
 
 	"renderAll": false,
 
-	"renderData": true,
-	"renderMark": true,
+	"renderData": false,
+	"renderMark": false,
 
 	"pageEvery": 4,
 
@@ -12,6 +12,7 @@
 		"cn",
 		"jp",
 		"ps",
-		"kr"
+		"kr",
+		"tw"
 	]
 }
