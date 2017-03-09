@@ -102,7 +102,7 @@
 				card.find('.sHQ').html(data.hq);
 
 				card.find('.sThumb').attr('src', '');
-				card.find('.sThumb').attr('src', 'https://raw.githubusercontent.com/kairiquery/kqp'+kq.conds.serv+'20/master/'+data.id+'.png');
+				card.find('.sThumb').attr('src', 'https://raw.githubusercontent.com/kairiquery/kqp'+kq.conds.serv+'21/master/'+data.id+'.png');
 
 				var types = ['awaken', 'normal', 'suport3'];
 

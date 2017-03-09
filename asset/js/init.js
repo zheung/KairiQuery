@@ -161,11 +161,11 @@
 		var src = this.src;
 
 		if(/20\//.test(src)) {
-			this.src = src.replace(/20\//g, '21/');
+			this.src = src.replace(/21\//g, '22/');
 
 			return;
 		}
-		if(/21\//.test(src)) {
+		if(/22\//.test(src)) {
 			this.src = './kq/img/no20.png';
 
 			return;
