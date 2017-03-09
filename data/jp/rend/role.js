@@ -377,7 +377,20 @@ module.exports = ($) => {
 			},
 			130: 'DAMAGE_CUT2',
 			131: 'DAMAGE_BOOST_ORDER_TARGET_DEBUFF',
-			132: 'DAMAGE_CUT_ORDER_TARGET_DEBUFF'
+			132: 'DAMAGE_CUT_ORDER_TARGET_DEBUFF',
+			133: 'ENEMY_CURSE',
+			134: (card, skill, role, skillFirst) => {
+				let p = role.params, target = showTarget(skill, role, skillFirst);
+
+				return '`祝福...待渲染...求科普机制`';
+			},
+			135: 'CURSE_RELEASE',
+			136: 'BLESS_RELEASE',
+			137: 'CURSE_TURN_DOWN',
+			138: 'BLESS_TURN_DOWN',
+			139: 'BEGINNING_DRAW',
+			140: 'CURSE_TURN_UP',
+			141:'BLESS_TURN_UP'
 		};
 	};
 };

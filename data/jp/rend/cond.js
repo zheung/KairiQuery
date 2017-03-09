@@ -56,10 +56,19 @@ module.exports = ($) => {
 			11: false,
 			12: false,
 			13: false,
-			14: false,
+			14: (card, skill, cond) => {
+				if(~~cond.param1 > 0 && cond.param2 > 0) _l('Cond 14 Double');
+
+				if(~~cond.param1 > 0)
+					return `我方 | ${cond.param1}张<kqud title="应该不包括此卡,请帮忙验证">或以上</kqud>`;
+				else
+					return `我方 | ${cond.param2}张<kqud title="应该不包括此卡,请帮忙验证">或以下</kqud>`;
+			},
 			15: false,
 			16: false,
-			17: false,
+			17: (card, skill, cond) => {
+				return `我方 | ${cond.param1}Cost | ${cond.param2}张<kqud title="应该不包括此卡,请帮忙验证">或以上</kqud>`;
+			},
 			18: false,
 			19: false,
 			20: false,

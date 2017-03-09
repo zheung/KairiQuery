@@ -14,10 +14,10 @@ module.exports = ($) => {
 			for(let skill of skills[st]) {
 
 				let s = { prio: skill.cond.priority, content: [] },
-					condType = skill.cond.type, delayType = skill.delay.type;
+					condType = skill.cond.type, condType2 = skill.cond2.type, delayType = skill.delay.type;
 
 				if(condType) {
-					let rend = rdrCond(serv)[condType];
+					let rend = rdrCond(serv)[condType], rend2 = rdrCond(serv)[condType2];
 
 					if(rend)
 						s.cond = rend(card, skill, skill.cond).replace(/\t|\n/g, '');
@@ -25,6 +25,14 @@ module.exports = ($) => {
 						_l('New Cond', condType, 'Card', card.id, 'Skill', skill.id);
 
 						s.cond = '~未渲染条件' + condType;
+					}
+
+					if(rend2)
+						s.cond += ' 且 ' + rend2(card, skill, skill.cond2).replace(/\t|\n/g, '');
+					else if(condType2 != 0) {
+						_l('New Cond2', condType2, 'Card', card.id, 'Skill', skill.id);
+
+						s.cond = '~未渲染条件' + condType2;
 					}
 				}
 
