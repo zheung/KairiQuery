@@ -4,12 +4,15 @@ module.exports = ($) => {
 
 		return {
 			1: (card, skill, cond) => {
-				if(~~cond.param1 > 0 && cond.param2 > 0) _l('Cond 1 Double');
+				let u = ~~cond.param1, d = ~~cond.param2;
 
-				if(~~cond.param1 > 0)
-					return `${cond.param1}Chain或以上`;
+				if(u==0) u=1;
+				if(d==0) d=4;
+
+				if(u==d)
+					return `${u} Chain`;
 				else
-					return`${cond.param2}Chain以下`;
+					return `${u}~${d} Chain`;
 			},
 			2: (card, skill, cond) => {
 				if(~~cond.param2) _l('Cond 2 Double');
@@ -37,21 +40,30 @@ module.exports = ($) => {
 				return `${star}${cond.param2}张<kqud title="不包括此卡">或以上</kqud>`;
 			},
 			8: (card, skill, cond) => {
-				if(~~cond.param1 > 0 && cond.param2 > 0) _l('Cond 8 Double');
+				let u = ~~cond.param1, d = ~~cond.param2;
 
-				if(~~cond.param1 > 0)
-					return `自身 | 发动时 | HP${cond.param1}%或以上`;
+				if(u == d)
+					return `自身 | 发动时 | HP<br>${u}%`;
+				else if(u && !d)
+					return `自身 | 发动时 | HP<br>${u}%或以上`;
+				else if(!u && d)
+					return `自身 | 发动时 | HP<br>${d}%或以下`;
 				else
-					return `自身 | 发动时 | HP${cond.param2}%以下`;
+					return `自身 | 发动时 | HP<br>${u}%~${d}%`;
 			},
 			9: false,
 			10: (card, skill, cond) => {
-				if(~~cond.param1 > 0 && cond.param2 > 0) _l('Cond 10 Double');
+				let u = ~~cond.param1, d = ~~cond.param2;
 
-				if(~~cond.param1>0)
-					return `${cond.param1}回合或以上`;
-				else
-					return `${cond.param2}回合以下`;
+				if((u && d && u != d) || (!u && !d))
+					_l('Cond 10 New Type! '+card.id+' '+card.info.name);
+
+				if(u == d)
+					return `第${u}回合`;
+				else if(u && !d)
+					return `${u}回合或以上`;
+				else if(!u && d)
+					return `${d}回合或以下`;
 			},
 			11: false,
 			12: false,

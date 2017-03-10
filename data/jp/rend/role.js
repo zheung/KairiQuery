@@ -382,7 +382,7 @@ module.exports = ($) => {
 			134: (card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
-				return '`祝福...待渲染...求科普机制`';
+				return `${target} | 祝福 | ${p[1]}回合`;
 			},
 			135: 'CURSE_RELEASE',
 			136: 'BLESS_RELEASE',

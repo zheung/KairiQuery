@@ -4,12 +4,15 @@ module.exports = ($) => {
 
 		return {
 			1: (card, skill, cond) => {
-				if(~~cond.param1 > 0 && cond.param2 > 0) _l('Cond 1 Double');
+				let u = ~~cond.param1, d = ~~cond.param2;
 
-				if(~~cond.param1 > 0)
-					return `${cond.param1}Chain或以上`;
+				if(u==0) u=1;
+				if(d==0) d=4;
+
+				if(u==d)
+					return `${u} Chain`;
 				else
-					return`${cond.param2}Chain以下`;
+					return `${u}~${d} Chain`;
 			},
 			2: (card, skill, cond) => {
 				if(~~cond.param2) _l('Cond 2 Double');
@@ -37,26 +40,48 @@ module.exports = ($) => {
 				return `${star}${cond.param2}张<kqud title="不包括此卡">或以上</kqud>`;
 			},
 			8: (card, skill, cond) => {
-				if(~~cond.param1 > 0 && cond.param2 > 0) _l('Cond 8 Double');
+				let u = ~~cond.param1, d = ~~cond.param2;
 
-				if(~~cond.param1 > 0)
-					return `自身 | 发动时 | HP${cond.param1}%或以上`;
+				if(u == d)
+					return `自身 | 发动时 | HP<br>${u}%`;
+				else if(u && !d)
+					return `自身 | 发动时 | HP<br>${u}%或以上`;
+				else if(!u && d)
+					return `自身 | 发动时 | HP<br>${d}%或以下`;
 				else
-					return `自身 | 发动时 | HP${cond.param2}%以下`;
+					return `自身 | 发动时 | HP<br>${u}%~${d}%`;
 			},
 			9: false,
 			10: (card, skill, cond) => {
-				if(~~cond.param1 > 0 && cond.param2 > 0) _l('Cond 10 Double');
+				let u = ~~cond.param1, d = ~~cond.param2;
+				if(u <= 1) u = 0;
 
-				if(~~cond.param1>0)
-					return `${cond.param1}回合或以上`;
-				else
-					return `${cond.param2}回合以下`;
+				if((u && d && u != d) || (!u && !d))
+					_l('Cond 10 New Type! '+card.id+' '+card.info.name+' '+skill.id+' '+u+' '+d);
+
+				if(u == d)
+					return `第${u}回合`;
+				else if(u && !d)
+					return `${u}回合或以上`;
+				else if(!u && d)
+					return `${d}回合或以下`;
 			},
 			11: false,
 			12: false,
 			13: false,
-			14: false,
+			14: (card, skill, cond) => {
+				let u = ~~cond.param1, d = ~~cond.param2;
+				if(d >= 28) d = 0;
+
+				if(u == d)
+					return `我方 | <kqud title="应该不包括此卡,请帮忙验证">出牌数</kqud><br>共${u}张`;
+				else if(u && !d)
+					return `我方 | <kqud title="应该不包括此卡,请帮忙验证">出牌数</kqud><br>${u}张或以上`;
+				else if(!u && d)
+					return `我方 | <kqud title="应该不包括此卡,请帮忙验证">出牌数</kqud><br>${d}张或以下`;
+				else
+					return `我方 | <kqud title="应该不包括此卡,请帮忙验证">出牌数</kqud><br>${u}~${d}张`;
+			},
 			15: false,
 			16: false,
 			17: false,
@@ -66,20 +91,24 @@ module.exports = ($) => {
 			21: false,
 			22: false,
 			23: (card, skill, cond) => {
-				if(~~cond.param3) _l('Cond 23 Double');
+				if(~~cond.param3) _l('Cond 23 New Param');
 
 				return `我方 | ${shower.roleDebuff[valuer.roleDebuff[cond.param1]]}
 					${cond.param2 ? `或${shower.roleDebuff[valuer.roleDebuff[cond.param2]]}` : ''}
 					状态`;
 			},
 			24: (card, skill, cond) => {
-				if(~~cond.param3) _l('Cond 23 Double');
+				if(~~cond.param3) _l('Cond 23 New Param');
 
 				return `我方 | ${shower.roleDebuff[valuer.roleDebuff[cond.param1]]}
 					${cond.param2 ? '或'+shower.roleDebuff[valuer.roleDebuff[cond.param2]] : ''}
 					状态`;
 			},
-			25: false,
+			25: (card, skill, cond) => {
+				if(~~cond.param2) _l('Cond 23 New Param');
+
+				return `我方 | ${shower.roleBuff[valuer.roleBuff[cond.param1]]}状态`;
+			},
 			26: false,
 			27: false,
 			28: false,
@@ -104,5 +133,4 @@ module.exports = ($) => {
 			39: false
 		};
 	};
-
 };

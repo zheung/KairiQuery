@@ -117,8 +117,10 @@
 					for(var si in skill) {
 						var s = skill[si];
 
-						var head = $('<a>').addClass('TabHead').addClass('SkillContent').html(s.cond || '无').appendTo(header);
+						var head = $('<a><div></div></a>').addClass('flex jcc aic TabHead SkillContent').appendTo(header);
 						head[0].dataset.tab = 'Skill'+i+type; head[0].dataset.page = j;
+
+						head.find('div').html(s.cond || '无');
 
 						if(head.html()=='无' && si > 0) head.css('width', '20%');
 
@@ -126,11 +128,11 @@
 						for(var ci in s.content) content += '<span class="TextRole">'+(s.content[ci] || '无')+'</span>';
 						content += '<span class="bfrTextRoles"></span>';
 
-						var item = $('<div>').addClass('TabItem').addClass('SkillContent').html(content).appendTo(box);
+						var item = $('<div>').addClass('TabItem SkillContent').html(content).appendTo(box);
 						item[0].dataset.tab = 'Skill'+i+type; item[0].dataset.page = j++;
 					}
 
-					header.find(':first-child').addClass('active');
+					header.find('>:last-child').addClass('active');
 				}
 
 				var primary = (kq.conds.mark[0][7] ? 2 : (data.job != '通用' ? 0 : 1));
@@ -142,6 +144,7 @@
 
 			kqf.retab();
 			$('.TabHead.Skill.primary').click();
+			$('.TabHeader.SkillContent>.active').click();
 		},
 		tabServ: function(serv) {
 			kq.conds.serv = serv;

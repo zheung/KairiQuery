@@ -88,8 +88,12 @@ module.exports = ($) => {
 				return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
 					<kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
 			},
-			20: false,
-			21:	false,
+			20: (card, skill, role, skillFirst) => {console.log(card.info.name);
+				let p = role.params, target = showTarget(skill, role, skillFirst);
+
+				return `${target} | ${p[1]}回合 | 提升${show(p[4])}${show(p[5])}伤害 | ${p[2]/10}%`;
+			},
+			21: false,
 			22: false,
 			23: (card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
@@ -212,7 +216,11 @@ module.exports = ($) => {
 				return `${target} | 显示自身的元素`;
 			},
 			62: 'ENEMY_AI_TRIGGER_FLAG_SET',
-			63: 'ATTACK_BARRIER',
+			63: (card, skill, role, skillFirst) => {
+				let p = role.params, target = showTarget(skill, role, skillFirst);
+
+				return `${target} | ${p[1]}回合 | ${p[4]}层 | ${show(p[5])}护盾 | 伤害${p[2]}点以下无效化`;
+			},
 			64: (card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 

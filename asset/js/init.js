@@ -71,8 +71,8 @@
 	$(document).keydown(function(e) {
 		var ae = document.activeElement;
 
-		if(ae.id == 'CondName') {
-			if(e.keyCode == 13) {
+		if(ae.type == 'input' || ae.type == 'textarea') {
+			if(ae.id == 'condName' && e.keyCode == 13) {
 				if(e.shiftKey)
 					$('[data-cond][data-x=s]').trigger('click', { fourceON: true });
 
@@ -80,6 +80,8 @@
 
 				return false;
 			}
+
+			return true;
 		}
 		else if(ae == $('.sPage')[0]) {
 			if(e.keyCode == 13) {

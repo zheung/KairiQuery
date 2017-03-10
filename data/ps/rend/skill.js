@@ -48,7 +48,7 @@ module.exports = ($) => {
 				ss.push(s);
 			}
 
-			result[st] = ss.sort((a, b) => { return b.prio - a.prio; });
+			result[st] = ss.sort((a, b) => { return a.prio - b.prio; });
 		}
 
 		return result;

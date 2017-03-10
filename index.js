@@ -20,7 +20,11 @@ module.exports = ($) => {
 		if(!query.serv) query.serv = 'cn';
 
 		this.body = fs.readFileSync($.pa('asset/html/index.html')).toString()
-			.replace(`\${serv-${query.serv}}`, ' active').replace(/\$\{serv-\w\w\}/g, '');
+			.replace(`\${serv-${query.serv}}`, ' active')
+			.replace(/\$\{serv-\w\w\}/g, '')
+			.replace('${key}', query.key || '')
+			.replace('${page}', query.page || 1)
+			;
 	});
 
 	router.get('/q', function*(next) {
