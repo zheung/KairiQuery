@@ -145,6 +145,8 @@
 			kqf.retab();
 			$('.TabHead.Skill.primary').click();
 			$('.TabHeader.SkillContent>.active').click();
+
+			if(history.replaceState) history.replaceState(null, null, 'kq?serv='+kq.conds.serv+(kq.conds.name?'&key='+kq.conds.name:''));
 		},
 		tabServ: function(serv) {
 			kq.conds.serv = serv;
