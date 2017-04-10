@@ -1,16 +1,18 @@
 {
 	"env": {
-		"node": true,
-		"es6": true
+		"node": true
 	},
 	"extends": "eslint:recommended",
+	"parserOptions": {
+		"ecmaVersion": 8
+	},
 	"rules": {
-		"indent": [ "warn", "tab" ],
-		"linebreak-style": [ "error", "windows" ],
-		"quotes": [ "error", "single" ],
-		"semi": [ "error", "always" ],
-		"no-unused-vars": [ "warn", { "vars": "all", "args": "after-used" } ],
-		"no-console": [ "warn" ]
+		"indent": [ 1, "tab" ],
+		"linebreak-style": [ 2, "windows" ],
+		"quotes": [ 2, "single" ],
+		"semi": [ 2, "always" ],
+		"no-unused-vars": [ 1, { "vars": "all", "args": "after-used" } ],
+		"no-console": [ 1 ]
 	},
 	"globals": {
 		"_c": true,
@@ -20,9 +22,7 @@
 		"fs": true,
 		"path": true,
 		"qs": true,
-
-		"koa": true,
-		"koaRouter": true,
+		"URL": true,
 
 		"CleanCSS": true,
 		"UglifyJS": true

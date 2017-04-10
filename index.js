@@ -1,42 +1,38 @@
-let static = require('koa-static');
-
-module.exports = ($) => {
+module.exports = ($, router) => {
 	$.rq('init');
-
-	let app = koa(), router = koaRouter();
 
 	let filter = $.rq('filter');
 
-	app.use(static($.pa('asset')));
+	$.st($.pa('asset'));
 
-	router.get('/', function*(next) {
-		yield next;
+	router.get('/', async(ctx, next) => {
+		await next();
 
 		let query;
 
-		if(this.originalUrl != this._matchedRoute)
-			query = qs.parse(qs.unescape(this.originalUrl.replace('/kq\?', '')));
+		if(ctx.originalUrl != ctx._matchedRoute)
+			query = qs.parse(qs.unescape(ctx.originalUrl.replace('/kq\?', '')));
 
 		if(!query.serv) query.serv = 'cn';
 
-		this.body = fs.readFileSync($.pa('asset/html/index.html')).toString()
+		ctx.body = fs.readFileSync($.pa('asset/html/index.html')).toString()
 			.replace(`\${serv-${query.serv}}`, ' active')
 			.replace(/\$\{serv-\w\w\}/g, '')
 			.replace('${key}', query.key || '')
 			.replace('${page}', query.page || 1)
-			;
+		;
 	});
 
-	router.get('/q', function*(next) {
-		yield next;
+	router.get('/q', async(ctx, next) => {
+		await next();
 
 		let query;
 
-		if(this.originalUrl != this._matchedRoute)
-			query = qs.parse(qs.unescape(this.originalUrl.replace('/kq/q\?', '')));
+		if(ctx.originalUrl != ctx._matchedRoute)
+			query = qs.parse(qs.unescape(ctx.originalUrl.replace('/kq/q\?', '')));
 
 		if(query.serv)
-			this.body = filter(query, [
+			ctx.body = filter(query, [
 				'id',
 				['info.name', 'name'],
 				['info.title', 'title'],
@@ -53,7 +49,7 @@ module.exports = ($) => {
 				['this', 'skill', 'f.skill']
 			]);
 		else
-			this.body = '';
+			ctx.body = '';
 	});
 
 	let cleancss = new CleanCSS({restructuring:false});
@@ -68,8 +64,4 @@ module.exports = ($) => {
 		UglifyJS.minify($.pa('asset/js/kq.js')).code+
 		UglifyJS.minify($.pa('asset/js/init.js')).code
 	);
-
-	app.use(router.routes()).use(router.allowedMethods());
-
-	return app;
 };
