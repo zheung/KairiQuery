@@ -52,6 +52,12 @@ module.exports = ($, router) => {
 			ctx.body = '';
 	});
 
+	router.get('/disqus', async(ctx, next) => {
+		await next();
+
+		ctx.body = Request({url: 'https://kairiquery.disqus.com/embed.js'});
+	});
+
 	let cleancss = new CleanCSS({restructuring:false});
 	fs.writeFileSync($.pa('asset/css/kq.all.min.css'),
 		cleancss.minify(fs.readFileSync($.pa('../pub/asset/css/flex.css')).toString()).styles+
