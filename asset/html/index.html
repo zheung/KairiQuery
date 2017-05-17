@@ -1,7 +1,7 @@
 <!html>
 <html>
 	<head>
-		<title>(施工中)Kairi Query | 乖离性百万亚瑟王数据站</title>
+		<title>Kairi Query | 乖离性百万亚瑟王数据站</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="Content-Language" content="zh-CN">
@@ -595,7 +595,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="TabItem RightNavi clrFontDark flex drc jcs aic wpw" data-tab="RightNavi" data-page="Board">
+				<div class="TabItem RightNavi flex drc jcs aic wpw" data-tab="RightNavi" data-page="Board">
+					<div class="flex drc jcs aic wpw fs11" style="width: 100%;">
+						由于多说即将关闭，友言不支持https，网易云一堆BUG无法导入评论，畅言要备案。<br>
+						逼于无奈将评论系统迁移至Disqus，国内无法访问，需要翻墙。<br>
+						正在研究解决方案，Disqus有开发API，大概可以利用API通过服务器代理下来。
+					</div>
 					<div class="flex drc jcs aic wpw" style="width: 100%; overflow-x: hidden; overflow-y: visible;">
 						<div id="disqus_thread" style="width: 95%;" ></div>
 					</div>
@@ -693,28 +698,16 @@
 		<!--<script type="text/javascript" src="kq/js/kq.js"></script>-->
 		<!--<script type="text/javascript" src="kq/js/init.js"></script>-->
 
-		<!--<script type="text/javascript">
-			var duoshuoQuery = { short_name: 'kairiquery' };
-			(function() {
-				var ds = document.createElement('script');
-				ds.type = 'text/javascript';ds.async = true;
-				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-				ds.charset = 'UTF-8';
-				(document.getElementsByTagName('head')[0]
-				|| document.getElementsByTagName('body')[0]).appendChild(ds);
-			})();
-		</script>-->
 		<script>
-
 			var disqus_config = function () {
-			this.page.url = 'https://danor.top/kq';  // Replace PAGE_URL with your page's canonical URL variable
-			this.page.identifier = 1; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+				this.page.url = 'https://danor.top/kq';
+				this.page.identifier = 1;
 			};
-			(function() { // DON'T EDIT BELOW THIS LINE
-			var d = document, s = d.createElement('script');
-			s.src = '/kq/disqus';
-			s.setAttribute('data-timestamp', +new Date());
-			(d.head || d.body).appendChild(s);
+			(function() {
+				var d = document, s = d.createElement('script');
+				s.src = 'https://kairiquery.disqus.com/embed.js';
+				s.setAttribute('data-timestamp', +new Date());
+				(d.head || d.body).appendChild(s);
 			})();
 		</script>
 
