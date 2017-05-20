@@ -5,6 +5,8 @@ module.exports = ($, router) => {
 
 	$.st($.pa('asset'));
 
+	$.io($.rq('io'));
+
 	router.get('/', async(ctx, next) => {
 		await next();
 
@@ -16,9 +18,8 @@ module.exports = ($, router) => {
 		if(!query.serv) query.serv = 'cn';
 
 		ctx.body = fs.readFileSync($.pa('asset/html/index.html')).toString()
-			.replace(`\${serv-${query.serv}}`, ' active')
-			.replace(/\$\{serv-\w\w\}/g, '')
-			.replace('${key}', query.key || '')
+			.replace('${serv}', query.serv)
+			.replace('${word}', query.word || '')
 			.replace('${page}', query.page || 1)
 		;
 	});
@@ -52,16 +53,16 @@ module.exports = ($, router) => {
 			ctx.body = '';
 	});
 
-	let cleancss = new CleanCSS({restructuring:false});
-	fs.writeFileSync($.pa('asset/css/kq.all.min.css'),
-		cleancss.minify(fs.readFileSync($.pa('../pub/asset/css/flex.css')).toString()).styles+
-		cleancss.minify(fs.readFileSync($.pa('../pub/asset/css/small.css')).toString()).styles+
-		cleancss.minify(fs.readFileSync($.pa('asset/css/style.css')).toString()).styles+
-		cleancss.minify(fs.readFileSync($.pa('asset/css/test.css')).toString()).styles+
-		cleancss.minify(fs.readFileSync($.pa('asset/css/color.css')).toString()).styles
-	);
-	fs.writeFileSync($.pa('asset/js/kq.all.min.js'),
-		UglifyJS.minify($.pa('asset/js/kq.js')).code+
-		UglifyJS.minify($.pa('asset/js/init.js')).code
-	);
+	// let cleancss = new CleanCSS({restructuring:false});
+	// fs.writeFileSync($.pa('asset/css/kq.all.min.css'),
+	// 	cleancss.minify(fs.readFileSync($.pa('../pub/asset/css/flex.css')).toString()).styles+
+	// 	cleancss.minify(fs.readFileSync($.pa('../pub/asset/css/small.css')).toString()).styles+
+	// 	cleancss.minify(fs.readFileSync($.pa('asset/css/style.css')).toString()).styles+
+	// 	cleancss.minify(fs.readFileSync($.pa('asset/css/test.css')).toString()).styles+
+	// 	cleancss.minify(fs.readFileSync($.pa('asset/css/color.css')).toString()).styles
+	// );
+	// fs.writeFileSync($.pa('asset/js/kq.all.min.js'),
+	// 	UglifyJS.minify($.pa('asset/js/kq.js')).code+
+	// 	UglifyJS.minify($.pa('asset/js/init.js')).code
+	// );
 };

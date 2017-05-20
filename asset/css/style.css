@@ -16,6 +16,12 @@ input, span {
 	outline: none;
 }
 
+input {
+	border: 1px solid transparent;
+
+	font-size: 16px;
+}
+
 a {
 	text-decoration: none;
 }
@@ -27,10 +33,13 @@ a {
 
 .Main {
 	height: 100%;
+	width: 100%;
+
+	flex: 1
 }
 .Navi {
-	width: 450px;
 	height: 100%;
+	width: 450px;
 
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -276,9 +285,13 @@ a {
 	width: 40px;
 
 	text-align: center;
+	background-color: #293134;
 	color: #E0E2E4;
 
 	cursor: auto;
+}
+.Page:focus {
+	border-bottom: 1px solid #E0E2E4;
 }
 
 .Imgbox {

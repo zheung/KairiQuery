@@ -1,5 +1,5 @@
 let condsParse = (conds, xlen, ylen) => {
-	conds.name = conds.name? conds.name.trim() : '';
+	conds.word = conds.word? conds.word.trim() : '';
 
 	conds.page = conds.page || 1;
 
@@ -58,7 +58,7 @@ module.exports = ($) => {
 			let card = cards[id], mark = marks[id];
 
 			if(
-				(card.info.name.indexOf(conds.name)+1 || card.info.title.indexOf(conds.name)+1) &&
+				(card.info.name.indexOf(conds.word)+1 || card.info.title.indexOf(conds.word)+1) &&
 				(conds.zero || valid(serv, mark, conds.mark, marks.xlen, marks.ylen))
 			)
 				resultAll.push(renderAll ? rend(serv, card, paths) : card);

@@ -29,10 +29,10 @@
 	"globals": {
 		"$": true,
 
-		"kq": true,
-		"kqe": true,
-		"kqs": true,
-		"kqd": true,
-		"kqf": true
+		"Vue": true,
+		"io": true,
+
+		"pre": true,
+		"app": true
 	}
 }
