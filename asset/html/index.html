@@ -150,7 +150,7 @@
 						</div>
 						<a id="Search" class="w4 Button" @click="query">搜索</a>
 					</div>
-					<div class="NaviColumn hr flex jcs aic wpw">基础属性</div>
+					<div class="NaviColumn hr flex jcs aic wpw">基础属性~~~~~~~施工中，功能大部分缺失，望谅解，明天解决</div>
 					<div class="NaviColumn2x flex jcb aic wpw">
 						<a class="w4 Toggle" @click="toggleAll('rare')">稀有度</a>
 						<div class="CondBar flex jca aic wpw">
@@ -171,7 +171,7 @@
 					<div class="NaviColumn flex jcb aic wpw">
 						<a class="w4 Toggle" data-cond="cost" data-x="s">COST</a>
 						<div class="CondBar flex jca aic wpw">
-							<a class="Toggle" v-for="c of conds.cost" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
+							<a class="Toggle min" v-for="c of conds.cost" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 						</div>
 					</div>
 					<div class="NaviColumn2x flex jcb aic wpw">
@@ -734,7 +734,7 @@
 		<script type="text/javascript" src="kq/js/app.js"></script>
 		<script type="text/javascript" src="kq/js/io.js"></script>
 
-		<!--<script>
+		<script>
 			var disqus_config = function () {
 				this.page.url = 'https://danor.top/kq';
 				this.page.identifier = 1;
@@ -745,8 +745,8 @@
 				s.setAttribute('data-timestamp', +new Date());
 				(d.head || d.body).appendChild(s);
 			})();
-		</script>-->
+		</script>
 
-		<!--<div style="display: none"><script src="https://s11.cnzz.com/z_stat.php?id=1260330116&web_id=1260330116" language="JavaScript"></script></div>-->
+		<div style="display: none"><script src="https://s11.cnzz.com/z_stat.php?id=1260330116&web_id=1260330116" language="JavaScript"></script></div>
 	</body>
 </html>
