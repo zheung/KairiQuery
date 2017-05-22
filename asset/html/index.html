@@ -150,7 +150,7 @@
 						</div>
 						<a id="Search" class="w4 Button" @click="query">搜索</a>
 					</div>
-					<div class="NaviColumn hr flex jcs aic wpw">基础属性~~~~~~~施工中，功能大部分缺失，望谅解，明天解决</div>
+					<div class="NaviColumn hr flex jcs aic wpw">基础属性</div>
 					<div class="NaviColumn2x flex jcb aic wpw">
 						<a class="w4 Toggle" @click="toggleAll('rare')">稀有度</a>
 						<div class="CondBar flex jca aic wpw">
@@ -178,37 +178,20 @@
 						<a class="w4 Toggle" data-cond="attr" data-x="s">属性</a>
 						<div class="CondBar flex jca aic wpw">
 							<div class="wf flex jca aic wpw">
-								<a class="Toggle off flex jcc" data-cond="attr" data-x="0" data-y="3" data-z="1">火</a>
-								<a class="Toggle off flex jcc" data-cond="attr" data-x="0" data-y="3" data-z="2">冰</a>
-								<a class="Toggle off flex jcc" data-cond="attr" data-x="0" data-y="3" data-z="4">风</a>
-								<a class="Toggle off flex jcc" data-cond="attr" data-x="0" data-y="3" data-z="8">光</a>
-								<a class="Toggle off flex jcc" data-cond="attr" data-x="0" data-y="3" data-z="16">暗</a>
+								<a class="Toggle" v-for="c of conds.attr" v-if="c.g == 0" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 							<div class="wf flex jca aic wpw">
-								<a class="Toggle off flex jcc" data-cond="attr" data-x="0" data-y="3" data-z="32">火冰</a>
-								<a class="Toggle off flex jcc" data-cond="attr" data-x="0" data-y="3" data-z="64">火风</a>
-								<a class="Toggle off flex jcc" data-cond="attr" data-x="0" data-y="3" data-z="128">火光</a>
-								<a class="Toggle off flex jcc" data-cond="attr" data-x="0" data-y="3" data-z="256">火暗</a>
-								<a class="Toggle off flex jcc" data-cond="attr" data-x="0" data-y="3" data-z="16384">光暗</a>
+								<a class="Toggle" v-for="c of conds.attr" v-if="c.g == 1" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 							<div class="wf flex jca aic wpw">
-								<a class="Toggle off flex jcc" data-cond="attr" data-x="0" data-y="3" data-z="512">冰风</a>
-								<a class="Toggle off flex jcc" data-cond="attr" data-x="0" data-y="3" data-z="1024">冰光</a>
-								<a class="Toggle off flex jcc" data-cond="attr" data-x="0" data-y="3" data-z="2048">冰暗</a>
-								<a class="Toggle off flex jcc" data-cond="attr" data-x="0" data-y="3" data-z="4096">风光</a>
-								<a class="Toggle off flex jcc" data-cond="attr" data-x="0" data-y="3" data-z="8192">风暗</a>
+								<a class="Toggle" v-for="c of conds.attr" v-if="c.g == 2" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 					</div>
 					<div class="NaviColumn flex jcb aic wpw">
 						<a class="w4 Toggle" title="等于卡面右上角一个字的技能" data-cond="skillKind" data-x="s">技能</a>
 						<div class="CondBar flex jca aic wpw">
-							<a class="Toggle off" data-cond="skillKind" data-x="0" data-y="4" data-z="1">物理</a>
-							<a class="Toggle off" data-cond="skillKind" data-x="0" data-y="4" data-z="2">魔法</a>
-							<a class="Toggle off" data-cond="skillKind" data-x="0" data-y="4" data-z="4">治疗</a>
-							<a class="Toggle off" data-cond="skillKind" data-x="0" data-y="4" data-z="8">支援</a>
-							<a class="Toggle off" data-cond="skillKind" data-x="0" data-y="4" data-z="16">防御</a>
-							<a class="Toggle off" data-cond="skillKind" data-x="0" data-y="4" data-z="32">弱化</a>
+							<a class="Toggle" v-for="c of conds.skillKind" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 						</div>
 					</div>
 				</div>
@@ -218,22 +201,10 @@
 					</div>
 					<div class="NaviColumn hr flex jcs aic wpw">常用标签</div>
 					<div class="NaviColumn flex jca aic wpn">
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="256">圣杯</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="32">天剋</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="128">限定</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="31">普池</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="16">特典</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="5" data-z="1">地图</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="6" data-z="1">联动</a>
+						<a class="Toggle" v-for="c of conds.common" v-if="c.g == 0" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 					</div>
 					<div class="NaviColumn hr flex jca aic wpn">
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="1">AOE</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="43" data-z="2">+2</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="2">嘲讽</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="4">单人支</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="8">解状态</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="16">Bug奶</a>
-						<a class="Toggle off" data-cond="common" data-x="0" data-y="8" data-z="64">高Chain</a>
+						<a class="Toggle" v-for="c of conds.common" v-if="c.g == 1" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 					</div>
 					<div class="TabHeader RightNavi2 flex jca aih wpn">
 						<a class="TabHead RightNavi3 flex jcc aic" @click="tab.skillFilter = 1" :class="{ active: tab.skillFilter == 1 }">攻击</a>
@@ -255,35 +226,25 @@
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="attatarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="attatarget" data-x="0" data-y="9" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="attatarget" data-x="0" data-y="9" data-z="2">单体</a>
+								<a class="wf Toggle" v-for="c of conds.attatarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="attatype" data-x="s">类型</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="attatype" data-x="0" data-y="10" data-z="1">物理</a>
-								<a class="wf Toggle off" data-cond="attatype" data-x="0" data-y="10" data-z="2">魔法</a>
+								<a class="wf Toggle" v-for="c of conds.attatype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="attatime" data-x="s">次数</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="attatime" data-x="0" data-y="11" data-z="1">1</a>
-								<a class="wf Toggle off" data-cond="attatime" data-x="0" data-y="11" data-z="2">2</a>
-								<a class="wf Toggle off" data-cond="attatime" data-x="0" data-y="11" data-z="4">3</a>
-								<a class="wf Toggle off" data-cond="attatime" data-x="0" data-y="11" data-z="8">4</a>
-								<a class="wf Toggle off" data-cond="attatime" data-x="0" data-y="11" data-z="16">5</a>
+								<a class="wf Toggle" v-for="c of conds.attatime" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="attaeffect" data-x="s"><kqud title="必须与攻击一起使用的攻击特效">特效</kqud></a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="16">高暴</a>
-								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="1">吸血</a>
-								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="2">反伤</a>
-								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="4">穿防</a>
-								<a class="wf Toggle off" data-cond="attaeffect" data-x="0" data-y="12" data-z="8">附属</a>
+								<a class="wf Toggle" v-for="c of conds.attaeffect" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 					</div>
@@ -291,16 +252,13 @@
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="healtarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="healtarget" data-x="0" data-y="13" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="healtarget" data-x="0" data-y="13" data-z="2">单体</a>
-								<a class="wf Toggle off" data-cond="healtarget" data-x="0" data-y="13" data-z="4">自身</a>
+								<a class="wf Toggle" v-for="c of conds.healtarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 								<a class="w4 Toggle" data-cond="healparam" data-x="s">参数</a>
 								<div class="CondBar flex jca aic wpn">
-									<a class="wf Toggle off" data-cond="healparam" data-x="0" data-y="14" data-z="1">恢复量</a>
-									<a class="wf Toggle off" data-cond="healparam" data-x="0" data-y="14" data-z="2">最大生命</a>
+									<a class="wf Toggle" v-for="c of conds.healparam" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 								</div>
 						</div>
 					</div>
@@ -308,18 +266,13 @@
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="regentarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="regentarget" data-x="0" data-y="15" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="regentarget" data-x="0" data-y="15" data-z="2">单体</a>
-								<a class="wf Toggle off" data-cond="regentarget" data-x="0" data-y="15" data-z="4">自身</a>
+								<a class="wf Toggle" v-for="c of conds.regentarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="regenturn" data-x="s">回合</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="regenturn" data-x="0" data-y="16" data-z="1">2</a>
-								<a class="wf Toggle off" data-cond="regenturn" data-x="0" data-y="16" data-z="2">3</a>
-								<a class="wf Toggle off" data-cond="regenturn" data-x="0" data-y="16" data-z="4">4</a>
-								<a class="wf Toggle off" data-cond="regenturn" data-x="0" data-y="16" data-z="8">5</a>
+								<a class="wf Toggle" v-for="c of conds.regenturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 					</div>
@@ -327,34 +280,25 @@
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="supotarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="supotarget" data-x="0" data-y="17" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="supotarget" data-x="0" data-y="17" data-z="2">单体</a>
-								<a class="wf Toggle off" data-cond="supotarget" data-x="0" data-y="17" data-z="4">自身</a>
+								<a class="wf Toggle" v-for="c of conds.supotarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="supoturn" data-x="s">回合</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="supoturn" data-x="0" data-y="18" data-z="1">1</a>
-								<a class="wf Toggle off" data-cond="supoturn" data-x="0" data-y="18" data-z="2">2</a>
-								<a class="wf Toggle off" data-cond="supoturn" data-x="0" data-y="18" data-z="4">3</a>
-								<a class="wf Toggle off" data-cond="supoturn" data-x="0" data-y="18" data-z="8">4</a>
+								<a class="wf Toggle" v-for="c of conds.supoturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="supoparam" data-x="s">属性</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="supoparam" data-x="0" data-y="19" data-z="2">物理伤害</a>
-								<a class="wf Toggle off" data-cond="supoparam" data-x="0" data-y="19" data-z="4">魔法伤害</a>
-								<a class="wf Toggle off" data-cond="supoparam" data-x="0" data-y="19" data-z="8">恢复量</a>
-								<a class="wf Toggle off" data-cond="supoparam" data-x="0" data-y="19" data-z="1">最大生命</a>
+								<a class="wf Toggle" v-for="c of conds.supoparam" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="supotype" data-x="s">类型</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="supotype" data-x="0" data-y="20" data-z="1">固定值</a>
-								<a class="wf Toggle off" data-cond="supotype" data-x="0" data-y="20" data-z="2">基于属性</a>
+								<a class="wf Toggle" v-for="c of conds.supotype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 					</div>
@@ -362,33 +306,25 @@
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="defetarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="defetarget" data-x="0" data-y="21" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="defetarget" data-x="0" data-y="21" data-z="2">单体</a>
-								<a class="wf Toggle off" data-cond="defetarget" data-x="0" data-y="21" data-z="4">自身</a>
+								<a class="wf Toggle" v-for="c of conds.defetarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="defeturn" data-x="s">回合</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="defeturn" data-x="0" data-y="22" data-z="1">1</a>
-								<a class="wf Toggle off" data-cond="defeturn" data-x="0" data-y="22" data-z="2">2</a>
-								<a class="wf Toggle off" data-cond="defeturn" data-x="0" data-y="22" data-z="4">3</a>
-								<a class="wf Toggle off" data-cond="defeturn" data-x="0" data-y="22" data-z="8">4</a>
+								<a class="wf Toggle" v-for="c of conds.defeturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="defeparam" data-x="s">属性</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="defeparam" data-x="0" data-y="23" data-z="4">全防御</a>
-								<a class="wf Toggle off" data-cond="defeparam" data-x="0" data-y="23" data-z="1">物理防御</a>
-								<a class="wf Toggle off" data-cond="defeparam" data-x="0" data-y="23" data-z="2">魔法防御</a>
+								<a class="wf Toggle" v-for="c of conds.defeparam" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="defetype" data-x="s">类型</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="defetype" data-x="0" data-y="24" data-z="1">固定值</a>
-								<a class="wf Toggle off" data-cond="defetype" data-x="0" data-y="24" data-z="2">基于属性</a>
+								<a class="wf Toggle" v-for="c of conds.defetype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 					</div>
@@ -396,34 +332,25 @@
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="jammtarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="jammtarget" data-x="0" data-y="25" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="jammtarget" data-x="0" data-y="25" data-z="2">单体</a>
+								<a class="wf Toggle" v-for="c of conds.jammtarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="jammturn" data-x="s">回合</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="jammturn" data-x="0" data-y="26" data-z="1">1</a>
-								<a class="wf Toggle off" data-cond="jammturn" data-x="0" data-y="26" data-z="2">2</a>
-								<a class="wf Toggle off" data-cond="jammturn" data-x="0" data-y="26" data-z="4">3</a>
-								<a class="wf Toggle off" data-cond="jammturn" data-x="0" data-y="26" data-z="8">4</a>
+								<a class="wf Toggle" v-for="c of conds.jammturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="jammparam" data-x="s">属性</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="jammparam" data-x="0" data-y="27" data-z="4">全伤害</a>
-								<a class="wf Toggle off" data-cond="jammparam" data-x="0" data-y="27" data-z="1">物伤</a>
-								<a class="wf Toggle off" data-cond="jammparam" data-x="0" data-y="27" data-z="2">魔伤</a>
-								<a class="wf Toggle off" data-cond="jammparam" data-x="0" data-y="27" data-z="8">物防</a>
-								<a class="wf Toggle off" data-cond="jammparam" data-x="0" data-y="27" data-z="16">魔防</a>
+								<a class="wf Toggle" v-for="c of conds.jammparam" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="jammtype" data-x="s">类型</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="jammtype" data-x="0" data-y="28" data-z="1">固定值</a>
-								<a class="wf Toggle off" data-cond="jammtype" data-x="0" data-y="28" data-z="2">基于属性</a>
+								<a class="wf Toggle" v-for="c of conds.jammtype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 					</div>
@@ -431,27 +358,19 @@
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="dottarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="dottarget" data-x="0" data-y="29" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="dottarget" data-x="0" data-y="29" data-z="2">单体</a>
+								<a class="wf Toggle" v-for="c of conds.dottarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="dottype" data-x="s">属性</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="dottype" data-x="0" data-y="30" data-z="1">毒毒</a>
-								<a class="wf Toggle off" data-cond="dottype" data-x="0" data-y="30" data-z="2">燃烧</a>
-								<a class="wf Toggle off" data-cond="dottype" data-x="0" data-y="30" data-z="4">冻结</a>
-								<a class="wf Toggle off" data-cond="dottype" data-x="0" data-y="30" data-z="8">裂风</a>
-								<a class="wf Toggle off" data-cond="dottype" data-x="0" data-y="30" data-z="16">感电</a>
+								<a class="wf Toggle" v-for="c of conds.dottype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="dotturn" data-x="s">回合</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="dotturn" data-x="0" data-y="31" data-z="1">3</a>
-								<a class="wf Toggle off" data-cond="dotturn" data-x="0" data-y="31" data-z="2">4</a>
-								<a class="wf Toggle off" data-cond="dotturn" data-x="0" data-y="31" data-z="4">5</a>
-								<a class="wf Toggle off" data-cond="dotturn" data-x="0" data-y="31" data-z="8">8</a>
+								<a class="wf Toggle" v-for="c of conds.dotturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 					</div>
@@ -459,27 +378,17 @@
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="coverturn" data-x="s">回合</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="coverturn" data-x="0" data-y="32" data-z="1">1</a>
-								<a class="wf Toggle off" data-cond="coverturn" data-x="0" data-y="32" data-z="2">2</a>
+								<a class="wf Toggle" v-for="c of conds.coverturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="coverpercent" data-x="s">比例</a>
 							<div class="CondBar flex drc jca aic wpn">
 								<div class="wf flex jca aic wpw">
-									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="1">10</a>
-									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="2">20</a>
-									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="4">25</a>
-									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="8">30</a>
-									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="16">35</a>
-									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="32">40</a>
+									<a class="wf Toggle" v-for="c of conds.coverpercent" v-if="c.g == 0" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 								</div>
 								<div class="wf flex jca aic wpw">
-									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="64">45</a>
-									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="128">50</a>
-									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="256">55</a>
-									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="512">60</a>
-									<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="33" data-z="1024">65</a>
+									<a class="wf Toggle" v-for="c of conds.coverpercent" v-if="c.g == 1" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 								</div>
 							</div>
 						</div>
@@ -488,28 +397,19 @@
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="enchtarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="enchtarget" data-x="0" data-y="34" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="enchtarget" data-x="0" data-y="34" data-z="2">单体</a>
-								<a class="wf Toggle off" data-cond="enchtarget" data-x="0" data-y="34" data-z="3">自身</a>
+								<a class="wf Toggle" v-for="c of conds.enchtarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="enchtype" data-x="s">属性</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="enchtype" data-x="0" data-y="35" data-z="1">火</a>
-								<a class="wf Toggle off" data-cond="enchtype" data-x="0" data-y="35" data-z="2">冰</a>
-								<a class="wf Toggle off" data-cond="enchtype" data-x="0" data-y="35" data-z="4">风</a>
-								<a class="wf Toggle off" data-cond="enchtype" data-x="0" data-y="35" data-z="8">光</a>
-								<a class="wf Toggle off" data-cond="enchtype" data-x="0" data-y="35" data-z="16">暗</a>
+								<a class="wf Toggle" v-for="c of conds.enchtype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="enchturn" data-x="s">回合</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="enchturn" data-x="0" data-y="36" data-z="1">1</a>
-								<a class="wf Toggle off" data-cond="enchturn" data-x="0" data-y="36" data-z="2">2</a>
-								<a class="wf Toggle off" data-cond="enchturn" data-x="0" data-y="36" data-z="4">3</a>
-								<a class="wf Toggle off" data-cond="enchturn" data-x="0" data-y="36" data-z="8">4</a>
+								<a class="wf Toggle" v-for="c of conds.enchturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 					</div>
@@ -517,27 +417,19 @@
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="adeftarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="adeftarget" data-x="0" data-y="37" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="adeftarget" data-x="0" data-y="37" data-z="2">单体</a>
-								<a class="wf Toggle off" data-cond="adeftarget" data-x="0" data-y="37" data-z="3">自身</a>
+								<a class="wf Toggle" v-for="c of conds.adeftarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="adeftype" data-x="s">属性</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="adeftype" data-x="0" data-y="38" data-z="1">火</a>
-								<a class="wf Toggle off" data-cond="adeftype" data-x="0" data-y="38" data-z="2">冰</a>
-								<a class="wf Toggle off" data-cond="adeftype" data-x="0" data-y="38" data-z="4">风</a>
-								<a class="wf Toggle off" data-cond="adeftype" data-x="0" data-y="38" data-z="8">光</a>
-								<a class="wf Toggle off" data-cond="adeftype" data-x="0" data-y="38" data-z="16">暗</a>
+								<a class="wf Toggle" v-for="c of conds.adeftype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="adefturn" data-x="s">回合</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="adefturn" data-x="0" data-y="39" data-z="1">1</a>
-								<a class="wf Toggle off" data-cond="adefturn" data-x="0" data-y="39" data-z="2">2</a>
-								<a class="wf Toggle off" data-cond="adefturn" data-x="0" data-y="39" data-z="4">3</a>
+								<a class="wf Toggle" v-for="c of conds.adefturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 					</div>
@@ -545,80 +437,57 @@
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="ajamtarget" data-x="s">目标</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="ajamtarget" data-x="0" data-y="40" data-z="1">全体</a>
-								<a class="wf Toggle off" data-cond="ajamtarget" data-x="0" data-y="40" data-z="2">单体</a>
+								<a class="wf Toggle" v-for="c of conds.ajamtarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="ajamtype" data-x="s">属性</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="ajamtype" data-x="0" data-y="41" data-z="1">火</a>
-								<a class="wf Toggle off" data-cond="ajamtype" data-x="0" data-y="41" data-z="2">冰</a>
-								<a class="wf Toggle off" data-cond="ajamtype" data-x="0" data-y="41" data-z="4">风</a>
-								<a class="wf Toggle off" data-cond="ajamtype" data-x="0" data-y="41" data-z="8">光</a>
-								<a class="wf Toggle off" data-cond="ajamtype" data-x="0" data-y="41" data-z="16">暗</a>
+								<a class="wf Toggle" v-for="c of conds.ajamtype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="ajamturn" data-x="s">回合</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="ajamturn" data-x="0" data-y="42" data-z="1">1</a>
-								<a class="wf Toggle off" data-cond="ajamturn" data-x="0" data-y="42" data-z="2">2</a>
-								<a class="wf Toggle off" data-cond="ajamturn" data-x="0" data-y="42" data-z="4">3</a>
+								<a class="wf Toggle" v-for="c of conds.ajamturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 					</div>
 					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" v-if="tab.skillFilter == 12">
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="atostype" data-x="s">抽卡</a>
+							<a class="w4 Toggle" data-cond="dealbonus" data-x="s">抽卡</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="43" data-z="1">+1</a>
-								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="43" data-z="2">+2</a>
+								<a class="wf Toggle" v-for="c of conds.dealbonus" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="atostype" data-x="s">解除</a>
+							<a class="w4 Toggle" data-cond="releasee" data-x="s">解除</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="44" data-z="2">封印</a>
-								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="44" data-z="32">封C</a>
-								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="44" data-z="4">标记</a>
-								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="44" data-z="8">黑暗</a>
-								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="44" data-z="16">陷阱</a>
-								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="44" data-z="1">毒</a>
+								<a class="wf Toggle" v-for="c of conds.release" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="atostype" data-x="s">反射</a>
+							<a class="w4 Toggle" data-cond="reflect" data-x="s">反射</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="45" data-z="1">全体</a>
-								<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="45" data-z="2">自身</a>
-								<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="46" data-z="1">1回合</a>
-								<a class="Toggle off" data-cond="coverpercent" data-x="0" data-y="46" data-z="2">2回合</a>
+								<a class="wf Toggle" v-for="c of conds.reflect" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="rsistype" data-x="s">抗性</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="rsistype" data-x="0" data-y="47" data-z="1">封印</a>
-								<a class="wf Toggle off" data-cond="rsistype" data-x="0" data-y="47" data-z="2">黑暗</a>
+								<a class="wf Toggle" v-for="c of conds.rsistype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="atostype" data-x="s">自残</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="48" data-z="1">生命</a>
-								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="48" data-z="2">陷阱</a>
-								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="48" data-z="4">封印</a>
+								<a class="wf Toggle" v-for="c of conds.atostype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="atostype" data-x="s">其他</a>
+							<a class="w4 Toggle" data-cond="other" data-x="s">其他</a>
 							<div class="CondBar flex jca aic wpn">
-								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="49" data-z="1">暴击</a>
-								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="49" data-z="2">打断</a>
-								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="49" data-z="4">免克制</a>
-								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="49" data-z="8">看破</a>
-								<a class="wf Toggle off" data-cond="atostype" data-x="0" data-y="49" data-z="16">强化毒</a>
+								<a class="wf Toggle" v-for="c of conds.other" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 					</div>

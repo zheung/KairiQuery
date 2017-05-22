@@ -59,13 +59,13 @@ module.exports = {
 		{ on: false, type: 'common', g: 0, x: 0, y: 5, z: 16, text: '特典' },
 		{ on: false, type: 'common', g: 0, x: 0, y: 5, z: 1, text: '地图' },
 		{ on: false, type: 'common', g: 0, x: 0, y: 6, z: 1, text: '联动' },
-		{ on: false, type: 'common', g: 0, x: 0, y: 8, z: 1, text: 'AOE' },
-		{ on: false, type: 'common', g: 0, x: 0, y: 43, z: 2, text: '+2' },
-		{ on: false, type: 'common', g: 0, x: 0, y: 8, z: 2, text: '嘲讽' },
-		{ on: false, type: 'common', g: 0, x: 0, y: 8, z: 4, text: '单人支' },
-		{ on: false, type: 'common', g: 0, x: 0, y: 8, z: 8, text: '解状态' },
-		{ on: false, type: 'common', g: 0, x: 0, y: 8, z: 16, text: 'Bug奶' },
-		{ on: false, type: 'common', g: 0, x: 0, y: 8, z: 64, text: '高Chain' }
+		{ on: false, type: 'common', g: 1, x: 0, y: 8, z: 1, text: 'AOE' },
+		{ on: false, type: 'common', g: 1, x: 0, y: 43, z: 2, text: '+2' },
+		{ on: false, type: 'common', g: 1, x: 0, y: 8, z: 2, text: '嘲讽' },
+		{ on: false, type: 'common', g: 1, x: 0, y: 8, z: 4, text: '单人支' },
+		{ on: false, type: 'common', g: 1, x: 0, y: 8, z: 8, text: '解状态' },
+		{ on: false, type: 'common', g: 1, x: 0, y: 8, z: 16, text: 'Bug奶' },
+		{ on: false, type: 'common', g: 1, x: 0, y: 8, z: 64, text: '高Chain' }
 	],
 	attatarget: [
 		{ on: false, type: 'attatarget', g: 0, x: 0, y: 9, z: 1, text: '全体' },
@@ -87,7 +87,7 @@ module.exports = {
 		{ on: false, type: 'attaeffect', g: 0, x: 0, y: 12, z: 1, text: '吸血' },
 		{ on: false, type: 'attaeffect', g: 0, x: 0, y: 12, z: 2, text: '反伤' },
 		{ on: false, type: 'attaeffect', g: 0, x: 0, y: 12, z: 4, text: '穿防' },
-		{ on: false, type: 'attaeffect', g: 0, x: 0, y: 12, z: 8, text: '附属' }
+		{ on: false, type: 'attaeffect', g: 0, x: 0, y: 12, z: 8, text: '附伤' }
 	],
 	healtarget: [
 		{ on: false, type: 'healtarget', g: 0, x: 0, y: 13, z: 1, text: '全体' },
@@ -199,15 +199,11 @@ module.exports = {
 		{ on: false, type: 'coverpercent', g: 0, x: 0, y: 33, z: 8, text: '30' },
 		{ on: false, type: 'coverpercent', g: 0, x: 0, y: 33, z: 16, text: '35' },
 		{ on: false, type: 'coverpercent', g: 0, x: 0, y: 33, z: 32, text: '40' },
-		{ on: false, type: 'coverpercent', g: 0, x: 0, y: 33, z: 64, text: '45' },
-		{ on: false, type: 'coverpercent', g: 0, x: 0, y: 33, z: 128, text: '50' },
-		{ on: false, type: 'coverpercent', g: 0, x: 0, y: 33, z: 256, text: '55' },
-		{ on: false, type: 'coverpercent', g: 0, x: 0, y: 33, z: 512, text: '60' },
-		{ on: false, type: 'coverpercent', g: 0, x: 0, y: 33, z: 1024, text: '65' },
-		{ on: false, type: 'coverpercent', g: 0, x: 0, y: 45, z: 1, text: '全体' },
-		{ on: false, type: 'coverpercent', g: 0, x: 0, y: 45, z: 2, text: '自身' },
-		{ on: false, type: 'coverpercent', g: 0, x: 0, y: 46, z: 1, text: '1回合' },
-		{ on: false, type: 'coverpercent', g: 0, x: 0, y: 46, z: 2, text: '2回合' }
+		{ on: false, type: 'coverpercent', g: 1, x: 0, y: 33, z: 64, text: '45' },
+		{ on: false, type: 'coverpercent', g: 1, x: 0, y: 33, z: 128, text: '50' },
+		{ on: false, type: 'coverpercent', g: 1, x: 0, y: 33, z: 256, text: '55' },
+		{ on: false, type: 'coverpercent', g: 1, x: 0, y: 33, z: 512, text: '60' },
+		{ on: false, type: 'coverpercent', g: 1, x: 0, y: 33, z: 1024, text: '65' }
 	],
 	enchtarget: [
 		{ on: false, type: 'enchtarget', g: 0, x: 0, y: 34, z: 1, text: '全体' },
@@ -260,26 +256,38 @@ module.exports = {
 		{ on: false, type: 'ajamturn', g: 0, x: 0, y: 42, z: 2, text: '2' },
 		{ on: false, type: 'ajamturn', g: 0, x: 0, y: 42, z: 4, text: '3' }
 	],
-	atostype: [
-		{ on: false, type: 'atostype', g: 0, x: 0, y: 43, z: 1, text: '+1' },
-		{ on: false, type: 'atostype', g: 0, x: 0, y: 43, z: 2, text: '+2' },
-		{ on: false, type: 'atostype', g: 0, x: 0, y: 44, z: 2, text: '封印' },
-		{ on: false, type: 'atostype', g: 0, x: 0, y: 44, z: 32, text: '封C' },
-		{ on: false, type: 'atostype', g: 0, x: 0, y: 44, z: 4, text: '标记' },
-		{ on: false, type: 'atostype', g: 0, x: 0, y: 44, z: 8, text: '黑暗' },
-		{ on: false, type: 'atostype', g: 0, x: 0, y: 44, z: 16, text: '陷阱' },
-		{ on: false, type: 'atostype', g: 0, x: 0, y: 44, z: 1, text: '毒' },
-		{ on: false, type: 'atostype', g: 0, x: 0, y: 48, z: 1, text: '生命' },
-		{ on: false, type: 'atostype', g: 0, x: 0, y: 48, z: 2, text: '陷阱' },
-		{ on: false, type: 'atostype', g: 0, x: 0, y: 48, z: 4, text: '封印' },
-		{ on: false, type: 'atostype', g: 0, x: 0, y: 49, z: 1, text: '暴击' },
-		{ on: false, type: 'atostype', g: 0, x: 0, y: 49, z: 2, text: '打断' },
-		{ on: false, type: 'atostype', g: 0, x: 0, y: 49, z: 4, text: '免克制' },
-		{ on: false, type: 'atostype', g: 0, x: 0, y: 49, z: 8, text: '看破' },
-		{ on: false, type: 'atostype', g: 0, x: 0, y: 49, z: 16, text: '强化毒' }
+	dealbonus: [
+		{ on: false, type: 'dealbonus', g: 0, x: 0, y: 43, z: 1, text: '+1' },
+		{ on: false, type: 'dealbonus', g: 0, x: 0, y: 43, z: 2, text: '+2' },
+	],
+	release: [
+		{ on: false, type: 'release', g: 0, x: 0, y: 44, z: 2, text: '封印' },
+		{ on: false, type: 'release', g: 0, x: 0, y: 44, z: 32, text: '封C' },
+		{ on: false, type: 'release', g: 0, x: 0, y: 44, z: 4, text: '标记' },
+		{ on: false, type: 'release', g: 0, x: 0, y: 44, z: 8, text: '黑暗' },
+		{ on: false, type: 'release', g: 0, x: 0, y: 44, z: 16, text: '陷阱' },
+		{ on: false, type: 'release', g: 0, x: 0, y: 44, z: 1, text: '毒' },
+	],
+	reflect: [
+		{ on: false, type: 'reflect', g: 0, x: 0, y: 45, z: 1, text: '全体' },
+		{ on: false, type: 'reflect', g: 0, x: 0, y: 45, z: 2, text: '自身' },
+		{ on: false, type: 'reflect', g: 0, x: 0, y: 46, z: 1, text: '1回合' },
+		{ on: false, type: 'reflect', g: 0, x: 0, y: 46, z: 2, text: '2回合' }
 	],
 	rsistype: [
 		{ on: false, type: 'rsistype', g: 0, x: 0, y: 47, z: 1, text: '封印' },
 		{ on: false, type: 'rsistype', g: 0, x: 0, y: 47, z: 2, text: '黑暗' }
+	],
+	atostype: [
+		{ on: false, type: 'atostype', g: 0, x: 0, y: 48, z: 1, text: '生命' },
+		{ on: false, type: 'atostype', g: 0, x: 0, y: 48, z: 2, text: '陷阱' },
+		{ on: false, type: 'atostype', g: 0, x: 0, y: 48, z: 4, text: '封印' },
+	],
+	other: [
+		{ on: false, type: 'other', g: 0, x: 0, y: 49, z: 1, text: '暴击' },
+		{ on: false, type: 'other', g: 0, x: 0, y: 49, z: 2, text: '打断' },
+		{ on: false, type: 'other', g: 0, x: 0, y: 49, z: 4, text: '免克制' },
+		{ on: false, type: 'other', g: 0, x: 0, y: 49, z: 8, text: '看破' },
+		{ on: false, type: 'other', g: 0, x: 0, y: 49, z: 16, text: '强化毒' }
 	]
 };
