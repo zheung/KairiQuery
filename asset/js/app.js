@@ -7,7 +7,7 @@ window.app = new Vue({
 		pageNow: 1,
 		pageMax: 1,
 
-		imgSrc: [],
+		imgSrc: ['','','',''],
 
 		dynmSearch: true,
 
@@ -32,16 +32,12 @@ window.app = new Vue({
 	},
 	watch: {
 		recos: function() {
-			Vue.set(app.imgSrc, 0, '');
-			Vue.set(app.imgSrc, 1, '');
-			Vue.set(app.imgSrc, 2, '');
-			Vue.set(app.imgSrc, 3, '');
+			for(var i in app.imgSrc)
+				Vue.set(app.imgSrc, i, '');
 
 			setTimeout(function() {
-				Vue.set(app.imgSrc, 0, 'https://raw.githubusercontent.com/kairiquery/kqp'+app.serv+'21/master/'+app.recos[0].id+'.png');
-				Vue.set(app.imgSrc, 1, 'https://raw.githubusercontent.com/kairiquery/kqp'+app.serv+'21/master/'+app.recos[1].id+'.png');
-				Vue.set(app.imgSrc, 2, 'https://raw.githubusercontent.com/kairiquery/kqp'+app.serv+'21/master/'+app.recos[2].id+'.png');
-				Vue.set(app.imgSrc, 3, 'https://raw.githubusercontent.com/kairiquery/kqp'+app.serv+'21/master/'+app.recos[3].id+'.png');
+				for(var i in app.imgSrc)
+					Vue.set(app.imgSrc, i, 'https://raw.githubusercontent.com/kairiquery/kqp'+app.serv+'21/master/'+app.recos[i].id+'.png');
 			}, 0);
 		}
 	},
