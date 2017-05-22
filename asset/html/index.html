@@ -18,9 +18,9 @@
 		<div id="app" class="Frame clrFont flex drr wpn jcs aic wpn">
 			<div class="Main blrBack flex drc jcc aic wpn">
 				<div class="Cards flex drc jcs ais acs wpw">
-					<div class="Card flex drc jcs ais acs wpw" v-for="reco of recos">
+					<div class="Card flex drc jcs ais acs wpw" v-for="(reco, ri) of recos">
 						<div class="ImgBox flex jcc aic">
-							<img class="ImgThumb sThumb" :src="'https://raw.githubusercontent.com/kairiquery/kqp'+app.serv+'21/master/'+reco.id+'.png'" @error="imgError">
+							<img class="ImgThumb sThumb" :src="imgSrc[reco, ri]" @error="imgError">
 						</div>
 						<div class="DataBox">
 							<div class="NameBox flex jcc aie"><a class="selable Info sTitle">{{'<'+reco.title+'>'+reco.name}}</a></div>

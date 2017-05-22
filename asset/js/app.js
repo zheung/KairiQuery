@@ -7,6 +7,8 @@ window.app = new Vue({
 		pageNow: 1,
 		pageMax: 1,
 
+		imgSrc: [],
+
 		dynmSearch: true,
 
 		tab: {
@@ -28,6 +30,21 @@ window.app = new Vue({
 		conds: {},
 		condAll : {}
 	},
+	watch: {
+		recos: function() {
+			Vue.set(app.imgSrc, 0, '');
+			Vue.set(app.imgSrc, 1, '');
+			Vue.set(app.imgSrc, 2, '');
+			Vue.set(app.imgSrc, 3, '');
+
+			setTimeout(function() {
+				Vue.set(app.imgSrc, 0, 'https://raw.githubusercontent.com/kairiquery/kqp'+app.serv+'21/master/'+app.recos[0].id+'.png');
+				Vue.set(app.imgSrc, 1, 'https://raw.githubusercontent.com/kairiquery/kqp'+app.serv+'21/master/'+app.recos[1].id+'.png');
+				Vue.set(app.imgSrc, 2, 'https://raw.githubusercontent.com/kairiquery/kqp'+app.serv+'21/master/'+app.recos[2].id+'.png');
+				Vue.set(app.imgSrc, 3, 'https://raw.githubusercontent.com/kairiquery/kqp'+app.serv+'21/master/'+app.recos[3].id+'.png');
+			}, 0);
+		}
+	},
 	methods: {
 		query: function(page) {
 			if(page < 0 || page > this.pageMax) return;
@@ -47,16 +64,16 @@ window.app = new Vue({
 
 			return result;
 		},
-		imgError: function() {
-			var src = this.src;
+		imgError: function(e) {
+			var target = e.currentTarget, src = target.src;
 
-			if(/20\//.test(src)) {
-				this.src = src.replace(/21\//g, '22/');
+			if(/21\//.test(src)) {
+				target.src = src.replace(/21\//g, '22/');
 
 				return;
 			}
 			if(/22\//.test(src)) {
-				this.src = './kq/img/no20.png';
+				target.src = './kq/img/no20.png';
 
 				return;
 			}
