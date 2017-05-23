@@ -33,12 +33,7 @@ window.app = new Vue({
 	watch: {
 		recos: function() {
 			for(var i in app.recos)
-				Vue.set(app.imgSrc, i, '');
-
-			setTimeout(function() {
-				for(var i in app.recos)
-					Vue.set(app.imgSrc, i, 'https://raw.githubusercontent.com/kairiquery/kqp'+app.serv+'21/master/'+app.recos[i].id+'.png');
-			}, 0);
+				Vue.set(app.imgSrc, i, 'https://raw.githubusercontent.com/kairiquery/kqp'+app.serv+'21/master/'+app.recos[i].id+'.png');
 		}
 	},
 	methods: {
