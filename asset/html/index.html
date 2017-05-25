@@ -383,11 +383,11 @@
 						<div class="NaviColumn flex jcb aic wpw">
 							<a class="w4 Toggle" data-cond="coverpercent" data-x="s">比例</a>
 							<div class="CondBar flex drc jca aic wpn">
-								<div class="wf flex jca aic wpw">
-									<a class="wf Toggle" v-for="c of conds.coverpercent" v-if="c.g == 0" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
+								<div class="wf flex jca aic wpn">
+									<a class="wf Toggle min" v-for="c of conds.coverpercent" v-if="c.g == 0" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 								</div>
-								<div class="wf flex jca aic wpw">
-									<a class="wf Toggle" v-for="c of conds.coverpercent" v-if="c.g == 1" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
+								<div class="wf flex jca aic wpn">
+									<a class="wf Toggle min" v-for="c of conds.coverpercent" v-if="c.g == 1" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 								</div>
 							</div>
 						</div>
