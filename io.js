@@ -1,10 +1,10 @@
-module.exports = ($) => {
-	let filter = $.rq('filter');
+module.exports = async($) => {
+	let filter = await $.rq('filter');
 
-	return (emit) => {
+	return async(emit) => {
 		return {
-			query: (query) => {
-				emit('query', filter(query, [
+			query: async(query) => {
+				let a = await filter(query, [
 					'id',
 					['info.name', 'name'],
 					['info.title', 'title'],
@@ -19,10 +19,11 @@ module.exports = ($) => {
 					['info.rare', 'rare', 'd.shower.rare'],
 					['skill.normal.0.info.attr', 'attr', 'd.shower.attr'],
 					['this', 'skill', 'f.skill']
-				]));
+				]);
+				await emit('query', a);
 			},
-			conds: () => {
-				emit('conds', $.rq('data/conds'));
+			conds: async() => {
+				await emit('conds', await $.rq('data/conds'));
 			}
 		};
 	};

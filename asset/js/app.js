@@ -28,7 +28,9 @@ window.app = new Vue({
 		mark: [[]],
 
 		conds: {},
-		condAll : {}
+		condAll : {},
+
+		suportMode: false
 	},
 	watch: {
 		recos: function() {
@@ -38,16 +40,16 @@ window.app = new Vue({
 	},
 	methods: {
 		query: function(page) {
-			if(page < 0 || page > this.pageMax) return;
+			if(page < 0 || page > app.pageMax) return;
 
-			app.emit('query', this.param(function(param) { param.page = (typeof page == 'number' && page ? page : 1); }));
+			app.emit('query', app.param(function(param) { param.page = (typeof page == 'number' && page ? page : 1); }));
 		},
 		param: function(moder) {
 			var result = {
 				serv: app.serv,
 				word: app.word,
 				page: app.pageNow,
-				mark: app.mark.toString().replace(/\,/g, '~'),
+				mark: app.mark.toString().replace(/\,/g, '|'),
 				zero: (/[1-9]/.test(app.mark.toString()))?0:1
 			};
 
@@ -101,6 +103,13 @@ window.app = new Vue({
 			});
 
 			app.query();
+		},
+		suportModeApply: function() {
+			app.suportMode = !app.suportMode;
+
+			app.recos.map(function(reco) {
+				Vue.set(app.tab.skillTab, reco.id, 2);
+			});
 		}
 	}
 });

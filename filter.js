@@ -1,72 +1,52 @@
-let condsParse = (conds, xlen, ylen) => {
+let condsParse = async(conds) => {
 	conds.word = conds.word? conds.word.trim() : '';
 
 	conds.page = conds.page || 1;
 
 	conds.zero = !!~~conds.zero;
 
-	conds.mark = conds.mark.split('~');
+	conds.mark = conds.mark.split('|');
 
-	let mark = [], index = 0;
-
-	for(let i=0; i< xlen; i++)
-		mark.push((() => {
-			let x = [];
-
-			for(let j=0; j < ylen; j++)
-				x.push(~~conds.mark[index++]);
-
-			return x;
-		})());
-
-	conds.mark = mark;
+	for(let i in conds.mark)
+		conds.mark[i] = ~~conds.mark[i];
 };
 
-let valid = (serv, mcas, mcos, xlen, ylen) => {
-	for(let y=0; y < ylen; y++) {
-		let pass = false, xysum = 0;
+module.exports = async($) => {
+	return async(conds = {}, paths = []) => {
+		let serv = conds.serv,
+			dict = $.marks[serv], mark = { $and: [ { $where: 'true'} ] },
+			rend = $.rends[serv], pageEvery = $.conf.pageEvery;
 
-		for(let x=0; x < xlen; x++) {
-			let mca = mcas[x][y], mco = mcos[x][y];
+		await condsParse(conds);
 
-			xysum += mco;
+		conds.mark.map((bit, x) => {
+			let map = dict[x], and = { mark: {$in: []} }, all = and.mark.$in;
 
-			if(mca & mco) {
-				pass = true;
+			if(bit) {
+				for(let y in map)
+					if(bit & y)
+						all.push(map[y]);
 
-				break;
+				mark.$and.push(and);
 			}
-		}
+		});
 
-		if(xysum && !pass) return false;
-	}
+		let coll = await $.db.coll(`${serv}`),
+			query = {
+				$and: [ {
+					$or: [ {'info.name': RegExp(`.*${conds.word || ''}.*`)}, {'info.title': RegExp(`.*${conds.word || ''}.*`)} ]
+				}, {
+					$or: [ {$where: `${conds.zero}`}, mark ]
+				}]
+			};
 
-	return true;
-};
+		let raw = await(await coll.find(query)).skip(pageEvery * (conds.page - 1)).limit(pageEvery).toArray(),
+			count = await(await coll.find(query)).count(),
+			result = [];
 
-module.exports = ($) => {
-	return (conds = {}, paths = []) => {
-		let serv = conds.serv, cards = $.datas[serv], marks = $.marks[serv];
+		for(let d of raw)
+			result.push(await rend(serv, d, paths));
 
-		condsParse(conds, marks.xlen, marks.ylen);
-
-		let rend = $.rends[serv],
-			renderAll = $.conf.renderAll, pageEvery = $.conf.pageEvery,
-			resultAll = [], result = [];
-
-		for(let id in cards) {
-			let card = cards[id], mark = marks[id];
-
-			if(
-				(card.info.name.indexOf(conds.word)+1 || card.info.title.indexOf(conds.word)+1) &&
-				(conds.zero || valid(serv, mark, conds.mark, marks.xlen, marks.ylen))
-			)
-				resultAll.push(renderAll ? rend(serv, card, paths) : card);
-		}
-
-		for(let d of resultAll.slice(pageEvery * (conds.page - 1), pageEvery * conds.page))
-			result.push(renderAll ? d : rend(serv, d, paths));
-
-		return [result, ~~conds.page, Math.ceil(resultAll.length / pageEvery)];
+		return [result, ~~conds.page, Math.ceil(count / pageEvery)];
 	};
 };

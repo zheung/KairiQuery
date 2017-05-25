@@ -1,8 +1,7 @@
-module.exports = ($) => {
-
-	return (serv, card) => {
-		let rdrCond = $.rq(`data/${serv}/rend/cond`),
-			rdrRole = $.rq(`data/${serv}/rend/role`);
+module.exports = async($) => {
+	return async(serv, card) => {
+		let rdrCond = await $.rq(`data/${serv}/rend/cond`),
+			rdrRole = await $.rq(`data/${serv}/rend/role`);
 
 		let result = {},
 			skillTypes = ['awaken', 'normal', 'suport3'],
@@ -16,10 +15,10 @@ module.exports = ($) => {
 					condType = skill.cond.type, delayType = skill.delay.type;
 
 				if(condType) {
-					let rend = rdrCond(serv)[condType];
+					let rend = (await rdrCond(serv))[condType];
 
 					if(rend)
-						s.cond = rend(card, skill, skill.cond).replace(/\t|\n/g, '');
+						s.cond = (await rend(card, skill, skill.cond)).replace(/\t|\n/g, '');
 					else {
 						_l('New Cond', condType, 'Card', card.id, 'Skill', skill.id);
 
@@ -32,7 +31,7 @@ module.exports = ($) => {
 
 					if(rend)
 						s.cond = (skill.delay.timing==2 ? '<kqud title="在敌方行动后判定条件，满足条件则发动技能">敌方行动后</kqud> | ' : '')+
-							rend(card, skill, skill.delay).replace(/\t|\n/g, '');
+							(await rend(card, skill, skill.delay)).replace(/\t|\n/g, '');
 					else {
 						_l('New Delay', delayType, 'Card', card.id, 'Skill', skill.id);
 
@@ -49,10 +48,10 @@ module.exports = ($) => {
 				}
 
 				for(let role of skill.role) {
-					let skillType = role.type, rend = rdrRole(serv)[skillType];
+					let skillType = role.type, rend = (await rdrRole(serv))[skillType];
 
 					if(rend instanceof Function)
-						s.content.push(rend(card, skill, role, skillFirst).replace(/\t|\n/g, ''));
+						s.content.push((await rend(card, skill, role, skillFirst)).replace(/\t|\n/g, ''));
 					else {
 						_l('New Skill', skillType, 'Card', card.id, 'Skill', skill.id);
 

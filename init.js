@@ -1,6 +1,5 @@
-module.exports = ($) => {
-	$.dicts = $.rq('loader/dict')();
-	$.rends = $.rq('loader/rend')();
-	$.datas = $.rq('loader/data')();
-	$.marks = $.rq('loader/mark')();
+module.exports = async($) => {
+	$.dicts = await (await $.rq('loader/dict'))();
+	$.rends = await (await $.rq('loader/rend'))();
+	$.marks = await (await $.rq('loader/mark'))();
 };

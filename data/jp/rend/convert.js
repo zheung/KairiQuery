@@ -1,8 +1,8 @@
-module.exports = ($) => {
-	return (serv, type, value) => {
+module.exports = async($) => {
+	return async(serv, type, value) => {
 		let func = {
-			skill: $.rq(`data/${serv}/rend/skill`),
-			skillKind: $.rq(`data/${serv}/rend/skillKind`)
+			skill: await $.rq(`data/${serv}/rend/skill`),
+			skillKind: await $.rq(`data/${serv}/rend/skillKind`)
 		};
 
 		if(type) {

@@ -1,6 +1,8 @@
 {
 	"pathServ": "/kq",
 
+	"db": "kq",
+
 	"renderAll": false,
 
 	"renderData": false,

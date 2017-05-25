@@ -1,7 +1,6 @@
-module.exports = ($) => {
-
-	return (serv, data, paths) => {
-		let convert = $.rq(`data/${serv}/rend/convert`), rData = {};
+module.exports = async($) => {
+	return async(serv, data, paths) => {
+		let convert = await $.rq(`data/${serv}/rend/convert`), rData = {};
 
 		for(let path of paths) {
 			let dNodes, rNodes;
@@ -22,9 +21,9 @@ module.exports = ($) => {
 				if(index++ < length)
 					rPointer = rPointer[node] || (rPointer[node] = {});
 				else if(path[0] == 'this')
-					rPointer[node] = path[2] ? convert(serv, path[2], data) : dPointer;
+					rPointer[node] = path[2] ? await convert(serv, path[2], data) : dPointer;
 				else
-					rPointer[node] = path[2] ? convert(serv, path[2], dPointer || 0) : dPointer;
+					rPointer[node] = path[2] ? await convert(serv, path[2], dPointer || 0) : dPointer;
 		}
 
 		return rData;

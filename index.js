@@ -1,11 +1,11 @@
-module.exports = ($, router) => {
-	$.rq('init');
+module.exports = async($, router) => {
+	await await $.rq('init');
 
-	let filter = $.rq('filter');
+	let filter = await $.rq('filter');
 
-	$.st($.pa('asset'));
+	await $.st(await $.pa('asset'));
 
-	$.io($.rq('io'));
+	await $.io(await $.rq('io'));
 
 	router.get('/', async(ctx, next) => {
 		await next();
@@ -17,7 +17,7 @@ module.exports = ($, router) => {
 
 		if(!query.serv) query.serv = 'cn';
 
-		ctx.body = fs.readFileSync($.pa('asset/html/index.html')).toString()
+		ctx.body = fs.readFileSync(await $.pa('asset/html/index.html')).toString()
 			.replace('${serv}', query.serv)
 			.replace('${word}', query.word || '')
 			.replace('${page}', query.page || 1)
@@ -52,17 +52,4 @@ module.exports = ($, router) => {
 		else
 			ctx.body = '';
 	});
-
-	// let cleancss = new CleanCSS({restructuring:false});
-	// fs.writeFileSync($.pa('asset/css/kq.all.min.css'),
-	// 	cleancss.minify(fs.readFileSync($.pa('../pub/asset/css/flex.css')).toString()).styles+
-	// 	cleancss.minify(fs.readFileSync($.pa('../pub/asset/css/small.css')).toString()).styles+
-	// 	cleancss.minify(fs.readFileSync($.pa('asset/css/style.css')).toString()).styles+
-	// 	cleancss.minify(fs.readFileSync($.pa('asset/css/test.css')).toString()).styles+
-	// 	cleancss.minify(fs.readFileSync($.pa('asset/css/color.css')).toString()).styles
-	// );
-	// fs.writeFileSync($.pa('asset/js/kq.all.min.js'),
-	// 	UglifyJS.minify($.pa('asset/js/kq.js')).code+
-	// 	UglifyJS.minify($.pa('asset/js/init.js')).code
-	// );
 };

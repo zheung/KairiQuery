@@ -66,7 +66,7 @@
 								<div class="TabBox SkillContent">
 									<div class="TabItem SkillContent" v-for="(skill, si) of reco.skill.awaken" v-if="tab.skillAwaken[reco.id]==si">
 										<span class="bfrTextRoles"></span>
-										<span class="TextRole" v-for="content of skill.content" v-html="content || '无'"></span>
+										<span class="TextRole selable" v-for="content of skill.content" v-html="content || '无'"></span>
 										<span class="bfrTextRoles"></span>
 									</div>
 								</div>
@@ -86,7 +86,7 @@
 								<div class="TabBox SkillContent">
 									<div class="TabItem SkillContent" v-for="(skill, si) of reco.skill.suport3" v-if="tab.skillSuport3[reco.id]==si">
 										<span class="bfrTextRoles"></span>
-										<span class="TextRole" v-for="content of skill.content" v-html="content || '无'"></span>
+										<span class="TextRole selable" v-for="content of skill.content" v-html="content || '无'"></span>
 										<span class="bfrTextRoles"></span>
 									</div>
 								</div>
@@ -106,7 +106,7 @@
 								<div class="TabBox SkillContent">
 									<div class="TabItem SkillContent" v-for="(skill, si) of reco.skill.normal" v-if="tab.skillNormal[reco.id]==si">
 										<span class="bfrTextRoles"></span>
-										<span class="TextRole" v-for="content of skill.content" v-html="content || '无'"></span>
+										<span class="TextRole selable" v-for="content of skill.content" v-html="content || '无'"></span>
 										<span class="bfrTextRoles"></span>
 									</div>
 								</div>
@@ -132,16 +132,15 @@
 				<div class="TabItem RightNavi flex drc aic wpw" v-if="tab.dash == 1">
 					<div class="NaviColumn hr flex jcb aic wpw">
 						<div>
-							<a class="Toggle off" data-cond="ex" data-x="0" data-y="7" data-z="1">EX技能模式</a>
-							<!--<a class="Toggle off" data-cond="test" data-x="0" data-y="0" data-z="512">测试</a>-->
+							<a class="Toggle" :class = "suportMode? 'on': 'off'" @click="suportModeApply">支援优先</a>
 						</div>
 						<div>
 							<span>服务器：</span>
 							<a class="TabHead Serv" @click="serv = 'cn'; query();" :class="{ active: serv == 'cn' }">国</a>
 							<a class="TabHead Serv" @click="serv = 'jp'; query();" :class="{ active: serv == 'jp' }">日</a>
 							<a class="TabHead Serv" @click="serv = 'ps'; query();" :class="{ active: serv == 'ps' }">PS</a>
-							<a class="TabHead Serv" @click="serv = 'kr'; query();" :class="{ active: serv == 'kr' }">韩</a>
 							<a class="TabHead Serv" @click="serv = 'tw'; query();" :class="{ active: serv == 'tw' }">台</a>
+							<a class="TabHead Serv" @click="serv = 'kr'; query();" :class="{ active: serv == 'kr' }">韩</a>
 						</div>
 					</div>
 					<div class="NaviColumn flex jcb aic wpw">
@@ -150,7 +149,7 @@
 						</div>
 						<a id="Search" class="w4 Button" @click="query">搜索</a>
 					</div>
-					<div class="NaviColumn hr flex jcs aic wpw">基础属性 | 已更到最新（除台PS服部分头像）</div>
+					<div class="NaviColumn hr flex jcs aic wpw">基础属性 | 后端大改造，可能有bug</div>
 					<div class="NaviColumn2x flex jcb aic wpw">
 						<a class="w4 Toggle" @click="toggleAll('rare')">稀有度</a>
 						<div class="CondBar flex jca aic wpw">

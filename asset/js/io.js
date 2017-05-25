@@ -17,7 +17,7 @@
 
 		recos.map(function(reco) {
 			if(!reco.skill.suport3) reco.skill.suport3 = [{ cond:' ', content:['无'] }];
-			Vue.set(app.tab.skillTab, reco.id, (app.mark[0][7] ? 2 : (reco.job != '通用' ? 1 : 3)));
+			Vue.set(app.tab.skillTab, reco.id, (app.suportMode ? 2 : (reco.job != '通用' ? 1 : 3)));
 			Vue.set(app.tab.skillAwaken, reco.id, reco.skill.awaken.length ? reco.skill.awaken.length-1 : 0);
 			Vue.set(app.tab.skillNormal, reco.id, reco.skill.normal.length ? reco.skill.normal.length-1 : 0);
 			Vue.set(app.tab.skillSuport3, reco.id, reco.skill.suport3.length ? reco.skill.suport3.length-1 : 0);
