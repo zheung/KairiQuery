@@ -21,6 +21,7 @@ module.exports = async($, router) => {
 			.replace('${serv}', query.serv)
 			.replace('${word}', query.word || '')
 			.replace('${page}', query.page || 1)
+			.replace('${mark}', query.mark || '')
 		;
 	});
 

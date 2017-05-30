@@ -1,74 +1,72 @@
-// (function() {
-// 	// Global Key Event
-// 	$(document).keydown(function(e) {
-// 		var ae = document.activeElement;
+(function() {
+	var isInput = function(tagName) {
+			return tagName == 'input' || tagName == 'textarea';
+		},
+		inArr = function(code, arr) {
+			for (var i in arr)
+				if(arr[i] == code)
+					return true;
 
-// 		if(ae.type == 'input' || ae.type == 'textarea') {
-// 			if(ae.id == 'condName' && e.keyCode == 13) {
-// 				if(e.shiftKey)
-// 					$('[data-cond][data-x=s]').trigger('click', { fourceON: true });
+			return false;
+		};
 
-// 				kqe.search.click();
+	window.keyInit = function() {
+		document.addEventListener('keyup', function(e) {
+			var ae = document.activeElement, kc = e.keyCode, tagName = ae.tagName.toLowerCase();
 
-// 				return false;
-// 			}
+			if(!isInput(tagName)) {
+				if(inArr(kc, [65, 33, 74])) { app.query(app.pageNow - 1); return false; }
+				else if(inArr(kc, [68, 34, 75])) { app.query(app.pageNow + 1); return false; }
+				else if(inArr(kc, [35, 77])) { app.query(); return false; }
+				else if(inArr(kc, [36, 78])) { app.query(~~app.pageMax); return false; }
 
-// 			return true;
-// 		}
-// 		else if(ae == $('.sPage')[0]) {
-// 			if(e.keyCode == 13) {
-// 				var $this = $(e.target), page = $this.html();
+				else if(kc == 81) {
+					var now = app.tab.dash;
 
-// 				if(page > 0 && page <= kqd.pageMax)
-// 					kq.query(function(param) { param.page = page; },kqf.dealer);
-// 				else
-// 					$this.html(kqd.page);
+					if(now > 2) now = 1;
+					else {
+						now += (e.shiftKey ? -1 : 1);
 
-// 				return false;
-// 			}
-// 		}
-// 		else {
-// 			if(e.keyCode == 9) {
-// 				var next = kqe.rightNavi.filter('.active'), notFind = true;
+						if(now < 1)
+							now = 2;
+						else if(now > 2)
+							now = 1;
+					}
 
-// 				while(notFind) {
-// 					next = next[e.shiftKey?'prev':'next']();
+					app.tab.dash = now;
 
-// 					if(!next.length)
-// 						next = kqe.rightNavi[e.shiftKey?'last':'first']();
+					return false;
+				}
+				else if(kc == 83 && e.shiftKey) {
+					app.$refs.condName.focus();
 
-// 					if(next[0].dataset.notab !== '')
-// 						notFind = false;
-// 				}
+					return false;
+				}
+				else if(kc == 13 && e.shiftKey) {
+					app.word = '';
+					app.clearAll();
 
-// 				next.click();
+					return false;
+				}
+			}
+			else if(ae.id == 'CondName') {
+				if(kc == 13) {
+					if (e.shiftKey)
+						app.clearAll();
 
-// 				return false;
-// 			}
-// 			else if(e.keyCode == 33 || e.keyCode == 74) { kqe.pagePrev.click(); return false; }
-// 			else if(e.keyCode == 34 || e.keyCode == 75) { kqe.pageNext.click(); return false; }
-// 			else if(e.keyCode == 35 || e.keyCode == 78) {
-// 				kq.query(function(param) { param.page = kqd.pageMax; }, kqf.dealer);
+					app.query();
+				}
+			}
+			else if(ae.id == 'Page') {
+				if(kc == 13) {
+					app.$refs.pager.blur();
 
-// 				return false;
-// 			}
-// 			else if(e.keyCode == 36 || e.keyCode == 77) {
-// 				kq.query(function(param) { param.page = 1; }, kqf.dealer);
+					if (e.shiftKey)
+						app.clearAll();
 
-// 				return false;
-// 			}
-// 			else if(e.keyCode == 81 && e.ctrlKey) {
-// 				kqe.condName.focus();
-
-// 				return false;
-// 			}
-// 			else if(e.keyCode == 13 && e.shiftKey) {
-// 				$('[data-cond][data-x=s]').trigger('click', {});
-
-// 				kqe.search.click();
-
-// 				return false;
-// 			}
-// 		}
-// 	});
-// })();
+					app.query(~~this.pageNow);
+				}
+			}
+		});
+	};
+})();

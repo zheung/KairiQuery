@@ -117,7 +117,7 @@
 				<div class="Pager flex jcb aic">
 					<a class="PagePrev flex jcc aic" @click="query(pageNow-1)">上一页</a>
 					<div class="PageCount flex jcc aic">
-						第<input class="Page" type="text" v-model.number="pageNow" @keyup.enter="query(pageNow)"></input>/&nbsp;<span id="RecordPageMax">{{pageMax}}</span>&nbsp;页
+						第<input id="Page" ref="pager" class="Page" type="text" v-model.number="pageNow" @keyup.enter="query(pageNow)"></input>/&nbsp;<span id="RecordPageMax">{{pageMax}}</span>&nbsp;页
 					</div>
 					<a class="PageNext flex jcc aic" @click="query(pageNow+1)">下一页</a>
 				</div>
@@ -145,7 +145,7 @@
 					</div>
 					<div class="NaviColumn flex jcb aic wpw">
 						<div class="CondBar2 flex jca aic wpw">
-							<input id="CondName" class="wf Input" type="text" placeholder="名称或称号" v-model="word"></input>
+							<input id="CondName" ref="condName" class="wf Input" type="text" placeholder="名称或称号" v-model="word"></input>
 						</div>
 						<a id="Search" class="w4 Button" @click="query">搜索</a>
 					</div>
@@ -162,19 +162,19 @@
 						</div>
 					</div>
 					<div class="NaviColumn flex jcb aic wpw">
-						<a class="w4 Toggle" data-cond="job" data-x="s">职业</a>
+						<a class="w4 Toggle" @click="toggleAll('job')">职业</a>
 						<div class="CondBar flex jca aic wpw">
 							<a class="Toggle" v-for="c of conds.job" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 						</div>
 					</div>
 					<div class="NaviColumn flex jcb aic wpw">
-						<a class="w4 Toggle" data-cond="cost" data-x="s">COST</a>
+						<a class="w4 Toggle" @click="toggleAll('cost')">COST</a>
 						<div class="CondBar flex jca aic wpw">
 							<a class="Toggle min" v-for="c of conds.cost" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 						</div>
 					</div>
 					<div class="NaviColumn2x flex jcb aic wpw">
-						<a class="w4 Toggle" data-cond="attr" data-x="s">属性</a>
+						<a class="w4 Toggle" @click="toggleAll('attr')">属性</a>
 						<div class="CondBar flex jca aic wpw">
 							<div class="wf flex jca aic wpw">
 								<a class="Toggle" v-for="c of conds.attr" v-if="c.g == 0" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
@@ -188,7 +188,7 @@
 						</div>
 					</div>
 					<div class="NaviColumn flex jcb aic wpw">
-						<a class="w4 Toggle" title="等于卡面右上角一个字的技能" data-cond="skillKind" data-x="s">技能</a>
+						<a class="w4 Toggle" title="等于卡面右上角一个字的技能" @click="toggleAll('skillKind')">技能</a>
 						<div class="CondBar flex jca aic wpw">
 							<a class="Toggle" v-for="c of conds.skillKind" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 						</div>
@@ -223,25 +223,25 @@
 					</div>
 					<div class=" h81p TabItem RightNavi3 clrFont flex drc jcs aic wpw" v-if="tab.skillFilter == 1">
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="attatarget" data-x="s">目标</a>
+							<a class="w4 Toggle" @click="toggleAll('attatarget')">目标</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.attatarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="attatype" data-x="s">类型</a>
+							<a class="w4 Toggle" @click="toggleAll('attatype')">类型</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.attatype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="attatime" data-x="s">次数</a>
+							<a class="w4 Toggle" @click="toggleAll('attatime')">次数</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.attatime" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="attaeffect" data-x="s"><kqud title="必须与攻击一起使用的攻击特效">特效</kqud></a>
+							<a class="w4 Toggle" @click="toggleAll('attaeffect')"><kqud title="必须与攻击一起使用的攻击特效">特效</kqud></a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.attaeffect" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
@@ -249,13 +249,13 @@
 					</div>
 					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" v-if="tab.skillFilter == 2">
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="healtarget" data-x="s">目标</a>
+							<a class="w4 Toggle" @click="toggleAll('healtarget')">目标</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.healtarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-								<a class="w4 Toggle" data-cond="healparam" data-x="s">参数</a>
+								<a class="w4 Toggle" @click="toggleAll('healparam')">参数</a>
 								<div class="CondBar flex jca aic wpn">
 									<a class="wf Toggle" v-for="c of conds.healparam" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 								</div>
@@ -263,13 +263,13 @@
 					</div>
 					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" v-if="tab.skillFilter == 3">
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="regentarget" data-x="s">目标</a>
+							<a class="w4 Toggle" @click="toggleAll('regentarget')">目标</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.regentarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="regenturn" data-x="s">回合</a>
+							<a class="w4 Toggle" @click="toggleAll('regenturn')">回合</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.regenturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
@@ -277,25 +277,25 @@
 					</div>
 					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" v-if="tab.skillFilter == 4">
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="supotarget" data-x="s">目标</a>
+							<a class="w4 Toggle" @click="toggleAll('supotarget')">目标</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.supotarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="supoturn" data-x="s">回合</a>
+							<a class="w4 Toggle" @click="toggleAll('supoturn')">回合</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.supoturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="supoparam" data-x="s">属性</a>
+							<a class="w4 Toggle" @click="toggleAll('supoparam')">属性</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.supoparam" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="supotype" data-x="s">类型</a>
+							<a class="w4 Toggle" @click="toggleAll('supotype')">类型</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.supotype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
@@ -303,25 +303,25 @@
 					</div>
 					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" v-if="tab.skillFilter == 5">
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="defetarget" data-x="s">目标</a>
+							<a class="w4 Toggle" @click="toggleAll('defetarget')">目标</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.defetarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="defeturn" data-x="s">回合</a>
+							<a class="w4 Toggle" @click="toggleAll('defeturn')">回合</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.defeturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="defeparam" data-x="s">属性</a>
+							<a class="w4 Toggle" @click="toggleAll('defeparam')">属性</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.defeparam" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="defetype" data-x="s">类型</a>
+							<a class="w4 Toggle" @click="toggleAll('defetype')">类型</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.defetype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
@@ -329,25 +329,25 @@
 					</div>
 					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" v-if="tab.skillFilter == 6">
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="jammtarget" data-x="s">目标</a>
+							<a class="w4 Toggle" @click="toggleAll('jammtarget')">目标</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.jammtarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="jammturn" data-x="s">回合</a>
+							<a class="w4 Toggle" @click="toggleAll('jammturn')">回合</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.jammturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="jammparam" data-x="s">属性</a>
+							<a class="w4 Toggle" @click="toggleAll('jammparam')">属性</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.jammparam" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="jammtype" data-x="s">类型</a>
+							<a class="w4 Toggle" @click="toggleAll('jammtype')">类型</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.jammtype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
@@ -355,19 +355,19 @@
 					</div>
 					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" v-if="tab.skillFilter == 7">
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="dottarget" data-x="s">目标</a>
+							<a class="w4 Toggle" @click="toggleAll('dottarget')">目标</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.dottarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="dottype" data-x="s">属性</a>
+							<a class="w4 Toggle" @click="toggleAll('dottype')">属性</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.dottype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="dotturn" data-x="s">回合</a>
+							<a class="w4 Toggle" @click="toggleAll('dotturn')">回合</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.dotturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
@@ -375,13 +375,13 @@
 					</div>
 					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" v-if="tab.skillFilter == 8">
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="coverturn" data-x="s">回合</a>
+							<a class="w4 Toggle" @click="toggleAll('coverturn')">回合</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.coverturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="coverpercent" data-x="s">比例</a>
+							<a class="w4 Toggle" @click="toggleAll('coverpercent')">比例</a>
 							<div class="CondBar flex drc jca aic wpn">
 								<div class="wf flex jca aic wpn">
 									<a class="wf Toggle min" v-for="c of conds.coverpercent" v-if="c.g == 0" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
@@ -394,19 +394,19 @@
 					</div>
 					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" v-if="tab.skillFilter == 9">
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="enchtarget" data-x="s">目标</a>
+							<a class="w4 Toggle" @click="toggleAll('enchtarget')">目标</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.enchtarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="enchtype" data-x="s">属性</a>
+							<a class="w4 Toggle" @click="toggleAll('enchtype')">属性</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.enchtype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="enchturn" data-x="s">回合</a>
+							<a class="w4 Toggle" @click="toggleAll('enchturn')">回合</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.enchturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
@@ -414,19 +414,19 @@
 					</div>
 					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" v-if="tab.skillFilter == 10">
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="adeftarget" data-x="s">目标</a>
+							<a class="w4 Toggle" @click="toggleAll('adeftarget')">目标</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.adeftarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="adeftype" data-x="s">属性</a>
+							<a class="w4 Toggle" @click="toggleAll('adeftype')">属性</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.adeftype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="adefturn" data-x="s">回合</a>
+							<a class="w4 Toggle" @click="toggleAll('adefturn')">回合</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.adefturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
@@ -434,19 +434,19 @@
 					</div>
 					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" v-if="tab.skillFilter == 11">
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="ajamtarget" data-x="s">目标</a>
+							<a class="w4 Toggle" @click="toggleAll('ajamtarget')">目标</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.ajamtarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="ajamtype" data-x="s">属性</a>
+							<a class="w4 Toggle" @click="toggleAll('ajamtype')">属性</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.ajamtype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="ajamturn" data-x="s">回合</a>
+							<a class="w4 Toggle" @click="toggleAll('ajamturn')">回合</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.ajamturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
@@ -454,37 +454,37 @@
 					</div>
 					<div class="TabItem RightNavi3 clrFont flex drc jcs aic wpw" v-if="tab.skillFilter == 12">
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="dealbonus" data-x="s">抽卡</a>
+							<a class="w4 Toggle" @click="toggleAll('dealbonus')">抽卡</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.dealbonus" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="releasee" data-x="s">解除</a>
+							<a class="w4 Toggle" @click="toggleAll('release')">解除</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.release" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="reflect" data-x="s">反射</a>
+							<a class="w4 Toggle" @click="toggleAll('reflect')">反射</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.reflect" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="rsistype" data-x="s">抗性</a>
+							<a class="w4 Toggle" @click="toggleAll('rsistype')">抗性</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.rsistype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="atostype" data-x="s">自残</a>
+							<a class="w4 Toggle" @click="toggleAll('atostype')">自残</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.atostype" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 						</div>
 						<div class="NaviColumn flex jcb aic wpw">
-							<a class="w4 Toggle" data-cond="other" data-x="s">其他</a>
+							<a class="w4 Toggle" @click="toggleAll('other')">其他</a>
 							<div class="CondBar flex jca aic wpn">
 								<a class="wf Toggle" v-for="c of conds.other" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
@@ -507,7 +507,7 @@
 						<a class="TabHead RightNavi2 flex jcc aic" @click="tab.about = 2" :class="{ active: tab.about == 2 }">友情链接</a>
 						<a class="TabHead RightNavi2 flex jcc aic" @click="tab.about = 3" :class="{ active: tab.about == 3 }">关于</a>
 					</div>
-					<div class="TabItem RightNavi2 clrFontDark fs20 flex drc jcb aic wpw" v-if="tab.about == 1">
+					<div class="TabItem RightNavi2 clrFontDark fs20 flex drc jcb aic wpw" v-if="tab.about == 3">
 						<div>
 							<span class="fs24 fsb clrFont">K</span>airi&nbsp;
 							<span class="fs24 fsb clrFont">Q</span>uery
@@ -541,7 +541,7 @@
 							<span class="fs24 fsb clrFont">DanoR</span>
 						</div>
 					</div>
-					<div class="TabItem RightNavi2 clrFont flex drc aic wpw" v-if="tab.about == 2">
+					<div class="TabItem RightNavi2 clrFont flex drc aic wpw" v-if="tab.about == 1">
 						<div class="NaviColumn flex jcs aic wpw">
 							加入了一些快捷键支持，感觉比较隐蔽干脆来一发教程吧。
 						</div>
@@ -573,11 +573,11 @@
 							切换标签<a class="Toggle on" href="http://ww3.sinaimg.cn/large/627ab2d1gw1f9eotahfqsg208w050tbr.gif" target="_blank">演示GIF</a>
 						</div>
 						<div class="NaviColumn flex jcs aic wpw">
-							1、Tab~Tab~Tab~Tab~Tab~<br>
-							2、Shift+Tab反向（虽然最终只有两个Tab并没有什么卵用o_O）<br>
+							1、Q~Q~Q~Q~Q~(浏览器有兼容问题就不再用Tab了)<br>
+							2、Shift+Q反向（虽然目测只有两个Tab并没有什么卵用o_O）<br>
 						</div>
 					</div>
-					<div class="TabItem RightNavi2 clrFont flex drc aic wpw" v-if="tab.about == 3">
+					<div class="TabItem RightNavi2 clrFont flex drc aic wpw" v-if="tab.about == 2">
 						<div class="NaviColumn flex jcs aic wpw">
 							欢迎交换友链233
 						</div>
@@ -587,10 +587,7 @@
 		</div>
 
 		<script type="text/javascript">
-			window.pre = {
-				serv: '${serv}',
-				word: '${word}'
-			}
+			window.pre = { serv: '${serv}', word: '${word}', mark: '${mark}', page: ~~'${page}' }
 		</script>
 		<script type="text/javascript" src="pub/js/vue.min.js"></script>
 		<script type="text/javascript" src="pub/js/socket.io.js"></script>

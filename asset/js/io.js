@@ -9,7 +9,7 @@
 		app.io.emit.apply(app.io, args);
 	};
 
-	on('query', function(result) {
+	on('query', function(result, mark) {
 		var recos = result[0];
 
 		app.tab.skillTab = {};
@@ -33,11 +33,24 @@
 		app.pageNow = result[1];
 		app.pageMax = result[2];
 
-		if(history.replaceState) history.replaceState(null, null, 'kq?serv='+app.serv+(app.word?'&word='+app.word:''));
+		if(history.replaceState)
+			history.replaceState(null, null, 'kq?serv='+app.serv
+				+(app.word ? '&word='+app.word : '')
+				+(app.pageNow > 1 ? '&page='+app.pageNow : '')
+				+(mark ? '&mark='+mark : '')
+			);
 	});
 
 	on('conds', function(conds) {
 		app.conds = conds;
+
+		var types = Object.keys(app.conds);
+
+		window.pre.mark.split('|').map(function(num, i) {
+			if(num) app.toggleAll(types[i], true, num);
+		});
+
+		app.query(app.pageNow);
 	});
 })();
 
@@ -50,9 +63,7 @@
 		if(first) {
 			first = false;
 
-			app.serv = window.pre.serv;
 			app.emit('conds');
-			app.query(1);
 		}
 	});
 

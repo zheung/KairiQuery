@@ -4,8 +4,8 @@ window.app = new Vue({
 		io:io(),
 
 		recos: [],
-		pageNow: 1,
-		pageMax: 1,
+		pageNow: window.pre.page || 1,
+		pageMax: window.pre.page || 1,
 
 		imgSrc: ['','','',''],
 
@@ -23,9 +23,10 @@ window.app = new Vue({
 			skillSuport3: {},
 		},
 
-		serv: 'cn',
-		word: '',
-		mark: [[]],
+		serv: window.pre.serv || 'cn',
+		word: window.pre.word || '',
+
+		mark: [],
 
 		conds: {},
 		condAll : {},
@@ -38,6 +39,9 @@ window.app = new Vue({
 				Vue.set(app.imgSrc, i, 'https://raw.githubusercontent.com/kairiquery/kqp'+app.serv+'21/master/'+app.recos[i].id+'.png');
 		}
 	},
+	mounted: function() {
+		window.keyInit();
+	},
 	methods: {
 		query: function(page) {
 			if(page < 0 || page > app.pageMax) return;
@@ -49,8 +53,8 @@ window.app = new Vue({
 				serv: app.serv,
 				word: app.word,
 				page: app.pageNow,
-				mark: app.mark.toString().replace(/\,/g, '|'),
-				zero: (/[1-9]/.test(app.mark.toString()))?0:1
+				mark: app.mark.toString().replace(/\,/g, '|').replace(/\|+$/g, ''),
+				zero: (/[1-9]/.test(app.mark.toString())) ? 0 : 1
 			};
 
 			if(moder) moder(result);
@@ -75,9 +79,11 @@ window.app = new Vue({
 			Vue.set(cond, 'on', on);
 
 			if(cond.on)
-				app.mark[cond.x][cond.y] |= cond.z;
+				app.mark[cond.x] |= cond.y;
 			else
-				app.mark[cond.x][cond.y] &= ~cond.z;
+				app.mark[cond.x] &= ~cond.y;
+
+			if(!app.mark[cond.x]) app.mark[cond.x] = undefined;
 		},
 		toggle: function(eve, cond) {
 			var type = cond.type;
@@ -95,20 +101,25 @@ window.app = new Vue({
 
 			app.query();
 		},
-		toggleAll: function(type) {
-			var on = app.condAll[type] = !app.condAll[type];
+		toggleAll: function(type, bool, num) {
+			var on = app.condAll[type] = bool == undefined ? !app.condAll[type]: !!bool;
 
 			app.conds[type].map(function(c) {
-				app.markit(c, on);
+				if(num && !!(num & c.y))
+					app.markit(c, on);
 			});
 
 			app.query();
+		},
+		clearAll: function() {
+			for(var type in app.conds)
+				app.toggleAll(type, false);
 		},
 		suportModeApply: function() {
 			app.suportMode = !app.suportMode;
 
 			app.recos.map(function(reco) {
-				Vue.set(app.tab.skillTab, reco.id, 2);
+				Vue.set(app.tab.skillTab, reco.id, app.suportMode ? 2 : 1);
 			});
 		}
 	}
