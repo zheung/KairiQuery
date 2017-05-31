@@ -1,0 +1,78 @@
+[
+	[ "n", "hn", "r", "sr", "ur", "mr", "mr+", "mr++", "mmr", "test" ],
+	[ "mercenary", "millionaire", "thief", "singer", "null" ],
+	[ "cost1", "cost2", "cost3", "cost4", "cost5", "cost9", "cost11" ],
+	[
+		"fire", "ice", "wind", "light", "dark",
+		"fireice", "firewind", "firelight", "firedark",
+		"icewind", "icelight", "icedark", "windlight", "winddark", "lightdark"
+	],
+	[ "attack", "sorcery", "recovery", "support", "defense", "jamming", "special" ],
+
+	[ "map", "fulltime", "super", "boss", "redeem", "regicide", "knight", "limited", "cup" ],
+	[ "linkage" ], [ "ex" ],
+
+	[ "aoe", "cover", "buffone", "rele", "bug", "ench", "chain" ],
+
+	[ "attack:aoe", "attack:soe" ],
+	[ "attack:physical", "attack:magic" ],
+	[ "attack:time1", "attack:time2", "attack:time3", "attack:time4", "attack:time5" ],
+	[ "attack:drain", "attack:revenge", "attack:pierce", "attack:attrach", "attack:crit" ],
+
+	[ "heal:aoe", "heal:soe", "heal:slf" ],
+	[ "heal:fix", "heal:param" ],
+
+	[ "regen:aoe", "regen:soe", "regen:slf" ],
+	[ "regen:turn2", "regen:turn3", "regen:turn4", "regen:turn5" ],
+
+	[ "supo:aoe", "supo:soe", "supo:slf" ],
+	[ "supo:turn1", "supo:turn2", "supo:turn3", "supo:turn4" ],
+	[ "supo:param2", "supo:param3", "supo:param4", "supo:param5" ],
+	[ "supo:fix", "supo:param" ],
+
+	[ "defe:aoe", "defe:soe", "defe:slf" ],
+	[ "defe:turn1", "defe:turn2", "defe:turn3", "defe:turn4" ],
+	[ "defe:param6", "defe:param7", "defe:double" ],
+	[ "defe:fix", "defe:param" ],
+
+	[ "jamm:aoe", "jamm:soe" ],
+	[ "jamm:turn1", "jamm:turn2", "jamm:turn3", "jamm:turn4" ],
+	[ "jamm:param3", "jamm:param4", "jamm:double", "jamm:param6", "jamm:param7" ],
+	[ "jamm:fix", "jamm:param" ],
+
+	[ "dot:aoe", "dot:soe" ],
+	[ "dot:poison", "dot:burn", "dot:freeze", "dot:bleed", "dot:electric" ],
+	[ "dot:turn3", "dot:turn4", "dot:turn5", "dot:turn8" ],
+
+	[ "cover:turn1", "cover:turn2" ],
+	[
+		"cover:per10", "cover:per20", "cover:per25", "cover:per30", "cover:per35",
+		"cover:per40", "cover:per45", "cover:per50", "cover:per55", "cover:per60", "cover:per65"
+	],
+
+	[ "ench:aoe", "ench:soe" ],
+	[ "ench:attr1", "ench:attr2", "ench:attr3", "ench:attr4", "ench:attr5" ],
+	[ "ench:turn1", "ench:turn2", "ench:turn3", "ench:turn4" ],
+
+	[ "adef:aoe", "adef:soe", "adef:slf" ],
+	[ "adef:attr1", "adef:attr2", "adef:attr3", "adef:attr4", "adef:attr5" ],
+	[ "adef:turn1", "adef:turn2", "adef:turn3"],
+
+	[ "ajam:aoe", "ajam:soe" ],
+	[ "ajam:attr1", "ajam:attr2", "ajam:attr3", "ajam:attr4", "ajam:attr5" ],
+	[ "ajam:turn1", "ajam:turn2", "ajam:turn3"],
+
+	[ "deal:+1", "deal:+2" ],
+
+	[ "rele:role7", "rele:role15", "rele:role19", "rele:role23", "rele:role24", "rele:role26" ],
+
+
+	[ "rfle:aoe", "rfle:slf" ],
+	[ "rfle:turn1", "rfle:turn2" ],
+
+	[ "rsis:seal", "rsis:dark" ],
+
+	[ "atos:hp", "atos:trap", "atos:cost" ],
+
+	[ "crit", "stan", "nord", "asee", "dotup" ]
+]

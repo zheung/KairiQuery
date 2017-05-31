@@ -16,8 +16,8 @@ let hasPlus = (cards, id, lastRare) => {
 	return false;
 };
 
-module.exports = (valuer, cards, skils, roles, rules, supss, suprs, evols) => {
-	let result = [],
+module.exports = (valuer, marker, cards, skils, roles, rules, supss, suprs, evols) => {
+	let result = {},
 		dictSkil = {}, dictRole = {}, dictRule = {}, dictCard = {},
 		dictSups = {}, dictSupr = {}, dictEvol = {};
 
@@ -87,7 +87,10 @@ module.exports = (valuer, cards, skils, roles, rules, supss, suprs, evols) => {
 
 		card.evol = dictEvol[card.id] || [];
 
-		result.push(card);
+		card.mark = marker(card);
+
+		result[card.id] = card;
+		// result.push(card);
 	}
 
 	for(let card of cards)

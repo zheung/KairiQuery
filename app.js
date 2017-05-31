@@ -11,7 +11,8 @@ let render = {
 	let csvp = require('./libs/csvp'),
 		hacker = require('./hack'),
 		valuer = require('./data/dict/valuer.json'),
-		merger = require('./libs/merger');
+		merger = require('./libs/merger'),
+		marker = require('./data/mark/func');
 
 	let db = await mongo('kq');
 
@@ -40,7 +41,7 @@ let render = {
 		}
 
 		let data = merger(
-			valuer,
+			valuer, marker(serv),
 			raw['card'],
 			raw['skil'],
 			raw['role'],
@@ -50,16 +51,20 @@ let render = {
 			raw['evol']
 		);
 
-		let coll = await db.coll(serv);
+		if(serv =='jp') {
+			fs.writeFileSync('D:/Desktop/data.json', JSON.stringify(data));
+			console.log('de');
+		}
+		// let coll = await db.coll(serv);
 
-		try {
-			await coll.drop();
-		}
-		catch(e) {
-			if(e.code != 26) console.error(e);
-		}
-		await coll.insert(data);
-		// console.log(Object.keys(data).length);
+		// try {
+		// 	await coll.drop();
+		// }
+		// catch(e) {
+		// 	if(e.code != 26) console.error(e);
+		// }
+		// await coll.insert(data);
+		// // console.log(Object.keys(data).length);
 	}
 
 	console.log('done');
