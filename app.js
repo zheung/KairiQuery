@@ -6,17 +6,17 @@ let render = {
 };
 
 (async() => {
-	let conf = require('./config'),
-		mongo = require('./libs/db'),
-		csvp = require('./libs/csvp'),
+	let conf = require('./config'), mongo = require('./libs/db');
+
+	let csvp = require('./libs/csvp'),
 		hacker = require('./hack'),
 		valuer = require('./data/dict/valuer.json');
 
-	for(let serv of conf.servs) {
-		let db = await mongo(`kq-${serv}`);
+	let db = await mongo('kq');
 
+	for(let serv of conf.servs) {
 		for(let type of conf.types) {
-			let coll = await db.coll(type),
+			let coll = await db.coll(`${serv}${type}`),
 				header = require(`./data/head/${type}.json`);
 
 			try {
