@@ -105,11 +105,11 @@ window.app = new Vue({
 			var on = app.condAll[type] = bool == undefined ? !app.condAll[type]: !!bool;
 
 			app.conds[type].map(function(c) {
-				if(num && !!(num & c.y))
+				if(!num || (num != undefined && !!(num & c.y)))
 					app.markit(c, on);
 			});
 
-			app.query();
+			if(num == undefined) app.query();
 		},
 		clearAll: function() {
 			for(var type in app.conds)
