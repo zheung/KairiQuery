@@ -16,7 +16,7 @@ let render = {
 
 	let db = await mongo('kq');
 
-	for(let serv of conf.servs) {
+	for(let serv of process.argv[2] ? [process.argv[2]] : conf.servs) {
 		let raw = {};
 
 		for(let type of conf.types) {
