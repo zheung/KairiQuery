@@ -20,51 +20,27 @@ let render = {
 		let raw = {};
 
 		for(let type of conf.types) {
-			let coll = await db.coll(`${serv}${type}`),
-				header = require(`./data/head/${type}.json`);
-
-			try {
-				await coll.drop();
-			}
-			catch(e) {
-				if(e.code != 26) console.error(e);
-			}
+			let header = require(`./data/head/${type}.json`);
 
 			let result = await csvp(`./data/raw/${serv}-${type}.csv`, type, 1, await hacker(`header-${serv}-${type}`, header), valuer, render);
 
-			raw[type] = result;
-
 			console.log(`${serv}-${type}-${result.length}`);
 
-			// if(result.length)
-			// 	await coll.insert(result);
+			if(result.length)
+				await (await db.coll(`${serv}${type}`)).renew(result);
+
+			raw[type] = result;
 		}
 
 		let data = merger(
 			valuer, marker(serv),
-			raw['card'],
-			raw['skil'],
-			raw['role'],
-			raw['rule'],
-			raw['sups'],
-			raw['supr'],
-			raw['evol']
+			raw['card'], raw['skil'], raw['role'],
+			raw['rule'], raw['sups'], raw['supr'], raw['evol']
 		);
 
-		if(serv =='jp') {
-			fs.writeFileSync('D:/Desktop/data.json', JSON.stringify(data));
-			console.log('de');
-		}
-		// let coll = await db.coll(serv);
+		(await db.coll(serv)).renew(data[0]);
 
-		// try {
-		// 	await coll.drop();
-		// }
-		// catch(e) {
-		// 	if(e.code != 26) console.error(e);
-		// }
-		// await coll.insert(data);
-		// // console.log(Object.keys(data).length);
+		console.log(data[0].length);
 	}
 
 	console.log('done');

@@ -19,6 +19,16 @@ module.exports = async(dbname) => {
 				},
 				insert: async(arr) => {
 					return coll.insertMany(arr);
+				},
+				renew: async(arr) => {
+					try {
+						await coll.drop();
+					}
+					catch(e) {
+						if(e.code != 26) console.error(e);
+					}
+
+					return coll.insertMany(arr);
 				}
 			};
 		}

@@ -17,7 +17,7 @@ let hasPlus = (cards, id, lastRare) => {
 };
 
 module.exports = (valuer, marker, cards, skils, roles, rules, supss, suprs, evols) => {
-	let result = {},
+	let result = [[], {}],
 		dictSkil = {}, dictRole = {}, dictRule = {}, dictCard = {},
 		dictSups = {}, dictSupr = {}, dictEvol = {};
 
@@ -89,8 +89,8 @@ module.exports = (valuer, marker, cards, skils, roles, rules, supss, suprs, evol
 
 		card.mark = marker(card);
 
-		result[card.id] = card;
-		// result.push(card);
+		result[0].push(card);
+		result[1][card.id] = card;
 	}
 
 	for(let card of cards)
