@@ -14,8 +14,8 @@ let condsParse = async(conds) => {
 module.exports = async($) => {
 	return async(conds = {}, paths = []) => {
 		let serv = conds.serv,
-			dict = $.marks[serv], mark = { $and: [ { $where: 'true'} ] },
-			rend = $.rends[serv], pageEvery = $.conf.pageEvery;
+			dict = $.mark, mark = { $and: [ { $where: 'true'} ] },
+			rend = $.rend, pageEvery = $.conf.pageEvery;
 
 		await condsParse(conds);
 
