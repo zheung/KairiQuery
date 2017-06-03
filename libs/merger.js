@@ -57,7 +57,8 @@ module.exports = (valuer, marker, cards, skils, roles, rules, supss, suprs, evol
 	for(let skil of skils) {
 		skil.role = dictRole[skil.role] || [];
 
-		(dictSkil[skil.id] || (dictSkil[skil.id] = [])).push(skil);
+		let dict = (dictSkil[skil.id] || (dictSkil[skil.id] = []));
+		dict.push(skil);
 	}
 	for(let sups of supss) {
 		sups.role = dictSupr[sups.role] || [];

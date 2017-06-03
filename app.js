@@ -24,10 +24,10 @@ let render = {
 
 			let result = await csvp(`./data/raw/${serv}-${type}.csv`, type, 1, await hacker(`header-${serv}-${type}`, header), valuer, render);
 
-			console.log(`${serv}-${type}-${result.length}`);
+			// console.log(`${serv}-${type}-${result.length}`);
 
-			if(result.length)
-				await (await db.coll(`${serv}${type}`)).renew(result);
+			// if(result.length)
+			// 	await (await db.coll(`${serv}${type}`)).renew(result);
 
 			raw[type] = result;
 		}
@@ -38,7 +38,7 @@ let render = {
 			raw['rule'], raw['sups'], raw['supr'], raw['evol']
 		);
 
-		(await db.coll(serv)).renew(data[0]);
+		// (await db.coll(serv)).renew(data[0]);
 
 		console.log(data[0].length);
 	}
