@@ -132,7 +132,8 @@
 				<div class="TabItem RightNavi flex drc aic wpw" v-if="tab.dash == 1">
 					<div class="NaviColumn hr flex jcb aic wpw">
 						<div>
-							<a class="Toggle" :class = "suportMode? 'on': 'off'" @click="suportModeApply">支援优先</a>
+							<a class="Toggle" :class = "suportMode? 'on': 'off'" @click="suportModeApply">支援</a>
+							<a class="Toggle" :class = "prioMode? 'on': 'off'" @click="prioModeApply">PVP</a>
 						</div>
 						<div>
 							<span>服务器：</span>

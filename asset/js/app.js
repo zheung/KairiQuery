@@ -31,7 +31,8 @@ window.app = new Vue({
 		conds: {},
 		condAll : {},
 
-		suportMode: false
+		suportMode: false,
+		prioMode: false
 	},
 	watch: {
 		recos: function() {
@@ -54,7 +55,8 @@ window.app = new Vue({
 				word: app.word,
 				page: app.pageNow,
 				mark: app.mark.toString().replace(/\,/g, '|').replace(/\|+$/g, ''),
-				zero: (/[1-9]/.test(app.mark.toString())) ? 0 : 1
+				zero: (/[1-9]/.test(app.mark.toString())) ? 0 : 1,
+				prio: app.prioMode
 			};
 
 			if(moder) moder(result);
@@ -121,6 +123,11 @@ window.app = new Vue({
 			app.recos.map(function(reco) {
 				Vue.set(app.tab.skillTab, reco.id, app.suportMode ? 2 : 1);
 			});
+		},
+		prioModeApply: function() {
+			app.prioMode = !app.prioMode;
+
+			app.query();
 		}
 	}
 });
