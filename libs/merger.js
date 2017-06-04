@@ -36,7 +36,9 @@ module.exports = (valuer, marker, cards, skils, roles, rules, supss, suprs, evol
 			}
 		}
 
-		(dictRole[role.id] || (dictRole[role.id] = [])).push(role);
+		let dict = dictRole[role.id] || (dictRole[role.id] = []);
+
+		dict.push(role);
 	}
 
 	for(let supr of suprs) {
@@ -51,19 +53,24 @@ module.exports = (valuer, marker, cards, skils, roles, rules, supss, suprs, evol
 			}
 		}
 
-		(dictSupr[supr.id] || (dictSupr[supr.id] = [])).push(supr);
+		let dict = dictSupr[supr.id] || (dictSupr[supr.id] = []);
+
+		dict.push(supr);
 	}
 
 	for(let skil of skils) {
 		skil.role = dictRole[skil.role] || [];
 
-		let dict = (dictSkil[skil.id] || (dictSkil[skil.id] = []));
+		let dict = dictSkil[skil.id] || (dictSkil[skil.id] = []);
+
 		dict.push(skil);
 	}
 	for(let sups of supss) {
 		sups.role = dictSupr[sups.role] || [];
 
-		(dictSups[sups.id] || (dictSups[sups.id] = [])).push(sups);
+		let dict = dictSups[sups.id] || (dictSups[sups.id] = []);
+
+		dict.push(sups);
 	}
 
 	for(let evol of evols) {
@@ -73,7 +80,9 @@ module.exports = (valuer, marker, cards, skils, roles, rules, supss, suprs, evol
 			if(!evol.matter[id].fame)
 				delete evol.matter[id];
 
-		(dictEvol[evol.id] || (dictEvol[evol.id] = [])).push(evol);
+		let dict = dictEvol[evol.id] || (dictEvol[evol.id] = []);
+
+		dict.push(evol);
 	}
 
 	for(let card of cards) {

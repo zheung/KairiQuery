@@ -11,6 +11,7 @@ let render = {
 	let csvp = require('./libs/csvp'),
 		hacker = require('./hack'),
 		valuer = require('./data/dict/valuer.json'),
+		shower = require('./data/dict/shower.json'),
 		merger = require('./libs/merger'),
 		marker = require('./data/mark/func');
 
@@ -24,10 +25,10 @@ let render = {
 
 			let result = await csvp(`./data/raw/${serv}-${type}.csv`, type, 1, await hacker(`header-${serv}-${type}`, header), valuer, render);
 
-			// console.log(`${serv}-${type}-${result.length}`);
+			console.log(`${serv}-${type}-${result.length}`);
 
-			// if(result.length)
-			// 	await (await db.coll(`${serv}${type}`)).renew(result);
+			if(result.length)
+				await (await db.coll(`${serv}${type}`)).renew(result);
 
 			raw[type] = result;
 		}
@@ -38,10 +39,18 @@ let render = {
 			raw['rule'], raw['sups'], raw['supr'], raw['evol']
 		);
 
-		// (await db.coll(serv)).renew(data[0]);
+		(await db.coll(serv)).renew(data[0]);
 
 		console.log(data[0].length);
 	}
 
-	console.log('done');
+	// let coll = await db.coll('cn');
+	// let result = await coll.find({mark:'ur', evol:{$size:0}});
+	// for(let card of (await result.toArray())) {
+	// 	let skill = (card.skill.awaken[0]||card.skill.normal[0]);
+
+	// 	console.log([card.info.title, card.info.name, shower.job[skill.info.job], shower.attr[skill.info.attr], skill.info.cost, (card.info.star==1?'活动':'扭蛋')].join(','));
+	// }
+
+	// console.log('done');
 })();

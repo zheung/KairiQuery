@@ -1,10 +1,10 @@
 module.exports = {
 	servs: [
-		// 'jp',
+		'jp',
 		'cn',
-		// 'tw',
-		// 'kr',
-		// 'ps'
+		'tw',
+		'kr',
+		'ps'
 	],
 	types: [
 		'card',
