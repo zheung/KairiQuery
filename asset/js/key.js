@@ -17,8 +17,8 @@
 			if(!isInput(tagName)) {
 				if(inArr(kc, [65, 33, 74])) { app.query(app.pageNow - 1); return false; }
 				else if(inArr(kc, [68, 34, 75])) { app.query(app.pageNow + 1); return false; }
-				else if(inArr(kc, [35, 77])) { app.query(); return false; }
-				else if(inArr(kc, [36, 78])) { app.query(~~app.pageMax); return false; }
+				else if(inArr(kc, [35, 77])) { app.query(~~app.pageMax); return false; }
+				else if(inArr(kc, [36, 78])) { app.query(); return false; }
 
 				else if(kc == 81) {
 					var now = app.tab.dash;

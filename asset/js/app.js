@@ -104,7 +104,7 @@ window.app = new Vue({
 			app.query();
 		},
 		toggleAll: function(type, bool, num) {
-			var on = app.condAll[type] = bool == undefined ? !app.condAll[type]: !!bool;
+			var on = app.condAll[type] = (bool == undefined ? !app.condAll[type]: !!bool);
 
 			app.conds[type].map(function(c) {
 				if(!num || (num != undefined && !!(num & c.y)))
