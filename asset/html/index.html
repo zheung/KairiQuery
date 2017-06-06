@@ -150,10 +150,9 @@
 						</div>
 						<a id="Search" class="w4 Button" @click="query">搜索</a>
 					</div>
-					<div class="NaviColumn fs11 hr flex jcs aic wpw" style="color: antiquewhite;">
-						快奶我出祝福卡，不然不懂怎么写祝福卡的逻辑了哈<br>
-						快捷键修复；修复部分快捷键（具体看More）<br>
-						URL地址支持所有参数！（快去分享给基友吧！）
+					<div class="NaviColumn fs12 hr flex jcs aic wpw" style="color: antiquewhite;">
+						阿蒂拉30连三次10连全金；祸不单行，黄金律是跪定了<br>
+						部分筛选有严重BUG，先撤下了，以后再慢慢重构。
 					</div>
 					<div class="NaviColumn2x flex jcb aic wpw">
 						<a class="w4 Toggle" @click="toggleAll('rare')">稀有度</a>
@@ -201,15 +200,17 @@
 				</div>
 				<div class="TabItem RightNavi flex drc jcs aic wpn" v-if="tab.dash == 2">
 					<div class="NaviColumn hr fs11 flex jcs aic wpw">
-						你知道吗？在原始数据中，COST、属性和职业实际上属于“技能”而不是“卡牌”的。从歌姬使用B叔时是支援卡，其他职业使用时是治疗卡可以印证。
+						你知道吗？<br>
+						COST、属性和职业是“技能”的属性而不是“卡牌”的。<br>
+						例如B叔在歌姬卡组中是支援卡，在其他卡组是治疗卡。
 					</div>
-					<div class="NaviColumn hr flex jcs aic wpw">常用标签</div>
+					<!--<div class="NaviColumn hr flex jcs aic wpw">常用标签</div>
 					<div class="NaviColumn flex jca aic wpn">
 						<a class="Toggle" v-for="c of conds.common" v-if="c.g == 0" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
-					</div>
-					<div class="NaviColumn hr flex jca aic wpn">
+					</div>-->
+					<!--<div class="NaviColumn hr flex jca aic wpn">
 						<a class="Toggle" v-for="c of conds.common" v-if="c.g == 1" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
-					</div>
+					</div>-->
 					<div class="TabHeader RightNavi2 flex jca aih wpn">
 						<a class="TabHead RightNavi3 flex jcc aic" @click="tab.skillFilter = 1" :class="{ active: tab.skillFilter == 1 }">攻击</a>
 						<a class="TabHead RightNavi3 flex jcc aic" @click="tab.skillFilter = 2" :class="{ active: tab.skillFilter == 2 }">治疗</a>

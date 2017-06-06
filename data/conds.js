@@ -11,11 +11,11 @@ module.exports = {
 		{ on: false, type: 'rare', g: 1, x: 0, y: 16, text: 'UR' }
 	],
 	job: [
-		{ on: false, type: 'job', g: 0, x: 1, y: 1, text: '兵哥' },
-		{ on: false, type: 'job', g: 0, x: 1, y: 2, text: '豪爸' },
-		{ on: false, type: 'job', g: 0, x: 1, y: 4, text: '贼妹' },
-		{ on: false, type: 'job', g: 0, x: 1, y: 8, text: '姬妈' },
-		{ on: false, type: 'job', g: 0, x: 1, y: 16, text: '教官' }
+		{ on: false, type: 'job', g: 0, x: 1, y: 1, text: '棕毛' },
+		{ on: false, type: 'job', g: 0, x: 1, y: 2, text: '金毛' },
+		{ on: false, type: 'job', g: 0, x: 1, y: 4, text: '呆毛' },
+		{ on: false, type: 'job', g: 0, x: 1, y: 8, text: '粉毛' },
+		{ on: false, type: 'job', g: 0, x: 1, y: 16, text: '没毛' }
 	],
 	cost: [
 		{ on: false, type: 'cost', g: 0, x: 2, y: 1, text: '1' },

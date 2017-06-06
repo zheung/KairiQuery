@@ -37,18 +37,17 @@
 			history.replaceState(null, null, 'kq?serv='+app.serv
 				+(app.word ? '&word='+app.word : '')
 				+(app.pageNow > 1 ? '&page='+app.pageNow : '')
-				+(mark ? '&mark='+mark : '')
+				// +(mark ? '&mark='+mark : '')
 			);
 	});
 
 	on('conds', function(conds) {
 		app.conds = conds;
 
-		var types = Object.keys(app.conds);
-
-		window.pre.mark.split('|').map(function(num, i) {
-			if(num) app.toggleAll(types[i], true, num);
-		});
+		// var types = Object.keys(app.conds);
+		// window.pre.mark.split('|').map(function(num, i) {
+		// 	if(num) app.toggleAll(types[i], true, num);
+		// });
 
 		app.query(app.pageNow);
 	});
