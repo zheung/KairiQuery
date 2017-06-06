@@ -17,7 +17,7 @@ module.exports = (serv) => {
 		if(rare == 62) set.add('mr++');
 		if(rare == 7) set.add('mmr');
 
-		let sm = card.skill.awaken.sort(prioSorter).concat(card.skill.normal.sort(prioSorter))[0],
+		let sm = card.skill.awaken.concat().sort(prioSorter).concat(card.skill.normal.concat().sort(prioSorter))[0],
 			sf = (card.skill.awaken[0] || card.skill.normal[0]),
 			chain = sm.info.chain,
 			cost = sf.info.cost, attr = sf.info.attr, job = sf.info.job, kind = sf.info.kind;

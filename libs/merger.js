@@ -65,6 +65,7 @@ module.exports = (valuer, marker, cards, skils, roles, rules, supss, suprs, evol
 
 		dict.push(skil);
 	}
+
 	for(let sups of supss) {
 		sups.role = dictSupr[sups.role] || [];
 
