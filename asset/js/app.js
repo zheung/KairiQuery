@@ -9,8 +9,6 @@ window.app = new Vue({
 
 		imgSrc: ['','','',''],
 
-		dynmSearch: true,
-
 		tab: {
 			dash: 1,
 			skillFilter: 1,
