@@ -19,6 +19,13 @@ window.app = new Vue({
 			skillAwaken: {},
 			skillNormal: {},
 			skillSuport3: {},
+
+			main: 0,
+			mains: [
+				{ text:'卡牌资料', type: 'query' },
+				{ text:'资料：蛋池UR一览表', type: 'page' },
+				{ text:'骑士：侵蚀型莫德雷德(SSR)', type: 'detail', id: 123456 }
+			]
 		},
 
 		serv: window.pre.serv || 'cn',

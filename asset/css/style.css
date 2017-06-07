@@ -28,8 +28,6 @@ input, span {
 }
 input {
 	border: 1px solid transparent;
-
-	font-size: 16px;
 }
 input:focus {
 	border-bottom: 1px solid #E0E2E4;
@@ -66,7 +64,7 @@ kqud {
 }
 .recoBox>.reco {
 	border: 2px solid transparent;
-	border-bottom: 2px solid #111111;
+	border-bottom: 2px solid #222222;
 	border-radius: 4px;
 
 	width: 99%;
@@ -153,7 +151,6 @@ kqud {
 	height: 95%;
 	border-radius: 4px;
 	overflow: hidden;
-	font-size: 14px;
 }
 
 /*-------tabBox.SkillContent-------*/
@@ -241,21 +238,21 @@ kqud {
 }
 
 /*-------tabBox.dash-------*/
-.tabBox.Dash {
+.tabBox.dash {
 	height: 100%;
 	width: 450px;
 
 	overflow: hidden;
 	overflow-y: auto;
 }
-.tabBox.Dash>.headBox {
+.tabBox.dash>.headBox {
 	width: 100%;
 	height: 45px;
 	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 
 	background-color: #34495e;
 }
-.tabBox.Dash>.headBox>.head {
+.tabBox.dash>.headBox>.head {
 	width: 100%;
 
 	border: 2px solid #34495e;
@@ -267,19 +264,19 @@ kqud {
 
 	cursor: pointer;
 }
-.tabBox.Dash>.headBox>.head:hover {
+.tabBox.dash>.headBox>.head:hover {
 	border-bottom: 2px solid #148474;
 }
-.tabBox.Dash>.headBox>.head.active {
+.tabBox.dash>.headBox>.head.active {
 	border-radius: 4px;
 	border: 2px solid #148474;
 	background-color: #148474;
 }
-.tabBox.Dash>.headBox>.item {
+.tabBox.dash>.headBox>.item {
 	height: 93%;
 	width: 100%;
 }
-.tabBox.Dash>.item {
+.tabBox.dash>.item {
 	height: 80%;
 	width: 100%;
 
@@ -458,7 +455,6 @@ kqud {
 
 	text-align: center;
 	color: #557799;
-	font-size: 17px;
 
 	cursor: auto;
 }
@@ -493,4 +489,36 @@ kqud {
 }
 .tabBox.serv>span {
 	width: 100px;
+}
+/*-------tabBox.main-------*/
+.tabBox.main>.headBox {
+	height: 5%;
+	width: 100%;
+
+	border: 2px solid transparent;
+	border-bottom: 2px solid #222222;
+
+	overflow: hidden;
+}
+.tabBox.main>.headBox>.head {
+	border: 2px solid #34495e;
+	border-radius: 4px;
+
+	margin: 4px;
+	padding: 1px 7px;
+
+	color: #E0E2E4;
+
+	cursor: pointer;
+}
+.tabBox.main>.headBox>.head:hover {
+	border-bottom: 2px solid #148474;
+}
+.tabBox.main>.headBox>.head.active {
+	border: 2px solid #148474;
+	background-color: #148474;
+}
+.tabBox.main>.item {
+	height: 95%;
+	width: 100%;
 }
