@@ -1,2 +1,8 @@
 #Visual Studio Code
 .vscode
+
+#Node Modules Folder
+node_modules
+
+#Package Lock
+package-lock.json
