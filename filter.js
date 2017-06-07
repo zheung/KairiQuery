@@ -42,8 +42,11 @@ module.exports = async($) => {
 				}]
 			};
 
+		global.qq = query;
+		global.co = coll;
+
 		let cur = await coll.find(query),
-			raw = await cur.sort(conds.prio?{'skill.awaken.priority.pvp':1}:{}).skip(pageEvery * (conds.page - 1)).limit(pageEvery).toArray(),
+			raw = await cur.sort(conds.prio?{'extra.prio.pvp':1}:{}).skip(pageEvery * (conds.page - 1)).limit(pageEvery).toArray(),
 			count = await cur.count(),
 			result = [];
 

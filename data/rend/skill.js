@@ -11,9 +11,9 @@ module.exports = async($) => {
 			let ss = [], skillFirst = skills[st][0];
 
 			for(let skill of skills[st]) {
-				let s = { prio: skill.cond.priority, content: [] },
+				let s = { prio: skill.cond.prio, content: [] },
 					condType = skill.cond.type, condType2 = skill.cond2 ? skill.cond2.type : undefined, delayType = skill.delay ? skill.delay.type : undefined,
-					pve = skill.priority.pve ? skill.priority.pve : skillFirst.priority.pve, pvp = skill.priority.pvp ? skill.priority.pvp : skillFirst.priority.pvp;
+					pve = skill.prio.pve ? skill.prio.pve : skillFirst.prio.pve, pvp = skill.prio.pvp ? skill.prio.pvp : skillFirst.prio.pvp;
 
 				if(condType) {
 					let rend = (await rdrCond(serv))[condType], rend2 = (await rdrCond(serv))[condType2];

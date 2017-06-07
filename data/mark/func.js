@@ -1,5 +1,5 @@
 module.exports = () => {
-	let prioSorter = (a, b) => { return b.cond.priority - a.cond.priority; };
+	let prioSorter = (a, b) => { return b.cond.prio - a.cond.prio; };
 
 	return (card) => {
 		let set = new Set();
