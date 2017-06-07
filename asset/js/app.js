@@ -1,64 +1,83 @@
 window.app = new Vue({
 	el: '#app',
 	data: {
-		io:io(),
+		io: io(),
 
-		recos: [],
-		pageNow: window.pre.page || 1,
-		pageMax: window.pre.page || 1,
+		main: {
+			recos: [],
+			pageNow: window.pre.page || 1,
+			pageMax: window.pre.page || 1,
 
-		gurs: [],
+			imgSrc: ['','','',''],
 
-		imgSrc: ['','','',''],
-		imgSrc2: ['','','',''],
 
-		tab: {
-			dash: 1,
-			skillFilter: 1,
-			about: 1,
+			tab: {
+				dash: 1,
+				skillFilter: 1,
+				about: 1,
 
-			skillTab: {},
+				skillTab: {},
 
-			skillAwaken: {},
-			skillNormal: {},
-			skillSuport3: {},
+				skillAwaken: {},
+				skillNormal: {},
+				skillSuport3: {},
 
-			main: 0,
-			mains: [
-				{ text:'卡牌资料', type: 'query' },
-				{ text:'资料：蛋池UR一览表', type: 'page' },
-				{ text:'骑士：侵蚀型莫德雷德(SSR)', type: 'detail', id: 123456 }
-			]
+				main: 0,
+				mains: [
+					{ text:'卡牌资料', type: 'query' },
+					{ text:'资料：蛋池UR一览表', type: 'page' },
+					{ text:'骑士：侵蚀型莫德雷德(SSR)', type: 'detail', id: 123456 }
+				]
+			},
+
+			serv: window.pre.serv || 'cn',
+			word: window.pre.word || '',
+
+			mark: [],
+
+			conds: {},
+			condAll : {},
+
+			suportMode: false,
+			prioMode: false
 		},
+		gurs: {
+			imgSrc: ['','','','', ''],
 
-		serv: window.pre.serv || 'cn',
-		word: window.pre.word || '',
+			tab: {
+				dash: 1,
+				skillFilter: 1,
+				about: 1,
 
-		mark: [],
+				skillTab: {},
 
-		conds: {},
-		condAll : {},
+				skillAwaken: {},
+				skillNormal: {},
+				skillSuport3: {}
+			},
 
-		suportMode: false,
-		prioMode: false
+			recos: [],
+			pageNow: 1,
+			pageMax: 1,
+		}
 	},
 	mounted: function() {
 		window.keyInit();
 	},
 	methods: {
 		query: function(page) {
-			if(page < 0 || page > app.pageMax) return;
+			if(page < 0 || page > app.main.pageMax) return;
 
 			app.emit('query', app.param(function(param) { param.page = (typeof page == 'number' && page ? page : 1); }));
 		},
 		param: function(moder) {
 			var result = {
-				serv: app.serv,
-				word: app.word,
-				page: app.pageNow,
-				mark: app.mark.toString().replace(/\,/g, '|').replace(/\|+$/g, ''),
-				zero: (/[1-9]/.test(app.mark.toString())) ? 0 : 1,
-				prio: app.prioMode
+				serv: app.main.serv,
+				word: app.main.word,
+				page: app.main.pageNow,
+				mark: app.main.mark.toString().replace(/\,/g, '|').replace(/\|+$/g, ''),
+				zero: (/[1-9]/.test(app.main.mark.toString())) ? 0 : 1,
+				prio: app.main.prioMode
 			};
 
 			if(moder) moder(result);
@@ -83,21 +102,21 @@ window.app = new Vue({
 			Vue.set(cond, 'on', on);
 
 			if(cond.on)
-				app.mark[cond.x] |= cond.y;
+				app.main.mark[cond.x] |= cond.y;
 			else
-				app.mark[cond.x] &= ~cond.y;
+				app.main.mark[cond.x] &= ~cond.y;
 
-			if(!app.mark[cond.x]) app.mark[cond.x] = undefined;
+			if(!app.main.mark[cond.x]) app.main.mark[cond.x] = undefined;
 		},
 		toggle: function(eve, cond) {
 			var type = cond.type;
 
 			if(eve.ctrlKey && !eve.shiftKey)
-				app.conds[type].map(function(c) {
+				app.main.conds[type].map(function(c) {
 					app.markit(c, cond == c);
 				});
 			else if(!eve.ctrlKey && eve.shiftKey)
-				app.conds[type].map(function(c) {
+				app.main.conds[type].map(function(c) {
 					app.markit(c, cond != c);
 				});
 			else
@@ -106,9 +125,9 @@ window.app = new Vue({
 			app.query();
 		},
 		toggleAll: function(type, bool, num) {
-			var on = app.condAll[type] = (bool == undefined ? !app.condAll[type]: !!bool);
+			var on = app.main.condAll[type] = (bool == undefined ? !app.main.condAll[type]: !!bool);
 
-			app.conds[type].map(function(c) {
+			app.main.conds[type].map(function(c) {
 				if(!num || (num != undefined && !!(num & c.y)))
 					app.markit(c, on);
 			});
@@ -116,18 +135,18 @@ window.app = new Vue({
 			if(num == undefined) app.query();
 		},
 		clearAll: function() {
-			for(var type in app.conds)
+			for(var type in app.main.conds)
 				app.toggleAll(type, false);
 		},
 		suportModeApply: function() {
-			app.suportMode = !app.suportMode;
+			app.main.suportMode = !app.main.suportMode;
 
-			app.recos.map(function(reco) {
-				Vue.set(app.tab.skillTab, reco.id, app.suportMode ? 2 : 1);
+			app.main.recos.map(function(reco) {
+				Vue.set(app.main.tab.skillTab, reco.id, app.main.suportMode ? 2 : 1);
 			});
 		},
 		prioModeApply: function() {
-			app.prioMode = !app.prioMode;
+			app.main.prioMode = !app.main.prioMode;
 
 			app.query();
 		}
