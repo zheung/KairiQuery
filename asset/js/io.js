@@ -15,17 +15,17 @@
 		app.tab.skillTab = {};
 		app.tab.skillAwaken = {};
 
-		recos.map(function(reco) {
+		recos.map(function(reco, i) {
 			if(!reco.skill.suport3) reco.skill.suport3 = [{ cond:' ', content:['无'] }];
 			Vue.set(app.tab.skillTab, reco.id, (app.suportMode ? 2 : (reco.job != '通用' ? 1 : 3)));
 			Vue.set(app.tab.skillAwaken, reco.id, reco.skill.awaken.length ? reco.skill.awaken.length-1 : 0);
 			Vue.set(app.tab.skillNormal, reco.id, reco.skill.normal.length ? reco.skill.normal.length-1 : 0);
 			Vue.set(app.tab.skillSuport3, reco.id, reco.skill.suport3.length ? reco.skill.suport3.length-1 : 0);
+			Vue.set(app.imgSrc, i, 'https://raw.githubusercontent.com/kairiquery/kqp'+app.serv+'21/master/'+recos[i].id+'.png');
 
-
-			for(var i in reco.skill)
-				if(!reco.skill[i].length)
-					reco.skill[i].push({cond:' ', content: ['无']});
+			for(var j in reco.skill)
+				if(!reco.skill[j].length)
+					reco.skill[j].push({cond:' ', content: ['无']});
 		});
 
 		app.recos = recos;
@@ -50,6 +50,14 @@
 		// });
 
 		app.query(app.pageNow);
+	});
+
+	on('gur', function(result) {
+		app.gurs = result;
+
+		result.map(function (ur, i) {
+			Vue.set(app.imgSrc2, i, 'https://raw.githubusercontent.com/kairiquery/kqp'+app.serv+'21/master/'+result[i].id+'.png');
+		});
 	});
 })();
 

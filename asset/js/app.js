@@ -7,7 +7,10 @@ window.app = new Vue({
 		pageNow: window.pre.page || 1,
 		pageMax: window.pre.page || 1,
 
+		gurs: [],
+
 		imgSrc: ['','','',''],
+		imgSrc2: ['','','',''],
 
 		tab: {
 			dash: 1,
@@ -38,12 +41,6 @@ window.app = new Vue({
 
 		suportMode: false,
 		prioMode: false
-	},
-	watch: {
-		recos: function() {
-			for(var i in app.recos)
-				Vue.set(app.imgSrc, i, 'https://raw.githubusercontent.com/kairiquery/kqp'+app.serv+'21/master/'+app.recos[i].id+'.png');
-		}
 	},
 	mounted: function() {
 		window.keyInit();

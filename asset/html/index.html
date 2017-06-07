@@ -125,7 +125,49 @@
 					</div>
 				</div>
 				<div class="item drc" v-show="tab.main == 1">
-					敬请不期待
+					<div class="recoBox drc jcs ais acs wpw">
+						<div class="reco drc jcs ais acs wpw" v-for="(reco, ri) of gurs">
+							<div class="thumbBox">
+								<img class="thumb" :src="app.imgSrc2[ri]" @error="imgError">
+							</div>
+							<div class="dataBox drc jca">
+								<span class="title sel">{{reco.title}}</span>
+								<span class="name sel">{{reco.name}}</span>
+								<div>
+									<span>{{reco.job}}</span>&nbsp;&nbsp;
+									<span>{{reco.attr}}</span>&nbsp;&nbsp;
+									<span>{{reco.kind}}</span>&nbsp;&nbsp;
+									<span>{{reco.rare}}</span>&nbsp;&nbsp;
+									<span>{{reco.cost}}</span>C&nbsp;&nbsp;
+									<span>{{reco.star || ''}}</span>
+								</div>
+							</div>
+							<div class="skillBox jca">
+								<div class="tabBox Skill">
+									<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab[reco.id] == 1">
+										<div class="headBox jca">
+											<div
+												class="head"
+												v-for="(skill, si) of reco.skill.awaken"
+												@click="Vue.set(tab.skillAwaken, reco.id, si)"
+												:class="{ active: tab.skillAwaken[reco.id] == si }"
+												:style="{ width: ((!skill.cond && si > 0)? '20%' : undefined) }"
+											>
+												<div class="sel" v-html="skill.cond || '无'"></div>
+											</div>
+										</div>
+										<div class="itemBox">
+											<div class="item drc jcs ais" v-for="(skill, si) of reco.skill.awaken" v-if="tab.skillAwaken[reco.id]==si">
+												<span class="clear"></span>
+												<span class="role sel" v-for="content of skill.content" v-html="content || '无'"></span>
+												<span class="clear"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="item drc" v-show="tab.main == 2">
 					S？？？M！！！
@@ -564,9 +606,9 @@
 							<span class="fs24 fsb clrFont">DanoR</span>
 						</div>
 					</div>
-					<div class="item clrFont drc wpw" v-if="tab.about == 1">
+					<div class="item clrFont drc jcs wpw" v-if="tab.about == 1">
 						<div class="NaviColumn jcs wpw">
-							加入了一些快捷键支持，感觉比较隐蔽干脆来一发教程吧。
+							加入了一堆快捷键支持，感觉比较隐蔽干脆来一发教程吧。
 						</div>
 						<div class="NaviColumn hr jcs wpw">
 							条件筛选<a class="Toggle on" href="http://ww4.sinaimg.cn/large/627ab2d1gw1f9eota2x5fg208w050wgp.gif" target="_blank">演示GIF</a>
