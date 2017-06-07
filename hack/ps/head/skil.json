@@ -13,8 +13,8 @@
 	"d.job.info.job",
 	"d.porm.info.porm",
 	"n.info.cost",
-	"n.priority.pve",
-	"n.priority.pvp",
+	"n.prio.pve",
+	"n.prio.pvp",
 	"i.d.skillRank.info.rank",
 	"i.n.info.hate",
 	"d.skillTarget.info.target",
@@ -25,7 +25,7 @@
 	"s.cond.param3",
 	"s.cond.param4",
 	"s.cond.param5",
-	"n.cond.priority",
+	"n.cond.prio",
 	"s.role",
 	"i"
 ]

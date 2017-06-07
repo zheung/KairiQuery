@@ -1,5 +1,5 @@
 module.exports = (serv) => {
-	let prioSorter = (a, b) => { return b.cond.priority - a.cond.priority; };
+	let prioSorter = (a, b) => { return b.cond.prio - a.cond.prio; };
 
 	return (card) => {
 		let set = new Set();
@@ -75,9 +75,9 @@ module.exports = (serv) => {
 					set.add('heal:slf');
 
 				if(rt == 12 || rp[5][1] == 2)
-					set.add('heal:hpm');
+					set.add('heal:fix');
 				else
-					set.add('heal:hq');
+					set.add('heal:param');
 			}
 			//缓回
 			if(rt == 13) {

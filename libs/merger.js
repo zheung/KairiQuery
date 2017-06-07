@@ -104,9 +104,20 @@ module.exports = (valuer, marker, cards, skils, roles, rules, supss, suprs, evol
 		result[1][card.id] = card;
 	}
 
-	for(let card of cards)
+	for(let card of cards) {
 		if(hasPlus(dictCard, card.id))
 			card.info.rare = ~~(card.info.rare+'0');
+
+		let prioSorter = (a, b) => { return b.cond.prio - a.cond.prio; },
+			sm = card.skill.awaken.concat().sort(prioSorter).concat(card.skill.normal.concat().sort(prioSorter))[0];
+
+		card.extra = {
+			prio: {
+				pvp: sm.prio.pvp,
+				pve: sm.prio.pve
+			}
+		};
+	}
 
 	return result;
 };
