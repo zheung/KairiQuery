@@ -32,6 +32,12 @@ a {
 	text-decoration: none;
 }
 
+/*-------kqud-------*/
+kqud {
+	border-bottom: 1px dashed #888888;
+	cursor: help;
+}
+
 /*-------app-------*/
 #app {
 	height: 100%;
@@ -112,7 +118,100 @@ a {
 }
 
 
+/*-------tabBox-------*/
+.tabBox {
+	width: 100%;
+	height: 100%;
+}
 
+/*-------tabBox.Skill-------*/
+.tabBox.Skill>.headBox {
+	width: 12%;
+	height: 100%;
+}
+.tabBox.Skill>.headBox>.head {
+	margin: 3px;
+	min-width: 30px;
+
+	padding: 4px;
+	padding-left: 3px;
+	padding-right: 3px;
+
+	border: 2px solid #34495e;
+	border-radius: 4px;
+
+	color: #557799;
+
+	text-align: center;
+
+	cursor: pointer;
+}
+.tabBox.Skill>.headBox>.head.active {
+	border: 2px solid #557799;
+
+	color: #E0E2E4;
+	background-color: #557799;
+}
+.tabBox.Skill>.item {
+	width: 85%;
+	height: 95%;
+	border-radius: 4px;
+	overflow: hidden;
+	font-size: 14px;
+}
+
+/*-------tabBox.SkillContent-------*/
+.tabBox.SkillContent>.headBox {
+	width: 99%;
+	height: 30%;
+}
+.tabBox.SkillContent>.headBox>.head {
+	width: 100%;
+	height: 100%;
+
+	border: 2px solid transparent;
+	border-radius: 4px 4px 0px 0px;
+
+	text-align: center;
+}
+.tabBox.SkillContent>.headBox>.head.active {
+	border: 2px solid #148474;
+
+	background-color: #148474;
+}
+.tabBox.SkillContent>.headBox>.head:first-child {
+	width: 24%;
+	margin-left: -2px;
+}
+.tabBox.SkillContent>.headBox>.head:last-child {
+	width: 100%;
+	margin-right: -2px;
+}
+
+.tabBox.SkillContent>.itemBox {
+	width: 99%;
+	height: 65%;
+
+	border: 2px solid #148474;
+
+	overflow: hidden;
+}
+.tabBox.SkillContent>.itemBox>.item {
+	width: 100%;
+	height: 100%;
+
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.tabBox.SkillContent>.itemBox>.item>.role {
+	display: block;
+	border-left: 14px solid transparent;
+}
+.tabBox.SkillContent>.itemBox>.item>.clear {
+	display: block;
+	height: 4px;
+}
 
 
 
@@ -326,54 +425,6 @@ a {
 	border-bottom: 1px solid #E0E2E4;
 }
 
-.TabHeader.Skill {
-	width: 12%;
-	height: 100%;
-}
-.TabHead.Skill {
-	margin: 3px;
-	min-width: 30px;
-
-	padding: 4px;
-	padding-left: 3px;
-	padding-right: 3px;
-
-	border: 2px solid #34495e;
-	border-radius: 4px;
-
-	color: #557799;
-
-	text-align: center;
-
-	cursor: pointer;
-}
-.TabHead.Skill.active {
-	border: 2px solid #557799;
-
-	color: #E0E2E4;
-	background-color: #557799;
-}
-.TabItem.Skill {
-	width: 85%;
-	height: 95%;
-	border-radius: 4px;
-	overflow: hidden;
-	font-size: 14px;
-}
-kqud {
-	border-bottom: 1px dashed #888888;
-	cursor: help;
-}
-
-.bfrTextRoles {
-	display: block;
-	height: 4px;
-}
-
-.TextRole {
-	display: block;
-	border-left: 14px solid transparent;
-}
 
 .Tips {
 	position: absolute;
@@ -385,49 +436,6 @@ kqud {
 
 	font-size: 14px;
 	color: #E0E2E4;
-}
-
-.TabHeader.SkillContent {
-	width: 99%;
-	height: 30%;
-}
-.TabHead.SkillContent {
-	width: 100%;
-	height: 100%;
-
-	border: 2px solid transparent;
-	border-radius: 4px 4px 0px 0px;
-
-	text-align: center;
-}
-.TabHead.SkillContent.active {
-	border: 2px solid #148474;
-
-	background-color: #148474;
-}
-.TabHeader.SkillContent>.TabHead:first-child {
-	width: 24%;
-	margin-left: -2px;
-}
-.TabHeader.SkillContent>.TabHead:last-child {
-	width: 100%;
-	margin-right: -2px;
-}
-
-.TabItem.SkillContent {
-	width: 100%;
-	height: 100%;
-
-	overflow-x: hidden;
-	overflow-y: auto;
-}
-.TabBox.SkillContent {
-	width: 99%;
-	height: 65%;
-
-	border: 2px solid #148474;
-
-	overflow: hidden;
 }
 
 .TabHead.Serv {

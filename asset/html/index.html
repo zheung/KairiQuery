@@ -47,68 +47,70 @@
 							</div>
 						</div>
 						<div class="skillBox drr jca aic">
-							<div class="TabHeader Skill drc jcc aic">
-								<a class="TabHead Skill" @click="Vue.set(tab.skillTab, reco.id, 1)" :class="{ active: tab.skillTab[reco.id]==1 }">觉醒</a>
-								<a class="TabHead Skill" @click="Vue.set(tab.skillTab, reco.id, 2)" :class="{ active: tab.skillTab[reco.id]==2 }">支援</a>
-								<a class="TabHead Skill" @click="Vue.set(tab.skillTab, reco.id, 3)" :class="{ active: tab.skillTab[reco.id]==3 }">普通</a>
-							</div>
-							<div class="TabItem Skill drc jcs aic" v-if="tab.skillTab[reco.id] == 1">
-								<div class="TabHeader SkillContent drr jca aic wpn">
-									<a
-										class="jcc aic TabHead SkillContent"
-										v-for="(skill, si) of reco.skill.awaken"
-										@click="Vue.set(tab.skillAwaken, reco.id, si)"
-										:class="{ active: tab.skillAwaken[reco.id] == si }"
-										:style="{ width: ((!skill.cond && si > 0)? '20%' : undefined) }"
-									>
-										<div class="sel" v-html="skill.cond || '无'"></div>
-									</a>
+							<div class="tabBox Skill drr">
+								<div class="headBox drc jcc aic">
+									<a class="head" @click="Vue.set(tab.skillTab, reco.id, 1)" :class="{ active: tab.skillTab[reco.id]==1 }">觉醒</a>
+									<a class="head" @click="Vue.set(tab.skillTab, reco.id, 2)" :class="{ active: tab.skillTab[reco.id]==2 }">支援</a>
+									<a class="head" @click="Vue.set(tab.skillTab, reco.id, 3)" :class="{ active: tab.skillTab[reco.id]==3 }">普通</a>
 								</div>
-								<div class="TabBox SkillContent">
-									<div class="TabItem SkillContent" v-for="(skill, si) of reco.skill.awaken" v-if="tab.skillAwaken[reco.id]==si">
-										<span class="bfrTextRoles"></span>
-										<span class="TextRole sel" v-for="content of skill.content" v-html="content || '无'"></span>
-										<span class="bfrTextRoles"></span>
+								<div class="item tabBox SkillContent drc jcs aic" v-if="tab.skillTab[reco.id] == 1">
+									<div class="headBox drr jca aic wpn">
+										<div
+											class="head jcc aic"
+											v-for="(skill, si) of reco.skill.awaken"
+											@click="Vue.set(tab.skillAwaken, reco.id, si)"
+											:class="{ active: tab.skillAwaken[reco.id] == si }"
+											:style="{ width: ((!skill.cond && si > 0)? '20%' : undefined) }"
+										>
+											<div class="sel" v-html="skill.cond || '无'"></div>
+										</div>
+									</div>
+									<div class="itemBox">
+										<div class="item drc" v-for="(skill, si) of reco.skill.awaken" v-if="tab.skillAwaken[reco.id]==si">
+											<span class="clear"></span>
+											<span class="role sel" v-for="content of skill.content" v-html="content || '无'"></span>
+											<span class="clear"></span>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="TabItem Skill drc jcs aic" v-if="tab.skillTab[reco.id] == 2">
-								<div class="TabHeader SkillContent drr jca aic wpn">
-									<a
-										class="jcc aic TabHead SkillContent"
-										v-for="(skill, si) of reco.skill.suport3"
-										@click="Vue.set(tab.skillSuport3, reco.id, si)"
-										:class="{ active: tab.skillSuport3[reco.id] == si }"
-										:style="{ width: ((!skill.cond && si > 0)? '20%' : undefined) }"
-									>
-										<div class="sel" v-html="skill.cond || '无'"></div>
-									</a>
-								</div>
-								<div class="TabBox SkillContent">
-									<div class="TabItem SkillContent" v-for="(skill, si) of reco.skill.suport3" v-if="tab.skillSuport3[reco.id]==si">
-										<span class="bfrTextRoles"></span>
-										<span class="TextRole sel" v-for="content of skill.content" v-html="content || '无'"></span>
-										<span class="bfrTextRoles"></span>
+								<div class="item tabBox SkillContent drc jcs aic" v-if="tab.skillTab[reco.id] == 2">
+									<div class="headBox drr jca aic wpn">
+										<div
+											class="head jcc aic"
+											v-for="(skill, si) of reco.skill.suport3"
+											@click="Vue.set(tab.skillSuport3, reco.id, si)"
+											:class="{ active: tab.skillSuport3[reco.id] == si }"
+											:style="{ width: ((!skill.cond && si > 0)? '20%' : undefined) }"
+										>
+											<div class="sel" v-html="skill.cond || '无'"></div>
+										</div>
+									</div>
+									<div class="itemBox">
+										<div class="item drc" v-for="(skill, si) of reco.skill.suport3" v-if="tab.skillSuport3[reco.id]==si">
+											<span class="clear"></span>
+											<span class="role sel" v-for="content of skill.content" v-html="content || '无'"></span>
+											<span class="clear"></span>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="TabItem Skill drc jcs aic" v-if="tab.skillTab[reco.id] == 3">
-								<div class="TabHeader SkillContent drr jca aic wpn">
-									<a
-										class="jcc aic TabHead SkillContent"
-										v-for="(skill, si) of reco.skill.normal"
-										@click="Vue.set(tab.skillNormal, reco.id, si)"
-										:class="{ active: tab.skillNormal[reco.id] == si }"
-										:style="{ width: ((!skill.cond && si > 0)? '20%' : undefined) }"
-									>
-										<div class="sel" v-html="skill.cond || '无'"></div>
-									</a>
-								</div>
-								<div class="TabBox SkillContent">
-									<div class="TabItem SkillContent" v-for="(skill, si) of reco.skill.normal" v-if="tab.skillNormal[reco.id]==si">
-										<span class="bfrTextRoles"></span>
-										<span class="TextRole sel" v-for="content of skill.content" v-html="content || '无'"></span>
-										<span class="bfrTextRoles"></span>
+								<div class="item tabBox SkillContent drc jcs aic" v-if="tab.skillTab[reco.id] == 3">
+									<div class="headBox drr jca aic wpn">
+										<div
+											class="head jcc aic"
+											v-for="(skill, si) of reco.skill.normal"
+											@click="Vue.set(tab.skillNormal, reco.id, si)"
+											:class="{ active: tab.skillNormal[reco.id] == si }"
+											:style="{ width: ((!skill.cond && si > 0)? '20%' : undefined) }"
+										>
+											<div class="sel" v-html="skill.cond || '无'"></div>
+										</div>
+									</div>
+									<div class="itemBox">
+										<div class="item drc" v-for="(skill, si) of reco.skill.normal" v-if="tab.skillNormal[reco.id]==si">
+											<span class="clear"></span>
+											<span class="role sel" v-for="content of skill.content" v-html="content || '无'"></span>
+											<span class="clear"></span>
+										</div>
 									</div>
 								</div>
 							</div>
