@@ -21,7 +21,7 @@
 							<img class="thumb" :src="app.imgSrc[ri]" @error="imgError">
 						</div>
 						<div class="dataBox drc jca">
-							<span class="title sel">{{'<'+reco.title+'>'}}</span>
+							<span class="title sel">{{reco.title}}</span>
 							<span class="name sel">{{reco.name}}</span>
 							<div>
 								<span>{{reco.job}}</span>&nbsp;&nbsp;
@@ -31,16 +31,16 @@
 								<span>{{reco.cost}}</span>C&nbsp;&nbsp;
 								<span>{{reco.star || ''}}</span>
 							</div>
-								<table width="100%" class="clrFont">
-									<tr>
-										<td width="25%">HP</td><td width="25%">{{reco.hp}}</td>
-										<td width="25%">HQ</td><td width="25%">{{reco.hq}}</td>
-									</tr>
-									<tr>
-										<td width="25%">AD</td><td width="25%">{{reco.ad}}</td>
-										<td width="25%">AP</td><td width="25%">{{reco.ap}}</td>
-									</tr>
-								</table>
+							<table width="100%" class="clrFont">
+								<tr>
+									<td width="25%">HP</td><td width="25%">{{reco.hp}}</td>
+									<td width="25%">HQ</td><td width="25%">{{reco.hq}}</td>
+								</tr>
+								<tr>
+									<td width="25%">AD</td><td width="25%">{{reco.ad}}</td>
+									<td width="25%">AP</td><td width="25%">{{reco.ap}}</td>
+								</tr>
+							</table>
 						</div>
 						<div class="skillBox jca">
 							<div class="tabBox Skill">

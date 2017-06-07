@@ -89,15 +89,16 @@ kqud {
 	width: 30%;
 	height: 100%;
 }
-.recoBox>.reco>.databox>.name {
+.recoBox>.reco>.databox>span {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-.recoBox>.reco>.databox>.title {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+.recoBox>.reco>.databox>.title::before {
+	content: '<'
+}
+.recoBox>.reco>.databox>.title::after {
+	content: '>'
 }
 .recoBox>.reco>.databox>table {
 	border-radius: 4px;
@@ -112,7 +113,6 @@ kqud {
 	width: 55%;
 	height: 100%;
 }
-
 
 /*-------tabBox-------*/
 .tabBox {
@@ -466,7 +466,7 @@ kqud {
 /*-------tabBox.serv-------*/
 .tabBox.serv {
 	height: 2%;
-	width: 50%;
+	width: 60%;
 }
 .tabBox.serv>.head {
 	margin: 3px;
