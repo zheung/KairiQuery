@@ -40,9 +40,11 @@ let render = {
 			raw['rule'], raw['sups'], raw['supr'], raw['evol']
 		);
 
-		(await db.coll(serv)).renew(data[0]);
+		await (await db.coll(serv)).renew(data[0]);
 
 		console.log(data[0].length);
+
+		process.exit();
 	}
 
 	// let coll = await db.coll('cn');

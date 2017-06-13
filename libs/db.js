@@ -28,7 +28,7 @@ module.exports = async(dbname) => {
 						if(e.code != 26) console.error(e);
 					}
 
-					return coll.insertMany(arr);
+					return await coll.insertMany(arr);
 				}
 			};
 		}
