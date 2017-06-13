@@ -1,4 +1,5 @@
 global.fs = require('fs');
+global._l = console.log;
 
 let render = {
 	filter: (cells) => { return !/^#/.test(cells[0]) && (~~cells[0] > 1000 || /[A-Z_]+/.test(cells[0])); },
