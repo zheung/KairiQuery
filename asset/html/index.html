@@ -16,17 +16,110 @@
 		<div id="app" class="tabBox Main fs14 drc jcs">
 			<div id="headBox" class="headBox bld">
 				<div class="left jcs">
-					<a class="head" v-for="(t, idx) of tab" :class="{ active: tabNow==idx }" @click="changeTab($event, idx)">{{t.title}}</a>
+					<a class="head" v-for="(t, idx) of tab" :class="{ active: tabNow==idx }" @click="changeTab(idx)">{{t.title}}</a>
 				</div>
 				<div class="right">
 					<div class="head">&lt;</div>
 					<div class="head">&gt;</div>
 
-					<div class="head">Chat</div>
-					<div class="head">More</div>
+					<div class="head" :class="{ active: tabNow=='chat' }" @click="changeTab(-1, 'chat')">Chat</div>
+					<div class="head" :class="{ active: tabNow=='more' }" @click="changeTab(-1, 'more')">More</div>
 				</div>
 			</div>
 			<div id="bodyBox" class="bodyBox bld">
+				<div id="chatBox" style="display:none">
+					<ul>
+						<li>多说即将关闭，友言半死不活不支持https</li>
+						<li>网易云一堆BUG无法导入评论，畅言要备案</li>
+						<li>（吐血状</li>
+						<li>逼于无奈，留言系统准备迁移至Disqus。</li>
+						<li>（强大但要翻墙</li>
+						<li>Disqus有提供API，理论上能通过服务器代理API。</li>
+						<li>（遥遥无期</li>
+						<li>
+							如有问题建议，请移步到Github提交：
+							<a class="clrFont" target="_blank" href="https://github.com/zheung/KairiQuery/issues">https://github.com/zheung/KairiQuery/issues</a>
+						</li>
+					</ul>
+				</div>
+				<div id="moreBox" style="display:none">
+					<div class="item clrFontDark fs20 drc jcb wpw">
+						<div>
+							<span class="fs24 fsb clrFont">K</span>airi&nbsp;
+							<span class="fs24 fsb clrFont">Q</span>uery
+						</div>
+						<div>
+							乖离型MA的
+							<span class="fs24 fsb clrFont">坑</span>
+						</div>
+						<div>
+							查卡牌数据的
+							<span class="fs24 fsb clrFont">工具</span>
+						</div>
+						<div>
+							基于文件解包的
+							<span class="fs24 fsb clrFont">数据</span>
+						</div>
+						<div>
+							强迫症患者的
+							<span class="fs24 fsb clrFont">制作</span>
+						</div>
+						<div>
+							毫无艺术细胞的
+							<span class="fs24 fsb clrFont">页面设计</span>
+						</div>
+						<div>
+							<span class="fs24 fsb clrFont">无耻地</span>
+							使用<span class="fs24 fsb clrFont">Github</span>作为图片服务器
+						</div>
+						<div>
+							Make&nbsp;by&nbsp;
+							<span class="fs24 fsb clrFont">DanoR</span>
+						</div>
+					</div>
+					<div class="item clrFont drc wpw">
+						<div class="NaviColumn jcs wpw">
+							加入了一些快捷键支持，感觉比较隐蔽干脆来一发教程吧。
+						</div>
+						<div class="NaviColumn hr jcs wpw">
+							条件筛选<a class="Toggle on" href="http://ww4.sinaimg.cn/large/627ab2d1gw1f9eota2x5fg208w050wgp.gif" target="_blank">演示GIF</a>
+						</div>
+						<div class="NaviColumn jcs wpw">
+							1、点击“总称”：全选、全反选<br>
+							2、Ctrl+点击：单选<br>
+							3、Shift+点击：单反选<br>
+						</div>
+						<div class="NaviColumn hr jcs wpw">
+							翻页<a class="Toggle on" href="http://ww4.sinaimg.cn/large/627ab2d1gw1f9eota4ck6g208w050q51.gif" target="_blank">演示GIF</a>
+						</div>
+						<div class="NaviColumn jcs wpw">
+							1、点击当前页码可以输入页码，回车跳页<br>
+							2、J（PageUp）、K（PageDown）上下翻页<br>
+							3、N（Home）、M（End）跳到第一页与最后一页
+						</div>
+						<div class="NaviColumn hr jcs wpw">
+							搜索框<a class="Toggle on" href="http://ww3.sinaimg.cn/large/627ab2d1gw1f9eota484rg208w050gmc.gif" target="_blank">演示GIF</a>
+						</div>
+						<div class="NaviColumn jcs wpw">
+							1、Shift+S：聚集到搜索框<br>
+							2、回车：搜索<br>
+							3、在搜索框，Shift+回车：重置所有条件（关键词除外）
+							4、不在搜索框，Shift+回车：重置所有条件（包括关键词）
+						</div>
+						<div class="NaviColumn hr jcs wpw">
+							切换标签<a class="Toggle on" href="http://ww3.sinaimg.cn/large/627ab2d1gw1f9eotahfqsg208w050tbr.gif" target="_blank">演示GIF</a>
+						</div>
+						<div class="NaviColumn jcs wpw">
+							1、Q~Q~Q~Q~Q~(浏览器有兼容问题就不再用Tab了)<br>
+							2、Shift+Q反向（虽然目测只有两个Tab并没有什么卵用o_O）<br>
+						</div>
+					</div>
+					<div class="item clrFont drc jcs wpw">
+						<div class="NaviColumn jcs wpw">
+							欢迎交换友链233
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -34,6 +127,8 @@
 			window.pre = { serv: '${serv}', word: '${word}', mark: '${mark}', page: ~~'${page}' };
 			window.aps = {};
 			window.bb = document.getElementById('bodyBox');
+			window.tabChat = document.getElementById('chatBox');
+			window.tabMore = document.getElementById('moreBox');
 		</script>
 
 		<script type="text/javascript" src="pub/js/vue.js"></script>

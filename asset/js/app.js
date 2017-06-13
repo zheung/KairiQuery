@@ -2,8 +2,7 @@ window.ready = function() {
 	window.keyInit();
 
 	app.loadTab('main');
-	// app.emit('conds');
-	// app.emit('gur', {page:1,every:5});
+	// app.emitRaw('gur', {page:1,every:5});
 };
 
 window.app = new Vue({
@@ -21,6 +20,8 @@ window.app = new Vue({
 			var first = true;
 
 			window.initIO();
+
+			app.emit = app.emitWith('app');
 
 			app.io.on('ready', function() {
 				clearInterval(itr);
@@ -40,58 +41,67 @@ window.app = new Vue({
 	methods: {
 		loadTab: function(name) {
 			if(!app.subs[name])
-				app.emit('appload', name);
+				this.emit('load', name);
 			else
-				app.addTab(name);
+				this.addTab(name);
 		},
 		addTab: function(name, where) {
-			var sub = app.subs[name], tab, div, n;
+			var sub = this.subs[name], tab, css, div;
 
-			if(sub && (sub.type == 'page' || !app.tab[name])) {
-				app.tab.map(function(t) {
+			if(sub && (sub.type == 'page' || !this.tab[name])) {
+				this.tab.map(function(t) {
 					t.div.style.display = 'none';
 				});
 
-				div = document.createElement('div');
+				css = document.createElement('style');
+				css.id = 'style'+name;
+				css.innerHTML = sub.styl;
 
+				div = document.createElement('div');
 				div.id = 'sub'+name;
 				div.style.display = 'flex';
 				div.innerHTML = sub.tmpl;
+				div.className = 'body';
 
+				div.appendChild(css);
 				bb.appendChild(div);
 
+				if(sub.ioer) eval(sub.ioer);
 				if(sub.init) eval(sub.init);
 
 				tab = { name: name, type: sub.type, title: sub.title, div: div };
 
-				Vue.set(app.tad, name, tab);
-				app.tab.splice(where || app.tabNow+1, 0, tab);
+				Vue.set(this.tad, name, tab);
+				this.tab.splice(where || this.tabNow+1, 0, tab);
 
-				app.tabNow = where || app.tabNow+1;
+				this.tabNow = where || this.tabNow+1;
 			}
 		},
-		changeTab: function(e, idx) {
-			app.tabNow = idx;
+		changeTab: function(idx, spec) {
+			this.tabNow = spec || idx;
 
-			for(var n in app.tab)
-				app.tab[n].div.style.display = 'none';
+			for(var n in this.tab)
+				this.tab[n].div.style.display = 'none';
+			window.chatBox.style.display = 'none';
+			window.moreBox.style.display = 'none';
 
-			app.tab[idx].div.style.display = 'flex';
+			((spec == 'chat') ? window.chatBox : ((spec == 'more') ? window.moreBox : this.tab[idx].div)).style.display = 'flex';
 		},
 		closeTab: function() {
-			var tab = app.tab[app.tabNow], sub = aps[tab.name];
+			if(typeof this.tabNow == 'number') {
+				var tab = this.tab[this.tabNow], sub = aps[tab.name];
 
-			sub.$destroy();
+				sub.$destroy();
 
-			app.tab.splice(app.tabNow, 1);
-			delete aps[tab.name];
+				this.tab.splice(this.tabNow, 1);
+				delete aps[tab.name];
 
-			bb.removeChild(tab.div);
+				bb.removeChild(tab.div);
 
-			app.tabNow = app.tabNow-1==0 ? app.tabNow-1 : 0;
+				this.tabNow = this.tabNow-1==0 ? this.tabNow-1 : 0;
 
-			return false;
+				return false;
+			}
 		}
 	}
 });
-

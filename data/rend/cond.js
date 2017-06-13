@@ -28,16 +28,16 @@ module.exports = async($) => {
 				return `${cond.param1}%机率`;
 			},
 			5: async(card, skill, cond) => {
-				return `${shower.attr[valuer.attr[cond.param1]]} | ${cond.param2}张<kqud title="不包括此卡">或以上</kqud>`;
+				return `${shower.attr[valuer.attr[cond.param1]]} | ${cond.param2}张<samp title="不包括此卡">或以上</samp>`;
 			},
 			6: async(card, skill, cond) => {
-				return `${shower.skillKind2[valuer.skillKind[cond.param1]]} | ${cond.param2}张<kqud title="不包括此卡">或以上</kqud>`;
+				return `${shower.skillKind2[valuer.skillKind[cond.param1]]} | ${cond.param2}张<samp title="不包括此卡">或以上</samp>`;
 			},
 			7: async(card, skill, cond) => {
 				let rare = valuer.rare[cond.param1],
 					star = (rare == 1? '' : `${rare}★+ | ` );
 
-				return `${star}${cond.param2}张<kqud title="不包括此卡">或以上</kqud>`;
+				return `${star}${cond.param2}张<samp title="不包括此卡">或以上</samp>`;
 			},
 			8: async(card, skill, cond) => {
 				let u = ~~cond.param1, d = ~~cond.param2;
@@ -73,18 +73,18 @@ module.exports = async($) => {
 				if(d >= 28) d = 0;
 
 				if(u == d)
-					return `我方 | <kqud title="应该不包括此卡,请帮忙验证">出牌数</kqud><br>共${u}张`;
+					return `我方 | <samp title="应该不包括此卡,请帮忙验证">出牌数</samp><br>共${u}张`;
 				else if(u && !d)
-					return `我方 | <kqud title="应该不包括此卡,请帮忙验证">出牌数</kqud><br>${u}张或以上`;
+					return `我方 | <samp title="应该不包括此卡,请帮忙验证">出牌数</samp><br>${u}张或以上`;
 				else if(!u && d)
-					return `我方 | <kqud title="应该不包括此卡,请帮忙验证">出牌数</kqud><br>${d}张或以下`;
+					return `我方 | <samp title="应该不包括此卡,请帮忙验证">出牌数</samp><br>${d}张或以下`;
 				else
-					return `我方 | <kqud title="应该不包括此卡,请帮忙验证">出牌数</kqud><br>${u}~${d}张`;
+					return `我方 | <samp title="应该不包括此卡,请帮忙验证">出牌数</samp><br>${u}~${d}张`;
 			},
 			15: false,
 			16: false,
 			17: async(card, skill, cond) => {
-				return `我方 | ${cond.param1}Cost | ${cond.param2}张<kqud title="应该不包括此卡,请帮忙验证">或以上</kqud>`;
+				return `我方 | ${cond.param1}Cost | ${cond.param2}张<samp title="应该不包括此卡,请帮忙验证">或以上</samp>`;
 			},
 			18: false,
 			19: false,

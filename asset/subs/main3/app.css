@@ -1,53 +1,5 @@
-body {
-	margin: 0;
-
-	overflow: hidden;
-
-	color: #E0E2E4;
-
-	cursor: default;
-
-	user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-
-	font-family: "Microsoft YaHei";
-}
-
-div {
-	display: flex;
-
-	flex-direction: row;
-	flex-wrap: nowrap;
-
-	justify-content: center;
-	align-items: center;
-}
-input, span {
-	outline: none;
-}
-input {
-	border: 1px solid transparent;
-}
-input:focus {
-	border-bottom: 1px solid #E0E2E4;
-}
-a {
-	text-decoration: none;
-}
-
-/*-------kqud-------*/
-kqud {
-	border-bottom: 1px dashed #888888;
-	cursor: help;
-}
-
-/*-------app-------*/
-#app {
-	height: 100%;
-	width: 100%;
-
-	background-color: green;
+#submain>div>span {
+	color: red;
 }
 
 .mainBox {
@@ -489,36 +441,4 @@ kqud {
 }
 .tabBox.serv>span {
 	width: 100px;
-}
-/*-------tabBox.main-------*/
-.tabBox.main>.headBox {
-	height: 5%;
-	width: 100%;
-
-	border: 2px solid transparent;
-	border-bottom: 2px solid #222222;
-
-	overflow: hidden;
-}
-.tabBox.main>.headBox>.head {
-	border: 2px solid #34495e;
-	border-radius: 4px;
-
-	margin: 4px;
-	padding: 1px 7px;
-
-	color: #E0E2E4;
-
-	cursor: pointer;
-}
-.tabBox.main>.headBox>.head:hover {
-	border-bottom: 2px solid #148474;
-}
-.tabBox.main>.headBox>.head.active {
-	border: 2px solid #148474;
-	background-color: #148474;
-}
-.tabBox.main>.item {
-	height: 95%;
-	width: 100%;
 }

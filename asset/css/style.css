@@ -52,9 +52,12 @@ input:focus {
 a {
 	text-decoration: none;
 }
+a:visited {
+	color: #E0E2E4;
+}
 
-/*-------kqud-------*/
-kqud {
+/*-------samp-------*/
+samp {
 	border-bottom: 1px dashed #888888;
 	cursor: help;
 }

@@ -1,20 +1,63 @@
-#submain>div>span {
-	color: red;
-}
-
-.mainBox {
+#submain .mainBox {
 	height: 100%;
 	width: 100%;
 
 	flex: 1
 }
+/*-------tabBox.dash-------*/
+#submain .tabBox.dash {
+	height: 100%;
+	width: 450px;
+
+	overflow: hidden;
+}
+#submain .tabBox.dash>.headBox {
+	width: 100%;
+	height: 45px;
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+
+	background-color: #34495e;
+}
+#submain .tabBox.dash>.headBox>.head {
+	width: 100%;
+
+	border: 2px solid #34495e;
+
+	margin: 0;
+	margin-right: 2px;
+
+	color: #E0E2E4;
+
+	cursor: pointer;
+}
+#submain .tabBox.dash>.headBox>.head:hover {
+	border-bottom: 2px solid #148474;
+}
+#submain .tabBox.dash>.headBox>.head.active {
+	border-radius: 4px;
+	border: 2px solid #148474;
+	background-color: #148474;
+}
+#submain .tabBox.dash>.headBox>.item {
+	height: 93%;
+	width: 100%;
+}
+#submain .tabBox.dash>.item {
+	height: 80%;
+	width: 100%;
+
+	flex: 1;
+
+	overflow-x: hidden;
+	overflow-y: auto;
+}
 
 /*-------recoBox-------*/
-.recoBox {
+#submain .recoBox {
 	width: 100%;
 	height: 95%;
 }
-.recoBox>.reco {
+#submain .recoBox>.reco {
 	border: 2px solid transparent;
 	border-bottom: 2px solid #222222;
 	border-radius: 4px;
@@ -24,58 +67,58 @@
 	max-height: 150px;
 }
 
-.recoBox>.reco>.thumbBox {
+#submain .recoBox>.reco>.thumbBox {
 	width: 15%;
 	height: 100%;
 }
-.recoBox>.reco>.thumbBox>.thumb {
+#submain .recoBox>.reco>.thumbBox>.thumb {
 	max-height: 90%;
 	max-width: 90%;
 
 	width: auto;
 }
 
-.recoBox>.reco>.databox {
+#submain .recoBox>.reco>.databox {
 	width: 30%;
 	height: 100%;
 }
-.recoBox>.reco>.databox>span {
+#submain .recoBox>.reco>.databox>span {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-.recoBox>.reco>.databox>.title::before {
+#submain .recoBox>.reco>.databox>.title::before {
 	content: '<'
 }
-.recoBox>.reco>.databox>.title::after {
+#submain .recoBox>.reco>.databox>.title::after {
 	content: '>'
 }
-.recoBox>.reco>.databox>table {
+#submain .recoBox>.reco>.databox>table {
 	border-radius: 4px;
 	border-collapse:collapse;
 }
-.recoBox>.reco>.databox>table td {
+#submain .recoBox>.reco>.databox>table td {
 	text-align: center;
 	border: 2px solid #34495e;
 }
 
-.recoBox>.reco>.skillBox {
+#submain .recoBox>.reco>.skillBox {
 	width: 55%;
 	height: 100%;
 }
 
 /*-------tabBox-------*/
-.tabBox {
+#submain .tabBox {
 	width: 100%;
 	height: 100%;
 }
 
 /*-------tabBox.Skill-------*/
-.tabBox.Skill>.headBox {
+#submain .tabBox.Skill>.headBox {
 	width: 12%;
 	height: 100%;
 }
-.tabBox.Skill>.headBox>.head {
+#submain .tabBox.Skill>.headBox>.head {
 	margin: 3px;
 	min-width: 30px;
 
@@ -92,13 +135,13 @@
 
 	cursor: pointer;
 }
-.tabBox.Skill>.headBox>.head.active {
+#submain .tabBox.Skill>.headBox>.head.active {
 	border: 2px solid #557799;
 
 	color: #E0E2E4;
 	background-color: #557799;
 }
-.tabBox.Skill>.item {
+#submain .tabBox.Skill>.item {
 	width: 85%;
 	height: 95%;
 	border-radius: 4px;
@@ -106,11 +149,11 @@
 }
 
 /*-------tabBox.SkillContent-------*/
-.tabBox.SkillContent>.headBox {
+#submain .tabBox.SkillContent>.headBox {
 	width: 99%;
 	height: 30%;
 }
-.tabBox.SkillContent>.headBox>.head {
+#submain .tabBox.SkillContent>.headBox>.head {
 	width: 100%;
 	height: 100%;
 
@@ -119,21 +162,21 @@
 
 	text-align: center;
 }
-.tabBox.SkillContent>.headBox>.head.active {
+#submain .tabBox.SkillContent>.headBox>.head.active {
 	border: 2px solid #148474;
 
 	background-color: #148474;
 }
-.tabBox.SkillContent>.headBox>.head:first-child {
+#submain .tabBox.SkillContent>.headBox>.head:first-child {
 	width: 24%;
 	margin-left: -2px;
 }
-.tabBox.SkillContent>.headBox>.head:last-child {
+#submain .tabBox.SkillContent>.headBox>.head:last-child {
 	width: 100%;
 	margin-right: -2px;
 }
 
-.tabBox.SkillContent>.itemBox {
+#submain .tabBox.SkillContent>.itemBox {
 	width: 99%;
 	height: 65%;
 
@@ -141,7 +184,7 @@
 
 	overflow: hidden;
 }
-.tabBox.SkillContent>.itemBox>.item {
+#submain .tabBox.SkillContent>.itemBox>.item {
 	width: 100%;
 	height: 100%;
 
@@ -149,32 +192,32 @@
 	overflow-y: auto;
 }
 
-.tabBox.SkillContent>.itemBox>.item>.role {
+#submain .tabBox.SkillContent>.itemBox>.item>.role {
 	display: block;
 	border-left: 14px solid transparent;
 }
-.tabBox.SkillContent>.itemBox>.item>.clear {
+#submain .tabBox.SkillContent>.itemBox>.item>.clear {
 	display: block;
 	height: 4px;
 }
 
 /*-------pageBox-------*/
-.pageBox {
+#submain .pageBox {
 	width: 100%;
 	height: 5%;
 }
-.pageBox>.prev, .pageBox>.next {
+#submain .pageBox>.prev, .pageBox>.next {
 	width: 33%;
 
 	cursor: pointer;
 }
-.pageBox>.count {
+#submain .pageBox>.count {
 	width: 33%;
 }
-.pageBox>.count>* {
+#submain .pageBox>.count>* {
 	padding-top: 1px;
 }
-.pageBox>.count>input {
+#submain .pageBox>.count>input {
 	width: 40px;
 	padding-top: 3px;
 
@@ -185,26 +228,19 @@
 
 	cursor: auto;
 }
-.pageBox>.count>input:focus {
+#submain .pageBox>.count>input:focus {
 	border-bottom: 1px solid #E0E2E4;
 }
 
-/*-------tabBox.dash-------*/
-.tabBox.dash {
-	height: 100%;
-	width: 450px;
-
-	overflow: hidden;
-	overflow-y: auto;
-}
-.tabBox.dash>.headBox {
-	width: 100%;
-	height: 45px;
+/*-------tabBox.skillType-------*/
+#submain .tabBox.skillType>.headBox {
+	width: 90%;
+	height: 34px;
 	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 
 	background-color: #34495e;
 }
-.tabBox.dash>.headBox>.head {
+#submain .tabBox.skillType>.headBox>.head {
 	width: 100%;
 
 	border: 2px solid #34495e;
@@ -216,69 +252,33 @@
 
 	cursor: pointer;
 }
-.tabBox.dash>.headBox>.head:hover {
-	border-bottom: 2px solid #148474;
+#submain .tabBox.skillType>.headBox>.head:hover {
+	border-top: 2px solid #148474;
 }
-.tabBox.dash>.headBox>.head.active {
+#submain .tabBox.skillType>.headBox>.head:hover, .tabBox.skillType>.headBox>.head.active {
 	border-radius: 4px;
 	border: 2px solid #148474;
 	background-color: #148474;
 }
-.tabBox.dash>.headBox>.item {
-	height: 93%;
-	width: 100%;
-}
-.tabBox.dash>.item {
-	height: 80%;
+#submain .tabBox.skillType>.item {
+	height: 100%;
 	width: 100%;
 
 	flex: 1;
-}
 
-/*-------tabBox.skillType-------*/
-.tabBox.skillType>.headBox {
-	width: 90%;
-	height: 34px;
-	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-
-	background-color: #34495e;
-}
-.tabBox.skillType>.headBox>.head {
-	width: 100%;
-
-	border: 2px solid #34495e;
-
-	margin: 0;
-	margin-right: 2px;
-
-	color: #E0E2E4;
-
-	cursor: pointer;
-}
-.tabBox.skillType>.headBox>.head:hover {
-	border-top: 2px solid #148474;
-}
-.tabBox.skillType>.headBox>.head:hover, .tabBox.skillType>.headBox>.head.active {
-	border-radius: 4px;
-	border: 2px solid #148474;
-	background-color: #148474;
-}
-.tabBox.skillType>.item {
-	height: 50%;
-	width: 100%;
 	overflow-x: hidden;
-	overflow-y: visible;
+	overflow-y: auto;
 }
 
 /*-------tabBox.more-------*/
-.tabBox.more>.headBox {
+#submain .tabBox.more>.headBox {
 	width: 90%;
 	height: 34px;
 	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 
 	background-color: #34495e;
 }
-.tabBox.more>.headBox>.head {
+#submain .tabBox.more>.headBox>.head {
 	width: 100%;
 
 	border: 2px solid #34495e;
@@ -290,15 +290,15 @@
 
 	cursor: pointer;
 }
-.tabBox.more>.headBox>.head:hover {
+#submain .tabBox.more>.headBox>.head:hover {
 	border-top: 2px solid #148474;
 }
-.tabBox.more>.headBox>.more:hover, .tabBox.more>.headBox>.head.active {
+#submain .tabBox.more>.headBox>.more:hover, .tabBox.more>.headBox>.head.active {
 	border-radius: 4px;
 	border: 2px solid #148474;
 	background-color: #148474;
 }
-.tabBox.more>.item {
+#submain .tabBox.more>.item {
 	height: 92%;
 	width: 100%;
 	overflow-x: hidden;
@@ -306,29 +306,29 @@
 }
 
 /*-------Column-------*/
-.NaviColumnSpace {
+#submain .NaviColumnSpace {
 	width: 90%;
 	height: 24px;
 	min-height: 24px;
 }
-.NaviColumn {
+#submain .NaviColumn {
 	width: 90%;
 	height: auto;
 	min-height: 45px;
 }
-.NaviColumn2x {
+#submain .NaviColumn2x {
 	width: 90%;
 	height: auto;
 	min-height: 90px;
 }
-.NaviColumn3x {
+#submain .NaviColumn3x {
 	width: 90%;
 	height: auto;
 	min-height: 135px;
 }
 
 /*-------Toggle-------*/
-.Toggle {
+#submain .Toggle {
 	margin: 3px;
 	min-width: 30px;
 
@@ -345,34 +345,34 @@
 
 	cursor: pointer;
 }
-.Toggle.on, .Toggle.on:hover, .Toggle.off:hover {
+#submain .Toggle.on, .Toggle.on:hover, .Toggle.off:hover {
 	border-color: #557799;
 
 	background-color: #557799;
 }
-.Toggle.off {
-	border-color: #4a6b8c;
+#submain .Toggle.off {
+	border-color: #557799;
 }
-.Toggle.min {
+#submain .Toggle.min {
 	min-width: 24px;
 }
 
-.CondBar {
+#submain .CondBar {
 	width: 77%;
 	height: auto;
 	border-left: 2px solid #E0E2E4;
 	padding-left: 4px;
 }
-.CondBar2 {
+#submain .CondBar2 {
 	width: 77%;
 	height: auto;
 }
-.Conds {
+#submain .Conds {
 	width: 100%;
 	height: 14%;
 }
 
-#Search {
+#submain #Search {
 	margin: 3px;
 	min-width: 30px;
 
@@ -391,7 +391,7 @@
 
 	cursor: pointer;
 }
-#CondName {
+#submain #CondName {
 	margin: 3px;
 
 	min-width: 30px;
@@ -412,13 +412,13 @@
 }
 
 /*-------tabBox.serv-------*/
-.tabBox.serv {
+#submain .tabBox.serv {
 	height: 2%;
-	width: 60%;
+	width: 45%;
 }
-.tabBox.serv>.head {
+#submain .tabBox.serv>.head {
 	margin: 3px;
-	width: 25px;
+	width: 20px;
 
 	border: 2px solid #34495e;
 	color: #557799;
@@ -433,12 +433,12 @@
 
 	cursor: pointer;
 }
-.tabBox.serv>.head.active {
+#submain .tabBox.serv>.head.active {
 	border: 2px solid #557799;
 
 	color: #E0E2E4;
 	background-color: #557799;
 }
-.tabBox.serv>span {
+#submain .tabBox.serv>span {
 	width: 100px;
 }

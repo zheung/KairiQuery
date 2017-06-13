@@ -1,25 +1,28 @@
 window.initIO = function() {
-	app.on = function(event, func) { app.io.on('kq-'+event, func); };
-
-	app.emit = function() {
-		var args = Array.prototype.slice.call(arguments);
-
-		args[0] = 'kq-'+args[0];
-
-		app.io.emit.apply(app.io, args);
+	app.on = function(name) {
+		return function(event, func) {
+			app.io.on('kq-'+name+event, func);
+		};
 	};
 
-	var raw = {
-		app: {
-			load: function(name, type, title, tmpl, init) {
-				Vue.set(app.subs, name, { type: type, title: title, tmpl: tmpl, init: init });
+	app.emitWith = function(name) {
+		return function() {
+			var args = Array.prototype.slice.call(arguments);
 
-				app.addTab(name);
-			}
+			args[0] = 'kq-'+name+args[0];
+
+			app.io.emit.apply(app.io, args);
+		};
+	};
+
+	var worker = {
+		load: function(name, type, title, html, css, js1, js2) {
+			Vue.set(app.subs, name, { type: type, title: title, tmpl: html, styl: css, init: js1, ioer: js2 });
+
+			app.addTab(name);
 		}
 	};
 
-	for(let sub in raw)
-		for(let name in raw[sub])
-			app.on(sub+name, raw[sub][name]);
+	var on = app.on('app');
+	for(let name in worker) on(name, worker[name]);
 };

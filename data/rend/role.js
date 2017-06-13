@@ -18,7 +18,7 @@ module.exports = async($) => {
 				let base = Math.ceil(~~p[1]+~~p[2]/1000*card.info.max.level);
 
 				return `${target} | ${p[5]}回${show(p[8])}元素的${show(p[9])}攻击 |\x20
-					${base ? `<kqud title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</kqud>+` : ''}
+					${base ? `<samp title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</samp>+` : ''}
 					${show(p[6])}的${p[3]/10}%
 					${(p[7] / (serv=='ps'?1:10) != 15 ? ` | ${~~p[7] / 10}%高暴击率` : '')}`;
 			},
@@ -38,7 +38,7 @@ module.exports = async($) => {
 			7: async(card, skill, role) => {
 				let p = role.params;
 
-				return `附加伤害 | <kqud title="等价于 无视目标对应防御的${p[1]}%">目标对应防御的${p[1]}%</kqud>`;
+				return `附加伤害 | <samp title="等价于 无视目标对应防御的${p[1]}%">目标对应防御的${p[1]}%</samp>`;
 			},
 			8: async(card, skill, role) => {
 				let p = role.params;
@@ -50,7 +50,7 @@ module.exports = async($) => {
 
 				let base = Math.ceil(~~p[1]+~~p[2]/1000*card.info.max.level);
 
-				return `${target} | 恢复生命 | ${base ? `<kqud title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</kqud>+` : ''}
+				return `${target} | 恢复生命 | ${base ? `<samp title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</samp>+` : ''}
 					${show(p[5])}的${p[3]/10}%`;
 			},
 			10: false,
@@ -66,8 +66,8 @@ module.exports = async($) => {
 				let base = Math.ceil(~~p[2]+~~p[3]/1000*card.info.max.level);
 
 				return `${target} | ${p[1]}回合 |\x20
-					<kqud title="发动时机：回合开始前">持续恢复生命</kqud> |\x20
-					<kqud title="等级成长：${p[2]}+${p[3]/1000}*等级">${base}</kqud>+
+					<samp title="发动时机：回合开始前">持续恢复生命</samp> |\x20
+					<samp title="等级成长：${p[2]}+${p[3]/1000}*等级">${base}</samp>+
 					${p[4]/10}%${show(p[6])}`;
 			},
 			14: false,
@@ -77,7 +77,7 @@ module.exports = async($) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
 				return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
-					<kqud title="等级成长：${p[6]}*等级">${p[6]*card.info.max.level}</kqud>+${show(p[3])}的${p[4]/10}%`;
+					<samp title="等级成长：${p[6]}*等级">${p[6]*card.info.max.level}</samp>+${show(p[3])}的${p[4]/10}%`;
 			},
 			18: false,
 			19: async(card, skill, role, skillFirst) => {
@@ -86,7 +86,7 @@ module.exports = async($) => {
 				let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
 				return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
-					<kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
+					<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
 			},
 			20: async(card, skill, role, skillFirst) => {console.logasync(card.info.name);
 				let p = role.params, target = showTarget(skill, role, skillFirst);
@@ -101,7 +101,7 @@ module.exports = async($) => {
 				let base = Math.ceil(~~p[5]/1000+~~p[6]*card.info.max.level);
 
 				return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
-					<kqud title="等级成长：${p[5]/1000}+${p[6]}*等级">${base}</kqud>+${p[4]/10}%${show(p[3])}`;
+					<samp title="等级成长：${p[5]/1000}+${p[6]}*等级">${base}</samp>+${p[4]/10}%${show(p[3])}`;
 			},
 			24: 'DEF_UP_BY_TARGET_PARAM',
 			25: async(card, skill, role, skillFirst) => {
@@ -110,7 +110,7 @@ module.exports = async($) => {
 				let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
 				return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
-					<kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
+					<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
 			},
 			26: async(card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
@@ -131,7 +131,7 @@ module.exports = async($) => {
 				let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
 				return `${target} | ${p[1]}回合 | 降低${show(p[2])} |\x20
-					<kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
+					<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
 			},
 			30: 'GUARD_BREAK_BY_SELF_PARAM',
 			31: 'GUARD_BREAK_BY_TARGET_PARAM',
@@ -141,7 +141,7 @@ module.exports = async($) => {
 				let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
 				return `${target} | ${p[1]}回合 | 降低${show(p[2])} |\x20
-					<kqud title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</kqud>点`;
+					<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
 			},
 			33: 'DAMAGE_DOWN',
 			34: 'UNDERMINE',
@@ -249,7 +249,7 @@ module.exports = async($) => {
 			79: async(card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
-				return `${target} | <kqud title="发动条件：处于${show(p[6])}状态">${show(p[6])}</kqud> |\x20
+				return `${target} | <samp title="发动条件：处于${show(p[6])}状态">${show(p[6])}</samp> |\x20
 					回合+${p[1]} | 伤害提升${p[2]}%`;
 			},
 			80: 'HEAL_REVERSE',
@@ -284,7 +284,7 @@ module.exports = async($) => {
 				if(~~p[5] || ~~p[6] || ~~p[7]) _l('miao?');
 
 				return `${target} | ${p[1]}回合 | 陷阱 | ${num}张 |\x20
-					<kqud title="时机：我方卡牌全部发动后，敌方行动前">使用后受到伤害${p[4]}点</kqud>`;
+					<samp title="时机：我方卡牌全部发动后，敌方行动前">使用后受到伤害${p[4]}点</samp>`;
 			},
 			93: 'CARD_TRAP_DOT',
 			94: async(card, skill, role, skillFirst) => {
@@ -310,7 +310,7 @@ module.exports = async($) => {
 				let base = Math.ceil(~~p[2] + ~~p[5] * card.info.max.level);
 
 				return `${target} | ${p[1]}回合 | 追加${show(p[6])}元素伤害 |\x20
-					<kqud title="等级成长：${p[2]}+${p[5]}*等级">${base}</kqud>点`;
+					<samp title="等级成长：${p[2]}+${p[5]}*等级">${base}</samp>点`;
 			},
 			108: 'ENEMY_AWAKE_FLAG_SET',
 			109: 'FORCE_BATTLE_END',
@@ -320,7 +320,7 @@ module.exports = async($) => {
 				let base = Math.ceil(~~p[4] + ~~p[5] / 1000 * card.info.max.level);
 
 				return `${target} | ${p[1]}回合 | 提升${show(p[6])}元素耐性 |\x20
-					<kqud title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</kqud>点`;
+					<samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>点`;
 			},
 			111: async(card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
@@ -328,7 +328,7 @@ module.exports = async($) => {
 				let base = Math.ceil(~~p[4] + ~~p[5] / 1000 * card.info.max.level);
 
 				return `${target} | ${p[1]}回合 | 降低${show(p[6])}元素耐性 |\x20
-					<kqud title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</kqud>点`;
+					<samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>点`;
 			},
 			112: 'ATTR_DEF_UP_SUPPORT',
 			113: async(card, skill, role, skillFirst) => {
@@ -337,7 +337,7 @@ module.exports = async($) => {
 				let base = Math.ceil(~~p[2] / 100 + ~~p[3] / 100 * card.info.max.level);
 
 				return `${target} | ${p[1]}回合 | 反射伤害 |\x20
-					所受伤害的<kqud title="等级成长：${p[2]/100}+${p[3]/100}*等级">${base}</kqud>%`;
+					所受伤害的<samp title="等级成长：${p[2]/100}+${p[3]/100}*等级">${base}</samp>%`;
 			},
 			114: 'ATK_OP_REFLECTION_INVALID',
 			115: 'DEBUFF_REGIST_LIMIT',
@@ -351,37 +351,37 @@ module.exports = async($) => {
 			123: async(card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
-				return `${target} | ${show(p[6]) || '任意'}元素<kqud title="技能元素等价于卡面显示的元素">技能</kqud> | 提升${show(p[7])}伤害 | ${p[2] / 10}%`;
+				return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp> | 提升${show(p[7])}伤害 | ${p[2] / 10}%`;
 			},
 			124: async(card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
-				return `${target} | ${show(p[6]) || '任意'}元素<kqud title="技能元素等价于卡面显示的元素">技能</kqud> | 提升${show(p[7])}支援效果 | ${p[4] / 10}%`;
+				return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp> | 提升${show(p[7])}支援效果 | ${p[4] / 10}%`;
 			},
 			125: async(card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
-				return `${target} | ${show(p[6]) || '任意'}元素<kqud title="技能元素等价于卡面显示的元素">技能</kqud> | 提升${show(p[7])}效果 | ${p[4] / 10}%`;
+				return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp> | 提升${show(p[7])}效果 | ${p[4] / 10}%`;
 			},
 			126: async(card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
-				return `${target} | ${show(p[6]) || '任意'}元素<kqud title="技能元素等价于卡面显示的元素">技能</kqud> | 提升${show(p[7])}弱化效果 | ${p[4] / 10}%`;
+				return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp> | 提升${show(p[7])}弱化效果 | ${p[4] / 10}%`;
 			},
 			127: async(card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
-				return `${target} | ${show(p[6]) || '任意'}元素<kqud title="技能元素等价于卡面显示的元素">技能</kqud> | 提升${show(p[7])}弱化效果 | ${p[4] / 10}%`;
+				return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp> | 提升${show(p[7])}弱化效果 | ${p[4] / 10}%`;
 			},
 			128: async(card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
-				return `${target} | ${show(p[6]) || '任意'}元素<kqud title="技能元素等价于卡面显示的元素">技能</kqud> | 提升治疗效果 | ${p[4] / 10}%`;
+				return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp> | 提升治疗效果 | ${p[4] / 10}%`;
 			},
 			129: async(card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
-				return `${target} | ${show(p[4]) || '任意'}元素<kqud title="技能元素等价于卡面显示的元素">技能</kqud> | 提升${show(p[5])}伤害暴击率 | ${p[2] / 10}%`;
+				return `${target} | ${show(p[4]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp> | 提升${show(p[5])}伤害暴击率 | ${p[2] / 10}%`;
 			},
 			130: 'DAMAGE_CUT2',
 			131: 'DAMAGE_BOOST_ORDER_TARGET_DEBUFF',
