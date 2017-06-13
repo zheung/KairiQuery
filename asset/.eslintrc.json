@@ -33,6 +33,8 @@
 		"io": true,
 
 		"pre": true,
-		"app": true
+		"app": true,
+		"aps": true,
+		"bb": true
 	}
 }

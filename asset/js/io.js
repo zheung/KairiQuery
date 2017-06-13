@@ -11,20 +11,10 @@ window.initIO = function() {
 
 	var raw = {
 		app: {
-			load: function(name, type, title, tmpl) {
-				Vue.set(app.subs, name, { tmpl: tmpl });
+			load: function(name, type, title, tmpl, init) {
+				Vue.set(app.subs, name, { type: type, title: title, tmpl: tmpl, init: init });
 
-				if(!app.tabs[name])
-					Vue.set(app.tabs, name, { type: type, title: title });
-
-				app.tabNow = name;
-
-				setTimeout(function() {
-					var sb = document.createElement('script');
-					sb.src = 'kq/subs/'+name+'/app.js?'+Math.random().toString().slice(-15);
-
-					document.body.appendChild(sb);
-				});
+				app.addTab(name);
 			}
 		}
 	};

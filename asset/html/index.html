@@ -14,9 +14,9 @@
 	</head>
 	<body>
 		<div id="app" class="tabBox Main fs14 drc jcs">
-			<div class="headBox bld">
+			<div id="headBox" class="headBox bld">
 				<div class="left jcs">
-					<div class="head" v-for="(tab, k) of tabs" :class="{ active: tabNow==k }" @mouseup="close($event, k)">{{tab.title}}</div>
+					<a class="head" v-for="(t, idx) of tab" :class="{ active: tabNow==idx }" @click="changeTab($event, idx)">{{t.title}}</a>
 				</div>
 				<div class="right">
 					<div class="head">&lt;</div>
@@ -26,19 +26,20 @@
 					<div class="head">More</div>
 				</div>
 			</div>
-			<div class="bodyBox bld">
-					<div class="body" v-for="(tab, k) of tabs" v-show="tabNow==k" :id="'sub'+k" v-html="subs[k].tmpl"></div>
+			<div id="bodyBox" class="bodyBox bld">
 			</div>
 		</div>
 
 		<script type="text/javascript">
-			window.pre = { serv: '${serv}', word: '${word}', mark: '${mark}', page: ~~'${page}' }
+			window.pre = { serv: '${serv}', word: '${word}', mark: '${mark}', page: ~~'${page}' };
+			window.aps = {};
+			window.bb = document.getElementById('bodyBox');
 		</script>
 
 		<script type="text/javascript" src="pub/js/vue.js"></script>
 		<script type="text/javascript" src="pub/js/socket.io.js"></script>
 
-		<!--<script type="text/javascript" src="kq/js/key.js"></script>-->
+		<script type="text/javascript" src="kq/js/key.js"></script>
 		<script type="text/javascript" src="kq/js/io.js"></script>
 		<script type="text/javascript" src="kq/js/app.js"></script>
 
