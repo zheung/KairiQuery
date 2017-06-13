@@ -50,7 +50,7 @@ module.exports = async($) => {
 									['skill.normal.0.info.attr', 'attr', 'd.shower.attr'],
 									['this', 'skill', 'f.skill']
 								],
-								paramer.main(conds),
+								await paramer.main(conds),
 								conds.prio ? { 'extra.prio.pvp': 1 } : {},
 								conds.serv, conds.page, $.conf.pageEvery
 							);
