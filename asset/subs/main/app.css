@@ -1,24 +1,24 @@
-#submain .mainBox {
+#sub__name__ .mainBox {
 	height: 100%;
 	width: 100%;
 
 	flex: 1
 }
 /*-------tabBox.dash-------*/
-#submain .tabBox.dash {
+#sub__name__ .tabBox.dash {
 	height: 100%;
 	width: 450px;
 
 	overflow: hidden;
 }
-#submain .tabBox.dash>.headBox {
+#sub__name__ .tabBox.dash>.headBox {
 	width: 100%;
 	height: 45px;
 	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 
 	background-color: #34495e;
 }
-#submain .tabBox.dash>.headBox>.head {
+#sub__name__ .tabBox.dash>.headBox>.head {
 	width: 100%;
 
 	border: 2px solid #34495e;
@@ -30,19 +30,19 @@
 
 	cursor: pointer;
 }
-#submain .tabBox.dash>.headBox>.head:hover {
+#sub__name__ .tabBox.dash>.headBox>.head:hover {
 	border-bottom: 2px solid #148474;
 }
-#submain .tabBox.dash>.headBox>.head.active {
+#sub__name__ .tabBox.dash>.headBox>.head.active {
 	border-radius: 4px;
 	border: 2px solid #148474;
 	background-color: #148474;
 }
-#submain .tabBox.dash>.headBox>.item {
+#sub__name__ .tabBox.dash>.headBox>.item {
 	height: 93%;
 	width: 100%;
 }
-#submain .tabBox.dash>.item {
+#sub__name__ .tabBox.dash>.item {
 	height: 80%;
 	width: 100%;
 
@@ -53,11 +53,11 @@
 }
 
 /*-------recoBox-------*/
-#submain .recoBox {
+#sub__name__ .recoBox {
 	width: 100%;
 	height: 95%;
 }
-#submain .recoBox>.reco {
+#sub__name__ .recoBox>.reco {
 	border: 2px solid transparent;
 	border-bottom: 2px solid #222222;
 	border-radius: 4px;
@@ -67,58 +67,58 @@
 	max-height: 150px;
 }
 
-#submain .recoBox>.reco>.thumbBox {
+#sub__name__ .recoBox>.reco>.thumbBox {
 	width: 15%;
 	height: 100%;
 }
-#submain .recoBox>.reco>.thumbBox>.thumb {
+#sub__name__ .recoBox>.reco>.thumbBox>.thumb {
 	max-height: 90%;
 	max-width: 90%;
 
 	width: auto;
 }
 
-#submain .recoBox>.reco>.databox {
+#sub__name__ .recoBox>.reco>.databox {
 	width: 30%;
 	height: 100%;
 }
-#submain .recoBox>.reco>.databox>span {
+#sub__name__ .recoBox>.reco>.databox>span {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-#submain .recoBox>.reco>.databox>.title::before {
+#sub__name__ .recoBox>.reco>.databox>.title::before {
 	content: '<'
 }
-#submain .recoBox>.reco>.databox>.title::after {
+#sub__name__ .recoBox>.reco>.databox>.title::after {
 	content: '>'
 }
-#submain .recoBox>.reco>.databox>table {
+#sub__name__ .recoBox>.reco>.databox>table {
 	border-radius: 4px;
 	border-collapse:collapse;
 }
-#submain .recoBox>.reco>.databox>table td {
+#sub__name__ .recoBox>.reco>.databox>table td {
 	text-align: center;
 	border: 2px solid #34495e;
 }
 
-#submain .recoBox>.reco>.skillBox {
+#sub__name__ .recoBox>.reco>.skillBox {
 	width: 55%;
 	height: 100%;
 }
 
 /*-------tabBox-------*/
-#submain .tabBox {
+#sub__name__ .tabBox {
 	width: 100%;
 	height: 100%;
 }
 
 /*-------tabBox.Skill-------*/
-#submain .tabBox.Skill>.headBox {
+#sub__name__ .tabBox.Skill>.headBox {
 	width: 12%;
 	height: 100%;
 }
-#submain .tabBox.Skill>.headBox>.head {
+#sub__name__ .tabBox.Skill>.headBox>.head {
 	margin: 3px;
 	min-width: 30px;
 
@@ -135,13 +135,13 @@
 
 	cursor: pointer;
 }
-#submain .tabBox.Skill>.headBox>.head.active {
+#sub__name__ .tabBox.Skill>.headBox>.head.active {
 	border: 2px solid #557799;
 
 	color: #E0E2E4;
 	background-color: #557799;
 }
-#submain .tabBox.Skill>.item {
+#sub__name__ .tabBox.Skill>.item {
 	width: 85%;
 	height: 95%;
 	border-radius: 4px;
@@ -149,11 +149,11 @@
 }
 
 /*-------tabBox.SkillContent-------*/
-#submain .tabBox.SkillContent>.headBox {
+#sub__name__ .tabBox.SkillContent>.headBox {
 	width: 99%;
 	height: 30%;
 }
-#submain .tabBox.SkillContent>.headBox>.head {
+#sub__name__ .tabBox.SkillContent>.headBox>.head {
 	width: 100%;
 	height: 100%;
 
@@ -162,21 +162,21 @@
 
 	text-align: center;
 }
-#submain .tabBox.SkillContent>.headBox>.head.active {
+#sub__name__ .tabBox.SkillContent>.headBox>.head.active {
 	border: 2px solid #148474;
 
 	background-color: #148474;
 }
-#submain .tabBox.SkillContent>.headBox>.head:first-child {
+#sub__name__ .tabBox.SkillContent>.headBox>.head:first-child {
 	width: 24%;
 	margin-left: -2px;
 }
-#submain .tabBox.SkillContent>.headBox>.head:last-child {
+#sub__name__ .tabBox.SkillContent>.headBox>.head:last-child {
 	width: 100%;
 	margin-right: -2px;
 }
 
-#submain .tabBox.SkillContent>.itemBox {
+#sub__name__ .tabBox.SkillContent>.itemBox {
 	width: 99%;
 	height: 65%;
 
@@ -184,7 +184,7 @@
 
 	overflow: hidden;
 }
-#submain .tabBox.SkillContent>.itemBox>.item {
+#sub__name__ .tabBox.SkillContent>.itemBox>.item {
 	width: 100%;
 	height: 100%;
 
@@ -192,32 +192,32 @@
 	overflow-y: auto;
 }
 
-#submain .tabBox.SkillContent>.itemBox>.item>.role {
+#sub__name__ .tabBox.SkillContent>.itemBox>.item>.role {
 	display: block;
 	border-left: 14px solid transparent;
 }
-#submain .tabBox.SkillContent>.itemBox>.item>.clear {
+#sub__name__ .tabBox.SkillContent>.itemBox>.item>.clear {
 	display: block;
 	height: 4px;
 }
 
 /*-------pageBox-------*/
-#submain .pageBox {
+#sub__name__ .pageBox {
 	width: 100%;
 	height: 5%;
 }
-#submain .pageBox>.prev, .pageBox>.next {
+#sub__name__ .pageBox>.prev, .pageBox>.next {
 	width: 33%;
 
 	cursor: pointer;
 }
-#submain .pageBox>.count {
+#sub__name__ .pageBox>.count {
 	width: 33%;
 }
-#submain .pageBox>.count>* {
+#sub__name__ .pageBox>.count>* {
 	padding-top: 1px;
 }
-#submain .pageBox>.count>input {
+#sub__name__ .pageBox>.count>input {
 	width: 40px;
 
 	font-size: 14px;
@@ -228,19 +228,19 @@
 
 	cursor: auto;
 }
-#submain .pageBox>.count>input:focus {
+#sub__name__ .pageBox>.count>input:focus {
 	border-bottom: 1px solid #E0E2E4;
 }
 
 /*-------tabBox.skillType-------*/
-#submain .tabBox.skillType>.headBox {
+#sub__name__ .tabBox.skillType>.headBox {
 	width: 90%;
 	height: 34px;
 	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 
 	background-color: #34495e;
 }
-#submain .tabBox.skillType>.headBox>.head {
+#sub__name__ .tabBox.skillType>.headBox>.head {
 	width: 100%;
 
 	border: 2px solid #34495e;
@@ -252,15 +252,15 @@
 
 	cursor: pointer;
 }
-#submain .tabBox.skillType>.headBox>.head:hover {
+#sub__name__ .tabBox.skillType>.headBox>.head:hover {
 	border-top: 2px solid #148474;
 }
-#submain .tabBox.skillType>.headBox>.head:hover, .tabBox.skillType>.headBox>.head.active {
+#sub__name__ .tabBox.skillType>.headBox>.head:hover, .tabBox.skillType>.headBox>.head.active {
 	border-radius: 4px;
 	border: 2px solid #148474;
 	background-color: #148474;
 }
-#submain .tabBox.skillType>.item {
+#sub__name__ .tabBox.skillType>.item {
 	height: 100%;
 	width: 100%;
 
@@ -271,14 +271,14 @@
 }
 
 /*-------tabBox.more-------*/
-#submain .tabBox.more>.headBox {
+#sub__name__ .tabBox.more>.headBox {
 	width: 90%;
 	height: 34px;
 	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 
 	background-color: #34495e;
 }
-#submain .tabBox.more>.headBox>.head {
+#sub__name__ .tabBox.more>.headBox>.head {
 	width: 100%;
 
 	border: 2px solid #34495e;
@@ -290,15 +290,15 @@
 
 	cursor: pointer;
 }
-#submain .tabBox.more>.headBox>.head:hover {
+#sub__name__ .tabBox.more>.headBox>.head:hover {
 	border-top: 2px solid #148474;
 }
-#submain .tabBox.more>.headBox>.more:hover, .tabBox.more>.headBox>.head.active {
+#sub__name__ .tabBox.more>.headBox>.more:hover, .tabBox.more>.headBox>.head.active {
 	border-radius: 4px;
 	border: 2px solid #148474;
 	background-color: #148474;
 }
-#submain .tabBox.more>.item {
+#sub__name__ .tabBox.more>.item {
 	height: 92%;
 	width: 100%;
 	overflow-x: hidden;
@@ -306,29 +306,29 @@
 }
 
 /*-------Column-------*/
-#submain .NaviColumnSpace {
+#sub__name__ .NaviColumnSpace {
 	width: 90%;
 	height: 24px;
 	min-height: 24px;
 }
-#submain .NaviColumn {
+#sub__name__ .NaviColumn {
 	width: 90%;
 	height: auto;
 	min-height: 45px;
 }
-#submain .NaviColumn2x {
+#sub__name__ .NaviColumn2x {
 	width: 90%;
 	height: auto;
 	min-height: 90px;
 }
-#submain .NaviColumn3x {
+#sub__name__ .NaviColumn3x {
 	width: 90%;
 	height: auto;
 	min-height: 135px;
 }
 
 /*-------Toggle-------*/
-#submain .Toggle {
+#sub__name__ .Toggle {
 	margin: 3px;
 	min-width: 30px;
 
@@ -345,34 +345,34 @@
 
 	cursor: pointer;
 }
-#submain .Toggle.on, .Toggle.on:hover, .Toggle.off:hover {
+#sub__name__ .Toggle.on, .Toggle.on:hover, .Toggle.off:hover {
 	border-color: #557799;
 
 	background-color: #557799;
 }
-#submain .Toggle.off {
+#sub__name__ .Toggle.off {
 	border-color: #557799;
 }
-#submain .Toggle.min {
+#sub__name__ .Toggle.min {
 	min-width: 24px;
 }
 
-#submain .CondBar {
+#sub__name__ .CondBar {
 	width: 77%;
 	height: auto;
 	border-left: 2px solid #E0E2E4;
 	padding-left: 4px;
 }
-#submain .CondBar2 {
+#sub__name__ .CondBar2 {
 	width: 77%;
 	height: auto;
 }
-#submain .Conds {
+#sub__name__ .Conds {
 	width: 100%;
 	height: 14%;
 }
 
-#submain #Search {
+#sub__name__ #Search {
 	margin: 3px;
 	min-width: 30px;
 
@@ -391,7 +391,7 @@
 
 	cursor: pointer;
 }
-#submain #CondName {
+#sub__name__ #CondName {
 	margin: 3px;
 
 	min-width: 30px;
@@ -412,11 +412,11 @@
 }
 
 /*-------tabBox.serv-------*/
-#submain .tabBox.serv {
+#sub__name__ .tabBox.serv {
 	height: 2%;
 	width: 45%;
 }
-#submain .tabBox.serv>.head {
+#sub__name__ .tabBox.serv>.head {
 	margin: 3px;
 	width: 20px;
 
@@ -433,12 +433,12 @@
 
 	cursor: pointer;
 }
-#submain .tabBox.serv>.head.active {
+#sub__name__ .tabBox.serv>.head.active {
 	border: 2px solid #557799;
 
 	color: #E0E2E4;
 	background-color: #557799;
 }
-#submain .tabBox.serv>span {
+#sub__name__ .tabBox.serv>span {
 	width: 100px;
 }
