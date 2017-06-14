@@ -85,16 +85,12 @@ window.app = new Vue({
 
 				bb.appendChild(div);
 
-				if(sub.init) {
-					sub.init();
-				}
-				else
-					itr = setInterval(function() {
-						if(!sub.now && sub.init)
-							sub.init();
-						else
-							clearInterval(itr);
-					}, 50);
+				itr = setInterval(function() {
+					if(!sub.now && sub.init)
+						sub.init();
+					else
+						clearInterval(itr);
+				}, 50);
 
 				tab = { name: name, type: sub.type, title: sub.title, div: div, sub: sub };
 
