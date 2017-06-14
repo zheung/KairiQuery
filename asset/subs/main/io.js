@@ -46,5 +46,5 @@
 	};
 
 	var on = app.on('__name__');
-	for(let name in worker) on(name, worker[name]);
+	for(var name in worker) on(name, worker[name]);
 })();
