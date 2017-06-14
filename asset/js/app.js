@@ -88,7 +88,7 @@ window.app = new Vue({
 				itr = setInterval(function() {
 					if(!sub.now && sub.init)
 						sub.init();
-					else
+					else if (sub.now && sub.init)
 						clearInterval(itr);
 				}, 50);
 

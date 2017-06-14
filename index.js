@@ -15,7 +15,6 @@ module.exports = async($, router) => {
 		if(!query.serv) query.serv = 'cn';
 
 		ctx.type = 'html';
-		ctx.set('Cache-Control', 'max-age=60');
 
 		ctx.body = fs.createReadStream(await $.pa('asset/html/index.html'))
 			.pipe(replaceStream('${serv}', query.serv))
@@ -27,7 +26,6 @@ module.exports = async($, router) => {
 		let p = ctx.params;
 
 		ctx.type = p.ext;
-		ctx.set('Cache-Control', 'max-age=60');
 
 		if(ctx.query.tab)
 			ctx.body = fs.createReadStream(await $.pa(`asset/subs/${p.sub}/${p.name}.${p.ext}`))

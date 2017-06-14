@@ -1,4 +1,6 @@
 app.sub.__name__.init = function() {
+	console.log('__name__ init');
+
 	app.sub.__name__.now = new Vue({
 		el: '#sub__name__>div',
 		mounted: function() {
