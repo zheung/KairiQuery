@@ -15,12 +15,12 @@ module.exports = async($) => {
 					return `${u}~${d} Chain`;
 			},
 			2: async(card, skill, cond) => {
-				if(~~cond.param2) _l('Cond 2 Double');
+				if(~~cond.param2) L('Cond 2 Double');
 
 				return `目标 | ${shower.attr[valuer.attr[cond.param1]]}属性`;
 			},
 			3: async(card, skill, cond) => {
-				if(~~cond.param2) _l('Cond 3 Double');
+				if(~~cond.param2) L('Cond 3 Double');
 
 				return `目标 | ${shower.roleDebuff[valuer.roleDebuff[cond.param1]]}状态`;
 			},
@@ -56,7 +56,7 @@ module.exports = async($) => {
 				let u = ~~cond.param1, d = ~~cond.param2;
 
 				if((u && d && u != d) || (!u && !d))
-					_l('Cond 10 New Type! '+card.id+' '+card.info.name+' '+skill.id+' '+u+' '+d);
+					L('Cond 10 New Type! '+card.id+' '+card.info.name+' '+skill.id+' '+u+' '+d);
 
 				if(u == d)
 					return `第${u}回合`;
@@ -92,21 +92,21 @@ module.exports = async($) => {
 			21: false,
 			22: false,
 			23: async(card, skill, cond) => {
-				if(~~cond.param3) _l('Cond 23 Double');
+				if(~~cond.param3) L('Cond 23 Double');
 
 				return `我方 | ${shower.roleDebuff[valuer.roleDebuff[cond.param1]]}
 					${cond.param2 ? `或${shower.roleDebuff[valuer.roleDebuff[cond.param2]]}` : ''}
 					状态`;
 			},
 			24: async(card, skill, cond) => {
-				if(~~cond.param3) _l('Cond 23 Double');
+				if(~~cond.param3) L('Cond 23 Double');
 
 				return `我方 | ${shower.roleDebuff[valuer.roleDebuff[cond.param1]]}
 					${cond.param2 ? '或'+shower.roleDebuff[valuer.roleDebuff[cond.param2]] : ''}
 					状态`;
 			},
 			25: async(card, skill, cond) => {
-				if(~~cond.param2) _l('Cond 25 Double');
+				if(~~cond.param2) L('Cond 25 Double');
 
 				return `我方 | ${shower.roleBuff[valuer.roleBuff[cond.param1]]}状态`;
 			},
@@ -122,12 +122,12 @@ module.exports = async($) => {
 			35: false,
 			36: false,
 			37: async(card, skill, cond) => {
-				if(~~cond.param2) _l('Cond 37 Double');
+				if(~~cond.param2) L('Cond 37 Double');
 
 				return `自身 | ${shower.roleBuff[valuer.roleBuff[cond.param1]]}状态`;
 			},
 			38: async(card, skill, cond) => {
-				if(~~cond.param2) _l('Cond 38 Double');
+				if(~~cond.param2) L('Cond 38 Double');
 
 				return `目标 | ${shower.roleBuff[valuer.roleBuff[cond.param1]]}状态`;
 			},

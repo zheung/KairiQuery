@@ -21,7 +21,7 @@ module.exports = async($) => {
 					if(rend)
 						s.cond = (await rend(card, skill, skill.cond)).replace(/\t|\n/g, '');
 					else {
-						_l('New Cond', condType, 'Card', card.id, 'Skill', skill.id);
+						L('New Cond', condType, 'Card', card.id, 'Skill', skill.id);
 
 						s.cond = '~未渲染条件' + condType;
 					}
@@ -29,7 +29,7 @@ module.exports = async($) => {
 					if(rend2)
 						s.cond += ' 且 ' + (await rend2(card, skill, skill.cond2)).replace(/\t|\n/g, '');
 					else if(condType2 != 0) {
-						_l('New Cond2', condType2, 'Card', card.id, 'Skill', skill.id);
+						L('New Cond2', condType2, 'Card', card.id, 'Skill', skill.id);
 
 						s.cond = '~未渲染条件' + condType2;
 					}
@@ -42,7 +42,7 @@ module.exports = async($) => {
 						s.cond = (skill.delay.timing==2 ? '<samp title="在敌方行动后判定条件，满足条件则发动技能">敌方行动后</samp> | ' : '')+
 							(await rend(card, skill, skill.delay)).replace(/\t|\n/g, '');
 					else {
-						_l('New Delay', delayType, 'Card', card.id, 'Skill', skill.id);
+						L('New Delay', delayType, 'Card', card.id, 'Skill', skill.id);
 
 						s.cond = '~未渲染条件' + delayType;
 					}
@@ -62,7 +62,7 @@ module.exports = async($) => {
 					if(rend instanceof Function)
 						s.content.push((await rend(card, skill, role, skillFirst)).replace(/\t|\n/g, ''));
 					else {
-						_l('New Skill', skillType, 'Card', card.id, 'Skill', skill.id);
+						L('New Skill', skillType, 'Card', card.id, 'Skill', skill.id);
 
 						s.content.push('~未渲染技能' + skillType);
 					}

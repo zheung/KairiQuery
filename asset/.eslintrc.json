@@ -34,7 +34,6 @@
 
 		"pre": true,
 		"app": true,
-		"aps": true,
 		"bb": true
 	}
 }

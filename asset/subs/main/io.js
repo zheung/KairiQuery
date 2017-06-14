@@ -1,7 +1,7 @@
 (function() {
 	var worker = {
 		query: function(result, mark) {
-			var sub = aps.__name__, recos = result[0];
+			var sub = app.sub.__name__.now, recos = result[0];
 
 			sub.tab.skillTab = {};
 			sub.tab.skillAwaken = {};
@@ -32,7 +32,7 @@
 			// 	);
 		},
 		conds: function(conds) {
-			var sub = aps.__name__;
+			var sub = app.sub.__name__.now;
 
 			sub.conds = conds;
 

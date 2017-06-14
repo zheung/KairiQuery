@@ -67,8 +67,8 @@ module.exports = () => {
 			});
 
 			if(Object.keys(counter).length) {
-				_l(name+' counter:');
-				_l(counter);
+				L(name+' counter:');
+				L(counter);
 			}
 
 			return result;

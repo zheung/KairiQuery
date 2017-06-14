@@ -211,7 +211,7 @@ module.exports = async($) => {
 			61: async(card, skill, role, skillFirst) => {
 				let target = showTarget(skill, role, skillFirst);
 
-				if(role.params[1] != 9999) _l('New Params Skill 61');
+				if(role.params[1] != 9999) L('New Params Skill 61');
 
 				return `${target} | 显示自身的元素`;
 			},
@@ -224,7 +224,7 @@ module.exports = async($) => {
 			64: async(card, skill, role, skillFirst) => {
 				let p = role.params, target = showTarget(skill, role, skillFirst);
 
-				if(p[4][1] || p[5][1] != 3) _l('New Params Skill 64');
+				if(p[4][1] || p[5][1] != 3) L('New Params Skill 64');
 
 				return `${target} | ${p[1]}回合 | 使敌方攻击指向自身 | 减免所受伤害的${p[2]/10}%`;
 			},
@@ -281,7 +281,7 @@ module.exports = async($) => {
 
 				let num = (p[2] == p[3] ? p[2]: `${p[2]}~${p[3]}`);
 
-				if(~~p[5] || ~~p[6] || ~~p[7]) _l('miao?');
+				if(~~p[5] || ~~p[6] || ~~p[7]) L('miao?');
 
 				return `${target} | ${p[1]}回合 | 陷阱 | ${num}张 |\x20
 					<samp title="时机：我方卡牌全部发动后，敌方行动前">使用后受到伤害${p[4]}点</samp>`;

@@ -15,9 +15,9 @@ module.exports = async($) => {
 						if(info.type == 'work')
 							await emit('appload', name, 'work', info.title,
 								fs.readFileSync(await $.pa(`asset/subs/${name}/app.html`)).toString().replace(/(\t)/g, '').replace(/(__name__)/g, name),
-								fs.readFileSync(await $.pa(`asset/subs/${name}/app.css`)).toString().replace(/(\t)/g, '').replace(/(__name__)/g, name),
-								fs.readFileSync(await $.pa(`asset/subs/${name}/app.js`)).toString().replace(/(\t)/g, '').replace(/(__name__)/g, name),
-								fs.readFileSync(await $.pa(`asset/subs/${name}/io.js`)).toString().replace(/(\t)/g, '').replace(/(__name__)/g, name),
+								// fs.readFileSync(await $.pa(`asset/subs/${name}/app.css`)).toString().replace(/(\t)/g, '').replace(/(__name__)/g, name),
+								// fs.readFileSync(await $.pa(`asset/subs/${name}/app.js`)).toString().replace(/(\t)/g, '').replace(/(__name__)/g, name),
+								// fs.readFileSync(await $.pa(`asset/subs/${name}/io.js`)).toString().replace(/(\t)/g, '').replace(/(__name__)/g, name),
 							);
 						else if(info.type == 'page')
 							await emit('appload', name, 'page', await (await $.rq(`asset/subs/${name}`))(...param) );

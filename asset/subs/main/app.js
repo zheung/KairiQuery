@@ -1,147 +1,149 @@
-aps.__name__ = new Vue({
-	el: '#sub__name__>div',
-	mounted: function() {
-		this.emit = app.emitWith('__name__');
+app.sub.__name__.init = function() {
+	app.sub.__name__.now = new Vue({
+		el: '#sub__name__>div',
+		mounted: function() {
+			this.emit = app.emitWith('__name__');
 
-		this.emit('conds');
-	},
-	data: {
-		recos: [],
-		pageNow: window.pre.page || 1,
-		pageMax: window.pre.page || 1,
-
-		imgSrc: ['','','',''],
-
-		tab: {
-			dash: 1,
-			skillFilter: 1,
-			about: 1,
-
-			skillTab: {},
-
-			skillAwaken: {},
-			skillNormal: {},
-			skillSuport3: {}
+			this.emit('conds');
 		},
+		data: {
+			recos: [],
+			pageNow: window.pre.page || 1,
+			pageMax: window.pre.page || 1,
 
-		serv: window.pre.serv || 'cn',
-		word: window.pre.word || '',
+			imgSrc: ['','','',''],
 
-		mark: [],
+			tab: {
+				dash: 1,
+				skillFilter: 1,
+				about: 1,
 
-		conds: {},
-		condAll : {},
+				skillTab: {},
 
-		suportMode: false,
-		prioMode: false,
+				skillAwaken: {},
+				skillNormal: {},
+				skillSuport3: {}
+			},
 
-		// gurs: {
-		// 	imgSrc: ['','','','', ''],
+			serv: window.pre.serv || 'cn',
+			word: window.pre.word || '',
 
-		// 	tab: {
-		// 		dash: 1,
-		// 		skillFilter: 1,
-		// 		about: 1,
+			mark: [],
 
-		// 		skillTab: {},
+			conds: {},
+			condAll : {},
 
-		// 		skillAwaken: {},
-		// 		skillNormal: {},
-		// 		skillSuport3: {}
-		// 	},
+			suportMode: false,
+			prioMode: false,
 
-		// 	recos: [],
-		// 	pageNow: 1,
-		// 	pageMax: 1,
-		// }
-	},
-	methods: {
-		query: function(page) {
-			if(page < 0 || page > this.pageMax) return;
+			// gurs: {
+			// 	imgSrc: ['','','','', ''],
 
-			this.emit('query', this.param(function(param) { param.page = (typeof page == 'number' && page ? page : 1); }));
+			// 	tab: {
+			// 		dash: 1,
+			// 		skillFilter: 1,
+			// 		about: 1,
+
+			// 		skillTab: {},
+
+			// 		skillAwaken: {},
+			// 		skillNormal: {},
+			// 		skillSuport3: {}
+			// 	},
+
+			// 	recos: [],
+			// 	pageNow: 1,
+			// 	pageMax: 1,
+			// }
 		},
-		param: function(moder) {
-			var result = {
-				serv: this.serv,
-				word: this.word,
-				page: this.pageNow,
-				mark: this.mark.toString().replace(/\,/g, '|').replace(/\|+$/g, ''),
-				zero: (/[1-9]/.test(this.mark.toString())) ? 0 : 1,
-				prio: this.prioMode
-			};
+		methods: {
+			query: function(page) {
+				if(page < 0 || page > this.pageMax) return;
 
-			if(moder) moder(result);
+				this.emit('query', this.param(function(param) { param.page = (typeof page == 'number' && page ? page : 1); }));
+			},
+			param: function(moder) {
+				var result = {
+					serv: this.serv,
+					word: this.word,
+					page: this.pageNow,
+					mark: this.mark.toString().replace(/\,/g, '|').replace(/\|+$/g, ''),
+					zero: (/[1-9]/.test(this.mark.toString())) ? 0 : 1,
+					prio: this.prioMode
+				};
 
-			return result;
-		},
-		imgError: function(e) {
-			var target = e.currentTarget, src = target.src;
+				if(moder) moder(result);
 
-			if(/21\//.test(src)) {
-				target.src = src.replace(/21\//g, '22/');
+				return result;
+			},
+			imgError: function(e) {
+				var target = e.currentTarget, src = target.src;
 
-				return;
-			}
-			if(/22\//.test(src)) {
-				target.src = './kq/img/no20.png';
+				if(/21\//.test(src)) {
+					target.src = src.replace(/21\//g, '22/');
 
-				return;
-			}
-		},
-		markit: function(cond, on) {
-			this.$set(cond, 'on', on);
+					return;
+				}
+				if(/22\//.test(src)) {
+					target.src = './kq/img/no20.png';
 
-			if(cond.on)
-				this.mark[cond.x] |= cond.y;
-			else
-				this.mark[cond.x] &= ~cond.y;
+					return;
+				}
+			},
+			markit: function(cond, on) {
+				this.$set(cond, 'on', on);
 
-			if(!this.mark[cond.x]) this.mark[cond.x] = undefined;
-		},
-		toggle: function(eve, cond) {
-			var sub = this, type = cond.type;
+				if(cond.on)
+					this.mark[cond.x] |= cond.y;
+				else
+					this.mark[cond.x] &= ~cond.y;
 
-			if(eve.ctrlKey && !eve.shiftKey)
+				if(!this.mark[cond.x]) this.mark[cond.x] = undefined;
+			},
+			toggle: function(eve, cond) {
+				var sub = this, type = cond.type;
+
+				if(eve.ctrlKey && !eve.shiftKey)
+					this.conds[type].map(function(c) {
+						sub.markit(c, cond == c);
+					});
+				else if(!eve.ctrlKey && eve.shiftKey)
+					this.conds[type].map(function(c) {
+						sub.markit(c, cond != c);
+					});
+				else
+					sub.markit(cond, !cond.on);
+
+				this.query();
+			},
+			toggleAll: function(type, bool, num) {
+				var sub = this, on = this.condAll[type] = (bool == undefined ? !this.condAll[type]: !!bool);
+
 				this.conds[type].map(function(c) {
-					sub.markit(c, cond == c);
+					if(!num || (num != undefined && !!(num & c.y)))
+						sub.markit(c, on);
 				});
-			else if(!eve.ctrlKey && eve.shiftKey)
-				this.conds[type].map(function(c) {
-					sub.markit(c, cond != c);
+
+				if(num == undefined) this.query();
+			},
+			clearAll: function() {
+				for(var type in this.conds)
+					this.toggleAll(type, false);
+			},
+			suportModeApply: function() {
+				var sub = this;
+
+				this.suportMode = !this.suportMode;
+
+				this.recos.map(function(reco) {
+					sub.$set(sub.tab.skillTab, reco.id, sub.suportMode ? 2 : 1);
 				});
-			else
-				sub.markit(cond, !cond.on);
+			},
+			prioModeApply: function() {
+				this.prioMode = !this.prioMode;
 
-			this.query();
-		},
-		toggleAll: function(type, bool, num) {
-			var sub = this, on = this.condAll[type] = (bool == undefined ? !this.condAll[type]: !!bool);
-
-			this.conds[type].map(function(c) {
-				if(!num || (num != undefined && !!(num & c.y)))
-					sub.markit(c, on);
-			});
-
-			if(num == undefined) this.query();
-		},
-		clearAll: function() {
-			for(var type in this.conds)
-				this.toggleAll(type, false);
-		},
-		suportModeApply: function() {
-			var sub = this;
-
-			this.suportMode = !this.suportMode;
-
-			this.recos.map(function(reco) {
-				sub.$set(sub.tab.skillTab, reco.id, sub.suportMode ? 2 : 1);
-			});
-		},
-		prioModeApply: function() {
-			this.prioMode = !this.prioMode;
-
-			this.query();
+				this.query();
+			}
 		}
-	}
-});
+	});
+};

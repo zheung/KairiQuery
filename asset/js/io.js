@@ -16,8 +16,8 @@ window.initIO = function() {
 	};
 
 	var worker = {
-		load: function(name, type, title, html, css, js1, js2) {
-			Vue.set(app.subs, name, { type: type, title: title, tmpl: html, styl: css, init: js1, ioer: js2 });
+		load: function(name, type, title, html) {
+			Vue.set(app.sub, name, { type: type, title: title, tmpl: html, first: true });
 
 			app.addTab(name);
 		}

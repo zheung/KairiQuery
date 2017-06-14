@@ -9,9 +9,11 @@ window.app = new Vue({
 	el: '#headBox',
 	data: {
 		io: io(),
+
 		tab: [],
 		tad: {},
-		subs: {},
+
+		sub: {},
 
 		tabNow: -1
 	},
@@ -40,36 +42,61 @@ window.app = new Vue({
 	},
 	methods: {
 		loadTab: function(name) {
-			if(!app.subs[name])
+			if(!app.sub[name])
 				this.emit('load', name);
 			else
 				this.addTab(name);
 		},
 		addTab: function(name, where) {
-			var sub = this.subs[name], tab, css, div;
+			var sub = this.sub[name], tab, css, div, scr, itr;
 
-			if(sub && (sub.type == 'page' || !this.tab[name])) {
+			if(sub && (!this.tad[name] || sub.type == 'page')) {
 				this.tab.map(function(t) {
 					t.div.style.display = 'none';
 				});
 
-				css = document.createElement('style');
-				css.id = 'style'+name;
-				css.innerHTML = sub.styl;
-
-				div = document.createElement('div');
+				div = div = document.createElement('div');
 				div.id = 'sub'+name;
 				div.style.display = 'flex';
 				div.innerHTML = sub.tmpl;
 				div.className = 'body';
 
-				div.appendChild(css);
+				if(sub.first) {
+					sub.first = false;
+
+					sub.css = css = document.createElement('link');
+					css.rel = 'stylesheet';
+					css.type = 'text/css';
+					css.href = '/kq/subs/'+name+'/app.css';
+					div.appendChild(css);
+
+					scr = document.createElement('script');
+					scr.type = 'text/javascript';
+					scr.src = '/kq/subs/'+name+'/app.js';
+					div.appendChild(scr);
+
+					scr = document.createElement('script');
+					scr.type = 'text/javascript';
+					scr.src = '/kq/subs/'+name+'/io.js';
+					div.appendChild(scr);
+				}
+				else
+					div.appendChild(sub.css);
+
 				bb.appendChild(div);
 
-				if(sub.ioer) eval(sub.ioer);
-				if(sub.init) eval(sub.init);
+				if(sub.init) {
+					sub.init();
+				}
+				else
+					itr = setInterval(function() {
+						if(!sub.now && sub.init)
+							sub.init();
+						else
+							clearInterval(itr);
+					}, 50);
 
-				tab = { name: name, type: sub.type, title: sub.title, div: div };
+				tab = { name: name, type: sub.type, title: sub.title, div: div, sub: sub };
 
 				Vue.set(this.tad, name, tab);
 				this.tab.splice(where || this.tabNow+1, 0, tab);
@@ -89,16 +116,21 @@ window.app = new Vue({
 		},
 		closeTab: function() {
 			if(typeof this.tabNow == 'number') {
-				var tab = this.tab[this.tabNow], sub = aps[tab.name];
+				var tab = this.tab[this.tabNow], name = tab.name,
+					sub = this.sub[name].now;
 
-				sub.$destroy();
+				if(sub) sub.$destroy();
 
 				this.tab.splice(this.tabNow, 1);
-				delete aps[tab.name];
+				delete this.sub[name].now;
+				delete this.tad[name];
 
 				bb.removeChild(tab.div);
 
-				this.tabNow = this.tabNow-1==0 ? this.tabNow-1 : 0;
+				if(this.tab.length-1)
+					this.tabNow = this.tabNow ? 0 : this.tabNow-1;
+				else
+					this.tabNow = -1;
 
 				return false;
 			}
