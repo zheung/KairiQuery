@@ -24,5 +24,5 @@ window.initIO = function() {
 	};
 
 	var on = app.on('app');
-	for(let name in worker) on(name, worker[name]);
+	for(var name in worker) on(name, worker[name]);
 };
