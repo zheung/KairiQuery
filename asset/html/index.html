@@ -26,6 +26,7 @@
 				</div>
 			</div>
 			<div id="bodyBox" class="bodyBox bld">
+				<div id="maskBox">加载中</div>
 				<div id="chatBox" style="display:none">
 					<ul>
 						<li>多说即将关闭，友言半死不活不支持https</li>
@@ -125,6 +126,7 @@
 		<script type="text/javascript">
 			window.pre = { serv: '${serv}', word: '${word}', mark: '${mark}', page: ~~'${page}' };
 			window.bb = document.getElementById('bodyBox');
+			window.ma = document.getElementById('maskBox');
 			window.tabChat = document.getElementById('chatBox');
 			window.tabMore = document.getElementById('moreBox');
 		</script>

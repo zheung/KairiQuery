@@ -1,4 +1,4 @@
-app.sub.__name__.init = function() {
+app.sub.__name__.init = function(cb) {
 	console.log('__name__ init');
 
 	app.sub.__name__.now = new Vue({
@@ -7,6 +7,8 @@ app.sub.__name__.init = function() {
 			this.emit = app.emitWith('__name__');
 
 			this.emit('conds');
+
+			if(cb) cb();
 		},
 		data: {
 			recos: [],

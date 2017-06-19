@@ -48,16 +48,25 @@ window.app = new Vue({
 				this.addTab(name);
 		},
 		addTab: function(name, where) {
-			var sub = this.sub[name], tab, css, div, scr, itr;
+			var sub = this.sub[name], tab, css, div, scr, itr, mtr, mtrc = 0;
 
 			if(sub && (!this.tad[name] || sub.type == 'page')) {
+				window.ma.style.display = 'flex';
+
+				mtr = setInterval(function() {
+					if(mtrc++ == 3) mtrc = 0;
+
+					window.ma.innerHTML = '加载中'+ ['.', '..', '...'][mtrc];
+					console.log(window.ma.innerHTML);
+				}, 500);
+
 				this.tab.map(function(t) {
 					t.div.style.display = 'none';
 				});
 
 				div = div = document.createElement('div');
 				div.id = 'sub'+name;
-				div.style.display = 'flex';
+				div.style.display = 'none';
 				div.innerHTML = sub.tmpl;
 				div.className = 'body';
 
@@ -86,8 +95,13 @@ window.app = new Vue({
 				bb.appendChild(div);
 
 				itr = setInterval(function() {
-					if(!sub.now && sub.init)
-						sub.init();
+					if(!sub.now && sub.init) {
+						sub.init(function() {
+							div.style.display = 'flex';
+							clearInterval(mtr);
+							window.ma.style.display = 'none';
+						});
+					}
 					else if (sub.now && sub.init)
 						clearInterval(itr);
 				}, 50);

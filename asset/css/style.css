@@ -69,6 +69,10 @@ samp {
 
 	background-color: green;
 }
+#maskBox{
+	width: 100%;
+	height: 100%;
+}
 
 /*-------tabMain-------*/
 .tabBox.Main>.headBox {
