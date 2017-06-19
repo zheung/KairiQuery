@@ -12,7 +12,11 @@
 				Vue.set(sub.tab.skillAwaken, reco.id, reco.skill.awaken.length ? reco.skill.awaken.length-1 : 0);
 				Vue.set(sub.tab.skillNormal, reco.id, reco.skill.normal.length ? reco.skill.normal.length-1 : 0);
 				Vue.set(sub.tab.skillSuport3, reco.id, reco.skill.suport3.length ? reco.skill.suport3.length-1 : 0);
-				Vue.set(sub.imgSrc, i, 'https://raw.githubusercontent.com/kairiquery/kqp'+sub.serv+'21/master/'+recos[i].id+'.png');
+
+				if(sub.serv == 'jp')
+					Vue.set(sub.imgSrc, i, 'https://kairiquery.oss-cn-shenzhen.aliyuncs.com/jp20/'+recos[i].id+'.png');
+				else
+					Vue.set(sub.imgSrc, i, 'https://raw.githubusercontent.com/kairiquery/kqp'+sub.serv+'21/master/'+recos[i].id+'.png');
 
 				for(var j in reco.skill)
 					if(!reco.skill[j].length)
