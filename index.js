@@ -7,7 +7,7 @@ module.exports = async($, router) => {
 	router.get('/', async(ctx, next) => {
 		await next();
 
-		let query;
+		let query = {};
 
 		if(ctx.originalUrl != ctx._matchedRoute)
 			query = qs.parse(qs.unescape(ctx.originalUrl.replace('/kq\?', '')));
