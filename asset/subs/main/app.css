@@ -1,3 +1,7 @@
+#sub__name__>div {
+	position: relative;
+}
+
 #sub__name__ .mainBox {
 	height: 100%;
 	width: 100%;
@@ -9,16 +13,35 @@
 	height: 100%;
 	width: 450px;
 
+	position: absolute;
+	top: 0px;
+	right: -450px;
+
 	overflow: hidden;
+
+	transition:right 2s;
 }
-#sub__name__ .tabBox.dash>.headBox {
+#sub__name__ .tabBox.dash.open {
+	right: 0px;
+}
+
+#sub__name__ .tabBox.dash>.sideBox {
+	height: 100%;
+	width: 20px;
+}
+#sub__name__ .tabBox.dash>.dashBox {
+	height: 100%;
+	width: 100%;
+}
+
+#sub__name__ .tabBox.dash>.dashBox>.headBox {
 	width: 100%;
 	height: 45px;
 	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 
 	background-color: #34495e;
 }
-#sub__name__ .tabBox.dash>.headBox>.head {
+#sub__name__ .tabBox.dash>.dashBox>.headBox>.head {
 	width: 100%;
 
 	border: 2px solid #34495e;
@@ -30,19 +53,19 @@
 
 	cursor: pointer;
 }
-#sub__name__ .tabBox.dash>.headBox>.head:hover {
+#sub__name__ .tabBox.dash>.dashBox>.headBox>.head:hover {
 	border-bottom: 2px solid #148474;
 }
-#sub__name__ .tabBox.dash>.headBox>.head.active {
+#sub__name__ .tabBox.dash>.dashBox>.headBox>.head.active {
 	border-radius: 4px;
 	border: 2px solid #148474;
 	background-color: #148474;
 }
-#sub__name__ .tabBox.dash>.headBox>.item {
+#sub__name__ .tabBox.dash>.dashBox>.headBox>.item {
 	height: 93%;
 	width: 100%;
 }
-#sub__name__ .tabBox.dash>.item {
+#sub__name__ .tabBox.dash>.dashBox>.item {
 	height: 80%;
 	width: 100%;
 
