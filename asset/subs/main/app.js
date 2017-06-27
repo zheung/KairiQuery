@@ -4,9 +4,13 @@ app.sub.__name__.init = function(cb) {
 	app.sub.__name__.now = new Vue({
 		el: '#sub__name__>div',
 		mounted: function() {
-			this.emit = app.emitWith('__name__');
+			var sub = this;
 
-			this.emit('conds');
+			sub.emit = app.emitWith('__name__');
+
+			sub.emit('conds');
+
+			setTimeout(function() { sub.showDash = true; }, 50);
 
 			if(cb) cb();
 		},
@@ -23,6 +27,7 @@ app.sub.__name__.init = function(cb) {
 				about: 1,
 
 				skillTab: {},
+				skillTab2: {},
 
 				skillAwaken: {},
 				skillNormal: {},
@@ -39,6 +44,8 @@ app.sub.__name__.init = function(cb) {
 
 			suportMode: false,
 			prioMode: false,
+
+			showDash: false
 
 			// gurs: {
 			// 	imgSrc: ['','','','', ''],

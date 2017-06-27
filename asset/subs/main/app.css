@@ -15,11 +15,11 @@
 
 	position: absolute;
 	top: 0px;
-	right: -450px;
+	right: -430px;
 
 	overflow: hidden;
 
-	transition:right 2s;
+	transition:right 0.5s;
 }
 #sub__name__ .tabBox.dash.open {
 	right: 0px;
@@ -28,6 +28,11 @@
 #sub__name__ .tabBox.dash>.sideBox {
 	height: 100%;
 	width: 20px;
+
+	z-index: 1;
+	border: solid 1px #148474;
+	border-radius: 4px;
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
 }
 #sub__name__ .tabBox.dash>.dashBox {
 	height: 100%;
@@ -37,7 +42,7 @@
 #sub__name__ .tabBox.dash>.dashBox>.headBox {
 	width: 100%;
 	height: 45px;
-	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
 
 	background-color: #34495e;
 }
@@ -91,7 +96,7 @@
 }
 
 #sub__name__ .recoBox>.reco>.thumbBox {
-	width: 15%;
+	width: 10%;
 	height: 100%;
 }
 #sub__name__ .recoBox>.reco>.thumbBox>.thumb {
@@ -102,7 +107,7 @@
 }
 
 #sub__name__ .recoBox>.reco>.databox {
-	width: 30%;
+	width: 20%;
 	height: 100%;
 }
 #sub__name__ .recoBox>.reco>.databox>span {
@@ -126,7 +131,7 @@
 }
 
 #sub__name__ .recoBox>.reco>.skillBox {
-	width: 55%;
+	width: 34%;
 	height: 100%;
 }
 
@@ -142,12 +147,10 @@
 	height: 100%;
 }
 #sub__name__ .tabBox.Skill>.headBox>.head {
-	margin: 3px;
+	margin: 1px;
 	min-width: 30px;
 
-	padding: 4px;
-	padding-left: 3px;
-	padding-right: 3px;
+	padding: 3px;
 
 	border: 2px solid #34495e;
 	border-radius: 4px;
@@ -259,7 +262,7 @@
 #sub__name__ .tabBox.skillType>.headBox {
 	width: 90%;
 	height: 34px;
-	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
 
 	background-color: #34495e;
 }
@@ -297,7 +300,7 @@
 #sub__name__ .tabBox.more>.headBox {
 	width: 90%;
 	height: 34px;
-	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
 
 	background-color: #34495e;
 }
