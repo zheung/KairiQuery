@@ -3,6 +3,8 @@ module.exports = async($) => {
 		let rdrCond = await $.rq('data/rend/cond'),
 			rdrRole = await $.rq('data/rend/role');
 
+		let shower = $.dicts.shower;
+
 		let result = {},
 			skillTypes = ['awaken', 'normal', 'suport3'],
 			skills = card.skill;
@@ -28,7 +30,7 @@ module.exports = async($) => {
 
 					if(rend2)
 						s.cond += ' 且 ' + (await rend2(card, skill, skill.cond2)).replace(/\t|\n/g, '');
-					else if(condType2 != 0) {
+					else if(condType2) {
 						L('New Cond2', condType2, 'Card', card.id, 'Skill', skill.id);
 
 						s.cond = '~未渲染条件' + condType2;
@@ -62,9 +64,9 @@ module.exports = async($) => {
 					if(rend instanceof Function)
 						s.content.push((await rend(card, skill, role, skillFirst)).replace(/\t|\n/g, ''));
 					else {
-						L('New Skill', skillType, 'Card', card.id, 'Skill', skill.id);
+						L('New Role', shower.skillRole[skillType], 'Card', card.id, 'Skill', skill.id);
 
-						s.content.push('~未渲染技能' + skillType);
+						s.content.push('~未渲染技能' + shower.skillRole[skillType]);
 					}
 				}
 

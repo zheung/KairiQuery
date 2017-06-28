@@ -5,7 +5,9 @@ module.exports = async($) => {
 		let rend = $.rend;
 
 		let coll = await $.db.coll(`${serv}`), cur = await coll.find(query),
-			raw = await cur.sort(sort).toArray(),
+			raw = await cur.sort(sort)
+				.skip(every * (page - 1)).limit(every)
+				.toArray(),
 			count = await cur.count(),
 			result = [];
 
