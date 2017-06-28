@@ -36,7 +36,7 @@ module.exports = async($) => {
 				}
 
 				if(delayType) {
-					let rend = rdrCond(serv)[delayType];
+					let rend = (await rdrCond(serv))[delayType];
 
 					if(rend)
 						s.cond = (skill.delay.timing==2 ? '<samp title="在敌方行动后判定条件，满足条件则发动技能">敌方行动后</samp> | ' : '')+
