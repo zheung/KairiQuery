@@ -1,190 +1,181 @@
 <div class="fs14 jcs">
-	<div class="mainBox drc jcs">
-		<div class="recoBox drc jcs ais acs wpw">
-			<div class="reco drc jcs ais acs wpw" v-for="(reco, ri) of recos">
-				<div class="thumbBox">
-					<img class="thumb" :src="imgSrc[ri]" @error="imgError">
+	<div class="recoBox drc jcs ais acs wpw">
+		<div class="reco drc jcs ais acs wpw" v-for="(reco, ri) of recos">
+			<div class="thumbBox">
+				<img class="thumb" :src="imgSrc[ri]" @error="imgError">
+			</div>
+			<div class="dataBox drc jca">
+				<span class="title sel">{{reco.title}}</span>
+				<span class="name sel">{{reco.name}}</span>
+				<div>
+					<span>{{reco.job}}</span>&nbsp;&nbsp;
+					<span>{{reco.attr}}</span>&nbsp;&nbsp;
+					<span>{{reco.kind}}</span>&nbsp;&nbsp;
+					<span>{{reco.rare}}</span>&nbsp;&nbsp;
+					<span>{{reco.cost}}</span>C&nbsp;&nbsp;
+					<span>{{reco.star || ''}}</span>
 				</div>
-				<div class="dataBox drc jca">
-					<span class="title sel">{{reco.title}}</span>
-					<span class="name sel">{{reco.name}}</span>
-					<div>
-						<span>{{reco.job}}</span>&nbsp;&nbsp;
-						<span>{{reco.attr}}</span>&nbsp;&nbsp;
-						<span>{{reco.kind}}</span>&nbsp;&nbsp;
-						<span>{{reco.rare}}</span>&nbsp;&nbsp;
-						<span>{{reco.cost}}</span>C&nbsp;&nbsp;
-						<span>{{reco.star || ''}}</span>
+				<table width="100%" class="clrFont">
+					<tr>
+						<td width="25%">HP</td><td width="25%">{{reco.hp}}</td>
+						<td width="25%">HQ</td><td width="25%">{{reco.hq}}</td>
+					</tr>
+					<tr>
+						<td width="25%">AD</td><td width="25%">{{reco.ad}}</td>
+						<td width="25%">AP</td><td width="25%">{{reco.ap}}</td>
+					</tr>
+				</table>
+			</div>
+			<div class="skillBox jca">
+				<div class="tabBox Skill">
+					<div class="headBox drc">
+						<div class="head" @click="$set(tab.skillTab, reco.id, 1)" :class="{ active: tab.skillTab[reco.id]==1 }">觉醒</div>
+						<div class="head" @click="$set(tab.skillTab, reco.id, 2)" :class="{ active: tab.skillTab[reco.id]==2 }">支援</div>
+						<div class="head" @click="$set(tab.skillTab, reco.id, 3)" :class="{ active: tab.skillTab[reco.id]==3 }">普通</div>
+						<div class="head" @click="$set(tab.skillTab, reco.id, 4)" :class="{ active: tab.skillTab[reco.id]==4 }">祝福</div>
 					</div>
-					<table width="100%" class="clrFont">
-						<tr>
-							<td width="25%">HP</td><td width="25%">{{reco.hp}}</td>
-							<td width="25%">HQ</td><td width="25%">{{reco.hq}}</td>
-						</tr>
-						<tr>
-							<td width="25%">AD</td><td width="25%">{{reco.ad}}</td>
-							<td width="25%">AP</td><td width="25%">{{reco.ap}}</td>
-						</tr>
-					</table>
-				</div>
-				<div class="skillBox jca">
-					<div class="tabBox Skill">
-						<div class="headBox drc">
-							<div class="head" @click="$set(tab.skillTab, reco.id, 1)" :class="{ active: tab.skillTab[reco.id]==1 }">觉醒</div>
-							<div class="head" @click="$set(tab.skillTab, reco.id, 2)" :class="{ active: tab.skillTab[reco.id]==2 }">支援</div>
-							<div class="head" @click="$set(tab.skillTab, reco.id, 3)" :class="{ active: tab.skillTab[reco.id]==3 }">普通</div>
-							<div class="head" @click="$set(tab.skillTab, reco.id, 4)" :class="{ active: tab.skillTab[reco.id]==4 }">祝福</div>
-						</div>
-						<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab[reco.id] == 1">
-							<div class="headBox jca">
-								<div
-									class="head"
-									v-for="(skill, si) of reco.skill.awaken"
-									@click="$set(tab.skillAwaken, reco.id, si)"
-									:class="{ active: tab.skillAwaken[reco.id] == si }"
-									:style="{ width: ((!skill.cond && si > 0)? '20%' : undefined) }"
-								>
-									<div class="sel" v-html="skill.cond || '无'"></div>
-								</div>
-							</div>
-							<div class="itemBox">
-								<div class="item drc jcs ais" v-for="(skill, si) of reco.skill.awaken" v-if="tab.skillAwaken[reco.id]==si">
-									<span class="clear"></span>
-									<span class="role sel" v-for="content of skill.content" v-html="content || '无'"></span>
-									<span class="clear"></span>
-								</div>
+					<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab[reco.id] == 1">
+						<div class="headBox jca">
+							<div
+								class="head"
+								v-for="(skill, si) of reco.skill.awaken"
+								@click="$set(tab.skillAwaken, reco.id, si)"
+								:class="{ active: tab.skillAwaken[reco.id] == si }"
+								:style="{ width: ((!skill.cond && si > 0)? '20%' : undefined) }"
+							>
+								<div class="sel" v-html="skill.cond || '无'"></div>
 							</div>
 						</div>
-						<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab[reco.id] == 2">
-							<div class="headBox jca">
-								<div
-									class="head"
-									v-for="(skill, si) of reco.skill.suport3"
-									@click="$set(tab.skillSuport3, reco.id, si)"
-									:class="{ active: tab.skillSuport3[reco.id] == si }"
-									:style="{ width: ((!skill.cond && si > 0)? '20%' : undefined) }"
-								>
-									<div class="sel" v-html="skill.cond || '无'"></div>
-								</div>
-							</div>
-							<div class="itemBox">
-								<div class="item drc jcs ais" v-for="(skill, si) of reco.skill.suport3" v-if="tab.skillSuport3[reco.id]==si">
-									<span class="clear"></span>
-									<span class="role sel" v-for="content of skill.content" v-html="content || '无'"></span>
-									<span class="clear"></span>
-								</div>
-							</div>
-						</div>
-						<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab[reco.id] == 3">
-							<div class="headBox jca">
-								<div
-									class="head"
-									v-for="(skill, si) of reco.skill.normal"
-									@click="$set(tab.skillNormal, reco.id, si)"
-									:class="{ active: tab.skillNormal[reco.id] == si }"
-									:style="{ width: ((!skill.cond && si > 0)? '20%' : undefined) }"
-								>
-									<div class="sel" v-html="skill.cond || '无'"></div>
-								</div>
-							</div>
-							<div class="itemBox">
-								<div class="item drc jcs ais" v-for="(skill, si) of reco.skill.normal" v-if="tab.skillNormal[reco.id]==si">
-									<span class="clear"></span>
-									<span class="role sel" v-for="content of skill.content" v-html="content || '无'"></span>
-									<span class="clear"></span>
-								</div>
-							</div>
-						</div>
-						<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab[reco.id] == 4">
-							<div class="headBox jca">
-								<div class="head active">
-									<div class="sel"></div>
-								</div>
-							</div>
-							<div class="itemBox">
-								<div class="item drc jcs ais">
-									<span class="clear"></span>
-									<span class="role sel">预计放祝福技能</span>
-									<span class="clear"></span>
-								</div>
+						<div class="itemBox">
+							<div class="item drc jcs ais" v-for="(skill, si) of reco.skill.awaken" v-if="tab.skillAwaken[reco.id]==si">
+								<span class="clear"></span>
+								<span class="role sel" v-for="content of skill.content" v-html="content || '无'"></span>
+								<span class="clear"></span>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="skillBox jca">
-					<div class="tabBox Skill">
-						<div class="headBox drc">
-							<div class="head" @click="$set(tab.skillTab2, reco.id, 1)" :class="{ active: tab.skillTab2[reco.id]==1 }">进化</div>
-							<div class="head" @click="$set(tab.skillTab2, reco.id, 2)" :class="{ active: tab.skillTab2[reco.id]==2 }">三围</div>
-							<div class="head" @click="$set(tab.skillTab2, reco.id, 3)" :class="{ active: tab.skillTab2[reco.id]==3 }">传记</div>
-							<div class="head" @click="$set(tab.skillTab2, reco.id, 4)" :class="{ active: tab.skillTab2[reco.id]==4 }">其他</div>
-						</div>
-						<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab2[reco.id] == 1">
-							<div class="headBox jca">
-								<div class="head active">
-									<div class="sel"></div>
-								</div>
-							</div>
-							<div class="itemBox">
-								<div class="item drc jcs ais">
-									<span class="clear"></span>
-									<span class="role sel">预计放进化素材</span>
-									<span class="clear"></span>
-								</div>
+					<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab[reco.id] == 2">
+						<div class="headBox jca">
+							<div
+								class="head"
+								v-for="(skill, si) of reco.skill.suport3"
+								@click="$set(tab.skillSuport3, reco.id, si)"
+								:class="{ active: tab.skillSuport3[reco.id] == si }"
+								:style="{ width: ((!skill.cond && si > 0)? '20%' : undefined) }"
+							>
+								<div class="sel" v-html="skill.cond || '无'"></div>
 							</div>
 						</div>
-						<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab2[reco.id] == 2">
-							<div class="headBox jca">
-								<div class="head active">
-									<div class="sel"></div>
-								</div>
-							</div>
-							<div class="itemBox">
-								<div class="item drc jcs ais">
-									<span class="clear"></span>
-									<span class="role sel">奶子！奶子！奶子！</span>
-									<span class="clear"></span>
-								</div>
+						<div class="itemBox">
+							<div class="item drc jcs ais" v-for="(skill, si) of reco.skill.suport3" v-if="tab.skillSuport3[reco.id]==si">
+								<span class="clear"></span>
+								<span class="role sel" v-for="content of skill.content" v-html="content || '无'"></span>
+								<span class="clear"></span>
 							</div>
 						</div>
-						<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab2[reco.id] == 3">
-							<div class="headBox jca">
-								<div class="head active">
-									<div class="sel"></div>
-								</div>
-							</div>
-							<div class="itemBox">
-								<div class="item drc jcs ais">
-									<span class="clear"></span>
-									<span class="role sel">其实传记很有意思的</span>
-									<span class="clear"></span>
-								</div>
+					</div>
+					<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab[reco.id] == 3">
+						<div class="headBox jca">
+							<div
+								class="head"
+								v-for="(skill, si) of reco.skill.normal"
+								@click="$set(tab.skillNormal, reco.id, si)"
+								:class="{ active: tab.skillNormal[reco.id] == si }"
+								:style="{ width: ((!skill.cond && si > 0)? '20%' : undefined) }"
+							>
+								<div class="sel" v-html="skill.cond || '无'"></div>
 							</div>
 						</div>
-						<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab2[reco.id] == 4">
-							<div class="headBox jca">
-								<div class="head active">
-									<div class="sel"></div>
-								</div>
+						<div class="itemBox">
+							<div class="item drc jcs ais" v-for="(skill, si) of reco.skill.normal" v-if="tab.skillNormal[reco.id]==si">
+								<span class="clear"></span>
+								<span class="role sel" v-for="content of skill.content" v-html="content || '无'"></span>
+								<span class="clear"></span>
 							</div>
-							<div class="itemBox">
-								<div class="item drc jcs ais">
-									<span class="clear"></span>
-									<span class="role sel">帮忙想想还有什么可以展示的？</span>
-									<span class="clear"></span>
-								</div>
+						</div>
+					</div>
+					<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab[reco.id] == 4">
+						<div class="headBox jca">
+							<div class="head active">
+								<div class="sel"></div>
+							</div>
+						</div>
+						<div class="itemBox">
+							<div class="item drc jcs ais">
+								<span class="clear"></span>
+								<span class="role sel">预计放祝福技能</span>
+								<span class="clear"></span>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="pageBox jcb">
-			<div class="prev" @click="query(pageNow-1)">上一页</div>
-			<div class="count">
-				第<input id="Page" ref="pager" class="Page" type="text" v-model.number="pageNow" @keyup.enter="query(pageNow)"></input>/&nbsp;<span id="RecordPageMax">{{pageMax}}</span>&nbsp;页
+			<div class="skillBox jca">
+				<div class="tabBox Skill">
+					<div class="headBox drc">
+						<div class="head" @click="$set(tab.skillTab2, reco.id, 1)" :class="{ active: tab.skillTab2[reco.id]==1 }">进化</div>
+						<div class="head" @click="$set(tab.skillTab2, reco.id, 2)" :class="{ active: tab.skillTab2[reco.id]==2 }">三围</div>
+						<div class="head" @click="$set(tab.skillTab2, reco.id, 3)" :class="{ active: tab.skillTab2[reco.id]==3 }">传记</div>
+						<div class="head" @click="$set(tab.skillTab2, reco.id, 4)" :class="{ active: tab.skillTab2[reco.id]==4 }">其他</div>
+					</div>
+					<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab2[reco.id] == 1">
+						<div class="headBox jca">
+							<div class="head active">
+								<div class="sel"></div>
+							</div>
+						</div>
+						<div class="itemBox">
+							<div class="item drc jcs ais">
+								<span class="clear"></span>
+								<span class="role sel">预计放进化素材</span>
+								<span class="clear"></span>
+							</div>
+						</div>
+					</div>
+					<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab2[reco.id] == 2">
+						<div class="headBox jca">
+							<div class="head active">
+								<div class="sel"></div>
+							</div>
+						</div>
+						<div class="itemBox">
+							<div class="item drc jcs ais">
+								<span class="clear"></span>
+								<span class="role sel">奶子！奶子！奶子！</span>
+								<span class="clear"></span>
+							</div>
+						</div>
+					</div>
+					<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab2[reco.id] == 3">
+						<div class="headBox jca">
+							<div class="head active">
+								<div class="sel"></div>
+							</div>
+						</div>
+						<div class="itemBox">
+							<div class="item drc jcs ais">
+								<span class="clear"></span>
+								<span class="role sel">其实传记很有意思的</span>
+								<span class="clear"></span>
+							</div>
+						</div>
+					</div>
+					<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab2[reco.id] == 4">
+						<div class="headBox jca">
+							<div class="head active">
+								<div class="sel"></div>
+							</div>
+						</div>
+						<div class="itemBox">
+							<div class="item drc jcs ais">
+								<span class="clear"></span>
+								<span class="role sel">帮忙想想还有什么可以展示的？</span>
+								<span class="clear"></span>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="next" @click="query(pageNow+1)">下一页</div>
 		</div>
 	</div>
 	<div class="tabBox dash" :class="{ open: showDash }">
@@ -563,6 +554,13 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="pageBox jcb">
+				<div class="prev" @click="query(pageNow-1)">上一页</div>
+				<div class="count">
+					第<input id="Page" ref="pager" class="Page" type="text" v-model.number="pageNow" @keyup.enter="query(pageNow)"></input>/&nbsp;<span id="RecordPageMax">{{pageMax}}</span>&nbsp;页
+				</div>
+				<div class="next" @click="query(pageNow+1)">下一页</div>
 			</div>
 		</div>
 	</div>

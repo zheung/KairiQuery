@@ -2,12 +2,6 @@
 	position: relative;
 }
 
-#sub__name__ .mainBox {
-	height: 100%;
-	width: 100%;
-
-	flex: 1
-}
 /*-------tabBox.dash-------*/
 #sub__name__ .tabBox.dash {
 	height: 100%;
@@ -15,14 +9,15 @@
 
 	position: absolute;
 	top: 0px;
-	right: -430px;
+	right: 0px;
 
 	overflow: hidden;
 
-	transition:right 0.5s;
+	transform: translate3d(430px, 0, 0);
+	transition:transform 0.7s;
 }
 #sub__name__ .tabBox.dash.open {
-	right: 0px;
+	transform: translate3d(0, 0, 0);
 }
 
 #sub__name__ .tabBox.dash>.sideBox {
@@ -83,14 +78,14 @@
 /*-------recoBox-------*/
 #sub__name__ .recoBox {
 	width: 100%;
-	height: 95%;
+	height: 100%;
 }
 #sub__name__ .recoBox>.reco {
 	border: 2px solid transparent;
 	border-bottom: 2px solid #222222;
 	border-radius: 4px;
 
-	width: 99%;
+	width: 100%;
 	height: 24%;
 	max-height: 150px;
 }
@@ -250,7 +245,7 @@
 	text-align: center;
 
 	color: #E0E2E4;
-	background-color: #293134;
+	background-color: transparent;
 
 	cursor: auto;
 }
