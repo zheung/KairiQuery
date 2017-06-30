@@ -54,10 +54,9 @@ window.app = new Vue({
 				window.ma.style.display = 'flex';
 
 				mtr = setInterval(function() {
-					if(mtrc++ == 3) mtrc = 0;
+					if(++mtrc == 4) mtrc = 0;
 
-					window.ma.innerHTML = '加载中'+ ['.', '..', '...'][mtrc];
-					console.log(window.ma.innerHTML);
+					window.ma.innerHTML = '加载中'+ ['', '.', '..', '...'][mtrc];
 				}, 500);
 
 				this.tab.map(function(t) {

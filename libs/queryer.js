@@ -11,8 +11,14 @@ module.exports = async($) => {
 			count = await cur.count(),
 			result = [];
 
-		for(let d of raw)
-			result.push(await rend(serv, d, paths));
+		for(let d of raw) {
+			let rd = await rend(serv, d, paths);
+
+			for(let st in rd.skill)
+				rd.skill[st] = rd.skill[st].reverse();
+
+			result.push(rd);
+		}
 
 		return [result, ~~page, Math.ceil(count / every)];
 	};

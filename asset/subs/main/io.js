@@ -10,9 +10,9 @@
 				if(!reco.skill.suport3) reco.skill.suport3 = [{ cond:' ', content:['无'] }];
 				Vue.set(sub.tab.skillTab, reco.id, (sub.suportMode ? 2 : (reco.job != '通用' ? 1 : 3)));
 				Vue.set(sub.tab.skillTab2, reco.id, 1);
-				Vue.set(sub.tab.skillAwaken, reco.id, reco.skill.awaken.length ? reco.skill.awaken.length-1 : 0);
-				Vue.set(sub.tab.skillNormal, reco.id, reco.skill.normal.length ? reco.skill.normal.length-1 : 0);
-				Vue.set(sub.tab.skillSuport3, reco.id, reco.skill.suport3.length ? reco.skill.suport3.length-1 : 0);
+				Vue.set(sub.tab.skillAwaken, reco.id, 0);
+				Vue.set(sub.tab.skillNormal, reco.id, 0);
+				Vue.set(sub.tab.skillSuport3, reco.id, 0);
 
 				if(sub.serv != 'kr')
 					Vue.set(sub.imgSrc, i, 'https://kairiquery.oss-cn-shenzhen.aliyuncs.com/'+sub.serv+'21/'+recos[i].id+'.png');

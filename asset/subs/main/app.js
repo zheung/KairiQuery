@@ -154,6 +154,16 @@ app.sub.__name__.init = function(cb) {
 				this.prioMode = !this.prioMode;
 
 				this.query();
+			},
+			clickSkillHead: function(reco, tab, skills, skill, si) {
+				this.$set(tab, reco.id, si);
+			},
+			clickSkillPrio: function(reco, tab, skills) {
+				var now = tab[reco.id];
+
+				if(++now == skills.length) now = 0;
+
+				this.$set(tab, reco.id, now);
 			}
 		}
 	});

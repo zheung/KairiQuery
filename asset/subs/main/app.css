@@ -165,43 +165,64 @@
 #sub__name__ .tabBox.Skill>.item {
 	width: 85%;
 	height: 95%;
+
 	border-radius: 4px;
-	overflow: hidden;
+	border: 2px solid #148474;
 }
 
 /*-------tabBox.SkillContent-------*/
-#sub__name__ .tabBox.SkillContent>.headBox {
-	width: 99%;
-	height: 30%;
+#sub__name__ .tabBox.SkillContent>.headBoxBig {
+	width: 100%;
+	height: 28px;
+
+	z-index: 2;
+
+	transition:all 0.4s;
 }
-#sub__name__ .tabBox.SkillContent>.headBox>.head {
+#sub__name__ .tabBox.SkillContent>.headBoxBig>.headBox {
 	width: 100%;
 	height: 100%;
 
-	border: 2px solid transparent;
-	border-radius: 4px 4px 0px 0px;
+	z-index: 2;
+
+	transition:all 0.4s;
+}
+#sub__name__ .tabBox.SkillContent>.headBoxBig>.headBox:hover>.head {
+	opacity: 100;
+}
+#sub__name__ .tabBox.SkillContent>.headBoxBig>.headBox>.head {
+	width: 100%;
+	height: 28px;
+
+	background-color: #148474;
 
 	text-align: center;
+
+	position: relative;
+
+	opacity: 0;
+
+	transform: translate3d(0, 0, 0);
+	transition:all 0.15s;
 }
-#sub__name__ .tabBox.SkillContent>.headBox>.head.active {
-	border: 2px solid #148474;
+#sub__name__ .tabBox.SkillContent>.headBoxBig>.headBox>.head.active {
+	opacity: 100;
+}
+#sub__name__ .tabBox.SkillContent>.headBoxBig>.headBox>.head>.cond {
+	width: 100%;
+}
+#sub__name__ .tabBox.SkillContent>.headBoxBig>.switch {
+	width: 40px;
+	height: 28px;
+
+	text-align: center;
 
 	background-color: #148474;
 }
-#sub__name__ .tabBox.SkillContent>.headBox>.head:first-child {
-	width: 24%;
-	margin-left: -2px;
-}
-#sub__name__ .tabBox.SkillContent>.headBox>.head:last-child {
-	width: 100%;
-	margin-right: -2px;
-}
 
 #sub__name__ .tabBox.SkillContent>.itemBox {
-	width: 99%;
-	height: 65%;
-
-	border: 2px solid #148474;
+	width: 100%;
+	height: 100%;
 
 	overflow: hidden;
 }
@@ -219,7 +240,7 @@
 }
 #sub__name__ .tabBox.SkillContent>.itemBox>.item>.clear {
 	display: block;
-	height: 4px;
+	height: 7px;
 }
 
 /*-------pageBox-------*/

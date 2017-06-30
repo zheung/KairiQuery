@@ -43,13 +43,13 @@ module.exports = async($) => {
 				let u = ~~cond.param1, d = ~~cond.param2;
 
 				if(u == d)
-					return `自身 | 发动时 | HP<br>${u}%`;
+					return `自身 | 发动时 | HP | ${u}%`;
 				else if(u && !d)
-					return `自身 | 发动时 | HP<br>${u}%或以上`;
+					return `自身 | 发动时 | HP | ${u}%或以上`;
 				else if(!u && d)
-					return `自身 | 发动时 | HP<br>${d}%或以下`;
+					return `自身 | 发动时 | HP | ${d}%或以下`;
 				else
-					return `自身 | 发动时 | HP<br>${u}%~${d}%`;
+					return `自身 | 发动时 | HP | ${u}%~${d}%`;
 			},
 			9: false,
 			10: async(card, skill, cond) => {
@@ -75,18 +75,18 @@ module.exports = async($) => {
 				if(d >= 28) d = 0;
 
 				if(u == d)
-					return `我方 | 出牌数<br>共${u}张`;
+					return `我方 | 出牌数 | 共${u}张`;
 				else if(u && !d)
-					return `我方 | 出牌数<br>${u}张或以上`;
+					return `我方 | 出牌数 | ${u}张或以上`;
 				else if(!u && d)
-					return `我方 | 出牌数<br>${d}张或以下`;
+					return `我方 | 出牌数 | ${d}张或以下`;
 				else
-					return `我方 | 出牌数<br>${u}~${d}张`;
+					return `我方 | 出牌数 | ${u}~${d}张`;
 			},
 			15: false,
 			16: false,
 			17: async(card, skill, cond) => {
-				return `我方 | ${cond.param1}Cost<br>${cond.param2}张或以上`;
+				return `我方 | ${cond.param1}Cost | ${cond.param2}张或以上`;
 			},
 			18: false,
 			19: false,
@@ -136,12 +136,12 @@ module.exports = async($) => {
 			35: async(card, skill, cond) => {
 				if(cond.param4 || cond.param5) L('Cond 35 New Type');
 
-				return `自身 | <samp title="卡组中的10张卡，包括手上的和不在手上的">卡牌</samp><br>${shower.attr[valuer.attr[cond.param1]]}元素 | ${cond.param3}张以上`;
+				return `自身 | <samp title="卡组中的10张卡，包括手上的和不在手上的">卡牌</samp> | ${shower.attr[valuer.attr[cond.param1]]}元素 | ${cond.param3}张以上`;
 			},
 			36: async(card, skill, cond) => {
 				if(cond.param4 || cond.param5) L('Cond 35 New Type');
 
-				return `自身 | <samp title="卡组中的10张卡，包括手上的和不在手上的">卡牌</samp><br>${shower.skillKind2[valuer.skillKind[cond.param1]]} | ${cond.param3}张以上`;
+				return `自身 | <samp title="卡组中的10张卡，包括手上的和不在手上的">卡牌</samp> | ${shower.skillKind2[valuer.skillKind[cond.param1]]} | ${cond.param3}张以上`;
 			},
 			37: async(card, skill, cond) => {
 				if(~~cond.param2) L('Cond 37 Double');
@@ -161,13 +161,13 @@ module.exports = async($) => {
 				if(d >= 28) d = 0;
 
 				if(u == d)
-					return `<samp title="任意一人满足条件即可">我方</samp> | HP<br>${u}%`;
+					return `<samp title="任意一人满足条件即可">我方</samp> | HP | ${u}%`;
 				else if(u && !d)
-					return `<samp title="任意一人满足条件即可">我方</samp> | HP<br>${u}%或以上`;
+					return `<samp title="任意一人满足条件即可">我方</samp> | HP | ${u}%或以上`;
 				else if(!u && d)
-					return `<samp title="任意一人满足条件即可">我方</samp> | HP<br>${d}%或以下`;
+					return `<samp title="任意一人满足条件即可">我方</samp> | HP | ${d}%或以下`;
 				else
-					return `<samp title="任意一人满足条件即可">我方</samp> | HP<br>${u}~${d}%`;
+					return `<samp title="任意一人满足条件即可">我方</samp> | HP | ${u}~${d}%`;
 			}
 		};
 	};
