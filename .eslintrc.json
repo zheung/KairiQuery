@@ -1,0 +1,22 @@
+{
+	"env": {
+		"node": true
+	},
+	"extends": "eslint:recommended",
+	"parserOptions": {
+		"ecmaVersion": 8
+	},
+	"rules": {
+		"indent": [ 1, "tab" ],
+		"linebreak-style": [ 2, "windows" ],
+		"quotes": [ 2, "single" ],
+		"semi": [ 2, "always" ],
+		"no-unused-vars": [ 1, { "vars": "all", "args": "after-used" } ],
+		"no-console": [ 1 ]
+	},
+	"globals": {
+		"L": true,
+
+		"fs": true
+	}
+}

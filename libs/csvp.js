@@ -66,8 +66,8 @@ module.exports = async(path, name, start, header, dicter, parser) => {
 		});
 
 		if(Object.keys(counter).length) {
-			_l(name+' counter:');
-			_l(counter);
+			L(name+' counter:');
+			L(counter);
 		}
 
 		return result;
