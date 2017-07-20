@@ -7,6 +7,13 @@ module.exports = async($, router) => {
 	router.get('/', async(ctx, next) => {
 		await next();
 
+		if(ctx.req.url == '/kq/') {
+			ctx.status = 301;
+			ctx.redirect('https://'+ctx.accept.headers.host+'/kq');
+
+			return;
+		}
+
 		let query = {};
 
 		if(ctx.originalUrl != ctx._matchedRoute)
