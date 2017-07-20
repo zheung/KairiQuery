@@ -1,11 +1,6 @@
 global.fs = require('fs');
 global.L = console.log;
 
-let render = {
-	filter: (cells) => { return !/^#/.test(cells[0]) && (~~cells[0] > 1000 || /[A-Z_]+/.test(cells[0])); },
-	rare: (cell, cells, dicter) => { return dicter.rare[`${cells[7]}${cells[22]}`]; }
-};
-
 (async() => {
 	let conf = require('./config'), mongo = require('./libs/db');
 
@@ -14,7 +9,11 @@ let render = {
 		valuer = require('./data/dict/valuer.json'),
 		shower = require('./data/dict/shower.json'),
 		merger = require('./libs/merger'),
-		marker = require('./data/mark/func');
+		marker = require('./data/mark/func'),
+		render = {
+		filter: (cells) => { return !/^#/.test(cells[0]) && (~~cells[0] > 1000 || /[A-Z_]+/.test(cells[0])); },
+		rare: (cell, cells, dicter) => { return dicter.rare[`${cells[7]}${cells[22]}`]; }
+	};
 
 	let db = await mongo('kq');
 
@@ -46,14 +45,4 @@ let render = {
 
 		process.exit();
 	}
-
-	// let coll = await db.coll('cn');
-	// let result = await coll.find({mark:'ur', evol:{$size:0}});
-	// for(let card of (await result.toArray())) {
-	// 	let skill = (card.skill.awaken[0]||card.skill.normal[0]);
-
-	// 	console.log([card.info.title, card.info.name, shower.job[skill.info.job], shower.attr[skill.info.attr], skill.info.cost, (card.info.star==1?'活动':'扭蛋')].join(','));
-	// }
-
-	// console.log('done');
 })();
