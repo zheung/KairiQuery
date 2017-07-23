@@ -17,6 +17,22 @@
 	"globals": {
 		"L": true,
 
-		"fs": true
+		"fs": true,
+
+		"mongo": true,
+		"csvp": true,
+
+		"conf": true,
+
+		"hacker": true,
+
+		"valuer": true,
+		"shower": true,
+		"dicter": true,
+
+		"merger": true,
+		"marker": true,
+		"funcer": true,
+		"render": true
 	}
 }

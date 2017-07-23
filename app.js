@@ -1,48 +1,48 @@
-global.fs = require('fs');
-global.L = console.log;
-
 (async() => {
-	let conf = require('./config'), mongo = require('./libs/db');
+	await require('./init')();
 
-	let csvp = require('./libs/csvp'),
-		hacker = require('./hack'),
-		valuer = require('./data/dict/valuer.json'),
-		shower = require('./data/dict/shower.json'),
-		merger = require('./libs/merger'),
-		marker = require('./data/mark/func'),
-		render = {
-		filter: (cells) => { return !/^#/.test(cells[0]) && (~~cells[0] > 1000 || /[A-Z_]+/.test(cells[0])); },
-		rare: (cell, cells, dicter) => { return dicter.rare[`${cells[7]}${cells[22]}`]; }
-	};
+	let raw = {}, serv = conf.serv, db = await mongo('kq');
 
-	let db = await mongo('kq');
+	for(let type of conf.types) {
+		let header = require(`./data/head/${type}.json`);
 
-	for(let serv of process.argv[2] ? [process.argv[2]] : conf.servs) {
-		let raw = {};
+		let result = await csvp(`./data/raw/${serv}-${type}.csv`, type, 1, await hacker(`header-${serv}-${type}`, header), valuer, funcer);
 
-		for(let type of conf.types) {
-			let header = require(`./data/head/${type}.json`);
+		L(`${serv}-${type}-${result.length}`);
 
-			let result = await csvp(`./data/raw/${serv}-${type}.csv`, type, 1, await hacker(`header-${serv}-${type}`, header), valuer, render);
+		if(result.length)
+			await (await db.coll(`${serv}${type}`)).renew(result);
 
-			console.log(`${serv}-${type}-${result.length}`);
-
-			if(result.length)
-				await (await db.coll(`${serv}${type}`)).renew(result);
-
-			raw[type] = result;
-		}
-
-		let data = merger(
-			valuer, marker(serv),
-			raw['card'], raw['skil'], raw['role'],
-			raw['rule'], raw['sups'], raw['supr'], raw['evol']
-		);
-
-		await (await db.coll(serv)).renew(data[0]);
-
-		console.log(data[0].length);
-
-		process.exit();
+		raw[type] = result;
 	}
+
+	let data = await merger(
+		valuer, marker(serv),
+		raw['card'], raw['skil'], raw['role'],
+		raw['rule'], raw['sups'], raw['supr'], raw['evol']
+	);
+
+	// card.rend = await render(conf.serv, card, [
+	// 	'id',
+	// 	['info.name', 'name'],
+	// 	['info.title', 'title'],
+	// 	['info.star', 'star', 'd.shower.star'],
+	// 	['figure.hp.max', 'hp'],
+	// 	['figure.ad.max', 'ad'],
+	// 	['figure.ap.max', 'ap'],
+	// 	['figure.hq.max', 'hq'],
+	// 	['skill.normal.0.info.cost', 'cost'],
+	// 	['skill.normal.0.info.job', 'job', 'd.shower.job'],
+	// 	['this', 'kind', 'f.skillKind'],
+	// 	['info.rare', 'rare', 'd.shower.rare'],
+	// 	['skill.normal.0.info.attr', 'attr', 'd.shower.attr'],
+	// 	['this', 'skill', 'f.skill'],
+	// 	['this', 'prio', 'f.prio']
+	// ]);
+
+	await (await db.coll(serv)).renew(data[0]);
+
+	L(data[0].length);
+
+	process.exit();
 })();

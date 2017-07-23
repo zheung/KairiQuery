@@ -2,21 +2,21 @@ let hasPlus = (cards, id, lastRare) => {
 	let card = cards[id], rare = card.info.rare;
 
 	if(!lastRare && (rare == 61 || rare == 62 || rare == 7))
-		return false;
+		return '0';
 	else if(card.info.rare == 7)
-		return true;
+		return '1';
 	else if(lastRare == card.info.rare)
 		return false;
 
 	for(let evol of card.evol)
 		if(evol.type == 'NORMAL' || evol.type == 'LIMIT')
 			if(hasPlus(cards, evol.target, card.info.rare))
-				return true;
+				return '1';
 
-	return false;
+	return '0';
 };
 
-module.exports = (valuer, marker, cards, skils, roles, rules, supss, suprs, evols) => {
+module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs, evols) => {
 	let result = [[], {}],
 		dictSkil = {}, dictRole = {}, dictRule = {}, dictCard = {},
 		dictSups = {}, dictSupr = {}, dictEvol = {};
@@ -94,6 +94,12 @@ module.exports = (valuer, marker, cards, skils, roles, rules, supss, suprs, evol
 		card.skill.suport2 = dictSups[card.skill.suport ? card.skill.suport[2] : undefined] || [];
 		card.skill.suport3 = dictSups[card.skill.suport ? card.skill.suport[3] : undefined] || [];
 
+		if(dictSkil[card.skill.call]) {
+			L();
+		}
+
+		card.skill.call = dictSkil[card.skill.call] || [];
+
 		delete card.skill.suport;
 
 		card.evol = dictEvol[card.id] || [];
@@ -105,19 +111,7 @@ module.exports = (valuer, marker, cards, skils, roles, rules, supss, suprs, evol
 	}
 
 	for(let card of cards) {
-		if(hasPlus(dictCard, card.id))
-			card.info.rare = ~~(card.info.rare+'0');
-
-		let prioSorter1 = (a, b) => { return b.prio.pvp - a.prio.pvp; }, prioSorter2 = (a, b) => { return b.prio.pve - a.prio.pve; },
-			sm1 = card.skill.awaken.concat().sort(prioSorter1).concat(card.skill.normal.concat().sort(prioSorter1))[0],
-			sm2 = card.skill.awaken.concat().sort(prioSorter2).concat(card.skill.normal.concat().sort(prioSorter2))[0];
-
-		card.extra = {
-			prio: {
-				pvp: sm1.prio.pvp,
-				pve: sm2.prio.pve
-			}
-		};
+		card.info.rare = ~~(card.info.rare+hasPlus(dictCard, card.id));
 	}
 
 	return result;
