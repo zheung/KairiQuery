@@ -51,7 +51,7 @@
 								class="switch"
 								@click.stop="clickSkillPrio(reco, tab.skillAwaken, reco.skill.awaken)"
 							>
-								<samp class="jca curp" title="条件发动优先级：数值值越大优先级月高。点击切换条件">
+								<samp class="jca curp" title="条件发动优先级：数值值越大优先级越高。点击切换条件">
 									{{reco.skill.awaken[tab.skillAwaken[reco.id]].prio+1}}
 									<i class="fa fa-refresh"></i>
 								</samp>
@@ -82,7 +82,7 @@
 								class="switch"
 								@click.stop="clickSkillPrio(reco, tab.skillSuport3, reco.skill.suport3)"
 							>
-								<samp class="jca curp" title="条件发动优先级：数值值越大优先级月高。点击切换条件">
+								<samp class="jca curp" title="条件发动优先级：数值值越大优先级越高。点击切换条件">
 									{{reco.skill.suport3[tab.skillSuport3[reco.id]].prio+1 || '0'}}
 									<i class="fa fa-refresh"></i>
 								</samp>
