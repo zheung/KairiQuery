@@ -1,19 +1,21 @@
-let hasPlus = (cards, id, lastRare) => {
+let hasPlus = (cards, id, ids = []) => {
 	let card = cards[id], rare = card.info.rare;
 
-	if(!lastRare && (rare == 61 || rare == 62 || rare == 7))
-		return '0';
-	else if(card.info.rare == 7)
-		return '1';
-	else if(lastRare == card.info.rare)
-		return false;
+	if(ids.indexOf(id)+1)
+		return 0;
+	else if(card.info.plus && !ids.length)
+		return card.info.plus+1;
+	else if(card.info.plus || rare == 7 || rare == 71)
+		return 1;
+	else
+		for(let evol of card.evol) {
+			if(evol.type == 'NORMAL')
+				return hasPlus(cards, evol.target, (ids.push(id) && 0) || ids);
+			else if(evol.type == 'LIMIT')
+				return 1;
+		}
 
-	for(let evol of card.evol)
-		if(evol.type == 'NORMAL' || evol.type == 'LIMIT')
-			if(hasPlus(cards, evol.target, card.info.rare))
-				return '1';
-
-	return '0';
+	return 0;
 };
 
 module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs, evols) => {
@@ -94,10 +96,6 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 		card.skill.suport2 = dictSups[card.skill.suport ? card.skill.suport[2] : undefined] || [];
 		card.skill.suport3 = dictSups[card.skill.suport ? card.skill.suport[3] : undefined] || [];
 
-		if(dictSkil[card.skill.call]) {
-			L();
-		}
-
 		card.skill.call = dictSkil[card.skill.call] || [];
 
 		delete card.skill.suport;
@@ -111,7 +109,25 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 	}
 
 	for(let card of cards) {
-		card.info.rare = ~~(card.info.rare+hasPlus(dictCard, card.id));
+		card.info.rare = ~~(`${card.info.rare}${hasPlus(dictCard, card.id)}`);
+
+		card.rend = await render(conf.serv, card, [
+			'id',
+			['info.name', 'name'],
+			['info.title', 'title'],
+			['info.star', 'star', 'd.shower.star'],
+			['figure.hp.max', 'hp'],
+			['figure.ad.max', 'ad'],
+			['figure.ap.max', 'ap'],
+			['figure.hq.max', 'hq'],
+			['skill.normal.0.info.cost', 'cost'],
+			['skill.normal.0.info.job', 'job', 'd.shower.job'],
+			['this', 'kind', 'f.skillKind'],
+			['info.rare', 'rare', 'd.shower.rare'],
+			['skill.normal.0.info.attr', 'attr', 'd.shower.attr'],
+			['this', 'skill', 'f.skill'],
+			['this', 'prio', 'f.prio']
+		]);
 	}
 
 	return result;
