@@ -18,7 +18,7 @@ module.exports = async(dbname) => {
 					return await coll.drop();
 				},
 				insert: async(arr) => {
-					return coll.insertMany(arr);
+					return await coll.insertMany(arr);
 				},
 				renew: async(arr) => {
 					try {

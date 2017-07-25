@@ -16,13 +16,20 @@
 		raw[type] = result;
 	}
 
-	let data = await merger(
+	let col = await (await db.coll(serv)),
+		data = await merger(
 		valuer, marker(serv),
 		raw['card'], raw['skil'], raw['role'],
 		raw['rule'], raw['sups'], raw['supr'], raw['evol']
-	);
+	), arr = data[0];
 
-	await (await db.coll(serv)).renew(data[0]);
+	col.drop();
+
+	for(let i = 0,len = arr.length; i<len; i+=100){
+		L(i, len);
+
+		await col.insert(arr.slice(i, i+100));
+	}
 
 	L(data[0].length);
 

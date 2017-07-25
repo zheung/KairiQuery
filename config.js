@@ -1,5 +1,5 @@
 module.exports = {
-	servs: 'tw',
+	servs: 'cn',
 	types: [
 		'card',
 		'evol',
