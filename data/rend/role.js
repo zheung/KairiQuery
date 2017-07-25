@@ -232,6 +232,14 @@ module.exports = async(serv) => {
 
 			return `${target} | ${p[1]}回合 | 感电 | ${Math.ceil(p[5]/10)}+${p[6]/10}%${show(p[8])}`;
 		},
+		73: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst),
+				turn = (~~p.param1 == ~~p.param2) ? `${~~p.param1}回合` : `${~~p.param1}~${~~p.param2}回合`,
+				num = (~~p.param3 == ~~p.param4) ? `${~~p.param3}张` : `${~~p.param3}~${~~p.param4}张`,
+				cost = (~~p.param7 == ~~p.param8) ? `${~~p.param7}张` : `${~~p.param7}~${~~p.param8}张`;
+
+			return `${target} | 封印 | ${show(p[5])}类型${show(p[5])}元素 | ${cost} | ${turn}${num}`;
+		},
 		46: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 

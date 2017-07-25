@@ -48,6 +48,7 @@
 		"PER_SUCCESS": 10
 	},
 	"skillKind": {
+		"ALL": 0,
 		"ATTACK": 1,
 		"SORCERY": 2,
 		"RECOVERY": 3,
@@ -57,6 +58,7 @@
 		"SPECIAL": 7
 	},
 	"attr": {
+		"ALL": 0,
 		"FIRE": 1,
 		"ICE": 2,
 		"WIND": 3,
