@@ -1,9 +1,9 @@
 module.exports = {
 	rare: [
-		{ on: false, type: 'rare', g: 0, x: 0, y: 32, text: 'MR' },
-		{ on: false, type: 'rare', g: 0, x: 0, y: 64, text: 'MR+' },
-		{ on: false, type: 'rare', g: 0, x: 0, y: 128, text: 'MR++' },
 		{ on: false, type: 'rare', g: 0, x: 0, y: 256, text: 'MMR' },
+		{ on: false, type: 'rare', g: 0, x: 0, y: 128, text: 'MR++' },
+		{ on: false, type: 'rare', g: 0, x: 0, y: 64, text: 'MR+' },
+		{ on: false, type: 'rare', g: 0, x: 0, y: 32, text: 'MR' },
 		{ on: false, type: 'rare', g: 1, x: 0, y: 1, text: 'N' },
 		{ on: false, type: 'rare', g: 1, x: 0, y: 2, text: 'HN' },
 		{ on: false, type: 'rare', g: 1, x: 0, y: 4, text: 'R' },
@@ -11,10 +11,10 @@ module.exports = {
 		{ on: false, type: 'rare', g: 1, x: 0, y: 16, text: 'UR' }
 	],
 	job: [
-		{ on: false, type: 'job', g: 0, x: 1, y: 1, text: '兵佣' },
-		{ on: false, type: 'job', g: 0, x: 1, y: 2, text: '豪富' },
-		{ on: false, type: 'job', g: 0, x: 1, y: 4, text: '贼盗' },
-		{ on: false, type: 'job', g: 0, x: 1, y: 8, text: '姬歌' },
+		{ on: false, type: 'job', g: 0, x: 1, y: 1, text: '佣兵' },
+		{ on: false, type: 'job', g: 0, x: 1, y: 2, text: '富豪' },
+		{ on: false, type: 'job', g: 0, x: 1, y: 4, text: '盗贼' },
+		{ on: false, type: 'job', g: 0, x: 1, y: 8, text: '歌姬' },
 		{ on: false, type: 'job', g: 0, x: 1, y: 16, text: '通用' }
 	],
 	cost: [
@@ -24,7 +24,7 @@ module.exports = {
 		{ on: false, type: 'cost', g: 0, x: 2, y: 8, text: '4' },
 		{ on: false, type: 'cost', g: 0, x: 2, y: 16, text: '5' },
 		{ on: false, type: 'cost', g: 0, x: 2, y: 32, text: '9' },
-		{ on: false, type: 'cost', g: 0, x: 2, y: 64, text: '11' }
+		// { on: false, type: 'cost', g: 0, x: 2, y: 64, text: '11' }
 	],
 	attr: [
 		{ on: false, type: 'attr', g: 0, x: 3, y: 1, text: '火' },
@@ -42,6 +42,13 @@ module.exports = {
 		{ on: false, type: 'attr', g: 2, x: 3, y: 2048, text: '冰暗' },
 		{ on: false, type: 'attr', g: 2, x: 3, y: 4096, text: '风光' },
 		{ on: false, type: 'attr', g: 2, x: 3, y: 8192, text: '风暗' }
+	],
+	attrSingle: [
+		{ on: false, type: 'attr', g: 0, x: 50, y: 1, text: '火' },
+		{ on: false, type: 'attr', g: 0, x: 50, y: 2, text: '冰' },
+		{ on: false, type: 'attr', g: 0, x: 50, y: 4, text: '风' },
+		{ on: false, type: 'attr', g: 0, x: 50, y: 8, text: '光' },
+		{ on: false, type: 'attr', g: 0, x: 50, y: 16, text: '暗' }
 	],
 	skillKind: [
 		{ on: false, type: 'skillKind', g: 0, x: 4, y: 1, text: '物理' },

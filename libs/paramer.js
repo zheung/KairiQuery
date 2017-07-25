@@ -1,7 +1,10 @@
 module.exports = async($) => {
 	return {
 		main: async(conds = {}) => {
-			let dict = $.mark, mark = { $and: [ { $where: 'true'} ] };
+			let dict = $.mark,
+				word = conds.word, mark = { $and: [ { $where: 'true'} ] },
+				cond1,
+				cond2 = { $or: [ { $where: conds.zero.toString() }, mark ] };
 
 			conds.mark.map((bit, x) => {
 				let map = dict[x], and = { mark: {$in: []} }, all = and.mark.$in;
@@ -15,12 +18,17 @@ module.exports = async($) => {
 				}
 			});
 
+			if(/^\d+$/.test(word))
+				cond1 = { 'id': ~~word };
+			else if (/^\$/.test(word))
+				cond1 = { mark: {$in: [word.match(/^\$(.*)/)[1]] } };
+			else
+				cond1 = {
+					$or: [ {'info.name': RegExp(`.*${word || ''}.*`)}, {'info.title': RegExp(`.*${word || ''}.*`)} ]
+				};
+
 			return {
-				$and: [ {
-					$or: [ {'info.name': RegExp(`.*${conds.word || ''}.*`)}, {'info.title': RegExp(`.*${conds.word || ''}.*`)} ]
-				}, {
-					$or: [ {$where: `${conds.zero}`}, mark ]
-				}]
+				$and: [ cond1, cond2 ]
 			};
 		},
 		gur: async() => {
