@@ -28,7 +28,7 @@
 	for(let i = 0,len = arr.length; i<len; i+=100){
 		L(i, len);
 
-		await col.insert(arr.slice(i, i+100));
+		L(await col.insert(arr.slice(i, i+100)));
 	}
 
 	L(data[0].length);
