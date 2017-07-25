@@ -1,18 +1,14 @@
 module.exports = async($) => {
-	return async(paths = [], query = {}, sort = {}, serv = 'cn', page = 1, every = 4) => {
-		if(!paths.length) return [[], 0, 0];
-
-		let rend = $.rend;
-
+	return async(query = {}, sort = {}, serv = 'cn', page = 1, every = 4) => {
 		let coll = await $.db.coll(`${serv}`), cur = await coll.find(query),
-			raw = await cur.sort(sort)
+			raw = await cur.project({rend:1}).sort(sort)
 				.skip(every * (page - 1)).limit(every)
 				.toArray(),
 			count = await cur.count(),
 			result = [];
 
 		for(let d of raw) {
-			let rd = await rend(serv, d, paths);
+			let rd = d.rend;
 
 			for(let st in rd.skill)
 				rd.skill[st] = rd.skill[st].reverse();

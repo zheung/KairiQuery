@@ -31,22 +31,6 @@ module.exports = async($) => {
 
 						let mark = conds.mark,
 							result = await queryer(
-								[
-									'id',
-									['info.name', 'name'],
-									['info.title', 'title'],
-									['info.star', 'star', 'd.shower.star'],
-									['figure.hp.max', 'hp'],
-									['figure.ad.max', 'ad'],
-									['figure.ap.max', 'ap'],
-									['figure.hq.max', 'hq'],
-									['skill.normal.0.info.cost', 'cost'],
-									['skill.normal.0.info.job', 'job', 'd.shower.job'],
-									['this', 'kind', 'f.skillKind'],
-									['info.rare', 'rare', 'd.shower.rare'],
-									['skill.normal.0.info.attr', 'attr', 'd.shower.attr'],
-									['this', 'skill', 'f.skill']
-								],
 								await paramer.main(conds),
 								conds.prio ? { 'extra.prio.pvp': 1 } : {},
 								conds.serv, conds.page, $.conf.pageEvery
@@ -61,18 +45,6 @@ module.exports = async($) => {
 				gcur: {
 					query: async(conds) => {
 						let result = await queryer(
-								[
-									'id',
-									['info.name', 'name'],
-									['info.title', 'title'],
-									['info.star', 'star', 'd.shower.star'],
-									['skill.normal.0.info.cost', 'cost'],
-									['skill.normal.0.info.job', 'job', 'd.shower.job'],
-									['this', 'kind', 'f.skillKind'],
-									['info.rare', 'rare', 'd.shower.rare'],
-									['skill.normal.0.info.attr', 'attr', 'd.shower.attr'],
-									['this', 'skill', 'f.skill']
-								],
 								paramer.gur(conds), {}, conds.serv, conds.page, conds.every
 							);
 
