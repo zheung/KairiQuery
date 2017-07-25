@@ -66,7 +66,19 @@ module.exports = async() => {
 		},
 		11: false,
 		12: false,
-		13: false,
+		13: async(card, skill, cond) => {
+			let u = ~~cond.param1, d = ~~cond.param2;
+			if(d >= 28) d = 0;
+
+			if(u == d)
+				return `自身 | 出牌数 | 共${u}张`;
+			else if(u && !d)
+				return `自身 | 出牌数 | ${u}张或以上`;
+			else if(!u && d)
+				return `自身 | 出牌数 | ${d}张或以下`;
+			else
+				return `自身 | 出牌数 | ${u}~${d}张`;
+		},
 		14: async(card, skill, cond) => {
 			let u = ~~cond.param1, d = ~~cond.param2;
 			if(d >= 28) d = 0;
@@ -133,12 +145,12 @@ module.exports = async() => {
 		35: async(card, skill, cond) => {
 			if(cond.param4 || cond.param5) L('Cond 35 New Type');
 
-			return `自身 | <samp title="卡组中的10张卡，包括手上的和不在手上的">卡牌</samp> | ${shower.attr[valuer.attr[cond.param1]]}元素 | ${cond.param3}张以上`;
+			return `自身 | <samp title="卡组中的10张卡，包括手上的和不在手上的">卡组</samp> | ${shower.attr[valuer.attr[cond.param1]]}元素 | ${cond.param3}张以上`;
 		},
 		36: async(card, skill, cond) => {
 			if(cond.param4 || cond.param5) L('Cond 35 New Type');
 
-			return `自身 | <samp title="卡组中的10张卡，包括手上的和不在手上的">卡牌</samp> | ${shower.skillKind2[valuer.skillKind[cond.param1]]} | ${cond.param3}张以上`;
+			return `自身 | <samp title="卡组中的10张卡，包括手上的和不在手上的">卡组</samp> | ${shower.skillKind2[valuer.skillKind[cond.param1]]} | ${cond.param3}张以上`;
 		},
 		37: async(card, skill, cond) => {
 			if(~~cond.param2) L('Cond 37 Double');
