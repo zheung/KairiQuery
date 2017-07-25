@@ -136,7 +136,19 @@ module.exports = async() => {
 		},
 		27: false,
 		28: false,
-		29: false,
+		29: async(card, skill, cond) => {
+			let u = ~~cond.param4, d = ~~cond.param5;
+			if(d >= 28) d = 0;
+
+			if(u == d)
+				return `我方 | 出牌数 | 分类: ${shower.tag[cond.param1]} | 共${u}张`;
+			else if(u && !d)
+				return `我方 | 出牌数 | 分类: ${shower.tag[cond.param1]} | ${u}张或以上`;
+			else if(!u && d)
+				return `我方 | 出牌数 | 分类: ${shower.tag[cond.param1]} | ${d}张或以下`;
+			else
+				return `我方 | 出牌数 | 分类: ${shower.tag[cond.param1]} | ${u}~${d}张`;
+		},
 		30: false,
 		31: false,
 		32: false,
@@ -177,6 +189,19 @@ module.exports = async() => {
 				return `<samp title="任意一人满足条件即可">我方</samp> | HP | ${d}%或以下`;
 			else
 				return `<samp title="任意一人满足条件即可">我方</samp> | HP | ${u}~${d}%`;
+		},
+		60: async(card, skill, cond) => {
+			let u = ~~cond.param2, d = ~~cond.param3;
+			if(d >= 28) d = 0;
+
+			if(u == d)
+				return `自身 | 祝福 | ${shower.attr[valuer.attr[cond.param1]]}元素 | 共${u}张`;
+			else if(u && !d)
+				return `自身 | 祝福 | ${shower.attr[valuer.attr[cond.param1]]}元素 | ${u}张或以上`;
+			else if(!u && d)
+				return `自身 | 祝福 | ${shower.attr[valuer.attr[cond.param1]]}元素 | ${d}张或以下`;
+			else
+				return `自身 | 祝福 | ${shower.attr[valuer.attr[cond.param1]]}元素 | ${u}~${d}张`;
 		}
 	};
 };
