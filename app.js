@@ -10,8 +10,8 @@
 
 		L(`${serv}-${type}-${result.length}`);
 
-		if(result.length)
-			await (await db.coll(`${serv}${type}`)).renew(result);
+		// if(result.length)
+		// 	await (await db.coll(`${serv}${type}`)).renew(result);
 
 		raw[type] = result;
 	}
@@ -23,12 +23,12 @@
 		raw['rule'], raw['sups'], raw['supr'], raw['evol']
 	), arr = data[0];
 
+	L('merge done');
+
 	col.drop();
 
-	for(let i = 0,len = arr.length; i<len; i+=100){
-		L(i, len);
-
-		L(await col.insert(arr.slice(i, i+100)));
+	for(let i = 0,len = arr.length; i<len; i+=50){
+		L(i, len, (await col.insert(arr.slice(i, i+50))).insertedCount);
 	}
 
 	L(data[0].length);
