@@ -19,16 +19,21 @@ module.exports = async(serv) => {
 				${show(p[6])}的${p[3]/10}%
 				${(p[7] / (serv=='ps'?1:10) != 15 ? ` | ${~~p[7] / 10}%高暴击率` : '')}`;
 		},
+		2: false,
+		3: false,
+		4: false,
 		5: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
 			return `${target} | 恢复生命 | 造成伤害的${p[1]}%`;
 		},
+		6: false,
 		7: async(card, skill, role) => {
 			let p = role.params;
 
 			return `附加伤害 | 累计损失生命的${p[1]}% | 上限：${show(p[3])}的${p[4]}%`;
 		},
+		8: false,
 		9: async(card, skill, role) => {
 			let p = role.params;
 
@@ -39,6 +44,7 @@ module.exports = async(serv) => {
 
 			return `附加伤害 | ${show(p[5])}的${p[3]/10}%`;
 		},
+		11: () => { return '免疫元素克制'; },
 		12: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
@@ -47,6 +53,8 @@ module.exports = async(serv) => {
 			return `${target} | 恢复生命 | ${base ? `<samp title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</samp>+` : ''}
 				${show(p[5])}的${p[3]/10}%`;
 		},
+		13: false,
+		14: false,
 		15: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
@@ -62,12 +70,17 @@ module.exports = async(serv) => {
 				<samp title="等级成长：${p[2]}+${p[3]/1000}*等级">${base}</samp>+
 				${p[4]/10}%${show(p[6])}`;
 		},
+		17: false,
+		18: false,
+		19: false,
+		20: false,
 		21: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
 			return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
 				<samp title="等级成长：${p[6]}*等级">${p[6]*card.info.max.level}</samp>+${show(p[3])}的${p[4]/10}%`;
 		},
+		22: false,
 		23: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
@@ -76,10 +89,46 @@ module.exports = async(serv) => {
 			return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
 				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
 		},
+		24: false,
+		25: false,
 		26: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
 			return `${target} | ${p[1]}回合 | 提升${show(p[4])}${show(p[5])}伤害 | ${p[2]/10}%`;
+		},
+		27: false,
+		28: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			let db, db1 = show(p[3]) , db2 = show(p[4]);
+
+			if(db2 && db1 != db2) db = `${db1}、${db2}`;
+			else db = db1;
+
+			return `${target} | 解除${db}状态`;
+		},
+		29: false,
+		30: false,
+		31: false,
+		32: false,
+		33: false,
+		34: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			return `${target} | ${p[1]}回合 | 提升暴击率 | ${p[2] / 10}%`;
+		},
+		35: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			let base = Math.ceil(~~p[2] + ~~p[5] * card.info.max.level);
+
+			return `${target} | ${p[1]}回合 | 追加${show(p[6])}元素伤害 |\x20
+				<samp title="等级成长：${p[2]}+${p[5]}*等级">${base}</samp>点`;
+		},
+		36: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			return `${target} | ${p[1]}回合 | 减免所受伤害的${p[2]/10}%`;
 		},
 		37: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
@@ -89,6 +138,7 @@ module.exports = async(serv) => {
 			return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
 				<samp title="等级成长：${p[5]/1000}+${p[6]}*等级">${base}</samp>+${p[4]/10}%${show(p[3])}`;
 		},
+		38: false,
 		39: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
@@ -97,11 +147,41 @@ module.exports = async(serv) => {
 			return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
 				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
 		},
+		40: false,
 		41: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
 			return `${target} | ${p[1]}回合 | 受到伤害的${p[4]}% | 转换为${show(p[2])} | 上限：${p[5]}`;
 		},
+		42: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			return `${target} | ${p[1]}回合 | 提升封印抗性 | ${p[2]}%`;
+		},
+		43: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			return `${target} | ${p[1]}回合 | ${p[4]}层 | ${show(p[5])}护盾 | 伤害${p[2]}点以下无效化`;
+		},
+		44: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			return `${target} | ${p[1]}回合 | ${p[4]}层 | ${show(p[6])}元素${show(p[5])}护盾 | 伤害${p[2]}点以下无效化`;
+		},
+		45: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			if(p[4][1] || p[5][1] != 3) L('New Params Skill 64');
+
+			return `${target} | ${p[1]}回合 | 使敌方攻击指向自身 | 减免所受伤害的${p[2]/10}%`;
+		},
+		46: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			return `${target} | ${p[1]}回合 | 提升黑暗抗性 | ${p[2]}%`;
+		},
+		47: false,
+		48: false,
 		49: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
@@ -114,6 +194,10 @@ module.exports = async(serv) => {
 
 			return `${target} | 解除所有BUFF`;
 		},
+		51: false,
+		52: false,
+		53: false,
+		54: false,
 		55: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
@@ -128,6 +212,9 @@ module.exports = async(serv) => {
 			return `${target} | ${p[1]}回合 | 降低${show(p[2])} |\x20
 				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
 		},
+		57: false,
+		58: false,
+		59: false,
 		60: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
@@ -136,6 +223,9 @@ module.exports = async(serv) => {
 			return `${target} | ${p[1]}回合 | 降低${show(p[2])} |\x20
 				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
 		},
+		61: false,
+		62: false,
+		63: false,
 		64: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
@@ -161,72 +251,7 @@ module.exports = async(serv) => {
 
 			return `${target} | ${p[1]}回合 | 裂风 | ${Math.ceil(p[5]/10)}+${p[6]/10}%${show(p[8])}`;
 		},
-		81: async(card, skill, role, skillFirst) => {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | 属性变更 | ${show(p[2])}`;
-		},
-		82: async(card, skill, role, skillFirst) => {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | 抽卡+${p[1]}`;
-		},
-		28: async(card, skill, role, skillFirst) => {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			let db, db1 = show(p[3]) , db2 = show(p[4]);
-
-			if(db2 && db1 != db2) db = `${db1}、${db2}`;
-			else db = db1;
-
-			return `${target} | 解除${db}状态`;
-		},
-		42: async(card, skill, role, skillFirst) => {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | 提升封印抗性 | ${p[2]}%`;
-		},
-		11: () => { return '免疫元素克制'; },
-		87: async(card, skill, role, skillFirst) => {
-			let target = showTarget(skill, role, skillFirst);
-
-			if(role.params[1] != 9999) L('New Params Skill 61');
-
-			return `${target} | 显示自身的元素`;
-		},
-		43: async(card, skill, role, skillFirst) => {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | ${p[4]}层 | ${show(p[5])}护盾 | 伤害${p[2]}点以下无效化`;
-		},
-		45: async(card, skill, role, skillFirst) => {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			if(p[4][1] || p[5][1] != 3) L('New Params Skill 64');
-
-			return `${target} | ${p[1]}回合 | 使敌方攻击指向自身 | 减免所受伤害的${p[2]/10}%`;
-		},
-		74: async(card, skill, role, skillFirst) => {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | 附加伤害 | 所受伤害的${p[2]/10}%`;
-		},
-		91: async(card, skill, role, skillFirst) => {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | <samp title="发动条件：处于${show(p[6])}状态">${show(p[6])}</samp> |\x20
-				回合+${p[1]} | 伤害提升${p[2]}%`;
-		},
-		34: async(card, skill, role, skillFirst) => {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | 提升暴击率 | ${p[2] / 10}%`;
-		},
-		92: async(card, skill, role, skillFirst) => {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | 抽卡-${p[1]}`;
-		},
+		71: false,
 		72: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
@@ -240,10 +265,16 @@ module.exports = async(serv) => {
 
 			return `${target} | 封印 | ${show(p[5])}类型${show(p[5])}元素 | ${cost} | ${turn}${num}`;
 		},
-		46: async(card, skill, role, skillFirst) => {
+		74: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${p[1]}回合 | 提升黑暗抗性 | ${p[2]}%`;
+			return `${target} | ${p[1]}回合 | 标记 | 受到攻击时 | 伤害提升${p[2]/10}%`;
+		},
+		75: false,
+		76: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			return `${target} | ${p[1]}回合 | COST封印 | ${p[2]}点`;
 		},
 		77: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
@@ -255,18 +286,69 @@ module.exports = async(serv) => {
 			return `${target} | ${p[1]}回合 | 陷阱 | ${num}张 |\x20
 				<samp title="时机：我方卡牌全部发动后，敌方行动前">使用后受到伤害${p[4]}点</samp>`;
 		},
-		76: async(card, skill, role, skillFirst) => {
+		78: false,
+		79: false,
+		80: false,
+		81: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${p[1]}回合 | COST封印 | ${p[2]}点`;
+			return `${target} | ${p[1]}回合 | 属性变更 | ${show(p[2])}`;
 		},
-		35: async(card, skill, role, skillFirst) => {
+		82: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[2] + ~~p[5] * card.info.max.level);
+			return `${target} | 抽卡+${p[1]}`;
+		},
+		83: false,
+		84: false,
+		85: false,
+		86: false,
+		87: async(card, skill, role, skillFirst) => {
+			let target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${p[1]}回合 | 追加${show(p[6])}元素伤害 |\x20
-				<samp title="等级成长：${p[2]}+${p[5]}*等级">${base}</samp>点`;
+			if(role.params[1] != 9999) L('New Params Skill 61');
+
+			return `${target} | 显示自身的元素`;
+		},
+		88: false,
+		90: false,
+		91: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			return `${target} | <samp title="发动条件：处于${show(p[6])}状态">${show(p[6])}</samp> |\x20
+				回合+${p[1]} | 伤害提升${p[2]}%`;
+		},
+		92: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			return `${target} | 抽卡-${p[1]}`;
+		},
+		93: false,
+		94: false,
+		95: false,
+		96: false,
+		97: false,
+		98: false,
+		99: false,
+		100: false,
+		101: false,
+		102: false,
+		103: false,
+		104: false,
+		105: false,
+		106: false,
+		107: false,
+		108: false,
+		109: false,
+		110: false,
+		111: false,
+		112: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			let base = Math.ceil(~~p[4] + ~~p[5] / 1000 * card.info.max.level);
+
+			return `${target} | ${p[1]}回合 | 降低${show(p[6])}元素耐性 |\x20
+				<samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>点`;
 		},
 		113: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
@@ -276,14 +358,9 @@ module.exports = async(serv) => {
 			return `${target} | ${p[1]}回合 | 提升${show(p[6])}元素耐性 |\x20
 				<samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>点`;
 		},
-		112: async(card, skill, role, skillFirst) => {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			let base = Math.ceil(~~p[4] + ~~p[5] / 1000 * card.info.max.level);
-
-			return `${target} | ${p[1]}回合 | 降低${show(p[6])}元素耐性 |\x20
-				<samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>点`;
-		},
+		114: false,
+		115: false,
+		116: false,
 		117: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
@@ -292,6 +369,13 @@ module.exports = async(serv) => {
 			return `${target} | ${p[1]}回合 | 反射伤害 |\x20
 				所受伤害的<samp title="等级成长：${p[2]/100}+${p[3]/100}*等级">${base}</samp>%`;
 		},
+		118: false,
+		119: false,
+		120: false,
+		121: false,
+		122: false,
+		123: false,
+		124: false,
 		125: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
@@ -327,11 +411,22 @@ module.exports = async(serv) => {
 
 			return `${target} | ${show(p[4]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp> | 提升${show(p[5])}伤害暴击率 | ${p[2] / 10}%`;
 		},
+		132: false,
+		133: false,
+		134: false,
+		135: false,
 		136: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
 			return `${target} | 祝福 | ${p[1]}回合`;
 		},
+		137: false,
+		138: false,
+		139: false,
+		140: false,
+		141: false,
+		142: false,
+		143: false,
 		144: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
@@ -339,16 +434,6 @@ module.exports = async(serv) => {
 
 			return `${target} | ${p[1]}回合 | 提高${show(p[2])}上限 |\x20
 				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
-		},
-		44: async(card, skill, role, skillFirst) => {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | ${p[4]}层 | ${show(p[6])}元素${show(p[5])}护盾 | 伤害${p[2]}点以下无效化`;
-		},
-		36: async(card, skill, role, skillFirst) => {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | 减免所受伤害的${p[2]/10}%`;
 		}
 	};
 };

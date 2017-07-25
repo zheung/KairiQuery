@@ -2,7 +2,7 @@
 	"n.id",
 	"s.info.name",
 	"s.info.subname",
-	"i.s.show.text",
+	"s.show.text",
 	"i.n.show.id",
 	"i.n.show.role",
 	"i.n.show.multi",

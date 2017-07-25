@@ -33,8 +33,6 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 			for(let index in rule.types) {
 				let type = rule.types[index];
 
-
-
 				if(type && type != 1)
 					role.params[index] = [type, valuer[type][role.params[index]]];
 			}
@@ -104,14 +102,14 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 
 		card.evol = dictEvol[card.id] || [];
 
-		card.mark = marker(card);
-
 		result[0].push(card);
 		result[1][card.id] = card;
 	}
 
 	for(let card of cards) {
 		card.info.rare = ~~(`${card.info.rare}${hasPlus(dictCard, card.id)}`);
+
+		card.mark = marker(card);
 
 		card.rend = await render(conf.serv, card, [
 			'id',
@@ -130,6 +128,10 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 			['this', 'skill', 'f.skill'],
 			['this', 'prio', 'f.prio']
 		]);
+
+		for(let type of ['normal', 'awaken', 'suport1', 'suport2', 'suport3', 'call'])
+			for(let skill of card.skill[type])
+				skill.show;
 	}
 
 	return result;
