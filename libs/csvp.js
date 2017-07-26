@@ -28,11 +28,7 @@ let parsePath = (obj, paths, value) => {
 	};
 
 module.exports = async(path, name, start, header, dicter, parser) => {
-<<<<<<< HEAD
 	let str = fs.readFileSync(path).toString().replace(/侠客/g, '盗贼').replace(/侠士/g, '义贼型'),
-=======
-	let str = fs.readFileSync(path).toString().replace(/侠客/g, '盗贼').replace(/侠士型/g, '义贼型'),
->>>>>>> 01704ed0f4b1999465c295ec9bf84642aa924ed4
 		rows = str.split('\r\n');
 
 	if(header && header.length) {
