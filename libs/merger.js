@@ -96,7 +96,7 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 		card.skill.suport2 = dictSups[card.skill.suport ? card.skill.suport[2] : undefined] || [];
 		card.skill.suport3 = dictSups[card.skill.suport ? card.skill.suport[3] : undefined] || [];
 
-		card.skill.call = dictSkil[card.skill.call] || [];
+		card.skill.bless = dictSkil[card.skill.bless] || [];
 
 		delete card.skill.suport;
 
@@ -129,7 +129,7 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 			['this', 'prio', 'f.prio']
 		]);
 
-		for(let type of ['normal', 'awaken', 'suport1', 'suport2', 'suport3', 'call'])
+		for(let type of ['normal', 'awaken', 'suport1', 'suport2', 'suport3', 'bless'])
 			for(let skill of card.skill[type])
 				skill.show;
 	}

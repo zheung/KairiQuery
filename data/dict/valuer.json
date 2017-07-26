@@ -479,7 +479,8 @@
 	},
 	"skillTiming": {
 		"NORMAL": 1,
-		"ENEMY_ACTION_END": 2
+		"ENEMY_ACTION_END": 2,
+		"USER_ATTACK_END": 3
 	},
 	"matType": {
 		"FUSION": 1,

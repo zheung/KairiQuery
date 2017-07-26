@@ -431,7 +431,8 @@
 	},
 	"skillTiming": {
 		"1": "NORMAL",
-		"2": "ENEMY_ACTION_END"
+		"2": "<samp title=\"在敌方行动后判定条件，满足条件则发动技能\">敌方行动后</samp> | ",
+		"3": "<samp title=\"在我方行动后判定条件，满足条件则发动技能\">我方行动后</samp> | "
 	},
 	"star": {
 		"1": "活动",

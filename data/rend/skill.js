@@ -5,7 +5,7 @@ module.exports = async(serv, card) => {
 	let shower = dicter.shower;
 
 	let result = {},
-		skillTypes = ['awaken', 'normal', 'suport1', 'suport2', 'suport3', 'call'],
+		skillTypes = ['awaken', 'normal', 'suport1', 'suport2', 'suport3', 'bless'],
 		skills = card.skill;
 
 	for(let st of skillTypes) {
@@ -40,8 +40,7 @@ module.exports = async(serv, card) => {
 				let rend = (await rdrCond(serv))[delayType];
 
 				if(rend)
-					s.cond = (skill.delay.timing==2 ? '<samp title="在敌方行动后判定条件，满足条件则发动技能">敌方行动后</samp> | ' : '')+
-						(await rend(card, skill, skill.delay)).replace(/\t|\n/g, '');
+					s.cond = (shower.skillTiming[skill.delay.timing] || '') + (await rend(card, skill, skill.delay)).replace(/\t|\n/g, '');
 				else {
 					L('New Delay', delayType, 'Card', card.id, 'Skill', skill.id);
 
@@ -52,9 +51,9 @@ module.exports = async(serv, card) => {
 			let chain = skill.info.chain;
 			if(st != 'suport3') {
 				if(chain && (chain != 20 && chain != 1))
-					s.content.push(`<samp title="发动等级越低越先发动，相同则随机发动">发动等级</samp> | PVE ${pve / 10} PVP ${pvp / 10} | Chain威力 | <samp title="Chain威力计算规则：\r\n1、影响HP的技能(物理、魔法、治疗)：每Chain增加总数值的${chain}%点\r\n2、影响属性的技能(防御、弱化、支援)：每Chain增加${chain}点\r\n3、根据某属性A影响属性的技能：每Chain增加${chain}%该属性数值">${chain}</>`);
+					s.content.push(`<samp title="发动等级越低越先发动，相同则按出牌顺序发动">发动等级</samp> | PVE ${pve / 10} PVP ${pvp / 10} | Chain威力 | <samp title="Chain威力计算规则：\r\n1、影响HP的技能(物理、魔法、治疗)：每Chain增加总数值的${chain}%点\r\n2、影响属性的技能(防御、弱化、支援)：每Chain增加${chain}点\r\n3、根据某属性A影响属性的技能：每Chain增加${chain}%该属性数值">${chain}</>`);
 				else
-					s.content.push(`<samp title="发动等级越低越先发动，相同则随机发动">发动等级</samp> | PVP ${pve / 10} PVE ${pvp / 10}`);
+					s.content.push(`<samp title="发动等级越低越先发动，相同则出牌顺序发动">发动等级</samp> | PVP ${pve / 10} PVE ${pvp / 10}`);
 			}
 
 			for(let role of skill.role) {
