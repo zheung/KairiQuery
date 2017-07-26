@@ -62,7 +62,7 @@
 	[ "ajam:attr1", "ajam:attr2", "ajam:attr3", "ajam:attr4", "ajam:attr5" ],
 	[ "ajam:turn1", "ajam:turn2", "ajam:turn3"],
 
-	[ "deal:+1", "deal:+2" ],
+	[ "deal:+1", "deal:+2", "deal:+3" ],
 
 	[ "rele:role7", "rele:role15", "rele:role19", "rele:role23", "rele:role24", "rele:role26" ],
 
@@ -72,7 +72,9 @@
 
 	[ "rsis:seal", "rsis:dark" ],
 
-	[ "atos:hp", "atos:trap", "atos:cost" ],
+	[ "atos:hp", "atos:trap", "atos:cost", "atos:deal" ],
 
-	[ "crit", "stan", "nord", "asee", "dotup" ]
+	[ "crit", "stan", "nord", "asee", "dotup" ],
+
+	[ "attr:fire", "attr:ice", "attr:wind", "attr:light", "attr:dark" ]
 ]

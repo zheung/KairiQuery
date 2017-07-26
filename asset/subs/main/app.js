@@ -31,7 +31,8 @@ app.sub.__name__.init = function(cb) {
 
 				skillAwaken: {},
 				skillNormal: {},
-				skillSuport3: {}
+				skillSuport3: {},
+				skillBless: {}
 			},
 
 			serv: window.pre.serv || 'cn',
@@ -42,7 +43,7 @@ app.sub.__name__.init = function(cb) {
 			conds: {},
 			condAll : {},
 
-			suportMode: false,
+			skillMode: 1,
 			prioMode: false,
 
 			showDash: false
@@ -141,13 +142,16 @@ app.sub.__name__.init = function(cb) {
 				for(var type in this.conds)
 					this.toggleAll(type, false);
 			},
-			suportModeApply: function() {
+			modeApply: function(mode) {
 				var sub = this;
 
-				this.suportMode = !this.suportMode;
+				if(sub.skillMode == mode)
+					sub.skillMode = 1;
+				else
+					sub.skillMode = mode;
 
 				this.recos.map(function(reco) {
-					sub.$set(sub.tab.skillTab, reco.id, sub.suportMode ? 2 : 1);
+					sub.$set(sub.tab.skillTab, reco.id, sub.skillMode);
 				});
 			},
 			prioModeApply: function() {

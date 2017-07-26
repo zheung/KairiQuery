@@ -52,7 +52,7 @@
 								@click.stop="clickSkillPrio(reco, tab.skillAwaken, reco.skill.awaken)"
 							>
 								<samp class="jca curp" title="条件发动优先级：数值值越大优先级越高。点击切换条件">
-									{{reco.skill.awaken[tab.skillAwaken[reco.id]].prio+1}}
+									{{reco.skill.awaken[tab.skillAwaken[reco.id]].prio+1 || '0'}}
 									<i class="fa fa-refresh"></i>
 								</samp>
 							</div>
@@ -130,16 +130,31 @@
 					<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab[reco.id] == 4">
 						<div class="headBoxBig jcs ais acs">
 							<div class="headBox block">
-								<div class="head active">
-									<div class="cond sel block"></div>
+								<div
+									class="head"
+									v-for="(skill, si) of reco.skill.bless"
+									@click="clickSkillHead(reco, tab.skillBless, reco.skill.bless, skill, si)"
+									:class="{ active: tab.skillBless[reco.id] == si }"
+									:style="{ transform: 'translate3d(0, '+tab.skillBless[reco.id]*(-28)+'px, 0)' }"
+								>
+									<div class="cond sel block" v-html="skill.cond || '无'"></div>
 								</div>
 							</div>
-							<div class="itemBox">
-								<div class="item drc jcs ais">
-									<span class="clear"></span>
-									<span class="role sel">预计放祝福技能</span>
-									<span class="clear"></span>
-								</div>
+							<div
+								class="switch"
+								@click.stop="clickSkillPrio(reco, tab.skillBless, reco.skill.bless)"
+							>
+								<samp class="jca curp" title="条件发动优先级：数值值越大优先级越高。点击切换条件">
+									{{reco.skill.bless[tab.skillBless[reco.id]].prio+1 || '0'}}
+									<i class="fa fa-refresh"></i>
+								</samp>
+							</div>
+						</div>
+						<div class="itemBox">
+							<div class="item drc jcs ais" v-for="(skill, si) of reco.skill.bless" v-if="tab.skillBless[reco.id]==si">
+								<span class="clear"></span>
+								<span class="role sel" v-for="content of skill.content" v-html="content || '无'"></span>
+								<span class="clear"></span>
 							</div>
 						</div>
 					</div>
@@ -233,7 +248,8 @@
 			<div class="item drc jcs" v-if="tab.dash == 1">
 				<div class="NaviColumn hr jcb wpw">
 					<div>
-						<div class="Toggle" :class = "suportMode? 'on': 'off'" @click="suportModeApply">支援</div>
+						<div class="Toggle" :class = "skillMode == 2? 'on': 'off'" @click="modeApply(2)">支援</div>
+						<div class="Toggle" :class = "skillMode == 4? 'on': 'off'" @click="modeApply(4)">祝福</div>
 						<div class="Toggle" :class = "prioMode? 'on': 'off'" @click="prioModeApply">PVP</div>
 					</div>
 					<div class="tabBox serv">
@@ -299,7 +315,6 @@
 			</div>
 			<div class="item tabBox skillType drc jcs" v-if="tab.dash == 2">
 				<div class="NaviColumn hr fs11 jcs wpw">
-					你知道吗？<br>
 					COST、属性和职业是“技能”的属性而不是“卡牌”的。<br>
 					例如B叔在歌姬卡组中是支援卡，在其他卡组是治疗卡。
 				</div>
@@ -313,7 +328,7 @@
 				<div class="headBox jca aih">
 					<div class="head" @click="tab.skillFilter = 1" :class="{ active: tab.skillFilter == 1 }">攻击</div>
 					<div class="head" @click="tab.skillFilter = 2" :class="{ active: tab.skillFilter == 2 }">治疗</div>
-					<div class="head" @click="tab.skillFilter = 3" :class="{ active: tab.skillFilter == 3 }">缓回</div>
+					<div class="head" @click="tab.skillFilter = 3" :class="{ active: tab.skillFilter == 3 }">属性</div>
 					<div class="head" @click="tab.skillFilter = 4" :class="{ active: tab.skillFilter == 4 }">支援</div>
 					<div class="head" @click="tab.skillFilter = 5" :class="{ active: tab.skillFilter == 5 }">防御</div>
 					<div class="head" @click="tab.skillFilter = 6" :class="{ active: tab.skillFilter == 6 }">弱化</div>
@@ -354,6 +369,9 @@
 				</div>
 				<div class="item clrFont drc jcs wpn" v-if="tab.skillFilter == 2">
 					<div class="NaviColumn jcb wpw">
+						治疗
+					</div>
+					<div class="NaviColumn jcb wpw">
 						<a class="w4 Toggle" @click="toggleAll('healtarget')">目标</a>
 						<div class="CondBar jca">
 							<a class="wf Toggle" v-for="c of conds.healtarget" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
@@ -365,8 +383,9 @@
 								<a class="wf Toggle" v-for="c of conds.healparam" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
 							</div>
 					</div>
-				</div>
-				<div class="item clrFont drc jcs wpn" v-if="tab.skillFilter == 3">
+					<div class="NaviColumn jcb wpw">
+						缓回
+					</div>
 					<div class="NaviColumn jcb wpw">
 						<a class="w4 Toggle" @click="toggleAll('regentarget')">目标</a>
 						<div class="CondBar jca">
@@ -377,6 +396,22 @@
 						<a class="w4 Toggle" @click="toggleAll('regenturn')">回合</a>
 						<div class="CondBar jca">
 							<a class="wf Toggle" v-for="c of conds.regenturn" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
+						</div>
+					</div>
+				</div>
+				<div class="item clrFont drc jcs wpn" v-if="tab.skillFilter == 3">
+					<div class="NaviColumn2x jcb wpw">
+						<a class="w4 Toggle" @click="toggleAll('attr')">属性</a>
+						<div class="CondBar jca wpw">
+							<div class="wf jca wpw">
+								<a class="Toggle" v-for="c of conds.attr" v-if="c.g == 0" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
+							</div>
+							<div class="wf jca wpw">
+								<a class="Toggle" v-for="c of conds.attr" v-if="c.g == 1" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
+							</div>
+							<div class="wf jca wpw">
+								<a class="Toggle" v-for="c of conds.attr" v-if="c.g == 2" @click="toggle($event, c)" :class = "c.on? 'on': 'off'">{{c.text}}</a>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -208,5 +208,5 @@
 	"attr:ice": "0:50:2",
 	"attr:wind": "0:50:4",
 	"attr:light": "0:50:8",
-	"attr:dark": "0:50:16",
+	"attr:dark": "0:50:16"
 }

@@ -266,6 +266,7 @@ module.exports = {
 	dealbonus: [
 		{ on: false, type: 'dealbonus', g: 0, x: 43, y: 1, text: '+1' },
 		{ on: false, type: 'dealbonus', g: 0, x: 43, y: 2, text: '+2' },
+		{ on: false, type: 'dealbonus', g: 0, x: 43, y: 4, text: '+3' },
 	],
 	release: [
 		{ on: false, type: 'release', g: 0, x: 44, y: 2, text: '封印' },
@@ -289,6 +290,7 @@ module.exports = {
 		{ on: false, type: 'atostype', g: 0, x: 48, y: 1, text: '生命' },
 		{ on: false, type: 'atostype', g: 0, x: 48, y: 2, text: '陷阱' },
 		{ on: false, type: 'atostype', g: 0, x: 48, y: 4, text: '封印' },
+		{ on: false, type: 'atostype', g: 0, x: 48, y: 8, text: '减抽' },
 	],
 	other: [
 		{ on: false, type: 'other', g: 0, x: 49, y: 1, text: '暴击' },
