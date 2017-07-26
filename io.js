@@ -32,7 +32,7 @@ module.exports = async($) => {
 						let mark = conds.mark,
 							result = await queryer(
 								await paramer.main(conds),
-								conds.prio ? { 'extra.prio.pvp': 1 } : {},
+								conds.prio ? { 'rend.prio.pvp': 1 } : {},
 								conds.serv, conds.page, $.conf.pageEvery
 							);
 
