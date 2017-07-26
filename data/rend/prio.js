@@ -5,9 +5,7 @@ module.exports = async(serv, card) => {
 		sm2 = card.skill.awaken.concat().sort(prioSorter2).concat(card.skill.normal.concat().sort(prioSorter2))[0];
 
 	return {
-		prio: {
-			pvp: sm1.prio.pvp,
-			pve: sm2.prio.pve
-		}
+		pvp: sm1.prio.pvp,
+		pve: sm2.prio.pve
 	};
 };
