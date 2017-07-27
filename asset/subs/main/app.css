@@ -11,6 +11,7 @@
 	top: 0px;
 	right: 0px;
 
+	z-index: 99;
 	overflow: hidden;
 
 	transform: translate3d(430px, 0, 0);
@@ -223,8 +224,6 @@
 #sub__name__ .tabBox.SkillContent>.itemBox {
 	width: 100%;
 	height: 100%;
-
-	overflow: hidden;
 }
 #sub__name__ .tabBox.SkillContent>.itemBox>.item {
 	width: 100%;
