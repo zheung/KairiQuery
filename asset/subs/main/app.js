@@ -32,7 +32,9 @@ app.sub.__name__.init = function(cb) {
 				skillAwaken: {},
 				skillNormal: {},
 				skillSuport3: {},
-				skillBless: {}
+				skillBless: {},
+
+				showAwaken: {}
 			},
 
 			serv: window.pre.serv || 'cn',
@@ -69,6 +71,23 @@ app.sub.__name__.init = function(cb) {
 			// }
 		},
 		methods: {
+			headInout: function(a, id, inout) {
+				var sub =this, tar = a.currentTarget;
+				if(inout) {
+					this.$set(sub.tab.showAwaken, id, sub.tab.showAwaken[id]+1 );
+					console.log(sub.tab.showAwaken[id]);
+				}
+				else {
+					setTimeout(function() {
+						sub.$set(sub.tab.showAwaken, id, sub.tab.showAwaken[id]-1 );
+						console.log(sub.tab.showAwaken[id]);
+					}, 100);
+				}
+				// if(tar.className.indexOf('active')+1 && inout)
+				// 	this.$set(this.tab.showAwaken, id, true);
+				// else if(!(tar.className.indexOf('active')+1) && !inout)
+				// 	this.$set(this.tab.showAwaken, id, false);
+			},
 			query: function(page) {
 				if(page < 0 || page > this.pageMax) return;
 

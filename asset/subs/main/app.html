@@ -40,11 +40,14 @@
 								<div
 									class="head"
 									v-for="(skill, si) of reco.skill.awaken"
-									@click="clickSkillHead(reco, tab.skillAwaken, reco.skill.awaken, skill, si)"
-									:class="{ active: tab.skillAwaken[reco.id] == si }"
+									@click1="clickSkillHead(reco, tab.skillAwaken, reco.skill.awaken, skill, si)"
+									@click.stop="clickSkillPrio(reco, tab.skillAwaken, reco.skill.awaken)"
+									:class="{ active: tab.skillAwaken[reco.id] == si, hover: tab.skillAwaken[reco.id] != si && !!tab.showAwaken[reco.id] }"
+									@mouseenter="headInout($event, reco.id, true)"
+									@mouseleave="headInout($event, reco.id, false)"
 									:style="{ transform: 'translate3d(0, '+tab.skillAwaken[reco.id]*(-28)+'px, 0)' }"
 								>
-									<div class="cond sel block" v-html="skill.cond || '无'"></div>
+									<div class="cond curp block" v-html="skill.cond || '无'"></div>
 								</div>
 							</div>
 							<div

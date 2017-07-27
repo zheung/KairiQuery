@@ -16,6 +16,7 @@
 				Vue.set(sub.tab.skillNormal, reco.id, 0);
 				Vue.set(sub.tab.skillSuport3, reco.id, 0);
 				Vue.set(sub.tab.skillBless, reco.id, 0);
+				Vue.set(sub.tab.showAwaken, reco.id, 0);
 
 				if(sub.serv != 'kr')
 					Vue.set(sub.imgSrc, i, 'https://kairiquery.oss-cn-shenzhen.aliyuncs.com/'+sub.serv+'21/'+recos[i].id+'.png');

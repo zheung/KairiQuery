@@ -188,7 +188,7 @@
 
 	transition:all 0.4s;
 }
-#sub__name__ .tabBox.SkillContent>.headBoxBig>.headBox:hover>.head {
+#sub__name__ .tabBox.SkillContent>.headBoxBig>.headBox>.head.hover {
 	opacity: 100;
 }
 #sub__name__ .tabBox.SkillContent>.headBoxBig>.headBox>.head {
@@ -227,7 +227,7 @@
 }
 #sub__name__ .tabBox.SkillContent>.itemBox>.item {
 	width: 100%;
-	height: 100%;
+	height: 113px;
 
 	overflow-x: hidden;
 	overflow-y: auto;
