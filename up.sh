@@ -9,4 +9,4 @@ cd /root/importer
 
 git clean -fd
 git checkout -- .
-git pull github master
+git pull
