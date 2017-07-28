@@ -17,8 +17,16 @@ module.exports = async() => {
 
 	global.merger = require('./libs/merger');
 	global.marker = require('./data/mark/func');
+
+	let inArr = (content, arr) => {
+		for(let i of arr)
+			if(content == i)
+				return true;
+
+		return false;
+	};
 	global.funcer = {
-		filter: (cells) => { return !/^#/.test(cells[0]) && (~~cells[0] > 1000 || /[A-Z_]+/.test(cells[0])); },
+		filter: (cells) => { return !/^#/.test(cells[0]) && (~~cells[0] > 1000 || /[A-Z_]+/.test(cells[0])) && !inArr(cells[0], conf.exclude); },
 		rare: (cell, cells, dicter) => { return dicter.rare[`${cells[7]}${cells[22]}`]; }
 	};
 

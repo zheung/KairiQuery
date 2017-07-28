@@ -39,12 +39,17 @@ module.exports = (serv) => {
 		if(rare == 63) set.add('mr++');
 		if(rare == 71) set.add('mmr');
 
-		let sm = card.skill.awaken.concat().sort(prioSorter).concat(card.skill.normal.concat().sort(prioSorter))[0],
-			sf = (card.skill.awaken[0] || card.skill.normal[0]),
-			chain = sm.info.chain,
-			cost = sf.info.cost, attr = sf.info.attr, job = sf.info.job, kind = sf.info.kind;
+		let sm = card.skill.awaken.concat().sort(prioSorter).concat(card.skill.normal.concat().sort(prioSorter))[0];
 
-		if(cost > 0) set.add('cost'+cost);
+		if(!sm) {
+			L('No Skill', card.id, card.info.name);
+
+			return Array.from(set);
+		}
+
+		let sf = (card.skill.awaken[0] || card.skill.normal[0]),
+		chain = sm.info.chain,
+		cost = sf.info.cost, attr = sf.info.attr, job = sf.info.job, kind = sf.info.kind;
 
 		if(attr == 1) set.add('fire');
 		if(attr == 2) set.add('ice');
@@ -68,12 +73,14 @@ module.exports = (serv) => {
 		if((attr+'').indexOf(4)+1) set.add('attr:light');
 		if((attr+'').indexOf(5)+1) set.add('attr:dark');
 
+		if(cost > 0) set.add('cost'+cost);
+
 		set.add(['mercenary', 'millionaire', 'thief', 'singer', 'null'][job-1]);
 		set.add(['attack', 'sorcery', 'recovery', 'support', 'defense', 'jamming', 'special'][kind-1]);
 
 		for(let role of sm.role) {
 			let target = { r: role.target, s: sm.info.target || sf.info.target },
-				rt = role.type, rp = role.params;
+			rt = role.type, rp = role.params;
 
 			//攻击
 			if(rt == 1) {
