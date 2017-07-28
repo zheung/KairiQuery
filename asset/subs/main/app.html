@@ -45,7 +45,7 @@
 								>
 								</div>
 							</div>
-							<div class="switch" v-if="reco.skill.awaken.empty">
+							<div class="switch" v-if="!reco.skill.awaken.empty">
 								<samp class="jca" title="条件发动优先级：数值值越大优先级越高。点击切换条件">
 									{{(reco.skill.awaken[tab.skillAwaken[reco.id]].prio+1 || '0')+'/'+(reco.skill.awaken.length || '0')}}
 									<i class="fa fa-refresh"></i>
@@ -71,7 +71,7 @@
 								>
 								</div>
 							</div>
-							<div class="switch" v-if="reco.skill.suport.empty">
+							<div class="switch" v-if="!reco.skill.suport.empty">
 								<samp class="jca" title="条件发动优先级：数值值越大优先级越高。点击切换条件">
 									{{(reco.skill.suport[tab.skillSuport[reco.id]].prio+1 || '0')+'/'+(reco.skill.suport.length || '0')}}
 									<i class="fa fa-refresh"></i>
@@ -97,7 +97,7 @@
 								>
 								</div>
 							</div>
-							<div class="switch" v-if="reco.skill.bless.empty">
+							<div class="switch" v-if="!reco.skill.bless.empty">
 								<samp class="jca" title="条件发动优先级：数值值越大优先级越高。点击切换条件">
 									{{(reco.skill.bless[tab.skillBless[reco.id]].prio+1 || '0')+'/'+(reco.skill.bless.length || '0')}}
 									<i class="fa fa-refresh"></i>
@@ -123,7 +123,7 @@
 								>
 								</div>
 							</div>
-							<div class="switch" v-if="reco.skill.normal.empty">
+							<div class="switch" v-if="!reco.skill.normal.empty">
 								<samp class="jca" title="条件发动优先级：数值值越大优先级越高。点击切换条件">
 									{{(reco.skill.normal[tab.skillNormal[reco.id]].prio+1 || '0')+'/'+(reco.skill.normal.length || '0')}}
 									<i class="fa fa-refresh"></i>
