@@ -5,14 +5,15 @@ module.exports = async(serv, card) => {
 	let shower = dicter.shower;
 
 	let result = {},
-		skillTypes = ['awaken', 'normal', 'suport1', 'suport2', 'suport3', 'bless'],
+		skillTypes = ['awaken', 'normal', 'bless', 'suport1', 'suport2', 'suport3'],
+		// skillTypes2 = [],
 		skills = card.skill;
 
 	for(let st of skillTypes) {
 		let ss = [], skillFirst = skills[st][0];
 
 		for(let skill of skills[st]) {
-			let s = { prio: skill.cond.prio, content: [] },
+			let s = { prio: skill.cond.prio, content: [], name: skill.info.name },
 				condType = skill.cond.type, condType2 = skill.cond2 ? skill.cond2.type : undefined, delayType = skill.delay ? skill.delay.type : undefined,
 				pve = skill.prio.pve ? skill.prio.pve : skillFirst.prio.pve, pvp = skill.prio.pvp ? skill.prio.pvp : skillFirst.prio.pvp;
 
