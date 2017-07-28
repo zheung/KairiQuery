@@ -14,7 +14,7 @@ module.exports = async(serv) => {
 
 			let base = Math.ceil(~~p[1]+~~p[2]/1000*card.info.max.level);
 
-			return `${target} | ${p[5]}回${show(p[8])}元素的${show(p[9])}攻击 |\x20
+			return `${target} | ${p[5]}段${show(p[8])}元素的${show(p[9])}攻击 |\x20
 				${base ? `<samp title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</samp>+` : ''}
 				${show(p[6])}的${p[3]/10}%
 				${(p[7] / (serv=='ps'?1:10) != 15 ? ` | ${~~p[7] / 10}%高暴击率` : '')}`;
@@ -31,18 +31,18 @@ module.exports = async(serv) => {
 		7: async(card, skill, role) => {
 			let p = role.params;
 
-			return `附加伤害 | 累计损失生命的${p[1]}% | 上限：${show(p[3])}的${p[4]}%`;
+			return `附加伤害 | 每段攻击 | 累计损失生命的${p[1]}% | 上限：${show(p[3])}的${p[4]}%`;
 		},
 		8: false,
 		9: async(card, skill, role) => {
 			let p = role.params;
 
-			return `附加伤害 | <samp title="等价于 无视目标对应防御的${p[1]}%">目标对应防御的${p[1]}%</samp>`;
+			return `附加伤害 | 每段攻击 | <samp title="等价于 无视目标对应防御的${p[1]}%">目标对应防御的${p[1]}%</samp>`;
 		},
 		10: async(card, skill, role) => {
 			let p = role.params;
 
-			return `附加伤害 | ${show(p[5])}的${p[3]/10}%`;
+			return `附加伤害 | 每段攻击 | ${show(p[5])}的${p[3]/10}%`;
 		},
 		11: () => { return '免疫元素克制'; },
 		12: async(card, skill, role, skillFirst) => {
