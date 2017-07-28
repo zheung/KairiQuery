@@ -297,6 +297,7 @@ module.exports = {
 		{ on: false, type: 'other', g: 0, x: 49, y: 2, text: '打断' },
 		{ on: false, type: 'other', g: 0, x: 49, y: 4, text: '免克制' },
 		{ on: false, type: 'other', g: 0, x: 49, y: 8, text: '看破' },
-		{ on: false, type: 'other', g: 0, x: 49, y: 16, text: '强化毒' }
+		{ on: false, type: 'other', g: 0, x: 49, y: 16, text: '强化毒' },
+		{ on: false, type: 'other', g: 1, x: 49, y: 32, text: '祝福' }
 	]
 };

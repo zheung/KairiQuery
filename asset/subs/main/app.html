@@ -31,8 +31,8 @@
 					<div class="headBox drc">
 						<div class="head" @click="$set(tab.skillTab, reco.id, 1)" :class="{ active: tab.skillTab[reco.id]==1 }">觉醒</div>
 						<div class="head" @click="$set(tab.skillTab, reco.id, 2)" :class="{ active: tab.skillTab[reco.id]==2 }">支援</div>
-						<div class="head" @click="$set(tab.skillTab, reco.id, 4)" :class="{ active: tab.skillTab[reco.id]==4 }">祝福</div>
-						<div class="head" @click="$set(tab.skillTab, reco.id, 3)" :class="{ active: tab.skillTab[reco.id]==3 }">普通</div>
+						<div class="head" @click="$set(tab.skillTab, reco.id, 3)" :class="{ active: tab.skillTab[reco.id]==3 }">祝福</div>
+						<div class="head" @click="$set(tab.skillTab, reco.id, 4)" :class="{ active: tab.skillTab[reco.id]==4 }">普通</div>
 					</div>
 					<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab[reco.id] == 1">
 						<div class="headBoxBig jcs ais acs" @click.stop="clickSkillPrio(reco, tab.skillAwaken, reco.skill.awaken)">
@@ -41,17 +41,11 @@
 									class="head jcc aic"
 									v-for="(skill, si) of reco.skill.awaken"
 									v-html="skill.cond || '无'"
-									@click1="clickSkillHead(reco, tab.skillAwaken, reco.skill.awaken, skill, si)"
-
-									:class="{ active: tab.skillAwaken[reco.id] == si, hover: tab.skillAwaken[reco.id] != si && !!tab.showAwaken[reco.id] }"
 									:style="{ transform: 'translate3d(0, '+tab.skillAwaken[reco.id]*(-28)+'px, 0)' }"
 								>
 								</div>
 							</div>
-							<div
-								class="switch"
-								@click1stop="clickSkillPrio(reco, tab.skillAwaken, reco.skill.awaken)"
-							>
+							<div class="switch" v-if="reco.skill.awaken.empty">
 								<samp class="jca" title="条件发动优先级：数值值越大优先级越高。点击切换条件">
 									{{(reco.skill.awaken[tab.skillAwaken[reco.id]].prio+1 || '0')+'/'+(reco.skill.awaken.length || '0')}}
 									<i class="fa fa-refresh"></i>
@@ -67,30 +61,25 @@
 						</div>
 					</div>
 					<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab[reco.id] == 2">
-						<div class="headBoxBig jcs ais acs">
-							<div class="headBox block">
+						<div class="headBoxBig jcs ais acs" @click.stop="clickSkillPrio(reco, tab.skillSuport, reco.skill.suport)">
+							<div class="headBox curp block">
 								<div
-									class="head"
-									v-for="(skill, si) of reco.skill.suport3"
-									@click="clickSkillHead(reco, tab.skillSuport3, reco.skill.suport3, skill, si)"
-									:class="{ active: tab.skillSuport3[reco.id] == si }"
-									:style="{ transform: 'translate3d(0, '+tab.skillSuport3[reco.id]*(-28)+'px, 0)' }"
+									class="head jcc aic"
+									v-for="(skill, si) of reco.skill.suport"
+									v-html="skill.cond || '无'"
+									:style="{ transform: 'translate3d(0, '+tab.skillSuport[reco.id]*(-28)+'px, 0)' }"
 								>
-									<div class="cond sel block" v-html="skill.name || '无'"></div>
 								</div>
 							</div>
-							<div
-								class="switch"
-								@click.stop="clickSkillPrio(reco, tab.skillSuport3, reco.skill.suport3)"
-							>
-								<samp class="jca curp" title="条件发动优先级：数值值越大优先级越高。点击切换条件">
-									{{reco.skill.suport3[tab.skillSuport3[reco.id]].prio+1 || '0'}}
+							<div class="switch" v-if="reco.skill.suport.empty">
+								<samp class="jca" title="条件发动优先级：数值值越大优先级越高。点击切换条件">
+									{{(reco.skill.suport[tab.skillSuport[reco.id]].prio+1 || '0')+'/'+(reco.skill.suport.length || '0')}}
 									<i class="fa fa-refresh"></i>
 								</samp>
 							</div>
 						</div>
 						<div class="itemBox">
-							<div class="item drc jcs ais" v-for="(skill, si) of reco.skill.suport3" v-if="tab.skillSuport3[reco.id]==si">
+							<div class="item drc jcs ais" v-for="(skill, si) of reco.skill.suport" v-if="tab.skillSuport[reco.id]==si">
 								<span class="clear"></span>
 								<span class="role sel" v-for="content of skill.content" v-html="content || '无'"></span>
 								<span class="clear"></span>
@@ -98,30 +87,25 @@
 						</div>
 					</div>
 					<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab[reco.id] == 3">
-						<div class="headBoxBig jcs ais acs">
-							<div class="headBox block">
+						<div class="headBoxBig jcs ais acs" @click.stop="clickSkillPrio(reco, tab.skillBless, reco.skill.bless)">
+							<div class="headBox curp block">
 								<div
-									class="head"
-									v-for="(skill, si) of reco.skill.normal"
-									@click="clickSkillHead(reco, tab.skillNormal, reco.skill.normal, skill, si)"
-									:class="{ active: tab.skillNormal[reco.id] == si }"
-									:style="{ transform: 'translate3d(0, '+tab.skillNormal[reco.id]*(-28)+'px, 0)' }"
+									class="head jcc aic"
+									v-for="(skill, si) of reco.skill.bless"
+									v-html="skill.cond || '无'"
+									:style="{ transform: 'translate3d(0, '+tab.skillBless[reco.id]*(-28)+'px, 0)' }"
 								>
-									<div class="cond sel block" v-html="skill.cond || '无'"></div>
 								</div>
 							</div>
-							<div
-								class="switch"
-								@click.stop="clickSkillPrio(reco, tab.skillNormal, reco.skill.normal)"
-							>
-								<samp class="jca curp" title="条件发动优先级：数值值越大优先级月高。点击切换条件">
-									{{reco.skill.normal[tab.skillNormal[reco.id]].prio+1 || '0'}}
+							<div class="switch" v-if="reco.skill.bless.empty">
+								<samp class="jca" title="条件发动优先级：数值值越大优先级越高。点击切换条件">
+									{{(reco.skill.bless[tab.skillBless[reco.id]].prio+1 || '0')+'/'+(reco.skill.bless.length || '0')}}
 									<i class="fa fa-refresh"></i>
 								</samp>
 							</div>
 						</div>
 						<div class="itemBox">
-							<div class="item drc jcs ais" v-for="(skill, si) of reco.skill.normal" v-if="tab.skillNormal[reco.id]==si">
+							<div class="item drc jcs ais" v-for="(skill, si) of reco.skill.bless" v-if="tab.skillBless[reco.id]==si">
 								<span class="clear"></span>
 								<span class="role sel" v-for="content of skill.content" v-html="content || '无'"></span>
 								<span class="clear"></span>
@@ -129,30 +113,25 @@
 						</div>
 					</div>
 					<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab[reco.id] == 4">
-						<div class="headBoxBig jcs ais acs">
-							<div class="headBox block">
+						<div class="headBoxBig jcs ais acs" @click.stop="clickSkillPrio(reco, tab.skillNormal, reco.skill.normal)">
+							<div class="headBox curp block">
 								<div
-									class="head"
-									v-for="(skill, si) of reco.skill.bless"
-									@click="clickSkillHead(reco, tab.skillBless, reco.skill.bless, skill, si)"
-									:class="{ active: tab.skillBless[reco.id] == si }"
-									:style="{ transform: 'translate3d(0, '+tab.skillBless[reco.id]*(-28)+'px, 0)' }"
+									class="head jcc aic"
+									v-for="(skill, si) of reco.skill.normal"
+									v-html="skill.cond || '无'"
+									:style="{ transform: 'translate3d(0, '+tab.skillNormal[reco.id]*(-28)+'px, 0)' }"
 								>
-									<div class="cond sel block" v-html="skill.cond || '无'"></div>
 								</div>
 							</div>
-							<div
-								class="switch"
-								@click.stop="clickSkillPrio(reco, tab.skillBless, reco.skill.bless)"
-							>
-								<samp class="jca curp" title="条件发动优先级：数值值越大优先级越高。点击切换条件">
-									{{reco.skill.bless[tab.skillBless[reco.id]].prio+1 || '0'}}
+							<div class="switch" v-if="reco.skill.normal.empty">
+								<samp class="jca" title="条件发动优先级：数值值越大优先级越高。点击切换条件">
+									{{(reco.skill.normal[tab.skillNormal[reco.id]].prio+1 || '0')+'/'+(reco.skill.normal.length || '0')}}
 									<i class="fa fa-refresh"></i>
 								</samp>
 							</div>
 						</div>
 						<div class="itemBox">
-							<div class="item drc jcs ais" v-for="(skill, si) of reco.skill.bless" v-if="tab.skillBless[reco.id]==si">
+							<div class="item drc jcs ais" v-for="(skill, si) of reco.skill.normal" v-if="tab.skillNormal[reco.id]==si">
 								<span class="clear"></span>
 								<span class="role sel" v-for="content of skill.content" v-html="content || '无'"></span>
 								<span class="clear"></span>
@@ -250,7 +229,7 @@
 				<div class="NaviColumn hr jcb wpw">
 					<div>
 						<div class="Toggle" :class = "skillMode == 2? 'on': 'off'" @click="modeApply(2)">支援</div>
-						<div class="Toggle" :class = "skillMode == 4? 'on': 'off'" @click="modeApply(4)">祝福</div>
+						<div class="Toggle" :class = "skillMode == 4? 'on': 'off'" @click="modeApply(3)">祝福</div>
 						<div class="Toggle" :class = "prioMode? 'on': 'off'" @click="prioModeApply">PVP</div>
 					</div>
 					<div class="tabBox serv">

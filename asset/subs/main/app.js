@@ -31,10 +31,8 @@ app.sub.__name__.init = function(cb) {
 
 				skillAwaken: {},
 				skillNormal: {},
-				skillSuport3: {},
-				skillBless: {},
-
-				showAwaken: {}
+				skillSuport: {},
+				skillBless: {}
 			},
 
 			serv: window.pre.serv || 'cn',
@@ -71,23 +69,6 @@ app.sub.__name__.init = function(cb) {
 			// }
 		},
 		methods: {
-			headInout: function(a, id, inout) {
-				var sub =this, tar = a.currentTarget;
-				if(inout) {
-					this.$set(sub.tab.showAwaken, id, sub.tab.showAwaken[id]+1 );
-					console.log(sub.tab.showAwaken[id]);
-				}
-				else {
-					setTimeout(function() {
-						sub.$set(sub.tab.showAwaken, id, sub.tab.showAwaken[id]-1 );
-						console.log(sub.tab.showAwaken[id]);
-					}, 100);
-				}
-				// if(tar.className.indexOf('active')+1 && inout)
-				// 	this.$set(this.tab.showAwaken, id, true);
-				// else if(!(tar.className.indexOf('active')+1) && !inout)
-				// 	this.$set(this.tab.showAwaken, id, false);
-			},
 			query: function(page) {
 				if(page < 0 || page > this.pageMax) return;
 
@@ -164,10 +145,18 @@ app.sub.__name__.init = function(cb) {
 			modeApply: function(mode) {
 				var sub = this;
 
-				if(sub.skillMode == mode)
+				if(sub.skillMode == mode) {
+					if(mode == 3)
+						sub.toggle({}, sub.conds.other[5]);
+
 					sub.skillMode = 1;
-				else
+				}
+				else {
+					if(mode == 3)
+						sub.toggle({}, sub.conds.other[5]);
+
 					sub.skillMode = mode;
+				}
 
 				this.recos.map(function(reco) {
 					sub.$set(sub.tab.skillTab, reco.id, sub.skillMode);

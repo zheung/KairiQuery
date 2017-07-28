@@ -44,7 +44,7 @@ module.exports = async($, router) => {
 	// let queryer = await $.rq('libs/queryer');
 	// router.get('/ex', async(ctx) => {
 	// 	let result = await queryer(
-	// 		{id:{$gt:10166112}}, {}, 'jp', 1, 1000
+	// 		{id:{$gt:99961001}}, {}, 'cn', 1, 1000
 	// 	);
 
 	// 	let r = [];

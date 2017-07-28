@@ -7,16 +7,21 @@
 			sub.tab.skillAwaken = {};
 
 			recos.map(function(reco, i) {
-				if(!reco.skill.suport3) reco.skill.suport3 = [{ cond:' ', content:['无'] }];
-				if(!reco.skill.bless) reco.skill.bless = [{ cond:' ', content:['无'] }];
+				if(!reco.skill.suport) {
+					reco.skill.suport = [{ cond:' ', content:['无'] }];
+					Vue.set(reco.skill.suport, 'empty', true);
+				}
+				if(!reco.skill.bless) {
+					reco.skill.bless = [{ cond:' ', content:['无'] }];
+					Vue.set(reco.skill.bless, 'empty', true);
+				}
 
-				Vue.set(sub.tab.skillTab, reco.id, (sub.skillMode != 1 ? sub.skillMode : (reco.job != '通用' ? 1 : 3)));
+				Vue.set(sub.tab.skillTab, reco.id, (sub.skillMode != 1 ? sub.skillMode : (reco.job != '通用' ? 1 : 4)));
 				Vue.set(sub.tab.skillTab2, reco.id, 1);
 				Vue.set(sub.tab.skillAwaken, reco.id, 0);
 				Vue.set(sub.tab.skillNormal, reco.id, 0);
-				Vue.set(sub.tab.skillSuport3, reco.id, 0);
+				Vue.set(sub.tab.skillSuport, reco.id, 0);
 				Vue.set(sub.tab.skillBless, reco.id, 0);
-				Vue.set(sub.tab.showAwaken, reco.id, 0);
 
 				if(sub.serv != 'kr')
 					Vue.set(sub.imgSrc, i, 'https://kairiquery.oss-cn-shenzhen.aliyuncs.com/'+sub.serv+'21/'+recos[i].id+'.png');
