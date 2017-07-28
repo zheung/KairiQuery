@@ -66,7 +66,7 @@ module.exports = async(serv) => {
 			let base = Math.ceil(~~p[2]+~~p[3]/1000*card.info.max.level);
 
 			return `${target} | ${p[1]}回合 |\x20
-				<samp title="发动时机：回合开始前">持续恢复生命</samp> |\x20
+				<samp title="发动时机：回合开始前">持续恢复生命</samp>&nbsp;|\x20
 				<samp title="等级成长：${p[2]}+${p[3]/1000}*等级">${base}</samp>+
 				${p[4]/10}%${show(p[6])}`;
 		},
@@ -315,7 +315,7 @@ module.exports = async(serv) => {
 		91: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | <samp title="发动条件：处于${show(p[6])}状态">${show(p[6])}</samp> |\x20
+			return `${target} | <samp title="发动条件：处于${show(p[6])}状态">${show(p[6])}</samp>&nbsp;|\x20
 				回合+${p[1]} | 伤害提升${p[2]}%`;
 		},
 		92: async(card, skill, role, skillFirst) => {
@@ -379,37 +379,37 @@ module.exports = async(serv) => {
 		125: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp> | 提升${show(p[7])}伤害 | ${p[2] / 10}%`;
+			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp>&nbsp;| 提升${show(p[7])}伤害 | ${p[2] / 10}%`;
 		},
 		126: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp> | 提升${show(p[7])}支援效果 | ${p[4] / 10}%`;
+			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp>&nbsp;| 提升${show(p[7])}支援效果 | ${p[4] / 10}%`;
 		},
 		127: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp> | 提升${show(p[7])}效果 | ${p[4] / 10}%`;
+			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp>&nbsp;| 提升${show(p[7])}效果 | ${p[4] / 10}%`;
 		},
 		128: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp> | 提升${show(p[7])}弱化效果 | ${p[4] / 10}%`;
+			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp>&nbsp;| 提升${show(p[7])}弱化效果 | ${p[4] / 10}%`;
 		},
 		129: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp> | 提升${show(p[7])}弱化效果 | ${p[4] / 10}%`;
+			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp>&nbsp;| 提升${show(p[7])}弱化效果 | ${p[4] / 10}%`;
 		},
 		130: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp> | 提升治疗效果 | ${p[4] / 10}%`;
+			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp>&nbsp;| 提升治疗效果 | ${p[4] / 10}%`;
 		},
 		131: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${show(p[4]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp> | 提升${show(p[5])}伤害暴击率 | ${p[2] / 10}%`;
+			return `${target} | ${show(p[4]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp>&nbsp;| 提升${show(p[5])}伤害暴击率 | ${p[2] / 10}%`;
 		},
 		132: false,
 		133: false,

@@ -74,5 +74,5 @@
 
 	[ "atos:hp", "atos:trap", "atos:cost" ],
 
-	[ "crit", "stan", "nord", "asee", "dotup" ]
+	[ "crit", "stan", "nord", "asee", "dotup", "bless" ]
 ]

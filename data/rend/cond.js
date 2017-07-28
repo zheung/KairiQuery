@@ -157,12 +157,12 @@ module.exports = async() => {
 		35: async(card, skill, cond) => {
 			if(cond.param4 || cond.param5) L('Cond 35 New Type');
 
-			return `自身 | <samp title="卡组中的10张卡，包括手上的和不在手上的">卡组</samp> | ${shower.attr[valuer.attr[cond.param1]]}元素 | ${cond.param3}张以上`;
+			return `自身 | <samp title="卡组中的10张卡，包括手上的和不在手上的">卡组</samp>&nbsp;| ${shower.attr[valuer.attr[cond.param1]]}元素 | ${cond.param3}张以上`;
 		},
 		36: async(card, skill, cond) => {
 			if(cond.param4 || cond.param5) L('Cond 35 New Type');
 
-			return `自身 | <samp title="卡组中的10张卡，包括手上的和不在手上的">卡组</samp> | ${shower.skillKind2[valuer.skillKind[cond.param1]]} | ${cond.param3}张以上`;
+			return `自身 | <samp title="卡组中的10张卡，包括手上的和不在手上的">卡组</samp>&nbsp;| ${shower.skillKind2[valuer.skillKind[cond.param1]]} | ${cond.param3}张以上`;
 		},
 		37: async(card, skill, cond) => {
 			if(~~cond.param2) L('Cond 37 Double');
@@ -182,13 +182,13 @@ module.exports = async() => {
 			if(d >= 28) d = 0;
 
 			if(u == d)
-				return `<samp title="任意一人满足条件即可">我方</samp> | HP | ${u}%`;
+				return `<samp title="任意一人满足条件即可">我方</samp>&nbsp;| HP | ${u}%`;
 			else if(u && !d)
-				return `<samp title="任意一人满足条件即可">我方</samp> | HP | ${u}%或以上`;
+				return `<samp title="任意一人满足条件即可">我方</samp>&nbsp;| HP | ${u}%或以上`;
 			else if(!u && d)
-				return `<samp title="任意一人满足条件即可">我方</samp> | HP | ${d}%或以下`;
+				return `<samp title="任意一人满足条件即可">我方</samp>&nbsp;| HP | ${d}%或以下`;
 			else
-				return `<samp title="任意一人满足条件即可">我方</samp> | HP | ${u}~${d}%`;
+				return `<samp title="任意一人满足条件即可">我方</samp>&nbsp;| HP | ${u}~${d}%`;
 		},
 		60: async(card, skill, cond) => {
 			let u = ~~cond.param2, d = ~~cond.param3;
