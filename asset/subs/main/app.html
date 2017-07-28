@@ -35,27 +35,25 @@
 						<div class="head" @click="$set(tab.skillTab, reco.id, 3)" :class="{ active: tab.skillTab[reco.id]==3 }">普通</div>
 					</div>
 					<div class="item tabBox SkillContent drc jcs" v-if="tab.skillTab[reco.id] == 1">
-						<div class="headBoxBig jcs ais acs">
-							<div class="headBox block">
+						<div class="headBoxBig jcs ais acs" @click.stop="clickSkillPrio(reco, tab.skillAwaken, reco.skill.awaken)">
+							<div class="headBox curp block">
 								<div
-									class="head"
+									class="head jcc aic"
 									v-for="(skill, si) of reco.skill.awaken"
+									v-html="skill.cond || '无'"
 									@click1="clickSkillHead(reco, tab.skillAwaken, reco.skill.awaken, skill, si)"
-									@click.stop="clickSkillPrio(reco, tab.skillAwaken, reco.skill.awaken)"
+
 									:class="{ active: tab.skillAwaken[reco.id] == si, hover: tab.skillAwaken[reco.id] != si && !!tab.showAwaken[reco.id] }"
-									@mouseenter="headInout($event, reco.id, true)"
-									@mouseleave="headInout($event, reco.id, false)"
 									:style="{ transform: 'translate3d(0, '+tab.skillAwaken[reco.id]*(-28)+'px, 0)' }"
 								>
-									<div class="cond curp block" v-html="skill.cond || '无'"></div>
 								</div>
 							</div>
 							<div
 								class="switch"
-								@click.stop="clickSkillPrio(reco, tab.skillAwaken, reco.skill.awaken)"
+								@click1stop="clickSkillPrio(reco, tab.skillAwaken, reco.skill.awaken)"
 							>
-								<samp class="jca curp" title="条件发动优先级：数值值越大优先级越高。点击切换条件">
-									{{reco.skill.awaken[tab.skillAwaken[reco.id]].prio+1 || '0'}}
+								<samp class="jca" title="条件发动优先级：数值值越大优先级越高。点击切换条件">
+									{{(reco.skill.awaken[tab.skillAwaken[reco.id]].prio+1 || '0')+'/'+(reco.skill.awaken.length || '0')}}
 									<i class="fa fa-refresh"></i>
 								</samp>
 							</div>

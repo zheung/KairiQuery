@@ -178,18 +178,17 @@
 
 	z-index: 2;
 
-	transition:all 0.4s;
+	transition:all 0.7s;
 }
 #sub__name__ .tabBox.SkillContent>.headBoxBig>.headBox {
 	width: 100%;
-	height: 100%;
+	height: 28px;
 
 	z-index: 2;
 
-	transition:all 0.4s;
-}
-#sub__name__ .tabBox.SkillContent>.headBoxBig>.headBox>.head.hover {
-	opacity: 100;
+	transition:all 0.7s;
+
+	overflow: hidden;
 }
 #sub__name__ .tabBox.SkillContent>.headBoxBig>.headBox>.head {
 	width: 100%;
@@ -201,19 +200,11 @@
 
 	position: relative;
 
-	opacity: 0;
-
 	transform: translate3d(0, 0, 0);
-	transition:all 0.15s;
-}
-#sub__name__ .tabBox.SkillContent>.headBoxBig>.headBox>.head.active {
-	opacity: 100;
-}
-#sub__name__ .tabBox.SkillContent>.headBoxBig>.headBox>.head>.cond {
-	width: 100%;
+	transition:all 0.4s;
 }
 #sub__name__ .tabBox.SkillContent>.headBoxBig>.switch {
-	width: 40px;
+	width: 50px;
 	height: 28px;
 
 	text-align: center;
