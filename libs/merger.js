@@ -17,6 +17,25 @@ let hasPlus = (cards, id, ids = []) => {
 
 	return 0;
 };
+let hasMMR = (cards, id, ids = []) => {
+	let card = cards[id], rare = card.info.rare;
+
+	if(card.info.name =='考试型伍&陆')
+		L();
+
+	if(ids.indexOf(id)+1)
+		return 0;
+	else if(rare == 7 || rare == 71)
+		return 1;
+	else {
+		for(let evol of card.evol) {
+			if(hasMMR(cards, evol.target, (ids.push(id) && 0) || ids))
+				return 1;
+		}
+
+		return 0;
+	}
+};
 
 module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs, evols) => {
 	let result = [[], {}],
@@ -108,6 +127,7 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 
 	for(let card of cards) {
 		card.info.rare = ~~(`${card.info.rare}${hasPlus(dictCard, card.id)}`);
+		card.info.mmr = hasMMR(dictCard, card.id);
 
 		card.mark = marker(card);
 

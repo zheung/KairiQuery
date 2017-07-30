@@ -39,6 +39,8 @@ module.exports = (serv) => {
 		if(rare == 63) set.add('mr++');
 		if(rare == 71) set.add('mmr');
 
+		set.add(`star:${card.info.star}`);
+
 		let sm = card.skill.awaken.concat().sort(prioSorter).concat(card.skill.normal.concat().sort(prioSorter))[0];
 
 		if(!sm) {
@@ -48,8 +50,8 @@ module.exports = (serv) => {
 		}
 
 		let sf = (card.skill.awaken[0] || card.skill.normal[0]),
-		chain = sm.info.chain,
-		cost = sf.info.cost, attr = sf.info.attr, job = sf.info.job, kind = sf.info.kind;
+			chain = sm.info.chain,
+			cost = sf.info.cost, attr = sf.info.attr, job = sf.info.job, kind = sf.info.kind;
 
 		if(attr == 1) set.add('fire');
 		if(attr == 2) set.add('ice');
