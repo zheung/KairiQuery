@@ -85,7 +85,7 @@ module.exports = async(serv, card) => {
 		for(let skill of skills[st]) {
 			let s = { prio: prioCount++, content: [], cond: skill.info.name };
 
-			if(skill.cond.type || skill.cond2.type || skill.delay.type)
+			if(skill.cond.type || (skill.cond2 && skill.cond2.type) || (skill.delay && skill.delay.type))
 				L('卧槽支援技有条件你敢信?!', card.id, card.info.name);
 
 			for(let role of skill.role) {

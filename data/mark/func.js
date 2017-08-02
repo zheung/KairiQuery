@@ -91,7 +91,7 @@ module.exports = (serv) => {
 
 				if(~~rp[5] > 0) set.add('attack:time'+rp[5]);
 
-				for(let tag of targeter(target, 'attack'))
+				for(let tag of targeter2(target, 'attack'))
 					set.add(tag);
 
 				if(rp[7] / (serv!='ps'?10:1) != 15) set.add('attack:crit');
