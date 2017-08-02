@@ -27,7 +27,11 @@ module.exports = async(serv) => {
 
 			return `${target} | 恢复生命 | 造成伤害的${p[1]}%`;
 		},
-		6: false,
+		6: async(card, skill, role) => {
+			let p = role.params;
+
+			return `我方全体 | 恢复生命 | 造成伤害的${p[1]}%`;
+		},
 		7: async(card, skill, role) => {
 			let p = role.params;
 
