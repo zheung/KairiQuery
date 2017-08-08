@@ -8,6 +8,9 @@ let hacker = {
 	'header-cn-sups': () => {
 		return require('./cn/head/sups.json');
 	},
+	'header-cn-skil': () => {
+		return require('./cn/head/skil.json');
+	},
 
 	'header-tw-card': () => {
 		return require('./tw/head/card.json');

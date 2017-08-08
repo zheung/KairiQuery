@@ -32,7 +32,7 @@
 			L(i, len, (await col.insert(arr.slice(i, i+50))).insertedCount);
 		}
 
-		L(data[0].length);
+		L(serv, 'done');
 
 		process.exit();
 	}

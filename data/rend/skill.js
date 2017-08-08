@@ -49,23 +49,52 @@ module.exports = async(serv, card) => {
 				}
 			}
 
-			let chain = skill.info.chain;
-			if(st != 'suport3') {
-				if(chain && (chain != 20 && chain != 1))
-					s.content.push(`<samp title="发动等级越低越先发动，相同则按出牌顺序发动">发动等级</samp>&nbsp;| PVE ${pve / 10} PVP ${pvp / 10} | Chain威力 | <samp title="Chain威力计算规则：\r\n1、影响HP的技能(物理、魔法、治疗)：每Chain增加总数值的${chain}%点\r\n2、影响属性的技能(防御、弱化、支援)：每Chain增加${chain}点\r\n3、根据某属性A影响属性的技能：每Chain增加${chain}%该属性数值">${chain}</>`);
-				else
+			if(serv == 'jp') {
+				if(st != 'suport3') {
 					s.content.push(`<samp title="发动等级越低越先发动，相同则出牌顺序发动">发动等级</samp>&nbsp;| PVE ${pve / 10} PVP ${pvp / 10}`);
+				}
+
+				let roleFirst = skill.role[0];
+
+				for(let role of skill.role) {
+					let skillType = role.type, rend = (await rdrRole(serv))[skillType];
+
+					if(rend instanceof Function) {
+						let chain1 = roleFirst.chain, chain2 = role.chain, chain = chain2 || chain1,
+							text = (await rend(card, skill, role, skillFirst)).replace(/\t|\n/g, '');
+
+						if(chain != 20 && chain != 0 && chain != 1)
+							text += ` | <samp title="Chain威力计算规则：\r\n1、影响HP的技能(物理、魔法、治疗)：每Chain增加总数值的${chain}%点\r\n2、影响属性的技能(防御、弱化、支援)：每Chain增加${chain}点\r\n3、基于某一属性计算的技能：每Chain增加${chain}%该属性数值">高连携</> | ${chain}`;
+
+						s.content.push(text);
+					}
+					else {
+						L('New Role', shower.skillRole[skillType], 'Card', card.id, 'Skill', skill.id);
+
+						s.content.push('~未渲染技能' + shower.skillRole[skillType]);
+					}
+				}
 			}
+			else {
+				let chain = skill.info.chain;
 
-			for(let role of skill.role) {
-				let skillType = role.type, rend = (await rdrRole(serv))[skillType];
+				if(st != 'suport3') {
+					if(chain && (chain != 20 && chain != 1))
+						s.content.push(`<samp title="发动等级越低越先发动，相同则按出牌顺序发动">发动等级</samp>&nbsp;| PVE ${pve / 10} PVP ${pvp / 10} | Chain威力 | <samp title="Chain威力计算规则：\r\n1、影响HP的技能(物理、魔法、治疗)：每Chain增加总数值的${chain}%点\r\n2、影响属性的技能(防御、弱化、支援)：每Chain增加${chain}点\r\n3、根据某属性A影响属性的技能：每Chain增加${chain}%该属性数值">${chain}</>`);
+					else
+						s.content.push(`<samp title="发动等级越低越先发动，相同则出牌顺序发动">发动等级</samp>&nbsp;| PVE ${pve / 10} PVP ${pvp / 10}`);
+				}
 
-				if(rend instanceof Function)
-					s.content.push((await rend(card, skill, role, skillFirst)).replace(/\t|\n/g, ''));
-				else {
-					L('New Role', shower.skillRole[skillType], 'Card', card.id, 'Skill', skill.id);
+				for(let role of skill.role) {
+					let skillType = role.type, rend = (await rdrRole(serv))[skillType];
 
-					s.content.push('~未渲染技能' + shower.skillRole[skillType]);
+					if(rend instanceof Function)
+						s.content.push((await rend(card, skill, role, skillFirst)).replace(/\t|\n/g, ''));
+					else {
+						L('New Role', shower.skillRole[skillType], 'Card', card.id, 'Skill', skill.id);
+
+						s.content.push('~未渲染技能' + shower.skillRole[skillType]);
+					}
 				}
 			}
 
