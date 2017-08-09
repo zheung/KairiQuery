@@ -184,7 +184,11 @@ module.exports = async(serv) => {
 
 			return `${target} | ${p[1]}回合 | 提升黑暗抗性 | ${p[2]}%`;
 		},
-		47: false,
+		47: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			return `${target} | ${p[1]}回合 | 提升${show(p[3])}抗性 | ${p[2]}%`;
+		},
 		48: false,
 		49: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);

@@ -39,6 +39,8 @@ module.exports = async() => {
 		8: async(card, skill, cond) => {
 			let u = ~~cond.param1, d = ~~cond.param2;
 
+			if(d == 100) d = 0;
+
 			if(u == d)
 				return `自身 | 发动时 | HP | ${u}%`;
 			else if(u && !d)
@@ -68,6 +70,7 @@ module.exports = async() => {
 		12: false,
 		13: async(card, skill, cond) => {
 			let u = ~~cond.param1, d = ~~cond.param2;
+
 			if(d >= 28) d = 0;
 
 			if(u == d)
@@ -81,6 +84,7 @@ module.exports = async() => {
 		},
 		14: async(card, skill, cond) => {
 			let u = ~~cond.param1, d = ~~cond.param2;
+
 			if(d >= 28) d = 0;
 
 			if(u == d)
@@ -100,9 +104,33 @@ module.exports = async() => {
 		18: false,
 		19: false,
 		20: async(card, skill, cond) => {
-			return `自身 | 花费 ${cond.param1}COST以上`;
+			let u = ~~cond.param1, d = ~~cond.param2;
+
+			if(d >= 41) d = 0;
+
+			if(u == d)
+				return `自身 | 消耗COST | 共${u}点`;
+			else if(u && !d)
+				return `自身 | 消耗COST | ${u}点或以上`;
+			else if(!u && d)
+				return `自身 | 消耗COST | ${d}点或以下`;
+			else
+				return `自身 | 消耗COST | ${u}~${d}点`;
 		},
-		21: false,
+		21: async(card, skill, cond) => {
+			let u = ~~cond.param1, d = ~~cond.param2;
+
+			if(d >= 41) d = 0;
+
+			if(u == d)
+				return `我方 | 消耗COST | 共${u}点`;
+			else if(u && !d)
+				return `我方 | 消耗COST | ${u}点或以上`;
+			else if(!u && d)
+				return `我方 | 消耗COST | ${d}点或以下`;
+			else
+				return `我方 | 消耗COST | ${u}~${d}点`;
+		},
 		22: async(card, skill, cond) => {
 			if(cond.param1 == cond.param2)
 				return `目标 | ${shower.skillRole[valuer.skillRole[cond.param1]]}状态`;
@@ -138,6 +166,7 @@ module.exports = async() => {
 		28: false,
 		29: async(card, skill, cond) => {
 			let u = ~~cond.param4, d = ~~cond.param5;
+
 			if(d >= 28) d = 0;
 
 			if(u == d)
@@ -175,10 +204,24 @@ module.exports = async() => {
 			return `目标 | ${shower.roleBuff[valuer.roleBuff[cond.param1]]}状态`;
 		},
 		39: false,
-		40: false,
+		40: async(card, skill, cond) => {
+			let u = ~~cond.param1, d = ~~cond.param2;
+
+			if(d == 100) d = 0;
+
+			if(u == d)
+				return `目标 | 发动时 | HP | ${u}%`;
+			else if(u && !d)
+				return `目标 | 发动时 | HP | ${u}%或以上`;
+			else if(!u && d)
+				return `目标 | 发动时 | HP | ${d}%或以下`;
+			else
+				return `目标 | 发动时 | HP | ${u}%~${d}%`;
+		},
 		41: false,
 		42: async(card, skill, cond) => {
 			let u = ~~cond.param1, d = ~~cond.param2;
+
 			if(d >= 28) d = 0;
 
 			if(u == d)
@@ -189,6 +232,20 @@ module.exports = async() => {
 				return `<samp title="任意一人满足条件即可">我方</samp>&nbsp;| HP | ${d}%或以下`;
 			else
 				return `<samp title="任意一人满足条件即可">我方</samp>&nbsp;| HP | ${u}~${d}%`;
+		},
+		46: async(card, skill, cond) => {
+			let u = ~~cond.param1, d = ~~cond.param2;
+
+			if(d >= 99) d = 0;
+
+			if(u == d)
+				return `目标 | BUFF数 | ${u}%`;
+			else if(u && !d)
+				return `目标 | BUFF数 | ${u}%或以上`;
+			else if(!u && d)
+				return `目标 | BUFF数 | ${d}%或以下`;
+			else
+				return `目标 | BUFF数 | ${u}~${d}%`;
 		},
 		60: async(card, skill, cond) => {
 			let u = ~~cond.param2, d = ~~cond.param3;
