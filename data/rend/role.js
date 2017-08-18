@@ -242,28 +242,38 @@ module.exports = async(serv) => {
 		67: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${p[1]}回合 | 毒 | ${Math.ceil(p[5]/10)}+${p[6]/10}%${show(p[8])}`;
+			let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+
+			return `${target} | ${p[1]}回合 | 毒 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
 		},
 		68: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${p[1]}回合 | 燃烧 | ${Math.ceil(p[5]/10)}+${p[6]/10}%${show(p[8])}`;
+			let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+
+			return `${target} | ${p[1]}回合 | 燃烧 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
 		},
 		69: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${p[1]}回合 | 冻结 | ${Math.ceil(p[5]/10)}+${p[6]/10}%${show(p[8])}`;
+			let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+
+			return `${target} | ${p[1]}回合 | 冻结 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
 		},
 		70: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${p[1]}回合 | 裂风 | ${Math.ceil(p[5]/10)}+${p[6]/10}%${show(p[8])}`;
+			let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+
+			return `${target} | ${p[1]}回合 | 裂风 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
 		},
 		71: false,
 		72: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${p[1]}回合 | 感电 | ${Math.ceil(p[5]/10)}+${p[6]/10}%${show(p[8])}`;
+			let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+
+			return `${target} | ${p[1]}回合 | 感电 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
 		},
 		73: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst),
