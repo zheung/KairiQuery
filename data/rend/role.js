@@ -12,7 +12,7 @@ module.exports = async(serv) => {
 		1: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[1]+~~p[2]/1000*card.info.max.level);
+			let base = Math.floor(~~p[1]+~~p[2]/1000*card.info.max.level);
 
 			return `${target} | ${p[5]}段${show(p[8])}元素的${show(p[9])}攻击 |\x20
 				${base ? `<samp title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</samp>+` : ''}
@@ -52,7 +52,7 @@ module.exports = async(serv) => {
 		12: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[1]+~~p[2]/1000*card.info.max.level);
+			let base = Math.floor(~~p[1]+~~p[2]/1000*card.info.max.level);
 
 			return `${target} | 恢复生命 | ${base ? `<samp title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</samp>+` : ''}
 				${show(p[5])}的${p[3]/10}%`;
@@ -67,7 +67,7 @@ module.exports = async(serv) => {
 		16: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[2]+~~p[3]/1000*card.info.max.level);
+			let base = Math.floor(~~p[2]+~~p[3]/1000*card.info.max.level);
 
 			return `${target} | ${p[1]}回合 |\x20
 				<samp title="发动时机：回合开始前">持续恢复生命</samp>&nbsp;|\x20
@@ -88,7 +88,7 @@ module.exports = async(serv) => {
 		23: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
 			return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
 				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
@@ -124,7 +124,7 @@ module.exports = async(serv) => {
 		35: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[2] + ~~p[5] * card.info.max.level);
+			let base = Math.floor(~~p[2] + ~~p[5] * card.info.max.level);
 
 			return `${target} | ${p[1]}回合 | 追加${show(p[6])}元素伤害 |\x20
 				<samp title="等级成长：${p[2]}+${p[5]}*等级">${base}</samp>点`;
@@ -137,7 +137,7 @@ module.exports = async(serv) => {
 		37: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[5]/1000+~~p[6]*card.info.max.level);
+			let base = Math.floor(~~p[5]/1000+~~p[6]*card.info.max.level);
 
 			return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
 				<samp title="等级成长：${p[5]/1000}+${p[6]}*等级">${base}</samp>+${p[4]/10}%${show(p[3])}`;
@@ -146,7 +146,7 @@ module.exports = async(serv) => {
 		39: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
 			return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
 				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
@@ -215,7 +215,7 @@ module.exports = async(serv) => {
 		56: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
 			return `${target} | ${p[1]}回合 | 降低${show(p[2])} |\x20
 				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
@@ -226,7 +226,7 @@ module.exports = async(serv) => {
 		60: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
 			return `${target} | ${p[1]}回合 | 降低${show(p[2])} |\x20
 				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
@@ -242,28 +242,28 @@ module.exports = async(serv) => {
 		67: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+			let base = ~~p[4]+Math.floor(~~p[5]*card.info.max.level/1000);
 
 			return `${target} | ${p[1]}回合 | 毒 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
 		},
 		68: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+			let base = ~~p[4]+Math.floor(~~p[5]*card.info.max.level/1000);
 
 			return `${target} | ${p[1]}回合 | 燃烧 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
 		},
 		69: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+			let base = ~~p[4]+Math.floor(~~p[5]*card.info.max.level/1000);
 
 			return `${target} | ${p[1]}回合 | 冻结 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
 		},
 		70: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+			let base = ~~p[4]+Math.floor(~~p[5]*card.info.max.level/1000);
 
 			return `${target} | ${p[1]}回合 | 裂风 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
 		},
@@ -271,7 +271,7 @@ module.exports = async(serv) => {
 		72: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+			let base = ~~p[4]+Math.floor(~~p[5]*card.info.max.level/1000);
 
 			return `${target} | ${p[1]}回合 | 感电 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
 		},
@@ -363,7 +363,7 @@ module.exports = async(serv) => {
 		112: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[4] + ~~p[5] / 1000 * card.info.max.level);
+			let base = Math.floor(~~p[4] + ~~p[5] / 1000 * card.info.max.level);
 
 			return `${target} | ${p[1]}回合 | 降低${show(p[6])}元素耐性 |\x20
 				<samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>点`;
@@ -371,7 +371,7 @@ module.exports = async(serv) => {
 		113: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[4] + ~~p[5] / 1000 * card.info.max.level);
+			let base = Math.floor(~~p[4] + ~~p[5] / 1000 * card.info.max.level);
 
 			return `${target} | ${p[1]}回合 | 提升${show(p[6])}元素耐性 |\x20
 				<samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>点`;
@@ -382,7 +382,7 @@ module.exports = async(serv) => {
 		117: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[2] / 100 + ~~p[3] / 100 * card.info.max.level);
+			let base = Math.floor(~~p[2] / 100 + ~~p[3] / 100 * card.info.max.level);
 
 			return `${target} | ${p[1]}回合 | 反射伤害 |\x20
 				所受伤害的<samp title="等级成长：${p[2]/100}+${p[3]/100}*等级">${base}</samp>%`;
@@ -448,7 +448,7 @@ module.exports = async(serv) => {
 		144: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.ceil(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
 			return `${target} | ${p[1]}回合 | 提高${show(p[2])}上限 |\x20
 				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
