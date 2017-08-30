@@ -1,6 +1,6 @@
 module.exports = async($, router) => {
 	await $.rq('init');
-	await $.st(await $.pa('asset'), { defer: true, });
+	await $.st(await $.pa('dist'), { defer: true, });
 	await $.io(await $.rq('io'));
 
 	router.get('/', async(ctx, next) => {
@@ -22,24 +22,24 @@ module.exports = async($, router) => {
 
 		ctx.type = 'html';
 
-		ctx.body = fs.createReadStream(await $.pa('asset/html/index.html'))
+		ctx.body = fs.createReadStream(await $.pa('dist/home.html'))
 			.pipe(replaceStream('${serv}', query.serv))
 			.pipe(replaceStream('${word}', query.word || ''))
 			.pipe(replaceStream('${page}', query.page || 1))
 			.pipe(replaceStream('${mark}', query.mark || ''));
 	});
-	router.get('/subs/:sub/:name.:ext', async(ctx) => {
-		let p = ctx.params;
+	// router.get('/subs/:sub/:name.:ext', async(ctx) => {
+	// 	let p = ctx.params;
 
-		ctx.type = p.ext;
+	// 	ctx.type = p.ext;
 
-		if(ctx.query.tab)
-			ctx.body = fs.createReadStream(await $.pa(`asset/subs/${p.sub}/${p.name}.${p.ext}`))
-				.pipe(replaceStream('__name__', p.sub));
-		else
-			ctx.body = fs.createReadStream(await $.pa(`asset/subs/${p.sub}/${p.name}.${p.ext}`))
-				.pipe(replaceStream('__name__', p.sub)).pipe(replaceStream('\t', ''));
-	});
+	// 	if(ctx.query.tab)
+	// 		ctx.body = fs.createReadStream(await $.pa(`asset/subs/${p.sub}/${p.name}.${p.ext}`))
+	// 			.pipe(replaceStream('__name__', p.sub));
+	// 	else
+	// 		ctx.body = fs.createReadStream(await $.pa(`asset/subs/${p.sub}/${p.name}.${p.ext}`))
+	// 			.pipe(replaceStream('__name__', p.sub)).pipe(replaceStream('\t', ''));
+	// });
 
 	// let queryer = await $.rq('libs/queryer');
 	// router.get('/ex', async(ctx) => {
