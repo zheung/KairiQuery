@@ -11,13 +11,12 @@
 </style>
 
 <script>
-import Vue from 'Vue';
-export default {
-	name: 'test',
-	data: function() {
-		return {
-			msg: 'Hiiiiiiii'
-		};
-	}
-};
+	export default {
+		name: 'test',
+		data: function() {
+			return {
+				msg: 'Hiiiiiiii'
+			};
+		}
+	};
 </script>

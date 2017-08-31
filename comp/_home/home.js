@@ -2,48 +2,25 @@ import 'babel-polyfill';
 
 import Vue from 'Vue';
 
-// import Test from './test.vue';
-// import Hhhh from './hhhh.vue';
+import Loader from './loader.js';
 
-Vue.config.debug = true;
-
-// let ensure = async function(what) {
-// 	return new Promise(function(resolve) {
-// 		require([], function() {
-// 			console.log(what);
-// 			let m = require(what);
-// 			resolve(m);
-// 		});
-// 	});
-// };
+// Vue.config.debug = true;
 
 let main = async function() {
-	// require([], function() {
-	// 	// let Test = require('./test.vue');
-
-	// 	console.log(Test);
-	// 	new Vue({
-	// 		el: '#app',
-	// 		components: {
-	// 			'kq-test': Test,
-	// 			// 'kq-hhhh': Hhhh,
-	// 		}
-	// 	});
-	// });
-
-	let Test = await System.import('./test.vue');
-	// let Hhhh = await ensure('./test.vue');
-
-	console.log(Test);
+	let Test;
+	if(Math.random().toString().substr(2,1) % 2) {
+		Test = await Loader('test');
+	}
+	else {
+		Test = await Loader('hhhh');
+	}
 
 	new Vue({
 		el: '#app',
 		components: {
-			'kq-test': Test,
-			// 'kq-hhhh': Hhhh,
+			'kq-test': Test.default
 		}
 	});
-
 };
 
 

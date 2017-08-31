@@ -28,6 +28,7 @@ module.exports = async($, router) => {
 			.pipe(replaceStream('${page}', query.page || 1))
 			.pipe(replaceStream('${mark}', query.mark || ''));
 	});
+
 	// router.get('/subs/:sub/:name.:ext', async(ctx) => {
 	// 	let p = ctx.params;
 
