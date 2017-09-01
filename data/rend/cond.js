@@ -50,7 +50,20 @@ module.exports = async() => {
 			else
 				return `自身 | 发动时 | HP | ${u}%~${d}%`;
 		},
-		9: false,
+		9: async(card, skill, cond) => {
+			let u = ~~cond.param1, d = ~~cond.param2;
+
+			if(d == 999999) d = 0;
+
+			if(u == d)
+				return `自身 | 发动时 | HP | ${u}`;
+			else if(u && !d)
+				return `自身 | 发动时 | HP | ${u}或以上`;
+			else if(!u && d)
+				return `自身 | 发动时 | HP | ${d}或以下`;
+			else
+				return `自身 | 发动时 | HP | ${u}~${d}`;
+		},
 		10: async(card, skill, cond) => {
 			let u = ~~cond.param1, d = ~~cond.param2;
 
