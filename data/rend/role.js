@@ -175,7 +175,7 @@ module.exports = async(serv) => {
 		45: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			if(p[4][1] || p[5][1] != 3) L('New Params Skill 64');
+			if(p[4][1] || p[5][1] != 3) L('New Params Role 64');
 
 			return `${target} | ${p[1]}回合 | 使敌方攻击指向自身 | 减免所受伤害的${p[2]/10}%`;
 		},
@@ -324,7 +324,7 @@ module.exports = async(serv) => {
 		87: async(card, skill, role, skillFirst) => {
 			let target = showTarget(skill, role, skillFirst);
 
-			if(role.params[1] != 9999) L('New Params Skill 61');
+			if(role.params[1] != 9999) L('New Params Role 61');
 
 			return `${target} | 显示自身的元素`;
 		},
@@ -444,7 +444,13 @@ module.exports = async(serv) => {
 		140: false,
 		141: false,
 		142: false,
-		143: false,
+		143: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			if(p[2][1]) L('New Params Role 143');
+
+			return `${target} | 所有祝福 | 回合+${p[1]}`;
+		},
 		144: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
