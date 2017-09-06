@@ -7,7 +7,11 @@
 	</head>
 	<body>
 		<div id="app">
-			<kq-test></kq-test>
+			<span>{{currentView}}</span>
+			<button @click="click">加载</button>
+			<keep-alive>
+				<component :is="currentView"></component>
+			</keep-alive>
 		</div>
 	<script type="text/javascript" src="kq/main.js"></script></body>
 </html>

@@ -1,27 +1,25 @@
-import 'babel-polyfill';
-
 import Vue from 'Vue';
 
 import Loader from './loader.js';
 
-// Vue.config.debug = true;
+Vue.config.debug = true;
 
 let main = async function() {
-	let Test;
-	if(Math.random().toString().substr(2,1) % 2) {
-		Test = await Loader('test');
-	}
-	else {
-		Test = await Loader('hhhh');
-	}
-
-	new Vue({
+	window.app = new Vue({
 		el: '#app',
-		components: {
-			'kq-test': Test.default
+		data: {
+			currentView: '',
+		},
+		methods: {
+			click: async function() {
+				let sub = ['subTest','subHhhh'][Math.random().toString().substr(2,1) % 2];
+
+				await Loader(sub);
+
+				this.currentView = sub;
+			}
 		}
 	});
 };
-
 
 window.onload = function () { main(); };

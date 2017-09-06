@@ -22,11 +22,11 @@ module.exports = async($, router) => {
 
 		ctx.type = 'html';
 
-		ctx.body = fs.createReadStream(await $.pa('dist/home.html'))
-			.pipe(replaceStream('${serv}', query.serv))
-			.pipe(replaceStream('${word}', query.word || ''))
-			.pipe(replaceStream('${page}', query.page || 1))
-			.pipe(replaceStream('${mark}', query.mark || ''));
+		ctx.body = fs.createReadStream(await $.pa('dist/home.html'));
+			// .pipe(replaceStream('${serv}', query.serv))
+			// .pipe(replaceStream('${word}', query.word || ''))
+			// .pipe(replaceStream('${page}', query.page || 1))
+			// .pipe(replaceStream('${mark}', query.mark || ''));
 	});
 
 	// router.get('/subs/:sub/:name.:ext', async(ctx) => {

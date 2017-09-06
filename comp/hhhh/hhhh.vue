@@ -1,7 +1,6 @@
 <template>
 	<div>
-		<div class="h">hhhh</div>
-		<button @click=""> </button>
+		<div class="h">{{msg}}</div>
 	</div>
 </template>
 
@@ -15,9 +14,15 @@
 <script>
 	export default {
 		name: 'test',
+		mounted: function() {
+			this.msg +=1;
+		},
+		activated: function() {
+			this.msg +=1;
+		},
 		data: function() {
 			return {
-				msg: 'Hiiiiiiii'
+				msg: 1
 			};
 		}
 	};
