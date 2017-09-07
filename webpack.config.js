@@ -8,7 +8,7 @@ module.exports = {
 	entry: path.join(D, 'comp', 'index.js'),
 	output: {
 		path: path.join(D, 'dist'),
-		publicPath: 'kq/',
+		publicPath: 'kq2/',
 		filename: '[name].js',
 		chunkFilename: 'sub[name].js'
 	},
