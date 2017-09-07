@@ -1,26 +1,40 @@
 <script>
+	import ToggleButton from './ToggleButton.vue';
+
 	export default {
-		name: 'home',
+		props: ['tabs', 'dealer', 'keyDefault'],
+
+		components: {
+			ToggleButton: ToggleButton
+		},
+
 		data: function() {
 			return {
-				tabs: [ { title: '卡牌查询', key: 'cardQuery' } ],
+				now: '',
 			};
 		},
 		methods: {
-			click: async function() {
-				let sub = ['subTest','subHhhh'][Math.random().toString().substr(2,1) % 2];
+			click: function(key) {
+				let tab = this.tabs[key];
 
-				await Loader(sub);
+				this.now = key;
 
-				this.currentView = sub;
+				if(this.dealer && tab) {
+					this.dealer(key);
+				}
 			}
+		},
+
+		mounted: function() {
+			this.click(this.keyDefault);
 		}
 	};
 </script>
 
 <template>
 	<div class="wrap">
-		<div class="button" v-for="tab of tabs" :key="tab.key">{{tab.title}}</div>
+		<ToggleButton v-for="(tab, key) of tabs" v-if="!tab.right" :now="now" :key="key" :id="key" :text="tab.title" :width="tab.width" :dealer="click" />
+		<ToggleButton v-for="(tab, key) of tabs" v-if="tab.right" class="right" :now="now" :key="key" :id="key" :text="tab.title" :width="tab.width" :dealer="click" />
 	</div>
 </template>
 
@@ -30,16 +44,11 @@
 
 		height: 30px;
 	}
-	.button {
-		border: 2px solid #555;
-		border-radius: 5px;
-		text-align: center;
-		line-height: 20px;
+	.right {
+		position: absolute;
 
-		font-size: 10px;
+		right: 0px;
 
-		width: 60px;
-
-		cursor: pointer;
+		margin: 0px 0px 0px 5px;
 	}
 </style>

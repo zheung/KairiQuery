@@ -1,24 +1,26 @@
 <script>
 	import Loader from '../loader.js';
-	import TabFrame from '../_comp/TabFrame.vue'
+	import TabFrame from '../_comp/TabFrame.vue';
 
 	export default {
-		name: 'home',
 		data: function() {
 			return {
 				currentView: '',
+				tabs: {
+					subCardQuery: { title: '卡牌查询' },
+					subBlueCard: { title: '青星骑士一览', width: 80 },
+					subAbout: { title: '关于', width: 40, right: true }
+				}
 			};
 		},
 		components: {
 			TabFrame: TabFrame
 		},
 		methods: {
-			click: async function() {
-				let sub = ['subTest','subHhhh'][Math.random().toString().substr(2,1) % 2];
+			changeTab: async function(key) {
+				await Loader(key);
 
-				await Loader(sub);
-
-				this.currentView = sub;
+				this.currentView = key;
 			}
 		}
 	};
@@ -28,12 +30,10 @@
 	<div class="homeBox">
 		<div class="title">
 			<span class="big">Kairi Query</span>
-			<span class="sub">乖离性百万亚瑟王数据站 by DanoR （最后更新：国服，09月07日；日服，09月07日；PS服，09月07日</span>
+			<span class="sub">-- 乖离性百万亚瑟王数据站(Alpha) by DanoR （最后更新：国服，09月07日；日服，09月07日；PS服，09月07日）</span>
 		</div>
-		<TabFrame class="tabBox"></TabFrame>
+		<TabFrame class="tabBox" :tabs="tabs" keyDefault="subCardQuery" :dealer="changeTab"></TabFrame>
 		<div class="frameBox">
-			<button @click="click">加载</button>
-			<span>{{currentView}}</span>
 			<keep-alive>
 				<component :is="currentView"></component>
 			</keep-alive>
@@ -86,5 +86,4 @@
 		left: 5px;
 		right: 5px;
 	}
-
 </style>

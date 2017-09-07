@@ -22,7 +22,7 @@ module.exports = async($, router) => {
 
 		ctx.type = 'html';
 
-		ctx.body = fs.createReadStream(await $.pa('dist/home.html'));
+		ctx.body = fs.createReadStream(await $.pa('dist/index.html'));
 			// .pipe(replaceStream('${serv}', query.serv))
 			// .pipe(replaceStream('${word}', query.word || ''))
 			// .pipe(replaceStream('${page}', query.page || 1))

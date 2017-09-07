@@ -1,19 +1,17 @@
 <template>
 	<div>
-		<div class="h">{{msg}}</div>
+		<div class="h">欧洲酋长，欧皇猪 {{msg}}</div>
 	</div>
 </template>
 
-
 <style scoped>
-.h {
-	color: blue;
+div {
+	color: lightyellow;
 }
 </style>
 
 <script>
 	export default {
-		name: 'test',
 		mounted: function() {
 			this.msg +=1;
 		},

@@ -33,7 +33,7 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			filename: path.join(D, 'dist', 'home.html'),
+			filename: path.join(D, 'dist', 'index.html'),
 			template: path.join(D, 'comp', 'index.html'),
 			inject: true
 		})

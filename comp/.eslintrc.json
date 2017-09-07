@@ -31,13 +31,11 @@
 		]
 	},
 	"globals": {
-		"$": true,
-
 		"Vue": true,
 		"io": true,
 
-		"pre": true,
-		"app": true,
-		"bb": true
+		"L": true,
+
+		"app": true
 	}
 }

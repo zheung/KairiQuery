@@ -1,12 +1,12 @@
 <template>
 	<div>
-		<div class="t">{{msg}}</div>
+		<div class="t">大黄蜂，嗡嗡嗡 {{msg}}</div>
 	</div>
 </template>
 
 <style scoped>
 .t {
-	color: red;
+	color: lightyellow;
 }
 </style>
 

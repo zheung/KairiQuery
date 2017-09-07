@@ -18,4 +18,5 @@ let main = async function() {
 	});
 };
 
+window.L = (0 || console).log;
 window.onload = function () { main(); };
