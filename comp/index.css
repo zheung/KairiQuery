@@ -1,0 +1,10 @@
+html, body, #home {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+* {
+	text-shadow: 0em 0em 0.0001em !important;
+	font-family: "Microsoft YaHei", sans-serif !important;
+}

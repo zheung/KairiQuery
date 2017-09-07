@@ -6,12 +6,8 @@
 		<title>首页</title>
 	</head>
 	<body>
-		<div id="app">
-			<span>{{currentView}}</span>
-			<button @click="click">加载</button>
-			<keep-alive>
-				<component :is="currentView"></component>
-			</keep-alive>
+		<div id="home">
+			<component is="home"></component>
 		</div>
 	<script type="text/javascript" src="kq/main.js"></script></body>
 </html>

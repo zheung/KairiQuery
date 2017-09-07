@@ -20,27 +20,21 @@ module.exports = {
 	},
 	module: {
 		loaders: [ {
+			test: /\.css$/,
+			loader: 'style-loader!css-loader'
+		}, {
 			test: /\.vue$/,
 			loader: 'vue-loader'
 		}, {
 			test: /\.js$/,
 			loader: 'babel-loader',
-			exclude: /node_modules/,
-			query: {
-				presets: [[
-					'env', {
-						targets: { uglify: true },
-						useBuiltIns: true
-					}
-				]],
-				'plugins': ['syntax-dynamic-import']
-			}
+			exclude: /node_modules/
 		}]
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			filename: path.join(D, 'dist', 'home.html'),
-			template: path.join(D, 'comp', '_home', 'home.html'),
+			template: path.join(D, 'comp', 'index.html'),
 			inject: true
 		})
 	]
