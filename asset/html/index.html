@@ -123,6 +123,7 @@
 				</div>
 			</div>
 		</div>
+		<a class="q2" href="/kq2">2</a>
 
 		<script type="text/javascript">
 			window.pre = { serv: '${serv}', word: '${word}', mark: '${mark}', page: ~~'${page}' };
@@ -130,6 +131,18 @@
 			window.ma = document.getElementById('maskBox');
 			window.tabChat = document.getElementById('chatBox');
 			window.tabMore = document.getElementById('moreBox');
+
+			var qq2 = document.querySelector('.q2');
+			setInterval(function() {
+				if(!window.q2) {
+					qq2.style.display = 'none';
+					window.q2 = true;
+				}
+				else {
+					qq2.style.display = 'block';
+					window.q2 = false;
+				}
+			}, 5000);
 		</script>
 
 		<script type="text/javascript" src="pub/js/vue.min.js"></script>
