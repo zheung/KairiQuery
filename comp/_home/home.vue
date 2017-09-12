@@ -29,8 +29,8 @@
 <template>
 	<div class="homeBox">
 		<div class="title">
-			<span class="big">Kairi Query</span>
-			<span class="sub">-- 乖离性百万亚瑟王数据站(Alpha) by DanoR （最后更新：国服，09月07日；日服，09月07日；PS服，09月07日）</span>
+			<div class="big">Kairi Query</div>
+			<div class="sub">-- 乖离性百万亚瑟王数据站(Alpha) by DanoR （最后更新：国服，09月07日；日服，09月07日；PS服，09月07日）</div>
 		</div>
 		<TabFrame class="tabBox" :tabs="tabs" keyDefault="subCardQuery" :dealer="changeTab"></TabFrame>
 		<div class="frameBox">
@@ -66,7 +66,17 @@
 		font-weight: bold;
 	}
 	.title>.sub {
+		position: absolute;
+
+		top: 10px;
+		left: 140px;
+
 		font-size: 10px;
+
+		word-break: keep-all;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
 	.tabBox {

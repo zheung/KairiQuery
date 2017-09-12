@@ -1,6 +1,7 @@
 <template>
 	<div>
-		<div class="h">欧洲酋长，欧皇猪 {{msg}}</div>
+		<div class="h">这里就是V2的试验场啦</div>
+		<div class="h">黄黑色很酷炫不是吗？！</div>
 	</div>
 </template>
 
