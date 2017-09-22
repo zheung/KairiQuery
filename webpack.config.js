@@ -29,6 +29,9 @@ module.exports = {
 			test: /\.js$/,
 			loader: 'babel-loader',
 			exclude: /node_modules/
+		}, {
+			test: /\.(png|jpg|gif)$/,
+			loader: 'url-loader?limit=1&name=./img/[name].[ext]',
 		}]
 	},
 	plugins: [

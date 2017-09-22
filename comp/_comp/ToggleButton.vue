@@ -17,7 +17,7 @@
 </script>
 
 <template>
-	<div class="button" :class="{ active: now == id }" :style="{ width: (width || 60)+'px' }" @click="click">{{text}}</div>
+	<div class="compToggleButton button" :class="{ active: now == id }" :style="{ width: (width || 60)+'px' }" @click="click">{{text}}</div>
 </template>
 
 <style scoped>
@@ -27,7 +27,7 @@
 		width: 60px;
 		height: 20px;
 
-		border: 2px solid #555;
+		border: 2px solid #ababab;
 
 		margin: 0px 5px 0px 0px;
 

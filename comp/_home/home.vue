@@ -7,9 +7,9 @@
 			return {
 				currentView: '',
 				tabs: {
-					subCardQuery: { title: '卡牌查询' },
-					subBlueCard: { title: '青星骑士一览', width: 80 },
-					subAbout: { title: '关于', width: 40, right: true }
+					iconMaker: { title: '头像生成' },
+					cardQuery: { title: '卡牌查询' },
+					about: { title: '关于', width: 40, right: true }
 				}
 			};
 		},
@@ -30,12 +30,12 @@
 	<div class="homeBox">
 		<div class="title">
 			<div class="big">Kairi Query</div>
-			<div class="sub">-- 乖离性百万亚瑟王数据站(Alpha) by DanoR （最后更新：国服，09月07日；日服，09月07日；PS服，09月07日）</div>
+			<div class="sub">-- 乖离性百万亚瑟王数据站(Alpha) by DanoR （最后更新：国服，XX月XX日；日服，XX月XX日；PS服，XX月XX日）</div>
 		</div>
-		<TabFrame class="tabBox" :tabs="tabs" keyDefault="subCardQuery" :dealer="changeTab"></TabFrame>
-		<div class="frameBox">
+		<TabFrame class="tabBox" :tabs="tabs" keyDefault="iconMaker" :dealer="changeTab"></TabFrame>
+		<div class="frameBox" :class="`sub${currentView.substring(0, 1).toUpperCase()}${currentView.substring(1)}`">
 			<keep-alive>
-				<component :is="currentView"></component>
+				<component :is="currentView" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; overflow-y: auto;"></component>
 			</keep-alive>
 		</div>
 	</div>

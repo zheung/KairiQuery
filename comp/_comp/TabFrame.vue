@@ -1,5 +1,5 @@
 <script>
-	import ToggleButton from './ToggleButton.vue';
+	import ToggleButton from './ToggleButton';
 
 	export default {
 		props: ['tabs', 'dealer', 'keyDefault'],
@@ -32,9 +32,9 @@
 </script>
 
 <template>
-	<div class="wrap">
-		<ToggleButton v-for="(tab, key) of tabs" v-if="!tab.right" :now="now" :key="key" :id="key" :text="tab.title" :width="tab.width" :dealer="click" />
-		<ToggleButton v-for="(tab, key) of tabs" v-if="tab.right" class="right" :now="now" :key="key" :id="key" :text="tab.title" :width="tab.width" :dealer="click" />
+	<div class="compTabFrame wrap">
+		<ToggleButton v-for="(tab, key) of tabs" :key="key" v-if="!tab.right" :now="now" :id="key" :text="tab.title" :width="tab.width" :dealer="click" />
+		<ToggleButton v-for="(tab, key) of tabs" :key="key" v-if=" tab.right" :now="now" :id="key" :text="tab.title" :width="tab.width" :dealer="click" class="right" />
 	</div>
 </template>
 
