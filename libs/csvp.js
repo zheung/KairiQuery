@@ -34,14 +34,20 @@ module.exports = async(path, name, start, header, dicter, parser) => {
 	if(header && header.length) {
 		let result = [], counter = {};
 
-		rows.forEach((row, index) => {
-			if(index+1 >= start && row.trim()) {
+		rows.forEach((row, indexRow) => {
+			if(indexRow+1 >= start && row.trim()) {
 				let cells = row.split(','), rowObj = {};
 
 				if(parser.filter && parser.filter(cells)) {
-					cells.forEach((cell, index) => {
-						let heads = header[index].split('.'),
-							option = heads.shift();
+					cells.forEach((cell, indexCell) => {
+						let heads = header[indexCell];
+
+						if(!heads) {
+							row;
+							throw Error(`Error: header not found\t${name}\t${indexRow}\t${indexCell}`);
+						}
+						heads = heads.split('.');
+						let option = heads.shift();
 
 						if(option == 's')
 							parsePath(rowObj, heads, cell);
