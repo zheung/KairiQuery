@@ -9,6 +9,7 @@
 				tabs: {
 					iconMaker: { title: '头像生成' },
 					cardQuery: { title: '卡牌查询' },
+					toggle: { title: '单选测试' },
 					about: { title: '关于', width: 40, right: true }
 				}
 			};

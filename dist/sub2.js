@@ -1,17 +1,17 @@
-webpackJsonp([0],{
+webpackJsonp([2],{
 
-/***/ 218:
+/***/ 220:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_iconMaker_vue__ = __webpack_require__(266);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_iconMaker_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_iconMaker_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_fa95ed90_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_iconMaker_vue__ = __webpack_require__(267);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Toggle_vue__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Toggle_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Toggle_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b873de40_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Toggle_vue__ = __webpack_require__(275);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(264)
+  __webpack_require__(272)
 }
 var normalizeComponent = __webpack_require__(49)
 /* script */
@@ -23,18 +23,18 @@ var normalizeComponent = __webpack_require__(49)
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-fa95ed90"
+var __vue_scopeId__ = "data-v-b873de40"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_iconMaker_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_fa95ed90_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_iconMaker_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Toggle_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b873de40_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Toggle_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "comp\\iconMaker\\iconMaker.vue"
+Component.options.__file = "comp\\Toggle\\Toggle.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -44,9 +44,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-fa95ed90", Component.options)
+    hotAPI.createRecord("data-v-b873de40", Component.options)
   } else {
-    hotAPI.reload("data-v-fa95ed90", Component.options)
+    hotAPI.reload("data-v-b873de40", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -538,23 +538,23 @@ if (false) {
 
 /***/ }),
 
-/***/ 264:
+/***/ 272:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(265);
+var content = __webpack_require__(273);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(48)("4233f4d2", content, false);
+var update = __webpack_require__(48)("007371e1", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fa95ed90\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./iconMaker.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fa95ed90\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./iconMaker.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b873de40\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Toggle.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b873de40\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Toggle.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -565,7 +565,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 265:
+/***/ 273:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(40)(undefined);
@@ -573,14 +573,14 @@ exports = module.exports = __webpack_require__(40)(undefined);
 
 
 // module
-exports.push([module.i, "\ndiv[data-v-fa95ed90] {\n\tcolor: lightyellow;\n}\n.col[data-v-fa95ed90] {\n\tmargin: 5px;\n}\n.col.toggle[data-v-fa95ed90] {\n\tmax-width: 400px;\n}\ninput[data-v-fa95ed90] {\n\tborder-radius: 5px;\n\tborder: 1px solid #474747;\n\ttext-align: center;\n}\n", ""]);
+exports.push([module.i, "\ndiv[data-v-b873de40] {\r\n\tcolor: lightyellow;\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 266:
+/***/ 274:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -594,102 +594,47 @@ var _Icon = __webpack_require__(221);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
-var _ToggleButton = __webpack_require__(93);
-
-var _ToggleButton2 = _interopRequireDefault(_ToggleButton);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 exports.default = {
+	components: {
+		Icon: _Icon2.default
+	},
+	mounted: function mounted() {
+		this.msg += 1;
+	},
+	activated: function activated() {
+		this.msg += 1;
+	},
 	data: function data() {
 		return {
-			rares: {
-				10: 'N', 20: 'HN', 30: 'R', 40: 'SR',
-				50: 'UR', 51: 'UR(A)', 60: 'MR', 61: 'MR(A)',
-				62: 'MR+', 63: 'MR++', 71: 'MMR'
-			},
-			attrs: {
-				1: '火', 2: '冰', 3: '风', 4: '光', 5: '暗',
-				102: '火冰', 103: '火风', 104: '火光', 105: '火暗',
-				203: '冰风', 204: '冰光', 205: '冰暗',
-				304: '风光', 305: '风暗', 405: '光暗'
-			},
-			jobs: {
-				1: '佣兵', 2: '富豪', 3: '盗贼', 4: '歌姬', 5: '通用'
-			},
-
-			toggle: {
+			msg: 1,
+			card: {
 				rare: 40,
 				attr: 4,
-				job: 1
-			},
-			url: '',
-			cent: 85.5
+				job: 1,
+				pid: 20002026
+			}
 		};
-	},
-	computed: {
-		card: function card() {
-			return {
-				rare: this.toggle.rare,
-				attr: this.toggle.attr,
-				job: this.toggle.job
-			};
-		}
-	},
-	methods: {
-		clickToggle: function clickToggle(type) {
-			var sub = this;
-
-			return function (value) {
-				sub.toggle[type] = ~~value;
-			};
-		}
-	},
-
-	components: {
-		Icon: _Icon2.default,
-		ToggleButton: _ToggleButton2.default
-	},
-
-	mounted: function mounted() {},
-	activated: function activated() {}
-};
+	}
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
-/***/ 267:
+/***/ 275:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -697,134 +642,17 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "compIconMaker" }, [
-    _c(
-      "div",
-      [
-        _c("Icon", {
-          attrs: { card: _vm.card, size: 150, url: _vm.url, cent: _vm.cent }
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c("div", [
-      _c("div", { staticClass: "col" }, [_vm._v("稀有：")]),
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "h" }, [_vm._v("这里就是V2的试验场啦")]),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col toggle" },
-        _vm._l(_vm.rares, function(text, key) {
-          return _c("ToggleButton", {
-            key: key,
-            staticClass: "col",
-            attrs: {
-              now: _vm.toggle.rare,
-              id: key,
-              text: text,
-              dealer: _vm.clickToggle("rare")
-            }
-          })
-        })
-      ),
+      _c("div", { staticClass: "h" }, [_vm._v("黄黑色很酷炫不是吗？！")]),
       _vm._v(" "),
-      _c("div", { staticClass: "col" }, [_vm._v("属性：")]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col toggle" },
-        _vm._l(_vm.attrs, function(text, key) {
-          return _c("ToggleButton", {
-            key: key,
-            staticClass: "col",
-            attrs: {
-              now: _vm.toggle.attr,
-              id: key,
-              text: text,
-              dealer: _vm.clickToggle("attr")
-            }
-          })
-        })
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "col" }, [_vm._v("职业：")]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col toggle" },
-        _vm._l(_vm.jobs, function(text, key) {
-          return _c("ToggleButton", {
-            key: key,
-            staticClass: "col",
-            attrs: {
-              now: _vm.toggle.job,
-              id: key,
-              text: text,
-              dealer: _vm.clickToggle("job")
-            }
-          })
-        })
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "col toggle" }, [
-        _vm._v("\n\t\t\t地址\n\t\t\t"),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model.trim",
-              value: _vm.url,
-              expression: "url",
-              modifiers: { trim: true }
-            }
-          ],
-          staticStyle: { width: "200px" },
-          attrs: { type: "text" },
-          domProps: { value: _vm.url },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.url = $event.target.value.trim()
-            },
-            blur: function($event) {
-              _vm.$forceUpdate()
-            }
-          }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col toggle" }, [
-        _vm._v("\n\t\t\t缩放\n\t\t\t"),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model.trim",
-              value: _vm.cent,
-              expression: "cent",
-              modifiers: { trim: true }
-            }
-          ],
-          staticStyle: { width: "100px" },
-          attrs: { type: "text" },
-          domProps: { value: _vm.cent },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.cent = $event.target.value.trim()
-            },
-            blur: function($event) {
-              _vm.$forceUpdate()
-            }
-          }
-        })
-      ])
-    ])
-  ])
+      _c("Icon", { attrs: { card: _vm.card } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -833,7 +661,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-fa95ed90", esExports)
+    require("vue-hot-reload-api")      .rerender("data-v-b873de40", esExports)
   }
 }
 
