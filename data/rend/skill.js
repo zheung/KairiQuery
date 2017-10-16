@@ -57,7 +57,7 @@ module.exports = async(serv, card) => {
 				let roleFirst = skill.role[0];
 
 				for(let role of skill.role) {
-					let skillType = role.type, rend = (await rdrRole(serv))[skillType];
+					let skillType = role.type, rend = (await rdrRole(serv))[shower.skillRole[skillType]];
 
 					if(rend instanceof Function) {
 						let chain1 = roleFirst.chain, chain2 = role.chain, chain = chain2 || chain1,
@@ -86,7 +86,7 @@ module.exports = async(serv, card) => {
 				}
 
 				for(let role of skill.role) {
-					let skillType = role.type, rend = (await rdrRole(serv))[skillType];
+					let skillType = role.type, rend = (await rdrRole(serv))[shower.skillRole[skillType]];
 
 					if(rend instanceof Function)
 						s.content.push((await rend(card, skill, role, skillFirst)).replace(/\t|\n/g, ''));
@@ -118,7 +118,7 @@ module.exports = async(serv, card) => {
 				L('卧槽支援技有条件你敢信?!', card.id, card.info.name);
 
 			for(let role of skill.role) {
-				let skillType = role.type, rend = (await rdrRole(serv))[skillType];
+				let skillType = role.type, rend = (await rdrRole(serv))[shower.skillRole[skillType]];
 
 				if(rend instanceof Function)
 					s.content.push((await rend(card, skill, role, skillFirst)).replace(/\t|\n/g, ''));
