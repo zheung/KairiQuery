@@ -1,0 +1,22 @@
+{
+  "name": "importer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zheung/KairiQuery.git"
+  },
+  "author": "DanoR",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zheung/KairiQuery/issues"
+  },
+  "homepage": "https://github.com/zheung/KairiQuery#readme",
+  "dependencies": {
+    "mongodb": "^2.2.33"
+  }
+}
