@@ -85,7 +85,7 @@ module.exports = (serv) => {
 			rt = role.type, rp = role.params;
 
 			//攻击
-			if(rt == 1) {
+			if(rt == 'ATTACK_AA') {
 				if(rp[9][1] == 1) set.add('attack:physical');
 				if(rp[9][1] == 2) set.add('attack:magic');
 
@@ -96,155 +96,155 @@ module.exports = (serv) => {
 
 				if(rp[7] / (serv!='ps'?10:1) != 15) set.add('attack:crit');
 			}
-			if(rt == 5) set.add('attack:drain');
-			if(rt == 7) set.add('attack:revenge');
-			if(rt == 9) set.add('attack:pierce');
-			if(rt == 10) set.add('attack:attrach');
+			if(rt == 'ATK_OP_DRAIN') set.add('attack:drain');
+			if(rt == 'ATK_OP_REVENGE') set.add('attack:revenge');
+			if(rt == 'ATK_OP_PIERCING') set.add('attack:pierce');
+			if(rt == 'ATK_OP_DAMAGE_INCREASE')
+				set.add('attack:attrach');
 			//免克制
-			if(rt == 11) set.add('nord');
+			if(rt == 'ATK_OP_ATTR_RATE_DOWN_INVALID') set.add('nord');
 			//治疗
-			if(rt == 12 || rt == 15) {
+			if(rt == 'HEAL_FIXED' || rt == 'HEAL_BY_SELF_PARAM') {
 				for(let tag of targeter(target, 'heal'))
 					set.add(tag);
 
-				if(rt == 12 || rp[5][1] == 2)
+				if(rt == 'HEAL_FIXED' || rp[5][1] == 2)
 					set.add('heal:fix');
 				else
 					set.add('heal:param');
 			}
 			//缓回
-			if(rt == 16) {
+			if(rt == 'REGENERATE_FIXED') {
 				for(let tag of targeter(target, 'regen'))
 					set.add(tag);
 
 				if(rp[1]) set.add('regen:turn'+rp[1]);
 			}
 			//支援
-			if(rt == 21 || rt == 23) {
+			if(rt == 'ATK_UP_BY_SELF_PARAM' || rt == 'ATK_UP_FIXED') {
 				for(let tag of targeter(target, 'supo'))
 					set.add(tag);
 
 				if(rp[1]) set.add('supo:turn'+rp[1]);
 				if(rp[2][1]) set.add('supo:param'+rp[2][1]);
 
-				if(rt == 21)
+				if(rt == 'ATK_UP_BY_SELF_PARAM')
 					set.add('supo:param');
-				if(rt == 23)
+				if(rt == 'ATK_UP_FIXED')
 					set.add('supo:fix');
 			}
 			//增伤，台服
-			if(rt == 26) set.add('dmup');
+			if(rt == 'DAMAGE_UP') set.add('dmup');
 			//解除
-			if(rt == 28) set.add('rele').add('rele:role'+rp[3][1]);
-			if(rt == 28 && rp[4][1]) set.add('rele:role'+rp[4][1]);
-			if(rt == 50) set.add('rele').add('rele:all');
+			if(rt == 'DEBUFF_RELEASE_ONE') set.add('rele').add('rele:role'+rp[3][1]);
+			if(rt == 'DEBUFF_RELEASE_ONE' && rp[4][1]) set.add('rele:role'+rp[4][1]);
+			if(rt == 'BUFF_RELEASE') set.add('rele').add('rele:all');
 			//暴击
-			if(rt == 34) set.add('crit');
+			if(rt == 'CRITICAL_UP') set.add('crit');
 			//追伤
-			if(rt == 35) {
+			if(rt == 'ENCHANT') {
 				for(let tag of targeter(target, 'ench'))
 					set.add(tag);
 
 				set.add('ench').add('ench:turn'+rp[1]).add('ench:attr'+rp[6][1]);
 			}
 			//减伤，PS服
-			if(rt == 36)
+			if(rt == 'DAMAGE_CUT')
 				set.add('dmcu');
 			//防御
-			if(rt==37 || rt==39) {
+			if(rt == 'DEF_UP_BY_SELF_PARAM' || rt == 'DEF_UP_FIXED') {
 				for(let tag of targeter(target, 'defe'))
 					set.add(tag);
 
 				if(rp[1]) set.add('defe:turn'+rp[1]);
 				if(rp[2][1]) set.add('defe:param'+rp[2][1]);
 
-				if(rt == 37)
+				if(rt == 'DEF_UP_BY_SELF_PARAM')
 					set.add('defe:param');
-				if(rt == 39)
+				if(rt == 'DEF_UP_FIXED')
 					set.add('defe:fix');
 			}
 			//转伤
-			if(rt == 41) set.add('trans');
+			if(rt == 'DEF_UP_BY_NOW_TURN_DAMAGE') set.add('trans');
 			//抗性
-			if(rt == 42) set.add('rsis:seal');
-			if(rt == 46) set.add('rsis:dark');
+			if(rt == 'CARD_SEAL_REGIST') set.add('rsis:seal');
+			if(rt == 'DARKNESS_REGIST') set.add('rsis:dark');
 			//护盾
-			if(rt == 43 || rt == 44) set.add('bari');
+			if(rt == 'ATTACK_BARRIER' || rt == 'ATTACK_BARRIER_APPOINT_ATTR')
+				set.add('bari');
 			//嘲讽
-			if(rt == 45)
+			if(rt == 'COVERING')
 				set.add('cover').add('cover:turn'+rp[1]).add('cover:per'+(rp[2]/10));
 			//自残
-			if(rt == 49) set.add('atos:hp');
-			if(rt == 76) set.add('atos:cost');
-			if(rt == 77) set.add('atos:trap');
-			if(rt == 92) set.add('atos:deal');
+			if(rt == 'HP_CUT') set.add('atos:hp');
+			if(rt == 'COST_BLOCK') set.add('atos:cost');
+			if(rt == 'CARD_TRAP_DAMAGE') set.add('atos:trap');
+			if(rt == 'DEAL_PENALTY') set.add('atos:deal');
 			//弱化
-			if(rt == 55 || rt == 56 || rt == 60) {
+			if(rt == 'ATK_BREAK_BY_SELF_PARAM' || rt == 'ATK_BREAK_FIXED' || rt == 'GUARD_BREAK_FIXED') {
 				for(let tag of targeter2(target, 'jamm'))
 					set.add(tag);
 
 				if(rp[1]) set.add('jamm:turn'+rp[1]);
 				if(rp[2][1]) set.add('jamm:param'+rp[2][1]);
 
-				if(rt == 55)
+				if(rt == 'ATK_BREAK_BY_SELF_PARAM')
 					set.add('jamm:param');
-				if(rt == 56 || rt == 60)
+				if(rt == 'ATK_BREAK_FIXED' || rt == 'GUARD_BREAK_FIXED')
 					set.add('jamm:fix');
 			}
 			//打断
-			if(rt == 64) set.add('stan');
+			if(rt == 'STAN') set.add('stan');
 			//五毒
-			if(rt == 67 || rt == 68 || rt == 69 || rt == 70 || rt == 72) {
+			if(rt == 'POISON' || rt == 'BURN' || rt == 'FREEZE' || rt == 'BLEED' || rt == 'ELECTRIC') {
 				for(let tag of targeter2(target, 'dot'))
 					set.add(tag);
 
-				if(rt == 67) set.add('dot:poison');
-				if(rt == 68) set.add('dot:burn');
-				if(rt == 69) set.add('dot:freeze');
-				if(rt == 70) set.add('dot:bleed');
-				if(rt == 72) set.add('dot:electric');
+				if(rt == 'POISON') set.add('dot:poison');
+				if(rt == 'BURN') set.add('dot:burn');
+				if(rt == 'FREEZE') set.add('dot:freeze');
+				if(rt == 'BLEED') set.add('dot:bleed');
+				if(rt == 'ELECTRIC') set.add('dot:electric');
 
 				if(rp[1]) set.add('dot:turn'+rp[1]);
 			}
 			//封印
-			if(rt == 73) set.add('seal');
+			if(rt == 'CARD_SEAL') set.add('seal');
 			//标记
-			if(rt == 74) set.add('mark');
-			//标记
-			if(rt == 74) set.add('mark');
+			if(rt == 'WEAKNESS') set.add('mark');
 			//属性变更
-			if(rt == 81) set.add('atran');
+			if(rt == 'REWRITE') set.add('atran');
 			//抽卡
-			if(rt == 82) set.add('deal:+'+rp[1]);
+			if(rt == 'DEAL_BONUS') set.add('deal:+'+rp[1]);
 			//看破
-			if(rt == 87) set.add('asee');
+			if(rt == 'ATTR_SEE') set.add('asee');
 			//毒强化
-			if(rt == 91) set.add('dotup');
+			if(rt == 'DOT_VALUE_UP') set.add('dotup');
 			//毒强化
-			if(rt == 92) set.add('deal:-'+rp[1]);
+			if(rt == 'DEAL_PENALTY') set.add('deal:-'+rp[1]);
 			//减耐
-			if(rt == 112) {
+			if(rt == 'ATTR_DEF_DOWN') {
 				for(let tag of targeter2(target, 'ajam'))
 					set.add(tag);
 
 				set.add('ajam').add('ajam:turn'+rp[1]).add('ajam:attr'+rp[6][1]);
 			}
 			//耐性
-			if(rt == 113) {
+			if(rt == 'ATTR_DEF_UP') {
 				for(let tag of targeter(target, 'adef'))
 					set.add(tag);
 
 				set.add('adef').add('adef:turn'+rp[1]).add('adef:attr'+rp[6][1]);
 			}
 			//反射
-			if(rt == 117) {
+			if(rt == 'REFLECTION') {
 				for(let tag of targeter(target, 'rfle'))
 					set.add(tag);
 
 				set.add('rfle:turn'+rp[1]);
 			}
 			//祝福
-			if(rt == 136) set.add('bless');
+			if(rt == 'BLESS') set.add('bless');
 		}
 
 		if(chain && (chain != 20 && chain != 1)) set.add('chain');

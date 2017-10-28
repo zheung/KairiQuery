@@ -37,6 +37,6 @@
 		process.exit();
 	}
 	catch(e) {
-		L(e);
+		L(e.stack);
 	}
 })();

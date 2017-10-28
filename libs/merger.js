@@ -20,9 +20,6 @@ let hasPlus = (cards, id, ids = []) => {
 let hasMMR = (cards, id, ids = []) => {
 	let card = cards[id], rare = card.info.rare;
 
-	if(card.info.name =='考试型伍&陆')
-		L();
-
 	if(ids.indexOf(id)+1)
 		return 0;
 	else if(rare == 7 || rare == 71)
@@ -42,8 +39,10 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 		dictSkil = {}, dictRole = {}, dictRule = {}, dictCard = {},
 		dictSups = {}, dictSupr = {}, dictEvol = {};
 
-	for(let rule of rules) dictRule[rule.id] = rule;
-	for(let card of cards) dictCard[card.id] = card;
+	for(let rule of rules)
+		dictRule[rule.name] = rule;
+	for(let card of cards)
+		dictCard[card.id] = card;
 
 	for(let role of roles) {
 		if(role.type) {

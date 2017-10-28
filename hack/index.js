@@ -50,9 +50,6 @@ let hacker = {
 	'header-ps-role': () => {
 		return require('./ps/head/role.json');
 	},
-	'header-ps-rule': () => {
-		return require('./ps/head/rule.json');
-	},
 	'header-ps-skil': () => {
 		return require('./ps/head/skil.json');
 	},
