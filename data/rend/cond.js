@@ -146,9 +146,9 @@ module.exports = async() => {
 		},
 		22: async(card, skill, cond) => {
 			if(cond.param1 == cond.param2)
-				return `目标 | ${shower.skillRole[valuer.skillRole[cond.param1]]}状态`;
+				return `自身 | ${shower.skillRole[valuer.skillRole[cond.param1]]}状态`;
 			else if(cond.param2)
-				return `目标 | ${shower.skillRole[valuer.skillRole[cond.param1]]}或${shower.skillRole[valuer.skillRole[cond.param2]]}状态`;
+				return `自身 | ${shower.skillRole[valuer.skillRole[cond.param1]]}或${shower.skillRole[valuer.skillRole[cond.param2]]}状态`;
 		},
 		23: async(card, skill, cond) => {
 			if(~~cond.param3) L('Cond 23 Double');
@@ -160,7 +160,7 @@ module.exports = async() => {
 		24: async(card, skill, cond) => {
 			if(~~cond.param3) L('Cond 23 Double');
 
-			return `我方 | ${shower.roleDebuff[valuer.roleDebuff[cond.param1]]}
+			return `敌方 | ${shower.roleDebuff[valuer.roleDebuff[cond.param1]]}
 				${cond.param2 ? '或'+shower.roleDebuff[valuer.roleDebuff[cond.param2]] : ''}
 				状态`;
 		},
@@ -171,9 +171,9 @@ module.exports = async() => {
 		},
 		26: async(card, skill, cond) => {
 			if(cond.param1 == cond.param2)
-				return `目标 | ${shower.skillRole[valuer.skillRole[cond.param1]]}状态`;
+				return `敌方 | ${shower.skillRole[valuer.skillRole[cond.param1]]}状态`;
 			else if(cond.param2)
-				return `目标 | ${shower.skillRole[valuer.skillRole[cond.param1]]}或${shower.skillRole[valuer.skillRole[cond.param2]]}状态`;
+				return `敌方 | ${shower.skillRole[valuer.skillRole[cond.param1]]}或${shower.skillRole[valuer.skillRole[cond.param2]]}状态`;
 		},
 		27: false,
 		28: false,
