@@ -1,3 +1,18 @@
+<template>
+	<div class="homeBox">
+		<div class="title">
+			<div class="big">Kairi Query</div>
+			<div class="sub">-- 乖离性百万亚瑟王数据站(Alpha) by DanoR （最后更新：国服，XX月XX日；日服，XX月XX日；PS服，XX月XX日）</div>
+		</div>
+		<TabFrame class="tabBox" :tabs="tabs" keyDefault="cardQuery" :dealer="changeTab"></TabFrame>
+		<div class="frameBox" :class="`sub${currentView.substring(0, 1).toUpperCase()}${currentView.substring(1)}`">
+			<keep-alive>
+				<component :is="currentView" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; overflow-y: auto;"></component>
+			</keep-alive>
+		</div>
+	</div>
+</template>
+
 <script>
 	import Loader from '../loader.js';
 	import TabFrame from '../_comp/TabFrame.vue';
@@ -26,21 +41,6 @@
 		}
 	};
 </script>
-
-<template>
-	<div class="homeBox">
-		<div class="title">
-			<div class="big">Kairi Query</div>
-			<div class="sub">-- 乖离性百万亚瑟王数据站(Alpha) by DanoR （最后更新：国服，XX月XX日；日服，XX月XX日；PS服，XX月XX日）</div>
-		</div>
-		<TabFrame class="tabBox" :tabs="tabs" keyDefault="cardQuery" :dealer="changeTab"></TabFrame>
-		<div class="frameBox" :class="`sub${currentView.substring(0, 1).toUpperCase()}${currentView.substring(1)}`">
-			<keep-alive>
-				<component :is="currentView" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; overflow-y: auto;"></component>
-			</keep-alive>
-		</div>
-	</div>
-</template>
 
 <style scoped>
 	.homeBox {

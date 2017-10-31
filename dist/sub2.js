@@ -151,7 +151,7 @@ exports = module.exports = __webpack_require__(40)(undefined);
 
 
 // module
-exports.push([module.i, "\n.comp[data-v-994f1bc6] {\n\toverflow: hidden;\n}\n.inbox[data-v-994f1bc6] {\n\tposition: absolute;\n\n\ttop: 0px;\n\tbottom: -17px;\n\tleft: 0px;\n\tright: -17px;\n\n\toverflow: scroll;\n}\n", ""]);
+exports.push([module.i, "\n.comp[data-v-994f1bc6] {\n\toverflow: hidden;\n}\n.inbox[data-v-994f1bc6] {\n\tposition: relative;\n\n\twidth: calc(100% + 17px);\n\theight: calc(100% + 17px);\n\n\toverflow: scroll;\n}\n", ""]);
 
 // exports
 
@@ -174,7 +174,14 @@ var _ToggleButton2 = _interopRequireDefault(_ToggleButton);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; } //
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
 	props: {
@@ -228,18 +235,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "comp compFrame" }, [
+    _c("div", { staticClass: "inbox" }, [_vm._t("default")], 2)
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "comp compFrame" }, [
-      _c("div", { staticClass: "inbox" })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -287,7 +287,7 @@ exports = module.exports = __webpack_require__(40)(undefined);
 
 
 // module
-exports.push([module.i, "\ndiv[data-v-3ea46092] {\n\tcolor: lightyellow;\n}\n.filterBox[data-v-3ea46092] {\n\tposition: absolute;\n\n\ttop: 5px;\n\tleft: 5px;\n\tright: 5px;\n\n\theight: 200px;\n\n\tborder: 2px solid yellow;\n\tborder-radius: 5px;\n}\n.cardBox[data-v-3ea46092] {\n\tposition: absolute;\n\n\ttop: 215px;\n\tleft: 5px;\n\tright: 5px;\n\tbottom: 5px;\n\n\tborder: 2px solid yellow;\n\tborder-radius: 5px;\n}\n", ""]);
+exports.push([module.i, "\n*[data-v-3ea46092] {\n\tposition: relative;\n\n\tcolor: lightyellow;\n}\n.filterBox[data-v-3ea46092] {\n\tposition: absolute;\n\n\ttop: 5px;\n\tleft: 5px;\n\tright: 5px;\n\n\theight: 200px;\n\n\tborder: 2px solid yellow;\n\tborder-radius: 5px;\n}\n.cardBox[data-v-3ea46092] {\n\tposition: absolute;\n\n\ttop: 215px;\n\tleft: 5px;\n\tright: 5px;\n\tbottom: 5px;\n\n\tborder: 2px solid yellow;\n\tborder-radius: 5px;\n}\n.card[data-v-3ea46092] {\n\tposition: relative;\n\n\tdisplay: block;\n\n\tmargin: 5px;\n\n\theight: 24px;\n\n\tborder: 2px solid yellow;\n}\n.inCard[data-v-3ea46092] {\n\tposition: relative;\n}\n", ""]);
 
 // exports
 
@@ -320,7 +320,9 @@ exports.default = {
 		fetch('kq2/query?conds={"serv":"cn","word":"","page":1,"mark":"","zero":1,"prio":false}').then(function (res) {
 			return res.json();
 		}).then(function (data) {
-			me.data = data;
+			me.cards = data[0][0];
+			me.page = data[0][1];
+			me.count = data[0][2];
 		});
 	},
 	activated: function activated() {
@@ -328,10 +330,36 @@ exports.default = {
 	},
 	data: function data() {
 		return {
-			data: []
+			cards: [],
+			page: 0,
+			count: 0
 		};
 	}
 }; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -385,7 +413,17 @@ var render = function() {
     [
       _c("Frame", { staticClass: "filterBox" }),
       _vm._v(" "),
-      _c("Frame", { staticClass: "cardBox" })
+      _c(
+        "Frame",
+        { staticClass: "cardBox" },
+        _vm._l(_vm.cards, function(card, ci) {
+          return _c("Frame", { key: ci, staticClass: "card" }, [
+            _c("div", { staticClass: "inCard" }, [_vm._v(_vm._s(card.name))]),
+            _vm._v(" "),
+            _c("div", { staticClass: "inCard" }, [_vm._v(_vm._s(card.name))])
+          ])
+        })
+      )
     ],
     1
   )

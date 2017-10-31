@@ -1,12 +1,19 @@
 <template>
 	<div>
 		<Frame class="filterBox" />
-		<Frame class="cardBox" />
+		<Frame class="cardBox">
+			<Frame class="card" v-for="(card, ci) of cards" :key="ci">
+				<div class="inCard">{{card.name}}</div>
+				<div class="inCard">{{card.name}}</div>
+			</Frame>
+		</Frame>
 	</div>
 </template>
 
 <style scoped>
-	div {
+	* {
+		position: relative;
+
 		color: lightyellow;
 	}
 
@@ -34,6 +41,23 @@
 		border: 2px solid yellow;
 		border-radius: 5px;
 	}
+
+	.card {
+		position: relative;
+
+		display: block;
+
+		margin: 5px;
+
+		height: 24px;
+
+		border: 2px solid yellow;
+	}
+
+	.inCard {
+		position: relative;
+
+	}
 </style>
 
 <script>
@@ -51,15 +75,20 @@
 				return res.json();
 			})
 			.then(function(data) {
-				me.data = data;
+				me.cards = data[0][0];
+				me.page = data[0][1];
+				me.count = data[0][2];
 			});
 		},
 		activated: function() {
 			this.msg +=1;
+
 		},
 		data: function() {
 			return {
-				data: []
+				cards: [],
+				page: 0,
+				count: 0
 			};
 		}
 	};

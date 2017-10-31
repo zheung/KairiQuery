@@ -1,3 +1,11 @@
+<template>
+	<div class="comp compFrame" >
+		<div class="inbox" >
+			<slot />
+		</div>
+	</div>
+</template>
+
 <script>
 	import ToggleButton from '../_comp/ToggleButton';
 
@@ -26,30 +34,16 @@
 	};
 </script>
 
-<template>
-	<div
-		class="comp compFrame"
-	>
-		<div
-			class="inbox"
-		>
-
-		</div>
-	</div>
-</template>
-
 <style scoped>
 	.comp {
 		overflow: hidden;
 	}
 
 	.inbox {
-		position: absolute;
+		position: relative;
 
-		top: 0px;
-		bottom: -17px;
-		left: 0px;
-		right: -17px;
+		width: calc(100% + 17px);
+		height: calc(100% + 17px);
 
 		overflow: scroll;
 	}
