@@ -16,6 +16,7 @@
 				active: false
 			};
 		},
+
 		methods: {
 			click: async function() {
 				if(this.dealer)
@@ -42,8 +43,8 @@
 	.box {
 		position: relative;
 
-		height: 100px;
-		width: 100px;
+		height: 150px;
+		width: 150px;
 
 		background: transparent;
 	}

@@ -5,7 +5,7 @@ export default async function(name) {
 		switch (name) {
 			case 'iconMaker': Vue.component(name, (await System.import('./iconMaker/iconMaker.vue')).default); break;
 			case 'cardQuery': Vue.component(name, (await System.import('./cardQuery/cardQuery.vue')).default); break;
-			case 'toggle': Vue.component(name, (await System.import('./Toggle/Toggle.vue')).default); break;
+			case 'test': Vue.component(name, (await System.import('./test/test.vue')).default); break;
 		}
 	}
 }

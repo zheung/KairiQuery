@@ -2,7 +2,12 @@
 	import ToggleButton from '../_comp/ToggleButton';
 
 	export default {
-		props: ['id', 'now', 'dealer', 'group'],
+		props: {
+			size: {},
+			height: {},
+			width: {},
+			clazz: {}
+		},
 		components: {
 			ToggleButton: ToggleButton
 		},
@@ -22,17 +27,30 @@
 </script>
 
 <template>
-	<div class="compToggleGroup">
-		<ToggleButton
-			v-for="(val, key) of group" :key="key"
-			:now="now" :id="key" :dealer="click"
-			:text="(typeof val == 'object' ? val.text : val )"
-			:width="(typeof val == 'object' ? val.width : 60 )"
-			class="col" />
+	<div
+		class="comp compFrame"
+	>
+		<div
+			class="inbox"
+		>
+
+		</div>
 	</div>
 </template>
 
 <style scoped>
-	.button {
+	.comp {
+		overflow: hidden;
+	}
+
+	.inbox {
+		position: absolute;
+
+		top: 0px;
+		bottom: -17px;
+		left: 0px;
+		right: -17px;
+
+		overflow: scroll;
 	}
 </style>

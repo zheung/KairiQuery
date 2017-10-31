@@ -7090,7 +7090,7 @@ exports.default = {
 			tabs: {
 				iconMaker: { title: '头像生成' },
 				cardQuery: { title: '卡牌查询' },
-				toggle: { title: '单选测试' },
+				test: { title: '宇宙测试' },
 				about: { title: '关于', width: 40, right: true }
 			}
 		};
@@ -7160,7 +7160,7 @@ exports.default = function () {
 						}
 
 						_context.t0 = name;
-						_context.next = _context.t0 === 'iconMaker' ? 4 : _context.t0 === 'cardQuery' ? 11 : _context.t0 === 'toggle' ? 18 : 25;
+						_context.next = _context.t0 === 'iconMaker' ? 4 : _context.t0 === 'cardQuery' ? 11 : _context.t0 === 'test' ? 18 : 25;
 						break;
 
 					case 4:
@@ -7180,7 +7180,7 @@ exports.default = function () {
 						_context.t4 = _Vue2.default;
 						_context.t5 = name;
 						_context.next = 15;
-						return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 219));
+						return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 219));
 
 					case 15:
 						_context.t6 = _context.sent.default;
@@ -7193,7 +7193,7 @@ exports.default = function () {
 						_context.t7 = _Vue2.default;
 						_context.t8 = name;
 						_context.next = 22;
-						return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 220));
+						return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 220));
 
 					case 22:
 						_context.t9 = _context.sent.default;
@@ -7553,7 +7553,7 @@ var render = function() {
         staticClass: "tabBox",
         attrs: {
           tabs: _vm.tabs,
-          keyDefault: "iconMaker",
+          keyDefault: "cardQuery",
           dealer: _vm.changeTab
         }
       }),
