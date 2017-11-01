@@ -146,7 +146,11 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 			['skill.normal.0.info.attr', 'attr', 'd.shower.attr'],
 			['this', 'skill', 'f.skill'],
 			['this', 'prio', 'f.prio'],
-			['evol', 'evol']
+			['evol', 'evol'],
+			['skill.normal.0.info.attr', 'raw.attr'],
+			['skill.normal.0.info.job', 'raw.job'],
+			['info.rare', 'raw.rare'],
+			['pict.normal', 'pict']
 		]);
 
 		for(let type of ['normal', 'awaken', 'suport1', 'suport2', 'suport3', 'bless'])
