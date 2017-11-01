@@ -5,16 +5,28 @@
 			height: {},
 			width: {},
 			url: {},
+			noUrl: { default : false },
 			cent: {},
-			card: {
-				default: {}
-			},
+
+			card: { default: {} },
+			serv: { default: 'cn' }
 		},
 
 		data: function() {
 			return {
 				active: false
 			};
+		},
+
+		computed: {
+			urlcpt : function() {
+				return this.noUrl ? '' :
+					(
+						this.url ||
+						(this.card ? `https://kairiquery.oss-cn-shenzhen.aliyuncs.com/reso/20/${this.serv}/${this.card.pict}.png` : '') ||
+						'kq2/./img/20002026.png'
+					);
+			}
 		},
 
 		methods: {
@@ -28,14 +40,14 @@
 
 <template>
 	<div class="box" :style="{ height: (size || height || 150)+'px', width:(size || width || 150)+'px' }">
-		<div class="layer" :class="`B${((card.rare||'')+'').substring(0, 1) || 6}`" />
+		<div class="layer" :class="`B${((card.raw.rare||'')+'').substring(0, 1) || 6}`" />
 		<div
 			class="layer"
-			:style="{ 'background-image': `url(${url || 'kq2/./img/20002026.png'})`, 'background-size': `${cent || 85.5 }%` }"
+			:style="{ 'background-image': `url(${urlcpt})`, 'background-size': `${cent || 85.5 }%` }"
 		/>
-		<div class="layer" :class="`F${card.rare || 60}`" />
-		<div class="layer" :class="`A${card.attr}`" v-if="card.attr" />
-		<div class="layer" :class="`J${card.job}`" v-if="card.job" />
+		<div class="layer" :class="`F${card.raw.rare || 60}`" />
+		<div class="layer" :class="`A${card.raw.attr}`" v-if="card.raw.attr" />
+		<div class="layer" :class="`J${card.raw.job}`" v-if="card.raw.job" />
 	</div>
 </template>
 

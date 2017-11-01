@@ -51,8 +51,8 @@
 		left: 0px;
 		right: 0px;
 
-		background: black;
-		color: yellow;
+		background: #262629;
+		color: #ffffff;
 	}
 	.title {
 		position: absolute;

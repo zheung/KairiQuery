@@ -91,7 +91,7 @@
 
 <style scoped>
 	div {
-		color: lightyellow;
+		color: #ffffff;
 	}
 	.col {
 		margin: 5px;

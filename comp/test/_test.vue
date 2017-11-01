@@ -2,22 +2,22 @@
 	<div>
 		<div class="h">这里就是V2的试验场啦</div>
 		<div class="h">黄黑色很酷炫不是吗？！</div>
-		<Frame :card="card"/>
+		<FrameScroll :card="card"/>
 	</div>
 </template>
 
 <style scoped>
 div {
-	color: lightyellow;
+	color: #ffffff;
 }
 </style>
 
 <script>
-	import Frame from '../_comp/Frame';
+	import FrameScroll from '../_comp/FrameScroll';
 
 	export default {
 		components: {
-			Frame: Frame
+			FrameScroll: FrameScroll
 		},
 		mounted: function() {
 			this.msg +=1;

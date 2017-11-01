@@ -40,7 +40,7 @@
 
 <style scoped>
 	.wrap {
-		border-bottom: 1px solid yellow;
+		border-bottom: 1px solid #ffffff;
 
 		height: 30px;
 	}

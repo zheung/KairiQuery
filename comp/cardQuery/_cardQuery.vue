@@ -1,12 +1,7 @@
 <template>
 	<div>
-		<Frame class="filterBox" />
-		<Frame class="cardBox">
-			<Frame class="card" v-for="(card, ci) of cards" :key="ci">
-				<div class="inCard">{{card.name}}</div>
-				<div class="inCard">{{card.name}}</div>
-			</Frame>
-		</Frame>
+		<FilterBox class="filterBox" />
+		<CardBox class="cardBox" :cards="this.cards" :serv="this.serv" />
 	</div>
 </template>
 
@@ -14,7 +9,7 @@
 	* {
 		position: relative;
 
-		color: lightyellow;
+		color: #ffffff;
 	}
 
 	.filterBox {
@@ -24,48 +19,39 @@
 		left: 5px;
 		right: 5px;
 
-		height: 200px;
+		height: 30px;
 
-		border: 2px solid yellow;
+		border: 2px solid #ffffff;
 		border-radius: 5px;
 	}
 
 	.cardBox {
 		position: absolute;
 
-		top: 215px;
+		top: 45px;
 		left: 5px;
 		right: 5px;
 		bottom: 5px;
 
-		border: 2px solid yellow;
+		border: 2px solid #ffffff;
 		border-radius: 5px;
-	}
-
-	.card {
-		position: relative;
-
-		display: block;
-
-		margin: 5px;
-
-		height: 24px;
-
-		border: 2px solid yellow;
-	}
-
-	.inCard {
-		position: relative;
-
 	}
 </style>
 
 <script>
-	import Frame from '../_comp/Frame';
+	import FilterBox from './filterBox';
+	import CardBox from './cardBox';
+
+	import FrameScroll from '../_comp/FrameScroll';
+	import Icon from '../_comp/Icon';
 
 	export default {
 		components: {
-			Frame: Frame
+			FilterBox: FilterBox,
+			CardBox: CardBox,
+
+			FrameScroll: FrameScroll,
+			Icon: Icon
 		},
 		mounted: function() {
 			let me = this;
@@ -81,12 +67,12 @@
 			});
 		},
 		activated: function() {
-			this.msg +=1;
-
 		},
 		data: function() {
 			return {
+				serv: 'cn',
 				cards: [],
+
 				page: 0,
 				count: 0
 			};

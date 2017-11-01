@@ -1,5 +1,5 @@
 <template>
-	<div class="comp compFrame" >
+	<div class="compFrameScroll" >
 		<div class="inbox" >
 			<slot />
 		</div>
@@ -35,7 +35,7 @@
 </script>
 
 <style scoped>
-	.comp {
+	.compFrameScroll {
 		overflow: hidden;
 	}
 

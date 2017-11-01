@@ -2,7 +2,7 @@ import 'babel-polyfill';
 
 import Vue from 'Vue';
 
-import Home from './_home/home.vue';
+import Home from './_home/_home.vue';
 
 import './index.css';
 
