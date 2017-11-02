@@ -58,7 +58,7 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 236:
+/***/ 235:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -600,7 +600,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _Icon = __webpack_require__(236);
+var _Icon = __webpack_require__(235);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 

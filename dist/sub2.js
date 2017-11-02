@@ -58,7 +58,7 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 235:
+/***/ 236:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -151,7 +151,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.compFrameScroll[data-v-3b078eca] {\n\toverflow: hidden;\n}\n.inbox[data-v-3b078eca] {\n\tposition: relative;\n\n\twidth: calc(100% + 17px);\n\theight: calc(100% + 17px);\n\n\toverflow: scroll;\n}\n.scr[data-v-3b078eca] {\n\twidth: 10px;\n\theight: 20px;\n\n\tposition: absolute;\n\n\ttop: 0px;\n\tright: 0px;\n\n\tcursor: pointer;\n\n\tborder-radius: 5px 0px 0px 5px;\n\tbackground-color: transparent;\n}\n", ""]);
+exports.push([module.i, "\n.compFrameScroll[data-v-3b078eca] {\n\toverflow: hidden;\n}\n.inbox[data-v-3b078eca] {\n\tposition: relative;\n\n\twidth: calc(100% + 17px);\n\theight: calc(100% + 17px);\n\n\toverflow: scroll;\n}\n.scr[data-v-3b078eca] {\n\twidth: 10px;\n\theight: 20px;\n\n\tposition: absolute;\n\n\ttop: 0px;\n\tright: 0px;\n\n\tcursor: pointer;\n\n\tborder-radius: 5px 0px 0px 5px;\n\tbackground-color: transparent;\n}\n.scr.show[data-v-3b078eca] {\n\tbackground-color: rgba(119, 119, 119, 0.4);\n}\n.scr.show[data-v-3b078eca]:hover {\n\tbackground-color: rgba(119, 119, 119, 0.7);\n}\n", ""]);
 
 // exports
 
@@ -195,7 +195,23 @@ exports.default = {
 		ToggleButton: _ToggleButton2.default
 	},
 	data: function data() {
+		var event = 'ontouchstart' in window ? {
+			down: 'touchstart',
+			move: 'touchmove',
+			up: 'touchend',
+			over: 'touchstart',
+			out: 'touchend'
+		} : {
+			down: 'mousedown',
+			move: 'mousemove',
+			up: 'mouseup',
+			over: 'mouseover',
+			out: 'mouseout'
+		};
+
 		return {
+			mobile: 'ontouchstart' in window,
+			event: event,
 			active: false,
 			now: 0,
 			down: false
@@ -234,21 +250,28 @@ exports.default = {
 			}
 		},
 		scrDown: function scrDown() {
-			document.addEventListener('mousemove', this.scrMove);
-			document.addEventListener('mouseup', this.scrUpon);
+			var scr = this.$refs.scr;
+
+			document.addEventListener(this.event.move, this.scrMove);
+			document.addEventListener(this.event.up, this.scrUpon);
 
 			document.body.className += ' nosel';
+			scr.style.backgroundColor = 'rgba(119, 119, 119, 0.7)';
 
 			this.down = true;
+
 			return false;
 		},
 		scrUpon: function scrUpon() {
+			var scr = this.$refs.scr;
+
 			this.down = false;
 
+			scr.style.backgroundColor = '';
 			document.body.className = document.body.className.replace(/ nosel/g, '');
 
-			document.removeEventListener('mousemove', this.scrMove);
-			document.removeEventListener('mouseup', this.scrUpon);
+			document.removeEventListener(this.event.move, this.scrMove);
+			document.removeEventListener(this.event.up, this.scrUpon);
 
 			return false;
 		},
@@ -274,12 +297,14 @@ exports.default = {
 
 	updated: function updated() {
 		var ib = this.$refs.ib;
+		var scr = this.$refs.scr;
 
 		if (ib.scrollHeight > ib.clientHeight) {
-			var scr = this.$refs.scr;
 
 			scr.style.height = ib.clientHeight * ib.clientHeight / ib.scrollHeight + 'px';
-			scr.style.backgroundColor = '#777777';
+			scr.className += ' show';
+		} else {
+			scr.className = scr.className.replace(/ show/g, '');
 		}
 	}
 };
@@ -305,7 +330,7 @@ var render = function() {
     _c("div", {
       ref: "scr",
       staticClass: "scr",
-      on: { mousedown: _vm.scrDown }
+      on: { mousedown: _vm.scrDown, touchstart: _vm.scrDown }
     })
   ])
 }
@@ -374,7 +399,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _FrameScroll = __webpack_require__(235);
+var _FrameScroll = __webpack_require__(236);
 
 var _FrameScroll2 = _interopRequireDefault(_FrameScroll);
 

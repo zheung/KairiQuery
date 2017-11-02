@@ -3,7 +3,7 @@
 		<div class="inbox" ref="ib" @scroll="scrRoll">
 			<slot />
 		</div>
-		<div class="scr" ref="scr" @mousedown="scrDown"/>
+		<div class="scr" ref="scr" @mousedown="scrDown" @touchstart="scrDown" />
 	</div>
 </template>
 
@@ -21,7 +21,24 @@
 			ToggleButton: ToggleButton
 		},
 		data: function() {
+			let event = ('ontouchstart' in window) ? {
+					down: 'touchstart',
+					move: 'touchmove',
+					up: 'touchend',
+					over: 'touchstart',
+					out: 'touchend'
+				} : {
+					down: 'mousedown',
+					move: 'mousemove',
+					up: 'mouseup',
+					over: 'mouseover',
+					out: 'mouseout'
+				};
+
+
 			return {
+				mobile: ('ontouchstart' in window),
+				event: event,
 				active: false,
 				now: 0,
 				down: false,
@@ -42,21 +59,28 @@
 				}
 			},
 			scrDown: function() {
-				document.addEventListener('mousemove', this.scrMove);
-				document.addEventListener('mouseup', this.scrUpon);
+				let scr = this.$refs.scr;
+
+				document.addEventListener(this.event.move, this.scrMove);
+				document.addEventListener(this.event.up, this.scrUpon);
 
 				document.body.className += ' nosel';
+				scr.style.backgroundColor = 'rgba(119, 119, 119, 0.7)';
 
 				this.down = true;
+
 				return false;
 			},
 			scrUpon: function() {
+				let scr = this.$refs.scr;
+
 				this.down = false;
 
+				scr.style.backgroundColor = '';
 				document.body.className = document.body.className.replace(/ nosel/g, '');
 
-				document.removeEventListener('mousemove', this.scrMove);
-				document.removeEventListener('mouseup', this.scrUpon);
+				document.removeEventListener(this.event.move, this.scrMove);
+				document.removeEventListener(this.event.up, this.scrUpon);
 
 				return false;
 			},
@@ -82,12 +106,15 @@
 
 		updated: function() {
 			let ib = this.$refs.ib;
+			let scr = this.$refs.scr;
 
 			if(ib.scrollHeight > ib.clientHeight) {
-				let scr = this.$refs.scr;
 
 				scr.style.height = (ib.clientHeight * ib.clientHeight / ib.scrollHeight) + 'px';
-				scr.style.backgroundColor = '#777777';
+				scr.className += ' show';
+			}
+			else {
+				scr.className = scr.className.replace(/ show/g, '');
 			}
 		}
 	};
@@ -120,5 +147,11 @@
 
 		border-radius: 5px 0px 0px 5px;
 		background-color: transparent;
+	}
+	.scr.show {
+		background-color: rgba(119, 119, 119, 0.4);
+	}
+	.scr.show:hover {
+		background-color: rgba(119, 119, 119, 0.7);
 	}
 </style>

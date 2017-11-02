@@ -63,64 +63,6 @@ if (false) {(function () {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_FrameScroll_vue__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_FrameScroll_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_FrameScroll_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3b078eca_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_FrameScroll_vue__ = __webpack_require__(282);
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(279)
-}
-var normalizeComponent = __webpack_require__(50)
-/* script */
-
-/* template */
-
-/* template functional */
-  var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-3b078eca"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_FrameScroll_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3b078eca_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_FrameScroll_vue__["a" /* default */],
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "comp\\_comp\\FrameScroll.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3b078eca", Component.options)
-  } else {
-    hotAPI.reload("data-v-3b078eca", Component.options)
-' + '  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
-
-
-/***/ }),
-
-/***/ 236:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_index_vue__ = __webpack_require__(277);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_index_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1a6daa88_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_index_vue__ = __webpack_require__(278);
@@ -163,6 +105,64 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-1a6daa88", Component.options)
   } else {
     hotAPI.reload("data-v-1a6daa88", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ 236:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_FrameScroll_vue__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_FrameScroll_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_FrameScroll_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3b078eca_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_FrameScroll_vue__ = __webpack_require__(282);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(279)
+}
+var normalizeComponent = __webpack_require__(50)
+/* script */
+
+/* template */
+
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-3b078eca"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_FrameScroll_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3b078eca_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_FrameScroll_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "comp\\_comp\\FrameScroll.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3b078eca", Component.options)
+  } else {
+    hotAPI.reload("data-v-3b078eca", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -641,7 +641,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.compFrameScroll[data-v-3b078eca] {\n\toverflow: hidden;\n}\n.inbox[data-v-3b078eca] {\n\tposition: relative;\n\n\twidth: calc(100% + 17px);\n\theight: calc(100% + 17px);\n\n\toverflow: scroll;\n}\n.scr[data-v-3b078eca] {\n\twidth: 10px;\n\theight: 20px;\n\n\tposition: absolute;\n\n\ttop: 0px;\n\tright: 0px;\n\n\tcursor: pointer;\n\n\tborder-radius: 5px 0px 0px 5px;\n\tbackground-color: transparent;\n}\n", ""]);
+exports.push([module.i, "\n.compFrameScroll[data-v-3b078eca] {\n\toverflow: hidden;\n}\n.inbox[data-v-3b078eca] {\n\tposition: relative;\n\n\twidth: calc(100% + 17px);\n\theight: calc(100% + 17px);\n\n\toverflow: scroll;\n}\n.scr[data-v-3b078eca] {\n\twidth: 10px;\n\theight: 20px;\n\n\tposition: absolute;\n\n\ttop: 0px;\n\tright: 0px;\n\n\tcursor: pointer;\n\n\tborder-radius: 5px 0px 0px 5px;\n\tbackground-color: transparent;\n}\n.scr.show[data-v-3b078eca] {\n\tbackground-color: rgba(119, 119, 119, 0.4);\n}\n.scr.show[data-v-3b078eca]:hover {\n\tbackground-color: rgba(119, 119, 119, 0.7);\n}\n", ""]);
 
 // exports
 
@@ -685,7 +685,23 @@ exports.default = {
 		ToggleButton: _ToggleButton2.default
 	},
 	data: function data() {
+		var event = 'ontouchstart' in window ? {
+			down: 'touchstart',
+			move: 'touchmove',
+			up: 'touchend',
+			over: 'touchstart',
+			out: 'touchend'
+		} : {
+			down: 'mousedown',
+			move: 'mousemove',
+			up: 'mouseup',
+			over: 'mouseover',
+			out: 'mouseout'
+		};
+
 		return {
+			mobile: 'ontouchstart' in window,
+			event: event,
 			active: false,
 			now: 0,
 			down: false
@@ -724,21 +740,28 @@ exports.default = {
 			}
 		},
 		scrDown: function scrDown() {
-			document.addEventListener('mousemove', this.scrMove);
-			document.addEventListener('mouseup', this.scrUpon);
+			var scr = this.$refs.scr;
+
+			document.addEventListener(this.event.move, this.scrMove);
+			document.addEventListener(this.event.up, this.scrUpon);
 
 			document.body.className += ' nosel';
+			scr.style.backgroundColor = 'rgba(119, 119, 119, 0.7)';
 
 			this.down = true;
+
 			return false;
 		},
 		scrUpon: function scrUpon() {
+			var scr = this.$refs.scr;
+
 			this.down = false;
 
+			scr.style.backgroundColor = '';
 			document.body.className = document.body.className.replace(/ nosel/g, '');
 
-			document.removeEventListener('mousemove', this.scrMove);
-			document.removeEventListener('mouseup', this.scrUpon);
+			document.removeEventListener(this.event.move, this.scrMove);
+			document.removeEventListener(this.event.up, this.scrUpon);
 
 			return false;
 		},
@@ -764,12 +787,14 @@ exports.default = {
 
 	updated: function updated() {
 		var ib = this.$refs.ib;
+		var scr = this.$refs.scr;
 
 		if (ib.scrollHeight > ib.clientHeight) {
-			var scr = this.$refs.scr;
 
 			scr.style.height = ib.clientHeight * ib.clientHeight / ib.scrollHeight + 'px';
-			scr.style.backgroundColor = '#777777';
+			scr.className += ' show';
+		} else {
+			scr.className = scr.className.replace(/ show/g, '');
 		}
 	}
 };
@@ -795,7 +820,7 @@ var render = function() {
     _c("div", {
       ref: "scr",
       staticClass: "scr",
-      on: { mousedown: _vm.scrDown }
+      on: { mousedown: _vm.scrDown, touchstart: _vm.scrDown }
     })
   ])
 }
@@ -872,7 +897,7 @@ var _cardBox = __webpack_require__(295);
 
 var _cardBox2 = _interopRequireDefault(_cardBox);
 
-var _Icon = __webpack_require__(236);
+var _Icon = __webpack_require__(235);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
@@ -1059,7 +1084,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _FrameScroll = __webpack_require__(235);
+var _FrameScroll = __webpack_require__(236);
 
 var _FrameScroll2 = _interopRequireDefault(_FrameScroll);
 
@@ -1212,7 +1237,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.card[data-v-55673095] {\n\tmargin: 5px;\n\n\tposition: relative;\n\n\tborder: 1px dashed transparent;\n\tborder-bottom: 2px dashed #ffffff;\n}\n.box1[data-v-55673095] {\n\twidth: 250px;\n\theight: 150px;\n\n\tmargin: 5px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 2px dashed transparent;\n\tborder-top: 2px solid #ffffff;\n\tborder-left: 2px solid #ffffff;\n\tborder-radius: 5px 0px 0px 0px;\n}\n.box2[data-v-55673095] {\n\twidth: 280px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.box2>table[data-v-55673095] {\n\twidth: calc(100% - 12px);\n\n\tmargin-left: 12px;\n\n\tline-height: 38px;\n}\n.box3[data-v-55673095] {\n\twidth: 130px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.box4[data-v-55673095] {\n\twidth: 100%;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.iconBox[data-v-55673095] {\n\tmargin: 0 auto;\n\n\tborder: 1px solid transparent;\n}\n.nameBox[data-v-55673095] {\n\twidth: 200px;\n\n\tmargin:0 auto;\n\n\tborder: 1px solid transparent;\n\n\ttext-align: center;\n}\n.name[data-v-55673095] {\n\tposition: relative;\n\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n}\n", ""]);
+exports.push([module.i, "\n.card[data-v-55673095] {\n\tmargin: 5px;\n\n\tposition: relative;\n\n\tborder: 1px dashed transparent;\n\tborder-bottom: 2px dashed #ffffff;\n}\n.box1[data-v-55673095] {\n\twidth: 250px;\n\theight: 150px;\n\n\tmargin: 5px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 2px dashed transparent;\n\tborder-top: 2px solid #ffffff;\n\tborder-left: 2px solid #ffffff;\n\tborder-radius: 5px 0px 0px 0px;\n}\n.box2[data-v-55673095] {\n\twidth: 280px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.box2>table[data-v-55673095] {\n\twidth: calc(100% - 12px);\n\n\tmargin-left: 12px;\n\n\tline-height: 38px;\n}\n.box3[data-v-55673095] {\n\twidth: 130px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.box4[data-v-55673095] {\n\twidth: calc(100% - 5px);\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-top: 1px dashed #ffffff;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.iconBox[data-v-55673095] {\n\tmargin: 0 auto;\n\n\tborder: 1px solid transparent;\n}\n.nameBox[data-v-55673095] {\n\twidth: 200px;\n\n\tmargin:0 auto;\n\n\tborder: 1px solid transparent;\n\n\ttext-align: center;\n}\n.name[data-v-55673095] {\n\tposition: relative;\n\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n}\n", ""]);
 
 // exports
 
@@ -1229,16 +1254,17 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _FrameScroll = __webpack_require__(235);
+var _FrameScroll = __webpack_require__(236);
 
 var _FrameScroll2 = _interopRequireDefault(_FrameScroll);
 
-var _Icon = __webpack_require__(236);
+var _Icon = __webpack_require__(235);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//
 //
 //
 //
@@ -1485,7 +1511,7 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticStyle: {} }, [
+        _c("div", { staticClass: "box4" }, [
           _c("div", [_vm._v("● 骑士技能：")]),
           _vm._v(" "),
           _c("div", { staticStyle: { "padding-left": "13px" } }, [

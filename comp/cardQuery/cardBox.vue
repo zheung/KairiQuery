@@ -32,7 +32,7 @@
 				<div style="padding-left: 13px;">魔攻：{{card.ap}}</div>
 				<div style="padding-left: 13px;">治疗：{{card.hq}}</div>
 			</div>
-			<div style="box4">
+			<div class="box4">
 				<div>●&nbsp;骑士技能：</div>
 				<div style="padding-left: 13px;">血量：{{card.hp}}</div>
 				<div style="padding-left: 13px;">物攻：{{card.ad}}</div>
@@ -111,7 +111,7 @@
 	}
 
 	.box4 {
-		width: 100%;
+		width: calc(100% - 5px);
 		height: 150px;
 
 		margin: 5px;
@@ -120,6 +120,7 @@
 		vertical-align: top;
 
 		border: 1px dashed transparent;
+		border-top: 1px dashed #ffffff;
 		border-left: 1px dotted rgba(255, 255, 255, 0.5);
 
 		line-height: 30px;
