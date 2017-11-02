@@ -151,7 +151,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.compFrameScroll[data-v-3b078eca] {\n\toverflow: hidden;\n}\n.inbox[data-v-3b078eca] {\n\tposition: relative;\n\n\twidth: calc(100% + 17px);\n\theight: calc(100% + 17px);\n\n\toverflow: scroll;\n}\n", ""]);
+exports.push([module.i, "\n.compFrameScroll[data-v-3b078eca] {\n\toverflow: hidden;\n}\n.inbox[data-v-3b078eca] {\n\tposition: relative;\n\n\twidth: calc(100% + 17px);\n\theight: calc(100% + 17px);\n\n\toverflow: scroll;\n}\n.scr[data-v-3b078eca] {\n\twidth: 10px;\n\theight: 20px;\n\n\tposition: absolute;\n\n\ttop: 0px;\n\tright: 0px;\n\n\tcursor: pointer;\n\n\tborder-radius: 5px 0px 0px 5px;\n\tbackground-color: transparent;\n}\n", ""]);
 
 // exports
 
@@ -182,6 +182,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
 
 exports.default = {
 	props: {
@@ -196,7 +197,8 @@ exports.default = {
 	data: function data() {
 		return {
 			active: false,
-			now: 0
+			now: 0,
+			down: false
 		};
 	},
 	methods: {
@@ -221,7 +223,64 @@ exports.default = {
 			}
 
 			return click;
-		}()
+		}(),
+		scrRoll: function scrRoll() {
+			var ib = this.$refs.ib;
+
+			if (ib.scrollHeight > ib.clientHeight) {
+				var scr = this.$refs.scr;
+
+				scr.style.top = ib.scrollTop * ib.clientHeight / ib.scrollHeight + 'px';
+			}
+		},
+		scrDown: function scrDown() {
+			document.addEventListener('mousemove', this.scrMove);
+			document.addEventListener('mouseup', this.scrUpon);
+
+			document.body.className += ' nosel';
+
+			this.down = true;
+			return false;
+		},
+		scrUpon: function scrUpon() {
+			this.down = false;
+
+			document.body.className = document.body.className.replace(/ nosel/g, '');
+
+			document.removeEventListener('mousemove', this.scrMove);
+			document.removeEventListener('mouseup', this.scrUpon);
+
+			return false;
+		},
+		scrMove: function scrMove(e) {
+			if (this.down) {
+				var ib = this.$refs.ib;
+				var scr = this.$refs.scr;
+
+				if (ib.scrollHeight > ib.clientHeight) {
+					var top = scr.offsetTop + e.movementY;
+					var max = ib.clientHeight - ib.clientHeight * ib.clientHeight / ib.scrollHeight;
+
+					if (top >= 0 && top <= max) {
+						scr.style.top = top + 'px';
+						ib.scrollTop = top * ib.scrollHeight / ib.clientHeight;
+					}
+				}
+			}
+
+			return false;
+		}
+	},
+
+	updated: function updated() {
+		var ib = this.$refs.ib;
+
+		if (ib.scrollHeight > ib.clientHeight) {
+			var scr = this.$refs.scr;
+
+			scr.style.height = ib.clientHeight * ib.clientHeight / ib.scrollHeight + 'px';
+			scr.style.backgroundColor = '#777777';
+		}
 	}
 };
 
@@ -236,7 +295,18 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "compFrameScroll" }, [
-    _c("div", { staticClass: "inbox" }, [_vm._t("default")], 2)
+    _c(
+      "div",
+      { ref: "ib", staticClass: "inbox", on: { scroll: _vm.scrRoll } },
+      [_vm._t("default")],
+      2
+    ),
+    _vm._v(" "),
+    _c("div", {
+      ref: "scr",
+      staticClass: "scr",
+      on: { mousedown: _vm.scrDown }
+    })
   ])
 }
 var staticRenderFns = []

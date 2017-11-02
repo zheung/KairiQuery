@@ -42,7 +42,6 @@
 	import FilterBox from './filterBox';
 	import CardBox from './cardBox';
 
-	import FrameScroll from '../_comp/FrameScroll';
 	import Icon from '../_comp/Icon';
 
 	export default {
@@ -50,7 +49,6 @@
 			FilterBox: FilterBox,
 			CardBox: CardBox,
 
-			FrameScroll: FrameScroll,
 			Icon: Icon
 		},
 		mounted: function() {

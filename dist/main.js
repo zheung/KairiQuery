@@ -8292,7 +8292,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "html, body, #home {\r\n\theight: 100%;\r\n\tmargin: 0px;\r\n\tpadding: 0px;\r\n\toverflow: hidden;\r\n}\r\n\r\n* {\r\n\ttext-shadow: 0em 0em 0.0001em !important;\r\n\tfont-family: \"Microsoft YaHei\", sans-serif !important;\r\n}", ""]);
+exports.push([module.i, "html, body, #home {\r\n\theight: 100%;\r\n\tmargin: 0px;\r\n\tpadding: 0px;\r\n\toverflow: hidden;\r\n}\r\n\r\n* {\r\n\ttext-shadow: 0em 0em 0.0001em !important;\r\n\tfont-family: \"Microsoft YaHei\", sans-serif !important;\r\n}\r\n\r\n.nosel {\r\n\tuser-select:none;\r\n\t-webkit-user-select:none;\r\n\t-moz-user-select: none;\r\n\t-ms-user-select:none;\r\n}", ""]);
 
 // exports
 

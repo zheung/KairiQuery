@@ -641,7 +641,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.compFrameScroll[data-v-3b078eca] {\n\toverflow: hidden;\n}\n.inbox[data-v-3b078eca] {\n\tposition: relative;\n\n\twidth: calc(100% + 17px);\n\theight: calc(100% + 17px);\n\n\toverflow: scroll;\n}\n", ""]);
+exports.push([module.i, "\n.compFrameScroll[data-v-3b078eca] {\n\toverflow: hidden;\n}\n.inbox[data-v-3b078eca] {\n\tposition: relative;\n\n\twidth: calc(100% + 17px);\n\theight: calc(100% + 17px);\n\n\toverflow: scroll;\n}\n.scr[data-v-3b078eca] {\n\twidth: 10px;\n\theight: 20px;\n\n\tposition: absolute;\n\n\ttop: 0px;\n\tright: 0px;\n\n\tcursor: pointer;\n\n\tborder-radius: 5px 0px 0px 5px;\n\tbackground-color: transparent;\n}\n", ""]);
 
 // exports
 
@@ -672,6 +672,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
 
 exports.default = {
 	props: {
@@ -686,7 +687,8 @@ exports.default = {
 	data: function data() {
 		return {
 			active: false,
-			now: 0
+			now: 0,
+			down: false
 		};
 	},
 	methods: {
@@ -711,7 +713,64 @@ exports.default = {
 			}
 
 			return click;
-		}()
+		}(),
+		scrRoll: function scrRoll() {
+			var ib = this.$refs.ib;
+
+			if (ib.scrollHeight > ib.clientHeight) {
+				var scr = this.$refs.scr;
+
+				scr.style.top = ib.scrollTop * ib.clientHeight / ib.scrollHeight + 'px';
+			}
+		},
+		scrDown: function scrDown() {
+			document.addEventListener('mousemove', this.scrMove);
+			document.addEventListener('mouseup', this.scrUpon);
+
+			document.body.className += ' nosel';
+
+			this.down = true;
+			return false;
+		},
+		scrUpon: function scrUpon() {
+			this.down = false;
+
+			document.body.className = document.body.className.replace(/ nosel/g, '');
+
+			document.removeEventListener('mousemove', this.scrMove);
+			document.removeEventListener('mouseup', this.scrUpon);
+
+			return false;
+		},
+		scrMove: function scrMove(e) {
+			if (this.down) {
+				var ib = this.$refs.ib;
+				var scr = this.$refs.scr;
+
+				if (ib.scrollHeight > ib.clientHeight) {
+					var top = scr.offsetTop + e.movementY;
+					var max = ib.clientHeight - ib.clientHeight * ib.clientHeight / ib.scrollHeight;
+
+					if (top >= 0 && top <= max) {
+						scr.style.top = top + 'px';
+						ib.scrollTop = top * ib.scrollHeight / ib.clientHeight;
+					}
+				}
+			}
+
+			return false;
+		}
+	},
+
+	updated: function updated() {
+		var ib = this.$refs.ib;
+
+		if (ib.scrollHeight > ib.clientHeight) {
+			var scr = this.$refs.scr;
+
+			scr.style.height = ib.clientHeight * ib.clientHeight / ib.scrollHeight + 'px';
+			scr.style.backgroundColor = '#777777';
+		}
 	}
 };
 
@@ -726,7 +785,18 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "compFrameScroll" }, [
-    _c("div", { staticClass: "inbox" }, [_vm._t("default")], 2)
+    _c(
+      "div",
+      { ref: "ib", staticClass: "inbox", on: { scroll: _vm.scrRoll } },
+      [_vm._t("default")],
+      2
+    ),
+    _vm._v(" "),
+    _c("div", {
+      ref: "scr",
+      staticClass: "scr",
+      on: { mousedown: _vm.scrDown }
+    })
   ])
 }
 var staticRenderFns = []
@@ -802,63 +872,17 @@ var _cardBox = __webpack_require__(295);
 
 var _cardBox2 = _interopRequireDefault(_cardBox);
 
-var _FrameScroll = __webpack_require__(235);
-
-var _FrameScroll2 = _interopRequireDefault(_FrameScroll);
-
 var _Icon = __webpack_require__(236);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 exports.default = {
 	components: {
 		FilterBox: _filterBox2.default,
 		CardBox: _cardBox2.default,
 
-		FrameScroll: _FrameScroll2.default,
 		Icon: _Icon2.default
 	},
 	mounted: function mounted() {
@@ -882,7 +906,46 @@ exports.default = {
 			count: 0
 		};
 	}
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
@@ -1149,7 +1212,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.card[data-v-55673095] {\n\theight: 300px;\n\n\tmargin: 5px;\n\n\tposition: relative;\n\n\tborder: 1px dashed transparent;\n\tborder-bottom: 2px dashed #ffffff;\n}\n.box1[data-v-55673095] {\n\twidth: 250px;\n\theight: 150px;\n\n\tmargin: 5px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 2px dashed transparent;\n\tborder-top: 2px solid #ffffff;\n\tborder-left: 2px solid #ffffff;\n\tborder-radius: 5px 0px 0px 0px;\n}\n.box2[data-v-55673095] {\n\twidth: 280px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted #ffffff88;\n\n\tline-height: 30px;\n}\n.box2>table[data-v-55673095] {\n\twidth: calc(100% - 12px);\n\n\tmargin-left: 12px;\n\n\tline-height: 38px;\n}\n.box3[data-v-55673095] {\n\twidth: 130px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted #ffffff88;\n\n\tline-height: 30px;\n}\n.box4[data-v-55673095] {\n\twidth: 100%;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted #ffffff88;\n\n\tline-height: 30px;\n}\n.iconBox[data-v-55673095] {\n\tmargin: 0 auto;\n\n\tborder: 1px solid transparent;\n}\n.nameBox[data-v-55673095] {\n\twidth: 200px;\n\n\tmargin:0 auto;\n\n\tborder: 1px solid transparent;\n\n\ttext-align: center;\n}\n.name[data-v-55673095] {\n\tposition: relative;\n\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n}\n", ""]);
+exports.push([module.i, "\n.card[data-v-55673095] {\n\tmargin: 5px;\n\n\tposition: relative;\n\n\tborder: 1px dashed transparent;\n\tborder-bottom: 2px dashed #ffffff;\n}\n.box1[data-v-55673095] {\n\twidth: 250px;\n\theight: 150px;\n\n\tmargin: 5px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 2px dashed transparent;\n\tborder-top: 2px solid #ffffff;\n\tborder-left: 2px solid #ffffff;\n\tborder-radius: 5px 0px 0px 0px;\n}\n.box2[data-v-55673095] {\n\twidth: 280px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.box2>table[data-v-55673095] {\n\twidth: calc(100% - 12px);\n\n\tmargin-left: 12px;\n\n\tline-height: 38px;\n}\n.box3[data-v-55673095] {\n\twidth: 130px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.box4[data-v-55673095] {\n\twidth: 100%;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.iconBox[data-v-55673095] {\n\tmargin: 0 auto;\n\n\tborder: 1px solid transparent;\n}\n.nameBox[data-v-55673095] {\n\twidth: 200px;\n\n\tmargin:0 auto;\n\n\tborder: 1px solid transparent;\n\n\ttext-align: center;\n}\n.name[data-v-55673095] {\n\tposition: relative;\n\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n}\n", ""]);
 
 // exports
 
@@ -1176,8 +1239,6 @@ var _Icon2 = _interopRequireDefault(_Icon);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
-//
 //
 //
 //
@@ -1361,7 +1422,7 @@ var render = function() {
     "FrameScroll",
     { staticClass: "compCardBox" },
     _vm._l(_vm.cards, function(card, ci) {
-      return _c("FrameScroll", { key: ci, staticClass: "card" }, [
+      return _c("div", { key: ci, staticClass: "card" }, [
         _c(
           "div",
           { staticClass: "box1" },

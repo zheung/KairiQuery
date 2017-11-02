@@ -1,6 +1,6 @@
 <template>
 	<FrameScroll class="compCardBox">
-		<FrameScroll class="card" v-for="(card, ci) of cards" :key="ci">
+		<div class="card" v-for="(card, ci) of cards" :key="ci">
 			<div class="box1">
 				<Icon class="iconBox" :card="card" size="100" />
 				<div class="nameBox">
@@ -39,14 +39,12 @@
 				<div style="padding-left: 13px;">魔攻：{{card.ap}}</div>
 				<div style="padding-left: 13px;">治疗：{{card.hq}}</div>
 			</div>
-		</FrameScroll>
+		</div>
 	</FrameScroll>
 </template>
 
 <style scoped>
 	.card {
-		height: 300px;
-
 		margin: 5px;
 
 		position: relative;
@@ -82,7 +80,7 @@
 		vertical-align: top;
 
 		border: 1px dashed transparent;
-		border-left: 1px dotted #ffffff88;
+		border-left: 1px dotted rgba(255, 255, 255, 0.5);
 
 		line-height: 30px;
 	}
@@ -107,7 +105,7 @@
 		vertical-align: top;
 
 		border: 1px dashed transparent;
-		border-left: 1px dotted #ffffff88;
+		border-left: 1px dotted rgba(255, 255, 255, 0.5);
 
 		line-height: 30px;
 	}
@@ -122,7 +120,7 @@
 		vertical-align: top;
 
 		border: 1px dashed transparent;
-		border-left: 1px dotted #ffffff88;
+		border-left: 1px dotted rgba(255, 255, 255, 0.5);
 
 		line-height: 30px;
 	}
