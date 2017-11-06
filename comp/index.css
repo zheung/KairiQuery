@@ -11,8 +11,13 @@ html, body, #home {
 }
 
 .nosel {
-	user-select:none;
-	-webkit-user-select:none;
+	user-select: none;
+	-webkit-user-select: none;
 	-moz-user-select: none;
-	-ms-user-select:none;
+	-ms-user-select: none;
 }
+
+::-webkit-input-placeholder { color: snow; }
+:-moz-placeholder { color: snow; }
+::-moz-placeholder { color: snow; }
+:-ms-input-placeholder { color: snow; }

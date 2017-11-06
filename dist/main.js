@@ -7642,7 +7642,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.homeBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 0px;\n\tbottom: 0px;\n\tleft: 0px;\n\tright: 0px;\n\n\tbackground: #262629;\n\tcolor: #ffffff;\n}\n.title[data-v-075407de] {\n\tposition: absolute;\n\n\theight: 40px;\n\n\ttop: 5px;\n\tleft: 5px;\n}\n.title>.big[data-v-075407de] {\n\tfont-size: 24px;\n\tfont-weight: bold;\n}\n.title>.sub[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 10px;\n\tleft: 140px;\n\n\tfont-size: 10px;\n\n\tword-break: keep-all;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n}\n.tabBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 50px;\n\tleft: 5px;\n\tright: 5px;\n\n\theight: 30px;\n}\n.frameBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 90px;\n\tbottom: 5px;\n\tleft: 5px;\n\tright: 5px;\n}\n", ""]);
+exports.push([module.i, "\n.homeBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 0px;\n\tbottom: 0px;\n\tleft: 0px;\n\tright: 0px;\n\n\tbackground: #262629;\n\tcolor: snow;\n}\n.title[data-v-075407de] {\n\tposition: absolute;\n\n\theight: 40px;\n\n\ttop: 5px;\n\tleft: 5px;\n\n\tcolor: #2da2c8;\n}\n.title>.big[data-v-075407de] {\n\tfont-size: 24px;\n\tfont-weight: bold;\n}\n.title>.sub[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 10px;\n\tleft: 140px;\n\n\tfont-size: 10px;\n\n\tword-break: keep-all;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n}\n.tabBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 50px;\n\tleft: 5px;\n\tright: 5px;\n\n\theight: 30px;\n}\n.tabBox>div[data-v-075407de] {\n\tborder: 2px solid #2da2c8;\n}\n.frameBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 90px;\n\tbottom: 0px;\n\tleft: 0px;\n\tright: 0px;\n}\n", ""]);
 
 // exports
 
@@ -7884,7 +7884,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.button[data-v-725800b4] {\n\tdisplay: inline-block;\n\n\twidth: 60px;\n\theight: 20px;\n\n\tborder: 2px solid #ffffff;\n\n\tmargin: 0px 5px 0px 0px;\n\n\tborder-radius: 5px;\n\n\ttext-align: center;\n\tline-height: 20px;\n\n\tfont-size: 10px;\n\n\tcursor: pointer;\n}\n.button.active[data-v-725800b4], .button[data-v-725800b4]:hover {\n\tborder: 2px solid #ffffff;\n\n\tcolor: #262629;\n\tbackground: #ffffff;\n\tfont-weight: bold;\n}\n", ""]);
+exports.push([module.i, "\n.button[data-v-725800b4] {\n\tdisplay: inline-block;\n\n\twidth: 60px;\n\theight: 20px;\n\n\tborder: 2px solid #2da2c8;\n\n\tmargin: 0px 5px 0px 0px;\n\n\tborder-radius: 5px;\n\n\ttext-align: center;\n\tline-height: 20px;\n\n\tfont-size: 10px;\n\n\tcursor: pointer;\n}\n.button.active[data-v-725800b4], .button[data-v-725800b4]:hover {\n\tcolor: snow;\n\n\tbackground: #2da2c8;\n\tfont-weight: bold;\n}\n", ""]);
 
 // exports
 
@@ -8059,7 +8059,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.wrap[data-v-47e3f9d8] {\n\tborder-bottom: 1px solid #ffffff;\n\n\theight: 30px;\n}\n.right[data-v-47e3f9d8] {\n\tposition: absolute;\n\n\tright: 0px;\n\n\tmargin: 0px 0px 0px 5px;\n}\n", ""]);
+exports.push([module.i, "\n.wrap[data-v-47e3f9d8] {\n\tborder: 1px solid transparent;\n\tborder-bottom: 1px solid snow;\n\n\theight: 30px;\n}\n.right[data-v-47e3f9d8] {\n\tposition: absolute;\n\n\tright: 0px;\n\n\tmargin: 0px 0px 0px 5px;\n}\n", ""]);
 
 // exports
 
@@ -8292,7 +8292,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "html, body, #home {\r\n\theight: 100%;\r\n\tmargin: 0px;\r\n\tpadding: 0px;\r\n\toverflow: hidden;\r\n}\r\n\r\n* {\r\n\ttext-shadow: 0em 0em 0.0001em !important;\r\n\tfont-family: \"Microsoft YaHei\", sans-serif !important;\r\n}\r\n\r\n.nosel {\r\n\tuser-select:none;\r\n\t-webkit-user-select:none;\r\n\t-moz-user-select: none;\r\n\t-ms-user-select:none;\r\n}", ""]);
+exports.push([module.i, "html, body, #home {\r\n\theight: 100%;\r\n\tmargin: 0px;\r\n\tpadding: 0px;\r\n\toverflow: hidden;\r\n}\r\n\r\n* {\r\n\ttext-shadow: 0em 0em 0.0001em !important;\r\n\tfont-family: \"Microsoft YaHei\", sans-serif !important;\r\n}\r\n\r\n.nosel {\r\n\tuser-select: none;\r\n\t-webkit-user-select: none;\r\n\t-moz-user-select: none;\r\n\t-ms-user-select: none;\r\n}\r\n\r\n::-webkit-input-placeholder { color: snow; }\r\n:-moz-placeholder { color: snow; }\r\n::-moz-placeholder { color: snow; }\r\n:-ms-input-placeholder { color: snow; }", ""]);
 
 // exports
 

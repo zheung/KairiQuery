@@ -583,7 +583,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\ndiv[data-v-55e727a2] {\n\tcolor: #ffffff;\n}\n.col[data-v-55e727a2] {\n\tmargin: 5px;\n}\n.col.toggle[data-v-55e727a2] {\n\tmax-width: 400px;\n}\ninput[data-v-55e727a2] {\n\tborder-radius: 5px;\n\tborder: 1px solid #474747;\n\ttext-align: center;\n}\n", ""]);
+exports.push([module.i, "\ndiv[data-v-55e727a2] {\n\tcolor: snow;\n}\n.col[data-v-55e727a2] {\n\tmargin: 5px;\n}\n.col.toggle[data-v-55e727a2] {\n\tmax-width: 400px;\n}\ninput[data-v-55e727a2] {\n\tborder-radius: 5px;\n\tborder: 1px solid #474747;\n\ttext-align: center;\n}\n", ""]);
 
 // exports
 

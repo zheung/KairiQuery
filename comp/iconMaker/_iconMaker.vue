@@ -91,7 +91,7 @@
 
 <style scoped>
 	div {
-		color: #ffffff;
+		color: snow;
 	}
 	.col {
 		margin: 5px;

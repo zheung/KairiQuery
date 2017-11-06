@@ -382,7 +382,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\ndiv[data-v-30ab9993] {\r\n\tcolor: #ffffff;\n}\r\n", ""]);
+exports.push([module.i, "\ndiv[data-v-30ab9993] {\r\n\tcolor: snow;\n}\r\n", ""]);
 
 // exports
 

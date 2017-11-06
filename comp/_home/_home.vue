@@ -52,7 +52,7 @@
 		right: 0px;
 
 		background: #262629;
-		color: #ffffff;
+		color: snow;
 	}
 	.title {
 		position: absolute;
@@ -61,6 +61,8 @@
 
 		top: 5px;
 		left: 5px;
+
+		color: #2da2c8;
 	}
 	.title>.big {
 		font-size: 24px;
@@ -89,12 +91,16 @@
 
 		height: 30px;
 	}
+	.tabBox>div {
+		border: 2px solid #2da2c8;
+	}
+
 	.frameBox {
 		position: absolute;
 
 		top: 90px;
-		bottom: 5px;
-		left: 5px;
-		right: 5px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
 	}
 </style>

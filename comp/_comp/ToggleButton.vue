@@ -27,7 +27,7 @@
 		width: 60px;
 		height: 20px;
 
-		border: 2px solid #ffffff;
+		border: 2px solid #2da2c8;
 
 		margin: 0px 5px 0px 0px;
 
@@ -41,10 +41,9 @@
 		cursor: pointer;
 	}
 	.button.active, .button:hover {
-		border: 2px solid #ffffff;
+		color: snow;
 
-		color: #262629;
-		background: #ffffff;
+		background: #2da2c8;
 		font-weight: bold;
 	}
 </style>

@@ -8,7 +8,7 @@
 
 <style scoped>
 div {
-	color: #ffffff;
+	color: snow;
 }
 </style>
 

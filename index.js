@@ -64,6 +64,14 @@ module.exports = async($, router) => {
 		];
 	});
 
+	router.get('/conds', async(ctx, next) => {
+		await next();
+
+		ctx.type = 'json';
+
+		ctx.body = await $.rq('data/conds');
+	});
+
 	// router.get('/subs/:sub/:name.:ext', async(ctx) => {
 	// 	let p = ctx.params;
 

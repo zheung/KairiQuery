@@ -9,7 +9,7 @@
 				</div>
 			</div>
 			<div class="box2">
-				<div>●&nbsp;基本属性：</div>
+				<div>●&nbsp;属性</div>
 				<table border="0">
 					<tr>
 						<td>稀有：{{card.rare}}</td>
@@ -26,19 +26,13 @@
 				</table>
 			</div>
 			<div class="box3">
-				<div>●&nbsp;基础四围：</div>
+				<div>●&nbsp;四围</div>
 				<div style="padding-left: 13px;">血量：{{card.hp}}</div>
 				<div style="padding-left: 13px;">物攻：{{card.ad}}</div>
 				<div style="padding-left: 13px;">魔攻：{{card.ap}}</div>
 				<div style="padding-left: 13px;">治疗：{{card.hq}}</div>
 			</div>
-			<div class="box4">
-				<div>●&nbsp;骑士技能：</div>
-				<div style="padding-left: 13px;">血量：{{card.hp}}</div>
-				<div style="padding-left: 13px;">物攻：{{card.ad}}</div>
-				<div style="padding-left: 13px;">魔攻：{{card.ap}}</div>
-				<div style="padding-left: 13px;">治疗：{{card.hq}}</div>
-			</div>
+			<SkillBox class="box4" :skill="card.skill" />
 		</div>
 	</FrameScroll>
 </template>
@@ -50,7 +44,6 @@
 		position: relative;
 
 		border: 1px dashed transparent;
-		border-bottom: 2px dashed #ffffff;
 	}
 
 	.box1 {
@@ -64,8 +57,8 @@
 		vertical-align: top;
 
 		border: 2px dashed transparent;
-		border-top: 2px solid #ffffff;
-		border-left: 2px solid #ffffff;
+		/* border-top: 2px solid snow;
+		border-left: 2px solid snow; */
 		border-radius: 5px 0px 0px 0px;
 	}
 	.box2 {
@@ -110,22 +103,6 @@
 		line-height: 30px;
 	}
 
-	.box4 {
-		width: calc(100% - 5px);
-		height: 150px;
-
-		margin: 5px;
-		padding-left: 20px;
-
-		vertical-align: top;
-
-		border: 1px dashed transparent;
-		border-top: 1px dashed #ffffff;
-		border-left: 1px dotted rgba(255, 255, 255, 0.5);
-
-		line-height: 30px;
-	}
-
 	.iconBox {
 		margin: 0 auto;
 
@@ -148,16 +125,31 @@
 		white-space: nowrap;
 		text-overflow: ellipsis;
 	}
+
+	.box4 {
+		width: 100%;
+
+		vertical-align: top;
+
+		border: 1px dashed transparent;
+
+		line-height: 30px;
+	}
 </style>
 
 <script>
 	import FrameScroll from '../_comp/FrameScroll';
 	import Icon from '../_comp/Icon';
+	import TabFrame from '../_comp/TabFrame';
+
+	import SkillBox from './SkillBox';
 
 	export default {
 		components: {
 			FrameScroll: FrameScroll,
-			Icon: Icon
+			TabFrame: TabFrame,
+			Icon: Icon,
+			SkillBox: SkillBox
 		},
 		props: {
 			cards: { default: [] },
@@ -170,6 +162,11 @@
 		},
 		data: function() {
 			return {
+				tabsSkillType: {
+					awaken: { title: '觉醒' },
+					normal: { title: '普通' },
+					suport: { title: '支援' }
+				}
 			};
 		}
 	};

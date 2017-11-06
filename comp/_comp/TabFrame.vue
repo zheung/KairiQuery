@@ -40,7 +40,8 @@
 
 <style scoped>
 	.wrap {
-		border-bottom: 1px solid #ffffff;
+		border: 1px solid transparent;
+		border-bottom: 1px solid snow;
 
 		height: 30px;
 	}
