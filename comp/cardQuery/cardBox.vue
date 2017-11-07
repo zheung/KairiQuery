@@ -1,6 +1,7 @@
 <template>
 	<FrameScroll class="compCardBox">
 		<div class="card" v-for="(card, ci) of cards" :key="ci">
+			<div class="order">{{ci+1+'/'+cards.length}}</div>
 			<div class="box1">
 				<Icon class="iconBox" :card="card" size="100" />
 				<div class="nameBox">
@@ -38,6 +39,12 @@
 </template>
 
 <style scoped>
+	.order {
+		position: absolute;
+
+		top: 0px;
+		right: 0px;
+	}
 	.card {
 		margin: 5px;
 

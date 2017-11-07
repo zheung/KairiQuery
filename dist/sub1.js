@@ -672,9 +672,11 @@ exports.default = {
 	computed: {
 		card: function card() {
 			return {
-				rare: this.toggle.rare,
-				attr: this.toggle.attr,
-				job: this.toggle.job
+				raw: {
+					rare: this.toggle.rare,
+					attr: this.toggle.attr,
+					job: this.toggle.job
+				}
 			};
 		}
 	},

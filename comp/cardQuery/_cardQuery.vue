@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<FilterBox class="filterBox" />
+		<FilterBox class="filterBox" :word="word" :pageNow="pageNow" :pageMax="pageMax" :onQuery="onQuery" />
 		<CardBox class="cardBox" :cards="this.cards" :serv="this.serv" />
 	</div>
 </template>
@@ -23,6 +23,10 @@
 
 		border: 2px solid transparent;
 		border-radius: 5px;
+
+		vertical-align: top;
+
+		background-color: #2da1c9;
 	}
 
 	.cardBox {
@@ -70,8 +74,8 @@
 			})
 			.then(function(data) {
 				me.cards = data[0][0];
-				me.page = data[0][1];
-				me.count = data[0][2];
+				me.pageNow = data[0][1];
+				me.pageMax = data[0][2];
 			});
 		},
 		activated: function() {
@@ -79,11 +83,53 @@
 		data: function() {
 			return {
 				serv: 'cn',
+
 				cards: [],
 
-				page: 0,
-				count: 0
+				word: '',
+				mark: '256',
+
+				pageNow: 0,
+				pageMax: 0
 			};
+		},
+		computed: {
+			param: function() {
+				return JSON.stringify({
+					serv: this.serv,
+					word: this.word,
+					page: this.pageNow,
+					mark: this.mark,
+					zero: ~~Boolean(!this.word || !this.mark),
+
+					prio: false
+				});
+			}
+		},
+		methods: {
+			onQuery: function(word, page) {
+				let me = this;
+
+				if(typeof word == 'string') this.word = word;
+
+				if(page != undefined && ~~page) {
+					if(~~page < 0 || ~~page > this.pageMax)
+						return;
+					else
+						this.pageNow = ~~page;
+				}
+L(this.param);
+				fetch(`kq2/query?conds=${this.param}`)
+				.then(function(res) {
+					return res.json();
+				})
+				.then(function(data) {
+					me.cards = data[0][0];
+					me.pageNow = data[0][1];
+					me.pageMax = data[0][2];
+				});
+			}
 		}
+
 	};
 </script>

@@ -6,7 +6,7 @@ webpackJsonp([0],Array(233).concat([
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_cardQuery_vue__ = __webpack_require__(289);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_cardQuery_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_cardQuery_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_c91f8be2_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_cardQuery_vue__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_c91f8be2_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_cardQuery_vue__ = __webpack_require__(305);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -826,7 +826,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n*[data-v-c91f8be2] {\n\tposition: relative;\n\n\tcolor: snow;\n}\n.filterBox[data-v-c91f8be2] {\n\tposition: absolute;\n\n\ttop: 5px;\n\tleft: 5px;\n\tright: 5px;\n\n\theight: 30px;\n\n\tborder: 2px solid transparent;\n\tborder-radius: 5px;\n}\n.cardBox[data-v-c91f8be2] {\n\tposition: absolute;\n\n\ttop: 45px;\n\tleft: 5px;\n\tright: 5px;\n\tbottom: 5px;\n\n\tborder: 2px solid snow;\n\tborder-radius: 5px;\n}\n", ""]);
+exports.push([module.i, "\n*[data-v-c91f8be2] {\n\tposition: relative;\n\n\tcolor: snow;\n}\n.filterBox[data-v-c91f8be2] {\n\tposition: absolute;\n\n\ttop: 5px;\n\tleft: 5px;\n\tright: 5px;\n\n\theight: 30px;\n\n\tborder: 2px solid transparent;\n\tborder-radius: 5px;\n\n\tvertical-align: top;\n\n\tbackground-color: #2da1c9;\n}\n.cardBox[data-v-c91f8be2] {\n\tposition: absolute;\n\n\ttop: 45px;\n\tleft: 5px;\n\tright: 5px;\n\tbottom: 5px;\n\n\tborder: 2px solid snow;\n\tborder-radius: 5px;\n}\n", ""]);
 
 // exports
 
@@ -878,21 +878,62 @@ exports.default = {
 			return res.json();
 		}).then(function (data) {
 			me.cards = data[0][0];
-			me.page = data[0][1];
-			me.count = data[0][2];
+			me.pageNow = data[0][1];
+			me.pageMax = data[0][2];
 		});
 	},
 	activated: function activated() {},
 	data: function data() {
 		return {
 			serv: 'cn',
+
 			cards: [],
 
-			page: 0,
-			count: 0
+			word: '',
+			mark: '256',
+
+			pageNow: 0,
+			pageMax: 0
 		};
+	},
+	computed: {
+		param: function param() {
+			return JSON.stringify({
+				serv: this.serv,
+				word: this.word,
+				page: this.pageNow,
+				mark: this.mark,
+				zero: ~~Boolean(!this.word || !this.mark),
+
+				prio: false
+			});
+		}
+	},
+	methods: {
+		onQuery: function onQuery(word, page) {
+			var me = this;
+
+			if (typeof word == 'string') this.word = word;
+
+			if (page != undefined && ~~page) {
+				if (~~page < 0 || ~~page > this.pageMax) return;else this.pageNow = ~~page;
+			}
+			L(this.param);
+			fetch('kq2/query?conds=' + this.param).then(function (res) {
+				return res.json();
+			}).then(function (data) {
+				me.cards = data[0][0];
+				me.pageNow = data[0][1];
+				me.pageMax = data[0][2];
+			});
+		}
 	}
+
 }; //
+//
+//
+//
+//
 //
 //
 //
@@ -1025,7 +1066,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.condText[data-v-2c03eaad] {\n\twidth: 200px;\n\theight: 30px;\n\n\tborder: 1px solid transparent;\n\tborder-right: 4px solid #2da1c9;\n\n\tpadding: 0px;\n\tpadding-left: 10px;\n\n\toutline: none;\n\n\tbackground-color: #2da1c9;\n\tcolor: snow;\n\tline-height: 30px;\n}\n.condText[data-v-2c03eaad]:focus {\n\tborder-right: 4px solid #148474;\n}\n.condPage[data-v-2c03eaad] {\n\twidth: 50px;\n\theight: 30px;\n\n\tborder: 2px solid transparent;\n\tborder-right: 4px solid #2da1c9;\n\n\tpadding: 0px;\n\tpadding-left: 10px;\n\n\toutline: none;\n\n\tbackground-color: #2da1c9;\n\tcolor: snow;\n\tline-height: 30px;\n}\n.condPage[data-v-2c03eaad]:focus {\n\tborder-right: 4px solid #148474;\n}\n.pageBox[data-v-2c03eaad] {\n\tdisplay: inline-block;\n}\n.turnBox[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\twidth: 40px;\n}\n.turn[data-v-2c03eaad] {\n\tborder: 2px solid #2da1c9;\n\n\theight: 30px;\n\twidth: 20px;\n}\n", ""]);
+exports.push([module.i, "\n.condWord[data-v-2c03eaad] {\n\twidth: 200px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\tborder-right: 5px solid #2da1c9;\n\n\tpadding: 0px;\n\tpadding-left: 10px;\n\n\toutline: none;\n\n\tbackground-color: #2da1c9;\n\tcolor: snow;\n\tline-height: 30px;\n\n\tfont-size: 16px;\n}\n.condWord[data-v-2c03eaad]:focus {\n\tbackground-color: #57b7d8;\n\n\tborder-right: 5px solid #148474;\n\tborder-radius: 5px;\n}\n.turn[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 20px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tbackground-color: #2da1c9;\n\n\tposition: relative;\n\n\tvertical-align: top;\n\n\ttext-align: center;\n\tline-height: 30px;\n\n\tcursor: pointer;\n}\n.turn[data-v-2c03eaad]:hover, .condText[data-v-2c03eaad]:hover, .pageBox[data-v-2c03eaad]:hover {\n\tbackground-color: #57b7d8;\n\tborder-radius: 5px;\n}\n.pageBox[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 110px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tbackground-color: #2da1c9;\n\tposition: relative;\n\n\tvertical-align: top;\n\n\ttext-align: center;\n\tline-height: 30px;\n}\n.condPage[data-v-2c03eaad] {\n\twidth: 45px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tpadding: 0px;\n\n\toutline: none;\n\n\tbackground-color: transparent;\n\tcolor: snow;\n\tline-height: 30px;\n\n\tfont-size: 16px;\n\n\ttext-align: center;\n}\n.condPage[data-v-2c03eaad]:focus {\n\tbackground-color: #57b7d8;\n\tborder-radius: 5px;\n}\n.pageMax[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 45px;\n\theight: 30px;\n}\n", ""]);
 
 // exports
 
@@ -1051,20 +1092,62 @@ exports.default = {
 	components: {
 		FrameScroll: _FrameScroll2.default
 	},
+	props: {
+		onQuery: { default: function _default() {} },
+
+		word: { default: 0 },
+		pageNow: { default: 0 },
+		pageMax: { default: 0 }
+	},
 	mounted: function mounted() {},
 	activated: function activated() {},
 	data: function data() {
 		return {
-			word: '',
-			pageMax: 1
+			word: ''
 		};
 	},
-	methods: {
-		onSearch: function onSearch() {
-			console.log(233);
-		}
-	}
+	methods: {}
 }; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1153,9 +1236,9 @@ var render = function() {
           expression: "word"
         }
       ],
-      ref: "condText",
-      staticClass: "condText",
-      attrs: { id: "CondText", type: "text", placeholder: "搜索..." },
+      ref: "condWord",
+      staticClass: "condWord",
+      attrs: { id: "CondWord", type: "text", placeholder: "搜索..." },
       domProps: { value: _vm.word },
       on: {
         keyup: function($event) {
@@ -1165,7 +1248,7 @@ var render = function() {
           ) {
             return null
           }
-          _vm.onSearch($event)
+          _vm.onQuery(_vm.word, 1)
         },
         input: function($event) {
           if ($event.target.composing) {
@@ -1176,9 +1259,73 @@ var render = function() {
       }
     }),
     _vm._v(" "),
-    _c("span", { staticClass: "turn" }, [_vm._v("<")]),
+    _c(
+      "div",
+      {
+        staticClass: "turn",
+        on: {
+          click: function($event) {
+            _vm.onQuery(_vm.word, _vm.pageNow - 1)
+          }
+        }
+      },
+      [_vm._v("<")]
+    ),
     _vm._v(" "),
-    _c("span", { staticClass: "turn" }, [_vm._v(">")])
+    _c("div", { staticClass: "pageBox" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model.number",
+            value: _vm.pageNow,
+            expression: "pageNow",
+            modifiers: { number: true }
+          }
+        ],
+        ref: "pager",
+        staticClass: "condPage",
+        attrs: { id: "Page", type: "text" },
+        domProps: { value: _vm.pageNow },
+        on: {
+          keyup: function($event) {
+            if (
+              !("button" in $event) &&
+              _vm._k($event.keyCode, "enter", 13, $event.key)
+            ) {
+              return null
+            }
+            _vm.onQuery(_vm.word, _vm.pageNow)
+          },
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.pageNow = _vm._n($event.target.value)
+          },
+          blur: function($event) {
+            _vm.$forceUpdate()
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("span", [_vm._v("/")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "pageMax" }, [_vm._v(_vm._s(_vm.pageMax))])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "turn",
+        on: {
+          click: function($event) {
+            _vm.onQuery(_vm.word, _vm.pageNow + 1)
+          }
+        }
+      },
+      [_vm._v(">")]
+    )
   ])
 }
 var staticRenderFns = []
@@ -1200,7 +1347,7 @@ if (false) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_cardBox_vue__ = __webpack_require__(298);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_cardBox_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_cardBox_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_55673095_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_cardBox_vue__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_55673095_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_cardBox_vue__ = __webpack_require__(304);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -1284,7 +1431,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.card[data-v-55673095] {\n\tmargin: 5px;\n\n\tposition: relative;\n\n\tborder: 1px dashed transparent;\n}\n.box1[data-v-55673095] {\n\twidth: 250px;\n\theight: 150px;\n\n\tmargin: 5px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 2px dashed transparent;\n\t/* border-top: 2px solid snow;\n\tborder-left: 2px solid snow; */\n\tborder-radius: 5px 0px 0px 0px;\n}\n.box2[data-v-55673095] {\n\twidth: 280px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.box2>table[data-v-55673095] {\n\twidth: calc(100% - 12px);\n\n\tmargin-left: 12px;\n\n\tline-height: 38px;\n}\n.box3[data-v-55673095] {\n\twidth: 130px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.iconBox[data-v-55673095] {\n\tmargin: 0 auto;\n\n\tborder: 1px solid transparent;\n}\n.nameBox[data-v-55673095] {\n\twidth: 200px;\n\n\tmargin:0 auto;\n\n\tborder: 1px solid transparent;\n\n\ttext-align: center;\n}\n.name[data-v-55673095] {\n\tposition: relative;\n\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n}\n.box4[data-v-55673095] {\n\twidth: 100%;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\n\tline-height: 30px;\n}\n", ""]);
+exports.push([module.i, "\n.order[data-v-55673095] {\n\tposition: absolute;\n\n\ttop: 0px;\n\tright: 0px;\n}\n.card[data-v-55673095] {\n\tmargin: 5px;\n\n\tposition: relative;\n\n\tborder: 1px dashed transparent;\n}\n.box1[data-v-55673095] {\n\twidth: 250px;\n\theight: 150px;\n\n\tmargin: 5px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 2px dashed transparent;\n\t/* border-top: 2px solid snow;\n\tborder-left: 2px solid snow; */\n\tborder-radius: 5px 0px 0px 0px;\n}\n.box2[data-v-55673095] {\n\twidth: 280px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.box2>table[data-v-55673095] {\n\twidth: calc(100% - 12px);\n\n\tmargin-left: 12px;\n\n\tline-height: 38px;\n}\n.box3[data-v-55673095] {\n\twidth: 130px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.iconBox[data-v-55673095] {\n\tmargin: 0 auto;\n\n\tborder: 1px solid transparent;\n}\n.nameBox[data-v-55673095] {\n\twidth: 200px;\n\n\tmargin:0 auto;\n\n\tborder: 1px solid transparent;\n\n\ttext-align: center;\n}\n.name[data-v-55673095] {\n\tposition: relative;\n\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n}\n.box4[data-v-55673095] {\n\twidth: 100%;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\n\tline-height: 30px;\n}\n", ""]);
 
 // exports
 
@@ -1308,16 +1455,23 @@ var _Icon = __webpack_require__(235);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
-var _TabFrame = __webpack_require__(222);
+var _TabFrame = __webpack_require__(97);
 
 var _TabFrame2 = _interopRequireDefault(_TabFrame);
 
-var _SkillBox = __webpack_require__(305);
+var _SkillBox = __webpack_require__(299);
 
 var _SkillBox2 = _interopRequireDefault(_SkillBox);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1488,148 +1642,14 @@ exports.default = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "FrameScroll",
-    { staticClass: "compCardBox" },
-    _vm._l(_vm.cards, function(card, ci) {
-      return _c(
-        "div",
-        { key: ci, staticClass: "card" },
-        [
-          _c(
-            "div",
-            { staticClass: "box1" },
-            [
-              _c("Icon", {
-                staticClass: "iconBox",
-                attrs: { card: card, size: "100" }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "nameBox" }, [
-                _c("div", [_vm._v("<" + _vm._s(card.title) + ">")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "name" }, [_vm._v(_vm._s(card.name))])
-              ])
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "box2" }, [
-            _c("div", [_vm._v("● 属性")]),
-            _vm._v(" "),
-            _c("table", { attrs: { border: "0" } }, [
-              _c("tr", [
-                _c("td", [_vm._v("稀有：" + _vm._s(card.rare))]),
-                _vm._v(" "),
-                _c("td", [_vm._v("消耗：" + _vm._s(card.cost) + "C")])
-              ]),
-              _vm._v(" "),
-              _c("tr", [
-                _c("td", [_vm._v("职业：" + _vm._s(card.job))]),
-                _vm._v(" "),
-                _c("td", [_vm._v("属性：" + _vm._s(card.attr))])
-              ]),
-              _vm._v(" "),
-              _c("tr", [
-                _c("td", [_vm._v("技能：" + _vm._s(card.kind))]),
-                _vm._v(" "),
-                _c("td", [_vm._v("类型：" + _vm._s(card.star))])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "box3" }, [
-            _c("div", [_vm._v("● 四围")]),
-            _vm._v(" "),
-            _c("div", { staticStyle: { "padding-left": "13px" } }, [
-              _vm._v("血量：" + _vm._s(card.hp))
-            ]),
-            _vm._v(" "),
-            _c("div", { staticStyle: { "padding-left": "13px" } }, [
-              _vm._v("物攻：" + _vm._s(card.ad))
-            ]),
-            _vm._v(" "),
-            _c("div", { staticStyle: { "padding-left": "13px" } }, [
-              _vm._v("魔攻：" + _vm._s(card.ap))
-            ]),
-            _vm._v(" "),
-            _c("div", { staticStyle: { "padding-left": "13px" } }, [
-              _vm._v("治疗：" + _vm._s(card.hq))
-            ])
-          ]),
-          _vm._v(" "),
-          _c("SkillBox", { staticClass: "box4", attrs: { skill: card.skill } })
-        ],
-        1
-      )
-    })
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-55673095", esExports)
-  }
-}
-
-/***/ }),
-/* 300 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("FilterBox", { staticClass: "filterBox" }),
-      _vm._v(" "),
-      _c("CardBox", {
-        staticClass: "cardBox",
-        attrs: { cards: this.cards, serv: this.serv }
-      })
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-c91f8be2", esExports)
-  }
-}
-
-/***/ }),
-/* 301 */,
-/* 302 */,
-/* 303 */,
-/* 304 */,
-/* 305 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_SkillBox_vue__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_SkillBox_vue__ = __webpack_require__(302);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_SkillBox_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_SkillBox_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6bf170d0_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_SkillBox_vue__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6bf170d0_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_SkillBox_vue__ = __webpack_require__(303);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(306)
+  __webpack_require__(300)
 }
 var normalizeComponent = __webpack_require__(50)
 /* script */
@@ -1675,13 +1695,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 306 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(307);
+var content = __webpack_require__(301);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1701,7 +1721,7 @@ if(false) {
 }
 
 /***/ }),
-/* 307 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(41)(undefined);
@@ -1709,13 +1729,13 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spanSkillType[data-v-6bf170d0] {\n\tposition: relative;\n\ttop: 1px;\n}\n.tabBoxSkillType[data-v-6bf170d0] {\n\tdisplay: inline-block;\n\n\theight: 24px;\n\n\tborder: 1px solid transparent;\n}\n.skillBox[data-v-6bf170d0] {\n\tborder: 2px solid transparent;\n\tborder: 1px solid #2da2c8;\n\tborder-left: 2px solid #2da2c8;\n\tborder-right: 2px solid #2da2c8;\n\n\twidth: calc(100% - 4px);\n\n\tfont-size: 12px;\n}\n.skillBox[data-v-6bf170d0]:first-child {\n\tborder-top: 2px solid #2da2c8;\n\tborder-top-left-radius: 5px;\n\tborder-top-right-radius: 5px;\n\n\tmargin-top: 10px;\n}\n.skillBox[data-v-6bf170d0]:last-child {\n\tborder-bottom: 2px solid #2da2c8;\n\tborder-bottom-left-radius: 5px;\n\tborder-bottom-right-radius: 5px;\n}\n.item[data-v-6bf170d0] {\n\theight: 30px;\n\tline-height: 30px;\n\n\tpadding-left: 10px;\n\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n\n\tborder: 1px solid transparent;\n}\n.cond[data-v-6bf170d0] {\n\tbackground-color: #2da2c8;\n}\n", ""]);
+exports.push([module.i, "\n.spanSkillType[data-v-6bf170d0] {\n\tposition: relative;\n\ttop: 1px;\n}\n.tabBoxSkillType[data-v-6bf170d0] {\n\tdisplay: inline-block;\n\n\theight: 24px;\n\n\tborder: 1px solid transparent;\n}\n.skillBox[data-v-6bf170d0] {\n\tdisplay: inline-block;\n\n\twidth: 430px;\n\n\tmargin: 5px;\n\n\tborder: 2px solid #2da2c8;\n\tborder-radius: 5px;\n\n\tvertical-align: top;\n\n\tfont-size: 12px;\n}\n.item[data-v-6bf170d0] {\n\theight: 30px;\n\tline-height: 30px;\n\n\tpadding-left: 10px;\n\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n\n\tborder: 1px solid transparent;\n}\n.cond[data-v-6bf170d0] {\n\tbackground-color: #2da2c8;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 308 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1725,7 +1745,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _TabFrame = __webpack_require__(222);
+var _TabFrame = __webpack_require__(97);
 
 var _TabFrame2 = _interopRequireDefault(_TabFrame);
 
@@ -1741,93 +1761,10 @@ exports.default = {
 
 	mounted: function mounted() {},
 	activated: function activated() {},
+	computed: {},
 	data: function data() {
-		var height1 = 0,
-		    height2 = 0,
-		    height3 = 0;
-
-		var _iteratorNormalCompletion = true;
-		var _didIteratorError = false;
-		var _iteratorError = undefined;
-
-		try {
-			for (var _iterator = this.skill.awaken[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-				var skill = _step.value;
-
-				height1 += skill.content.length + 1;
-			}
-		} catch (err) {
-			_didIteratorError = true;
-			_iteratorError = err;
-		} finally {
-			try {
-				if (!_iteratorNormalCompletion && _iterator.return) {
-					_iterator.return();
-				}
-			} finally {
-				if (_didIteratorError) {
-					throw _iteratorError;
-				}
-			}
-		}
-
-		var _iteratorNormalCompletion2 = true;
-		var _didIteratorError2 = false;
-		var _iteratorError2 = undefined;
-
-		try {
-			for (var _iterator2 = this.skill.normal[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-				var _skill = _step2.value;
-
-				height2 += _skill.content.length + 1;
-			}
-		} catch (err) {
-			_didIteratorError2 = true;
-			_iteratorError2 = err;
-		} finally {
-			try {
-				if (!_iteratorNormalCompletion2 && _iterator2.return) {
-					_iterator2.return();
-				}
-			} finally {
-				if (_didIteratorError2) {
-					throw _iteratorError2;
-				}
-			}
-		}
-
-		var _iteratorNormalCompletion3 = true;
-		var _didIteratorError3 = false;
-		var _iteratorError3 = undefined;
-
-		try {
-			for (var _iterator3 = this.skill.suport[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-				var _skill2 = _step3.value;
-
-				height3 += _skill2.content.length + 1;
-			}
-		} catch (err) {
-			_didIteratorError3 = true;
-			_iteratorError3 = err;
-		} finally {
-			try {
-				if (!_iteratorNormalCompletion3 && _iterator3.return) {
-					_iterator3.return();
-				}
-			} finally {
-				if (_didIteratorError3) {
-					throw _iteratorError3;
-				}
-			}
-		}
-
 		return {
 			show: 1,
-
-			height: (height1 || 2) * 32,
-			height1: (height1 || 2) * 32,
-			height2: (height2 || 2) * 32,
-			height3: (height3 || 2) * 32,
 
 			tabsSkillType: {
 				1: { title: '觉醒' },
@@ -1839,7 +1776,7 @@ exports.default = {
 
 	methods: {
 		changeSkill: function changeSkill(val) {
-			this.show = val;this.height = this['height' + val];
+			this.show = val;
 		}
 	}
 }; //
@@ -1913,17 +1850,9 @@ exports.default = {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 /***/ }),
-/* 309 */
+/* 303 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1931,7 +1860,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { style: { height: _vm.height + 50 + "px" } }, [
+  return _c("div", [
     _c(
       "div",
       { staticStyle: { "vertical-align": "top" } },
@@ -2073,6 +2002,148 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-6bf170d0", esExports)
+  }
+}
+
+/***/ }),
+/* 304 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "FrameScroll",
+    { staticClass: "compCardBox" },
+    _vm._l(_vm.cards, function(card, ci) {
+      return _c(
+        "div",
+        { key: ci, staticClass: "card" },
+        [
+          _c("div", { staticClass: "order" }, [
+            _vm._v(_vm._s(ci + 1 + "/" + _vm.cards.length))
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "box1" },
+            [
+              _c("Icon", {
+                staticClass: "iconBox",
+                attrs: { card: card, size: "100" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "nameBox" }, [
+                _c("div", [_vm._v("<" + _vm._s(card.title) + ">")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "name" }, [_vm._v(_vm._s(card.name))])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "box2" }, [
+            _c("div", [_vm._v("● 属性")]),
+            _vm._v(" "),
+            _c("table", { attrs: { border: "0" } }, [
+              _c("tr", [
+                _c("td", [_vm._v("稀有：" + _vm._s(card.rare))]),
+                _vm._v(" "),
+                _c("td", [_vm._v("消耗：" + _vm._s(card.cost) + "C")])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td", [_vm._v("职业：" + _vm._s(card.job))]),
+                _vm._v(" "),
+                _c("td", [_vm._v("属性：" + _vm._s(card.attr))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td", [_vm._v("技能：" + _vm._s(card.kind))]),
+                _vm._v(" "),
+                _c("td", [_vm._v("类型：" + _vm._s(card.star))])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "box3" }, [
+            _c("div", [_vm._v("● 四围")]),
+            _vm._v(" "),
+            _c("div", { staticStyle: { "padding-left": "13px" } }, [
+              _vm._v("血量：" + _vm._s(card.hp))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticStyle: { "padding-left": "13px" } }, [
+              _vm._v("物攻：" + _vm._s(card.ad))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticStyle: { "padding-left": "13px" } }, [
+              _vm._v("魔攻：" + _vm._s(card.ap))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticStyle: { "padding-left": "13px" } }, [
+              _vm._v("治疗：" + _vm._s(card.hq))
+            ])
+          ]),
+          _vm._v(" "),
+          _c("SkillBox", { staticClass: "box4", attrs: { skill: card.skill } })
+        ],
+        1
+      )
+    })
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-55673095", esExports)
+  }
+}
+
+/***/ }),
+/* 305 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("FilterBox", {
+        staticClass: "filterBox",
+        attrs: {
+          word: _vm.word,
+          pageNow: _vm.pageNow,
+          pageMax: _vm.pageMax,
+          onQuery: _vm.onQuery
+        }
+      }),
+      _vm._v(" "),
+      _c("CardBox", {
+        staticClass: "cardBox",
+        attrs: { cards: this.cards, serv: this.serv }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-c91f8be2", esExports)
   }
 }
 
