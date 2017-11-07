@@ -1,7 +1,8 @@
 <template>
 	<div class="homeBox">
+		<div ref="pop" class="pop" :style="popa"></div>
 		<div class="title">
-			<div class="big">Kairi Query</div>
+			<div class="big"  @mouseover="test" @mouseout="test2">Kairi Query</div>
 			<div class="sub">-- 乖离性百万亚瑟王数据站(Alpha) by DanoR （最后更新：国服，XX月XX日；日服，XX月XX日；PS服，XX月XX日）</div>
 		</div>
 		<TabFrame class="tabBox" :tabs="tabs" keyDefault="cardQuery" :dealer="changeTab"></TabFrame>
@@ -26,17 +27,48 @@
 					cardQuery: { title: '卡牌查询' },
 					test: { title: '宇宙测试' },
 					about: { title: '关于', width: 40, right: true }
+				},
+
+				isHover: false,
+				eve: {},
+
+				popa: {
+					opacity: 1,
+					top: 0,
+					left: 0
 				}
 			};
 		},
 		components: {
 			TabFrame: TabFrame
 		},
+		watch: {
+			isHover: function(now) {L(now);
+				if(now) {
+					this.popa.opacity = 1;
+					this.popa.top = (this.eve.clientY) + 'px';
+					this.popa.left = (this.eve.clientX) + 'px';
+				}
+				else {
+					this.popa.opacity = 0.5;
+
+				}
+			}
+		},
 		methods: {
 			changeTab: async function(key) {
 				await Loader(key);
 
 				this.currentView = key;
+			}
+			,test: function(event) {
+				this.eve = event;
+				this.isHover = true;
+				L('mover');
+			}
+			,test2: function() {
+				this.isHover = false;
+				L('mout');
 			}
 		}
 	};
@@ -102,5 +134,20 @@
 		bottom: 0px;
 		left: 0px;
 		right: 0px;
+	}
+
+	.pop {
+		display: block;
+
+		position: fixed;
+
+		width: 100px;
+		height: 20px;
+
+		top: 0px;
+		left: 0px;
+
+		background-color: green;
+		border-radius: 5px;
 	}
 </style>

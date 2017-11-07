@@ -7699,7 +7699,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.homeBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 0px;\n\tbottom: 0px;\n\tleft: 0px;\n\tright: 0px;\n\n\tbackground: #262629;\n\tcolor: snow;\n}\n.title[data-v-075407de] {\n\tposition: absolute;\n\n\theight: 40px;\n\n\ttop: 5px;\n\tleft: 5px;\n\n\tcolor: #2da2c8;\n}\n.title>.big[data-v-075407de] {\n\tfont-size: 24px;\n\tfont-weight: bold;\n}\n.title>.sub[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 10px;\n\tleft: 140px;\n\n\tfont-size: 10px;\n\n\tword-break: keep-all;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n}\n.tabBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 50px;\n\tleft: 5px;\n\tright: 5px;\n\n\theight: 30px;\n}\n.tabBox>div[data-v-075407de] {\n\tborder: 2px solid #2da2c8;\n}\n.frameBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 90px;\n\tbottom: 0px;\n\tleft: 0px;\n\tright: 0px;\n}\n", ""]);
+exports.push([module.i, "\n.homeBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 0px;\n\tbottom: 0px;\n\tleft: 0px;\n\tright: 0px;\n\n\tbackground: #262629;\n\tcolor: snow;\n}\n.title[data-v-075407de] {\n\tposition: absolute;\n\n\theight: 40px;\n\n\ttop: 5px;\n\tleft: 5px;\n\n\tcolor: #2da2c8;\n}\n.title>.big[data-v-075407de] {\n\tfont-size: 24px;\n\tfont-weight: bold;\n}\n.title>.sub[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 10px;\n\tleft: 140px;\n\n\tfont-size: 10px;\n\n\tword-break: keep-all;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n}\n.tabBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 50px;\n\tleft: 5px;\n\tright: 5px;\n\n\theight: 30px;\n}\n.tabBox>div[data-v-075407de] {\n\tborder: 2px solid #2da2c8;\n}\n.frameBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 90px;\n\tbottom: 0px;\n\tleft: 0px;\n\tright: 0px;\n}\n.pop[data-v-075407de] {\n\tdisplay: block;\n\n\tposition: fixed;\n\n\twidth: 100px;\n\theight: 20px;\n\n\ttop: 0px;\n\tleft: 0px;\n\n\tbackground-color: green;\n\tborder-radius: 5px;\n}\n", ""]);
 
 // exports
 
@@ -7773,6 +7773,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
 
 exports.default = {
 	data: function data() {
@@ -7783,11 +7784,32 @@ exports.default = {
 				cardQuery: { title: '卡牌查询' },
 				test: { title: '宇宙测试' },
 				about: { title: '关于', width: 40, right: true }
+			},
+
+			isHover: false,
+			eve: {},
+
+			popa: {
+				opacity: 1,
+				top: 0,
+				left: 0
 			}
 		};
 	},
 	components: {
 		TabFrame: _TabFrame2.default
+	},
+	watch: {
+		isHover: function isHover(now) {
+			L(now);
+			if (now) {
+				this.popa.opacity = 1;
+				this.popa.top = this.eve.clientY + 'px';
+				this.popa.left = this.eve.clientX + 'px';
+			} else {
+				this.popa.opacity = 0.5;
+			}
+		}
 	},
 	methods: {
 		changeTab: function () {
@@ -7816,7 +7838,16 @@ exports.default = {
 			}
 
 			return changeTab;
-		}()
+		}(),
+		test: function test(event) {
+			this.eve = event;
+			this.isHover = true;
+			L('mover');
+		},
+		test2: function test2() {
+			this.isHover = false;
+			L('mout');
+		}
 	}
 };
 
@@ -8181,7 +8212,24 @@ var render = function() {
     "div",
     { staticClass: "homeBox" },
     [
-      _vm._m(0),
+      _c("div", { ref: "pop", staticClass: "pop", style: _vm.popa }),
+      _vm._v(" "),
+      _c("div", { staticClass: "title" }, [
+        _c(
+          "div",
+          {
+            staticClass: "big",
+            on: { mouseover: _vm.test, mouseout: _vm.test2 }
+          },
+          [_vm._v("Kairi Query")]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "sub" }, [
+          _vm._v(
+            "-- 乖离性百万亚瑟王数据站(Alpha) by DanoR （最后更新：国服，XX月XX日；日服，XX月XX日；PS服，XX月XX日）"
+          )
+        ])
+      ]),
       _vm._v(" "),
       _c("TabFrame", {
         staticClass: "tabBox",
@@ -8226,22 +8274,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "title" }, [
-      _c("div", { staticClass: "big" }, [_vm._v("Kairi Query")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "sub" }, [
-        _vm._v(
-          "-- 乖离性百万亚瑟王数据站(Alpha) by DanoR （最后更新：国服，XX月XX日；日服，XX月XX日；PS服，XX月XX日）"
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -8292,7 +8325,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "html, body, #home {\r\n\theight: 100%;\r\n\tmargin: 0px;\r\n\tpadding: 0px;\r\n\toverflow: hidden;\r\n}\r\n\r\n* {\r\n\ttext-shadow: 0em 0em 0.0001em !important;\r\n\tfont-family: \"Microsoft YaHei\", sans-serif !important;\r\n\r\n\ttransition-property: all;\r\n\ttransition-duration: 0.4s;\r\n\r\n\t-webkit-transform: translateZ(0);\r\n\t-moz-transform: translateZ(0);\r\n\t-ms-transform: translateZ(0);\r\n\t-o-transform: translateZ(0);\r\n\ttransform: translateZ(0);\r\n}\r\n\r\n.nosel {\r\n\tuser-select: none;\r\n\t-webkit-user-select: none;\r\n\t-moz-user-select: none;\r\n\t-ms-user-select: none;\r\n}\r\n\r\n::-webkit-input-placeholder { color: snow; }\r\n:-moz-placeholder { color: snow; }\r\n::-moz-placeholder { color: snow; }\r\n:-ms-input-placeholder { color: snow; }", ""]);
+exports.push([module.i, "html, body, #home {\r\n\theight: 100%;\r\n\tmargin: 0px;\r\n\tpadding: 0px;\r\n\toverflow: hidden;\r\n}\r\n\r\n.homeBox *:not(.pop) {\r\n\ttext-shadow: 0em 0em 0.0001em !important;\r\n\tfont-family: \"Microsoft YaHei\", sans-serif !important;\r\n\r\n\ttransition-property: all;\r\n\ttransition-duration: 0.4s;\r\n\r\n\t-webkit-transform: translateZ(0);\r\n\t-moz-transform: translateZ(0);\r\n\t-ms-transform: translateZ(0);\r\n\t-o-transform: translateZ(0);\r\n\ttransform: translateZ(0);\r\n}\r\n\r\n.nosel {\r\n\tuser-select: none;\r\n\t-webkit-user-select: none;\r\n\t-moz-user-select: none;\r\n\t-ms-user-select: none;\r\n}\r\n\r\n::-webkit-input-placeholder { color: snow; }\r\n:-moz-placeholder { color: snow; }\r\n::-moz-placeholder { color: snow; }\r\n:-ms-input-placeholder { color: snow; }", ""]);
 
 // exports
 
