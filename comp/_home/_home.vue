@@ -2,7 +2,7 @@
 	<div class="homeBox">
 		<div ref="pop" class="pop" :style="popa"></div>
 		<div class="title">
-			<div class="big"  @mouseover="test" @mouseout="test2">Kairi Query</div>
+			<div class="big" @mouseover="test" @mouseout="test2" @mousemove="tmove">Kairi Query</div>
 			<div class="sub">-- 乖离性百万亚瑟王数据站(Alpha) by DanoR （最后更新：国服，XX月XX日；日服，XX月XX日；PS服，XX月XX日）</div>
 		</div>
 		<TabFrame class="tabBox" :tabs="tabs" keyDefault="cardQuery" :dealer="changeTab"></TabFrame>
@@ -69,6 +69,12 @@
 			,test2: function() {
 				this.isHover = false;
 				L('mout');
+			}
+			,tmove: function(e) {
+				if(this.isHover) {
+					this.popa.top = (e.clientY) + 'px';
+					this.popa.left = (e.clientX) + 'px';
+				}
 			}
 		}
 	};

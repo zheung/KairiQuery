@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<FilterBox class="filterBox" :word="word" :pageNow="pageNow" :pageMax="pageMax" :onQuery="onQuery" />
+		<FilterBox class="filterBox" :serv="serv" :word="word" :pageNow="pageNow" :pageMax="pageMax" :onQuery="onQuery" />
 		<CardBox class="cardBox" :cards="this.cards" :serv="this.serv" />
 	</div>
 </template>
@@ -39,6 +39,8 @@
 
 		border: 2px solid snow;
 		border-radius: 5px;
+
+		z-index: -1;
 	}
 </style>
 
@@ -107,10 +109,11 @@
 			}
 		},
 		methods: {
-			onQuery: function(word, page) {
+			onQuery: function(word, page, serv) {
 				let me = this;
 
 				if(typeof word == 'string') this.word = word;
+				if(typeof serv == 'string') this.serv = serv;
 
 				if(page != undefined && ~~page) {
 					if(~~page < 0 || ~~page > this.pageMax)
@@ -118,7 +121,9 @@
 					else
 						this.pageNow = ~~page;
 				}
-L(this.param);
+
+				L(this.param);
+
 				fetch(`kq2/query?conds=${this.param}`)
 				.then(function(res) {
 					return res.json();

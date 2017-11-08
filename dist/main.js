@@ -7847,6 +7847,12 @@ exports.default = {
 		test2: function test2() {
 			this.isHover = false;
 			L('mout');
+		},
+		tmove: function tmove(e) {
+			if (this.isHover) {
+				this.popa.top = e.clientY + 'px';
+				this.popa.left = e.clientX + 'px';
+			}
 		}
 	}
 };
@@ -8219,7 +8225,11 @@ var render = function() {
           "div",
           {
             staticClass: "big",
-            on: { mouseover: _vm.test, mouseout: _vm.test2 }
+            on: {
+              mouseover: _vm.test,
+              mouseout: _vm.test2,
+              mousemove: _vm.tmove
+            }
           },
           [_vm._v("Kairi Query")]
         ),

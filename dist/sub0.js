@@ -826,7 +826,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n*[data-v-c91f8be2] {\n\tposition: relative;\n\n\tcolor: snow;\n}\n.filterBox[data-v-c91f8be2] {\n\tposition: absolute;\n\n\ttop: 5px;\n\tleft: 5px;\n\tright: 5px;\n\n\theight: 30px;\n\n\tborder: 2px solid transparent;\n\tborder-radius: 5px;\n\n\tvertical-align: top;\n\n\tbackground-color: #2da1c9;\n}\n.cardBox[data-v-c91f8be2] {\n\tposition: absolute;\n\n\ttop: 45px;\n\tleft: 5px;\n\tright: 5px;\n\tbottom: 5px;\n\n\tborder: 2px solid snow;\n\tborder-radius: 5px;\n}\n", ""]);
+exports.push([module.i, "\n*[data-v-c91f8be2] {\n\tposition: relative;\n\n\tcolor: snow;\n}\n.filterBox[data-v-c91f8be2] {\n\tposition: absolute;\n\n\ttop: 5px;\n\tleft: 5px;\n\tright: 5px;\n\n\theight: 30px;\n\n\tborder: 2px solid transparent;\n\tborder-radius: 5px;\n\n\tvertical-align: top;\n\n\tbackground-color: #2da1c9;\n}\n.cardBox[data-v-c91f8be2] {\n\tposition: absolute;\n\n\ttop: 45px;\n\tleft: 5px;\n\tright: 5px;\n\tbottom: 5px;\n\n\tborder: 2px solid snow;\n\tborder-radius: 5px;\n\n\tz-index: -1;\n}\n", ""]);
 
 // exports
 
@@ -910,15 +910,18 @@ exports.default = {
 		}
 	},
 	methods: {
-		onQuery: function onQuery(word, page) {
+		onQuery: function onQuery(word, page, serv) {
 			var me = this;
 
 			if (typeof word == 'string') this.word = word;
+			if (typeof serv == 'string') this.serv = serv;
 
 			if (page != undefined && ~~page) {
 				if (~~page < 0 || ~~page > this.pageMax) return;else this.pageNow = ~~page;
 			}
+
 			L(this.param);
+
 			fetch('kq2/query?conds=' + this.param).then(function (res) {
 				return res.json();
 			}).then(function (data) {
@@ -930,6 +933,8 @@ exports.default = {
 	}
 
 }; //
+//
+//
 //
 //
 //
@@ -1066,7 +1071,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.condWord[data-v-2c03eaad] {\n\twidth: 200px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\tborder-right: 5px solid #2da1c9;\n\n\tpadding: 0px;\n\tpadding-left: 10px;\n\n\toutline: none;\n\n\tbackground-color: #2da1c9;\n\tcolor: snow;\n\tline-height: 30px;\n\n\tfont-size: 16px;\n}\n.condWord[data-v-2c03eaad]:focus {\n\tbackground-color: #57b7d8;\n\n\tborder-right: 5px solid #148474;\n\tborder-radius: 5px;\n}\n.turn[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 20px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tbackground-color: #2da1c9;\n\n\tposition: relative;\n\n\tvertical-align: top;\n\n\ttext-align: center;\n\tline-height: 30px;\n\n\tcursor: pointer;\n}\n.turn[data-v-2c03eaad]:hover, .condText[data-v-2c03eaad]:hover, .pageBox[data-v-2c03eaad]:hover {\n\tbackground-color: #57b7d8;\n\tborder-radius: 5px;\n}\n.pageBox[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 110px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tbackground-color: #2da1c9;\n\tposition: relative;\n\n\tvertical-align: top;\n\n\ttext-align: center;\n\tline-height: 30px;\n}\n.condPage[data-v-2c03eaad] {\n\twidth: 45px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tpadding: 0px;\n\n\toutline: none;\n\n\tbackground-color: transparent;\n\tcolor: snow;\n\tline-height: 30px;\n\n\tfont-size: 16px;\n\n\ttext-align: center;\n}\n.condPage[data-v-2c03eaad]:focus {\n\tbackground-color: #57b7d8;\n\tborder-radius: 5px;\n}\n.pageMax[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 45px;\n\theight: 30px;\n}\n", ""]);
+exports.push([module.i, "\n.condWord[data-v-2c03eaad] {\n\twidth: 200px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\tborder-right: 5px solid #2da1c9;\n\n\tpadding: 0px;\n\tpadding-left: 10px;\n\n\toutline: none;\n\n\tbackground-color: #2da1c9;\n\tcolor: snow;\n\tline-height: 30px;\n\n\tfont-size: 16px;\n}\n.condWord[data-v-2c03eaad]:focus {\n\tbackground-color: #57b7d8;\n\n\tborder-right: 5px solid #148474;\n\tborder-radius: 5px;\n}\n.turn[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 20px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tbackground-color: #2da1c9;\n\n\tposition: relative;\n\n\tvertical-align: top;\n\n\ttext-align: center;\n\tline-height: 30px;\n\n\tcursor: pointer;\n}\n.turn[data-v-2c03eaad]:hover, .condText[data-v-2c03eaad]:hover, .pageBox[data-v-2c03eaad]:hover {\n\tbackground-color: #57b7d8;\n\tborder-radius: 5px;\n}\n.pageBox[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 110px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tbackground-color: #2da1c9;\n\tposition: relative;\n\n\tvertical-align: top;\n\n\ttext-align: center;\n\tline-height: 30px;\n}\n.condPage[data-v-2c03eaad] {\n\twidth: 45px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tpadding: 0px;\n\n\toutline: none;\n\n\tbackground-color: transparent;\n\tcolor: snow;\n\tline-height: 30px;\n\n\tfont-size: 16px;\n\n\ttext-align: center;\n}\n.condPage[data-v-2c03eaad]:focus {\n\tbackground-color: #57b7d8;\n\tborder-radius: 5px;\n}\n.pageMax[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 45px;\n\theight: 30px;\n}\n.condItem[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\theight: 30px;\n\n\tmin-width: 40px;\n\n\tborder: 0px solid transparent;\n\n\tposition: relative;\n\n\tvertical-align: top;\n\n\tbackground-color: #2da1c9;\n\n\ttext-align: center;\n\tline-height: 30px;\n\n\tcursor: pointer;\n}\n.condItem[data-v-2c03eaad]:hover {\n\tbackground-color: #57b7d8;\n\tborder-radius: 5px 5px 0px 0px;\n}\n.condItemBox[data-v-2c03eaad] {\n\twidth: 38px;\n\n\tbackground-color: #2da1c9;\n\n\tborder: 2px solid transparent;\n\tborder-top: 2px solid #3181c5;\n\tborder-radius: 2px 2px 2px 2px;\n\n\tbox-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);\n}\n.condItemBox>span[data-v-2c03eaad] {\n\tdisplay: block;\n\n\twidth: 38px;\n\theight: 30px;\n}\n.condItemBox>span[data-v-2c03eaad]:hover {\n\tbackground-color: #57b7d8;\n\tborder-radius: 5px;\n}\n", ""]);
 
 // exports
 
@@ -1082,22 +1087,23 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _FrameScroll = __webpack_require__(236);
+var _CondBox = __webpack_require__(310);
 
-var _FrameScroll2 = _interopRequireDefault(_FrameScroll);
+var _CondBox2 = _interopRequireDefault(_CondBox);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
 	components: {
-		FrameScroll: _FrameScroll2.default
+		CondBox: _CondBox2.default
 	},
 	props: {
 		onQuery: { default: function _default() {} },
 
 		word: { default: 0 },
 		pageNow: { default: 0 },
-		pageMax: { default: 0 }
+		pageMax: { default: 0 },
+		serv: { default: 'cn' }
 	},
 	mounted: function mounted() {},
 	activated: function activated() {},
@@ -1216,6 +1222,61 @@ exports.default = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 294 */
@@ -1226,67 +1287,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("FrameScroll", { staticClass: "compfilterBox" }, [
-    _c("input", {
-      directives: [
-        {
-          name: "model",
-          rawName: "v-model",
-          value: _vm.word,
-          expression: "word"
-        }
-      ],
-      ref: "condWord",
-      staticClass: "condWord",
-      attrs: { id: "CondWord", type: "text", placeholder: "搜索..." },
-      domProps: { value: _vm.word },
-      on: {
-        keyup: function($event) {
-          if (
-            !("button" in $event) &&
-            _vm._k($event.keyCode, "enter", 13, $event.key)
-          ) {
-            return null
-          }
-          _vm.onQuery(_vm.word, 1)
-        },
-        input: function($event) {
-          if ($event.target.composing) {
-            return
-          }
-          _vm.word = $event.target.value
-        }
-      }
-    }),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass: "turn",
-        on: {
-          click: function($event) {
-            _vm.onQuery(_vm.word, _vm.pageNow - 1)
-          }
-        }
-      },
-      [_vm._v("<")]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "pageBox" }, [
+  return _c(
+    "div",
+    { staticClass: "compfilterBox" },
+    [
       _c("input", {
         directives: [
           {
             name: "model",
-            rawName: "v-model.number",
-            value: _vm.pageNow,
-            expression: "pageNow",
-            modifiers: { number: true }
+            rawName: "v-model",
+            value: _vm.word,
+            expression: "word"
           }
         ],
-        ref: "pager",
-        staticClass: "condPage",
-        attrs: { id: "Page", type: "text" },
-        domProps: { value: _vm.pageNow },
+        ref: "condWord",
+        staticClass: "condWord",
+        attrs: { id: "CondWord", type: "text", placeholder: "搜索..." },
+        domProps: { value: _vm.word },
         on: {
           keyup: function($event) {
             if (
@@ -1295,38 +1312,151 @@ var render = function() {
             ) {
               return null
             }
-            _vm.onQuery(_vm.word, _vm.pageNow)
+            _vm.onQuery(_vm.word, 1)
           },
           input: function($event) {
             if ($event.target.composing) {
               return
             }
-            _vm.pageNow = _vm._n($event.target.value)
-          },
-          blur: function($event) {
-            _vm.$forceUpdate()
+            _vm.word = $event.target.value
           }
         }
       }),
       _vm._v(" "),
-      _c("span", [_vm._v("/")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "pageMax" }, [_vm._v(_vm._s(_vm.pageMax))])
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass: "turn",
-        on: {
-          click: function($event) {
-            _vm.onQuery(_vm.word, _vm.pageNow + 1)
+      _c(
+        "div",
+        {
+          staticClass: "turn",
+          on: {
+            click: function($event) {
+              _vm.onQuery(_vm.word, _vm.pageNow - 1)
+            }
           }
-        }
-      },
-      [_vm._v(">")]
-    )
-  ])
+        },
+        [_vm._v("<")]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "pageBox" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model.number",
+              value: _vm.pageNow,
+              expression: "pageNow",
+              modifiers: { number: true }
+            }
+          ],
+          ref: "pager",
+          staticClass: "condPage",
+          attrs: { id: "Page", type: "text" },
+          domProps: { value: _vm.pageNow },
+          on: {
+            keyup: function($event) {
+              if (
+                !("button" in $event) &&
+                _vm._k($event.keyCode, "enter", 13, $event.key)
+              ) {
+                return null
+              }
+              _vm.onQuery(_vm.word, _vm.pageNow)
+            },
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.pageNow = _vm._n($event.target.value)
+            },
+            blur: function($event) {
+              _vm.$forceUpdate()
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("span", [_vm._v("/")]),
+        _vm._v(" "),
+        _c("span", { staticClass: "pageMax" }, [_vm._v(_vm._s(_vm.pageMax))])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "turn",
+          on: {
+            click: function($event) {
+              _vm.onQuery(_vm.word, _vm.pageNow + 1)
+            }
+          }
+        },
+        [_vm._v(">")]
+      ),
+      _vm._v(" "),
+      _c("CondBox", { staticClass: "condItem", attrs: { text: _vm.serv } }, [
+        _c("div", { staticClass: "condItemBox" }, [
+          _c(
+            "span",
+            {
+              on: {
+                click: function($event) {
+                  _vm.onQuery(_vm.word, 1, "cn")
+                }
+              }
+            },
+            [_vm._v("CN")]
+          ),
+          _vm._v(" "),
+          _c(
+            "span",
+            {
+              on: {
+                click: function($event) {
+                  _vm.onQuery(_vm.word, 1, "jp")
+                }
+              }
+            },
+            [_vm._v("JP")]
+          ),
+          _vm._v(" "),
+          _c(
+            "span",
+            {
+              on: {
+                click: function($event) {
+                  _vm.onQuery(_vm.word, 1, "ps")
+                }
+              }
+            },
+            [_vm._v("PS")]
+          ),
+          _vm._v(" "),
+          _c(
+            "span",
+            {
+              on: {
+                click: function($event) {
+                  _vm.onQuery(_vm.word, 1, "tw")
+                }
+              }
+            },
+            [_vm._v("TW")]
+          ),
+          _vm._v(" "),
+          _c(
+            "span",
+            {
+              on: {
+                click: function($event) {
+                  _vm.onQuery(_vm.word, 1, "kr")
+                }
+              }
+            },
+            [_vm._v("KR")]
+          )
+        ])
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -2121,6 +2251,7 @@ var render = function() {
       _c("FilterBox", {
         staticClass: "filterBox",
         attrs: {
+          serv: _vm.serv,
           word: _vm.word,
           pageNow: _vm.pageNow,
           pageMax: _vm.pageMax,
@@ -2144,6 +2275,237 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-c91f8be2", esExports)
+  }
+}
+
+/***/ }),
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_CondBox_vue__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_CondBox_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_CondBox_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_787967ba_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_CondBox_vue__ = __webpack_require__(314);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(311)
+}
+var normalizeComponent = __webpack_require__(50)
+/* script */
+
+/* template */
+
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-787967ba"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_CondBox_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_787967ba_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_CondBox_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "comp\\cardQuery\\CondBox.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-787967ba", Component.options)
+  } else {
+    hotAPI.reload("data-v-787967ba", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+/* 311 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(312);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(49)("f5e4b0ac", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-787967ba\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./CondBox.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-787967ba\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./CondBox.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 312 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(41)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.text[data-v-787967ba] {\n\tdisplay: inline-block;\n\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tpadding-left: 5px;\n\tpadding-right: 5px;\n\n\tposition: relative;\n\n\tvertical-align: top;\n\n\tbackground-color: #2da1c9;\n\n\ttext-align: center;\n\tline-height: 30px;\n\n\tcursor: pointer;\n}\n.text[data-v-787967ba]:hover {\n\tbackground-color: #57b7d8;\n\tborder-radius: 5px 5px 0px 0px;\n}\n.hideBox[data-v-787967ba] {\n\tdisplay: block;\n\n\tposition: absolute;\n\n\tleft: 0px;\n\n\tz-index: 999;\n}\n.show[data-v-787967ba] {\n\tvisibility: visible;\n\topacity: 1;\n}\n.hide[data-v-787967ba] {\n\tvisibility: hidden;\n\topacity: 0;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 313 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+	components: {},
+	props: {
+		text: { default: '' },
+		width: { default: 80 },
+		onChangeServ: { default: function _default() {} }
+	},
+	mounted: function mounted() {},
+	activated: function activated() {},
+	data: function data() {
+		return {
+			hover: false
+		};
+	},
+	methods: {
+		movr: function movr() {
+			this.hover = true;
+		},
+		mout: function mout() {
+			this.hover = false;
+		}
+	}
+};
+
+/***/ }),
+/* 314 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "compCondBox" }, [
+    _c(
+      "span",
+      { staticClass: "text", on: { mouseover: _vm.movr, mouseout: _vm.mout } },
+      [_vm._v(_vm._s(_vm.text))]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        ref: "hideBox",
+        class: { hideBox: true, show: _vm.hover, hide: !_vm.hover },
+        style: { width: _vm.width + "px" },
+        on: { mouseover: _vm.movr, mouseout: _vm.mout }
+      },
+      [_vm._t("default")],
+      2
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-787967ba", esExports)
   }
 }
 

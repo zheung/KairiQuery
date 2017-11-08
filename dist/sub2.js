@@ -382,7 +382,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\ndiv[data-v-30ab9993] {\r\n\tcolor: snow;\n}\r\n", ""]);
+exports.push([module.i, "\ndiv[data-v-30ab9993] {\r\n\tcolor: snow;\n}\n.test[data-v-30ab9993] {\r\n\theight: 24px;\n}\n.condItem[data-v-30ab9993] {\r\n\t\tdisplay: inline-block;\r\n\r\n\t\theight: 30px;\r\n\r\n\t\tborder: 0px solid transparent;\r\n\r\n\t\tpadding-left: 5px;\r\n\t\tpadding-right: 5px;\r\n\r\n\t\tposition: relative;\r\n\r\n\t\tvertical-align: top;\r\n\r\n\t\tbackground-color: #2da1c9;\r\n\r\n\t\ttext-align: center;\r\n\t\tline-height: 30px;\r\n\r\n\t\tcursor: pointer;\n}\n.condItem[data-v-30ab9993]:hover {\r\n\t\tbackground-color: #57b7d8;\r\n\t\tborder-radius: 5px;\n}\r\n", ""]);
 
 // exports
 
@@ -432,6 +432,39 @@ exports.default = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
@@ -443,17 +476,24 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("div", { staticClass: "h" }, [_vm._v("这里就是V2的试验场啦")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "h" }, [_vm._v("黄黑色很酷炫不是吗？！")]),
-      _vm._v(" "),
-      _c("FrameScroll", { attrs: { card: _vm.card } })
-    ],
-    1
-  )
+  return _c("div", [
+    _c("div", { staticClass: "test" }, [
+      _c(
+        "div",
+        {
+          staticClass: "condItem",
+          on: { mouseover: _vm.onShowServ, click: _vm.onShowServ }
+        },
+        [
+          _c("span", [_vm._v("国服")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "condHide" }, [
+            _vm._v("\n\t\t\t\t国服/国服/国服\n\t\t\t")
+          ])
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
