@@ -2,13 +2,17 @@
 	<div class="homeBox">
 		<div ref="pop" class="pop" :style="popa"></div>
 		<div class="title">
-			<div class="big" @mouseover="test" @mouseout="test2" @mousemove="tmove">Kairi Query</div>
+			<div class="big" @mouseover="tOver" @mouseout="tOutt" @mousemove="tMove">Kairi Query</div>
 			<div class="sub">-- 乖离性百万亚瑟王数据站(Alpha) by DanoR （最后更新：国服，XX月XX日；日服，XX月XX日；PS服，XX月XX日）</div>
 		</div>
 		<TabFrame class="tabBox" :tabs="tabs" keyDefault="cardQuery" :dealer="changeTab"></TabFrame>
 		<div class="frameBox" :class="`sub${currentView.substring(0, 1).toUpperCase()}${currentView.substring(1)}`">
 			<keep-alive>
-				<component :is="currentView" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; overflow-y: auto;"></component>
+				<component
+					:is="currentView"
+					style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; overflow-y: auto;"
+					:tFunc="tFunc"
+				></component>
 			</keep-alive>
 		</div>
 	</div>
@@ -19,6 +23,10 @@
 	import TabFrame from '../_comp/TabFrame.vue';
 
 	export default {
+		components: {
+			TabFrame: TabFrame
+		},
+
 		data: function() {
 			return {
 				currentView: '',
@@ -39,20 +47,22 @@
 				}
 			};
 		},
-		components: {
-			TabFrame: TabFrame
-		},
 		watch: {
-			isHover: function(now) {L(now);
+			isHover: function(now) {
 				if(now) {
 					this.popa.opacity = 1;
-					this.popa.top = (this.eve.clientY) + 'px';
-					this.popa.left = (this.eve.clientX) + 'px';
+					this.popa.top = (this.eve.clientY+5) + 'px';
+					this.popa.left = (this.eve.clientX+5) + 'px';
 				}
 				else {
-					this.popa.opacity = 0.5;
-
+					this.popa.opacity = 0;
 				}
+			}
+		},
+
+		computed: {
+			tFunc: function() {
+				return { over: this.tOver, outt: this.tOutt, move: this.tMove };
 			}
 		},
 		methods: {
@@ -60,20 +70,22 @@
 				await Loader(key);
 
 				this.currentView = key;
-			}
-			,test: function(event) {
+			},
+
+			tOver: function(event) {
 				this.eve = event;
 				this.isHover = true;
-				L('mover');
-			}
-			,test2: function() {
+				L('in');
+			},
+			tOutt: function() {
 				this.isHover = false;
-				L('mout');
-			}
-			,tmove: function(e) {
+			},
+			tMove: function(e) {
 				if(this.isHover) {
-					this.popa.top = (e.clientY) + 'px';
-					this.popa.left = (e.clientX) + 'px';
+					this.popa.top = (e.clientY+5) + 'px';
+					this.popa.left = (e.clientX+5) + 'px';
+
+					this.$refs.pop.innerHTML = this.eve.target.innerHTML;
 				}
 			}
 		}
@@ -147,7 +159,7 @@
 
 		position: fixed;
 
-		width: 100px;
+		width: auto;
 		height: 20px;
 
 		top: 0px;
@@ -155,5 +167,12 @@
 
 		background-color: green;
 		border-radius: 5px;
+
+		font-size: 12px;
+		line-height: 20px;
+
+		padding: 5px;
+
+		z-index: 9999;
 	}
 </style>

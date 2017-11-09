@@ -13,7 +13,7 @@
 				<div>●&nbsp;属性</div>
 				<table border="0">
 					<tr>
-						<td>稀有：{{card.rare}}</td>
+						<td >稀有：{{card.rare}}</td>
 						<td>消耗：{{card.cost}}C</td>
 					</tr>
 					<tr>
@@ -33,7 +33,7 @@
 				<div style="padding-left: 13px;">魔攻：{{card.ap}}</div>
 				<div style="padding-left: 13px;">治疗：{{card.hq}}</div>
 			</div>
-			<SkillBox class="box4" :skill="card.skill" />
+			<SkillBox class="box4" :skill="card.skill" :tFunc="tFunc" />
 		</div>
 	</FrameScroll>
 </template>
@@ -64,8 +64,6 @@
 		vertical-align: top;
 
 		border: 2px dashed transparent;
-		/* border-top: 2px solid snow;
-		border-left: 2px solid snow; */
 		border-radius: 5px 0px 0px 0px;
 	}
 	.box2 {
@@ -160,7 +158,8 @@
 		},
 		props: {
 			cards: { default: [] },
-			serv: { default: 'cn' }
+			serv: { default: 'cn' },
+			tFunc: {}
 		},
 
 		mounted: function() {

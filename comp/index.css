@@ -17,6 +17,11 @@ html, body, #home {
 	-ms-transform: translateZ(0);
 	-o-transform: translateZ(0);
 	transform: translateZ(0);
+
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 }
 
 .nosel {
@@ -24,6 +29,17 @@ html, body, #home {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
+}
+.sel {
+	user-select: text;
+	-moz-user-select: text;
+	-webkit-user-select: text;
+	cursor: text;
+}
+
+samp {
+	border-bottom: 1px dashed #888888;
+	cursor: help;
 }
 
 ::-webkit-input-placeholder { color: snow; }

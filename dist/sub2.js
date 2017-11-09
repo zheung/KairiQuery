@@ -5,13 +5,13 @@ webpackJsonp([2],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_test_vue__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_test_vue__ = __webpack_require__(313);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_test_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_test_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_30ab9993_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_test_vue__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_30ab9993_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_test_vue__ = __webpack_require__(314);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(306)
+  __webpack_require__(311)
 }
 var normalizeComponent = __webpack_require__(50)
 /* script */
@@ -58,7 +58,7 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 236:
+/***/ 278:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -287,6 +287,7 @@ exports.default = {
 					if (top >= 0 && top <= max) {
 						scr.style.top = top + 'px';
 						ib.scrollTop = top * ib.scrollHeight / ib.clientHeight;
+						L(top * ib.scrollHeight / ib.clientHeight);
 					}
 				}
 			}
@@ -347,13 +348,13 @@ if (false) {
 
 /***/ }),
 
-/***/ 306:
+/***/ 311:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(307);
+var content = __webpack_require__(312);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -374,7 +375,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 307:
+/***/ 312:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(41)(undefined);
@@ -389,7 +390,7 @@ exports.push([module.i, "\ndiv[data-v-30ab9993] {\r\n\tcolor: snow;\n}\n.test[da
 
 /***/ }),
 
-/***/ 308:
+/***/ 313:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -399,7 +400,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _FrameScroll = __webpack_require__(236);
+var _FrameScroll = __webpack_require__(278);
 
 var _FrameScroll2 = _interopRequireDefault(_FrameScroll);
 
@@ -468,7 +469,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 309:
+/***/ 314:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

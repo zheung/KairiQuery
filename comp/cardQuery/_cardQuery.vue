@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<FilterBox class="filterBox" :serv="serv" :word="word" :pageNow="pageNow" :pageMax="pageMax" :onQuery="onQuery" />
-		<CardBox class="cardBox" :cards="this.cards" :serv="this.serv" />
+		<FilterBox class="filterBox" :serv="serv" :word="word" :pageNow="pageNow" :pageMax="pageMax" :conds="conds" :onQuery="onQuery" :tFunc="tFunc" />
+		<CardBox class="cardBox" :cards="this.cards" :serv="this.serv" :tFunc="tFunc" />
 	</div>
 </template>
 
@@ -56,6 +56,11 @@
 			CardBox: CardBox,
 			Icon: Icon
 		},
+
+		props: {
+			tFunc: {},
+		},
+
 		created: function() {
 			let me = this;
 
@@ -87,9 +92,10 @@
 				serv: 'cn',
 
 				cards: [],
+				conds: {},
 
 				word: '',
-				mark: '256',
+				mark: [],
 
 				pageNow: 0,
 				pageMax: 0
@@ -101,15 +107,31 @@
 					serv: this.serv,
 					word: this.word,
 					page: this.pageNow,
-					mark: this.mark,
-					zero: ~~Boolean(!this.word || !this.mark),
+					mark: this.mark.toString().replace(/\,/g, '|').replace(/\|+$/g, ''),
+					zero: (/[1-9]/.test(this.mark.toString())) ? 0 : 1,
 
-					prio: false
+					prio: this.prio
 				});
 			}
 		},
 		methods: {
-			onQuery: function(word, page, serv) {
+			markit: function(cond, on) {
+				this.$set(cond, 'on', on);
+
+				var result;
+
+				if(cond.on)
+					result = this.mark[cond.x] | cond.y;
+				else
+					result = this.mark[cond.x] & ~cond.y;
+
+				this.$set(this.mark, cond.x, result);
+
+				if(!this.mark[cond.x]) {
+					this.$set(this.mark, cond.x, undefined);
+				}
+			},
+			onQuery: function(word, page, serv, condObj) {
 				let me = this;
 
 				if(typeof word == 'string') this.word = word;
@@ -120,6 +142,23 @@
 						return;
 					else
 						this.pageNow = ~~page;
+				}
+
+				if(condObj && condObj.cond && condObj.eve) {
+					let eve = condObj.eve;
+					let cond = condObj.cond;
+					let type = cond.type;
+
+					if(eve.ctrlKey && !eve.shiftKey)
+						this.conds[type].map(function(c) {
+							me.markit(c, cond == c);
+						});
+					else if(!eve.ctrlKey && eve.shiftKey)
+						this.conds[type].map(function(c) {
+							me.markit(c, cond != c);
+						});
+					else
+						me.markit(cond, !cond.on);
 				}
 
 				L(this.param);
@@ -135,6 +174,5 @@
 				});
 			}
 		}
-
 	};
 </script>

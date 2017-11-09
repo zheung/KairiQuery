@@ -7699,7 +7699,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.homeBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 0px;\n\tbottom: 0px;\n\tleft: 0px;\n\tright: 0px;\n\n\tbackground: #262629;\n\tcolor: snow;\n}\n.title[data-v-075407de] {\n\tposition: absolute;\n\n\theight: 40px;\n\n\ttop: 5px;\n\tleft: 5px;\n\n\tcolor: #2da2c8;\n}\n.title>.big[data-v-075407de] {\n\tfont-size: 24px;\n\tfont-weight: bold;\n}\n.title>.sub[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 10px;\n\tleft: 140px;\n\n\tfont-size: 10px;\n\n\tword-break: keep-all;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n}\n.tabBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 50px;\n\tleft: 5px;\n\tright: 5px;\n\n\theight: 30px;\n}\n.tabBox>div[data-v-075407de] {\n\tborder: 2px solid #2da2c8;\n}\n.frameBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 90px;\n\tbottom: 0px;\n\tleft: 0px;\n\tright: 0px;\n}\n.pop[data-v-075407de] {\n\tdisplay: block;\n\n\tposition: fixed;\n\n\twidth: 100px;\n\theight: 20px;\n\n\ttop: 0px;\n\tleft: 0px;\n\n\tbackground-color: green;\n\tborder-radius: 5px;\n}\n", ""]);
+exports.push([module.i, "\n.homeBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 0px;\n\tbottom: 0px;\n\tleft: 0px;\n\tright: 0px;\n\n\tbackground: #262629;\n\tcolor: snow;\n}\n.title[data-v-075407de] {\n\tposition: absolute;\n\n\theight: 40px;\n\n\ttop: 5px;\n\tleft: 5px;\n\n\tcolor: #2da2c8;\n}\n.title>.big[data-v-075407de] {\n\tfont-size: 24px;\n\tfont-weight: bold;\n}\n.title>.sub[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 10px;\n\tleft: 140px;\n\n\tfont-size: 10px;\n\n\tword-break: keep-all;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n}\n.tabBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 50px;\n\tleft: 5px;\n\tright: 5px;\n\n\theight: 30px;\n}\n.tabBox>div[data-v-075407de] {\n\tborder: 2px solid #2da2c8;\n}\n.frameBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 90px;\n\tbottom: 0px;\n\tleft: 0px;\n\tright: 0px;\n}\n.pop[data-v-075407de] {\n\tdisplay: block;\n\n\tposition: fixed;\n\n\twidth: auto;\n\theight: 20px;\n\n\ttop: 0px;\n\tleft: 0px;\n\n\tbackground-color: green;\n\tborder-radius: 5px;\n\n\tfont-size: 12px;\n\tline-height: 20px;\n\n\tpadding: 5px;\n\n\tz-index: 9999;\n}\n", ""]);
 
 // exports
 
@@ -7774,8 +7774,16 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
+//
+//
+//
 
 exports.default = {
+	components: {
+		TabFrame: _TabFrame2.default
+	},
+
 	data: function data() {
 		return {
 			currentView: '',
@@ -7796,19 +7804,21 @@ exports.default = {
 			}
 		};
 	},
-	components: {
-		TabFrame: _TabFrame2.default
-	},
 	watch: {
 		isHover: function isHover(now) {
-			L(now);
 			if (now) {
 				this.popa.opacity = 1;
-				this.popa.top = this.eve.clientY + 'px';
-				this.popa.left = this.eve.clientX + 'px';
+				this.popa.top = this.eve.clientY + 5 + 'px';
+				this.popa.left = this.eve.clientX + 5 + 'px';
 			} else {
-				this.popa.opacity = 0.5;
+				this.popa.opacity = 0;
 			}
+		}
+	},
+
+	computed: {
+		tFunc: function tFunc() {
+			return { over: this.tOver, outt: this.tOutt, move: this.tMove };
 		}
 	},
 	methods: {
@@ -7839,19 +7849,21 @@ exports.default = {
 
 			return changeTab;
 		}(),
-		test: function test(event) {
+
+		tOver: function tOver(event) {
 			this.eve = event;
 			this.isHover = true;
-			L('mover');
+			L('in');
 		},
-		test2: function test2() {
+		tOutt: function tOutt() {
 			this.isHover = false;
-			L('mout');
 		},
-		tmove: function tmove(e) {
+		tMove: function tMove(e) {
 			if (this.isHover) {
-				this.popa.top = e.clientY + 'px';
-				this.popa.left = e.clientX + 'px';
+				this.popa.top = e.clientY + 5 + 'px';
+				this.popa.left = e.clientX + 5 + 'px';
+
+				this.$refs.pop.innerHTML = this.eve.target.innerHTML;
 			}
 		}
 	}
@@ -8226,9 +8238,9 @@ var render = function() {
           {
             staticClass: "big",
             on: {
-              mouseover: _vm.test,
-              mouseout: _vm.test2,
-              mousemove: _vm.tmove
+              mouseover: _vm.tOver,
+              mouseout: _vm.tOutt,
+              mousemove: _vm.tMove
             }
           },
           [_vm._v("Kairi Query")]
@@ -8272,7 +8284,8 @@ var render = function() {
                   left: "0px",
                   right: "0px",
                   "overflow-y": "auto"
-                }
+                },
+                attrs: { tFunc: _vm.tFunc }
               })
             ],
             1
@@ -8335,7 +8348,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "html, body, #home {\r\n\theight: 100%;\r\n\tmargin: 0px;\r\n\tpadding: 0px;\r\n\toverflow: hidden;\r\n}\r\n\r\n.homeBox *:not(.pop) {\r\n\ttext-shadow: 0em 0em 0.0001em !important;\r\n\tfont-family: \"Microsoft YaHei\", sans-serif !important;\r\n\r\n\ttransition-property: all;\r\n\ttransition-duration: 0.4s;\r\n\r\n\t-webkit-transform: translateZ(0);\r\n\t-moz-transform: translateZ(0);\r\n\t-ms-transform: translateZ(0);\r\n\t-o-transform: translateZ(0);\r\n\ttransform: translateZ(0);\r\n}\r\n\r\n.nosel {\r\n\tuser-select: none;\r\n\t-webkit-user-select: none;\r\n\t-moz-user-select: none;\r\n\t-ms-user-select: none;\r\n}\r\n\r\n::-webkit-input-placeholder { color: snow; }\r\n:-moz-placeholder { color: snow; }\r\n::-moz-placeholder { color: snow; }\r\n:-ms-input-placeholder { color: snow; }", ""]);
+exports.push([module.i, "html, body, #home {\r\n\theight: 100%;\r\n\tmargin: 0px;\r\n\tpadding: 0px;\r\n\toverflow: hidden;\r\n}\r\n\r\n.homeBox *:not(.pop) {\r\n\ttext-shadow: 0em 0em 0.0001em !important;\r\n\tfont-family: \"Microsoft YaHei\", sans-serif !important;\r\n\r\n\ttransition-property: all;\r\n\ttransition-duration: 0.4s;\r\n\r\n\t-webkit-transform: translateZ(0);\r\n\t-moz-transform: translateZ(0);\r\n\t-ms-transform: translateZ(0);\r\n\t-o-transform: translateZ(0);\r\n\ttransform: translateZ(0);\r\n\r\n\tuser-select: none;\r\n\t-webkit-user-select: none;\r\n\t-moz-user-select: none;\r\n\t-ms-user-select: none;\r\n}\r\n\r\n.nosel {\r\n\tuser-select: none;\r\n\t-webkit-user-select: none;\r\n\t-moz-user-select: none;\r\n\t-ms-user-select: none;\r\n}\r\n.sel {\r\n\tuser-select: text;\r\n\t-moz-user-select: text;\r\n\t-webkit-user-select: text;\r\n\tcursor: text;\r\n}\r\n\r\nsamp {\r\n\tborder-bottom: 1px dashed #888888;\r\n\tcursor: help;\r\n}\r\n\r\n::-webkit-input-placeholder { color: snow; }\r\n:-moz-placeholder { color: snow; }\r\n::-moz-placeholder { color: snow; }\r\n:-ms-input-placeholder { color: snow; }", ""]);
 
 // exports
 

@@ -7,7 +7,8 @@
 		<div class="skillBoxs">
 			<div class="skillBox" v-show="show==1" v-for="(skill, si) of skill.awaken" :key="si">
 				<div class="item cond" v-html="skill.cond || '无'" :title="skill.cond || '无'"></div>
-				<div class="item content" v-for="(content, ci) of skill.content" :key="ci" v-html="content"></div>
+				<div class="item content" v-for="(content, ci) of skill.content" :key="ci" v-html="content"
+					@mouseover="tFunc.over" @mouseout="tFunc.outt" @mousemove="tFunc.move"></div>
 			</div>
 		</div>
 		<div class="skillBoxs">
@@ -50,6 +51,8 @@
 		vertical-align: top;
 
 		font-size: 12px;
+
+		box-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);
 	}
 
 	.item {
@@ -77,7 +80,8 @@
 			TabFrame: TabFrame
 		},
 		props: {
-			skill: { default: {} }
+			skill: { default: {} },
+			tFunc: {}
 		},
 
 		mounted: function() {

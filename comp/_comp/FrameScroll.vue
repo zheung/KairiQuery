@@ -35,7 +35,6 @@
 					out: 'mouseout'
 				};
 
-
 			return {
 				mobile: ('ontouchstart' in window),
 				event: event,
@@ -96,6 +95,7 @@
 						if(top >= 0 && top <= max) {
 							scr.style.top = top + 'px';
 							ib.scrollTop = (top * ib.scrollHeight / ib.clientHeight);
+							L(top * ib.scrollHeight / ib.clientHeight);
 						}
 					}
 				}

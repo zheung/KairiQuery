@@ -4,11 +4,11 @@ module.exports = {
 		{ on: false, type: 'rare', g: 0, x: 0, y: 128, text: 'MR++' },
 		{ on: false, type: 'rare', g: 0, x: 0, y: 64, text: 'MR+' },
 		{ on: false, type: 'rare', g: 0, x: 0, y: 32, text: 'MR' },
-		{ on: false, type: 'rare', g: 1, x: 0, y: 1, text: 'N' },
-		{ on: false, type: 'rare', g: 1, x: 0, y: 2, text: 'HN' },
-		{ on: false, type: 'rare', g: 1, x: 0, y: 4, text: 'R' },
+		{ on: false, type: 'rare', g: 1, x: 0, y: 16, text: 'UR' },
 		{ on: false, type: 'rare', g: 1, x: 0, y: 8, text: 'SR' },
-		{ on: false, type: 'rare', g: 1, x: 0, y: 16, text: 'UR' }
+		{ on: false, type: 'rare', g: 1, x: 0, y: 4, text: 'R' },
+		{ on: false, type: 'rare', g: 1, x: 0, y: 2, text: 'HN' },
+		{ on: false, type: 'rare', g: 1, x: 0, y: 1, text: 'N' },
 	],
 	job: [
 		{ on: false, type: 'job', g: 0, x: 1, y: 1, text: '佣兵' },
@@ -24,7 +24,7 @@ module.exports = {
 		{ on: false, type: 'cost', g: 0, x: 2, y: 8, text: '4' },
 		{ on: false, type: 'cost', g: 0, x: 2, y: 16, text: '5' },
 		{ on: false, type: 'cost', g: 0, x: 2, y: 32, text: '9' },
-		// { on: false, type: 'cost', g: 0, x: 2, y: 64, text: '11' }
+		{ on: false, type: 'cost', g: 0, x: 2, y: 64, text: '11' }
 	],
 	attr: [
 		{ on: false, type: 'attr', g: 0, x: 3, y: 1, text: '火' },

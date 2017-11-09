@@ -1,20 +1,77 @@
 <template>
-	<div class="compfilterBox">
-		<input id="CondWord" ref="condWord" class="condWord" type="text" placeholder="搜索..." @keyup.enter="onQuery(word, 1)" v-model="word"></input>
-		<div class="turn" @click="onQuery(word, pageNow-1)">&lt;</div>
-		<div class="pageBox">
-			<input id="Page" ref="pager" class="condPage" type="text" v-model.number="pageNow" @keyup.enter="onQuery(word, pageNow)"></input>
-			<span>/</span>
-			<span class="pageMax">{{pageMax}}</span>
+	<div ref="filterBox" class="compfilterBox">
+		<input data-width="200" class="condWord" type="text" placeholder="搜索..." @keyup.enter="onQuery(word, 1)" v-model="word"></input>
+		<div data-width="160" class="turnBox">
+			<div class="turn" @click="onQuery(word, pageNow-1)">&lt;</div>
+			<div class="pageBox">
+				<input id="Page" ref="pager" class="condPage" type="text" v-model.number="pageNow" @keyup.enter="onQuery(word, pageNow)"></input>
+				<span>/</span>
+				<span class="pageMax">{{pageMax}}</span>
+			</div>
+			<div class="turn" @click="onQuery(word, pageNow+1)">&gt;</div>
 		</div>
-		<div class="turn" @click="onQuery(word, pageNow+1)">&gt;</div>
-		<CondBox class="condItem" :text="serv">
+		<CondBox data-width="40" class="condItem" :text="serv.toUpperCase()">
 			<div class="condItemBox">
-				<span @click="onQuery(word, 1, 'cn')">CN</span>
-				<span @click="onQuery(word, 1, 'jp')">JP</span>
-				<span @click="onQuery(word, 1, 'ps')">PS</span>
-				<span @click="onQuery(word, 1, 'tw')">TW</span>
-				<span @click="onQuery(word, 1, 'kr')">KR</span>
+				<span @click="onQuery(word, 1, 'cn')" :class="{ active: serv == 'cn' }">CN</span>
+				<span @click="onQuery(word, 1, 'jp')" :class="{ active: serv == 'jp' }">JP</span>
+				<span @click="onQuery(word, 1, 'ps')" :class="{ active: serv == 'ps' }">PS</span>
+				<span @click="onQuery(word, 1, 'tw')" :class="{ active: serv == 'tw' }">TW</span>
+				<span @click="onQuery(word, 1, 'kr')" :class="{ active: serv == 'kr' }">KR</span>
+			</div>
+		</CondBox>
+		<CondBox data-width="50" style="width: 64px" class="condItem" text="稀有">
+			<div class="condItemBox" style="width: 60px">
+				<span
+					v-for="c of conds.rare" :key="c.text"
+					:class="{ active: c.on }" style="width: 56px"
+					@click="onQuery(word, 1, serv, { cond: c, eve: $event})"
+				>
+					{{c.text}}
+				</span>
+			</div>
+		</CondBox>
+		<CondBox data-width="50" style="width: 64px" class="condItem" text="职业">
+			<div class="condItemBox" style="width: 60px">
+				<span
+					v-for="c of conds.job" :key="c.text"
+					:class="{ active: c.on }" style="width: 56px"
+					@click="onQuery(word, 1, serv, { cond: c, eve: $event})"
+				>
+					{{c.text}}
+				</span>
+			</div>
+		</CondBox>
+		<CondBox data-width="50" style="width: 64px" class="condItem" text="COST">
+			<div class="condItemBox" style="width: 60px">
+				<span
+					v-for="c of conds.cost" :key="c.text"
+					:class="{ active: c.on }" style="width: 56px"
+					@click="onQuery(word, 1, serv, { cond: c, eve: $event})"
+				>
+					{{c.text}}
+				</span>
+			</div>
+		</CondBox>
+		<CondBox data-width="50" style="width: 64px" class="condItem" text="属性">
+			<div class="condItemBox" style="width: 60px">
+				<span
+					v-for="c of conds.attrSingle" :key="c.text"
+					:class="{ active: c.on }" style="width: 56px"
+					@click="onQuery(word, 1, serv, { cond: c, eve: $event})"
+				>
+					{{c.text}}
+				</span>
+			</div>
+		</CondBox>
+		<CondBox data-width="50" style="width: 64px" class="condItem" text="技能">
+			<div class="condItemBox" style="width: 60px">
+				<span
+					v-for="c of conds.skillKind" :key="c.text"
+					:class="{ active: c.on }" style="width: 56px"
+					@click="onQuery(word, 1, serv, { cond: c, eve: $event})"
+				>
+					{{c.text}}
+				</span>
 			</div>
 		</CondBox>
 	</div>
@@ -46,6 +103,14 @@
 		border-radius: 5px;
 	}
 
+	.turnBox {
+		display: inline-block;
+
+		width: 160px;
+		height: 30px;
+
+		vertical-align: top;
+	}
 	.turn {
 		display: inline-block;
 
@@ -68,6 +133,7 @@
 	.turn:hover, .condText:hover, .pageBox:hover {
 		background-color: #57b7d8;
 		border-radius: 5px;
+		box-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);
 	}
 
 	.pageBox {
@@ -138,9 +204,10 @@
 	.condItem:hover {
 		background-color: #57b7d8;
 		border-radius: 5px 5px 0px 0px;
+		box-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);
 	}
 	.condItemBox {
-		width: 38px;
+		width: 36px;
 
 		background-color: #2da1c9;
 
@@ -153,17 +220,30 @@
 	.condItemBox>span {
 		display: block;
 
-		width: 38px;
-		height: 30px;
+		width: 32px;
+		height: 24px;
+		line-height: 24px;
+		text-align: center;
+		border: 2px solid transparent;
+		border-radius: 5px;
+
+		margin-top: 5px;
+	}
+	.condItemBox>span.active {
+		border: 2px solid #148474;
+		background-color: #148474;
 	}
 	.condItemBox>span:hover {
 		background-color: #57b7d8;
-		border-radius: 5px;
+	}
+	.condItemBox>span.active:hover {
+		border: 2px solid #4bafa1;
+		background-color: #4bafa1;
 	}
 </style>
 
 <script>
-	import CondBox from './CondBox.vue';
+	import CondBox from './condBox.vue';
 
 	export default {
 		components: {
@@ -175,18 +255,50 @@
 			word: { default: 0 },
 			pageNow: { default: 0 },
 			pageMax: { default: 0 },
-			serv: { default: 'cn' }
+			serv: { default: 'cn' },
+			conds: { default: {} },
 		},
 		mounted: function() {
+			let me = this;
+
+			window.addEventListener('resize', this.onResize.bind(me), false);
 		},
 		activated: function() {
 		},
 		data: function() {
 			return {
-				word: ''
+				word: '',
+				height: 0,
+				width: 0,
+				wh: ''
 			};
 		},
+		watch: {
+			wh: function(val) {
+				console.log(this.width, this.height);
+
+				let box = this.$refs.filterBox, children = box.children;
+				let max = this.width - 14;
+				let total = 0;
+
+				for(let i=0; i<children.length; i++) {
+					let child = box.children[i];
+
+					total += ~~child.dataset.width;
+
+					if(total > max)
+						child.style.display = 'none';
+					else
+						child.style.display = 'inline-block';
+				}
+			}
+		},
 		methods: {
+			onResize: function() {
+				this.width = document.body.clientWidth;
+				this.height = document.body.clientHeight;
+				this.wh = `${this.width},${this.height}`;
+			}
 		}
 	};
 </script>

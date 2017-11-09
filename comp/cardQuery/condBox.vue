@@ -22,16 +22,10 @@
 
 		vertical-align: top;
 
-		background-color: #2da1c9;
-
 		text-align: center;
 		line-height: 30px;
 
 		cursor: pointer;
-	}
-	.text:hover {
-		background-color: #57b7d8;
-		border-radius: 5px 5px 0px 0px;
 	}
 	.hideBox {
 		display: block;
