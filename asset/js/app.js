@@ -75,17 +75,17 @@ window.app = new Vue({
 					sub.css = css = document.createElement('link');
 					css.rel = 'stylesheet';
 					css.type = 'text/css';
-					css.href = '/kq/subs/'+name+'/app.css';
+					css.href = '/kq1/subs/'+name+'/app.css';
 					div.appendChild(css);
 
 					scr = document.createElement('script');
 					scr.type = 'text/javascript';
-					scr.src = '/kq/subs/'+name+'/app.js';
+					scr.src = '/kq1/subs/'+name+'/app.js';
 					div.appendChild(scr);
 
 					scr = document.createElement('script');
 					scr.type = 'text/javascript';
-					scr.src = '/kq/subs/'+name+'/io.js';
+					scr.src = '/kq1/subs/'+name+'/io.js';
 					div.appendChild(scr);
 				}
 				else

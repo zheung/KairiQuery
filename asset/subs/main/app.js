@@ -97,7 +97,7 @@ app.sub.__name__.init = function(cb) {
 					return;
 				}
 				if(/22\//.test(src)) {
-					target.src = './kq/img/no20.png';
+					target.src = './kq1/img/no20.png';
 
 					return;
 				}

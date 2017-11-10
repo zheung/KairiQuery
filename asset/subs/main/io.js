@@ -24,7 +24,7 @@
 				Vue.set(sub.tab.skillBless, reco.id, 0);
 
 				if(sub.serv != 'kr')
-					Vue.set(sub.imgSrc, i, 'https://kairiquery.oss-cn-shenzhen.aliyuncs.com/'+sub.serv+'21/'+recos[i].id+'.png');
+					Vue.set(sub.imgSrc, i, 'https://kairiquery.oss-cn-shenzhen.aliyuncs.com/reso/21/'+sub.serv+'/'+recos[i].id+'.png');
 				else
 					Vue.set(sub.imgSrc, i, 'https://raw.githubusercontent.com/kairiquery/kqp'+sub.serv+'21/master/'+recos[i].id+'.png');
 
@@ -39,7 +39,7 @@
 			sub.pageMax = result[2];
 
 			// if(history.replaceState)
-			// 	history.replaceState(null, null, 'kq?serv='+sub.serv
+			// 	history.replaceState(null, null, 'kq1?serv='+sub.serv
 			// 		+(sub.word ? '&word='+sub.word : '')
 			// 		+(sub.pageNow > 1 ? '&page='+sub.pageNow : '')
 			// 		// +(mark ? '&mark='+mark : '')

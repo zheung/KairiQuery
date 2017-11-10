@@ -1,7 +1,7 @@
 window.initIO = function() {
 	app.on = function(name) {
 		return function(event, func) {
-			app.io.on('kq-'+name+event, func);
+			app.io.on('kq1-'+name+event, func);
 		};
 	};
 
@@ -9,7 +9,7 @@ window.initIO = function() {
 		return function() {
 			var args = Array.prototype.slice.call(arguments);
 
-			args[0] = 'kq-'+name+args[0];
+			args[0] = 'kq1-'+name+args[0];
 
 			app.io.emit.apply(app.io, args);
 		};

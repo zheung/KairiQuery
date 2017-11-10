@@ -6,9 +6,9 @@ module.exports = async($, router) => {
 	router.get('/', async(ctx, next) => {
 		await next();
 
-		if(ctx.req.url == '/kq/') {
+		if(ctx.req.url == '/kq1/') {
 			ctx.status = 301;
-			ctx.redirect('https://'+ctx.accept.headers.host+'/kq');
+			ctx.redirect('https://'+ctx.accept.headers.host+'/kq1');
 
 			return;
 		}
@@ -16,7 +16,7 @@ module.exports = async($, router) => {
 		let query = {};
 
 		if(ctx.originalUrl != ctx._matchedRoute)
-			query = qs.parse(qs.unescape(ctx.originalUrl.replace('/kq\?', '')));
+			query = qs.parse(qs.unescape(ctx.originalUrl.replace('/kq1\?', '')));
 
 		if(!query.serv) query.serv = 'cn';
 
