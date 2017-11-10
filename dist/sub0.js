@@ -871,22 +871,14 @@ exports.default = {
 	created: function created() {
 		var me = this;
 
-		fetch('kq2/conds').then(function (res) {
+		fetch('kq/conds').then(function (res) {
 			return res.json();
 		}).then(function (data) {
 			me.conds = data;
 		});
 	},
 	mounted: function mounted() {
-		var me = this;
-
-		fetch('kq2/query?conds={"serv":"cn","word":"","page":1,"mark":"256","zero":0,"prio":false}').then(function (res) {
-			return res.json();
-		}).then(function (data) {
-			me.cards = data[0][0];
-			me.pageNow = data[0][1];
-			me.pageMax = data[0][2];
-		});
+		this.onQuery();
 	},
 	activated: function activated() {},
 	data: function data() {
@@ -954,7 +946,7 @@ exports.default = {
 
 			L(this.param);
 
-			fetch('kq2/query?conds=' + this.param).then(function (res) {
+			fetch('kq/query?conds=' + this.param).then(function (res) {
 				return res.json();
 			}).then(function (data) {
 				me.cards = data[0][0];

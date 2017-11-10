@@ -45,6 +45,7 @@ module.exports = async($, router) => {
 
 		conds.word = conds.word? conds.word.trim() : '';
 		conds.zero = !!~~conds.zero;
+		conds.page = ~~conds.page || 1;
 
 		conds.mark = conds.mark.split('|');
 		for(let i in conds.mark)
@@ -71,43 +72,4 @@ module.exports = async($, router) => {
 
 		ctx.body = await $.rq('data/conds');
 	});
-
-	// router.get('/subs/:sub/:name.:ext', async(ctx) => {
-	// 	let p = ctx.params;
-
-	// 	ctx.type = p.ext;
-
-	// 	if(ctx.query.tab)
-	// 		ctx.body = fs.createReadStream(await $.pa(`asset/subs/${p.sub}/${p.name}.${p.ext}`))
-	// 			.pipe(replaceStream('__name__', p.sub));
-	// 	else
-	// 		ctx.body = fs.createReadStream(await $.pa(`asset/subs/${p.sub}/${p.name}.${p.ext}`))
-	// 			.pipe(replaceStream('__name__', p.sub)).pipe(replaceStream('\t', ''));
-	// });
-
-	// let queryer = await $.rq('libs/queryer');
-	// router.get('/ex', async(ctx) => {
-	// 	let result = await queryer(
-	// 		{id:{$gt:99961001}}, {}, 'cn', 1, 1000
-	// 	);
-
-	// 	let r = [];
-
-	// 	for(let c of result[0]) {
-	// 		r.push([c.name, c.rare, c.skill.suport3[0]?c.skill.suport3[0].content[0].replace('<samp title="技能元素等价于卡面显示的元素">技能</samp>', '技能'):'']);
-	// 	}
-
-	// 	let str = '<table border="0">';
-
-	// 	for(let c of r) {
-	// 		str += `
-	// 		<tr>
-	// 			<th>${c[0]}（${c[1]}）</th>
-	// 			<th>${c[2]}</th>
-	// 		</tr>`.trim();
-	// 	}
-	// 	str += '</table>';
-
-	// 	ctx.body = str;
-	// });
 };

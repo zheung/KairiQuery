@@ -64,7 +64,7 @@
 		created: function() {
 			let me = this;
 
-			fetch('kq2/conds')
+			fetch('kq/conds')
 			.then(function(res) {
 				return res.json();
 			})
@@ -73,17 +73,7 @@
 			});
 		},
 		mounted: function() {
-			let me = this;
-
-			fetch('kq2/query?conds={"serv":"cn","word":"","page":1,"mark":"256","zero":0,"prio":false}')
-			.then(function(res) {
-				return res.json();
-			})
-			.then(function(data) {
-				me.cards = data[0][0];
-				me.pageNow = data[0][1];
-				me.pageMax = data[0][2];
-			});
+			this.onQuery();
 		},
 		activated: function() {
 		},
@@ -163,7 +153,7 @@
 
 				L(this.param);
 
-				fetch(`kq2/query?conds=${this.param}`)
+				fetch(`kq/query?conds=${this.param}`)
 				.then(function(res) {
 					return res.json();
 				})
