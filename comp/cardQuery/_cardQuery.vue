@@ -151,8 +151,6 @@
 						me.markit(cond, !cond.on);
 				}
 
-				L(this.param);
-
 				fetch(`kq/query?conds=${this.param}`)
 				.then(function(res) {
 					return res.json();
