@@ -7800,8 +7800,8 @@ exports.default = {
 			currentView: '',
 
 			tabs: {
-				iconMaker: { title: '头像生成' },
 				cardQuery: { title: '卡牌查询' },
+				iconMaker: { title: '头像生成' },
 				test: { title: '宇宙测试' },
 				about: {
 					title: '关于新版',
