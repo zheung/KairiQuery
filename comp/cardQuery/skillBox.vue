@@ -7,20 +7,28 @@
 		<div class="skillBoxs">
 			<div class="skillBox" v-show="show==1" v-for="(skill, si) of skill.awaken" :key="si">
 				<div class="item cond" v-html="skill.cond || '无'" :title="skill.cond || '无'"></div>
-				<div class="item content" v-for="(content, ci) of skill.content" :key="ci" v-html="content"
-					@mouseover="tFunc.over" @mouseout="tFunc.outt" @mousemove="tFunc.move"></div>
+				<div
+					class="item content" v-for="(content, ci) of skill.content" :key="ci" v-html="content"
+					@mouseover="tFunc.over" @mouseout="tFunc.outt" @mousemove="tFunc.move">
+				</div>
 			</div>
 		</div>
 		<div class="skillBoxs">
 			<div class="skillBox" v-show="show==2" v-for="(skill, si) of skill.normal" :key="si">
 				<div class="item cond" v-html="skill.cond || '无'" :title="skill.cond || '无'"></div>
-				<div class="item content" v-for="(content, ci) of skill.content" :key="ci" v-html="content"></div>
+				<div
+					class="item content" v-for="(content, ci) of skill.content" :key="ci" v-html="content"
+					@mouseover="tFunc.over" @mouseout="tFunc.outt" @mousemove="tFunc.move">
+				</div>
 			</div>
 		</div>
 		<div class="skillBoxs">
 			<div class="skillBox" v-show="show==3" v-for="(skill, si) of skill.suport" :key="si">
 				<div class="item cond" v-html="skill.cond || '无'" :title="skill.cond || '无'"></div>
-				<div class="item content" v-for="(content, ci) of skill.content" :key="ci" v-html="content"></div>
+				<div
+					class="item content" v-for="(content, ci) of skill.content" :key="ci" v-html="content"
+					@mouseover="tFunc.over" @mouseout="tFunc.outt" @mousemove="tFunc.move">
+				</div>
 			</div>
 		</div>
 	</div>
@@ -41,7 +49,8 @@
 	.skillBox {
 		display: inline-block;
 
-		width: 430px;
+		max-width: 430px;
+		width: calc(100% - 15px);
 
 		margin: 5px;
 
@@ -59,7 +68,7 @@
 		height: 30px;
 		line-height: 30px;
 
-		padding-left: 10px;
+		padding: 0px 10px 0px 10px;
 
 		overflow: hidden;
 		white-space: nowrap;
@@ -69,6 +78,7 @@
 	}
 	.cond {
 		background-color: #2da2c8;
+		font-weight: bold;
 	}
 </style>
 

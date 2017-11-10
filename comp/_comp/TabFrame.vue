@@ -34,7 +34,7 @@
 <template>
 	<div class="compTabFrame wrap">
 		<ToggleButton v-for="(tab, key) of tabs" :key="key" v-if="!tab.right" :now="now" :id="key" :text="tab.title" :width="tab.width" :dealer="click" />
-		<ToggleButton v-for="(tab, key) of tabs" :key="key" v-if=" tab.right" :now="now" :id="key" :text="tab.title" :width="tab.width" :dealer="click" class="right" />
+		<ToggleButton v-for="(tab, key) of tabs" :key="key" v-if=" tab.right" :now="now" :id="key" :text="tab.title" :width="tab.width" :dealer="click" class="right" @mouseover.native="tab.over" @mouseout.native="tab.outt" />
 	</div>
 </template>
 

@@ -17,7 +17,7 @@
 </script>
 
 <template>
-	<div class="compToggleButton button" :class="{ active: now == id }" :style="{ width: (width || 60)+'px' }" @click="click">{{text}}</div>
+	<div class="compToggleButton button" :id="'tabButton'+id" :class="{ active: now == id }" :style="{ width: (width || 60)+'px' }" @click="click">{{text}}</div>
 </template>
 
 <style scoped>

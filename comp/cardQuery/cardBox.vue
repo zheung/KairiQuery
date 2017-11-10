@@ -6,7 +6,7 @@
 				<Icon class="iconBox" :card="card" size="100" />
 				<div class="nameBox">
 					<div>&lt;{{card.title}}&gt;</div>
-					<div class="name">{{card.name}}</div>
+					<div class="name sel">{{card.name}}</div>
 				</div>
 			</div>
 			<div class="box2">
@@ -44,6 +44,8 @@
 
 		top: 0px;
 		right: 0px;
+
+		font-size: 12px;
 	}
 	.card {
 		margin: 5px;

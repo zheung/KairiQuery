@@ -1,6 +1,6 @@
 <template>
 	<div ref="filterBox" class="compfilterBox">
-		<input data-width="200" class="condWord" type="text" placeholder="搜索..." @keyup.enter="onQuery(word, 1)" v-model="word"></input>
+		<input data-width="215" class="condWord" type="text" placeholder="搜索..." @keyup.enter="onQuery(word, 1)" v-model="word"></input>
 		<div data-width="160" class="turnBox">
 			<div class="turn" @click="onQuery(word, pageNow-1)">&lt;</div>
 			<div class="pageBox">
@@ -130,7 +130,7 @@
 
 		cursor: pointer;
 	}
-	.turn:hover, .condText:hover, .pageBox:hover {
+	.turn:hover, .condWord:hover, .pageBox:hover {
 		background-color: #57b7d8;
 		border-radius: 5px;
 		box-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);
@@ -259,9 +259,9 @@
 			conds: { default: {} },
 		},
 		mounted: function() {
-			let me = this;
+			window.addEventListener('resize', this.onResize.bind(this), false);
 
-			window.addEventListener('resize', this.onResize.bind(me), false);
+			this.onResize();
 		},
 		activated: function() {
 		},
@@ -274,9 +274,17 @@
 			};
 		},
 		watch: {
-			wh: function(val) {
-				console.log(this.width, this.height);
-
+			wh: function() {
+				this.rendBox();
+			}
+		},
+		methods: {
+			onResize: function() {
+				this.width = document.body.clientWidth;
+				this.height = document.body.clientHeight;
+				this.wh = `${this.width},${this.height}`;
+			},
+			rendBox: function() {
 				let box = this.$refs.filterBox, children = box.children;
 				let max = this.width - 14;
 				let total = 0;
@@ -291,13 +299,6 @@
 					else
 						child.style.display = 'inline-block';
 				}
-			}
-		},
-		methods: {
-			onResize: function() {
-				this.width = document.body.clientWidth;
-				this.height = document.body.clientHeight;
-				this.wh = `${this.width},${this.height}`;
 			}
 		}
 	};

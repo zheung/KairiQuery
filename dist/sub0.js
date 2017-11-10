@@ -1102,7 +1102,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.condWord[data-v-2c03eaad] {\n\twidth: 200px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\tborder-right: 5px solid #2da1c9;\n\n\tpadding: 0px;\n\tpadding-left: 10px;\n\n\toutline: none;\n\n\tbackground-color: #2da1c9;\n\tcolor: snow;\n\tline-height: 30px;\n\n\tfont-size: 16px;\n}\n.condWord[data-v-2c03eaad]:focus {\n\tbackground-color: #57b7d8;\n\n\tborder-right: 5px solid #148474;\n\tborder-radius: 5px;\n}\n.turnBox[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 160px;\n\theight: 30px;\n\n\tvertical-align: top;\n}\n.turn[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 20px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tbackground-color: #2da1c9;\n\n\tposition: relative;\n\n\tvertical-align: top;\n\n\ttext-align: center;\n\tline-height: 30px;\n\n\tcursor: pointer;\n}\n.turn[data-v-2c03eaad]:hover, .condText[data-v-2c03eaad]:hover, .pageBox[data-v-2c03eaad]:hover {\n\tbackground-color: #57b7d8;\n\tborder-radius: 5px;\n\tbox-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);\n}\n.pageBox[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 110px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tbackground-color: #2da1c9;\n\tposition: relative;\n\n\tvertical-align: top;\n\n\ttext-align: center;\n\tline-height: 30px;\n}\n.condPage[data-v-2c03eaad] {\n\twidth: 45px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tpadding: 0px;\n\n\toutline: none;\n\n\tbackground-color: transparent;\n\tcolor: snow;\n\tline-height: 30px;\n\n\tfont-size: 16px;\n\n\ttext-align: center;\n}\n.condPage[data-v-2c03eaad]:focus {\n\tbackground-color: #57b7d8;\n\tborder-radius: 5px;\n}\n.pageMax[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 45px;\n\theight: 30px;\n}\n.condItem[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\theight: 30px;\n\n\tmin-width: 40px;\n\n\tborder: 0px solid transparent;\n\n\tposition: relative;\n\n\tvertical-align: top;\n\n\tbackground-color: #2da1c9;\n\n\ttext-align: center;\n\tline-height: 30px;\n\n\tcursor: pointer;\n}\n.condItem[data-v-2c03eaad]:hover {\n\tbackground-color: #57b7d8;\n\tborder-radius: 5px 5px 0px 0px;\n\tbox-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);\n}\n.condItemBox[data-v-2c03eaad] {\n\twidth: 36px;\n\n\tbackground-color: #2da1c9;\n\n\tborder: 2px solid transparent;\n\tborder-top: 2px solid #3181c5;\n\tborder-radius: 2px 2px 2px 2px;\n\n\tbox-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);\n}\n.condItemBox>span[data-v-2c03eaad] {\n\tdisplay: block;\n\n\twidth: 32px;\n\theight: 24px;\n\tline-height: 24px;\n\ttext-align: center;\n\tborder: 2px solid transparent;\n\tborder-radius: 5px;\n\n\tmargin-top: 5px;\n}\n.condItemBox>span.active[data-v-2c03eaad] {\n\tborder: 2px solid #148474;\n\tbackground-color: #148474;\n}\n.condItemBox>span[data-v-2c03eaad]:hover {\n\tbackground-color: #57b7d8;\n}\n.condItemBox>span.active[data-v-2c03eaad]:hover {\n\tborder: 2px solid #4bafa1;\n\tbackground-color: #4bafa1;\n}\n", ""]);
+exports.push([module.i, "\n.condWord[data-v-2c03eaad] {\n\twidth: 200px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\tborder-right: 5px solid #2da1c9;\n\n\tpadding: 0px;\n\tpadding-left: 10px;\n\n\toutline: none;\n\n\tbackground-color: #2da1c9;\n\tcolor: snow;\n\tline-height: 30px;\n\n\tfont-size: 16px;\n}\n.condWord[data-v-2c03eaad]:focus {\n\tbackground-color: #57b7d8;\n\n\tborder-right: 5px solid #148474;\n\tborder-radius: 5px;\n}\n.turnBox[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 160px;\n\theight: 30px;\n\n\tvertical-align: top;\n}\n.turn[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 20px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tbackground-color: #2da1c9;\n\n\tposition: relative;\n\n\tvertical-align: top;\n\n\ttext-align: center;\n\tline-height: 30px;\n\n\tcursor: pointer;\n}\n.turn[data-v-2c03eaad]:hover, .condWord[data-v-2c03eaad]:hover, .pageBox[data-v-2c03eaad]:hover {\n\tbackground-color: #57b7d8;\n\tborder-radius: 5px;\n\tbox-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);\n}\n.pageBox[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 110px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tbackground-color: #2da1c9;\n\tposition: relative;\n\n\tvertical-align: top;\n\n\ttext-align: center;\n\tline-height: 30px;\n}\n.condPage[data-v-2c03eaad] {\n\twidth: 45px;\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tpadding: 0px;\n\n\toutline: none;\n\n\tbackground-color: transparent;\n\tcolor: snow;\n\tline-height: 30px;\n\n\tfont-size: 16px;\n\n\ttext-align: center;\n}\n.condPage[data-v-2c03eaad]:focus {\n\tbackground-color: #57b7d8;\n\tborder-radius: 5px;\n}\n.pageMax[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\twidth: 45px;\n\theight: 30px;\n}\n.condItem[data-v-2c03eaad] {\n\tdisplay: inline-block;\n\n\theight: 30px;\n\n\tmin-width: 40px;\n\n\tborder: 0px solid transparent;\n\n\tposition: relative;\n\n\tvertical-align: top;\n\n\tbackground-color: #2da1c9;\n\n\ttext-align: center;\n\tline-height: 30px;\n\n\tcursor: pointer;\n}\n.condItem[data-v-2c03eaad]:hover {\n\tbackground-color: #57b7d8;\n\tborder-radius: 5px 5px 0px 0px;\n\tbox-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);\n}\n.condItemBox[data-v-2c03eaad] {\n\twidth: 36px;\n\n\tbackground-color: #2da1c9;\n\n\tborder: 2px solid transparent;\n\tborder-top: 2px solid #3181c5;\n\tborder-radius: 2px 2px 2px 2px;\n\n\tbox-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);\n}\n.condItemBox>span[data-v-2c03eaad] {\n\tdisplay: block;\n\n\twidth: 32px;\n\theight: 24px;\n\tline-height: 24px;\n\ttext-align: center;\n\tborder: 2px solid transparent;\n\tborder-radius: 5px;\n\n\tmargin-top: 5px;\n}\n.condItemBox>span.active[data-v-2c03eaad] {\n\tborder: 2px solid #148474;\n\tbackground-color: #148474;\n}\n.condItemBox>span[data-v-2c03eaad]:hover {\n\tbackground-color: #57b7d8;\n}\n.condItemBox>span.active[data-v-2c03eaad]:hover {\n\tborder: 2px solid #4bafa1;\n\tbackground-color: #4bafa1;\n}\n", ""]);
 
 // exports
 
@@ -1118,7 +1118,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _condBox = __webpack_require__(315);
+var _condBox = __webpack_require__(294);
 
 var _condBox2 = _interopRequireDefault(_condBox);
 
@@ -1138,9 +1138,9 @@ exports.default = {
 		conds: { default: {} }
 	},
 	mounted: function mounted() {
-		var me = this;
+		window.addEventListener('resize', this.onResize.bind(this), false);
 
-		window.addEventListener('resize', this.onResize.bind(me), false);
+		this.onResize();
 	},
 	activated: function activated() {},
 	data: function data() {
@@ -1152,9 +1152,17 @@ exports.default = {
 		};
 	},
 	watch: {
-		wh: function wh(val) {
-			console.log(this.width, this.height);
-
+		wh: function wh() {
+			this.rendBox();
+		}
+	},
+	methods: {
+		onResize: function onResize() {
+			this.width = document.body.clientWidth;
+			this.height = document.body.clientHeight;
+			this.wh = this.width + ',' + this.height;
+		},
+		rendBox: function rendBox() {
 			var box = this.$refs.filterBox,
 			    children = box.children;
 			var max = this.width - 14;
@@ -1167,13 +1175,6 @@ exports.default = {
 
 				if (total > max) child.style.display = 'none';else child.style.display = 'inline-block';
 			}
-		}
-	},
-	methods: {
-		onResize: function onResize() {
-			this.width = document.body.clientWidth;
-			this.height = document.body.clientHeight;
-			this.wh = this.width + ',' + this.height;
 		}
 	}
 }; //
@@ -1422,11 +1423,227 @@ exports.default = {
 //
 
 /***/ }),
-/* 294 */,
-/* 295 */,
-/* 296 */,
-/* 297 */,
-/* 298 */,
+/* 294 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_condBox_vue__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_condBox_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_condBox_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6059a443_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_condBox_vue__ = __webpack_require__(298);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(295)
+}
+var normalizeComponent = __webpack_require__(50)
+/* script */
+
+/* template */
+
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-6059a443"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_condBox_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6059a443_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_condBox_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "comp\\cardQuery\\condBox.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6059a443", Component.options)
+  } else {
+    hotAPI.reload("data-v-6059a443", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+/* 295 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(296);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(49)("6a5a2957", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6059a443\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./condBox.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6059a443\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./condBox.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 296 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(41)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.text[data-v-6059a443] {\n\tdisplay: inline-block;\n\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tpadding-left: 5px;\n\tpadding-right: 5px;\n\n\tposition: relative;\n\n\tvertical-align: top;\n\n\ttext-align: center;\n\tline-height: 30px;\n\n\tcursor: pointer;\n}\n.hideBox[data-v-6059a443] {\n\tdisplay: block;\n\n\tposition: absolute;\n\n\tleft: 0px;\n\n\tz-index: 999;\n}\n.show[data-v-6059a443] {\n\tvisibility: visible;\n\topacity: 1;\n}\n.hide[data-v-6059a443] {\n\tvisibility: hidden;\n\topacity: 0;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 297 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+	components: {},
+	props: {
+		text: { default: '' },
+		width: { default: 80 },
+		onChangeServ: { default: function _default() {} }
+	},
+	mounted: function mounted() {},
+	activated: function activated() {},
+	data: function data() {
+		return {
+			hover: false
+		};
+	},
+	methods: {
+		movr: function movr() {
+			this.hover = true;
+		},
+		mout: function mout() {
+			this.hover = false;
+		}
+	}
+};
+
+/***/ }),
+/* 298 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "compCondBox" }, [
+    _c(
+      "span",
+      { staticClass: "text", on: { mouseover: _vm.movr, mouseout: _vm.mout } },
+      [_vm._v(_vm._s(_vm.text))]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        ref: "hideBox",
+        class: { hideBox: true, show: _vm.hover, hide: !_vm.hover },
+        style: { width: _vm.width + "px" },
+        on: { mouseover: _vm.movr, mouseout: _vm.mout }
+      },
+      [_vm._t("default")],
+      2
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-6059a443", esExports)
+  }
+}
+
+/***/ }),
 /* 299 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1449,7 +1666,7 @@ var render = function() {
           }
         ],
         staticClass: "condWord",
-        attrs: { "data-width": "200", type: "text", placeholder: "搜索..." },
+        attrs: { "data-width": "215", type: "text", placeholder: "搜索..." },
         domProps: { value: _vm.word },
         on: {
           keyup: function($event) {
@@ -1892,7 +2109,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.order[data-v-55673095] {\n\tposition: absolute;\n\n\ttop: 0px;\n\tright: 0px;\n}\n.card[data-v-55673095] {\n\tmargin: 5px;\n\n\tposition: relative;\n\n\tborder: 1px dashed transparent;\n}\n.box1[data-v-55673095] {\n\twidth: 250px;\n\theight: 150px;\n\n\tmargin: 5px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 2px dashed transparent;\n\tborder-radius: 5px 0px 0px 0px;\n}\n.box2[data-v-55673095] {\n\twidth: 280px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.box2>table[data-v-55673095] {\n\twidth: calc(100% - 12px);\n\n\tmargin-left: 12px;\n\n\tline-height: 38px;\n}\n.box3[data-v-55673095] {\n\twidth: 130px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.iconBox[data-v-55673095] {\n\tmargin: 0 auto;\n\n\tborder: 1px solid transparent;\n}\n.nameBox[data-v-55673095] {\n\twidth: 200px;\n\n\tmargin:0 auto;\n\n\tborder: 1px solid transparent;\n\n\ttext-align: center;\n}\n.name[data-v-55673095] {\n\tposition: relative;\n\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n}\n.box4[data-v-55673095] {\n\twidth: 100%;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\n\tline-height: 30px;\n}\n", ""]);
+exports.push([module.i, "\n.order[data-v-55673095] {\n\tposition: absolute;\n\n\ttop: 0px;\n\tright: 0px;\n\n\tfont-size: 12px;\n}\n.card[data-v-55673095] {\n\tmargin: 5px;\n\n\tposition: relative;\n\n\tborder: 1px dashed transparent;\n}\n.box1[data-v-55673095] {\n\twidth: 250px;\n\theight: 150px;\n\n\tmargin: 5px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 2px dashed transparent;\n\tborder-radius: 5px 0px 0px 0px;\n}\n.box2[data-v-55673095] {\n\twidth: 280px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.box2>table[data-v-55673095] {\n\twidth: calc(100% - 12px);\n\n\tmargin-left: 12px;\n\n\tline-height: 38px;\n}\n.box3[data-v-55673095] {\n\twidth: 130px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.iconBox[data-v-55673095] {\n\tmargin: 0 auto;\n\n\tborder: 1px solid transparent;\n}\n.nameBox[data-v-55673095] {\n\twidth: 200px;\n\n\tmargin:0 auto;\n\n\tborder: 1px solid transparent;\n\n\ttext-align: center;\n}\n.name[data-v-55673095] {\n\tposition: relative;\n\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n}\n.box4[data-v-55673095] {\n\twidth: 100%;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\n\tline-height: 30px;\n}\n", ""]);
 
 // exports
 
@@ -1926,6 +2143,8 @@ var _SkillBox2 = _interopRequireDefault(_SkillBox);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//
+//
 //
 //
 //
@@ -2189,7 +2408,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.spanSkillType[data-v-6bf170d0] {\n\tposition: relative;\n\ttop: 1px;\n}\n.tabBoxSkillType[data-v-6bf170d0] {\n\tdisplay: inline-block;\n\n\theight: 24px;\n\n\tborder: 1px solid transparent;\n}\n.skillBox[data-v-6bf170d0] {\n\tdisplay: inline-block;\n\n\twidth: 430px;\n\n\tmargin: 5px;\n\n\tborder: 2px solid #2da2c8;\n\tborder-radius: 5px;\n\n\tvertical-align: top;\n\n\tfont-size: 12px;\n\n\tbox-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);\n}\n.item[data-v-6bf170d0] {\n\theight: 30px;\n\tline-height: 30px;\n\n\tpadding-left: 10px;\n\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n\n\tborder: 1px solid transparent;\n}\n.cond[data-v-6bf170d0] {\n\tbackground-color: #2da2c8;\n}\n", ""]);
+exports.push([module.i, "\n.spanSkillType[data-v-6bf170d0] {\n\tposition: relative;\n\ttop: 1px;\n}\n.tabBoxSkillType[data-v-6bf170d0] {\n\tdisplay: inline-block;\n\n\theight: 24px;\n\n\tborder: 1px solid transparent;\n}\n.skillBox[data-v-6bf170d0] {\n\tdisplay: inline-block;\n\n\tmax-width: 430px;\n\twidth: calc(100% - 15px);\n\n\tmargin: 5px;\n\n\tborder: 2px solid #2da2c8;\n\tborder-radius: 5px;\n\n\tvertical-align: top;\n\n\tfont-size: 12px;\n\n\tbox-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);\n}\n.item[data-v-6bf170d0] {\n\theight: 30px;\n\tline-height: 30px;\n\n\tpadding: 0px 10px 0px 10px;\n\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n\n\tborder: 1px solid transparent;\n}\n.cond[data-v-6bf170d0] {\n\tbackground-color: #2da2c8;\n\tfont-weight: bold;\n}\n", ""]);
 
 // exports
 
@@ -2241,6 +2460,16 @@ exports.default = {
 		}
 	}
 }; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2415,7 +2644,12 @@ var render = function() {
               return _c("div", {
                 key: ci,
                 staticClass: "item content",
-                domProps: { innerHTML: _vm._s(content) }
+                domProps: { innerHTML: _vm._s(content) },
+                on: {
+                  mouseover: _vm.tFunc.over,
+                  mouseout: _vm.tFunc.outt,
+                  mousemove: _vm.tFunc.move
+                }
               })
             })
           ],
@@ -2453,7 +2687,12 @@ var render = function() {
               return _c("div", {
                 key: ci,
                 staticClass: "item content",
-                domProps: { innerHTML: _vm._s(content) }
+                domProps: { innerHTML: _vm._s(content) },
+                on: {
+                  mouseover: _vm.tFunc.over,
+                  mouseout: _vm.tFunc.outt,
+                  mousemove: _vm.tFunc.move
+                }
               })
             })
           ],
@@ -2507,7 +2746,9 @@ var render = function() {
               _c("div", { staticClass: "nameBox" }, [
                 _c("div", [_vm._v("<" + _vm._s(card.title) + ">")]),
                 _vm._v(" "),
-                _c("div", { staticClass: "name" }, [_vm._v(_vm._s(card.name))])
+                _c("div", { staticClass: "name sel" }, [
+                  _vm._v(_vm._s(card.name))
+                ])
               ])
             ],
             1
@@ -2619,231 +2860,6 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-c91f8be2", esExports)
-  }
-}
-
-/***/ }),
-/* 311 */,
-/* 312 */,
-/* 313 */,
-/* 314 */,
-/* 315 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_condBox_vue__ = __webpack_require__(318);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_condBox_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_condBox_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6059a443_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_condBox_vue__ = __webpack_require__(319);
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(316)
-}
-var normalizeComponent = __webpack_require__(50)
-/* script */
-
-/* template */
-
-/* template functional */
-  var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-6059a443"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_condBox_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6059a443_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_condBox_vue__["a" /* default */],
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "comp\\cardQuery\\condBox.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6059a443", Component.options)
-  } else {
-    hotAPI.reload("data-v-6059a443", Component.options)
-' + '  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
-
-
-/***/ }),
-/* 316 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(317);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(49)("6a5a2957", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6059a443\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./condBox.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6059a443\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./condBox.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 317 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(41)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.text[data-v-6059a443] {\n\tdisplay: inline-block;\n\n\theight: 30px;\n\n\tborder: 0px solid transparent;\n\n\tpadding-left: 5px;\n\tpadding-right: 5px;\n\n\tposition: relative;\n\n\tvertical-align: top;\n\n\ttext-align: center;\n\tline-height: 30px;\n\n\tcursor: pointer;\n}\n.hideBox[data-v-6059a443] {\n\tdisplay: block;\n\n\tposition: absolute;\n\n\tleft: 0px;\n\n\tz-index: 999;\n}\n.show[data-v-6059a443] {\n\tvisibility: visible;\n\topacity: 1;\n}\n.hide[data-v-6059a443] {\n\tvisibility: hidden;\n\topacity: 0;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 318 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-	components: {},
-	props: {
-		text: { default: '' },
-		width: { default: 80 },
-		onChangeServ: { default: function _default() {} }
-	},
-	mounted: function mounted() {},
-	activated: function activated() {},
-	data: function data() {
-		return {
-			hover: false
-		};
-	},
-	methods: {
-		movr: function movr() {
-			this.hover = true;
-		},
-		mout: function mout() {
-			this.hover = false;
-		}
-	}
-};
-
-/***/ }),
-/* 319 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "compCondBox" }, [
-    _c(
-      "span",
-      { staticClass: "text", on: { mouseover: _vm.movr, mouseout: _vm.mout } },
-      [_vm._v(_vm._s(_vm.text))]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        ref: "hideBox",
-        class: { hideBox: true, show: _vm.hover, hide: !_vm.hover },
-        style: { width: _vm.width + "px" },
-        on: { mouseover: _vm.movr, mouseout: _vm.mout }
-      },
-      [_vm._t("default")],
-      2
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-6059a443", esExports)
   }
 }
 

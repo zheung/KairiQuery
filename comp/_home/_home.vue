@@ -2,8 +2,8 @@
 	<div class="homeBox">
 		<div ref="pop" class="pop" :style="popa"></div>
 		<div class="title">
-			<div class="big" @mouseover="tOver" @mouseout="tOutt" @mousemove="tMove">Kairi Query</div>
-			<div class="sub">-- 乖离性百万亚瑟王数据站(Alpha) by DanoR （最后更新：国服，XX月XX日；日服，XX月XX日；PS服，XX月XX日）</div>
+			<div class="big">Kairi Query</div>
+			<div class="sub" :title="sub">-- 乖离性百万亚瑟王数据站 by DanoR {{sub}}</div>
 		</div>
 		<TabFrame class="tabBox" :tabs="tabs" keyDefault="cardQuery" :dealer="changeTab"></TabFrame>
 		<div class="frameBox" :class="`sub${currentView.substring(0, 1).toUpperCase()}${currentView.substring(1)}`">
@@ -14,6 +14,15 @@
 					:tFunc="tFunc"
 				></component>
 			</keep-alive>
+		</div>
+		<div ref="popAbout" class="popAbout">
+			● 啦啦啦，V2.0差不多就是这样子。<br>
+			● 新版在各个分辨率都比较舒服，也许没旧版那么直观<br>
+			● 反正分辨率越高越爽<br>
+			● 详细技能筛选和一些小功能没做，以后有空慢慢加<br>
+			● 有需求先用着旧版吧，地址是/kq1<br>
+			● 旧版数据是同步的，但头像不更新了<br>
+			● 依旧推荐较新的浏览器
 		</div>
 	</div>
 </template>
@@ -29,19 +38,37 @@
 
 		data: function() {
 			return {
+				sub: '（最后更新：国服，XX月XX日；日服，XX月XX日；PS服，XX月XX日）',
+
 				currentView: '',
+
 				tabs: {
 					iconMaker: { title: '头像生成' },
 					cardQuery: { title: '卡牌查询' },
 					test: { title: '宇宙测试' },
-					about: { title: '关于', width: 40, right: true }
+					about: {
+						title: '关于新版',
+						right: true,
+						over: function(e) {
+							this.$refs.popAbout.style.visibility = 'visible';
+							this.$refs.popAbout.style.opacity = 1;
+							e.target.style.borderRadius = '5px 5px 0px 0px';
+							e.target.style.backgroundColor = '#2da2c8';
+						}.bind(this),
+						outt: function(e) {
+							this.$refs.popAbout.style.visibility = 'hidden';
+							this.$refs.popAbout.style.opacity = 0;
+							e.target.style.borderRadius = '';
+							e.target.style.backgroundColor = '';
+						}.bind(this)
+					}
 				},
 
 				isHover: false,
 				eve: {},
 
 				popa: {
-					opacity: 1,
+					opacity: 0,
 					top: 0,
 					left: 0
 				}
@@ -50,7 +77,7 @@
 		watch: {
 			isHover: function(now) {
 				if(now) {
-					this.popa.opacity = 1;
+					this.popa.opacity = 0.8;
 					this.popa.top = (this.eve.clientY+5) + 'px';
 					this.popa.left = (this.eve.clientX+5) + 'px';
 				}
@@ -65,6 +92,17 @@
 				return { over: this.tOver, outt: this.tOutt, move: this.tMove };
 			}
 		},
+
+		mounted: function() {
+			let me = this;
+			let button = document.getElementById('tabButtonabout');
+
+			this.tabs.about.over({target: button });
+
+			setTimeout(function() {
+				me.tabs.about.outt({target: button });
+			}, 2000);
+		},
 		methods: {
 			changeTab: async function(key) {
 				await Loader(key);
@@ -75,7 +113,6 @@
 			tOver: function(event) {
 				this.eve = event;
 				this.isHover = true;
-				L('in');
 			},
 			tOutt: function() {
 				this.isHover = false;
@@ -85,7 +122,11 @@
 					this.popa.top = (e.clientY+5) + 'px';
 					this.popa.left = (e.clientX+5) + 'px';
 
-					this.$refs.pop.innerHTML = this.eve.target.innerHTML;
+					let tar = this.eve.target;
+
+					if(tar.tagName == 'SAMP') tar = tar.parentNode;
+
+					this.$refs.pop.innerHTML = tar.innerHTML;
 				}
 			}
 		}
@@ -107,6 +148,7 @@
 	.title {
 		position: absolute;
 
+		width: calc(100% - 10px);
 		height: 40px;
 
 		top: 5px;
@@ -115,6 +157,8 @@
 		color: #2da2c8;
 	}
 	.title>.big {
+		width: 140px;
+
 		font-size: 24px;
 		font-weight: bold;
 	}
@@ -123,6 +167,8 @@
 
 		top: 10px;
 		left: 140px;
+
+		max-width: calc(100% - 140px);
 
 		font-size: 10px;
 
@@ -165,7 +211,7 @@
 		top: 0px;
 		left: 0px;
 
-		background-color: green;
+		background-color: #148474;
 		border-radius: 5px;
 
 		font-size: 12px;
@@ -174,5 +220,30 @@
 		padding: 5px;
 
 		z-index: 9999;
+
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	.popAbout {
+		width: 400px;
+
+		position: absolute;
+
+		right: 11px;
+		top: 75px;
+
+		background-color: #2da1c9;
+
+		border: 2px solid #148474;
+		border-radius: 10px 0px 10px 10px;
+
+		padding: 5px;
+
+		font-size: 14px;
+		line-height: 30px;
+
+		box-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);
 	}
 </style>

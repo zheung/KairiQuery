@@ -7699,7 +7699,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.homeBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 0px;\n\tbottom: 0px;\n\tleft: 0px;\n\tright: 0px;\n\n\tbackground: #262629;\n\tcolor: snow;\n}\n.title[data-v-075407de] {\n\tposition: absolute;\n\n\theight: 40px;\n\n\ttop: 5px;\n\tleft: 5px;\n\n\tcolor: #2da2c8;\n}\n.title>.big[data-v-075407de] {\n\tfont-size: 24px;\n\tfont-weight: bold;\n}\n.title>.sub[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 10px;\n\tleft: 140px;\n\n\tfont-size: 10px;\n\n\tword-break: keep-all;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n}\n.tabBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 50px;\n\tleft: 5px;\n\tright: 5px;\n\n\theight: 30px;\n}\n.tabBox>div[data-v-075407de] {\n\tborder: 2px solid #2da2c8;\n}\n.frameBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 90px;\n\tbottom: 0px;\n\tleft: 0px;\n\tright: 0px;\n}\n.pop[data-v-075407de] {\n\tdisplay: block;\n\n\tposition: fixed;\n\n\twidth: auto;\n\theight: 20px;\n\n\ttop: 0px;\n\tleft: 0px;\n\n\tbackground-color: green;\n\tborder-radius: 5px;\n\n\tfont-size: 12px;\n\tline-height: 20px;\n\n\tpadding: 5px;\n\n\tz-index: 9999;\n}\n", ""]);
+exports.push([module.i, "\n.homeBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 0px;\n\tbottom: 0px;\n\tleft: 0px;\n\tright: 0px;\n\n\tbackground: #262629;\n\tcolor: snow;\n}\n.title[data-v-075407de] {\n\tposition: absolute;\n\n\twidth: calc(100% - 10px);\n\theight: 40px;\n\n\ttop: 5px;\n\tleft: 5px;\n\n\tcolor: #2da2c8;\n}\n.title>.big[data-v-075407de] {\n\twidth: 140px;\n\n\tfont-size: 24px;\n\tfont-weight: bold;\n}\n.title>.sub[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 10px;\n\tleft: 140px;\n\n\tmax-width: calc(100% - 140px);\n\n\tfont-size: 10px;\n\n\tword-break: keep-all;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n}\n.tabBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 50px;\n\tleft: 5px;\n\tright: 5px;\n\n\theight: 30px;\n}\n.tabBox>div[data-v-075407de] {\n\tborder: 2px solid #2da2c8;\n}\n.frameBox[data-v-075407de] {\n\tposition: absolute;\n\n\ttop: 90px;\n\tbottom: 0px;\n\tleft: 0px;\n\tright: 0px;\n}\n.pop[data-v-075407de] {\n\tdisplay: block;\n\n\tposition: fixed;\n\n\twidth: auto;\n\theight: 20px;\n\n\ttop: 0px;\n\tleft: 0px;\n\n\tbackground-color: #148474;\n\tborder-radius: 5px;\n\n\tfont-size: 12px;\n\tline-height: 20px;\n\n\tpadding: 5px;\n\n\tz-index: 9999;\n\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n}\n.popAbout[data-v-075407de] {\n\twidth: 400px;\n\n\tposition: absolute;\n\n\tright: 11px;\n\ttop: 75px;\n\n\tbackground-color: #2da1c9;\n\n\tborder: 2px solid #148474;\n\tborder-radius: 10px 0px 10px 10px;\n\n\tpadding: 5px;\n\n\tfont-size: 14px;\n\tline-height: 30px;\n\n\tbox-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);\n}\n", ""]);
 
 // exports
 
@@ -7778,6 +7778,15 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
 	components: {
@@ -7786,19 +7795,37 @@ exports.default = {
 
 	data: function data() {
 		return {
+			sub: '（最后更新：国服，XX月XX日；日服，XX月XX日；PS服，XX月XX日）',
+
 			currentView: '',
+
 			tabs: {
 				iconMaker: { title: '头像生成' },
 				cardQuery: { title: '卡牌查询' },
 				test: { title: '宇宙测试' },
-				about: { title: '关于', width: 40, right: true }
+				about: {
+					title: '关于新版',
+					right: true,
+					over: function (e) {
+						this.$refs.popAbout.style.visibility = 'visible';
+						this.$refs.popAbout.style.opacity = 1;
+						e.target.style.borderRadius = '5px 5px 0px 0px';
+						e.target.style.backgroundColor = '#2da2c8';
+					}.bind(this),
+					outt: function (e) {
+						this.$refs.popAbout.style.visibility = 'hidden';
+						this.$refs.popAbout.style.opacity = 0;
+						e.target.style.borderRadius = '';
+						e.target.style.backgroundColor = '';
+					}.bind(this)
+				}
 			},
 
 			isHover: false,
 			eve: {},
 
 			popa: {
-				opacity: 1,
+				opacity: 0,
 				top: 0,
 				left: 0
 			}
@@ -7807,7 +7834,7 @@ exports.default = {
 	watch: {
 		isHover: function isHover(now) {
 			if (now) {
-				this.popa.opacity = 1;
+				this.popa.opacity = 0.8;
 				this.popa.top = this.eve.clientY + 5 + 'px';
 				this.popa.left = this.eve.clientX + 5 + 'px';
 			} else {
@@ -7820,6 +7847,17 @@ exports.default = {
 		tFunc: function tFunc() {
 			return { over: this.tOver, outt: this.tOutt, move: this.tMove };
 		}
+	},
+
+	mounted: function mounted() {
+		var me = this;
+		var button = document.getElementById('tabButtonabout');
+
+		this.tabs.about.over({ target: button });
+
+		setTimeout(function () {
+			me.tabs.about.outt({ target: button });
+		}, 2000);
 	},
 	methods: {
 		changeTab: function () {
@@ -7853,7 +7891,6 @@ exports.default = {
 		tOver: function tOver(event) {
 			this.eve = event;
 			this.isHover = true;
-			L('in');
 		},
 		tOutt: function tOutt() {
 			this.isHover = false;
@@ -7863,7 +7900,11 @@ exports.default = {
 				this.popa.top = e.clientY + 5 + 'px';
 				this.popa.left = e.clientX + 5 + 'px';
 
-				this.$refs.pop.innerHTML = this.eve.target.innerHTML;
+				var tar = this.eve.target;
+
+				if (tar.tagName == 'SAMP') tar = tar.parentNode;
+
+				this.$refs.pop.innerHTML = tar.innerHTML;
 			}
 		}
 	}
@@ -8057,6 +8098,7 @@ var render = function() {
       staticClass: "compToggleButton button",
       class: { active: _vm.now == _vm.id },
       style: { width: (_vm.width || 60) + "px" },
+      attrs: { id: "tabButton" + _vm.id },
       on: { click: _vm.click }
     },
     [_vm._v(_vm._s(_vm.text))]
@@ -8198,6 +8240,14 @@ var render = function() {
                 text: tab.title,
                 width: tab.width,
                 dealer: _vm.click
+              },
+              nativeOn: {
+                mouseover: function($event) {
+                  tab.over($event)
+                },
+                mouseout: function($event) {
+                  tab.outt($event)
+                }
               }
             })
           : _vm._e()
@@ -8233,23 +8283,10 @@ var render = function() {
       _c("div", { ref: "pop", staticClass: "pop", style: _vm.popa }),
       _vm._v(" "),
       _c("div", { staticClass: "title" }, [
-        _c(
-          "div",
-          {
-            staticClass: "big",
-            on: {
-              mouseover: _vm.tOver,
-              mouseout: _vm.tOutt,
-              mousemove: _vm.tMove
-            }
-          },
-          [_vm._v("Kairi Query")]
-        ),
+        _c("div", { staticClass: "big" }, [_vm._v("Kairi Query")]),
         _vm._v(" "),
-        _c("div", { staticClass: "sub" }, [
-          _vm._v(
-            "-- 乖离性百万亚瑟王数据站(Alpha) by DanoR （最后更新：国服，XX月XX日；日服，XX月XX日；PS服，XX月XX日）"
-          )
+        _c("div", { staticClass: "sub", attrs: { title: _vm.sub } }, [
+          _vm._v("-- 乖离性百万亚瑟王数据站 by DanoR " + _vm._s(_vm.sub))
         ])
       ]),
       _vm._v(" "),
@@ -8292,7 +8329,23 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("div", { ref: "popAbout", staticClass: "popAbout" }, [
+        _vm._v("\n\t\t● 啦啦啦，V2.0差不多就是这样子。"),
+        _c("br"),
+        _vm._v("\n\t\t● 新版在各个分辨率都比较舒服，也许没旧版那么直观"),
+        _c("br"),
+        _vm._v("\n\t\t● 反正分辨率越高越爽"),
+        _c("br"),
+        _vm._v("\n\t\t● 详细技能筛选和一些小功能没做，以后有空慢慢加"),
+        _c("br"),
+        _vm._v("\n\t\t● 有需求先用着旧版吧，地址是/kq1"),
+        _c("br"),
+        _vm._v("\n\t\t● 旧版数据是同步的，但头像不更新了"),
+        _c("br"),
+        _vm._v("\n\t\t● 依旧推荐较新的浏览器\n\t")
+      ])
     ],
     1
   )
@@ -8348,7 +8401,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "html, body, #home {\r\n\theight: 100%;\r\n\tmargin: 0px;\r\n\tpadding: 0px;\r\n\toverflow: hidden;\r\n}\r\n\r\n.homeBox *:not(.pop) {\r\n\ttext-shadow: 0em 0em 0.0001em !important;\r\n\tfont-family: \"Microsoft YaHei\", sans-serif !important;\r\n\r\n\ttransition-property: all;\r\n\ttransition-duration: 0.4s;\r\n\r\n\t-webkit-transform: translateZ(0);\r\n\t-moz-transform: translateZ(0);\r\n\t-ms-transform: translateZ(0);\r\n\t-o-transform: translateZ(0);\r\n\ttransform: translateZ(0);\r\n\r\n\tuser-select: none;\r\n\t-webkit-user-select: none;\r\n\t-moz-user-select: none;\r\n\t-ms-user-select: none;\r\n}\r\n\r\n.nosel {\r\n\tuser-select: none;\r\n\t-webkit-user-select: none;\r\n\t-moz-user-select: none;\r\n\t-ms-user-select: none;\r\n}\r\n.sel {\r\n\tuser-select: text;\r\n\t-moz-user-select: text;\r\n\t-webkit-user-select: text;\r\n\tcursor: text;\r\n}\r\n\r\nsamp {\r\n\tborder-bottom: 1px dashed #888888;\r\n\tcursor: help;\r\n}\r\n\r\n::-webkit-input-placeholder { color: snow; }\r\n:-moz-placeholder { color: snow; }\r\n::-moz-placeholder { color: snow; }\r\n:-ms-input-placeholder { color: snow; }", ""]);
+exports.push([module.i, "html, body, #home {\r\n\theight: 100%;\r\n\tmargin: 0px;\r\n\tpadding: 0px;\r\n\toverflow: hidden;\r\n}\r\n\r\n.homeBox *:not(.pop) {\r\n\ttext-shadow: 0em 0em 0.0001em !important;\r\n\tfont-family: \"Microsoft YaHei\", sans-serif !important;\r\n\r\n\ttransition-property: all;\r\n\ttransition-duration: 0.4s;\r\n\r\n\t-webkit-transform: translateZ(0);\r\n\t-moz-transform: translateZ(0);\r\n\t-ms-transform: translateZ(0);\r\n\t-o-transform: translateZ(0);\r\n\ttransform: translateZ(0);\r\n\r\n\tuser-select: none;\r\n\t-webkit-user-select: none;\r\n\t-moz-user-select: none;\r\n\t-ms-user-select: none;\r\n}\r\n\r\n.nosel {\r\n\tuser-select: none;\r\n\t-webkit-user-select: none;\r\n\t-moz-user-select: none;\r\n\t-ms-user-select: none;\r\n}\r\n.sel {\r\n\tuser-select: text !important;\r\n\t-moz-user-select: text !important;\r\n\t-webkit-user-select: text !important;\r\n\tcursor: text !important;\r\n}\r\n\r\nsamp {\r\n\tborder-bottom: 1px dashed #888888;\r\n\tcursor: help;\r\n}\r\n\r\n::-webkit-input-placeholder { color: snow; }\r\n:-moz-placeholder { color: snow; }\r\n::-moz-placeholder { color: snow; }\r\n:-ms-input-placeholder { color: snow; }", ""]);
 
 // exports
 
