@@ -3,7 +3,7 @@
 		<div class="card" v-for="(card, ci) of cards" :key="ci">
 			<div class="order">{{ci+1+'/'+cards.length}}</div>
 			<div class="box1">
-				<Icon class="iconBox" :card="card" size="100" />
+				<Icon class="iconBox" :card="card" size="100" :serv="serv" />
 				<div class="nameBox">
 					<div>&lt;{{card.title}}&gt;</div>
 					<div class="name sel">{{card.name}}</div>

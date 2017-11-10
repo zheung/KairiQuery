@@ -2732,7 +2732,7 @@ var render = function() {
             [
               _c("Icon", {
                 staticClass: "iconBox",
-                attrs: { card: card, size: "100" }
+                attrs: { card: card, size: "100", serv: _vm.serv }
               }),
               _vm._v(" "),
               _c("div", { staticClass: "nameBox" }, [
