@@ -38,7 +38,7 @@
 
 		data: function() {
 			return {
-				sub: '（最后更新：国服，XX月XX日；日服，XX月XX日；PS服，XX月XX日）',
+				sub: '（最后更新：国服，11月10日；日服，11月10日；皮服，11月10日）',
 
 				currentView: '',
 
