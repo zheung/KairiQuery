@@ -26,8 +26,12 @@ module.exports = async() => {
 		return false;
 	};
 	global.funcer = {
-		filter: (cells) => { return !/^#/.test(cells[0]) && (~~cells[0] > 1000 || /[A-Z_]+/.test(cells[0])) && !inArr(cells[0], conf.exclude); },
-		rare: (cell, cells, dicter) => { return dicter.rare[`${cells[7]}${cells[22]}`]; }
+		filter: function(cells) {
+			return !/^#/.test(cells[0]) && (~~cells[0] > 1000 || /[A-Z_]+/.test(cells[0])) && !inArr(cells[0], conf.exclude);
+		},
+		rare: function(cell, cells, dicter) {
+			return dicter.rare[`${cells[7]}${cells[22]}`];
+		}
 	};
 
 	global.render = require('./data/rend');

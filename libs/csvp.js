@@ -43,8 +43,8 @@ module.exports = async(path, name, start, header, dicter, parser) => {
 						let heads = header[indexCell];
 
 						if(!heads) {
-							row;
-							throw Error(`Error: header not found\t${name}\t${indexRow}\t${indexCell}`);
+							row;parser;cells;
+							throw Error(`Error: header not found\t${name}\t${indexRow+1}\t${indexCell}`);
 						}
 						heads = heads.split('.');
 						let option = heads.shift();
