@@ -26,7 +26,11 @@
 
 		L('merge done');
 
-		await col.drop();
+		try {
+			await col.drop();
+		} catch (e) {
+			true;
+		}
 
 		for(let i = 0,len = arr.length; i<len; i+=50){
 			L(i, len, (await col.insert(arr.slice(i, i+50))).insertedCount);
