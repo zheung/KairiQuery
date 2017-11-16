@@ -50,7 +50,6 @@ module.exports = (serv) => {
 		}
 
 		let sf = (card.skill.awaken[0] || card.skill.normal[0]),
-			chain = sm.info.chain,
 			cost = sf.info.cost, attr = sf.info.attr, job = sf.info.job, kind = sf.info.kind;
 
 		if(attr == 1) set.add('fire');
@@ -81,8 +80,11 @@ module.exports = (serv) => {
 		set.add(['attack', 'sorcery', 'recovery', 'support', 'defense', 'jamming', 'special'][kind-1]);
 
 		for(let role of sm.role) {
-			let target = { r: role.target, s: sm.info.target || sf.info.target },
-			rt = role.type, rp = role.params;
+			let target = { r: role.target, s: sm.info.target || sf.info.target };
+			let rt = role.type, rp = role.params;
+			let chain = role.chain;
+
+			if(chain && (chain != 20 && chain != 1)) set.add('chain');
 
 			//攻击
 			if(rt == 'ATTACK_AA') {
@@ -246,8 +248,6 @@ module.exports = (serv) => {
 			//祝福
 			if(rt == 'BLESS') set.add('bless');
 		}
-
-		if(chain && (chain != 20 && chain != 1)) set.add('chain');
 
 		if(card.skill['suport3'] && card.skill['suport3'].length) set.add('ex');
 
