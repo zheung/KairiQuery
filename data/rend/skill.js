@@ -49,7 +49,7 @@ module.exports = async(serv, card) => {
 				}
 			}
 
-			if(serv == 'jp') {
+			if(serv == 'jp' || serv == 'cn') {
 				if(st != 'suport3') {
 					s.content.push(`<samp title="发动等级越低越先发动，相同则出牌顺序发动">发动等级</samp>&nbsp;| PVE ${pve / 10} PVP ${pvp / 10}`);
 				}
