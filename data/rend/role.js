@@ -464,5 +464,10 @@ module.exports = async(serv) => {
 
 			return `${target} | ${p[1]}回合 | ${target}死亡时 | 恢复${p[3]}%HP | 最多${p[2]}次`;
 		},
+		BURST_GAUGE_QUICK_UP: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			return `${target} | 提升变身进度${p[1]}%`;
+		}
 	};
 };
