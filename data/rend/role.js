@@ -467,7 +467,7 @@ module.exports = async(serv) => {
 		BURST_GAUGE_QUICK_UP: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			return `${target} | 提升变身进度${p[1]}%`;
+			return `${target} | 提升变身进度 | ${p[1]}%`;
 		}
 	};
 };
