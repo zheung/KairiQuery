@@ -210,7 +210,7 @@ module.exports = async(serv) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
 			return `${target} | ${p[1]}回合 | 降低${show(p[2])} |\x20
-				${p[6]}+${p[4]/10}%${show(p[3])}`;
+				<samp title="等级成长：${p[6]}*等级">${p[6]*card.info.max.level}</samp>+${show(p[3])}的${p[4]/10}%`;
 		},
 		ATK_BREAK_FIXED: async(card, skill, role, skillFirst) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
