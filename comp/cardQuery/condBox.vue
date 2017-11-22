@@ -1,6 +1,6 @@
 <template>
 	<div class="compCondBox">
-		<span class="text" @mouseover="movr" @mouseout="mout">{{text}}</span>
+		<span class="text" @mouseover="movr" @mouseout="mout">{{showText}}</span>
 		<div ref="hideBox" :class="{hideBox: true, show:hover, hide:!hover}" :style="{ width: width+'px' }" @mouseover="movr" @mouseout="mout">
 			<slot />
 		</div>
@@ -53,6 +53,7 @@
 		},
 		props: {
 			text: { default: '' },
+			conds: { default: [] },
 			width: { default: 80 },
 			onChangeServ: { default: function() {} }
 		},
@@ -72,6 +73,20 @@
 			mout: function() {
 				this.hover = false;
 			},
+		},
+		computed: {
+			showText: function() {
+				let count = 0, text;
+				for(let c of this.conds) {
+					if(c.on) {
+						count++;
+
+						text = c.text;
+					}
+				}
+
+				return count == 1 ? text : this.text;
+			}
 		}
 	};
 </script>

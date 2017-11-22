@@ -70,10 +70,11 @@
 			})
 			.then(function(data) {
 				me.conds = data;
+
+				me.onQuery(me.word, 1, me.serv, { cond: data.rare[0] });
 			});
 		},
 		mounted: function() {
-			this.onQuery();
 		},
 		activated: function() {
 		},
@@ -88,7 +89,7 @@
 				mark: [],
 
 				pageNow: 0,
-				pageMax: 0
+				pageMax: 1
 			};
 		},
 		computed: {
@@ -134,8 +135,8 @@
 						this.pageNow = ~~page;
 				}
 
-				if(condObj && condObj.cond && condObj.eve) {
-					let eve = condObj.eve;
+				if(condObj && condObj.cond) {
+					let eve = condObj.eve || {};
 					let cond = condObj.cond;
 					let type = cond.type;
 

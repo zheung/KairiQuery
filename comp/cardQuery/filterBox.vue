@@ -19,7 +19,7 @@
 				<span @click="onQuery(word, 1, 'kr')" :class="{ active: serv == 'kr' }">KR</span>
 			</div>
 		</CondBox>
-		<CondBox data-width="50" style="width: 64px" class="condItem" text="稀有">
+		<CondBox data-width="50" style="width: 64px" class="condItem" text="稀有" :conds="conds.rare">
 			<div class="condItemBox" style="width: 60px">
 				<span
 					v-for="c of conds.rare" :key="c.text"
@@ -30,7 +30,7 @@
 				</span>
 			</div>
 		</CondBox>
-		<CondBox data-width="50" style="width: 64px" class="condItem" text="职业">
+		<CondBox data-width="50" style="width: 64px" class="condItem" text="职业" :conds="conds.job">
 			<div class="condItemBox" style="width: 60px">
 				<span
 					v-for="c of conds.job" :key="c.text"
@@ -41,7 +41,7 @@
 				</span>
 			</div>
 		</CondBox>
-		<CondBox data-width="50" style="width: 64px" class="condItem" text="COST">
+		<CondBox data-width="50" style="width: 64px" class="condItem" text="COST" :conds="conds.cost">
 			<div class="condItemBox" style="width: 60px">
 				<span
 					v-for="c of conds.cost" :key="c.text"
@@ -52,7 +52,7 @@
 				</span>
 			</div>
 		</CondBox>
-		<CondBox data-width="50" style="width: 64px" class="condItem" text="属性">
+		<CondBox data-width="50" style="width: 64px" class="condItem" text="属性" :conds="conds.attrSingle">
 			<div class="condItemBox" style="width: 60px">
 				<span
 					v-for="c of conds.attrSingle" :key="c.text"
@@ -63,7 +63,7 @@
 				</span>
 			</div>
 		</CondBox>
-		<CondBox data-width="50" style="width: 64px" class="condItem" text="技能">
+		<CondBox data-width="50" style="width: 64px" class="condItem" text="技能" :conds="conds.skillKind">
 			<div class="condItemBox" style="width: 60px">
 				<span
 					v-for="c of conds.skillKind" :key="c.text"
