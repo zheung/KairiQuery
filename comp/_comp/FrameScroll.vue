@@ -132,6 +132,8 @@
 		height: calc(100% + 17px);
 
 		overflow: scroll;
+
+		transition-property: none;
 	}
 
 	.scr {
@@ -147,6 +149,8 @@
 
 		border-radius: 5px 0px 0px 5px;
 		background-color: transparent;
+
+		transition-property: none;
 	}
 	.scr.show {
 		background-color: rgba(119, 119, 119, 0.4);
