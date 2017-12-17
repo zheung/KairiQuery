@@ -59,6 +59,10 @@ module.exports = async(serv, card) => {
 				for(let role of skill.role) {
 					let skillType = role.type, rend = (await rdrRole(serv))[skillType];
 
+					if(skillType == 'BLESS') {
+						s.bless = true;
+					}
+
 					if(rend instanceof Function) {
 						let chain1 = roleFirst.chain, chain2 = role.chain, chain = chain2 || chain1,
 							text = (await rend(card, skill, role, skillFirst)).replace(/\t|\n/g, '');
@@ -130,6 +134,28 @@ module.exports = async(serv, card) => {
 			}
 
 			result.suport.push(s);
+		}
+	}
+
+	if(result.bless.length) {
+		for(let skill of result.awaken) {
+			skill.content.push('-------祝福------');
+			for(let bless of result.bless) {
+				skill.content.push(bless.cond);
+
+				for(let content of bless.content)
+					skill.content.push(content);
+			}
+		}
+
+		for(let skill of result.normal) {
+			skill.content.push('-------祝福------');
+			for(let bless of result.bless) {
+				skill.content.push(bless.cond);
+
+				for(let content of bless.content)
+					skill.content.push(content);
+			}
 		}
 	}
 
