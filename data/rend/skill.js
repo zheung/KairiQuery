@@ -137,27 +137,5 @@ module.exports = async(serv, card) => {
 		}
 	}
 
-	if(result.bless.length) {
-		for(let skill of result.awaken) {
-			skill.content.push('-------祝福------');
-			for(let bless of result.bless) {
-				skill.content.push(bless.cond);
-
-				for(let content of bless.content)
-					skill.content.push(content);
-			}
-		}
-
-		for(let skill of result.normal) {
-			skill.content.push('-------祝福------');
-			for(let bless of result.bless) {
-				skill.content.push(bless.cond);
-
-				for(let content of bless.content)
-					skill.content.push(content);
-			}
-		}
-	}
-
 	return result;
 };
