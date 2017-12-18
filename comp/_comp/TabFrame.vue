@@ -13,6 +13,11 @@
 				now: '',
 			};
 		},
+		watch: {
+			keyDefault: function(keyDefault) {
+				this.click(keyDefault);
+			}
+		},
 		methods: {
 			click: function(key) {
 				let tab = this.tabs[key];

@@ -2,28 +2,31 @@
 	<div>
 		<div style="vertical-align: top;">
 			<span class="spanSkillType">●&nbsp;技能</span>
-			<TabFrame class="tabBoxSkillType" :tabs="tabsSkillType" keyDefault="1" :dealer="changeSkill"></TabFrame>
+			<TabFrame class="tabBoxSkillType" :tabs="tabsSkillType" :keyDefault="tabsDefault" :dealer="changeSkill"></TabFrame>
 		</div>
 		<div class="skillBoxs">
-			<div class="skillBox" v-show="show==1" v-for="(skill, si) of skill.awaken" :key="si">
+			<div class="skillBox bless" v-show="skill[show][0] && skill[show][0].bless" v-for="(s, si) of skill.bless" :key="si">
+				<div class="item cond2" v-html="'[祝福] '+s.cond || '无'" :title="s.cond || '无'"></div>
+				<div
+					class="item content" v-for="(content, ci) of s.content" :key="ci" v-html="content"
+					@mouseover="tFunc.over" @mouseout="tFunc.outt" @mousemove="tFunc.move">
+				</div>
+			</div>
+			<div class="skillBox" v-show="show=='awaken'" v-for="(skill, si) of skill.awaken" :key="si">
 				<div class="item cond" v-html="skill.cond || '无'" :title="skill.cond || '无'"></div>
 				<div
 					class="item content" v-for="(content, ci) of skill.content" :key="ci" v-html="content"
 					@mouseover="tFunc.over" @mouseout="tFunc.outt" @mousemove="tFunc.move">
 				</div>
 			</div>
-		</div>
-		<div class="skillBoxs">
-			<div class="skillBox" v-show="show==2" v-for="(skill, si) of skill.normal" :key="si">
+			<div class="skillBox" v-show="show=='normal'" v-for="(skill, si) of skill.normal" :key="si">
 				<div class="item cond" v-html="skill.cond || '无'" :title="skill.cond || '无'"></div>
 				<div
 					class="item content" v-for="(content, ci) of skill.content" :key="ci" v-html="content"
 					@mouseover="tFunc.over" @mouseout="tFunc.outt" @mousemove="tFunc.move">
 				</div>
 			</div>
-		</div>
-		<div class="skillBoxs">
-			<div class="skillBox" v-show="show==3" v-for="(skill, si) of skill.suport" :key="si">
+			<div class="skillBox" v-show="show=='suport'" v-for="(skill, si) of skill.suport" :key="si">
 				<div class="item cond" v-html="skill.cond || '无'" :title="skill.cond || '无'"></div>
 				<div
 					class="item content" v-for="(content, ci) of skill.content" :key="ci" v-html="content"
@@ -63,6 +66,10 @@
 
 		box-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);
 	}
+	.skillBox.bless {
+		border: 2px solid #148474;
+		box-shadow: 2px 2px 5px 0px rgba(20, 132, 116, 0.5);
+	}
 
 	.item {
 		height: 30px;
@@ -78,6 +85,10 @@
 	}
 	.cond {
 		background-color: #2da2c8;
+		font-weight: bold;
+	}
+	.cond2 {
+		background-color: #148474;
 		font-weight: bold;
 	}
 </style>
@@ -98,17 +109,44 @@
 		},
 		activated: function() {
 		},
-		computed: {
-		},
-		data: function() {
-			return {
-				show: 1,
+		watch: {
+			skill: function(skill) {
+				let tabsSkillType = {};
 
-				tabsSkillType: {
-					1: { title: '觉醒' },
-					2: { title: '普通' },
-					3: { title: '支援' }
+				if(skill.awaken.length) {
+					tabsSkillType.awaken = { title: '觉醒' };
 				}
+				if(skill.normal.length) {
+					tabsSkillType.normal = { title: '普通' };
+				}
+				if(skill.suport.length) {
+					tabsSkillType.suport = { title: '支援' };
+				}
+
+				this.tabsSkillType = tabsSkillType;
+				this.tabsDefault = Object.keys(tabsSkillType)[0];
+			}
+		},
+
+		data: function() {
+			let skill = this.skill;
+			let tabsSkillType = {};
+
+			if(skill.awaken.length) {
+				tabsSkillType.awaken = { title: '觉醒' };
+			}
+			if(skill.normal.length) {
+				tabsSkillType.normal = { title: '普通' };
+			}
+			if(skill.suport.length) {
+				tabsSkillType.suport = { title: '支援' };
+			}
+
+			return {
+				show: Object.keys(tabsSkillType)[0],
+
+				tabsSkillType: tabsSkillType,
+				tabsDefault: Object.keys(tabsSkillType)[0]
 			};
 		},
 

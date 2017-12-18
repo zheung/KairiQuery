@@ -170,11 +170,6 @@
 		},
 		data: function() {
 			return {
-				tabsSkillType: {
-					awaken: { title: '觉醒' },
-					normal: { title: '普通' },
-					suport: { title: '支援' }
-				}
 			};
 		}
 	};
