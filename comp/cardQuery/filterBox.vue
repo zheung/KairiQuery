@@ -267,7 +267,6 @@
 		},
 		data: function() {
 			return {
-				word: '',
 				height: 0,
 				width: 0,
 				wh: ''

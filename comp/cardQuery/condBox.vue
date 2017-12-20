@@ -53,7 +53,7 @@
 		},
 		props: {
 			text: { default: '' },
-			conds: { default: [] },
+			conds: { default: function() { return []; } },
 			width: { default: 80 },
 			onChangeServ: { default: function() {} }
 		},
