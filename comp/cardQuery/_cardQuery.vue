@@ -157,11 +157,9 @@
 					return res.json();
 				})
 				.then(function(data) {
-					me.nextTrick(function() {
-						me.$set(me.cards, data[0][0]);
-						me.pageNow = data[0][1];
-						me.pageMax = data[0][2];
-					});
+					me.$set(me, 'cards', data[0][0]);
+					me.$set(me, 'pageNow', data[0][1]);
+					me.$set(me, 'pageMax', data[0][2]);
 				});
 			}
 		}
