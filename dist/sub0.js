@@ -947,9 +947,11 @@ exports.default = {
 			fetch('kq/query?conds=' + this.param).then(function (res) {
 				return res.json();
 			}).then(function (data) {
-				me.cards = data[0][0];
-				me.pageNow = data[0][1];
-				me.pageMax = data[0][2];
+				me.nextTrick(function () {
+					me.$set(me.cards, data[0][0]);
+					me.pageNow = data[0][1];
+					me.pageMax = data[0][2];
+				});
 			});
 		}
 	}
