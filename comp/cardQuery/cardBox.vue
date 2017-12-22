@@ -10,7 +10,7 @@
 				</div>
 			</div>
 			<div class="box2">
-				<div>●&nbsp;属性</div>
+				<div>●&nbsp;属性 [<span class="sel">{{card.id}}</span>]</div>
 				<table border="0">
 					<tr>
 						<td >稀有：{{card.rare}}</td>
