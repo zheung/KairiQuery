@@ -129,7 +129,7 @@
 				if(typeof serv == 'string') this.serv = serv;
 
 				if(page != undefined && ~~page) {
-					if(~~page < 0 || ~~page > this.pageMax)
+					if(~~page < 0 || (~~page > this.pageMax && this.pageMax))
 						return;
 					else
 						this.pageNow = ~~page;
