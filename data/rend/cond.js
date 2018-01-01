@@ -113,7 +113,7 @@ module.exports = async() => {
 			else
 				return `我方 | 出牌数 | ${u}~${d}张`;
 		},
-		15: async(card, skill, cond) => {//【対象/傭兵・盗賊】
+		15: async(card, skill, cond) => {
 			if(cond.param3 || cond.param4 || cond.param5) L('Cond 15 New Type');
 
 			if(cond.param1 && cond.param2)

@@ -217,8 +217,10 @@ module.exports = async(serv) => {
 
 			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
 
-			return `${target} | ${p[1]}回合 | 降低${show(p[2])} |\x20
-				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
+			if(~~p[3]<=1)
+				return `${target} | ${p[1]}回合 | 降低${show(p[2])} | <samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
+			else
+				return `${target} | ${p[1]}回合 | 降低${show(p[2])} | <samp title="固定值">${p[3]*p[4]/1000}</samp>点`;
 		},
 		ATK_BREAK_BY_NOW_TURN_DAMAGE: false,
 		GUARD_BREAK_BY_SELF_PARAM: false,
