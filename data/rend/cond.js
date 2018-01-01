@@ -79,7 +79,11 @@ module.exports = async() => {
 			else
 				return `${u}~${d}回合`;
 		},
-		11: false,
+		11: async(card, skill, cond) => {
+			if(cond.param3 || cond.param4 || cond.param5) L('Cond 11 New Type');
+
+			return `自身 | <samp title="从游戏开始时累计，不包括此卡">累计</samp>使用 | ${shower.skillKind2[valuer.skillKind[cond.param1]]} | ${cond.param2}张以下`;
+		},
 		12: false,
 		13: async(card, skill, cond) => {
 			let u = ~~cond.param1, d = ~~cond.param2;
@@ -109,7 +113,14 @@ module.exports = async() => {
 			else
 				return `我方 | 出牌数 | ${u}~${d}张`;
 		},
-		15: false,
+		15: async(card, skill, cond) => {//【対象/傭兵・盗賊】
+			if(cond.param3 || cond.param4 || cond.param5) L('Cond 15 New Type');
+
+			if(cond.param1 && cond.param2)
+				return `目标 | ${shower.job[valuer.job[cond.param1]]}或${shower.job[valuer.job[cond.param2]]}`;
+			else
+				return `目标 | ${shower.job[valuer.job[cond.param1]]}`;
+		},
 		16: false,
 		17: async(card, skill, cond) => {
 			return `我方 | ${cond.param1}Cost | ${cond.param2}张或以上`;
