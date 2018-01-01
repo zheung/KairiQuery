@@ -3,7 +3,7 @@
 		<div ref="pop" class="pop" :style="popa"></div>
 		<div class="title">
 			<div class="big">Kairi Query</div>
-			<div class="sub" :title="sub">乖离性百万亚瑟王“元旦必更”数据站 by DanoR {{sub}}</div>
+			<div class="sub" :title="sub">乖离性百万亚瑟王“元旦更了”数据站 by DanoR {{sub}}</div>
 		</div>
 		<TabFrame class="tabBox" :tabs="tabs" keyDefault="cardQuery" :dealer="changeTab"></TabFrame>
 		<div class="frameBox" :class="`sub${currentView.substring(0, 1).toUpperCase()}${currentView.substring(1)}`">
@@ -21,7 +21,8 @@
 			● 有需求先用着旧版吧，地址是/kq1<br>
 			● 旧版数据是同步的，但头像不更新了<br>
 			● <br>
-			● 要是元旦不更新，JOJO，我不做人了！
+			● 数据更新了
+			● 不得不承认是个半成品，得找时间修改一下设计
 		</div>
 	</div>
 </template>
@@ -37,7 +38,7 @@
 
 		data: function() {
 			return {
-				sub: '（最后更新：国服，等元旦；日服，等18年元旦；皮服，等2018年元旦）',
+				sub: '（最后更新：国服，01月01日；日服，01月01日；劈服，01月01日）',
 
 				currentView: '',
 
