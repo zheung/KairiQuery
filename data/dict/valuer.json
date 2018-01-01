@@ -494,7 +494,8 @@
 	},
 	"star": {
 		"": 1,
-		"PURPLE": 2,
-		"WHITE": 3
+		"WHITE": 2,
+		"PURPLE": 3,
+		"RED": 4
 	}
 }
