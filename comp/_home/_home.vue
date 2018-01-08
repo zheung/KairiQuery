@@ -2,7 +2,7 @@
 	<div class="homeBox">
 		<div ref="pop" class="pop" :style="popa"></div>
 		<div class="title">
-			<div class="big">Kairi Query</div>
+			<div class="big"><img src="./ush.png" title="乌莎哈和我都好可爱啊" />Kairi Query</div>
 			<div class="sub" :title="sub">乖离性百万亚瑟王“元旦更了”数据站 by DanoR {{sub}}</div>
 		</div>
 		<TabFrame class="tabBox" :tabs="tabs" keyDefault="cardQuery" :dealer="changeTab"></TabFrame>
@@ -157,16 +157,19 @@
 		color: #2da2c8;
 	}
 	.title>.big {
-		width: 140px;
+		width: 170px;
 
 		font-size: 24px;
 		font-weight: bold;
+	}
+	.title>.big>img {
+		height: 24px;
 	}
 	.title>.sub {
 		position: absolute;
 
 		top: 10px;
-		left: 140px;
+		left: 170px;
 
 		max-width: calc(100% - 140px);
 
