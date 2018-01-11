@@ -1,7 +1,7 @@
 module.exports = async(serv, data, paths) => {
 	let convert = require('./convert'), rData = {};
 
-	for(let p of paths) {
+	path:for(let p of paths) {
 		let dNodes, rNodes;
 
 		if(typeof p == 'string')
@@ -14,7 +14,10 @@ module.exports = async(serv, data, paths) => {
 		let index = 1, length = rNodes.length, dPointer = data, rPointer = rData;
 
 		for(let node of dNodes)
-			dPointer = dPointer[node];
+			if(dPointer)
+				dPointer = dPointer[node];
+			else
+				break path;
 
 		for(let node of rNodes)
 			if(index++ < length)
