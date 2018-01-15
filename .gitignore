@@ -3,3 +3,5 @@
 #NPM
 node_modules
 package-lock.json
+#Auth
+.auth.json
