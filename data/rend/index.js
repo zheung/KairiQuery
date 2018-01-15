@@ -17,7 +17,7 @@ module.exports = async(serv, data, paths) => {
 			if(dPointer)
 				dPointer = dPointer[node];
 			else
-				break path;
+				continue path;
 
 		for(let node of rNodes)
 			if(index++ < length)
