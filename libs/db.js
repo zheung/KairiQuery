@@ -1,10 +1,14 @@
-let connect;
+module.exports = async(dbinfo) => {
+	let connect;
 
-module.exports = async(dbname) => {
-	if(!connect)
-		connect = await require('mongodb').MongoClient.connect('mongodb://127.0.0.1:5211/');
+	if(!connect) {
+		connect = await require('mongodb').MongoClient.connect(`mongodb://${dbinfo.user}:${dbinfo.pswd}@${dbinfo.dest}:${dbinfo.port}/${dbinfo.name}`);
 
-	let db = connect.db(dbname);
+		delete dbinfo.user;
+		delete dbinfo.pswd;
+	}
+
+	let db = connect.db(dbinfo.name);
 
 	return {
 		coll: async(collname) => {

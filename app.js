@@ -2,7 +2,17 @@
 	try {
 		await require('./init')();
 
-		let raw = {}, serv = conf.serv, db = await mongo('kq');
+		let auth = require('./.auth.json');
+
+		let raw = {};
+		let serv = conf.serv;
+		let db = await mongo({
+			dest: auth.dest || '127.0.0.1',
+			port: auth.port || 5211,
+			name: auth.name,
+			user: auth.user,
+			pswd: auth.pswd
+		});
 
 		for(let type of conf.types) {
 			let header = require(`./data/head/${type}.json`);
