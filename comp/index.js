@@ -2,7 +2,7 @@ import 'babel-polyfill';
 
 import Vue from 'Vue';
 
-import Home from './_home/_home.vue';
+import HomeTopbar from './_homeTopbar/_homeTopbar.vue';
 
 import './index.css';
 
@@ -11,10 +11,14 @@ Vue.config.debug = true;
 let main = async function() {
 	window.Vue = Vue;
 
-	Vue.component('home', Home);
+	Vue.component('homeTopbar', HomeTopbar);
 
 	window.app = new Vue({
-		el: '#home'
+		el: '#home',
+		data: {
+			currentView: 'add',
+			cc: 'add'
+		}
 	});
 };
 

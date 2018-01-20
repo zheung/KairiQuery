@@ -1,11 +1,5 @@
 <template>
 	<div class="homeBox">
-		<div ref="pop" class="pop" :style="popa"></div>
-		<div class="title">
-			<div class="big"><img src="./ush.png" title="乌莎哈和我都好可爱啊" />Kairi Query</div>
-			<div class="sub" :title="sub">乖离性百万亚瑟王“元旦更了”数据站 by DanoR {{sub}}</div>
-		</div>
-		<TabFrame class="tabBox" :tabs="tabs" keyDefault="cardQuery" :dealer="changeTab"></TabFrame>
 		<div class="frameBox" :class="`sub${currentView.substring(0, 1).toUpperCase()}${currentView.substring(1)}`">
 			<keep-alive>
 				<component
@@ -14,15 +8,6 @@
 					:tFunc="tFunc"
 				></component>
 			</keep-alive>
-		</div>
-		<div ref="popAbout" class="popAbout">
-			● 推荐较新的浏览器，分辨率越高越爽<br>
-			● 详细技能筛选和一些小功能还没做，以后有空慢慢加<br>
-			● 有需求先用着旧版吧，地址是/kq1<br>
-			● 旧版数据是同步的，但头像不更新了<br>
-			● <br>
-			● 数据更新了<br>
-			● 不得不承认是个半成品，得找时间修改一下设计
 		</div>
 	</div>
 </template>

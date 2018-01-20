@@ -12,7 +12,16 @@
 	</head>
 	<body>
 		<div id="home">
-			<component is="home"></component>
+			<component is="homeTopbar" :currentView="currentView" />
+			<div class="frameBox" :class="'sub'+currentView.substring(0, 1).toUpperCase()+currentView.substring(1)">
+				<keep-alive>
+					<component
+						:is="currentView"
+						style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; overflow-y: auto;"
+						:tFunc="tFunc"
+					></component>
+				</keep-alive>
+			</div>
 		</div>
 	<script type="text/javascript" src="kq/main.js"></script></body>
 </html>
