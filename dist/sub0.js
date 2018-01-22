@@ -865,7 +865,7 @@ exports.default = {
 	},
 
 	props: {
-		tFunc: {}
+		tfunc: {}
 	},
 
 	created: function created() {
@@ -2328,7 +2328,7 @@ exports.default = {
 	props: {
 		cards: { default: [] },
 		serv: { default: 'cn' },
-		tFunc: {}
+		tfunc: {}
 	},
 
 	mounted: function mounted() {},
@@ -2457,8 +2457,9 @@ exports.default = {
 		TabFrame: _TabFrame2.default
 	},
 	props: {
+		cid: {},
 		skill: { default: {} },
-		tFunc: {}
+		tfunc: {}
 	},
 
 	mounted: function mounted() {},
@@ -2637,7 +2638,7 @@ var render = function() {
       "div",
       { staticClass: "skillBoxs" },
       [
-        _vm._l(_vm.skill.bless, function(s) {
+        _vm._l(_vm.skill.bless, function(s, sod) {
           return _c(
             "div",
             {
@@ -2649,7 +2650,7 @@ var render = function() {
                   expression: "skill[show][0] && skill[show][0].bless"
                 }
               ],
-              key: "skill-bless-" + s.id,
+              key: "skill-bless-" + sod,
               staticClass: "skillBox bless"
             },
             [
@@ -2665,9 +2666,9 @@ var render = function() {
                   staticClass: "item content",
                   domProps: { innerHTML: _vm._s(c) },
                   on: {
-                    mouseover: _vm.tFunc.over,
-                    mouseout: _vm.tFunc.outt,
-                    mousemove: _vm.tFunc.move
+                    mouseover: _vm.tfunc.over,
+                    mouseout: _vm.tfunc.outt,
+                    mousemove: _vm.tfunc.move
                   }
                 })
               })
@@ -2676,7 +2677,7 @@ var render = function() {
           )
         }),
         _vm._v(" "),
-        _vm._l(_vm.skill.awaken, function(s) {
+        _vm._l(_vm.skill.awaken, function(s, sod) {
           return _c(
             "div",
             {
@@ -2688,7 +2689,7 @@ var render = function() {
                   expression: "show=='awaken'"
                 }
               ],
-              key: "skill-awaken-" + s.id,
+              key: "skill-awaken-" + sod,
               staticClass: "skillBox"
             },
             [
@@ -2704,9 +2705,9 @@ var render = function() {
                   staticClass: "item content",
                   domProps: { innerHTML: _vm._s(c) },
                   on: {
-                    mouseover: _vm.tFunc.over,
-                    mouseout: _vm.tFunc.outt,
-                    mousemove: _vm.tFunc.move
+                    mouseover: _vm.tfunc.over,
+                    mouseout: _vm.tfunc.outt,
+                    mousemove: _vm.tfunc.move
                   }
                 })
               })
@@ -2715,7 +2716,7 @@ var render = function() {
           )
         }),
         _vm._v(" "),
-        _vm._l(_vm.skill.normal, function(s) {
+        _vm._l(_vm.skill.normal, function(s, sod) {
           return _c(
             "div",
             {
@@ -2727,7 +2728,7 @@ var render = function() {
                   expression: "show=='normal'"
                 }
               ],
-              key: "skill-normal-" + s.id,
+              key: "skill-normal-" + sod,
               staticClass: "skillBox"
             },
             [
@@ -2743,9 +2744,9 @@ var render = function() {
                   staticClass: "item content",
                   domProps: { innerHTML: _vm._s(c) },
                   on: {
-                    mouseover: _vm.tFunc.over,
-                    mouseout: _vm.tFunc.outt,
-                    mousemove: _vm.tFunc.move
+                    mouseover: _vm.tfunc.over,
+                    mouseout: _vm.tfunc.outt,
+                    mousemove: _vm.tfunc.move
                   }
                 })
               })
@@ -2754,7 +2755,7 @@ var render = function() {
           )
         }),
         _vm._v(" "),
-        _vm._l(_vm.skill.suport, function(s) {
+        _vm._l(_vm.skill.suport, function(s, sod) {
           return _c(
             "div",
             {
@@ -2766,7 +2767,7 @@ var render = function() {
                   expression: "show=='suport'"
                 }
               ],
-              key: "skill-suport-" + s.id,
+              key: "skill-suport-" + sod,
               staticClass: "skillBox"
             },
             [
@@ -2782,9 +2783,9 @@ var render = function() {
                   staticClass: "item content",
                   domProps: { innerHTML: _vm._s(c) },
                   on: {
-                    mouseover: _vm.tFunc.over,
-                    mouseout: _vm.tFunc.outt,
-                    mousemove: _vm.tFunc.move
+                    mouseover: _vm.tfunc.over,
+                    mouseout: _vm.tfunc.outt,
+                    mousemove: _vm.tfunc.move
                   }
                 })
               })
@@ -2899,7 +2900,7 @@ var render = function() {
           _vm._v(" "),
           _c("SkillBox", {
             staticClass: "box4",
-            attrs: { skill: card.skill, tFunc: _vm.tFunc }
+            attrs: { cid: card.id, skill: card.skill, tfunc: _vm.tfunc }
           })
         ],
         1
@@ -2939,13 +2940,13 @@ var render = function() {
           pageMax: _vm.pageMax,
           conds: _vm.conds,
           onQuery: _vm.onQuery,
-          tFunc: _vm.tFunc
+          tfunc: _vm.tfunc
         }
       }),
       _vm._v(" "),
       _c("CardBox", {
         staticClass: "cardBox",
-        attrs: { cards: this.cards, serv: this.serv, tFunc: _vm.tFunc }
+        attrs: { cards: this.cards, serv: this.serv, tfunc: _vm.tfunc }
       })
     ],
     1

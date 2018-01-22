@@ -51,3 +51,41 @@ samp {
 :-moz-placeholder { color: snow; }
 ::-moz-placeholder { color: snow; }
 :-ms-input-placeholder { color: snow; }
+
+.frameBox {
+	position: absolute;
+
+	top: 90px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+
+	background: #262629;
+	color: snow;
+}
+
+.pop {
+	display: block;
+
+	position: fixed;
+
+	width: auto;
+	height: 20px;
+
+	top: 0px;
+	left: 0px;
+
+	background-color: #148474;
+	border-radius: 5px;
+
+	font-size: 12px;
+	line-height: 20px;
+
+	padding: 5px;
+
+	z-index: 9999;
+
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}

@@ -33,7 +33,7 @@
 				<div style="padding-left: 13px;">魔攻：{{card.ap}}</div>
 				<div style="padding-left: 13px;">治疗：{{card.hq}}</div>
 			</div>
-			<SkillBox class="box4" :skill="card.skill" :tFunc="tFunc" />
+			<SkillBox class="box4" :cid="card.id" :skill="card.skill" :tfunc="tfunc" />
 		</div>
 	</FrameScroll>
 </template>
@@ -161,7 +161,7 @@
 		props: {
 			cards: { default: [] },
 			serv: { default: 'cn' },
-			tFunc: {}
+			tfunc: {}
 		},
 
 		mounted: function() {

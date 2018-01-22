@@ -5,7 +5,7 @@
 				<component
 					:is="currentView"
 					style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; overflow-y: auto;"
-					:tFunc="tFunc"
+					:tfunc="tfunc"
 				></component>
 			</keep-alive>
 		</div>
@@ -73,7 +73,7 @@
 		},
 
 		computed: {
-			tFunc: function() {
+			tfunc: function() {
 				return { over: this.tOver, outt: this.tOutt, move: this.tMove };
 			}
 		},
@@ -179,40 +179,6 @@
 		border: 2px solid #2da2c8;
 	}
 
-	.frameBox {
-		position: absolute;
-
-		top: 90px;
-		bottom: 0px;
-		left: 0px;
-		right: 0px;
-	}
-
-	.pop {
-		display: block;
-
-		position: fixed;
-
-		width: auto;
-		height: 20px;
-
-		top: 0px;
-		left: 0px;
-
-		background-color: #148474;
-		border-radius: 5px;
-
-		font-size: 12px;
-		line-height: 20px;
-
-		padding: 5px;
-
-		z-index: 9999;
-
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-	}
 
 	.popAbout {
 		width: 400px;

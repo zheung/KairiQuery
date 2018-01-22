@@ -5,32 +5,32 @@
 			<TabFrame class="tabBoxSkillType" :tabs="tabsSkillType" :keyDefault="tabsDefault" :dealer="changeSkill"></TabFrame>
 		</div>
 		<div class="skillBoxs">
-			<div class="skillBox bless" v-show="skill[show][0] && skill[show][0].bless" v-for="s of skill.bless" :key="`skill-bless-${s.id}`">
+			<div class="skillBox bless" v-show="skill[show][0] && skill[show][0].bless" v-for="(s, sod) of skill.bless" :key="`skill-bless-${sod}`">
 				<div class="item cond2" v-html="'[祝福] '+s.cond || '无'" :title="s.cond || '无'"></div>
 				<div
 					class="item content" v-for="(c, ci) of s.content" :key="`content-bless-${ci}`" v-html="c"
-					@mouseover="tFunc.over" @mouseout="tFunc.outt" @mousemove="tFunc.move">
+					@mouseover="tfunc.over" @mouseout="tfunc.outt" @mousemove="tfunc.move">
 				</div>
 			</div>
-			<div class="skillBox" v-show="show=='awaken'" v-for="s of skill.awaken" :key="`skill-awaken-${s.id}`">
+			<div class="skillBox" v-show="show=='awaken'" v-for="(s, sod) of skill.awaken" :key="`skill-awaken-${sod}`">
 				<div class="item cond" v-html="s.cond || '无'" :title="s.cond || '无'"></div>
 				<div
 					class="item content" v-for="(c, ci) of s.content" :key="`content-awaken-${ci}`" v-html="c"
-					@mouseover="tFunc.over" @mouseout="tFunc.outt" @mousemove="tFunc.move">
+					@mouseover="tfunc.over" @mouseout="tfunc.outt" @mousemove="tfunc.move">
 				</div>
 			</div>
-			<div class="skillBox" v-show="show=='normal'" v-for="s of skill.normal" :key="`skill-normal-${s.id}`">
+			<div class="skillBox" v-show="show=='normal'" v-for="(s, sod) of skill.normal" :key="`skill-normal-${sod}`">
 				<div class="item cond" v-html="s.cond || '无'" :title="s.cond || '无'"></div>
 				<div
 					class="item content" v-for="(c, ci) of s.content" :key="`content-normal-${ci}`" v-html="c"
-					@mouseover="tFunc.over" @mouseout="tFunc.outt" @mousemove="tFunc.move">
+					@mouseover="tfunc.over" @mouseout="tfunc.outt" @mousemove="tfunc.move">
 				</div>
 			</div>
-			<div class="skillBox" v-show="show=='suport'" v-for="s of skill.suport" :key="`skill-suport-${s.id}`">
+			<div class="skillBox" v-show="show=='suport'" v-for="(s, sod) of skill.suport" :key="`skill-suport-${sod}`">
 				<div class="item cond" v-html="s.cond || '无'" :title="s.cond || '无'"></div>
 				<div
 					class="item content" v-for="(c, ci) of s.content" :key="`content-suport-${ci}`" v-html="c"
-					@mouseover="tFunc.over" @mouseout="tFunc.outt" @mousemove="tFunc.move">
+					@mouseover="tfunc.over" @mouseout="tfunc.outt" @mousemove="tfunc.move">
 				</div>
 			</div>
 		</div>
@@ -101,8 +101,9 @@
 			TabFrame: TabFrame
 		},
 		props: {
+			cid: {},
 			skill: { default: {} },
-			tFunc: {}
+			tfunc: {}
 		},
 
 		mounted: function() {

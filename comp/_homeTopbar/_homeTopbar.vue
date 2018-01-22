@@ -1,11 +1,10 @@
 <template>
 	<div class="homeTopbarBox">
-		<div ref="pop" class="pop" :style="popa"></div>
 		<div class="title">
 			<div class="big"><img src="./ush.png" title="乌莎哈和我都好可爱啊" />Kairi Query</div>
 			<div class="sub" :title="sub">乖离性百万亚瑟王“元旦更了”数据站 by DanoR {{sub}}</div>
 		</div>
-		<TabFrame class="tabBox" :tabs="tabs" keyDefault="cardQuery" :dealer="changeTab"></TabFrame>
+		<TabFrame class="tabBox" :tabs="tabs" keyDefault="cardQuery" :dealer="changetab"></TabFrame>
 		<div ref="popAbout" class="popAbout">
 			● 推荐较新的浏览器，分辨率越高越爽<br>
 			● 详细技能筛选和一些小功能还没做，以后有空慢慢加<br>
@@ -19,7 +18,6 @@
 </template>
 
 <script>
-	import Loader from '../loader.js';
 	import TabFrame from '../_comp/TabFrame.vue';
 
 	export default {
@@ -27,7 +25,7 @@
 			TabFrame: TabFrame
 		},
 
-		props: ['currentView' ],
+		props: [ 'currentview', 'changetab' ],
 
 		data: function() {
 			return {
@@ -53,37 +51,9 @@
 							e.target.style.backgroundColor = '';
 						}.bind(this)
 					}
-				},
-
-				isHover: false,
-				eve: {},
-
-				popa: {
-					opacity: 0,
-					top: 0,
-					left: 0
 				}
 			};
 		},
-		watch: {
-			isHover: function(now) {
-				if(now) {
-					this.popa.opacity = 0.8;
-					this.popa.top = (this.eve.clientY+5) + 'px';
-					this.popa.left = (this.eve.clientX+5) + 'px';
-				}
-				else {
-					this.popa.opacity = 0;
-				}
-			}
-		},
-
-		computed: {
-			tFunc: function() {
-				return { over: this.tOver, outt: this.tOutt, move: this.tMove };
-			}
-		},
-
 		mounted: function() {
 			let me = this;
 			let button = document.getElementById('tabButtonabout');
@@ -95,31 +65,7 @@
 			}, 2000);
 		},
 		methods: {
-			changeTab: async function(key) {
-				await Loader(key);
 
-				this.currentView = key;
-			},
-
-			tOver: function(event) {
-				this.eve = event;
-				this.isHover = true;
-			},
-			tOutt: function() {
-				this.isHover = false;
-			},
-			tMove: function(e) {
-				if(this.isHover) {
-					this.popa.top = (e.clientY+5) + 'px';
-					this.popa.left = (e.clientX+5) + 'px';
-
-					let tar = this.eve.target;
-
-					if(tar.tagName == 'SAMP') tar = tar.parentNode;
-
-					this.$refs.pop.innerHTML = tar.innerHTML;
-				}
-			}
 		}
 	};
 </script>

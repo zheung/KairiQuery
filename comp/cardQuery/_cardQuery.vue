@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<FilterBox class="filterBox" :serv="serv" :word="word" :pageNow="pageNow" :pageMax="pageMax" :conds="conds" :onQuery="onQuery" :tFunc="tFunc" />
-		<CardBox class="cardBox" :cards="this.cards" :serv="this.serv" :tFunc="tFunc" />
+		<FilterBox class="filterBox" :serv="serv" :word="word" :pageNow="pageNow" :pageMax="pageMax" :conds="conds" :onQuery="onQuery" :tfunc="tfunc" />
+		<CardBox class="cardBox" :cards="this.cards" :serv="this.serv" :tfunc="tfunc" />
 	</div>
 </template>
 
@@ -58,7 +58,7 @@
 		},
 
 		props: {
-			tFunc: {},
+			tfunc: {},
 		},
 
 		created: function() {
