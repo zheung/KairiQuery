@@ -1,5 +1,5 @@
 <template>
-	<FrameScroll class="compCardBox">
+	<div class="compCardBox">
 		<div class="card" v-for="(card, ci) of cards" :key="ci">
 			<div class="order">{{ci+1+'/'+cards.length}}</div>
 			<div class="box1">
@@ -35,7 +35,7 @@
 			</div>
 			<SkillBox class="box4" :cid="card.id" :skill="card.skill" :tfunc="tfunc" />
 		</div>
-	</FrameScroll>
+	</div>
 </template>
 
 <style scoped>

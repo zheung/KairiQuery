@@ -1,9 +1,14 @@
 html {
 	height: 100%;
+
 	margin: 0px;
 	padding: 0px;
+
 	overflow: hidden;
 	overflow-y: auto;
+
+	background: #262629;
+	color: snow;
 }
 body, #home {
 	margin: 0px;
@@ -14,6 +19,13 @@ body, #home {
 	text-shadow: 0em 0em 0.0001em !important;
 	font-family: "Microsoft YaHei", sans-serif !important;
 
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.trans, .trans * {
 	transition-property: all;
 	transition-duration: 0.4s;
 
@@ -22,11 +34,6 @@ body, #home {
 	-ms-transform: translateZ(0);
 	-o-transform: translateZ(0);
 	transform: translateZ(0);
-
-	user-select: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
 }
 
 .nosel {
@@ -53,15 +60,11 @@ samp {
 :-ms-input-placeholder { color: snow; }
 
 .frameBox {
-	position: absolute;
+	position: relative;
 
 	top: 90px;
-	bottom: 0px;
 	left: 0px;
 	right: 0px;
-
-	background: #262629;
-	color: snow;
 }
 
 .pop {

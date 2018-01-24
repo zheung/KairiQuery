@@ -1,21 +1,15 @@
 <template>
 	<div>
-		<FilterBox class="filterBox" :serv="serv" :word="word" :pageNow="pageNow" :pageMax="pageMax" :conds="conds" :onQuery="onQuery" :tfunc="tfunc" />
-		<CardBox class="cardBox" :cards="this.cards" :serv="this.serv" :tfunc="tfunc" />
+		<FilterBox class="trans filterBox" :serv="serv" :word="word" :pageNow="pageNow" :pageMax="pageMax" :conds="conds" :onQuery="onQuery" />
+		<CardBox class="trans cardBox" :cards="this.cards" :serv="this.serv" :tfunc="tfunc" />
 	</div>
 </template>
 
 <style scoped>
-	* {
-		position: relative;
-
-		color: snow;
-	}
-
 	.filterBox {
-		position: absolute;
+		position: fixed;
 
-		top: 5px;
+		top: 90px;
 		left: 5px;
 		right: 5px;
 
@@ -27,20 +21,15 @@
 		vertical-align: top;
 
 		background-color: #2da1c9;
+
+		z-index: 2;
 	}
 
 	.cardBox {
-		position: absolute;
+		z-index: 1;
 
+		position: relative;
 		top: 45px;
-		left: 5px;
-		right: 5px;
-		bottom: 5px;
-
-		border: 2px solid snow;
-		border-radius: 5px;
-
-		z-index: -1;
 	}
 </style>
 

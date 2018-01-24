@@ -2,17 +2,16 @@
 	<div class="homeTopbarBox">
 		<div class="title">
 			<div class="big"><img src="./ush.png" title="乌莎哈和我都好可爱啊" />Kairi Query</div>
-			<div class="sub" :title="sub">乖离性百万亚瑟王“元旦更了”数据站 by DanoR {{sub}}</div>
+			<div class="sub" :title="sub">乖离性百万亚瑟王数据站 by DanoR {{sub}}</div>
 		</div>
-		<TabFrame class="tabBox" :tabs="tabs" keyDefault="cardQuery" :dealer="changetab"></TabFrame>
-		<div ref="popAbout" class="popAbout">
+		<TabFrame class="tabBox trans" :tabs="tabs" keyDefault="cardQuery" :dealer="changetab"></TabFrame>
+		<div ref="popAbout" class="popAbout trans">
 			● 推荐较新的浏览器，分辨率越高越爽<br>
 			● 详细技能筛选和一些小功能还没做，以后有空慢慢加<br>
 			● 有需求先用着旧版吧，地址是/kq1<br>
 			● 旧版数据是同步的，但头像不更新了<br>
 			● <br>
-			● 数据更新了<br>
-			● 不得不承认是个半成品，得找时间修改一下设计
+			● 开始动工<br>
 		</div>
 	</div>
 </template>
@@ -58,11 +57,11 @@
 			let me = this;
 			let button = document.getElementById('tabButtonabout');
 
-			this.tabs.about.over({target: button });
+			// this.tabs.about.over({target: button });
 
-			setTimeout(function() {
+			// setTimeout(function() {
 				me.tabs.about.outt({target: button });
-			}, 2000);
+			// }, 2000);
 		},
 		methods: {
 
@@ -82,6 +81,8 @@
 
 		background: #262629;
 		color: snow;
+
+		z-index: 2;
 	}
 	.title {
 		position: absolute;
@@ -130,32 +131,6 @@
 	}
 	.tabBox>div {
 		border: 2px solid #2da2c8;
-	}
-
-	.pop {
-		display: block;
-
-		position: fixed;
-
-		width: auto;
-		height: 20px;
-
-		top: 0px;
-		left: 0px;
-
-		background-color: #148474;
-		border-radius: 5px;
-
-		font-size: 12px;
-		line-height: 20px;
-
-		padding: 5px;
-
-		z-index: 9999;
-
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
 	}
 
 	.popAbout {
