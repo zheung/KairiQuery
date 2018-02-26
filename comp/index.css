@@ -25,7 +25,7 @@ body, #home {
 	-ms-user-select: none;
 }
 
-.trans, .trans * {
+.transSelf, .trans, .trans * {
 	transition-property: all;
 	transition-duration: 0.4s;
 
@@ -91,4 +91,8 @@ samp {
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+}
+
+.hideBarFrame {
+	top: 0px !important;
 }

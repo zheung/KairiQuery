@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<FilterBox class="trans filterBox" :serv="serv" :word="word" :pageNow="pageNow" :pageMax="pageMax" :conds="conds" :onQuery="onQuery" />
+		<FilterBox class="trans filterBox" :class="{ hideBarFrame: hidebar }" :serv="serv" :word="word" :pageNow="pageNow" :pageMax="pageMax" :conds="conds" :onQuery="onQuery" />
 		<CardBox class="trans cardBox" :cards="this.cards" :serv="this.serv" :tfunc="tfunc" />
 	</div>
 </template>
@@ -48,6 +48,7 @@
 
 		props: {
 			tfunc: {},
+			hidebar: {}
 		},
 
 		created: function() {

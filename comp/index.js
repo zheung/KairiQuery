@@ -3,6 +3,7 @@ import 'babel-polyfill';
 import Vue from 'Vue';
 
 import HomeTopbar from './_homeTopbar/_homeTopbar.vue';
+import HomeBopbar from './_homeBopbar/_homeBopbar.vue';
 
 import './index.css';
 
@@ -14,6 +15,7 @@ let main = async function() {
 	window.Vue = Vue;
 
 	Vue.component('homeTopbar', HomeTopbar);
+	Vue.component('homeBopbar', HomeBopbar);
 
 	window.app = new Vue({
 		el: '#home',
@@ -27,7 +29,10 @@ let main = async function() {
 				opacity: 0,
 				top: 0,
 				left: 0
-			}
+			},
+
+			hideBar: false,
+			hidding: false
 		},
 		watch: {
 			isHover: function(now) {
@@ -55,6 +60,16 @@ let main = async function() {
 				L(key);
 			},
 
+			hideDeal: function() {
+				let me = this;
+				this.hideBar = !this.hideBar;
+				this.hidding = true;
+
+				setTimeout(function() {
+					Vue.set(me, 'hidding', false);
+				}, 400);
+			},
+
 			tOver: function(event) {
 				this.eve = event;
 				this.isHover = true;
@@ -73,6 +88,16 @@ let main = async function() {
 
 					this.$refs.pop.innerHTML = tar.innerHTML;
 				}
+			},
+
+			frameBoxMe: function() {
+				let clazz = {};
+
+				clazz['sub'+this.currentView.substring(0, 1).toUpperCase()+this.currentView.substring(1)] = true;
+				clazz.hideBarFrame = this.hideBar;
+				clazz.transSelf = this.hidding;
+
+				return clazz;
 			}
 		}
 	});

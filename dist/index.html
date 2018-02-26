@@ -13,12 +13,13 @@
 	<body>
 		<div id="home">
 			<div ref="pop" class="pop" :style="popa"></div>
-			<div class="frameBox" :class="'sub'+currentView.substring(0, 1).toUpperCase()+currentView.substring(1)">
+			<div class="frameBox" :class="frameBoxMe()">
 				<keep-alive>
-					<component :is="currentView" :tfunc="tfunc"></component>
+					<component :is="currentView" :tfunc="tfunc" :hidebar="hideBar"></component>
 				</keep-alive>
 			</div>
-			<component is="homeTopbar" :currentview="currentView" :changetab="changeTab" />
+			<component is="homeBopbar" :hidebar="hideBar" :hidedeal="hideDeal"></component>
+			<component is="homeTopbar" :currentview="currentView" :changetab="changeTab" :hidebar="hideBar"></component>
 		</div>
 	<script type="text/javascript" src="kq/main.js"></script></body>
 </html>

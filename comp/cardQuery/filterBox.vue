@@ -1,15 +1,5 @@
 <template>
 	<div ref="filterBox" class="compfilterBox">
-		<input data-width="215" class="condWord" type="text" placeholder="搜索..." @keyup.enter="onQuery(word, 1)" v-model="word" />
-		<div data-width="160" class="turnBox">
-			<div class="turn" @click="onQuery(word, pageNow-1)">&lt;</div>
-			<div class="pageBox">
-				<input id="Page" ref="pager" class="condPage" type="text" v-model.number="pageNow" @keyup.enter="onQuery(word, pageNow)" />
-				<span>/</span>
-				<span class="pageMax">{{pageMax}}</span>
-			</div>
-			<div class="turn" @click="onQuery(word, pageNow+1)">&gt;</div>
-		</div>
 		<CondBox data-width="40" class="condItem" :text="serv.toUpperCase()">
 			<div class="condItemBox">
 				<span @click="onQuery(word, 1, 'cn')" :class="{ active: serv == 'cn' }">CN</span>
@@ -74,6 +64,16 @@
 				</span>
 			</div>
 		</CondBox>
+		<div data-width="160" class="turnBox">
+			<div class="turn" @click="onQuery(word, pageNow-1)">&lt;</div>
+			<div class="pageBox">
+				<input id="Page" ref="pager" class="condPage" type="text" v-model.number="pageNow" @keyup.enter="onQuery(word, pageNow)" />
+				<span>/</span>
+				<span class="pageMax">{{pageMax}}</span>
+			</div>
+			<div class="turn" @click="onQuery(word, pageNow+1)">&gt;</div>
+		</div>
+		<input data-width="215" class="condWord" type="text" placeholder="搜索..." @keyup.enter="onQuery(word, 1)" v-model="word" />
 	</div>
 </template>
 
