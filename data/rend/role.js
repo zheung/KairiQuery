@@ -470,6 +470,12 @@ module.exports = async(serv) => {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
 			return `${target} | 提升变身进度 | ${p[1]}%`;
-		}
+		},
+		CRITICAL_DAMAGE_BOOST: async(card, skill, role, skillFirst) => {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			return `${target} | ${p[1]}回合 | 提升暴击伤害 | ${p[2]}%`;
+		},
+
 	};
 };

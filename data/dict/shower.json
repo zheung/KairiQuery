@@ -308,7 +308,8 @@
 		"145": "ATK_OP_DRAIN_ALL",
 		"146": "GUTS",
 		"147": "ATK_BREAK_BY_TARGET_PARAM",
-		"148": "ATK_UP_TARGET_ENEMY_PARAM"
+		"148": "ATK_UP_TARGET_ENEMY_PARAM",
+		"149": "CRITICAL_DAMAGE_BOOST"
 	},
 	"roleTarget": {
 		"1": "选择",
@@ -449,6 +450,7 @@
 		"30020003": "New Game",
 		"30020004": "素晴",
 		"30020005": "点兔",
-		"90020001": "美食"
+		"90020001": "美食",
+		"20020002": "叛逆交响"
 	}
 }
