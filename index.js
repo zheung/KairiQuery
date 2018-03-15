@@ -43,9 +43,29 @@ module.exports = async($, router) => {
 			ctx.throw('query参数错误');
 		}
 
-		conds.word = conds.word? conds.word.trim() : '';
 		conds.zero = !!~~conds.zero;
 		conds.page = ~~conds.page || 1;
+
+		let every;
+		if(typeof conds.word == 'string' && conds.word) {
+			let words = [];
+
+			for(let word of conds.word.trim().split('||')) {
+				if(/^\^e/.test(word)) {
+					every = ~~word.match(/^\^e(.*)/)[1];
+				}
+				else {
+					words.push(word);
+				}
+			}
+
+			conds.word = words;
+		}
+		else {
+			conds.word = [];
+		}
+
+		conds.every = every || ~~conds.every || $.conf.pageEvery;
 
 		conds.mark = conds.mark.split('|');
 		for(let i in conds.mark)
@@ -55,7 +75,7 @@ module.exports = async($, router) => {
 			result = await queryer(
 				await paramer.main(conds),
 				conds.prio ? { 'rend.prio.pvp': 1 } : {},
-				conds.serv, conds.page, $.conf.pageEvery
+				conds.serv, conds.page, conds.every
 			);
 
 		ctx.type = 'json';

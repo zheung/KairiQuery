@@ -8,7 +8,8 @@
 			● 有需求先用着旧版吧，地址是/kq1<br>
 			● 旧版数据是同步的，但头像不更新了<br>
 			<br>
-			● 新年快乐，依旧施工中，进度意外缓慢，非常有毒<br>
+			● 支持AND查询了，分隔符是“||”<br>
+			● 怎么一上班就可以这么忙<br>
 		</div>
 	</div>
 </template>
@@ -108,7 +109,7 @@
 
 		position: absolute;
 
-		top: -195px;
+		bottom: 25px;
 		right: 66px;
 
 		background-color: #2da1c9;
