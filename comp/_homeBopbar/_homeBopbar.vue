@@ -3,13 +3,19 @@
 		<div class="item" @mouseover="noticeOver" @mouseout="noticeOutt">D的碎碎念</div>
 		<div class="item" @click="hidedeal">{{ hideBarText }}</div>
 		<div ref="popAbout" class="popAbout trans">
-			● 推荐较新的浏览器，分辨率越高越爽<br>
-			● 详细技能筛选和一些小功能还没做，以后有空慢慢加<br>
-			● 有需求先用着旧版吧，地址是/kq1<br>
-			● 旧版数据是同步的，但头像不更新了<br>
-			<br>
-			● 支持AND查询了，分隔符是“||”<br>
-			● 怎么一上班就可以这么忙<br>
+			● 又有新的想法了，这版很快要放弃了<br>
+			● PS服关服后会暂时把韩台皮的数据下架，专心做中日的<br>
+			● 韩台皮独有的卡以后会抽出来展示的
+			<hr>
+			● 随着皮服的关闭，曾经火热的乖离只剩下最后中日两服了<br>
+			● 日服现状虽不火但很稳。国服则危险多了，真的希望多多加油<br>
+			● 作为国服开服玩家，并不希望就这样关了，毕竟很多心血都在里面<br>
+			● 这可能是我最后一个认真玩和氪金的游戏，毕竟要工作和生活
+			<hr>
+			● 破站作为自己的练手网站，也是很能治愈自己强迫症的地方<br>
+			● 哪怕乖离关了，也不会关站的，感谢一直的支持（有人用？）<br>
+			● 未来有其他游戏的打算，甚至复刻乖离的战斗系统（文字上）<br>
+			● 不过那真是很遥远的未来呢，哈哈
 		</div>
 	</div>
 </template>
@@ -47,7 +53,7 @@
 
 			setTimeout(function() {
 				me.noticeOutt();
-			}, 1400);
+			}, 3400);
 		}
 	};
 </script>
@@ -105,7 +111,7 @@
 	}
 
 	.popAbout {
-		width: 400px;
+		width: 450px;
 
 		position: absolute;
 
@@ -121,6 +127,8 @@
 
 		font-size: 14px;
 		line-height: 30px;
+
+		text-align: left;
 
 		box-shadow: -2px 2px 5px 0px rgba(67, 122, 146, 0.5);
 	}
