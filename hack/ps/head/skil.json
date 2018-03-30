@@ -1,8 +1,5 @@
 [
 	"n.id",
-	"s.info.name",
-	"s.info.subname",
-	"s.show.text",
 	"i.n.show.id",
 	"i.n.show.role",
 	"d.skillType.info.type",
