@@ -20,12 +20,12 @@
 
 		data: function() {
 			return {
-				sub: '（最后更新：国服，03月27日；日服，03月30日；皮服，最后的更新完毕）',
+				sub: '（最后更新：国服，04月09日；日服，04月09日）',
 
 				tabs: {
 					cardQuery: { title: '卡牌查询' },
 					iconMaker: { title: '头像生成' },
-					test: { title: '宇宙测试' }
+					// test: { title: '宇宙测试' }
 				}
 			};
 		},

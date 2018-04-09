@@ -3,7 +3,7 @@
 		<div class="item" @mouseover="noticeOver" @mouseout="noticeOutt">D的碎碎念</div>
 		<div class="item" @click="hidedeal">{{ hideBarText }}</div>
 		<div ref="popAbout" class="popAbout trans">
-			● 又有新的想法了，这版很快要放弃了<br>
+			● 国服终于开圣剑啦<br>
 			● PS服关服后会暂时把韩台皮的数据下架，专心做中日的<br>
 			● 韩台皮独有的卡以后会抽出来展示的
 			<hr>
