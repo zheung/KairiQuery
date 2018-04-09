@@ -2,15 +2,6 @@ let hacker = {
 	'header-cn-card': () => {
 		return require('./cn/head/card.json');
 	},
-	'header-cn-supr': () => {
-		return require('./cn/head/supr.json');
-	},
-	'header-cn-sups': () => {
-		return require('./cn/head/sups.json');
-	},
-	'header-cn-skil': () => {
-		return require('./cn/head/skil.json');
-	},
 
 	'header-tw-card': () => {
 		return require('./tw/head/card.json');
