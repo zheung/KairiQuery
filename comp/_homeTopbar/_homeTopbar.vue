@@ -20,7 +20,7 @@
 
 		data: function() {
 			return {
-				sub: '（最后更新：国服，04月09日；日服，04月09日）',
+				sub: '（最后更新：国服，04月09日；日服，04月13日）',
 
 				tabs: {
 					cardQuery: { title: '卡牌查询' },
