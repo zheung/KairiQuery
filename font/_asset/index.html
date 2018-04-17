@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<title>D-Uni</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Content-Language" content="zh-CN">
+		<meta charset="utf-8">
+		<meta name="keywords" content="DanoR">
+		<meta name="description" content="DanoR">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+	</head>
+	<body>
+		<div id="home">
+			<div ref="pop" class="pop" :style="popa"></div>
+			<div :class="frameBoxClass">
+				<keep-alive>
+					<component :is="B.viewNow" :tfunc="tfunc"></component>
+				</keep-alive>
+			</div>
+			<component is="homeTop"></component>
+			<component is="homeLeft"></component>
+			<component is="homeNavi"></component>
+		</div>
+	</body>
+</html>

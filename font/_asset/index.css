@@ -7,7 +7,7 @@ html {
 	overflow: hidden;
 	overflow-y: auto;
 
-	background: #262629;
+	background: #3d464c;
 	color: snow;
 }
 body, #home {
@@ -17,15 +17,16 @@ body, #home {
 
 #home *:not(.pop) {
 	text-shadow: 0em 0em 0.0001em !important;
-	font-family: "Microsoft YaHei", sans-serif !important;
-
-	user-select: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
+	font-family: "Font Awesome 5 Free", "Microsoft YaHei", sans-serif !important;
 }
 
-.transSelf, .trans, .trans * {
+ul, li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.transAll, .transAll *, .trans {
 	transition-property: all;
 	transition-duration: 0.4s;
 
@@ -60,11 +61,18 @@ samp {
 :-ms-input-placeholder { color: snow; }
 
 .frameBox {
-	position: relative;
+	position: absolute;
 
-	top: 90px;
-	left: 0px;
-	right: 0px;
+	top: 100px;
+	left: 20px;
+	right: 20px;
+}
+.frameBox2 {
+	position: absolute;
+
+	top: 100px;
+	left: 270px;
+	right: 20px;
 }
 
 .pop {
@@ -91,8 +99,4 @@ samp {
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
-}
-
-.hideBarFrame {
-	top: 0px !important;
 }

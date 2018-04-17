@@ -159,7 +159,7 @@
 			SkillBox: SkillBox
 		},
 		props: {
-			cards: { default: [] },
+			cards: { default: function() { return []; } },
 			serv: { default: 'cn' },
 			tfunc: {}
 		},

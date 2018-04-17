@@ -1,7 +1,6 @@
 <template>
 	<div>
-		<FilterBox class="trans filterBox" :class="{ hideBarFrame: hidebar }" :serv="serv" :word="word" :pageNow="pageNow" :pageMax="pageMax" :conds="conds" :onQuery="onQuery" />
-		<CardBox class="trans cardBox" :cards="this.cards" :serv="this.serv" :tfunc="tfunc" />
+		<CardBox class="trans cardBox" :cards="CSX.comp('cardQueryDash').cards" :serv="CSX.comp('cardQueryDash').serv" :tfunc="tfunc" />
 	</div>
 </template>
 
@@ -9,7 +8,7 @@
 	.filterBox {
 		position: fixed;
 
-		top: 90px;
+		top: 5px;
 		left: 5px;
 		right: 5px;
 
@@ -29,19 +28,17 @@
 		z-index: 1;
 
 		position: relative;
-		top: 45px;
+		top: 0px;
 	}
 </style>
 
 <script>
-	import FilterBox from './filterBox';
 	import CardBox from './cardBox';
 
 	import Icon from '../_comp/Icon';
 
 	export default {
 		components: {
-			FilterBox: FilterBox,
 			CardBox: CardBox,
 			Icon: Icon
 		},
@@ -51,36 +48,8 @@
 			hidebar: {}
 		},
 
-		created: function() {
-			let me = this;
-
-			fetch('kq/conds')
-			.then(function(res) {
-				return res.json();
-			})
-			.then(function(data) {
-				me.conds = data;
-
-				me.onQuery(me.word, 1, me.serv, { cond: data.rare[0] });
-			});
-		},
-		mounted: function() {
-		},
-		activated: function() {
-		},
 		data: function() {
-			return {
-				serv: 'cn',
-
-				cards: [],
-				conds: {},
-
-				word: '',
-				mark: [],
-
-				pageNow: 0,
-				pageMax: 1
-			};
+			return window.CSX.init(this.$options.name, {}, {}, {});
 		},
 		computed: {
 			param: function() {

@@ -1,37 +1,45 @@
-module.exports = async($, router) => {
+module.exports = async function($, router) {
 	await $.rq('init');
 	await $.st(await $.pa('dist'), { defer: true });
 	await $.io(await $.rq('io'));
 
 	let queryer = await $.rq('libs/queryer'), paramer = await $.rq('libs/paramer');
 
-	router.get('/', async(ctx, next) => {
+	// router.get('/', async(ctx, next) => {
+	// 	await next();
+
+	// 	if(ctx.req.url == '/kq/') {
+	// 		ctx.status = 301;
+	// 		ctx.redirect('https://'+ctx.accept.headers.host+'/kq');
+
+	// 		return;
+	// 	}
+
+	// 	let query = {};
+
+	// 	if(ctx.originalUrl != ctx._matchedRoute)
+	// 		query = qs.parse(qs.unescape(ctx.originalUrl.replace('/kq\?', '')));
+
+	// 	if(!query.serv) query.serv = 'cn';
+
+	// 	ctx.type = 'html';
+
+	// 	ctx.body = fs.createReadStream(await $.pa('dist/index.html'));
+	// 		// .pipe(replaceStream('${serv}', query.serv))
+	// });
+
+	router.get('/api/modules', async function(ctx, next) {
 		await next();
 
-		if(ctx.req.url == '/kq/') {
-			ctx.status = 301;
-			ctx.redirect('https://'+ctx.accept.headers.host+'/kq');
+		ctx.type = 'json';
 
-			return;
-		}
-
-		let query = {};
-
-		if(ctx.originalUrl != ctx._matchedRoute)
-			query = qs.parse(qs.unescape(ctx.originalUrl.replace('/kq\?', '')));
-
-		if(!query.serv) query.serv = 'cn';
-
-		ctx.type = 'html';
-
-		ctx.body = fs.createReadStream(await $.pa('dist/index.html'));
-			// .pipe(replaceStream('${serv}', query.serv))
-			// .pipe(replaceStream('${word}', query.word || ''))
-			// .pipe(replaceStream('${page}', query.page || 1))
-			// .pipe(replaceStream('${mark}', query.mark || ''));
+		ctx.body = [
+			{ type: 'cardQuery', name: '骑士速查', only: true, dash: true },
+			{ type: 'iconMaker', name: '头像生成', only: false }
+		];
 	});
 
-	router.get('/query', async(ctx, next) => {
+	router.get('/query', async function(ctx, next) {
 		await next();
 
 		let conds = ctx.query.conds;
@@ -85,7 +93,7 @@ module.exports = async($, router) => {
 		];
 	});
 
-	router.get('/conds', async(ctx, next) => {
+	router.get('/conds', async function(ctx, next) {
 		await next();
 
 		ctx.type = 'json';

@@ -32,9 +32,12 @@
 	},
 	"globals": {
 		"Vue": true,
-		"io": true,
 
 		"L": true,
+		"A": true,
+
+		"BUS": true,
+		"CSX": true,
 
 		"app": true
 	}

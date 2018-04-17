@@ -5,10 +5,10 @@ let path = require('path');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry: path.join(D, 'comp', 'index.js'),
+	entry: path.join(D, 'font', '_asset', 'index.js'),
 	output: {
-		path: path.join(D, 'dist'),
-		publicPath: 'kq/',
+		path: path.join(D, 'back', 'dist'),
+		publicPath: 'kq3/',
 		filename: '[name].js',
 		chunkFilename: 'sub[name].js'
 	},
@@ -24,11 +24,16 @@ module.exports = {
 			loader: 'style-loader!css-loader'
 		}, {
 			test: /\.vue$/,
-			loader: 'vue-loader'
-		}, {
-			test: /\.js$/,
-			loader: 'babel-loader',
-			exclude: /node_modules/
+			loader: 'vue-loader',
+			options: {
+				loaders: {
+					// js: 'babel-loader'
+				}
+			}
+		// }, {
+		// 	test: /\.js$/,
+		// 	loader: 'babel-loader',
+		// 	exclude: /node_modules/
 		}, {
 			test: /\.(png|jpg|gif)$/,
 			loader: 'url-loader?limit=1&name=./img/[name].[ext]',
@@ -36,8 +41,8 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			filename: path.join(D, 'dist', 'index.html'),
-			template: path.join(D, 'comp', 'index.html'),
+			filename: path.join(D, 'back', 'dist', 'index.html'),
+			template: path.join(D, 'font', '_asset', 'index.html'),
 			inject: true
 		})
 	]

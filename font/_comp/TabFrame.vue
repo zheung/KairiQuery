@@ -46,7 +46,7 @@
 <style scoped>
 	.wrap {
 		border: 1px solid transparent;
-		border-bottom: 1px solid snow;
+		/* border-bottom: 1px solid snow; */
 
 		height: 30px;
 	}
