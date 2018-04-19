@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 let actions = {
-	modules: 'kq3/api/modules'
+	modules: 'kq/api/modules'
 };
 
 let prefix = '';

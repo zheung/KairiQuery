@@ -87,8 +87,8 @@
 		created: async function() {
 			let { C } = this;
 
-			A.reg('cardQueryCond', 'kq3/conds');
-			A.reg('cardQuery', 'kq3/query');
+			A.reg('cardQueryCond', 'kq/conds');
+			A.reg('cardQuery', 'kq/query');
 
 			let data = await A.conn('cardQueryCond');
 

@@ -8,7 +8,7 @@ module.exports = {
 	entry: path.join(D, 'font', '_asset', 'index.js'),
 	output: {
 		path: path.join(D, 'back', 'dist'),
-		publicPath: 'kq3/',
+		publicPath: 'kq/',
 		filename: '[name].js',
 		chunkFilename: 'sub[name].js'
 	},
