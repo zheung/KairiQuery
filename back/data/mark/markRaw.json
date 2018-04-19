@@ -74,7 +74,7 @@
 
 	[ "atos:hp", "atos:trap", "atos:cost", "atos:deal" ],
 
-	[ "crit", "stan", "nord", "asee", "dotup", "bless" ],
+	[ "crit", "stan", "nord", "asee", "dotup", "bless", "pass" ],
 
 	[ "attr:fire", "attr:ice", "attr:wind", "attr:light", "attr:dark" ]
 ]

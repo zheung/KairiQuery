@@ -30,8 +30,6 @@
 <script>
 	import moment from 'moment';
 
-	window.moment = moment;
-
 	export default {
 		data: function() {
 			return {

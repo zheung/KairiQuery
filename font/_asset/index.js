@@ -41,7 +41,6 @@ let main = async function() {
 		dashNow: '',
 
 		changeTab: undefined
-
 	};
 
 	let parseCompName = function(name) {
@@ -145,7 +144,7 @@ let main = async function() {
 		},
 		methods: {
 			changeTab: async function(madule) {
-				let { type, name, only, dash, base, time } = madule;
+				let { type, name, only = true, dash, base, time } = madule;
 
 				if(base) {
 					await this.setViewNow(base, time);

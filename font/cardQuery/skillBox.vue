@@ -5,6 +5,16 @@
 			<TabFrame class="tabBoxSkillType" :tabs="tabsSkillType" :keyDefault="tabsDefault" :dealer="changeSkill"></TabFrame>
 		</div>
 		<div class="skillBoxs">
+			<div class="skillBox bless"
+				v-show="((show=='awaken' && skill['awaken'] && skill['awaken'][0]) || show=='normal') && skill[show][0].pass"
+				v-for="(s, sod) of skill.pass" :key="`skill-bless-${sod}`"
+			>
+				<div class="item cond2" v-html="'[被动] '+s.cond || '无'" :title="s.cond || '无'"></div>
+				<div
+					class="item content" v-for="(c, ci) of s.content" :key="`content-bless-${ci}`" v-html="c"
+					@mouseover="tfunc.over" @mouseout="tfunc.outt" @mousemove="tfunc.move">
+				</div>
+			</div>
 			<div class="skillBox bless" v-show="skill[show][0] && skill[show][0].bless" v-for="(s, sod) of skill.bless" :key="`skill-bless-${sod}`">
 				<div class="item cond2" v-html="'[祝福] '+s.cond || '无'" :title="s.cond || '无'"></div>
 				<div
@@ -107,6 +117,7 @@
 		},
 
 		mounted: function() {
+			window.skill =this.skill;
 		},
 		activated: function() {
 		},

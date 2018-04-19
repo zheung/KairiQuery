@@ -94,7 +94,6 @@
 		line-height: 38px;
 	}
 
-
 	.box3 {
 		width: 130px;
 		height: 150px;
