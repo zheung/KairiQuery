@@ -1,12 +1,12 @@
 <template>
 	<div class="turnBox trans">
-		<div class="turn" @click="onQuery(undefined, value-1)">&lt;</div>
+		<div class="turn" @click="onQuery(undefined, CSX.comp('cardQueryDash').pageNow-1)">&lt;</div>
 		<div class="pageBox">
-			<input id="Page" ref="pager" class="condPage" type="text" v-model="CSX.comp('cardQueryDash').pageNow" @keyup.enter="onQuery(undefined, value)" />
+			<input id="Page" ref="pager" class="condPage" type="text" v-model="CSX.comp('cardQueryDash').pageNow" @keyup.enter="onQuery(undefined, CSX.comp('cardQueryDash').pageNow)" />
 			<span class="xiegang">/</span>
 			<span class="pageMax">{{CSX.comp('cardQueryDash').pageMax}}</span>
 		</div>
-		<div class="turn" @click="onQuery(undefined, value+1)">&gt;</div>
+		<div class="turn" @click="onQuery(undefined, CSX.comp('cardQueryDash').pageNow+1)">&gt;</div>
 	</div>
 </template>
 

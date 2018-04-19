@@ -56,7 +56,7 @@
 					attr: 4,
 					job: 1
 				},
-				url: '',
+				url: 'https://kairiquery.oss-cn-shenzhen.aliyuncs.com/reso/20/cn/10177026.png',
 				cent: 85.5
 			};
 		},

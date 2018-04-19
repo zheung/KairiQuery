@@ -25,7 +25,7 @@
 <template>
 	<div
 		class="compToggleButton button"
-		:class="{ trans: true,active: active }"
+		:class="{ trans: true, active: active }"
 		:style="{ width: width+'px' }"
 		@click="click($event)"
 	>
@@ -52,5 +52,9 @@
 		font-size: 10px;
 
 		cursor: pointer;
+	}
+	.button.active, .button:hover {
+		background: #2da2c8;
+		font-weight: bold;
 	}
 </style>
