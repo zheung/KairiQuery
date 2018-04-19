@@ -1,18 +1,23 @@
 <template>
 	<div class="homeTopBox nosel">
 		<div class="title">
-			<div class="big"><i class="pi pi-logo"></i>Duni</div>
+			<div class="big"><img src="./ush.png" title="乌莎哈和我都好可爱啊" />Kairi Query</div>
+			<div class="sub">乖离性百万亚瑟王数据站 by DanoR | 国服-{{cnut}}更新 日服-{{jput}}更新</div>
 		</div>
 	</div>
 </template>
 
 <script>
-	export default {
-		components: {
-		},
+	import moment from 'moment';
 
+	moment.locale('zh-cn');
+
+	export default {
 		data: function() {
-			return {};
+			return {
+				cnut: moment('2018-04-09 16:00:00').fromNow().replace(/ /g, ''),
+				jput: moment('2018-04-19 16:14:22').fromNow().replace(/ /g, '')
+			};
 		}
 	};
 </script>
@@ -49,8 +54,23 @@
 		color: snow;
 	}
 	.title>.big {
+		display: inline-block;
+
 		font-size: 24px;
 		font-weight: bold;
+
+		height: 40px;
+		line-height: 40px;
+
+		vertical-align: top;
+	}
+	.title>.sub {
+		display: inline-block;
+
+		font-size: 11px;
+		line-height: 48px;
+
+		vertical-align: top;
 	}
 	.title>.big>img {
 		height: 24px;

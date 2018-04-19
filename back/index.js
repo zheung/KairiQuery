@@ -5,29 +5,6 @@ module.exports = async function($, router) {
 
 	let queryer = await $.rq('libs/queryer'), paramer = await $.rq('libs/paramer');
 
-	// router.get('/', async(ctx, next) => {
-	// 	await next();
-
-	// 	if(ctx.req.url == '/kq/') {
-	// 		ctx.status = 301;
-	// 		ctx.redirect('https://'+ctx.accept.headers.host+'/kq');
-
-	// 		return;
-	// 	}
-
-	// 	let query = {};
-
-	// 	if(ctx.originalUrl != ctx._matchedRoute)
-	// 		query = qs.parse(qs.unescape(ctx.originalUrl.replace('/kq\?', '')));
-
-	// 	if(!query.serv) query.serv = 'cn';
-
-	// 	ctx.type = 'html';
-
-	// 	ctx.body = fs.createReadStream(await $.pa('dist/index.html'));
-	// 		// .pipe(replaceStream('${serv}', query.serv))
-	// });
-
 	router.get('/api/modules', async function(ctx, next) {
 		await next();
 

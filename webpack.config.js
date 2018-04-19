@@ -15,7 +15,7 @@ module.exports = {
 	resolve: {
 		extensions: ['.js', '.vue'],
 		alias: {
-			'Vue': 'vue/dist/vue.js'
+			'Vue': 'vue/dist/vue.min.js'
 		}
 	},
 	module: {
@@ -27,13 +27,13 @@ module.exports = {
 			loader: 'vue-loader',
 			options: {
 				loaders: {
-					// js: 'babel-loader'
+					js: 'babel-loader'
 				}
 			}
-		// }, {
-		// 	test: /\.js$/,
-		// 	loader: 'babel-loader',
-		// 	exclude: /node_modules/
+		}, {
+			test: /\.js$/,
+			loader: 'babel-loader',
+			exclude: /node_modules/
 		}, {
 			test: /\.(png|jpg|gif)$/,
 			loader: 'url-loader?limit=1&name=./img/[name].[ext]',

@@ -9,9 +9,10 @@ import Brands from '@fortawesome/fontawesome-free-brands';
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 
 import Empty from '../_comp/Empty';
-import HomeTop from '../_home/top/Top.vue';
-import HomeLeft from '../_home/left/Left.vue';
-import HomeNavi from '../_home/navi/Navi.vue';
+import HomeTop from '../_home/Top.vue';
+import HomeBop from '../_home/Bop.vue';
+import HomeLeft from '../_home/Left.vue';
+import HomeNavi from '../_home/Navi.vue';
 
 import Loader from './loader.js';
 import Connect from './connect';
@@ -26,6 +27,7 @@ let main = async function() {
 	window.A = Connect;
 
 	Vue.component('empty', Empty);
+	Vue.component('homeBop', HomeBop);
 	Vue.component('homeTop', HomeTop);
 	Vue.component('homeLeft', HomeLeft);
 	Vue.component('homeNavi', HomeNavi);
@@ -62,20 +64,24 @@ let main = async function() {
 		init: function(name, compObj = {}, statObj = {}, privObj = {}) {
 			let B = window.BUS;
 
-			let { comp, time } = parseCompName(name);
+			if(name) {
+				let { comp, time } = parseCompName(name);
 
-			if(!window.BUS.compData[comp]) {
-				Vue.set(B.compData, comp, compObj);
+				if(!window.BUS.compData[comp]) {
+					Vue.set(B.compData, comp, compObj);
+				}
+
+				if(!window.BUS.statData[comp]) {
+					Vue.set(B.statData, comp, {});
+				}
+				if(!window.BUS.statData[comp][time]) {
+					Vue.set(B.statData[comp], time, statObj);
+				}
+
+				return Object.assign({ B: window.BUS, C: compObj, S: statObj, CSX: this }, privObj);
 			}
 
-			if(!window.BUS.statData[comp]) {
-				Vue.set(B.statData, comp, {});
-			}
-			if(!window.BUS.statData[comp][time]) {
-				Vue.set(B.statData[comp], time, statObj);
-			}
-
-			return Object.assign({ B: window.BUS, C: compObj, S: statObj, CSX: this }, privObj);
+			return Object.assign({ B: window.BUS, CSX: this }, privObj);
 		},
 
 		comp: function(name) {
@@ -125,11 +131,9 @@ let main = async function() {
 			frameBoxClass: function() {
 				let { B } = this;
 
-				let flag = !!(CSX.comp('homeLeft') && CSX.comp('homeLeft').expand);
-
 				let result = {
-					frameBox: !flag,
-					frameBox2: flag,
+					frameBox: true,
+					mini: CSX.comp('homeLeft') && CSX.comp('homeLeft').expand,
 
 					trans: true
 				};

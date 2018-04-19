@@ -67,11 +67,11 @@ samp {
 	left: 20px;
 	right: 20px;
 }
-.frameBox2 {
+.frameBox.mini {
 	position: absolute;
 
 	top: 100px;
-	left: 270px;
+	left: 293px;
 	right: 20px;
 }
 

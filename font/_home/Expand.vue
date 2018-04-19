@@ -8,9 +8,6 @@
 	export default {
 		props: [ 'ctrlExpand', 'expand' ],
 
-		components: {
-		},
-
 		data: function() {
 			return {
 				now: '',
@@ -42,6 +39,10 @@
 		width: 10px;
 		height: 100%;
 
+		position: absolute;
+		top: 0px;
+		left: 0px;
+
 		background-color: #657179;
 
 		color: snow;
@@ -51,6 +52,8 @@
 		transition: all 0.2s;
 
 		vertical-align: top;
+
+		z-index: 1;
 	}
 	.homeLeftExpand.hide {
 		background-color: #0185e6;

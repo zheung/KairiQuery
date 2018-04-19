@@ -53,6 +53,8 @@
 		position: relative;
 
 		border: 1px dashed transparent;
+
+		font-size: 14px;
 	}
 
 	.box1 {

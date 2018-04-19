@@ -26,9 +26,7 @@
 	import Expand from './Expand.vue';
 
 	export default {
-		components: {
-			Expand
-		},
+		components: { Expand },
 
 		data: function() {
 			return window.CSX.init(this.$options.name,
@@ -107,11 +105,11 @@
 		top: 0px;
 		left: 10px;
 
-		width: 249px;
+		width: 273px;
 		height: 100%;
 
 		border-radius: 0px 2px 4px 0px;
-		box-shadow: 2px 0px 4px 0px rgb(63, 93, 117);
+		box-shadow: -1px 0px 4px 0px snow;
 
 		background: #3d464c;
 	}
@@ -133,7 +131,7 @@
 	.naviButton>.button {
 		display: inline-block;
 
-		width: 83px;
+		width: 91px;
 		height: 48px;
 		line-height: 48px;
 
@@ -148,7 +146,7 @@
 	.naviButton>.button.x2 {
 		display: inline-block;
 
-		width: 166px;
+		width: 182px;
 		height: 48px;
 		line-height: 48px;
 
@@ -203,6 +201,8 @@
 	}
 
 	.top2 {
+		display: inline-block;
+
 		padding-left: 20px;
 		padding-right: 10px;
 
@@ -214,7 +214,7 @@
 
 		overflow: hidden;
 
-		width: calc(100% - 50px);
+		width: calc(50% - 45px);
 
 		border-radius: 4px;
 		border: 1px solid transparent;
