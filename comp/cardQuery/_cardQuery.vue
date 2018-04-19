@@ -54,7 +54,7 @@
 		created: function() {
 			let me = this;
 
-			fetch('kq/conds')
+			fetch('kq2/conds')
 			.then(function(res) {
 				return res.json();
 			})
@@ -142,7 +142,7 @@
 						me.markit(cond, !cond.on);
 				}
 
-				fetch(`kq/query?conds=${this.param}`)
+				fetch(`kq2/query?conds=${this.param}`)
 				.then(function(res) {
 					return res.json();
 				})

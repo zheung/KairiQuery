@@ -24,7 +24,7 @@
 					(
 						this.url ||
 						(this.card ? `https://kairiquery.oss-cn-shenzhen.aliyuncs.com/reso/20/${this.serv}/${this.card.pict}.png` : '') ||
-						'kq2/./img/20002026.png'
+						'https://kairiquery.oss-cn-shenzhen.aliyuncs.com/reso/20/cn/10177026.png'
 					);
 			}
 		},
