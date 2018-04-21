@@ -1,15 +1,15 @@
 <template>
 	<div class="compCardBox">
-		<div class="card" v-for="(card, ci) of cards" :key="ci">
-			<div class="order">{{ci+1+'/'+cards.length}}</div>
+		<div class="card mini">
+			<!-- <div class="order">{{ci+1+'/'+cards.length}}</div> -->
 			<div class="box1">
 				<Icon class="iconBox" :card="card" size="100" :serv="serv" />
-				<div class="nameBox">
+				<!-- <div class="nameBox">
 					<div>&lt;{{card.title}}&gt;</div>
 					<div class="name sel">{{card.name}}</div>
-				</div>
+				</div> -->
 			</div>
-			<div class="box2">
+			<!-- <div class="box2">
 				<div>●&nbsp;属性 [<span class="sel">{{card.id}}</span>]</div>
 				<table border="0">
 					<tr>
@@ -33,10 +33,37 @@
 				<div style="padding-left: 13px;">魔攻：{{card.ap}}</div>
 				<div style="padding-left: 13px;">治疗：{{card.hq}}</div>
 			</div>
-			<SkillBox class="box4" :cid="card.id" :skill="card.skill" :tfunc="tfunc" />
+			<SkillBox class="box4" :cid="card.id" :skill="card.skill" /> -->
 		</div>
 	</div>
 </template>
+
+<script>
+	import FrameScroll from '../_comp/FrameScroll';
+	import Icon from '../_comp/Icon';
+	import TabFrame from '../_comp/TabFrame';
+
+	import SkillBox from './SkillBox';
+
+	export default {
+		components: {
+			FrameScroll: FrameScroll,
+			TabFrame: TabFrame,
+			Icon: Icon,
+			SkillBox: SkillBox
+		},
+		props: {
+			card: { default: function() { return {}; } },
+			serv: { default: 'cn' },
+		},
+
+		mounted: function() {
+		},
+		data: function() {
+			return {};
+		}
+	};
+</script>
 
 <style scoped>
 	.order {
@@ -47,21 +74,28 @@
 
 		font-size: 12px;
 	}
-	.card {
+
+	.compCardBox {
+		display: inline-block;
+	}
+
+	.card.mini {
 		margin: 5px;
+
+		display: inline-block;
 
 		position: relative;
 
-		border: 1px dashed transparent;
+		border: 1px dashed #2da1c9;
 
 		font-size: 14px;
 	}
 
 	.box1 {
-		width: 250px;
-		height: 150px;
+		/* width: 250px; */
+		/* height: 150px; */
 
-		margin: 5px;
+		/* margin: 5px; */
 
 		display: inline-block;
 
@@ -144,34 +178,3 @@
 		line-height: 30px;
 	}
 </style>
-
-<script>
-	import FrameScroll from '../_comp/FrameScroll';
-	import Icon from '../_comp/Icon';
-	import TabFrame from '../_comp/TabFrame';
-
-	import SkillBox from './SkillBox';
-
-	export default {
-		components: {
-			FrameScroll: FrameScroll,
-			TabFrame: TabFrame,
-			Icon: Icon,
-			SkillBox: SkillBox
-		},
-		props: {
-			cards: { default: function() { return []; } },
-			serv: { default: 'cn' },
-			tfunc: {}
-		},
-
-		mounted: function() {
-		},
-		activated: function() {
-		},
-		data: function() {
-			return {
-			};
-		}
-	};
-</script>

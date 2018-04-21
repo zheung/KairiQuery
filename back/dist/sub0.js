@@ -831,7 +831,7 @@ exports = module.exports = __webpack_require__(22)(undefined);
 
 
 // module
-exports.push([module.i, "\n.filterBox[data-v-6cff0d10] {\n\tposition: fixed;\n\n\ttop: 5px;\n\tleft: 5px;\n\tright: 5px;\n\n\theight: 30px;\n\n\tborder: 2px solid transparent;\n\tborder-radius: 5px;\n\n\tvertical-align: top;\n\n\tbackground-color: #2da1c9;\n\n\tz-index: 2;\n}\n.cardBox[data-v-6cff0d10] {\n\tz-index: 1;\n\n\tposition: relative;\n\ttop: 0px;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -852,120 +852,25 @@ var _cardBox = __webpack_require__(470);
 
 var _cardBox2 = _interopRequireDefault(_cardBox);
 
-var _Icon = __webpack_require__(415);
-
-var _Icon2 = _interopRequireDefault(_Icon);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 exports.default = {
-	components: {
-		CardBox: _cardBox2.default,
-		Icon: _Icon2.default
-	},
-
-	props: {
-		tfunc: {},
-		hidebar: {}
-	},
+	components: { CardBox: _cardBox2.default },
 
 	data: function data() {
 		return window.CSX.init(this.$options.name, {}, {}, {});
-	},
-	computed: {
-		param: function param() {
-			return JSON.stringify({
-				serv: this.serv,
-				word: this.word,
-				page: this.pageNow,
-				mark: this.mark.toString().replace(/\,/g, '|').replace(/\|+$/g, ''),
-				zero: /[1-9]/.test(this.mark.toString()) ? 0 : 1,
-
-				prio: this.prio
-			});
-		}
-	},
-	methods: {
-		markit: function markit(cond, on) {
-			this.$set(cond, 'on', on);
-
-			var result;
-
-			if (cond.on) result = this.mark[cond.x] | cond.y;else result = this.mark[cond.x] & ~cond.y;
-
-			this.$set(this.mark, cond.x, result);
-
-			if (!this.mark[cond.x]) {
-				this.$set(this.mark, cond.x, undefined);
-			}
-		},
-		onQuery: function onQuery(word, page, serv, condObj) {
-			var me = this;
-
-			if (typeof word == 'string') this.word = word;
-			if (typeof serv == 'string') this.serv = serv;
-
-			if (page != undefined && ~~page) {
-				if (~~page < 0 || ~~page > this.pageMax && this.pageMax) return;else this.pageNow = ~~page;
-			}
-
-			if (condObj && condObj.cond) {
-				var eve = condObj.eve || {};
-				var cond = condObj.cond;
-				var type = cond.type;
-
-				if (eve.ctrlKey && !eve.shiftKey) this.conds[type].map(function (c) {
-					me.markit(c, cond == c);
-				});else if (!eve.ctrlKey && eve.shiftKey) this.conds[type].map(function (c) {
-					me.markit(c, cond != c);
-				});else me.markit(cond, !cond.on);
-			}
-
-			fetch('kq/query?conds=' + this.param).then(function (res) {
-				return res.json();
-			}).then(function (data) {
-				me.$set(me, 'cards', data[0][0]);
-				me.$set(me, 'pageNow', data[0][1]);
-				me.$set(me, 'pageMax', data[0][2]);
-			});
-		}
 	}
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
@@ -1062,7 +967,7 @@ exports = module.exports = __webpack_require__(22)(undefined);
 
 
 // module
-exports.push([module.i, "\n.order[data-v-708c2534] {\n\tposition: absolute;\n\n\ttop: 0px;\n\tright: 0px;\n\n\tfont-size: 12px;\n}\n.card[data-v-708c2534] {\n\tmargin: 5px;\n\n\tposition: relative;\n\n\tborder: 1px dashed transparent;\n\n\tfont-size: 14px;\n}\n.box1[data-v-708c2534] {\n\twidth: 250px;\n\theight: 150px;\n\n\tmargin: 5px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 2px dashed transparent;\n\tborder-radius: 5px 0px 0px 0px;\n}\n.box2[data-v-708c2534] {\n\twidth: 280px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.box2>table[data-v-708c2534] {\n\twidth: calc(100% - 12px);\n\n\tmargin-left: 12px;\n\n\tline-height: 38px;\n}\n.box3[data-v-708c2534] {\n\twidth: 130px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.iconBox[data-v-708c2534] {\n\tmargin: 0 auto;\n\n\tborder: 1px solid transparent;\n}\n.nameBox[data-v-708c2534] {\n\twidth: 200px;\n\n\tmargin:0 auto;\n\n\tborder: 1px solid transparent;\n\n\ttext-align: center;\n}\n.name[data-v-708c2534] {\n\tposition: relative;\n\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n}\n.box4[data-v-708c2534] {\n\twidth: 100%;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\n\tline-height: 30px;\n}\n", ""]);
+exports.push([module.i, "\n.order[data-v-708c2534] {\n\tposition: absolute;\n\n\ttop: 0px;\n\tright: 0px;\n\n\tfont-size: 12px;\n}\n.compCardBox[data-v-708c2534] {\n\tdisplay: inline-block;\n}\n.card.mini[data-v-708c2534] {\n\tmargin: 5px;\n\n\tdisplay: inline-block;\n\n\tposition: relative;\n\n\tborder: 1px dashed #2da1c9;\n\n\tfont-size: 14px;\n}\n.box1[data-v-708c2534] {\n\t/* width: 250px; */\n\t/* height: 150px; */\n\n\t/* margin: 5px; */\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 2px dashed transparent;\n\tborder-radius: 5px 0px 0px 0px;\n}\n.box2[data-v-708c2534] {\n\twidth: 280px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.box2>table[data-v-708c2534] {\n\twidth: calc(100% - 12px);\n\n\tmargin-left: 12px;\n\n\tline-height: 38px;\n}\n.box3[data-v-708c2534] {\n\twidth: 130px;\n\theight: 150px;\n\n\tmargin: 5px;\n\tpadding-left: 20px;\n\n\tdisplay: inline-block;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\tborder-left: 1px dotted rgba(255, 255, 255, 0.5);\n\n\tline-height: 30px;\n}\n.iconBox[data-v-708c2534] {\n\tmargin: 0 auto;\n\n\tborder: 1px solid transparent;\n}\n.nameBox[data-v-708c2534] {\n\twidth: 200px;\n\n\tmargin:0 auto;\n\n\tborder: 1px solid transparent;\n\n\ttext-align: center;\n}\n.name[data-v-708c2534] {\n\tposition: relative;\n\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n}\n.box4[data-v-708c2534] {\n\twidth: 100%;\n\n\tvertical-align: top;\n\n\tborder: 1px dashed transparent;\n\n\tline-height: 30px;\n}\n", ""]);
 
 // exports
 
@@ -1137,113 +1042,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 exports.default = {
 	components: {
@@ -1253,15 +1051,13 @@ exports.default = {
 		SkillBox: _SkillBox2.default
 	},
 	props: {
-		cards: { default: function _default() {
-				return [];
+		card: { default: function _default() {
+				return {};
 			} },
-		serv: { default: 'cn' },
-		tfunc: {}
+		serv: { default: 'cn' }
 	},
 
 	mounted: function mounted() {},
-	activated: function activated() {},
 	data: function data() {
 		return {};
 	}
@@ -2261,95 +2057,21 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "compCardBox" },
-    _vm._l(_vm.cards, function(card, ci) {
-      return _c(
+  return _c("div", { staticClass: "compCardBox" }, [
+    _c("div", { staticClass: "card mini" }, [
+      _c(
         "div",
-        { key: ci, staticClass: "card" },
+        { staticClass: "box1" },
         [
-          _c("div", { staticClass: "order" }, [
-            _vm._v(_vm._s(ci + 1 + "/" + _vm.cards.length))
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "box1" },
-            [
-              _c("Icon", {
-                staticClass: "iconBox",
-                attrs: { card: card, size: "100", serv: _vm.serv }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "nameBox" }, [
-                _c("div", [_vm._v("<" + _vm._s(card.title) + ">")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "name sel" }, [
-                  _vm._v(_vm._s(card.name))
-                ])
-              ])
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "box2" }, [
-            _c("div", [
-              _vm._v("● 属性 ["),
-              _c("span", { staticClass: "sel" }, [_vm._v(_vm._s(card.id))]),
-              _vm._v("]")
-            ]),
-            _vm._v(" "),
-            _c("table", { attrs: { border: "0" } }, [
-              _c("tr", [
-                _c("td", [_vm._v("稀有：" + _vm._s(card.rare))]),
-                _vm._v(" "),
-                _c("td", [_vm._v("消耗：" + _vm._s(card.cost) + "C")])
-              ]),
-              _vm._v(" "),
-              _c("tr", [
-                _c("td", [_vm._v("职业：" + _vm._s(card.job))]),
-                _vm._v(" "),
-                _c("td", [_vm._v("属性：" + _vm._s(card.attr))])
-              ]),
-              _vm._v(" "),
-              _c("tr", [
-                _c("td", [_vm._v("技能：" + _vm._s(card.kind))]),
-                _vm._v(" "),
-                _c("td", [_vm._v("类型：" + _vm._s(card.star))])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "box3" }, [
-            _c("div", [_vm._v("● 四围")]),
-            _vm._v(" "),
-            _c("div", { staticStyle: { "padding-left": "13px" } }, [
-              _vm._v("血量：" + _vm._s(card.hp))
-            ]),
-            _vm._v(" "),
-            _c("div", { staticStyle: { "padding-left": "13px" } }, [
-              _vm._v("物攻：" + _vm._s(card.ad))
-            ]),
-            _vm._v(" "),
-            _c("div", { staticStyle: { "padding-left": "13px" } }, [
-              _vm._v("魔攻：" + _vm._s(card.ap))
-            ]),
-            _vm._v(" "),
-            _c("div", { staticStyle: { "padding-left": "13px" } }, [
-              _vm._v("治疗：" + _vm._s(card.hq))
-            ])
-          ]),
-          _vm._v(" "),
-          _c("SkillBox", {
-            staticClass: "box4",
-            attrs: { cid: card.id, skill: card.skill, tfunc: _vm.tfunc }
+          _c("Icon", {
+            staticClass: "iconBox",
+            attrs: { card: _vm.card, size: "100", serv: _vm.serv }
           })
         ],
         1
       )
-    })
-  )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -2374,17 +2096,13 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [
-      _c("CardBox", {
+    _vm._l(_vm.CSX.comp("cardQueryDash").cards, function(card, ci) {
+      return _c("CardBox", {
+        key: "cardBox" + ci,
         staticClass: "trans cardBox",
-        attrs: {
-          cards: _vm.CSX.comp("cardQueryDash").cards,
-          serv: _vm.CSX.comp("cardQueryDash").serv,
-          tfunc: _vm.tfunc
-        }
+        attrs: { card: card, serv: _vm.CSX.comp("cardQueryDash").serv }
       })
-    ],
-    1
+    })
   )
 }
 var staticRenderFns = []
