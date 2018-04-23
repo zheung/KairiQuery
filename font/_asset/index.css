@@ -51,7 +51,7 @@ ul, li {
 }
 
 samp {
-	border-bottom: 1px dashed #888888;
+	/* border-bottom: 1px dashed #888888; */
 	cursor: help;
 }
 
@@ -103,4 +103,12 @@ samp {
 
 hr {
 	border-color: #2da1c9;
+}
+.hrSnow {
+	border-color: snow;
+}
+
+.inline {
+	display: inline-block;
+	vertical-align: top;
 }

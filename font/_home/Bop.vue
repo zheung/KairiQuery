@@ -1,12 +1,13 @@
 <template>
-	<div class="homeBop trans" >
+	<div class="homeBop trans nosel" >
 		<div class="item" @mouseover="noticeOver" @mouseout="noticeOutt">D的碎碎念</div>
+		<div class="item" @click="backToTop">回到顶部</div>
 		<div ref="popAbout" class="popAbout trans">
 			● 第三版来了，很像初版，架构几乎重构<br>
 			● 如你所见好多细节没完善，有空再完善吧，太忙了<br>
 			● 恨死滚动条了，又丑又粗影响设计<br>
 
-			<hr>
+			<hr class="hrSnow">
 			● 破站作为自己的练手网站，也是很能治愈自己强迫症的地方<br>
 			● 哪怕乖离关了，也不会关站的，感谢一直的支持（有人用？<br>
 			● 未来有其他游戏的打算，甚至复刻乖离的战斗系统（文字上<br>
@@ -30,12 +31,15 @@
 			noticeOutt: function() {
 				this.$refs.popAbout.style.visibility = 'hidden';
 				this.$refs.popAbout.style.opacity = 0;
+			},
+			backToTop: function() {
+				document.documentElement.scrollTop=0
 			}
 		},
 		mounted: function() {
 			setTimeout(function() {
 				this.noticeOutt();
-			}.bind(this), 3400);
+			}.bind(this), 2400);
 		}
 	};
 </script>
@@ -98,7 +102,7 @@
 		position: absolute;
 
 		bottom: 25px;
-		right: 66px;
+		right: 0px;
 
 		background-color: #2da1c9;
 

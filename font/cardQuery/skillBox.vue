@@ -1,70 +1,95 @@
 <template>
 	<div class="compSkillBox">
-		<div v-for="(s, sod) of skill.pass" :key="`skill-bless-${sod}`" >
-			<div class="item cond2" v-html="'● 被动： '+s.cond || '无'" :title="s.cond || '无'"></div>
-			<div
-				class="item content" v-if="ci!=0" v-for="(c, ci) of s.content" :key="`content-bless-${ci}`" v-html="c"
+		<div class="inline itemsBox" v-if="(skill.awaken && skill.awaken.length)">
+			<div class="items" v-for="(s, sod) of skill.awaken" :key="`skill-awaken-${sod}`">
+				<div class="item prio" title="发动等级" :key="`skill-awaken-prio-${sod}`">{{s.prio}}</div>
+				<div
+					class="item cond"
+					:title="s.cond[1] ? s.cond[1] : ''"
 				>
+					<Fas icon="ellipsis-v" style="padding-right: 10px;"/>{{s.cond[0] || '无'}}
+				</div>
+				<div
+					class="item content"
+					v-if="(s.content && s.content.length)"
+					v-for="(c, ci) of s.content" :key="`content-awaken-${sod}-${ci}`"
+					v-html="c"
+				></div>
 			</div>
 		</div>
-		<div v-for="(s, sod) of skill.bless" :key="`skill-bless-${sod}`">
-			<div class="item cond2 bless" v-html="'● 祝福： '+(s.cond || '无')" :title="s.cond || '无'"></div>
-			<div class="item content" v-if="ci!=0" v-for="(c, ci) of s.content" :key="`content-bless-${ci}`" v-html="c"></div>
-		</div>
-		<div v-for="(s, sod) of skill.awaken" :key="`skill-awaken-${sod}`">
-			<div class="item cond" v-html="'● 觉醒： '+(s.cond || '无')" :title="s.cond || '无'"></div>
-			<div class="item content" v-if="ci!=0" v-for="(c, ci) of s.content" :key="`content-awaken-${ci}`" v-html="c"></div>
-		</div>
-		<div v-for="(s, sod) of skill.normal" :key="`skill-normal-${sod}`">
-			<div class="item cond" v-html="'● 普通： '+(s.cond || '无')" :title="s.cond || '无'"></div>
-			<div class="item content" v-if="ci!=0" v-for="(c, ci) of s.content" :key="`content-normal-${ci}`" v-html="c"></div>
-		</div>
-		<div v-for="(s, sod) of skill.suport" :key="`skill-suport-${sod}`">
-			<div class="item cond" v-html="'● 支援： '+(s.cond || '无')" :title="s.cond || '无'"></div>
-			<div class="item content" v-for="(c, ci) of s.content" :key="`content-suport-${ci}`" v-html="c"></div>
+		<div class="inline itemsBox">
+			<div class="items" v-for="(s, sod) of skill.pass" :key="`skill-pass-${sod}`">
+				<div class="item prio" title="发动等级" :key="`skill-pass-prio-${sod}`">{{s.prio}}</div>
+				<div
+					class="item cond pass"
+					:title="s.cond[1] ? s.cond[1] : ''"
+				>
+					<Fas icon="ellipsis-v" style="padding-right: 10px;"/>{{s.cond[0] || '无'}}
+				</div>
+				<div
+					class="item content"
+					v-if="(s.content && s.content.length)"
+					v-for="(c, ci) of s.content" :key="`content-pass-${ci}`"
+					v-html="c"
+				></div>
+			</div>
+			<div class="items" v-for="(s, sod) of skill.bless" :key="`skill-bless-${sod}`">
+				<div class="item prio" title="发动等级" :key="`skill-bless-prio-${sod}`">{{s.prio}}</div>
+				<div
+					class="item cond bless"
+					:title="s.cond[1] ? s.cond[1] : ''"
+				>
+					<Fas icon="ellipsis-v" style="padding-right: 10px;"/>{{s.cond[0] || '无'}}
+				</div>
+				<div
+					class="item content"
+					v-if="(s.content && s.content.length)"
+					v-for="(c, ci) of s.content" :key="`content-bless-${sod}-${ci}`"
+					v-html="c"
+				></div>
+			</div>
+					<div class="items" v-for="(s, sod) of skill.normal" :key="`skill-normal-${sod}`">
+				<div class="item prio" title="发动等级" :key="`skill-normal-prio-${sod}`">{{s.prio}}</div>
+				<div
+					class="item cond normal"
+					:title="s.cond[1] ? s.cond[1] : ''"
+				>
+					<Fas icon="ellipsis-v" style="padding-right: 10px;"/>{{s.cond[0] || '无'}}
+				</div>
+				<div
+					class="item content"
+					v-if="(s.content && s.content.length)"
+					v-for="(c, ci) of s.content" :key="`content-normal-${sod}-${ci}`"
+					v-html="c"
+				></div>
+			</div>
+			<div class="items" v-for="(s, sod) of skill.suport" v-if="sod == 0" :key="`skill-suport-${sod}`">
+				<div class="item prio" title="发动等级" :key="`skill-suport-prio-${sod}`">{{s.prio}}</div>
+				<div
+					class="item cond suport"
+					:title="s.cond[1] ? s.cond[1] : ''"
+				>
+					<Fas icon="ellipsis-v" style="padding-right: 10px;"/>{{s.cond[0] || '无'}}
+				</div>
+				<div
+					class="item content"
+					v-if="(s.content && s.content.length)"
+					v-for="(c, ci) of s.content" :key="`content-suport-${sod}-${ci}`"
+					v-html="c"
+				></div>
+			</div>
 		</div>
 	</div>
 </template>
 
 <style scoped>
 	.compSkillBox {
-		font-size: 12px;
-	}
-	.spanSkillType {
-		position: relative;
-		top: 1px;
-	}
-	.tabBoxSkillType {
-		display: inline-block;
-
-		height: 24px;
-
-		border: 1px solid transparent;
-	}
-	.skillBox {
-		display: inline-block;
-
-		max-width: 420px;
-
-		margin: 5px;
-
-		border: 2px solid #2da2c8;
-		border-radius: 5px;
-
-		vertical-align: top;
-
-		font-size: 12px;
-
-		box-shadow: 2px 2px 5px 0px rgba(67, 122, 146, 0.5);
-	}
-	.skillBox.bless {
-		border: 2px solid #148474;
-		box-shadow: 2px 2px 5px 0px rgba(20, 132, 116, 0.5);
+		font-size: 0;
 	}
 
 	.item {
-		height: 20px;
-		line-height: 20px;
+		height: 30px;
+		line-height: 30px;
 
 		padding: 0px 10px 0px 10px;
 
@@ -75,12 +100,48 @@
 		border: 1px solid transparent;
 	}
 	.cond {
+		height: 25px;
+		line-height: 25px;
+
 		background-color: #2da2c8;
 
 		border-radius: 2px;
 	}
-	.cond2 {
+	.cond.bless {
 		background-color: #148474;
+	}
+	.cond.normal {
+		background-color: #3f51b5;
+	}
+	.cond.pass {
+		background-color: #d28d00;
+	}
+	.cond.suport {
+		background-color: #8f24a1;
+	}
+
+	.prio {
+		float: right;
+
+		position: absolute;
+
+		top: 0px;
+		right: 0px;
+
+	}
+
+	.items {
+		position: relative;
+
+		font-size: 12px;
+	}
+
+	.itemsBox {
+		width: 49%;
+
+		margin-right: 4px;
+
+		position: relative;
 	}
 </style>
 

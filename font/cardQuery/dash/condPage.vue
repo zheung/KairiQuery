@@ -1,5 +1,5 @@
 <template>
-	<div class="turnBox trans">
+	<div class="turnBox">
 		<div class="turn" @click="onQuery(undefined, CSX.comp('cardQueryDash').pageNow-1)">&lt;</div>
 		<div class="pageBox">
 			<input id="Page" ref="pager" class="condPage" type="text" v-model="CSX.comp('cardQueryDash').pageNow" @keyup.enter="onQuery(undefined, CSX.comp('cardQueryDash').pageNow)" />
@@ -31,7 +31,7 @@
 		display: inline-block;
 
 		width: 100%;
-		height: 30px;
+		height: 25px;
 
 		vertical-align: top;
 
@@ -41,7 +41,7 @@
 		display: inline-block;
 
 		width: 20px;
-		height: 30px;
+		height: 25px;
 
 		border: 0px solid transparent;
 
@@ -52,7 +52,7 @@
 		vertical-align: top;
 
 		text-align: center;
-		line-height: 30px;
+		line-height: 25px;
 
 		cursor: pointer;
 	}
@@ -65,7 +65,7 @@
 		display: inline-block;
 
 		width: calc(100% - 50px);
-		height: 30px;
+		height: 25px;
 
 		border: 0px solid transparent;
 
@@ -76,11 +76,11 @@
 		border-radius: 4px;
 
 		text-align: center;
-		line-height: 30px;
+		line-height: 25px;
 	}
 	.condPage {
 		width: 80px;
-		height: 30px;
+		height: 25px;
 
 		border: 0px solid transparent;
 
@@ -90,7 +90,7 @@
 
 		background-color: transparent;
 		color: snow;
-		line-height: 30px;
+		line-height: 25px;
 
 		font-size: 16px;
 
@@ -103,7 +103,7 @@
 	}
 	.xiegang {
 		display: inline-block;
-		height: 30px;
+		height: 25px;
 
 		vertical-align: top;
 	}
@@ -111,7 +111,7 @@
 		display: inline-block;
 
 		width: 80px;
-		height: 30px;
+		height: 25px;
 
 		vertical-align: top;
 	}

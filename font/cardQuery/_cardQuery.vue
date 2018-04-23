@@ -1,30 +1,37 @@
 <template>
 	<div ref="box" class="compCardQuery">
 		<div class="listBox">
-			<CardBox @click.native="C.cardNow = card"
-				v-for="(card, ci) of CSX.comp('cardQueryDash').cards" :key="'cardBox'+ci"
+			<LogoBox @click.native="changeCard(card)"
+				v-for="(card, ci) of CSX.comp('cardQueryDash').cards" :key="`logoBox-${ci}`"
 				:card="card" :serv="CSX.comp('cardQueryDash').serv"
 			>
-			</CardBox>
+			</LogoBox>
 		</div>
-		<hr>
-		<InfoBox v-if="C.cardNow"
-			:card="C.cardNow" :serv="CSX.comp('cardQueryDash').serv"
-		>
-		</InfoBox>
+		<InfoBox v-for="(card, ci) of CSX.comp('cardQueryDash').cards" :key="`infoBox-${ci}`"
+			:card="card" :serv="CSX.comp('cardQueryDash').serv" :id="`cardInfo-${card.id}`"
+		></InfoBox>
 	</div>
 </template>
 
 <script>
-	import CardBox from './cardBox';
+	import LogoBox from './LogoBox';
 	import InfoBox from './infoBox';
 
 	export default {
-		components: { CardBox, InfoBox },
+		components: { LogoBox, InfoBox },
 
 		data: function() {
 			return window.CSX.init(this.$options.name, { cardNow: false }, {}, {});
 		},
+		methods: {
+			changeCard: function(card) {
+				this.C.cardNow = card;
+
+				Vue.nextTick(function() {
+					document.getElementById(`cardInfo-${card.id}`).scrollIntoView({block:'center'});
+				}.bind(this));
+			}
+		}
 	};
 </script>
 

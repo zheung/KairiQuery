@@ -2,7 +2,7 @@
 	<div class="homeTopBox nosel">
 		<div class="title">
 			<div class="big"><img src="./ush.png" title="乌莎哈和我都好可爱啊" />Kairi Query</div>
-			<div class="sub">乖离性百万亚瑟王数据站 by DanoR | 国服-{{cnut}}更新 日服-{{jput}}更新</div>
+			<div class="sub">乖离性百万亚瑟王数据站 by DanoR | 更新时间：网站-{{wsut}} 国服-{{cnut}} 日服-{{jput}}</div>
 		</div>
 	</div>
 </template>
@@ -16,7 +16,8 @@
 		data: function() {
 			return {
 				cnut: moment('2018-04-09 16:00:00').fromNow().replace(/ /g, ''),
-				jput: moment('2018-04-19 16:14:22').fromNow().replace(/ /g, '')
+				jput: moment('2018-04-19 16:14:22').fromNow().replace(/ /g, ''),
+				wsut: moment('2018-04-24 01:00:00').fromNow().replace(/ /g, '')
 			};
 		}
 	};

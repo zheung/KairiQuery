@@ -134,7 +134,7 @@
 					serv: C.serv,
 					word: C.word,
 					page: C.pageNow,
-					mark: C.mark.toString().replace(/\,/g, '|').replace(/\|+$/g, ''),
+					mark: C.mark.toString().replace(/,/g, '|').replace(/\|+$/g, ''),
 					zero: (/[1-9]/.test(C.mark.toString())) ? 0 : 1,
 
 					prio: C.prio

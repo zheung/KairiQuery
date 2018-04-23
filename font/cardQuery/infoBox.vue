@@ -1,7 +1,7 @@
 <template>
 	<div class="compInfoBox nosel">
 		<Icon class="inline" :card="card" size="100" :serv="serv"/>
-		<div class="inline">
+		<div class="inline" style="margin-left: 10px;">
 			<div class="line">
 				<div class="inline label">{{card.title}}</div><div class="inline content">{{card.name}}</div>
 			</div>
@@ -15,6 +15,7 @@
 				<div class="inline label">COST</div><div class="inline content">{{card.cost}}</div>
 				<div class="inline label">技能</div><div class="inline content">{{card.kind}}</div>
 				<div class="inline label">稀有</div><div class="inline content">{{card.rare}}</div>
+				<div class="inline label">类型</div><div class="inline content">{{card.starType}}</div>
 			</div>
 		</div>
 		<SkillBox class="box4" :cid="card.id" :skill="card.skill" />
@@ -46,23 +47,19 @@
 
 <style scoped>
 	.compInfoBox {
-		border: 1px dashed #2da1c9;
-		border-radius: 4px;
+		border: 1px dashed transparent;
+		border-top: 1px dashed #2da1c9;
 
-		margin-top: 4px;
-		padding-top: 4px;
-		padding-left: 4px;
-		padding-right: 4px;
+		margin: 4px;
+		padding: 10px;
+
+		font-size: 12px;
 	}
 
 	.line {
 		display: block;
 
-		margin-bottom: 8px;
-	}
-	.inline {
-		display: inline-block;
-		vertical-align: top;
+		margin-bottom: 16px;
 	}
 
 	.label {

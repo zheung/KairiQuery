@@ -224,7 +224,7 @@
 		cursor: pointer;
 	}
 	.top2:hover {
-		border: 1px solid white;
+		border: 1px solid snow;
 		background-color: #028be8;
 	}
 	.top2.hide {
