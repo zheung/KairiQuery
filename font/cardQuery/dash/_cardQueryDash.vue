@@ -207,6 +207,7 @@
 				});
 
 				Vue.set(C, 'cards', data[0][0]);
+				Vue.set(CSX.comp('cardQuery'), 'cardNow', data[0][0][0]);
 				Vue.set(C, 'pageNow', data[0][1]);
 				Vue.set(C, 'pageMax', data[0][2]);
 			}

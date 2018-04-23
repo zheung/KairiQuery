@@ -1,66 +1,37 @@
 <template>
 	<div class="compCardBox">
-		<div class="card mini">
-			<!-- <div class="order">{{ci+1+'/'+cards.length}}</div> -->
-			<div class="box1">
-				<Icon class="iconBox" :card="card" size="100" :serv="serv" />
-				<!-- <div class="nameBox">
-					<div>&lt;{{card.title}}&gt;</div>
-					<div class="name sel">{{card.name}}</div>
-				</div> -->
-			</div>
-			<!-- <div class="box2">
-				<div>●&nbsp;属性 [<span class="sel">{{card.id}}</span>]</div>
-				<table border="0">
-					<tr>
-						<td >稀有：{{card.rare}}</td>
-						<td>消耗：{{card.cost}}C</td>
-					</tr>
-					<tr>
-						<td>职业：{{card.job}}</td>
-						<td>属性：{{card.attr}}</td>
-					</tr>
-					<tr>
-						<td>技能：{{card.kind}}</td>
-						<td>类型：{{card.star}}</td>
-					</tr>
-				</table>
-			</div>
-			<div class="box3">
-				<div>●&nbsp;四围</div>
-				<div style="padding-left: 13px;">血量：{{card.hp}}</div>
-				<div style="padding-left: 13px;">物攻：{{card.ad}}</div>
-				<div style="padding-left: 13px;">魔攻：{{card.ap}}</div>
-				<div style="padding-left: 13px;">治疗：{{card.hq}}</div>
-			</div>
-			<SkillBox class="box4" :cid="card.id" :skill="card.skill" /> -->
+		<div class="card">
+			<Icon class="iconBox" :card="card" size="100" :serv="serv"/>
+		</div>
+		<div class="littleInfo left">
+			{{card.cost}}C
+		</div><div class="littleInfo ">
+			{{card.kind}}
+		</div><div class="littleInfo right star" :class="'S'+card.star">
+			&nbsp;&nbsp;{{~~(card.raw.rare/10)}}
 		</div>
 	</div>
 </template>
 
 <script>
-	import FrameScroll from '../_comp/FrameScroll';
 	import Icon from '../_comp/Icon';
-	import TabFrame from '../_comp/TabFrame';
-
-	import SkillBox from './SkillBox';
 
 	export default {
-		components: {
-			FrameScroll: FrameScroll,
-			TabFrame: TabFrame,
-			Icon: Icon,
-			SkillBox: SkillBox
-		},
+		components: { Icon },
+
 		props: {
 			card: { default: function() { return {}; } },
-			serv: { default: 'cn' },
+			serv: { default: 'cn' }
 		},
 
 		mounted: function() {
+
 		},
 		data: function() {
-			return {};
+			return {
+			};
+		},
+		computed: {
 		}
 	};
 </script>
@@ -77,19 +48,62 @@
 
 	.compCardBox {
 		display: inline-block;
+
+		text-align: center;
+
+		width: 105px;
+
+		border: 1px solid #1b6984;
+
+		border-radius: 2px;
+		margin: 4px 0px 0px 4px;
+	}
+	.compCardBox:hover, .compCardBox.hover {
+		border: 1px solid #2da1c9;
 	}
 
-	.card.mini {
-		margin: 5px;
-
-		display: inline-block;
+	.card {
+		display: block;
 
 		position: relative;
 
-		border: 1px dashed #2da1c9;
-
-		font-size: 14px;
+		cursor: pointer;
 	}
+	.littleInfo {
+		display: inline-block;
+
+		width: 32.5%;
+		height: 19px;
+
+		border-top: 1px solid #1b6984;
+
+		font-size: 12px;
+		line-height: 19px;
+
+		text-align: center;
+	}
+	.littleInfo.left {
+		border-right: 1px solid #1b6984;
+	}
+	.littleInfo.right {
+		border-left: 1px solid #1b6984;
+	}
+	.littleInfo.right>div {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.star {
+		text-align: left;
+		background-position: 11px -1px;
+		background-size: 21px 21px;
+		background-repeat: no-repeat;
+	}
+	.S0 { background-image: url('./img/S0.png'); }
+	.S1 { background-image: url('./img/S1.png'); }
+	.S2 { background-image: url('./img/S2.png'); }
+	.S3 { background-image: url('./img/S3.png'); }
+	.S4 { background-image: url('./img/S4.png'); }
 
 	.box1 {
 		/* width: 250px; */

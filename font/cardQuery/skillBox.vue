@@ -1,53 +1,35 @@
 <template>
-	<div>
-		<div style="vertical-align: top;">
-			<span class="spanSkillType">●&nbsp;技能</span>
-			<TabFrame class="tabBoxSkillType" :tabs="tabsSkillType" :keyDefault="tabsDefault" :dealer="changeSkill"></TabFrame>
+	<div class="compSkillBox">
+		<div v-for="(s, sod) of skill.pass" :key="`skill-bless-${sod}`" >
+			<div class="item cond2" v-html="'● 被动： '+s.cond || '无'" :title="s.cond || '无'"></div>
+			<div
+				class="item content" v-if="ci!=0" v-for="(c, ci) of s.content" :key="`content-bless-${ci}`" v-html="c"
+				>
+			</div>
 		</div>
-		<div class="skillBoxs">
-			<div class="skillBox bless"
-				v-show="((show=='awaken' && skill['awaken'] && skill['awaken'][0]) || show=='normal') && skill[show][0].pass"
-				v-for="(s, sod) of skill.pass" :key="`skill-bless-${sod}`"
-			>
-				<div class="item cond2" v-html="'[被动] '+s.cond || '无'" :title="s.cond || '无'"></div>
-				<div
-					class="item content" v-for="(c, ci) of s.content" :key="`content-bless-${ci}`" v-html="c"
-					@mouseover="tfunc.over" @mouseout="tfunc.outt" @mousemove="tfunc.move">
-				</div>
-			</div>
-			<div class="skillBox bless" v-show="skill[show][0] && skill[show][0].bless" v-for="(s, sod) of skill.bless" :key="`skill-bless-${sod}`">
-				<div class="item cond2" v-html="'[祝福] '+s.cond || '无'" :title="s.cond || '无'"></div>
-				<div
-					class="item content" v-for="(c, ci) of s.content" :key="`content-bless-${ci}`" v-html="c"
-					@mouseover="tfunc.over" @mouseout="tfunc.outt" @mousemove="tfunc.move">
-				</div>
-			</div>
-			<div class="skillBox" v-show="show=='awaken'" v-for="(s, sod) of skill.awaken" :key="`skill-awaken-${sod}`">
-				<div class="item cond" v-html="s.cond || '无'" :title="s.cond || '无'"></div>
-				<div
-					class="item content" v-for="(c, ci) of s.content" :key="`content-awaken-${ci}`" v-html="c"
-					@mouseover="tfunc.over" @mouseout="tfunc.outt" @mousemove="tfunc.move">
-				</div>
-			</div>
-			<div class="skillBox" v-show="show=='normal'" v-for="(s, sod) of skill.normal" :key="`skill-normal-${sod}`">
-				<div class="item cond" v-html="s.cond || '无'" :title="s.cond || '无'"></div>
-				<div
-					class="item content" v-for="(c, ci) of s.content" :key="`content-normal-${ci}`" v-html="c"
-					@mouseover="tfunc.over" @mouseout="tfunc.outt" @mousemove="tfunc.move">
-				</div>
-			</div>
-			<div class="skillBox" v-show="show=='suport'" v-for="(s, sod) of skill.suport" :key="`skill-suport-${sod}`">
-				<div class="item cond" v-html="s.cond || '无'" :title="s.cond || '无'"></div>
-				<div
-					class="item content" v-for="(c, ci) of s.content" :key="`content-suport-${ci}`" v-html="c"
-					@mouseover="tfunc.over" @mouseout="tfunc.outt" @mousemove="tfunc.move">
-				</div>
-			</div>
+		<div v-for="(s, sod) of skill.bless" :key="`skill-bless-${sod}`">
+			<div class="item cond2 bless" v-html="'● 祝福： '+(s.cond || '无')" :title="s.cond || '无'"></div>
+			<div class="item content" v-if="ci!=0" v-for="(c, ci) of s.content" :key="`content-bless-${ci}`" v-html="c"></div>
+		</div>
+		<div v-for="(s, sod) of skill.awaken" :key="`skill-awaken-${sod}`">
+			<div class="item cond" v-html="'● 觉醒： '+(s.cond || '无')" :title="s.cond || '无'"></div>
+			<div class="item content" v-if="ci!=0" v-for="(c, ci) of s.content" :key="`content-awaken-${ci}`" v-html="c"></div>
+		</div>
+		<div v-for="(s, sod) of skill.normal" :key="`skill-normal-${sod}`">
+			<div class="item cond" v-html="'● 普通： '+(s.cond || '无')" :title="s.cond || '无'"></div>
+			<div class="item content" v-if="ci!=0" v-for="(c, ci) of s.content" :key="`content-normal-${ci}`" v-html="c"></div>
+		</div>
+		<div v-for="(s, sod) of skill.suport" :key="`skill-suport-${sod}`">
+			<div class="item cond" v-html="'● 支援： '+(s.cond || '无')" :title="s.cond || '无'"></div>
+			<div class="item content" v-for="(c, ci) of s.content" :key="`content-suport-${ci}`" v-html="c"></div>
 		</div>
 	</div>
 </template>
 
 <style scoped>
+	.compSkillBox {
+		font-size: 12px;
+	}
 	.spanSkillType {
 		position: relative;
 		top: 1px;
@@ -62,8 +44,7 @@
 	.skillBox {
 		display: inline-block;
 
-		max-width: 430px;
-		width: calc(100% - 15px);
+		max-width: 420px;
 
 		margin: 5px;
 
@@ -82,8 +63,8 @@
 	}
 
 	.item {
-		height: 30px;
-		line-height: 30px;
+		height: 20px;
+		line-height: 20px;
 
 		padding: 0px 10px 0px 10px;
 
@@ -95,11 +76,11 @@
 	}
 	.cond {
 		background-color: #2da2c8;
-		font-weight: bold;
+
+		border-radius: 2px;
 	}
 	.cond2 {
 		background-color: #148474;
-		font-weight: bold;
 	}
 </style>
 
@@ -112,8 +93,7 @@
 		},
 		props: {
 			cid: {},
-			skill: { default: {} },
-			tfunc: {}
+			skill: { default: {} }
 		},
 
 		mounted: function() {

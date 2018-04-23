@@ -100,3 +100,7 @@ samp {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
+
+hr {
+	border-color: #2da1c9;
+}

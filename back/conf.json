@@ -8,7 +8,7 @@
 	"renderData": false,
 	"renderMark": false,
 
-	"pageEvery": 4,
+	"pageEvery": 8,
 
 	"servs": [
 		"cn",
