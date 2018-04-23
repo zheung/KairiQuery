@@ -37,7 +37,7 @@ let hasMMR = (cards, id, ids = []) => {
 module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs, evols) => {
 	let result = [[], {}],
 		dictSkil = {}, dictRole = {}, dictRule = {}, dictCard = {},
-		dictSups = {}, dictSupr = {}, dictEvol = {};
+		dictSupr = {}, dictEvol = {};
 
 	for(let rule of rules)
 		dictRule[rule.name] = rule;
@@ -89,7 +89,7 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 	for(let sups of supss) {
 		sups.role = dictSupr[sups.role] || [];
 
-		let dict = dictSups[sups.id] || (dictSups[sups.id] = []);
+		let dict = dictSkil[sups.id] || (dictSkil[sups.id] = []);
 
 		dict.push(sups);
 	}
@@ -110,11 +110,12 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 		card.skill.normal = dictSkil[card.skill.normal] || [];
 		card.skill.awaken = dictSkil[card.skill.awaken] || [];
 
-		card.skill.suport1 = dictSups[card.skill.suport ? card.skill.suport[1] : undefined] || [];
-		card.skill.suport2 = dictSups[card.skill.suport ? card.skill.suport[2] : undefined] || [];
-		card.skill.suport3 = dictSups[card.skill.suport ? card.skill.suport[3] : undefined] || [];
+		card.skill.suport1 = dictSkil[card.skill.suport ? card.skill.suport[1] : undefined] || [];
+		card.skill.suport2 = dictSkil[card.skill.suport ? card.skill.suport[2] : undefined] || [];
+		card.skill.suport3 = dictSkil[card.skill.suport ? card.skill.suport[3] : undefined] || [];
 
 		card.skill.bless = dictSkil[card.skill.bless] || [];
+		card.skill.pass = dictSkil[card.skill.pass] || [];
 
 		delete card.skill.suport;
 
@@ -134,7 +135,8 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 			'id',
 			['info.name', 'name'],
 			['info.title', 'title'],
-			['info.star', 'star', 'd.shower.star'],
+			['info.star', 'starType', 'd.shower.star'],
+			['info.star', 'star'],
 			['figure.hp.max', 'hp'],
 			['figure.ad.max', 'ad'],
 			['figure.ap.max', 'ap'],
@@ -158,7 +160,7 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 			['pict.normal', 'pict']
 		]);
 
-		for(let type of ['normal', 'awaken', 'suport1', 'suport2', 'suport3', 'bless'])
+		for(let type of ['normal', 'awaken', 'suport1', 'suport2', 'suport3', 'bless', 'pass'])
 			for(let skill of card.skill[type])
 				skill.show;
 	}

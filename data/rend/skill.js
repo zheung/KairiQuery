@@ -13,9 +13,9 @@ module.exports = async(serv, card) => {
 		let ss = [], skillFirst = skills[st][0];
 
 		for(let skill of skills[st]) {
-			let s = { prio: skill.cond.prio, content: [], name: skill.info.name },
-				condType = skill.cond.type, condType2 = skill.cond2 ? skill.cond2.type : undefined, delayType = skill.delay ? skill.delay.type : undefined,
-				pve = skill.prio.pve ? skill.prio.pve : skillFirst.prio.pve, pvp = skill.prio.pvp ? skill.prio.pvp : skillFirst.prio.pvp;
+			let s = { prio: skill.cond.prio, content: [], name: skill.info.name };
+			let condType = skill.cond.type, condType2 = skill.cond2 ? skill.cond2.type : undefined, delayType = skill.delay ? skill.delay.type : undefined;
+			let pve = skill.prio.pve ? skill.prio.pve : skillFirst.prio.pve, pvp = skill.prio.pvp ? skill.prio.pvp : skillFirst.prio.pvp;
 
 			if(condType) {
 				let rend = (await rdrCond(serv))[condType], rend2 = (await rdrCond(serv))[condType2];
@@ -116,6 +116,9 @@ module.exports = async(serv, card) => {
 		let skillFirst = skills[st][0];
 
 		for(let skill of skills[st]) {
+			if(skill.id==61018626) {
+				L();
+			}
 			let s = { prio: prioCount++, content: [], cond: skill.info.name };
 
 			if(skill.cond.type || (skill.cond2 && skill.cond2.type) || (skill.delay && skill.delay.type))
@@ -135,6 +138,64 @@ module.exports = async(serv, card) => {
 
 			result.suport.push(s);
 		}
+	}
+
+	result.pass = [];
+
+	let skillFirst = skills['pass'][0];
+
+	if(skills['pass'].length>1)
+		L('卧槽被动有多个技能你敢信?');
+
+	for(let skill of skills['pass']) {
+		let s = { prio: prioCount++, content: [], cond: skill.info.name };
+		let condType = skill.cond.type, condType2 = skill.cond2 ? skill.cond2.type : undefined, delayType = skill.delay ? skill.delay.type : undefined;
+
+		if(condType) {
+			let rend = (await rdrCond(serv))[condType], rend2 = (await rdrCond(serv))[condType2];
+
+			if(rend)
+				s.cond = (await rend(card, skill, skill.cond)).replace(/\t|\n/g, '');
+			else {
+				L('New Cond', condType, 'Card', card.id, 'Skill', skill.id);
+
+				s.cond = '~未渲染条件' + condType;
+			}
+
+			if(rend2)
+				s.cond += '&nbsp;且 ' + (await rend2(card, skill, skill.cond2)).replace(/\t|\n/g, '');
+			else if(condType2) {
+				L('New Cond2', condType2, 'Card', card.id, 'Skill', skill.id);
+
+				s.cond = '~未渲染条件' + condType2;
+			}
+		}
+
+		if(delayType) {
+			let rend = (await rdrCond(serv))[delayType];
+
+			if(rend)
+				s.cond = (shower.skillTiming[skill.delay.timing] || '') + (await rend(card, skill, skill.delay)).replace(/\t|\n/g, '');
+			else {
+				L('New Delay', delayType, 'Card', card.id, 'Skill', skill.id);
+
+				s.cond = '~未渲染时机' + delayType;
+			}
+		}
+
+		for(let role of skill.role) {
+			let skillType = role.type, rend = (await rdrRole(serv))[skillType];
+
+			if(rend instanceof Function)
+				s.content.push((await rend(card, skill, role, skillFirst)).replace(/\t|\n/g, ''));
+			else {
+				L('New Role', skillType, 'Card', card.id, 'Skill', skill.id);
+
+				s.content.push('~未渲染技能' + skillType);
+			}
+		}
+
+		result.pass.push(s);
 	}
 
 	return result;

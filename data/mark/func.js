@@ -250,6 +250,7 @@ module.exports = (serv) => {
 		}
 
 		if(card.skill['suport3'] && card.skill['suport3'].length) set.add('ex');
+		if(card.skill['pass'] && card.skill['pass'].length) set.add('pass');
 
 		return Array.from(set);
 	};

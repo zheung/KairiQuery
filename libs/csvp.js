@@ -58,8 +58,14 @@ module.exports = async(path, name, start, header, dicter, parser) => {
 
 						else if(option == 'p')
 							parsePath(rowObj, heads, parser[heads.shift()](cell, cells, dicter));
-						else if(option == 'd')
-							parsePath(rowObj, heads, ((dicter[heads.shift()][cell]) || 0));
+						else if(option == 'd') {
+							let head = heads.shift();
+
+							if(!dicter[head][cell] && cell) {
+								L(`New Dict[${head}]${cell}`);
+							}
+							parsePath(rowObj, heads, ((dicter[head][cell]) || 0));
+						}
 						else if(option == 'i')
 							return;
 						else if(option == 'c')

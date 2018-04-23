@@ -450,7 +450,9 @@ module.exports = function(serv) {
 		BLESS_RELEASE: false,
 		CURSE_TURN_DOWN: false,
 		BLESS_TURN_DOWN: false,
-		BEGINNING_DRAW: false,
+		BEGINNING_DRAW: function() {
+			return '起始抽牌';
+		},
 		CURSE_TURN_UP: false,
 		BLESS_TURN_UP: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);

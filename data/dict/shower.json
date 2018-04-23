@@ -158,7 +158,8 @@
 		"36": "SELF_MAIN_DECK_SKILL_KIND",
 		"37": "SELF_BUFF",
 		"38": "TARGET_BUFF",
-		"39": "SELF_ENCHANT_DAMAGE"
+		"39": "SELF_ENCHANT_DAMAGE",
+		"92": "SELF_ARTHUR_TYPE"
 	},
 	"skillRole": {
 		"1": "ATTACK_AA",

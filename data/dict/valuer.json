@@ -25,7 +25,7 @@
 		"RIGHT": 1,
 		"LEFT": 2,
 		"AMBIDEXTER": 3,
-		"UNKOWN": 4
+		"UNKNOWN": 4
 	},
 	"uses": {
 		"EXP": 1,
@@ -204,7 +204,8 @@
 		"USER_SIDE_DEBUFF_RELEASE": 88,
 		"SELF_BUFF_RELEASE": 89,
 		"TARGET_BUFF_RELEASE": 90,
-		"USER_SIDE_BUFF_RELEASE": 91
+		"USER_SIDE_BUFF_RELEASE": 91,
+		"SELF_ARTHUR_TYPE": 92
 	},
 	"skillRole": {
 		"ATTACK_AA": 1,
