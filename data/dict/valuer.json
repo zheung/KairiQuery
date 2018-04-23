@@ -92,6 +92,7 @@
 		"ALL": 3
 	},
 	"skillTarget": {
+		"0": 0,
 		"SELF": 1,
 		"USER_ONE": 2,
 		"USER_ALL": 3,
@@ -385,7 +386,8 @@
 		"SKILL_PHYSICS_TYPE": "porm",
 		"SKILL_ROLE_KIND_DEBUFF": "roleDebuff",
 		"SKILL_ROLE_KIND_BUFF": "roleBuff",
-		"DOT": "roleDot"
+		"DOT": "roleDot",
+		"TRANCE_GAUGE_STATE": 2
 	},
 	"battleParam": {
 		"HP": 1,
@@ -472,7 +474,8 @@
 		"CRITICAL_BOOST": 43,
 		"DAMAGE_CUT2": 44,
 		"DAMAGE_BOOST_ORDER_TARGET_DEBUFF": 45,
-		"DAMAGE_CUT_ORDER_TARGET_DEBUFF": 46
+		"DAMAGE_CUT_ORDER_TARGET_DEBUFF": 46,
+		"GUTS": 47
 	},
 	"roleDot": {
 		"POISON": 1,

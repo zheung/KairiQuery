@@ -14,7 +14,7 @@ module.exports = function(serv) {
 
 			let base = Math.floor(~~p[1]+~~p[2]/1000*card.info.max.level);
 
-			return `${target} | ${p[5]}段${show(p[8])}元素的${show(p[9])}攻击 |\x20
+			return `${target} | ${p[5]}段${show(p[8])}元素 | ${show(p[9])}攻击 |\x20
 				${base ? `<samp title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</samp>+` : ''}
 				${show(p[6])}的${p[3]/10}%
 				${(p[7] / (serv=='ps'?1:10) != 15 ? ` | ${~~p[7] / 10}%高暴击` : '')}`;

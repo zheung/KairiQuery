@@ -14,45 +14,76 @@ module.exports = async(serv, card) => {
 
 		for(let skill of skills[st]) {
 			let s = { prio: skill.cond.prio, content: [], name: skill.info.name };
-			let condType = skill.cond.type, condType2 = skill.cond2 ? skill.cond2.type : undefined, delayType = skill.delay ? skill.delay.type : undefined;
-			let pve = skill.prio.pve ? skill.prio.pve : skillFirst.prio.pve, pvp = skill.prio.pvp ? skill.prio.pvp : skillFirst.prio.pvp;
+
+			let condType = skill.cond.type;
+			let condType2 = skill.cond2 ? skill.cond2.type : undefined;
+			let delayType = skill.delay ? skill.delay.type : undefined;
+
+			let pve = skill.prio.pve ? skill.prio.pve : skillFirst.prio.pve;
+			let pvp = skill.prio.pvp ? skill.prio.pvp : skillFirst.prio.pvp;
+
+			if((!condType && condType2) || ((condType || condType2) && delayType))
+				L('奇怪的状态');
 
 			if(condType) {
 				let rend = (await rdrCond(serv))[condType], rend2 = (await rdrCond(serv))[condType2];
 
 				if(rend)
-					s.cond = (await rend(card, skill, skill.cond)).replace(/\t|\n/g, '');
+					s.cond = (await rend(card, skill, skill.cond));
 				else {
-					L('New Cond', condType, 'Card', card.id, 'Skill', skill.id);
+					L('新条件', condType, 'Card', card.id, 'Skill', skill.id);
 
-					s.cond = '~未渲染条件' + condType;
+					s.cond = ['~未渲染条件' + condType];
 				}
 
 				if(rend2)
-					s.cond += '&nbsp;且 ' + (await rend2(card, skill, skill.cond2)).replace(/\t|\n/g, '');
+					s.cond += '&nbsp;且 ' + (await rend2(card, skill, skill.cond2));
 				else if(condType2) {
-					L('New Cond2', condType2, 'Card', card.id, 'Skill', skill.id);
+					L('新条件2', condType2, 'Card', card.id, 'Skill', skill.id);
 
-					s.cond = '~未渲染条件' + condType2;
+					s.cond = ['~未渲染条件' + condType2];
 				}
 			}
 
 			if(delayType) {
 				let rend = (await rdrCond(serv))[delayType];
 
-				if(rend)
-					s.cond = (shower.skillTiming[skill.delay.timing] || '') + (await rend(card, skill, skill.delay)).replace(/\t|\n/g, '');
-				else {
-					L('New Delay', delayType, 'Card', card.id, 'Skill', skill.id);
+				if(rend) {
+					s.cond = await rend(card, skill, skill.delay);
 
-					s.cond = '~未渲染时机' + delayType;
+					if(s.cond[0]) {
+						s.cond[0] = (shower.skillTiming[skill.delay.timing]+' | ' || '')+s.cond[0];
+
+						if(s.cond[1]) {
+							s.cond[1] += '在敌方行动后判定条件，满足条件则发动技能\n'+s.cond[1];
+						}
+						else {
+							s.cond.push('在敌方行动后判定条件，满足条件则发动技能');
+						}
+					}
+					else {
+						s.cond.push(shower.skillTiming[skill.delay.timing]+' | ' || '');
+						s.cond.push('在敌方行动后判定条件，满足条件则发动技能');
+					}
+				}
+				else {
+					L('新延迟', delayType, 'Card', card.id, 'Skill', skill.id);
+
+					s.cond = ['~未渲染时机' + delayType];
 				}
 			}
 
+			if(s.cond && s.cond[0] && (!!(s.cond[0].indexOf('undefined')+1) || !!(s.cond[0].indexOf('null')+1) || !!(s.cond[0].indexOf('未渲染')+1))) {
+				L('bad条件');
+			}
+
+			if(!s.cond) {
+				s.cond = ['无'];
+			}
+
+			s.prio = `${pvp==pve? pve / 10: `${pve / 10}(${pvp / 10})`}`;
+
 			if(serv == 'jp' || serv == 'cn') {
-				if(st != 'suport3') {
-					s.content.push(`<samp title="发动等级越低越先发动，相同则出牌顺序发动">发动等级</samp>&nbsp;| PVE ${pve / 10} PVP ${pvp / 10}`);
-				}
 
 				let roleFirst = skill.role[0];
 
@@ -119,7 +150,7 @@ module.exports = async(serv, card) => {
 			if(skill.id==61018626) {
 				L();
 			}
-			let s = { prio: prioCount++, content: [], cond: skill.info.name };
+			let s = { prio: prioCount++, content: [], cond: [skill.info.name] };
 
 			if(skill.cond.type || (skill.cond2 && skill.cond2.type) || (skill.delay && skill.delay.type))
 				L('卧槽支援技有条件你敢信?!', card.id, card.info.name);
@@ -149,39 +180,71 @@ module.exports = async(serv, card) => {
 
 	for(let skill of skills['pass']) {
 		let s = { prio: prioCount++, content: [], cond: skill.info.name };
-		let condType = skill.cond.type, condType2 = skill.cond2 ? skill.cond2.type : undefined, delayType = skill.delay ? skill.delay.type : undefined;
+
+		let condType = skill.cond.type;
+		let condType2 = skill.cond2 ? skill.cond2.type : undefined;
+		let delayType = skill.delay ? skill.delay.type : undefined;
+
+		let pve = skill.prio.pve ? skill.prio.pve : skillFirst.prio.pve;
+		let pvp = skill.prio.pvp ? skill.prio.pvp : skillFirst.prio.pvp;
 
 		if(condType) {
 			let rend = (await rdrCond(serv))[condType], rend2 = (await rdrCond(serv))[condType2];
 
 			if(rend)
-				s.cond = (await rend(card, skill, skill.cond)).replace(/\t|\n/g, '');
+				s.cond = (await rend(card, skill, skill.cond));
 			else {
 				L('New Cond', condType, 'Card', card.id, 'Skill', skill.id);
 
-				s.cond = '~未渲染条件' + condType;
+				s.cond = ['~未渲染条件' + condType];
 			}
 
 			if(rend2)
-				s.cond += '&nbsp;且 ' + (await rend2(card, skill, skill.cond2)).replace(/\t|\n/g, '');
+				s.cond += '&nbsp;且 ' + (await rend2(card, skill, skill.cond2));
 			else if(condType2) {
 				L('New Cond2', condType2, 'Card', card.id, 'Skill', skill.id);
 
-				s.cond = '~未渲染条件' + condType2;
+				s.cond = ['~未渲染条件' + condType2];
 			}
 		}
 
 		if(delayType) {
 			let rend = (await rdrCond(serv))[delayType];
 
-			if(rend)
-				s.cond = (shower.skillTiming[skill.delay.timing] || '') + (await rend(card, skill, skill.delay)).replace(/\t|\n/g, '');
+			if(rend) {
+				s.cond = await rend(card, skill, skill.delay);
+
+				if(s.cond[0]) {
+					s.cond[0] = (shower.skillTiming[skill.delay.timing]+' | ' || '')+s.cond[0];
+
+					if(s.cond[1]) {
+						s.cond[1] += '在敌方行动后判定条件，满足条件则发动技能\n'+s.cond[1];
+					}
+					else {
+						s.cond.push('在敌方行动后判定条件，满足条件则发动技能');
+					}
+				}
+				else {
+					s.cond.push(shower.skillTiming[skill.delay.timing]+' | ' || '');
+					s.cond.push('在敌方行动后判定条件，满足条件则发动技能');
+				}
+			}
 			else {
 				L('New Delay', delayType, 'Card', card.id, 'Skill', skill.id);
 
-				s.cond = '~未渲染时机' + delayType;
+				s.cond = ['~未渲染时机' + delayType];
 			}
 		}
+
+		if(s.cond && s.cond[0] && (!!(s.cond[0].indexOf('undefined')+1) || !!(s.cond[0].indexOf('null')+1) || !!(s.cond[0].indexOf('未渲染')+1))) {
+			L('bad条件');
+		}
+
+		if(!s.cond) {
+			s.cond = ['无'];
+		}
+
+		s.prio = `${pvp==pve? pve / 10: `${pve / 10}(${pvp / 10})`}`;
 
 		for(let role of skill.role) {
 			let skillType = role.type, rend = (await rdrRole(serv))[skillType];

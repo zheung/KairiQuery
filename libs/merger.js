@@ -51,8 +51,13 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 			for(let index in rule.types) {
 				let type = rule.types[index];
 
-				if(type && type != 1)
+				if(type == 2) {
+					L('TRANCE_GAUGE_STATE!');
+				}
+
+				if(type && type != 1) {
 					role.params[index] = [type, valuer[type][role.params[index]]];
+				}
 			}
 		}
 

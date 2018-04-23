@@ -337,7 +337,8 @@
 		"porm": "SKILL_PHYSICS_TYPE",
 		"roleDebuff": "SKILL_ROLE_KIND_DEBUFF",
 		"roleBuff": "SKILL_ROLE_KIND_BUFF",
-		"roleDot": "DOT"
+		"roleDot": "DOT",
+		"2": "TRANCE_GAUGE_STATE"
 	},
 	"battleParam": {
 		"1": "当前生命",
@@ -381,50 +382,11 @@
 	"roleBuff": {
 		"1": "物理伤害上升",
 		"2": "物理伤害上升",
-		"3": "ATK_UP_BY_MND",
-		"4": "DEF_UP_BY_DEF",
-		"5": "DEF_UP_BY_MDEF",
-		"6": "DAMAGE_UP",
-		"7": "DAMAGE_CUT",
 		"8": "缓回",
-		"9": "STEAL",
-		"10": "ATTR",
-		"11": "CARD_SEAL_REGIST",
-		"12": "DEAL_BONUS",
-		"13": "ATTR_RATE_DOWN_INVALID",
-		"14": "ATTR_HIDE",
 		"15": "屏障",
-		"16": "COVERING",
-		"17": "FIELD_ATTR_UP",
-		"18": "FIELD_SKILL_UP",
-		"19": "FIELD_HEAL_UP",
-		"20": "FIELD_JAMMING_UP",
-		"21": "FIELD_SUPPORT_DEFENCE_UP",
-		"22": "PARAM_UP_BUFF_CONVERT",
-		"23": "CRITICAL_UP",
-		"24": "DARKNESS_REGIST",
-		"25": "CRITICAL_UP_BY_SUPPORT",
-		"26": "ROLE_VALUE_UP_BY_ROLE_OP",
-		"27": "DECK_COMBO_RATE_UP",
-		"28": "DEBUFF_REGIST",
-		"29": "NEED_COST_DOWN",
-		"30": "ROLE_VALUE_UP_BY_PVP_RATE",
 		"31": "追伤",
-		"32": "ATK_UP_BY_MAX_HP",
-		"33": "ATTR_DEF_UP",
-		"34": "REFLECTION",
-		"35": "DEBUFF_REGIST_LIMIT",
-		"36": "ENDURE",
-		"37": "DAMAGE_BOOST",
-		"38": "ATK_UP_BOOST",
-		"39": "DEF_UP_BOOST",
-		"40": "ATK_BREAK_BOOST",
-		"41": "GUARD_BREAK_BOOST",
-		"42": "HEAL_BOOST",
-		"43": "CRITICAL_BOOST",
-		"44": "DAMAGE_CUT2",
-		"45": "DAMAGE_BOOST_ORDER_TARGET_DEBUFF",
-		"46": "DAMAGE_CUT_ORDER_TARGET_DEBUFF"
+		"23": "暴击率提升",
+		"47": "奋起"
 	},
 	"roleDot": {
 		"1": "毒",
@@ -436,8 +398,8 @@
 	},
 	"skillTiming": {
 		"1": "NORMAL",
-		"2": "<samp title=\"在敌方行动后判定条件，满足条件则发动技能\">敌方行动后</samp>&nbsp;| ",
-		"3": "<samp title=\"在我方行动后判定条件，满足条件则发动技能\">我方行动后</samp>&nbsp;| "
+		"2": "敌方行动后",
+		"3": "我方行动后"
 	},
 	"star": {
 		"1": "活动",
