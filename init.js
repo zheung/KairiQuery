@@ -6,8 +6,8 @@ module.exports = async() => {
 	global.mongo = require('./libs/db');
 	global.csvp = require('./libs/csvp'),
 
-	global.conf = require('./config');
-	global.conf.serv = process.argv[2] || global.conf.servs || 'cn';
+	global.C = require('./config');
+	global.C.serv = [process.argv[2]] || global.conf.servs || [];
 
 	global.hacker = require('./hack'),
 
