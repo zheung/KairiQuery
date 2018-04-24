@@ -7,14 +7,14 @@
 			>
 			</LogoBox>
 		</div>
-		<InfoBox v-for="(card, ci) of CSX.comp('cardQueryDash').cards" :key="`infoBox-${ci}`"
+		<InfoBox v-for="(card, ci) of CSX.comp('cardQueryDash').cards" :key="`infoBox-${ci}`" v-if="card==C.cardNow"
 			:card="card" :serv="CSX.comp('cardQueryDash').serv" :id="`cardInfo-${card.id}`"
 		></InfoBox>
 	</div>
 </template>
 
 <script>
-	import LogoBox from './LogoBox';
+	import LogoBox from './logoBox';
 	import InfoBox from './infoBox';
 
 	export default {
