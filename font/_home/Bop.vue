@@ -3,7 +3,7 @@
 		<div class="item" @mouseover="noticeOver" @mouseout="noticeOutt">D的碎碎念</div>
 		<div class="item" @click="backToTop">回到顶部</div>
 		<div ref="popAbout" class="popAbout trans">
-			● V3.1，重做了模块，修了很多BUG。
+			● V3.1，重做了模块，修了很多BUG。<br>
 			● 不是太满意，都怪滚动条<br>
 			<hr class="hrSnow">
 			● 破站作为自己的练手网站，也是很能治愈自己强迫症的地方<br>
