@@ -61,11 +61,11 @@ let write = async function(colName, arr) {
 			let data = await merger(serv, 1, raw);
 
 			L('Card Data Merged');
-		// // 写到数据库
-		// 	await write(serv, data.arr[0]);
-		// 	await write(serv+'8', data.arr[1]);
+		// 写到数据库
+			await write(serv, data.arr[0]);
+			await write(serv+'8', data.arr[1]);
 
-		// 	L('Card Data Uploaded');
+			L('Card Data Uploaded');
 		}
 
 		process.exit();

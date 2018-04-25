@@ -8,6 +8,36 @@ module.exports = function(serv) {
 			return shower.roleTarget[role.target];
 	};
 
+	let showHand = function(hand) {
+		let attrShow = show([ 'attr', hand.attr ]);
+		let kindShow = show([ 'skillKind2', hand.kind ]);
+
+		attrShow = attrShow != '全部' ? ` | ${attrShow}元素` : '';
+		kindShow = kindShow != '全部' ? ` | ${kindShow}类型` : '';
+
+		let costShow = '';
+
+		let min = ~~hand.cost.min, max = ~~hand.cost.max;
+
+		if(min <= 1) {
+			min = 0;
+		}
+		if(max >= 9) {
+			max = 0;
+		}
+
+		if(min == max && min !=0)
+		costShow = ` | COST等于${min}`;
+		else if(min && !max)
+		costShow = ` | COST等于${min}或以上`;
+		else if(!min && max)
+			costShow = ` | COST等于${max}或以下`;
+		else
+			costShow = ` | COST等于${min}~${max}`;
+
+		return `${hand.num}张${attrShow}${kindShow}${costShow}`;
+	};
+
 	return {
 		ATTACK_AA: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
@@ -487,20 +517,52 @@ module.exports = function(serv) {
 		NEED_COST_DOWN_BURST : function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let hand = skill.hand;
+			if(p[1] > 1)
+				L(`card ${card.id} NEED_COST_DOWN_BURST?`);
 
-			let attrShow = show([ 'attr', hand.attr ]);
-			let kindShow = show([ 'skillKind2', hand.kind ]);
-
-			if(attrShow=='全部') attrShow = '任意';
-			if(kindShow=='全部') kindShow = '任意';
+			return `${target} | ${showHand(skill.hand)} | 减少COST | ${p[2]}`;
+		},
+		ADD_ATK_OP_PIERCING: function(card, skill, role, skillFirst) {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
 
 			if(p[1] > 1)
-				L('NEED_COST_DOWN_BURST回合大于1?!');
-			else if(p[2] > 1)
-				L('NEED_COST_DOWN_BURST回合大于11?!');
+				L('ADD_ATK_OP_PIERCING?');
 
-			return `${target} | ${hand.num}张 | ${attrShow?attrShow:''}元素 | ${kindShow?kindShow:''} | 减少COST | ${p[2]}`;
+			return `${target} | ${showHand(skill.hand)} | 无视对应防御 | ${p[2]}%`;
+		},
+		DISCARD_DRAW : function(card, skill, role, skillFirst) {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			return `${target} | 保留最多${showHand(skill.hand)} | 最多抽取${p[1]}张`;
+		},
+		ATTACK_MULTISTAGE : function(card, skill, role, skillFirst) {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			return `${target} | ${showHand(skill.hand)} | 追加${show(p[2])}攻击 | ${p[3]}次`;
+		},
+		DEF_UP_BOOST_ORDER_TRIBAL : function(card, skill, role, skillFirst) {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			if(p[1] > 1)
+				L('DEF_UP_BOOST_ORDER_TRIBAL?');
+
+			return `${target} | ${showHand(skill.hand)} | 当目标心像为[${show(['tribal', p[10]])}] | ${show(p[7])} | 提升${p[4]/10}%`;
+		},
+		ATK_UP_BOOST_ORDER_TRIBAL: function(card, skill, role, skillFirst) {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			if(p[1] > 1)
+				L('ATK_UP_BOOST_ORDER_TRIBAL?');
+
+			return `${target} | ${showHand(skill.hand)} | 当目标心像为[${show(['tribal', p[10]])}] | ${show(p[7])} | 提升${p[4]/10}%`;
+		},
+		DAMAGE_BOOST_ORDER_TRIBAL: function(card, skill, role, skillFirst) {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			if(p[1] > 1)
+				L('DAMAGE_BOOST_ORDER_TRIBAL?');
+
+			return `${target} | ${showHand(skill.hand)} | 当目标心像为[${show(['tribal', p[10]])}] | ${show(p[7])} | 提升${p[4]/10}%`;
 		},
 
 	};
