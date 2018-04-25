@@ -10,7 +10,10 @@ module.exports = {
 		'rule',
 		'skil',
 		'sups',
-		'supr'
+		'supr',
+		'budy',
+		'burs',
+		'burr',
 	],
 
 	exclude: [

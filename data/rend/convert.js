@@ -1,6 +1,7 @@
 module.exports = async(serv, type, value) => {
 	let func = {
 		skill: require('./skill'),
+		skillBudy: require('./skillBudy'),
 		skillKind: require('./skillKind'),
 		prio: require('./prio')
 	};

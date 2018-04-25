@@ -26,20 +26,22 @@ module.exports = (serv) => {
 	return (card) => {
 		let set = new Set();
 
-		let rare = card.info.rare;
-		if(rare == 10) set.add('n');
-		if(rare == 20) set.add('hn');
-		if(rare == 30) set.add('r');
-		if(rare == 40) set.add('sr');
-		if(rare == 50) set.add('ur');
-		if(rare == 51) set.add('ur');
-		if(rare == 60) set.add('mr');
-		if(rare == 61) set.add('mr');
-		if(rare == 62) set.add('mr+');
-		if(rare == 63) set.add('mr++');
-		if(rare == 71) set.add('mmr');
+		if(card.info) {
+			let rare = card.info.rare;
+			if(rare == 10) set.add('n');
+			if(rare == 20) set.add('hn');
+			if(rare == 30) set.add('r');
+			if(rare == 40) set.add('sr');
+			if(rare == 50) set.add('ur');
+			if(rare == 51) set.add('ur');
+			if(rare == 60) set.add('mr');
+			if(rare == 61) set.add('mr');
+			if(rare == 62) set.add('mr+');
+			if(rare == 63) set.add('mr++');
+			if(rare == 71) set.add('mmr');
 
-		set.add(`star:${card.info.star}`);
+			set.add(`star:${card.info.star}`);
+		}
 
 		let sm = card.skill.awaken.concat().sort(prioSorter).concat(card.skill.normal.concat().sort(prioSorter))[0];
 

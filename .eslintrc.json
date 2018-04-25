@@ -30,8 +30,6 @@
 		"shower": true,
 		"dicter": true,
 
-		"merger": true,
-		"marker": true,
 		"funcer": true,
 		"render": true
 	}

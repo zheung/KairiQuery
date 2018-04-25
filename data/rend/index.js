@@ -4,28 +4,46 @@ module.exports = async(serv, data, paths) => {
 	path:for(let p of paths) {
 		let dNodes, rNodes;
 
-		if(typeof p == 'string')
+		if(typeof p == 'string') {
 			dNodes = rNodes = p.split('.');
-		else if(p instanceof Array)
+		}
+		else if(p instanceof Array) {
 			[dNodes, rNodes] = [p[0].split('.'), (p[1] || '').split('.')];
-		else
+		}
+		else {
 			continue;
+		}
 
-		let index = 1, length = rNodes.length, dPointer = data, rPointer = rData;
+		let index = 1;
+		let length = rNodes.length;
+		let dPointer = data;
+		let rPointer = rData;
 
-		for(let node of dNodes)
-			if(dPointer)
+		for(let node of dNodes) {
+			if(dPointer) {
 				dPointer = dPointer[node];
-			else
+			}
+			else {
 				continue path;
+			}
+		}
 
-		for(let node of rNodes)
-			if(index++ < length)
+		for(let node of rNodes) {
+			if(index++ < length) {
 				rPointer = rPointer[node] || (rPointer[node] = {});
-			else if(p[0] == 'this')
-				rPointer[node] = p[2] ? await convert(serv, p[2], data) : dPointer;
-			else
-				rPointer[node] = p[2] ? await convert(serv, p[2], dPointer || 0) : dPointer;
+			}
+			else if(p instanceof Array && p[2]) {
+				if(p[0] == 'this') {
+					rPointer[node] = await convert(serv, p[2], data);
+				}
+				else {
+					rPointer[node] = await convert(serv, p[2], dPointer || 0);
+				}
+			}
+			else {
+				rPointer[node] = dPointer;
+			}
+		}
 	}
 
 	return rData;

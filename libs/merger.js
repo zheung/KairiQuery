@@ -34,10 +34,19 @@ let hasMMR = (cards, id, ids = []) => {
 	}
 };
 
-module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs, evols) => {
-	let result = [[], {}],
-		dictSkil = {}, dictRole = {}, dictRule = {}, dictCard = {},
-		dictSupr = {}, dictEvol = {};
+module.exports = async(serv, resultType = 1, valuer, marker, cards, skils, roles, rules, supss, suprs, evols, budys, burss, burrs) => {
+	let result = {
+		arr: [[], []],
+		obj: [{}, {}]
+	};
+
+	let dictCard = {};
+	let dictRule = {};
+	let dictEvol = {};
+	let dictSkil = {};
+	let dictRole = {};
+	let dictSupr = {};
+	let dictBurr = {};
 
 	for(let rule of rules)
 		dictRule[rule.name] = rule;
@@ -73,6 +82,10 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 			for(let index in rule.types) {
 				let type = rule.types[index];
 
+				if(type == 2) {
+					L('TRANCE_GAUGE_STATE!');
+				}
+
 				if(type && type != 1)
 					supr.params[index] = [type, valuer[type][supr.params[index]]];
 			}
@@ -81,6 +94,27 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 		let dict = dictSupr[supr.id] || (dictSupr[supr.id] = []);
 
 		dict.push(supr);
+	}
+
+	for(let burr of burrs) {
+		if(burr.type) {
+			let rule = dictRule[burr.type];
+
+			for(let index in rule.types) {
+				let type = rule.types[index];
+
+				if(type == 2) {
+					L('TRANCE_GAUGE_STATE!');
+				}
+
+				if(type && type != 1)
+					burr.params[index] = [type, valuer[type][burr.params[index]]];
+			}
+		}
+
+		let dict = dictBurr[burr.id] || (dictBurr[burr.id] = []);
+
+		dict.push(burr);
 	}
 
 	for(let skil of skils) {
@@ -97,6 +131,14 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 		let dict = dictSkil[sups.id] || (dictSkil[sups.id] = []);
 
 		dict.push(sups);
+	}
+
+	for(let burs of burss) {
+		burs.role = dictBurr[burs.role] || [];
+
+		let dict = dictSkil[burs.id] || (dictSkil[burs.id] = []);
+
+		dict.push(burs);
 	}
 
 	for(let evol of evols) {
@@ -126,8 +168,33 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 
 		card.evol = dictEvol[card.id] || [];
 
-		result[0].push(card);
-		result[1][card.id] = card;
+		if(resultType & 1) {
+			result.arr[0].push(card);
+		}
+		if(resultType & 2) {
+			result.obj[0][card.id] = card;
+		}
+	}
+
+	for(let budy of budys) {
+		budy.skill.pass = dictSkil[budy.skill.pass] || [];
+
+		if(budy.skill.active1) {
+			budy.skill.active1.role = dictSkil[budy.skill.active1.id] || [];
+		}
+		if(budy.skill.active2) {
+			budy.skill.active2.role = dictSkil[budy.skill.active2.id] || [];
+		}
+		if(budy.skill.active3) {
+			budy.skill.active3.role = dictSkil[budy.skill.active3.id] || [];
+		}
+
+		if(resultType & 1) {
+			result.arr[1].push(budy);
+		}
+		if(resultType & 2) {
+			result.obj[1][budy.id] = budy;
+		}
 	}
 
 	for(let card of cards) {
@@ -136,7 +203,7 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 
 		card.mark = marker(card);
 
-		card.rend = await render(conf.serv, card, [
+		card.rend = await render(serv, card, [
 			'id',
 			['info.name', 'name'],
 			['info.title', 'title'],
@@ -167,7 +234,25 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 
 		for(let type of ['normal', 'awaken', 'suport1', 'suport2', 'suport3', 'bless', 'pass'])
 			for(let skill of card.skill[type])
-				skill.show;
+				delete skill.show;
+
+	}
+
+	for(let budy of budys) {
+		// budy.mark = markerBudy(budy);
+
+		budy.rend = await render(serv, budy, [
+			'id',
+			'name',
+			'limit',
+			'pict',
+			'evol',
+			['this', 'skill', 'f.skillBudy']
+		]);
+
+		// for(let type of ['normal', 'awaken', 'suport1', 'suport2', 'suport3', 'bless', 'pass'])
+		// 	for(let skill of budy.skill[type])
+		// 		delete skill.show;
 	}
 
 	return result;

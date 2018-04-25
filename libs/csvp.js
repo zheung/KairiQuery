@@ -13,18 +13,27 @@ let parsePath = (obj, paths, value) => {
 		});
 	},
 	parseCount = (obj, paths, value) => {
-		paths.forEach((path, index) => {
-			if(index < paths.length - 1) {
-				if(!obj[path]) {
-					obj[path] = {};
-				}
+		// paths.forEach((path, index) => {
+		// 	if(index < paths.length - 1) {
+		// 		if(!obj[path]) {
+		// 			obj[path] = {};
+		// 		}
 
-				obj = obj[path];
+		// 		obj = obj[path];
+		// 	}
+		// 	else if(value) {
+		// 		obj[path] = (obj[path] ? obj[path]+1 : 1);
+		// 	}
+		// });
+
+		if(value) {
+			if(!obj[paths]) {
+				obj[paths] = 1;
 			}
-			else if(value) {
-				obj[path] = (obj[path] ? obj[path]+1 : 1);
+			else {
+				obj[paths] += 1;
 			}
-		});
+		}
 	};
 
 module.exports = async(path, name, start, header, dicter, parser) => {

@@ -12,7 +12,7 @@ module.exports = function(serv) {
 		ATTACK_AA: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.floor(~~p[1]+~~p[2]/1000*card.info.max.level);
+			let base = Math.floor(~~p[1]+~~p[2]/1000*card.max.level);
 
 			return `${target} | ${p[5]}段${show(p[8])}元素 | ${show(p[9])}攻击 |\x20
 				${base ? `<samp title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</samp>+` : ''}
@@ -54,7 +54,7 @@ module.exports = function(serv) {
 		HEAL_FIXED: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.floor(~~p[1]+~~p[2]/1000*card.info.max.level);
+			let base = Math.floor(~~p[1]+~~p[2]/1000*card.max.level);
 
 			return `${target} | 恢复生命 | ${base ? `<samp title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</samp>+` : ''}
 				${show(p[5])}的${p[3]/10}%`;
@@ -69,7 +69,7 @@ module.exports = function(serv) {
 		REGENERATE_FIXED: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.floor(~~p[2]+~~p[3]/1000*card.info.max.level);
+			let base = Math.floor(~~p[2]+~~p[3]/1000*card.max.level);
 
 			return `${target} | ${p[1]}回合 |\x20
 				<samp title="发动时机：回合开始前">持续恢复生命</samp>&nbsp;|\x20
@@ -84,13 +84,13 @@ module.exports = function(serv) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
 			return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
-				<samp title="等级成长：${p[6]}*等级">${p[6]*card.info.max.level}</samp>+${show(p[3])}的${p[4]/10}%`;
+				<samp title="等级成长：${p[6]}*等级">${p[6]*card.max.level}</samp>+${show(p[3])}的${p[4]/10}%`;
 		},
 		ATK_UP_BY_TARGET_PARAM: false,
 		ATK_UP_FIXED: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.max.level);
 
 			return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
 				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
@@ -130,7 +130,7 @@ module.exports = function(serv) {
 		ENCHANT: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.floor(~~p[2] + ~~p[5] * card.info.max.level);
+			let base = Math.floor(~~p[2] + ~~p[5] * card.max.level);
 
 			return `${target} | ${p[1]}回合 | 每段攻击后 | 追加${show(p[6])}元素伤害 |\x20
 				<samp title="等级成长：${p[2]}+${p[5]}*等级">${base}</samp>点`;
@@ -143,7 +143,7 @@ module.exports = function(serv) {
 		DEF_UP_BY_SELF_PARAM: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.floor(~~p[5]/1000+~~p[6]*card.info.max.level);
+			let base = Math.floor(~~p[5]/1000+~~p[6]*card.max.level);
 
 			return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
 				<samp title="等级成长：${p[5]/1000}+${p[6]}*等级">${base}</samp>+${p[4]/10}%${show(p[3])}`;
@@ -152,7 +152,7 @@ module.exports = function(serv) {
 		DEF_UP_FIXED: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.max.level);
 
 			return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
 				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
@@ -216,12 +216,12 @@ module.exports = function(serv) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
 			return `${target} | ${p[1]}回合 | 降低${show(p[2])} |\x20
-				<samp title="等级成长：${p[6]}*等级">${p[6]*card.info.max.level}</samp>+${show(p[3])}的${p[4]/10}%`;
+				<samp title="等级成长：${p[6]}*等级">${p[6]*card.max.level}</samp>+${show(p[3])}的${p[4]/10}%`;
 		},
 		ATK_BREAK_FIXED: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.max.level);
 
 			if(~~p[3]<=1)
 				return `${target} | ${p[1]}回合 | 降低${show(p[2])} | <samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
@@ -234,7 +234,7 @@ module.exports = function(serv) {
 		GUARD_BREAK_FIXED: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.max.level);
 
 			return `${target} | ${p[1]}回合 | 降低${show(p[2])} |\x20
 				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
@@ -250,28 +250,28 @@ module.exports = function(serv) {
 		POISON: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = ~~p[4]+Math.floor(~~p[5]*card.info.max.level/1000);
+			let base = ~~p[4]+Math.floor(~~p[5]*card.max.level/1000);
 
 			return `${target} | ${p[1]}回合 | 毒 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
 		},
 		BURN: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = ~~p[4]+Math.floor(~~p[5]*card.info.max.level/1000);
+			let base = ~~p[4]+Math.floor(~~p[5]*card.max.level/1000);
 
 			return `${target} | ${p[1]}回合 | 燃烧 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
 		},
 		FREEZE: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = ~~p[4]+Math.floor(~~p[5]*card.info.max.level/1000);
+			let base = ~~p[4]+Math.floor(~~p[5]*card.max.level/1000);
 
 			return `${target} | ${p[1]}回合 | 冻结 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
 		},
 		BLEED: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = ~~p[4]+Math.floor(~~p[5]*card.info.max.level/1000);
+			let base = ~~p[4]+Math.floor(~~p[5]*card.max.level/1000);
 
 			return `${target} | ${p[1]}回合 | 裂风 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
 		},
@@ -279,7 +279,7 @@ module.exports = function(serv) {
 		ELECTRIC: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = ~~p[4]+Math.floor(~~p[5]*card.info.max.level/1000);
+			let base = ~~p[4]+Math.floor(~~p[5]*card.max.level/1000);
 
 			return `${target} | ${p[1]}回合 | 感电 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
 		},
@@ -371,7 +371,7 @@ module.exports = function(serv) {
 		ATTR_DEF_DOWN: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.floor(~~p[4] + ~~p[5] / 1000 * card.info.max.level);
+			let base = Math.floor(~~p[4] + ~~p[5] / 1000 * card.max.level);
 
 			return `${target} | ${p[1]}回合 | 降低${show(p[6])}元素耐性 |\x20
 				<samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>点`;
@@ -379,7 +379,7 @@ module.exports = function(serv) {
 		ATTR_DEF_UP: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.floor(~~p[4] + ~~p[5] / 1000 * card.info.max.level);
+			let base = Math.floor(~~p[4] + ~~p[5] / 1000 * card.max.level);
 
 			return `${target} | ${p[1]}回合 | 提升${show(p[6])}元素耐性 |\x20
 				<samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>点`;
@@ -390,7 +390,7 @@ module.exports = function(serv) {
 		REFLECTION: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.floor(~~p[2] / 100 + ~~p[3] / 100 * card.info.max.level);
+			let base = Math.floor(~~p[2] / 100 + ~~p[3] / 100 * card.max.level);
 
 			return `${target} | ${p[1]}回合 | 反射伤害 |\x20
 				所受伤害的<samp title="等级成长：${p[2]/100}+${p[3]/100}*等级">${base}</samp>%`;
@@ -464,7 +464,7 @@ module.exports = function(serv) {
 		PARAM_LIMIT_BREAK_FIXED: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
-			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.info.max.level);
+			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.max.level);
 
 			return `${target} | ${p[1]}回合 | 提高${show(p[2])}上限 |\x20
 				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
@@ -483,6 +483,24 @@ module.exports = function(serv) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
 			return `${target} | ${p[1]}回合 | 提升暴击伤害 | ${p[2]}%`;
+		},
+		NEED_COST_DOWN_BURST : function(card, skill, role, skillFirst) {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+
+			let hand = skill.hand;
+
+			let attrShow = show([ 'attr', hand.attr ]);
+			let kindShow = show([ 'skillKind2', hand.kind ]);
+
+			if(attrShow=='全部') attrShow = '任意';
+			if(kindShow=='全部') kindShow = '任意';
+
+			if(p[1] > 1)
+				L('NEED_COST_DOWN_BURST回合大于1?!');
+			else if(p[2] > 1)
+				L('NEED_COST_DOWN_BURST回合大于11?!');
+
+			return `${target} | ${hand.num}张 | ${attrShow?attrShow:''}元素 | ${kindShow?kindShow:''} | 减少COST | ${p[2]}`;
 		},
 
 	};

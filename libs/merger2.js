@@ -34,7 +34,7 @@ let hasMMR = (cards, id, ids = []) => {
 	}
 };
 
-module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs, evols) => {
+module.exports = async(serv, valuer, marker, cards, skils, roles, rules, supss, suprs, evols) => {
 	let result = [[], {}],
 		dictSkil = {}, dictRole = {}, dictRule = {}, dictCard = {},
 		dictSups = {}, dictSupr = {}, dictEvol = {};
@@ -129,7 +129,7 @@ module.exports = async(valuer, marker, cards, skils, roles, rules, supss, suprs,
 		card.info.rare = ~~(`${card.info.rare}${hasPlus(dictCard, card.id)}`);
 		card.info.mmr = hasMMR(dictCard, card.id);
 
-		card.rend = await render(conf.serv, card, [
+		card.rend = await render(serv, card, [
 			'id',
 			['info.name', 'name'],
 			['info.title', 'title'],
