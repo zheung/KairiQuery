@@ -1,25 +1,17 @@
-module.exports = async($) => {
+module.exports = async function($) {
 	return {
-		main: async(conds = {}) => {
+		main: async function(conds = {}) {
 			let dict = $.mark;
+
 			let words = conds.word;
-			let mark = { $and: [ { $where: 'true'} ] };
 
-			let condID = [];
-			let condMark = [];
-			let condName = [];
-			let condTitle = [];
+			let mark = { $and: [ { $where: 'true' } ] };
+			let condMarkBit = { $or: [ { $where: conds.zero.toString() }, mark ] };
 
-			let cond1 = { $or: [
-					{ 'id': { $in: condID } },
-					{ 'mark': { $in: condMark } },
-					{ 'info.name': { $in: condName } },
-					{ 'info.title': { $in: condTitle } }
-				] };
-			let cond2 = { $or: [ { $where: conds.zero.toString() }, mark ] };
-
-			conds.mark.map((bit, x) => {
-				let map = dict[x], and = { mark: {$in: []} }, all = and.mark.$in;
+			conds.mark.map(function(bit, x) {
+				let map = dict[x];
+				let and = { mark: {$in: []} };
+				let all = and.mark.$in;
 
 				if(bit) {
 					for(let y in map)
@@ -31,8 +23,13 @@ module.exports = async($) => {
 			});
 
 			if(!words.length) {
-				return cond2;
+				return condMarkBit;
 			}
+
+			let condID = [];
+			let condMark = [];
+			let condName = [];
+			let condTitle = [];
 
 			for(let word of words) {
 				if(/^\d+$/.test(conds.word)) {
@@ -47,12 +44,29 @@ module.exports = async($) => {
 				}
 			}
 
-			return {
-				$and: [ cond1, cond2 ]
-			};
+			let condWord = { $or: [] };
+
+			if(condID.length) {
+				condWord.$or.push({ 'id': { $in: condID } });
+			}
+			if(condMark.length) {
+				condWord.$or.push({ 'mark': { $in: condMark } });
+			}
+			if(condName.length) {
+				condWord.$or.push({ 'name': { $in: condName } });
+			}
+			if(condTitle.length) {
+				condWord.$or.push({ 'title': { $in: condTitle } });
+			}
+
+			if(condWord.$or.length) {
+				return { $and: [ condWord, condMarkBit ] };
+			}
+
+			return condMarkBit;
 		},
-		gur: async() => {
-			return { 'info.star': 3, $or:[ { 'info.rare': 5 }, { 'info.rare': 50 } ] };
+		gur: function() {
+			return { 'star': 3, $or:[ { 'rare': 5 }, { 'rare': 50 } ] };
 		}
 	};
 };
