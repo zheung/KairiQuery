@@ -12,8 +12,8 @@ module.exports = function(serv) {
 		let attrShow = show([ 'attr', hand.attr ]);
 		let kindShow = show([ 'skillKind2', hand.kind ]);
 
-		attrShow = attrShow != '全部' ? ` | ${attrShow}元素` : '';
-		kindShow = kindShow != '全部' ? ` | ${kindShow}类型` : '';
+		attrShow = attrShow != '全部' ? ` | [${attrShow}]` : '';
+		kindShow = kindShow != '全部' ? ` | [${kindShow}]` : '';
 
 		let costShow = '';
 
@@ -27,15 +27,23 @@ module.exports = function(serv) {
 		}
 
 		if(min == max && min != 0)
-			costShow = ` | COST等于${min}`;
+			costShow = ` | COST：${min}`;
 		else if(min && !max)
-			costShow = ` | COST等于${min}或以上`;
+			costShow = ` | COST：${min}或以上`;
 		else if(!min && max)
-			costShow = ` | COST等于${max}或以下`;
+			costShow = ` | COST：${max}或以下`;
 		else if(min != 0 && max != 0)
-			costShow = ` | COST等于${min}~${max}`;
+			costShow = ` | COST：${min}~${max}`;
 
-		return `${hand.num}张${attrShow}${kindShow}${costShow}`;
+		let groupShow = '';
+
+		if(hand.group[1]) groupShow += '或'+show(['tag', hand.group[1]]);
+		if(hand.group[2]) groupShow += '或'+show(['tag', hand.group[2]]);
+		if(hand.group[3]) groupShow += '或'+show(['tag', hand.group[3]]);
+
+		if(groupShow) groupShow = groupShow.replace(/^或/, ' | 分组：');
+
+		return `${hand.num}张 | ${attrShow}${kindShow}${groupShow}${costShow}`;
 	};
 
 	return {

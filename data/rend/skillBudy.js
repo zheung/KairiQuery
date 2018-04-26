@@ -88,7 +88,7 @@ module.exports = async(serv, card) => {
 			s.cond = `消耗 | ${info.cost}%进度 | ${info.cooldown}回合冷却`;
 
 			if(info.level)
-			s.cond += ` | ${info.level}级解放`;
+				s.cond += ` | ${info.level}级解放`;
 
 			s.cond = [s.cond];
 
