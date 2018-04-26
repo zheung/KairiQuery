@@ -12,12 +12,14 @@
 			<ul class="leftModule" v-show="C.listShow=='module'">
 				<div v-for="madule of C.modules" :key="'leftModule'+madule.type"
 					:title="madule.name" class="top2"
-					@dblclick="B.changeTab(madule)"
+					@click="B.changeTab(madule)"
 				>
 					<Fas icon="list-alt" /> {{madule.name}}
 				</div>
 			</ul>
-			<component :is="B.dashNow" v-show="C.listShow=='dash'"></component>
+			<keep-alive>
+				<component :is="B.dashNow" v-show="C.listShow=='dash'"></component>
+			</keep-alive>
 		</div>
 	</div>
 </template>

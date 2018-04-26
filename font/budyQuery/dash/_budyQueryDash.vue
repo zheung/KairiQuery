@@ -1,5 +1,5 @@
 <template>
-	<div class="compCardQueryDash">
+	<div class="compBudyQueryDash">
 		<div class="colBox">
 			<input class="condWord trans" type="text" placeholder="搜索..." @keyup.enter="onQuery(C.word, 1)" v-model="C.word" />
 		</div>
@@ -19,52 +19,8 @@
 			</ToggleGroup>
 		</div>
 		<div class="colBox">
-			<div class="title x3">稀有</div>
-			<ToggleGroup :group="C.conds.rare" mode>
-				<ToggleButton slot-scope="props"
-					:text="props.val.text" :value="props.val.val"
-					:active="props.val.on"
-					:dealer="condDealer(props.val)"
-				>
-				</ToggleButton>
-			</ToggleGroup>
-		</div>
-		<div class="colBox">
-			<div class="title x2">职业</div>
-			<ToggleGroup :group="C.conds.job" mode>
-				<ToggleButton slot-scope="props"
-					:text="props.val.text" :value="props.val.val" :width="35"
-					:active="props.val.on"
-					:dealer="condDealer(props.val)"
-				>
-				</ToggleButton>
-			</ToggleGroup>
-		</div>
-		<div class="colBox">
-			<div class="title x2">能量</div>
-			<ToggleGroup :group="C.conds.cost" mode>
-				<ToggleButton slot-scope="props"
-					:text="props.val.text" :value="props.val.val" :width="35"
-					:active="props.val.on"
-					:dealer="condDealer(props.val)"
-				>
-				</ToggleButton>
-			</ToggleGroup>
-		</div>
-		<div class="colBox">
-			<div class="title x2">属性</div>
-			<ToggleGroup :group="C.conds.attr" mode>
-				<ToggleButton slot-scope="props"
-					:text="props.val.text" :value="props.val.val" :width="35"
-					:active="props.val.on"
-					:dealer="condDealer(props.val)"
-				>
-				</ToggleButton>
-			</ToggleGroup>
-		</div>
-		<div class="colBox">
-			<div class="title x2">技能</div>
-			<ToggleGroup :group="C.conds.skillKind" mode>
+			<div class="title x2">突破</div>
+			<ToggleGroup :group="C.conds.limit" mode>
 				<ToggleButton slot-scope="props"
 					:text="props.val.text" :value="props.val.val" :width="35"
 					:active="props.val.on"
@@ -87,14 +43,14 @@
 		created: async function() {
 			let { C } = this;
 
-			A.reg('cardQueryCond', 'kq/cardConds');
-			A.reg('cardQuery', 'kq/cardQuery');
+			A.reg('budyQueryCond', 'kq/budyConds');
+			A.reg('budyQuery', 'kq/budyQuery');
 
-			let data = await A.conn('cardQueryCond');
+			let data = await A.conn('budyQueryCond');
 
 			C.conds = data;
 
-			this.onQuery(C.word, 1, C.serv, { cond: data.rare[0] });
+			this.onQuery(C.word, 1, C.serv, { cond: data.limit[0] });
 		},
 		data: function() {
 			return window.CSX.init(this.$options.name,
@@ -103,7 +59,7 @@
 
 					serv: 'cn',
 
-					cards: [],
+					budys: [],
 
 					word: '',
 					mark: [],
@@ -202,12 +158,12 @@
 						this.markit(cond, !cond.on);
 				}
 
-				let data = await A.conn('cardQuery', {
+				let data = await A.conn('budyQuery', {
 					conds: this.param
 				});
 
-				Vue.set(C, 'cards', data[0][0]);
-				Vue.set(CSX.comp('cardQuery'), 'cardNow', data[0][0][0]);
+				Vue.set(C, 'budys', data[0][0]);
+				Vue.set(CSX.comp('budyQuery'), 'budyNow', data[0][0][0]);
 				Vue.set(C, 'pageNow', data[0][1]);
 				Vue.set(C, 'pageMax', data[0][2]);
 			}
@@ -216,7 +172,7 @@
 </script>
 
 <style scoped>
-	.compCardQueryDash {
+	.compBudyQueryDash {
 		height: calc(100% - 50px);
 		overflow-x: hidden;
 		overflow-y: auto;

@@ -8,7 +8,7 @@
 			noUrl: { default : false },
 			cent: {},
 
-			card: { default: {} },
+			data: { default: {} },
 			serv: { default: 'cn' }
 		},
 
@@ -20,12 +20,17 @@
 
 		computed: {
 			urlcpt : function() {
-				return this.noUrl ? '' :
-					(
-						this.url ||
-						(this.card ? `https://kairiquery.oss-cn-shenzhen.aliyuncs.com/reso/20/${this.serv}/${this.card.pict}.png` : '') ||
-						'kq2/./img/20002026.png'
-					);
+				if(this.noUrl) {
+					return '';
+				}
+				if(this.url) {
+					return this.url;
+				}
+				if(this.data) {
+					return `https://kairiquery.oss-cn-shenzhen.aliyuncs.com/reso/${this.data.raw.type}/20/${this.serv}/${this.data.pict}.png`;
+				}
+
+				return '';
 			}
 		},
 
@@ -40,14 +45,14 @@
 
 <template>
 	<div class="box" :style="{ height: (size || height || 150)+'px', width:(size || width || 150)+'px' }">
-		<div class="layer" :class="`B${((card.raw.rare||'')+'').substring(0, 1) || 6}`" />
+		<div class="layer" :class="`B${((data.raw.rare||'')+'').substring(0, 1) || 6}`" />
 		<div
 			class="layer"
-			:style="{ 'background-image': `url(${urlcpt})`, 'background-size': `${cent || 85.5 }%` }"
+			:style="{ 'background-image': `url(${urlcpt})`, 'background-size': `${cent || (data.raw.type=='card'?85.5:92) }%` }"
 		/>
-		<div class="layer" :class="`F${card.raw.rare || 60}`" />
-		<div class="layer" :class="`A${card.raw.attr}`" v-if="card.raw.attr" />
-		<div class="layer" :class="`J${card.raw.job}`" v-if="card.raw.job" />
+		<div class="layer" :class="`F${data.raw.rare || 60}`" />
+		<div class="layer" :class="`A${data.raw.attr}`" v-if="data.raw.attr" />
+		<div class="layer" :class="`J${data.raw.job}`" v-if="data.raw.job" />
 	</div>
 </template>
 
@@ -93,6 +98,11 @@
 	.F62 { background-image: url('./20/F62.png'); }
 	.F63 { background-image: url('./20/F63.png'); }
 	.F71 { background-image: url('./20/F71.png'); }
+	.F80 { background-image: url('./20/F80.png'); }
+	.F81 { background-image: url('./20/F81.png'); }
+	.F82 { background-image: url('./20/F82.png'); }
+	.F83 { background-image: url('./20/F83.png'); }
+	.F84 { background-image: url('./20/F84.png'); }
 
 	.A1 { background-image: url('./20/A1.png'); }
 	.A2 { background-image: url('./20/A2.png'); }

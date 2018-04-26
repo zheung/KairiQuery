@@ -1,7 +1,7 @@
 <template>
 	<div class="compIconMaker">
 		<div>
-			<Icon :card="card" :size="150" :url="url" :cent="cent" />
+			<Icon :data="card" :size="150" :url="url" :cent="cent" />
 		</div>
 		<div>
 			<div class="col">稀有：</div>

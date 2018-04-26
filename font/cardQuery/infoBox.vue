@@ -1,6 +1,6 @@
 <template>
 	<div class="compInfoBox nosel">
-		<Icon class="inline" :card="card" size="100" :serv="serv"/>
+		<Icon class="inline" :data="card" size="100" :serv="serv"/>
 		<div class="inline" style="margin-left: 10px;">
 			<div class="line">
 				<div class="inline label">{{card.title}}</div><div class="inline content">{{card.name}}</div>
@@ -18,7 +18,7 @@
 				<div class="inline label">类型</div><div class="inline content">{{card.starType}}</div>
 			</div>
 		</div>
-		<SkillBox class="box4" :cid="card.id" :skill="card.skill" />
+		<SkillBox :cid="card.id" :skill="card.skill" />
 	</div>
 </template>
 

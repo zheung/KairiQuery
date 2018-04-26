@@ -27,9 +27,9 @@
 			changeCard: function(card) {
 				this.C.cardNow = card;
 
-				Vue.nextTick(function() {
-					document.getElementById(`cardInfo-${card.id}`).scrollIntoView({block:'center'});
-				}.bind(this));
+				// Vue.nextTick(function() {
+				// 	document.getElementById(`cardInfo-${card.id}`).scrollIntoView({block:'center'});
+				// }.bind(this));
 			}
 		}
 	};

@@ -7,6 +7,8 @@ export default async function(type, time = 0) {
 			case 'calendar': Vue.component(`${type}_${time}`, (await System.import('../calendar/_calendar.vue')).default); break;
 			case 'cardQuery': Vue.component(`${type}_${time}`, (await System.import('../cardQuery/_cardQuery.vue')).default); break;
 			case 'cardQueryDash': Vue.component(`${type}_${time}`, (await System.import('../cardQuery/dash/_cardQueryDash.vue')).default); break;
+			case 'budyQuery': Vue.component(`${type}_${time}`, (await System.import('../budyQuery/_budyQuery.vue')).default); break;
+			case 'budyQueryDash': Vue.component(`${type}_${time}`, (await System.import('../budyQuery/dash/_budyQueryDash.vue')).default); break;
 		}
 	}
 }

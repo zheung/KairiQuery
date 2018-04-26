@@ -1,14 +1,7 @@
 <template>
 	<div class="compLogoBox">
-		<div class="card">
-			<Icon class="iconBox" :data="card" size="100" :serv="serv"/>
-		</div>
-		<div class="littleInfo left">
-			{{card.cost}}C
-		</div><div class="littleInfo ">
-			{{card.kind}}
-		</div><div class="littleInfo right star" :class="'S'+card.star">
-			&nbsp;&nbsp;{{~~(card.raw.rare/10)}}
+		<div class="budy">
+			<Icon class="iconBox" :data="budy" size="100" :serv="serv"/>
 		</div>
 	</div>
 </template>
@@ -20,7 +13,7 @@
 		components: { Icon },
 
 		props: {
-			card: { default: function() { return {}; } },
+			budy: { default: function() { return {}; } },
 			serv: { default: 'cn' }
 		},
 
@@ -62,7 +55,7 @@
 		border: 1px solid #2da1c9;
 	}
 
-	.card {
+	.budy {
 		display: block;
 
 		position: relative;
