@@ -1,11 +1,11 @@
 let hasPlus = (cards, id, ids = []) => {
-	let card = cards[id], rare = card.info.rare;
+	let card = cards[id], rare = card.rare;
 
 	if(ids.indexOf(id)+1)
 		return 0;
-	else if(card.info.plus && !ids.length)
-		return card.info.plus+1;
-	else if(card.info.plus || rare == 7 || rare == 71)
+	else if(card.plus && !ids.length)
+		return card.plus+1;
+	else if(card.plus || rare == 7 || rare == 71)
 		return 1;
 	else
 		for(let evol of card.evol) {
@@ -18,7 +18,7 @@ let hasPlus = (cards, id, ids = []) => {
 	return 0;
 };
 let hasMMR = (cards, id, ids = []) => {
-	let card = cards[id], rare = card.info.rare;
+	let card = cards[id], rare = card.rare;
 
 	if(ids.indexOf(id)+1)
 		return 0;
@@ -126,14 +126,14 @@ module.exports = async(serv, valuer, marker, cards, skils, roles, rules, supss, 
 	}
 
 	for(let card of cards) {
-		card.info.rare = ~~(`${card.info.rare}${hasPlus(dictCard, card.id)}`);
-		card.info.mmr = hasMMR(dictCard, card.id);
+		card.rare = ~~(`${card.rare}${hasPlus(dictCard, card.id)}`);
+		card.mmr = hasMMR(dictCard, card.id);
 
 		card.rend = await render(serv, card, [
 			'id',
-			['info.name', 'name'],
-			['info.title', 'title'],
-			['info.star', 'star', 'd.shower.star'],
+			['name', 'name'],
+			['title', 'title'],
+			['star', 'star', 'd.shower.star'],
 			['figure.hp.max', 'hp'],
 			['figure.ad.max', 'ad'],
 			['figure.ap.max', 'ap'],
@@ -143,7 +143,7 @@ module.exports = async(serv, valuer, marker, cards, skils, roles, rules, supss, 
 			['skill.normal.0.info.job', 'job', 'd.shower.job'],
 			['skill.awaken.0.info.job', 'job', 'd.shower.job'],
 			['this', 'kind', 'f.skillKind'],
-			['info.rare', 'rare', 'd.shower.rare'],
+			['rare', 'rare', 'd.shower.rare'],
 			['skill.normal.0.info.attr', 'attr', 'd.shower.attr'],
 			['skill.awaken.0.info.attr', 'attr', 'd.shower.attr'],
 			['this', 'skill', 'f.skill'],
@@ -153,7 +153,7 @@ module.exports = async(serv, valuer, marker, cards, skils, roles, rules, supss, 
 			['skill.awaken.0.info.attr', 'raw.attr'],
 			['skill.normal.0.info.job', 'raw.job'],
 			['skill.awaken.0.info.job', 'raw.job'],
-			['info.rare', 'raw.rare'],
+			['rare', 'raw.rare'],
 			['pict.normal', 'pict']
 		]);
 

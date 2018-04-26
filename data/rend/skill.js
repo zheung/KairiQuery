@@ -78,7 +78,7 @@ module.exports = async(serv, card) => {
 			}
 
 			if(!s.cond) {
-				s.cond = ['无'];
+				s.cond = [''];
 			}
 
 			s.prio = `${pvp==pve? pve / 10: `${pve / 10}(${pvp / 10})`}`;
@@ -242,7 +242,7 @@ module.exports = async(serv, card) => {
 		}
 
 		if(!s.cond) {
-			s.cond = ['无'];
+			s.cond = [''];
 		}
 
 		s.prio = `${pvp==pve? pve / 10: `${pve / 10}(${pvp / 10})`}`;

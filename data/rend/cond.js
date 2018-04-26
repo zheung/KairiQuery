@@ -77,7 +77,7 @@ module.exports = async() => {
 			let u = ~~cond.param1, d = ~~cond.param2;
 
 			if(!u && !d)
-				L('Cond 10 New Type! '+card.id+' '+card.info.name+' '+skill.id+' '+u+' '+d);
+				L('Cond 10 New Type! '+card.id+' '+card.name+' '+skill.id+' '+u+' '+d);
 
 			if(u == d)
 				return [`第${u}回合`];

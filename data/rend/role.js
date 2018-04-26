@@ -26,13 +26,13 @@ module.exports = function(serv) {
 			max = 0;
 		}
 
-		if(min == max && min !=0)
-		costShow = ` | COST等于${min}`;
+		if(min == max && min != 0)
+			costShow = ` | COST等于${min}`;
 		else if(min && !max)
-		costShow = ` | COST等于${min}或以上`;
+			costShow = ` | COST等于${min}或以上`;
 		else if(!min && max)
 			costShow = ` | COST等于${max}或以下`;
-		else
+		else if(min != 0 && max != 0)
 			costShow = ` | COST等于${min}~${max}`;
 
 		return `${hand.num}张${attrShow}${kindShow}${costShow}`;
@@ -122,7 +122,9 @@ module.exports = function(serv) {
 
 			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.max.level);
 
-			return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
+			let turnText = (skill.style=='BURST_PASSIVE' || skill.style=='PASSIVE') ? '' : ` | ${p[1]}回合`;
+
+			return `${target}${turnText} | ${p[1]}回合 | 提升${show(p[2])} |\x20
 				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
 		},
 		ATK_UP_FIXED_ATTR_BONUS: false,
@@ -175,7 +177,9 @@ module.exports = function(serv) {
 
 			let base = Math.floor(~~p[5]/1000+~~p[6]*card.max.level);
 
-			return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
+			let turnText = (skill.style=='BURST_PASSIVE' || skill.style=='PASSIVE') ? '' : ` | ${p[1]}回合`;
+
+			return `${target}${turnText} | 提升${show(p[2])} |\x20
 				<samp title="等级成长：${p[5]/1000}+${p[6]}*等级">${base}</samp>+${p[4]/10}%${show(p[3])}`;
 		},
 		DEF_UP_BY_TARGET_PARAM: false,
@@ -494,9 +498,11 @@ module.exports = function(serv) {
 		PARAM_LIMIT_BREAK_FIXED: function(card, skill, role, skillFirst) {
 			let p = role.params, target = showTarget(skill, role, skillFirst);
 
+			let turnText = (skill.style=='BURST_PASSIVE' || skill.style=='PASSIVE') ? '' : ` | ${p[1]}回合`;
+
 			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.max.level);
 
-			return `${target} | ${p[1]}回合 | 提高${show(p[2])}上限 |\x20
+			return `${target}${turnText} | 提高${show(p[2])}上限 |\x20
 				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
 		},
 		GUTS: function(card, skill, role, skillFirst) {
@@ -563,6 +569,22 @@ module.exports = function(serv) {
 				L('DAMAGE_BOOST_ORDER_TRIBAL?');
 
 			return `${target} | ${showHand(skill.hand)} | 当目标心像为[${show(['tribal', p[10]])}] | ${show(p[7])} | 提升${p[4]/10}%`;
+		},
+		PARAM_UP_SKILL_BONUS: function(card, skill, role, skillFirst) {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+// debugger;
+			if(p[1] > 1)
+				L('DAMAGE_BOOST_ORDER_TRIBAL?');
+
+			return '';
+		},
+		LIMIT_BREAK_BONUS: function(card, skill, role, skillFirst) {
+			let p = role.params, target = showTarget(skill, role, skillFirst);
+// debugger;
+			if(p[1] > 1)
+				L('DAMAGE_BOOST_ORDER_TRIBAL?');
+
+			return '';
 		},
 
 	};

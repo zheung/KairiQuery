@@ -1,11 +1,11 @@
 let hasPlus = (cards, id, ids = []) => {
-	let card = cards[id], rare = card.info.rare;
+	let card = cards[id], rare = card.rare;
 
 	if(ids.indexOf(id)+1)
 		return 0;
-	else if(card.info.plus && !ids.length)
-		return card.info.plus+1;
-	else if(card.info.plus || rare == 7 || rare == 71)
+	else if(card.plus && !ids.length)
+		return card.plus+1;
+	else if(card.plus || rare == 7 || rare == 71)
 		return 1;
 	else
 		for(let evol of card.evol) {
@@ -18,7 +18,7 @@ let hasPlus = (cards, id, ids = []) => {
 	return 0;
 };
 let hasMMR = (cards, id, ids = []) => {
-	let card = cards[id], rare = card.info.rare;
+	let card = cards[id], rare = card.rare;
 
 	if(ids.indexOf(id)+1)
 		return 0;
@@ -198,17 +198,19 @@ module.exports = async(serv, resultType = 1, valuer, marker, cards, skils, roles
 	}
 
 	for(let card of cards) {
-		card.info.rare = ~~(`${card.info.rare}${hasPlus(dictCard, card.id)}`);
-		card.info.mmr = hasMMR(dictCard, card.id);
+		card.rare = ~~(`${card.rare}${hasPlus(dictCard, card.id)}`);
+		card.mmr = hasMMR(dictCard, card.id);
+
+		card.type = 'card';
 
 		card.mark = marker(card);
 
 		card.rend = await render(serv, card, [
 			'id',
-			['info.name', 'name'],
-			['info.title', 'title'],
-			['info.star', 'starType', 'd.shower.star'],
-			['info.star', 'star'],
+			['name', 'name'],
+			['title', 'title'],
+			['star', 'starType', 'd.shower.star'],
+			['star', 'star'],
 			['figure.hp.max', 'hp'],
 			['figure.ad.max', 'ad'],
 			['figure.ap.max', 'ap'],
@@ -218,7 +220,7 @@ module.exports = async(serv, resultType = 1, valuer, marker, cards, skils, roles
 			['skill.normal.0.info.job', 'job', 'd.shower.job'],
 			['skill.awaken.0.info.job', 'job', 'd.shower.job'],
 			['this', 'kind', 'f.skillKind'],
-			['info.rare', 'rare', 'd.shower.rare'],
+			['rare', 'rare', 'd.shower.rare'],
 			['skill.normal.0.info.attr', 'attr', 'd.shower.attr'],
 			['skill.awaken.0.info.attr', 'attr', 'd.shower.attr'],
 			['this', 'skill', 'f.skill'],
@@ -228,18 +230,24 @@ module.exports = async(serv, resultType = 1, valuer, marker, cards, skils, roles
 			['skill.awaken.0.info.attr', 'raw.attr'],
 			['skill.normal.0.info.job', 'raw.job'],
 			['skill.awaken.0.info.job', 'raw.job'],
-			['info.rare', 'raw.rare'],
+			['rare', 'raw.rare'],
+			['type', 'raw.type'],
 			['pict.normal', 'pict']
 		]);
 
 		for(let type of ['normal', 'awaken', 'suport1', 'suport2', 'suport3', 'bless', 'pass'])
-			for(let skill of card.skill[type])
-				delete skill.show;
+			if(card.skill[type])
+				for(let skill of card.skill[type])
+					delete skill.show;
 
 	}
 
 	for(let budy of budys) {
-		// budy.mark = markerBudy(budy);
+		budy.rare = `${budy.rare}${budy.limit}`;
+
+		budy.type = 'budy';
+
+		budy.mark = marker(budy);
 
 		budy.rend = await render(serv, budy, [
 			'id',
@@ -247,12 +255,18 @@ module.exports = async(serv, resultType = 1, valuer, marker, cards, skils, roles
 			'limit',
 			'pict',
 			'evol',
+			['rare', 'raw.rare', 'd.shower.rare'],
+			['rare', 'raw.rare'],
+			['type', 'raw.type'],
 			['this', 'skill', 'f.skillBudy']
 		]);
 
-		// for(let type of ['normal', 'awaken', 'suport1', 'suport2', 'suport3', 'bless', 'pass'])
-		// 	for(let skill of budy.skill[type])
-		// 		delete skill.show;
+		for(let skill of budy.skill['pass'])
+			delete skill.show;
+
+		for(let type of ['active1', 'active2', 'active3'])
+			for(let skill of budy.skill[type].role)
+				delete skill.show;
 	}
 
 	return result;
