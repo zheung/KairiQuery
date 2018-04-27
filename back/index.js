@@ -9,9 +9,9 @@ module.exports = async function($, router) {
 		ctx.type = 'json';
 
 		ctx.body = [
-			{ type: 'cardQuery', name: '骑士速查', only: false, dash: true },
-			{ type: 'budyQuery', name: '传承速查', only: false, dash: true },
-			{ type: 'iconMaker', name: '头像生成', only: false }
+			{ type: 'cardQuery', name: '骑士速查', only: true, dash: true },
+			{ type: 'budyQuery', name: '传承速查', only: true, dash: true },
+			{ type: 'iconMaker', name: '头像生成', only: true }
 		];
 	});
 

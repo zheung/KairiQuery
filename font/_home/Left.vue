@@ -81,7 +81,9 @@
 
 			this.$set(C, 'modules', result || {});
 
-			B.changeTab(result[0]);
+			await B.changeTab(result[0]);
+			await B.changeTab(result[1]);
+			await B.changeTab(result[0]);
 		}
 	};
 </script>

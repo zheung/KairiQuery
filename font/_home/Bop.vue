@@ -3,13 +3,12 @@
 		<div class="item" @mouseover="noticeOver" @mouseout="noticeOutt">D的碎碎念</div>
 		<div class="item" @click="backToTop">回到顶部</div>
 		<div ref="popAbout" class="popAbout trans">
-			● V3.1，重做了模块，修了很多BUG。<br>
-			● 不是太满意，都怪滚动条<br>
-			<hr class="hrSnow">
-			● 破站作为自己的练手网站，也是很能治愈自己强迫症的地方<br>
-			● 哪怕乖离关了，也不会关站的，感谢一直的支持（有人用？<br>
-			● 未来有其他游戏的打算，甚至复刻乖离的战斗系统（文字上<br>
-			● 不过那真是很遥远的未来呢，哈哈
+			《V3.2 传承 来啦！》<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;新模块：传承速查<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;重写了所有技能渲染<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;调整了UI<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;爽啊！<br>
+			<!-- <hr class="hrSnow"> -->
 		</div>
 	</div>
 </template>
@@ -31,7 +30,7 @@
 				this.$refs.popAbout.style.opacity = 0;
 			},
 			backToTop: function() {
-				document.documentElement.scrollTop=0
+				document.documentElement.scrollTop = 0;
 			}
 		},
 		mounted: function() {
@@ -95,7 +94,7 @@
 	}
 
 	.popAbout {
-		width: 450px;
+		width: 200px;
 
 		position: absolute;
 
