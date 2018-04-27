@@ -10,11 +10,13 @@
 					<Fas icon="ellipsis-v" style="padding-right: 10px;"/>{{s.cond[0] || '无'}}
 				</div>
 				<div
-					class="item content"
-					v-if="(s.content && s.content.length)"
+					class="item cont"
+					v-if="(s.content && s.content.length) && c instanceof Object && c.content"
 					v-for="(c, ci) of s.content" :key="`content-awaken-${sod}-${ci}`"
-					v-html="c"
-				></div>
+					:title="c.title"
+				>
+					<div class="inline label">{{c.name}}</div><div class="inline content">{{c.content}}</div>
+				</div>
 			</div>
 		</div>
 		<div class="inline itemsBox">
@@ -27,11 +29,13 @@
 					<Fas icon="ellipsis-v" style="padding-right: 10px;"/>{{s.cond[0] || '无'}}
 				</div>
 				<div
-					class="item content"
-					v-if="(s.content && s.content.length)"
-					v-for="(c, ci) of s.content" :key="`content-pass-${ci}`"
-					v-html="c"
-				></div>
+					class="item cont"
+					v-if="(s.content && s.content.length) && c instanceof Object && c.content"
+					v-for="(c, ci) of s.content" :key="`content-pass-${sod}-${ci}`"
+					:title="c.title"
+				>
+					<div class="inline label pass">{{c.name}}</div><div class="inline content">{{c.content}}</div>
+				</div>
 			</div>
 			<div class="items" v-for="(s, sod) of skill.bless" :key="`skill-bless-${sod}`">
 				<div class="item prio" title="发动等级" :key="`skill-bless-prio-${sod}`">{{s.prio}}</div>
@@ -42,13 +46,15 @@
 					<Fas icon="ellipsis-v" style="padding-right: 10px;"/>{{s.cond[0] || '无'}}
 				</div>
 				<div
-					class="item content"
-					v-if="(s.content && s.content.length)"
+					class="item cont"
+					v-if="(s.content && s.content.length) && c instanceof Object && c.content"
 					v-for="(c, ci) of s.content" :key="`content-bless-${sod}-${ci}`"
-					v-html="c"
-				></div>
+					:title="c.title"
+				>
+					<div class="inline label bless">{{c.name}}</div><div class="inline content">{{c.content}}</div>
+				</div>
 			</div>
-					<div class="items" v-for="(s, sod) of skill.normal" :key="`skill-normal-${sod}`">
+			<div class="items" v-for="(s, sod) of skill.normal" :key="`skill-normal-${sod}`">
 				<div class="item prio" title="发动等级" :key="`skill-normal-prio-${sod}`">{{s.prio}}</div>
 				<div
 					class="item cond normal"
@@ -57,11 +63,13 @@
 					<Fas icon="ellipsis-v" style="padding-right: 10px;"/>{{s.cond[0] || '无'}}
 				</div>
 				<div
-					class="item content"
-					v-if="(s.content && s.content.length)"
+					class="item cont"
+					v-if="(s.content && s.content.length) && c instanceof Object && c.content"
 					v-for="(c, ci) of s.content" :key="`content-normal-${sod}-${ci}`"
-					v-html="c"
-				></div>
+					:title="c.title"
+				>
+					<div class="inline label normal">{{c.name}}</div><div class="inline content">{{c.content}}</div>
+				</div>
 			</div>
 			<div class="items" v-for="(s, sod) of skill.suport" v-if="sod == 0" :key="`skill-suport-${sod}`">
 				<div class="item prio" title="发动等级" :key="`skill-suport-prio-${sod}`">{{s.prio}}</div>
@@ -72,11 +80,13 @@
 					<Fas icon="ellipsis-v" style="padding-right: 10px;"/>{{s.cond[0] || '无'}}
 				</div>
 				<div
-					class="item content"
-					v-if="(s.content && s.content.length)"
+					class="item cont"
+					v-if="(s.content && s.content.length) && c instanceof Object && c.content"
 					v-for="(c, ci) of s.content" :key="`content-suport-${sod}-${ci}`"
-					v-html="c"
-				></div>
+					:title="c.title"
+				>
+					<div class="inline label suport">{{c.name}}</div><div class="inline content">{{c.content}}</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -99,24 +109,38 @@
 
 		border: 1px solid transparent;
 	}
+	.cont {
+		border: none;
+		padding: 0px;
+	}
 	.cond {
 		height: 25px;
 		line-height: 25px;
 
 		background-color: #2da2c8;
 
-		border-radius: 2px;
+		border-radius: 2px 2px 0px 0px;
 	}
-	.cond.bless {
+
+	.label {
+		padding: 0px 14px 0px 14px;
+
+		background: #2da1c9;
+	}
+	.content {
+		padding: 0px 14px 0px 14px;
+	}
+
+	.bless {
 		background-color: #148474;
 	}
-	.cond.normal {
+	.normal {
 		background-color: #3f51b5;
 	}
-	.cond.pass {
+	.pass {
 		background-color: #d28d00;
 	}
-	.cond.suport {
+	.suport {
 		background-color: #8f24a1;
 	}
 
@@ -143,6 +167,8 @@
 
 		position: relative;
 	}
+
+
 </style>
 
 <script>
