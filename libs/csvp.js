@@ -13,19 +13,6 @@ let parsePath = (obj, paths, value) => {
 		});
 	},
 	parseCount = (obj, paths, value) => {
-		// paths.forEach((path, index) => {
-		// 	if(index < paths.length - 1) {
-		// 		if(!obj[path]) {
-		// 			obj[path] = {};
-		// 		}
-
-		// 		obj = obj[path];
-		// 	}
-		// 	else if(value) {
-		// 		obj[path] = (obj[path] ? obj[path]+1 : 1);
-		// 	}
-		// });
-
 		if(value) {
 			if(!obj[paths]) {
 				obj[paths] = 1;

@@ -1,599 +1,812 @@
+// 渲染Role行动
+
 module.exports = function(serv) {
-	let show = function(p) { return shower[p[0]][p[1]]; };
-
-	let showTarget = function(skill, role, sf) {
-		if(role.target == 1)
-			return shower.skillTarget[skill.info.target || sf.info.target];
-		else
-			return shower.roleTarget[role.target];
-	};
-
-	let showHand = function(hand) {
-		let attrShow = show([ 'attr', hand.attr ]);
-		let kindShow = show([ 'skillKind2', hand.kind ]);
-
-		attrShow = attrShow != '全部' ? ` | [${attrShow}]` : '';
-		kindShow = kindShow != '全部' ? ` | [${kindShow}]` : '';
-
-		let costShow = '';
-
-		let min = ~~hand.cost.min, max = ~~hand.cost.max;
-
-		if(min <= 1) {
-			min = 0;
-		}
-		if(max >= 9) {
-			max = 0;
-		}
-
-		if(min == max && min != 0)
-			costShow = ` | COST：${min}`;
-		else if(min && !max)
-			costShow = ` | COST：${min}或以上`;
-		else if(!min && max)
-			costShow = ` | COST：${max}或以下`;
-		else if(min != 0 && max != 0)
-			costShow = ` | COST：${min}~${max}`;
-
-		let groupShow = '';
-
-		if(hand.group[1]) groupShow += '或'+show(['tag', hand.group[1]]);
-		if(hand.group[2]) groupShow += '或'+show(['tag', hand.group[2]]);
-		if(hand.group[3]) groupShow += '或'+show(['tag', hand.group[3]]);
-
-		if(groupShow) groupShow = groupShow.replace(/^或/, ' | 分组：');
-
-		return `${hand.num}张 | ${attrShow}${kindShow}${groupShow}${costShow}`;
-	};
-
-	return {
-		ATTACK_AA: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			let base = Math.floor(~~p[1]+~~p[2]/1000*card.max.level);
-
-			return `${target} | ${p[5]}段${show(p[8])}元素 | ${show(p[9])}攻击 |\x20
-				${base ? `<samp title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</samp>+` : ''}
-				${show(p[6])}的${p[3]/10}%
-				${(p[7] / (serv=='ps'?1:10) != 15 ? ` | ${~~p[7] / 10}%高暴击` : '')}`;
-		},
-		ATTACK_AP: false,
-		ATTACK_PA: false,
-		ATTACK_PP: false,
-		ATK_OP_DRAIN: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | 恢复生命 | 造成伤害的${p[1]}%`;
-		},
-		ATK_OP_DRAIN_ALL: function(card, skill, role) {
-			let p = role.params;
-
-			return `我方全体 | 恢复生命 | 造成伤害的${p[1]}%`;
-		},
-		ATK_OP_REVENGE: function(card, skill, role) {
-			let p = role.params;
-
-			return `<samp title="直接作用于面板，受暴击、克制、EX影响">附加伤害</samp> | 每段攻击 | 累计损失生命的${p[1]}% | 上限：${show(p[3])}的${p[4]}%`;
-		},
-		ATK_OP_NOW_TURN_REVENGE: false,
-		ATK_OP_PIERCING: function(card, skill, role) {
-			let p = role.params;
-
-			return `<samp title="不作用于面板，不受暴击、克制、EX影响">增加伤害</samp> | 每段攻击 | <samp title="等价于 无视目标对应防御的${p[1]}%">目标对应防御的${p[1]}%</samp>`;
-		},
-		ATK_OP_DAMAGE_INCREASE: function(card, skill, role) {
-			let p = role.params;
-
-			return `<samp title="作用于面板，受暴击、克制、EX影响">附加伤害</samp> | 每段攻击 | ${show(p[5])}的${p[3]/10}%`;
-		},
-		ATK_OP_ATTR_RATE_DOWN_INVALID: function() {
-			return '攻击时无视元素克制';
-		},
-		HEAL_FIXED: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			let base = Math.floor(~~p[1]+~~p[2]/1000*card.max.level);
-
-			return `${target} | 恢复生命 | ${base ? `<samp title="等级成长：${p[1]}+${p[2]/1000}*等级">${base}</samp>+` : ''}
-				${show(p[5])}的${p[3]/10}%`;
-		},
-		HEAL_BY_TARGET_HP: false,
-		HEAL_BY_TARGET_MAXHP: false,
-		HEAL_BY_SELF_PARAM: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | 恢复生命 | ${show(p[1])}的${p[2]/10}%`;
-		},
-		REGENERATE_FIXED: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			let base = Math.floor(~~p[2]+~~p[3]/1000*card.max.level);
-
-			return `${target} | ${p[1]}回合 |\x20
-				<samp title="发动时机：回合开始前">持续恢复生命</samp>&nbsp;|\x20
-				<samp title="等级成长：${p[2]}+${p[3]/1000}*等级">${base}</samp>+
-				${p[4]/10}%${show(p[6])}`;
-		},
-		REGENERATE_BY_TARGET_HP: false,
-		REGENERATE_BY_TARGET_MAXHP: false,
-		REGENERATE_BY_SELF_PARAM: false,
-		CARD_SEAL_RECOVERY: false,
-		ATK_UP_BY_SELF_PARAM: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
-				<samp title="等级成长：${p[6]}*等级">${p[6]*card.max.level}</samp>+${show(p[3])}的${p[4]/10}%`;
-		},
-		ATK_UP_BY_TARGET_PARAM: false,
-		ATK_UP_FIXED: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.max.level);
-
-			let turnText = (skill.style=='BURST_PASSIVE' || skill.style=='PASSIVE') ? '' : ` | ${p[1]}回合`;
-
-			return `${target}${turnText} | ${p[1]}回合 | 提升${show(p[2])} |\x20
-				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
-		},
-		ATK_UP_FIXED_ATTR_BONUS: false,
-		ATK_UP_BY_NOW_TURN_DAMAGE: false,
-		DAMAGE_UP: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | 提升${show(p[4])}${show(p[5])}伤害 | ${p[2]/10}%`;
-		},
-		DEBUFF_RELEASE: false,
-		DEBUFF_RELEASE_ONE: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			let db, db1 = show(p[3]) , db2 = show(p[4]);
-
-			if(db2 && db1 != db2) db = `${db1}、${db2}`;
-			else db = db1;
-
-			return `${target} | 解除${db}状态`;
-		},
-		DEBUFF_RELEASE_ONE_NUM: false,
-		DEBUFF_RELEASE_RANDOM: false,
-		DEBUFF_RELEASE_OLD: false,
-		ATTR_RATE_DOWN_INVALID: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]} | 攻击时无视元素克制`;
-		},
-		PARAM_UP_BUFF_CONVERT: false,
-		CRITICAL_UP: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | 提升暴击率 | ${p[2] / 10}%`;
-		},
-		ENCHANT: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			let base = Math.floor(~~p[2] + ~~p[5] * card.max.level);
-
-			return `${target} | ${p[1]}回合 | 每段攻击后 | 追加${show(p[6])}元素伤害 |\x20
-				<samp title="等级成长：${p[2]}+${p[5]}*等级">${base}</samp>点`;
-		},
-		DAMAGE_CUT: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | 减免所受伤害的${p[2]/10}%`;
-		},
-		DEF_UP_BY_SELF_PARAM: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			let base = Math.floor(~~p[5]/1000+~~p[6]*card.max.level);
-
-			let turnText = (skill.style=='BURST_PASSIVE' || skill.style=='PASSIVE') ? '' : ` | ${p[1]}回合`;
-
-			return `${target}${turnText} | 提升${show(p[2])} |\x20
-				<samp title="等级成长：${p[5]/1000}+${p[6]}*等级">${base}</samp>+${p[4]/10}%${show(p[3])}`;
-		},
-		DEF_UP_BY_TARGET_PARAM: false,
-		DEF_UP_FIXED: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.max.level);
-
-			return `${target} | ${p[1]}回合 | 提升${show(p[2])} |\x20
-				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
-		},
-		DEF_UP_FIXED_ATTR_BONUS: false,
-		DEF_UP_BY_NOW_TURN_DAMAGE: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | 受到伤害的${p[4]}% | 转换为${show(p[2])} | 上限：${p[5]}`;
-		},
-		CARD_SEAL_REGIST: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | 提升封印抗性 | ${p[2]}%`;
-		},
-		ATTACK_BARRIER: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | ${p[4]}层 | ${show(p[5])}护盾 | 伤害${p[2]}点以下无效化`;
-		},
-		ATTACK_BARRIER_APPOINT_ATTR: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | ${p[4]}层 | ${show(p[6])}元素${show(p[5])}护盾 | 伤害${p[2]}点以下无效化`;
-		},
-		COVERING: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			if(p[4][1] || p[5][1] != 3) L('New Params Role 64');
-
-			return `${target} | ${p[1]}回合 | 使敌方攻击指向自身 | 减免所受伤害的${p[2]/10}%`;
-		},
-		DARKNESS_REGIST: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | 提升黑暗抗性 | ${p[2]}%`;
-		},
-		DEBUFF_REGIST: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | 提升${show(p[3])}抗性 | ${p[2]}%`;
-		},
-		DEBUFF_REGIST_CARD: false,
-		HP_CUT: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | 生命降低 | 当前生命的${p[1]}%`;
-		},
-		BUFF_RELEASE: function(card, skill, role, skillFirst) {
-			let target = showTarget(skill, role, skillFirst);
-
-			if(~~role.params[1] < 100 || ~~role.params[2] > 0) L('New Role Param', role.type, 'Card', card.id, 'Skill', skill.id, 'Role', role.id);
-
-			return `${target} | 解除所有BUFF`;
-		},
-		BUFF_RELEASE_ONE: false,
-		BUFF_RELEASE_ONE_NUM: false,
-		BUFF_RELEASE_RANDOM: false,
-		BUFF_RELEASE_OLD: false,
-		ATK_BREAK_BY_SELF_PARAM: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			return `${target} | ${p[1]}回合 | 降低${show(p[2])} |\x20
-				<samp title="等级成长：${p[6]}*等级">${p[6]*card.max.level}</samp>+${show(p[3])}的${p[4]/10}%`;
-		},
-		ATK_BREAK_FIXED: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-
-			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.max.level);
-
-			if(~~p[3]<=1)
-				return `${target} | ${p[1]}回合 | 降低${show(p[2])} | <samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
+	// 渲染游戏内置值
+		let show = function(p) {
+			return shower[p[0]][p[1]];
+		};
+	// 渲染行动目标 目标又行动目标和技能目标两种
+		let showTarget = function(skill, role, sf) {
+			if(role.target == 1)
+				return shower.skillTarget[skill.info.target || sf.info.target];
 			else
-				return `${target} | ${p[1]}回合 | 降低${show(p[2])} | <samp title="固定值">${p[3]*p[4]/1000}</samp>点`;
-		},
-		ATK_BREAK_BY_NOW_TURN_DAMAGE: false,
-		GUARD_BREAK_BY_SELF_PARAM: false,
-		GUARD_BREAK_BY_TARGET_PARAM: false,
-		GUARD_BREAK_FIXED: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				return shower.roleTarget[role.target];
+		};
+	// 渲染手牌选择 一般是传承技能用
+		let showHand = function(hand) {
+		// 元素技能渲染
+			let attrShow = show([ 'attr', hand.attr ]);
+			let kindShow = show([ 'skillKind2', hand.kind ]);
 
-			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.max.level);
+			attrShow = attrShow != '全部' ? `[${attrShow}]` : '';
+			kindShow = kindShow != '全部' ? `[${kindShow}]` : '';
+		// COST渲染
+			let costShow = '';
 
-			return `${target} | ${p[1]}回合 | 降低${show(p[2])} |\x20
-				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
-		},
-		GUARD_BREAK_BY_NOW_TURN_DAMAGE: false,
-		DAMAGE_DOWN: false,
-		UNDERMINE: false,
-		STAN: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+			let min = ~~hand.cost.min, max = ~~hand.cost.max;
 
-			return `${target} | 打断行动 | 机率${p[2]}%`;
-		},
-		POISON: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+			if(min <= 1) {
+				min = 0;
+			}
+			if(max >= 9) {
+				max = 0;
+			}
 
-			let base = ~~p[4]+Math.floor(~~p[5]*card.max.level/1000);
+			if(min == max && min != 0)
+				costShow = `[Cost：${min}]`;
+			else if(min && !max)
+				costShow = `[Cost：${min}或以上]`;
+			else if(!min && max)
+				costShow = `[Cost：${max}或以下]`;
+			else if(min != 0 && max != 0)
+				costShow = `[Cost：${min}~${max}]`;
+		// 分组渲染
+			let groupShow = '';
 
-			return `${target} | ${p[1]}回合 | 毒 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
-		},
-		BURN: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+			if(hand.group[0]) groupShow += ' 或 '+show(['tag', hand.group[0]]);
+			if(hand.group[1]) groupShow += ' 或 '+show(['tag', hand.group[1]]);
+			if(hand.group[2]) groupShow += ' 或 '+show(['tag', hand.group[2]]);
 
-			let base = ~~p[4]+Math.floor(~~p[5]*card.max.level/1000);
+			if(groupShow) groupShow = groupShow.replace(/^ 或/, '分组：');
+			groupShow = `[${groupShow}]`;
 
-			return `${target} | ${p[1]}回合 | 燃烧 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
-		},
-		FREEZE: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+			return `选择手牌 | ${hand.num}张${costShow}${attrShow}${kindShow}${groupShow}`;
+		};
+	// // 参数监视
+	// 	let monit = function(params, options = [], showText, type) {
+	// 		let flag = false;
 
-			let base = ~~p[4]+Math.floor(~~p[5]*card.max.level/1000);
+	// 		for(let opt of options) {
+	// 			if(opt instanceof Array) {
+	// 				if(params['p'+opt[0]] != opt[1]){
+	// 					L(`warn: ${type} params${opt[0]}`, params['p'+opt[0]]);
+	// 					flag = true;
+	// 				}
+	// 			}
+	// 			else {
+	// 				if(params['p'+opt] && params['p'+opt] != '0') {
+	// 					L(`warn: ${type} params${opt}`, params['p'+opt]);
+	// 					flag = true;
+	// 				}
+	// 			}
+	// 		}
 
-			return `${target} | ${p[1]}回合 | 冻结 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
-		},
-		BLEED: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+	// 		if(flag && showText) { L(showText); }
 
-			let base = ~~p[4]+Math.floor(~~p[5]*card.max.level/1000);
+	// 		return false;
+	// 	};
 
-			return `${target} | ${p[1]}回合 | 裂风 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
-		},
-		STEAL: false,
-		ELECTRIC: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+		return {
+		// 攻击
+			ATTACK_AA: function(card, skill, role, skillFirst) {
+				let { p0,p1,p2,p4,p5,p6,p7,p8 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
 
-			let base = ~~p[4]+Math.floor(~~p[5]*card.max.level/1000);
+				let base = Math.floor(~~p0+~~p1/1000*card.max.level);
 
-			return `${target} | ${p[1]}回合 | 感电 | <samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>+${p[6]/10}%${show(p[8])}`;
-		},
-		CARD_SEAL: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst),
-				turn = (~~p.param1 == ~~p.param2) ? `${~~p.param1}回合` : `${~~p.param1}~${~~p.param2}回合`,
-				num = (~~p.param3 == ~~p.param4) ? `${~~p.param3}张` : `${~~p.param3}~${~~p.param4}张`,
-				cost = (~~p.param7 == ~~p.param8) ? `${~~p.param7}张` : `${~~p.param7}~${~~p.param8}张`;
+				let type = p8 ? `${show(p8)}` : '';
 
-			return `${target} | 封印 | ${show(p[5])}类型${show(p[5])}元素 | ${cost} | ${turn}${num}`;
-		},
-		WEAKNESS: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				let time = p4>0 ? ` | ${p4}段` : '';
+				let attr = p7 ? ` | ${show(p7)}` : '';
 
-			return `${target} | ${p[1]}回合 | 标记 | 受到攻击时 | 伤害提升${p[2]/10}%`;
-		},
-		HEAL_REVERSE: false,
-		COST_BLOCK: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				let addi = ` | ${base}+${show(p5)}的${p2/10}%`;
 
-			return `${target} | ${p[1]}回合 | COST封印 | ${p[2]}点`;
-		},
-		CARD_TRAP_DAMAGE: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				let crit = p6 / 10 != 15 ? ` | ${~~p6 / 10}%暴击` : '';
 
-			let num = (p[2] == p[3] ? p[2]: `${p[2]}~${p[3]}`);
+				let content = `${target}${time}${attr}${addi}${crit}`;
+				let title = `基础值随等级成长：${p0}+${p1/1000}*等级`;
 
-			if(~~p[5] || ~~p[6] || ~~p[7]) L('miao?');
+				return { name: type+'攻击', content: content, title: title };
+			},
+		// 吸血
+			ATK_OP_DRAIN: function(card, skill, role) {
+				let { p0 } = role.params;
 
-			return `${target} | ${p[1]}回合 | 陷阱 | ${num}张 |\x20
-				<samp title="时机：我方卡牌全部发动后，敌方行动前">使用后受到伤害${p[4]}点</samp>`;
-		},
-		CARD_TRAP_DOT: false,
-		DARKNESS_RANDOM: false,
-		DARKNESS_APPOINT: false,
-		REWRITE: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				let content = `造成伤害的${p0}% | 转化为恢复[自身]生命`;
+				let title = `造成伤害的${p0} 转化为 [自身]生命`;
 
-			return `${target} | ${p[1]}回合 | 属性变更 | ${show(p[2])}`;
-		},
-		DEAL_BONUS: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				return { name: '吸血', content: content, title: title };
+			},
+			// 全体吸血
+			ATK_OP_DRAIN_ALL: function(card, skill, role) {
+				let { p0 } = role.params;
 
-			return `${target} | 抽卡+${p[1]}`;
-		},
-		NONE: false,
-		OUTPUT_TEXT: false,
-		DESTRUCT: false,
-		ATTR_HIDE: false,
-		ATTR_SEE: function(card, skill, role, skillFirst) {
-			let target = showTarget(skill, role, skillFirst);
+				let content = `造成伤害的${p0}% | 转化为[我方全体]生命`;
+				let title = `造成伤害的${p0} 转化为 [我方全体]生命`;
 
-			if(role.params[1] != 9999) L('New Params Role 61');
+				return { name: '吸血', content: content, title: title };
+			},
+		// 复仇
+			ATK_OP_REVENGE: function(card, skill, role) {
+				let { p0,p2,p3 } = role.params;
 
-			return `${target} | 显示自身的元素`;
-		},
-		REVIVE: false,
-		ROLE_OP_COMBO: false,
-		DOT_VALUE_UP: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				let content = `每段攻击 | 叠加面板 | 累计损失生命的${p0}% | 上限：${show(p2)}的${p3}%`;
+				let title = `累计损失生命的${p0} 转化为 攻击面板`;
 
-			return `${target} | <samp title="发动条件：处于${show(p[6])}状态">${show(p[6])}</samp>&nbsp;|\x20
-				回合+${p[1]} | 伤害提升${p[2]}%`;
-		},
-		DEAL_PENALTY: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				return { name: '复仇', content: content, title: title };
+			},
+		// 防御穿透
+			ATK_OP_PIERCING: function(card, skill, role) {
+				let { p0 } = role.params;
 
-			return `${target} | 抽卡-${p[1]}`;
-		},
-		DEAL_PENALTY_TURN_APPOINT: false,
-		ENEMY_AWAKE_FLAG_SET: false,
-		FORCE_BATTLE_END: false,
-		FIELD_ATTR_UP: false,
-		FIELD_ATTR_DOWN: false,
-		FIELD_SKILL_UP: false,
-		FIELD_HEAL_UP: false,
-		FIELD_HEAL_DOWN: false,
-		FIELD_JAMMING_UP: false,
-		FIELD_SUPPORT_DEFENCE_UP: false,
-		CRITICAL_UP_BY_SUPPORT: false,
-		ROLE_VALUE_UP_BY_ROLE_OP: false,
-		DECK_COMBO_RATE_UP: false,
-		NEED_COST_DOWN: false,
-		ROLE_VALUE_UP_BY_PVP_RATE: false,
-		ATK_UP_FIXED_PARAM_UNIQUE: false,
-		DEF_UP_FIXED_PARAM_UNIQUE: false,
-		ATK_UP_FIXED_SUPPORT: false,
-		DEF_UP_FIXED_SUPPORT: false,
-		ATTR_DEF_DOWN: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				let content = `每段攻击 | 无视防御 | 目标的攻击对应的防御的${p0}%`;
+				let title = '直接修正防御值，不作用于面板';
 
-			let base = Math.floor(~~p[4] + ~~p[5] / 1000 * card.max.level);
+				return { name: '穿透', content: content, title: title };
+			},
+		// 叠加参数
+			ATK_OP_DAMAGE_INCREASE: function(card, skill, role) {
+				let { p2,p4 } = role.params;
 
-			return `${target} | ${p[1]}回合 | 降低${show(p[6])}元素耐性 |\x20
-				<samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>点`;
-		},
-		ATTR_DEF_UP: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				if(!p2) return { content: '' };
 
-			let base = Math.floor(~~p[4] + ~~p[5] / 1000 * card.max.level);
+				let content = `每段攻击 | 叠加面板 | ${show(p4)}的${p2/10}%`;
+				let title = `${show(p4)}的${p2/10}% 转化为 攻击面板`;
 
-			return `${target} | ${p[1]}回合 | 提升${show(p[6])}元素耐性 |\x20
-				<samp title="等级成长：${p[4]}+${p[5]/1000}*等级">${base}</samp>点`;
-		},
-		ATTR_DEF_UP_SUPPORT: false,
-		DEBUFF_REGIST_LIMIT: false,
-		DEBUFF_REGIST_CARD_LIMIT: false,
-		REFLECTION: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				return { name: '叠加', content: content, title: title };
+			},
+		// 免疫克制
+			ATK_OP_ATTR_RATE_DOWN_INVALID: function() {
+				return { name: '免疫克制', content: '攻击时无视元素克制', title: '' };
+			},
+		// 治疗
+			HEAL_FIXED: function(card, skill, role, skillFirst) {
+				let { p0,p1,p2,p4 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
 
-			let base = Math.floor(~~p[2] / 100 + ~~p[3] / 100 * card.max.level);
+				let base = Math.floor(~~p0+~~p1/1000*card.max.level);
 
-			return `${target} | ${p[1]}回合 | 反射伤害 |\x20
-				所受伤害的<samp title="等级成长：${p[2]/100}+${p[3]/100}*等级">${base}</samp>%`;
-		},
-		ATK_OP_REFLECTION_INVALID: false,
-		TRANCE_GAUGE_STATE_CHANGE: false,
-		TRANCE_GAUGE_VALUE_UP: false,
-		TRANCE_GAUGE_VALUE_DOWN: false,
-		TRANCE_GAUGE_OVER_HEAT_TURN_ADD: false,
-		ENDURE: false,
-		CRITICAL_DOWN: false,
-		DAMAGE_BOOST: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				let addi = ` | ${base}点 + ${show(p4)}的${p2/10}%`;
 
-			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp>&nbsp;| 提升${show(p[7])}伤害 | ${p[2] / 10}%`;
-		},
-		ATK_UP_BOOST: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				let content = `${target}${addi}`;
+				let title = `基础值随等级成长：${p0}+${p1/1000}*等级`;
 
-			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp>&nbsp;| 提升${show(p[7])}支援效果 | ${p[4] / 10}%`;
-		},
-		DEF_UP_BOOST: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				return { name: '治疗', content: content, title: title };
+			},
+		// 治疗 基于参数
+			HEAL_BY_SELF_PARAM: function(card, skill, role, skillFirst) {
+				let { p0,p1 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp>&nbsp;| 提升${show(p[7])}效果 | ${p[4] / 10}%`;
-		},
-		ATK_BREAK_BOOST: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				let content = `${target} | ${show(p0)}的${p1/10}%`;
+				let title = `基础值随等级成长：${p0}+${p1/1000}*等级`;
 
-			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp>&nbsp;| 提升${show(p[7])}弱化效果 | ${p[4] / 10}%`;
-		},
-		GUARD_BREAK_BOOST: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				return { name: '治疗', content: content, title: title };
+			},
+		// 缓回
+			REGENERATE_FIXED: function(card, skill, role, skillFirst) {
+				let { p0,p1,p2,p3,p5 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp>&nbsp;| 提升${show(p[7])}弱化效果 | ${p[4] / 10}%`;
-		},
-		HEAL_BOOST: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				let base = Math.floor(~~p1+~~p2/1000*card.max.level);
 
-			return `${target} | ${show(p[6]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp>&nbsp;| 提升治疗效果 | ${p[4] / 10}%`;
-		},
-		CRITICAL_BOOST: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				let content = `${target} | ${p0}回合 | ${base}点 + ${p3/10}%${show(p5)}`;
+				let title = `治疗时机：回合开始前。基础值随等级成长：${p1}+${p2/1000}*等级`;
 
-			return `${target} | ${show(p[4]) || '任意'}元素<samp title="技能元素等价于卡面显示的元素">技能</samp>&nbsp;| 提升${show(p[5])}伤害暴击率 | ${p[2] / 10}%`;
-		},
-		DAMAGE_CUT2: false,
-		DAMAGE_BOOST_ORDER_TARGET_DEBUFF: false,
-		DAMAGE_CUT_ORDER_TARGET_DEBUFF: false,
-		ENEMY_CURSE: false,
-		BLESS: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				return { name: '持续治疗', content: content, title: title };
+			},
+		// 支援 根据参数
+			ATK_UP_BY_SELF_PARAM: function(card, skill, role, skillFirst) {
+				let { p0,p1,p2,p3,p5 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
 
-			return `${target} | 祝福 | ${p[1]}回合`;
-		},
-		CURSE_RELEASE: false,
-		BLESS_RELEASE: false,
-		CURSE_TURN_DOWN: false,
-		BLESS_TURN_DOWN: false,
-		BEGINNING_DRAW: function() {
-			return '起始抽牌';
-		},
-		CURSE_TURN_UP: false,
-		BLESS_TURN_UP: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				let count = `${p5*card.max.level}点 + ${show(p2)}的${p3/10}%`;
 
-			if(p[2][1]) L('New Params Role 143');
+				let content = `${target} | ${p0}回合 | 提升${count}`;
+				let title = `基础值随等级成长：${p5}*等级`;
 
-			return `${target} | 所有祝福 | 回合+${p[1]}`;
-		},
-		PARAM_LIMIT_BREAK_FIXED: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				return { name: `${show(p1)}`, content: content, title: title };
+			},
+		// 支援
+			ATK_UP_FIXED: function(card, skill, role, skillFirst) {
+				let { p0,p1,p3,p4 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
 
-			let turnText = (skill.style=='BURST_PASSIVE' || skill.style=='PASSIVE') ? '' : ` | ${p[1]}回合`;
+				let base = Math.floor(~~p3/1000+~~p4/1000*card.max.level);
 
-			let base = Math.floor(~~p[4]/1000+~~p[5]/1000*card.max.level);
+				let turnText = (skill.style=='BURST_PASSIVE' || skill.style=='PASSIVE') ? '' : ` | ${p0}回合`;
 
-			return `${target}${turnText} | 提高${show(p[2])}上限 |\x20
-				<samp title="等级成长：${p[4]/1000}+${p[5]/1000}*等级">${base}</samp>点`;
-		},
-		GUTS: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				let content = `${target}${turnText} | 提升${base}点`;
+				let title = `基础值随等级成长：${p3/1000}+${p4/1000}*等级`;
 
-			return `${target} | ${p[1]}回合 | ${target}死亡时 | 恢复${p[3]}%HP | 最多${p[2]}次`;
-		},
-		BURST_GAUGE_QUICK_UP: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				return { name: `${show(p1)}`, content: content, title: title };
+			},
+		// 伤害强化
+			DAMAGE_UP: function(card, skill, role, skillFirst) {
+				let { p0,p1,p3,p4 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
 
-			return `${target} | 提升变身进度 | ${p[1]}%`;
-		},
-		CRITICAL_DAMAGE_BOOST: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				let content = `${target} | ${p0}回合 | 提升${show(p3)}${show(p4)}伤害 | ${p1/10}%`;
 
-			return `${target} | ${p[1]}回合 | 提升暴击伤害 | ${p[2]}%`;
-		},
-		NEED_COST_DOWN_BURST : function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				return { name: '伤害强化', content: content, title: '' };
+			},
+		// 解除Debuff
+			DEBUFF_RELEASE_ONE: function(card, skill, role, skillFirst) {
+				let { p2,p3 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
 
-			if(p[1] > 1)
-				L(`card ${card.id} NEED_COST_DOWN_BURST?`);
+				let db, db1 = show(p2) , db2 = show(p3);
 
-			return `${target} | ${showHand(skill.hand)} | 减少COST | ${p[2]}`;
-		},
-		ADD_ATK_OP_PIERCING: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				if(db2 && db1 != db2)
+					db = `${db1}、${db2}`;
+				else
+					db = db1;
 
-			if(p[1] > 1)
-				L('ADD_ATK_OP_PIERCING?');
+				let content = `${target} | ${db}状态`;
 
-			return `${target} | ${showHand(skill.hand)} | 无视对应防御 | ${p[2]}%`;
-		},
-		DISCARD_DRAW : function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				return { name: '解除状态', content: content, title: '' };
+			},
+		// 免疫克制
+			ATTR_RATE_DOWN_INVALID: function(card, skill, role, skillFirst) {
+				let { p0 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
 
-			return `${target} | 保留最多${showHand(skill.hand)} | 最多抽取${p[1]}张`;
-		},
-		ATTACK_MULTISTAGE : function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				let content = `${target} | ${p0} | 攻击时无视元素克制`;
 
-			return `${target} | ${showHand(skill.hand)} | 追加${show(p[2])}攻击 | ${p[3]}次`;
-		},
-		DEF_UP_BOOST_ORDER_TRIBAL : function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				return { name: '克制免疫', content: content, title: '' };
+			},
+		// 暴击率提升
+			CRITICAL_UP: function(card, skill, role, skillFirst) {
+				let { p0,p1 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
 
-			if(p[1] > 1)
-				L('DEF_UP_BOOST_ORDER_TRIBAL?');
+				let content = `${target} | ${p0}回合 | 提升${p1 / 10}%`;
 
-			return `${target} | ${showHand(skill.hand)} | 当目标心像为[${show(['tribal', p[10]])}] | ${show(p[7])} | 提升${p[4]/10}%`;
-		},
-		ATK_UP_BOOST_ORDER_TRIBAL: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				return { name: '暴击率', content: content, title: '' };
+			},
+		// 追伤
+			ENCHANT: function(card, skill, role, skillFirst) {
+				let { p0,p1,p4,p5 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
 
-			if(p[1] > 1)
-				L('ATK_UP_BOOST_ORDER_TRIBAL?');
+				let base = Math.floor(~~p1 + ~~p4 * card.max.level);
 
-			return `${target} | ${showHand(skill.hand)} | 当目标心像为[${show(['tribal', p[10]])}] | ${show(p[7])} | 提升${p[4]/10}%`;
-		},
-		DAMAGE_BOOST_ORDER_TRIBAL: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
+				let content = `${target} | ${p0}回合 | 每段攻击后 | 追加1段元素攻击 | ${base}点`;
+				let title = `等级成长：${p1}+${p4}*等级\r\n纯元素攻击，不带有[物理][魔法]属性。\r\n不触发物魔防御，触发耐性计算`;
 
-			if(p[1] > 1)
-				L('DAMAGE_BOOST_ORDER_TRIBAL?');
+				return { name: `${show(p5)}追伤`, content: content, title: title };
+			},
+		// 伤害减免
+			DAMAGE_CUT: function(card, skill, role, skillFirst) {
+				let { p0,p1 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
 
-			return `${target} | ${showHand(skill.hand)} | 当目标心像为[${show(['tribal', p[10]])}] | ${show(p[7])} | 提升${p[4]/10}%`;
-		},
-		PARAM_UP_SKILL_BONUS: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-// debugger;
-			if(p[1] > 1)
-				L('DAMAGE_BOOST_ORDER_TRIBAL?');
+				let content = `${target} | ${p0}回合 | 减免所受伤害的${p1/10}%`;
+				let title = '百分比伤害不受减伤影响';
 
-			return '';
-		},
-		LIMIT_BREAK_BONUS: function(card, skill, role, skillFirst) {
-			let p = role.params, target = showTarget(skill, role, skillFirst);
-// debugger;
-			if(p[1] > 1)
-				L('DAMAGE_BOOST_ORDER_TRIBAL?');
+				return { name: '减伤', content: content, title: title };
+			},
+		// 防御 基于参数
+			DEF_UP_BY_SELF_PARAM: function(card, skill, role, skillFirst) {
+				let { p0,p1,p2,p3,p4,p5 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
 
-			return '';
-		},
+				let base = Math.floor(~~p4/1000+~~p5*card.max.level);
 
+				let turnText = (skill.style=='BURST_PASSIVE' || skill.style=='PASSIVE') ? '' : ` | ${p0}回合`;
+
+				let content = `${target}${turnText} | 提升${base}点 + ${p3/10}%${show(p2)}`;
+				let title = `基础值随等级成长：${p4/1000}+${p5}*等级`;
+
+				return { name: `${show(p1)}`, content: content, title: title };
+			},
+		// 防御
+			DEF_UP_FIXED: function(card, skill, role, skillFirst) {
+				let { p0,p1,p3,p4 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let base = Math.floor(~~p3/1000+~~p4/1000*card.max.level);
+
+				let content = `${target} | ${p0}回合 | 提升${base}点`;
+				let title = `基础值随等级成长：${p3/1000}+${p4/1000}*等级`;
+
+				return { name: `${show(p1)}`, content: content, title: title };
+			},
+		// 转伤
+			DEF_UP_BY_NOW_TURN_DAMAGE: function(card, skill, role, skillFirst) {
+				let { p0,p1,p3,p4 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | 受到伤害的${p3}% | 转化为 ${show(p1)} | 上限：${p4}`;
+
+				return { name: '复仇', content: content, title: '' };
+			},
+		// 封印抗性
+			CARD_SEAL_REGIST: function(card, skill, role, skillFirst) {
+				let { p0,p1 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | 提升${p1}%`;
+
+				return { name: '封印抗性', content: content, title: '' };
+			},
+		// 护盾
+			ATTACK_BARRIER: function(card, skill, role, skillFirst) {
+				let { p0,p1,p3,p4, } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | ${p3}层 | 伤害${p1}点以下无效化`;
+
+				return { name: `${show(p4)}护盾`, content: content, title: '' };
+			},
+		// 元素护盾
+			ATTACK_BARRIER_APPOINT_ATTR: function(card, skill, role, skillFirst) {
+				let { p0,p1,p3,p4,p5 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | ${p3}层 | 伤害${p1}点以下无效化`;
+
+				return { name: `${show(p5)}${show(p4)}护盾`, content: content, title: '' };
+			},
+		// 嘲讽
+			COVERING: function(card, skill, role, skillFirst) {
+				let { p0,p1,p3,p4 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				if(p3[1] || p4[1] != 3) L('New Params Role 64');
+
+				let content = `${target} | ${p0}回合 | 减免所受伤害的${p1/10}%`;
+
+				return { name: '嘲讽', content: content, title: '' };
+			},
+		// 黑暗抗性
+			DARKNESS_REGIST: function(card, skill, role, skillFirst) {
+				let { p0,p1 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | 提升${p1}%`;
+
+				return { name: '黑暗抗性', content: content, title: '' };
+			},
+		// DEBUFF抗性
+			DEBUFF_REGIST: function(card, skill, role, skillFirst) {
+				let { p0,p1,p2 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | 提升${p1}%`;
+
+				return { name: `${show(p2)}抗性`, content: content, title: '' };
+			},
+		// HP减少 百分比
+			HP_CUT: function(card, skill, role, skillFirst) {
+				let { p0 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | 当前生命的${p0}%`;
+
+				return { name: '损失生命', content: content, title: '' };
+			},
+		// 解除所有buff
+			BUFF_RELEASE: function(card, skill, role, skillFirst) {
+				let target = showTarget(skill, role, skillFirst);
+
+				if(~~role.params[1] < 100 || ~~role.params[2] > 0)
+					L('New Role Param', role.type, 'Card', card.id, 'Skill', skill.id, 'Role', role.id);
+
+				return { name: '解除状态', content: `${target} | 全部BUFF类状态`, title: '' };
+			},
+		// 弱化 基于参数
+			ATK_BREAK_BY_SELF_PARAM: function(card, skill, role, skillFirst) {
+				let { p0,p1,p2,p3,p5 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | 降低${p5*card.max.level}点 + ${show(p2)}的${p3/10}%`;
+				let title = `基础值随等级成长：${p5}*等级`;
+
+				return { name: `${show(p1)}`, content: content, title: title };
+			},
+		// 弱化
+			ATK_BREAK_FIXED: function(card, skill, role, skillFirst) {
+				let { p0,p1,p2,p3,p4 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let base = Math.floor(~~p3/1000+~~p4/1000*card.max.level);
+				if(~~p2<=1) {
+					let content = `${target} | ${p0}回合 | 降低${base}点`;
+					let title = `基础值随等级成长：${p3/1000}+${p4/1000}*等级`;
+
+					return { name: `${show(p1)}`, content: content, title: title };
+				}
+				else {
+					let content = `${target} | ${p0}回合 | 降低${p2*p3/1000}点`;
+					let title = '固定值';
+
+					return { name: `${show(p1)}`, content: content, title: title };
+				}
+			},
+		// 防御弱化
+			GUARD_BREAK_FIXED: function(card, skill, role, skillFirst) {
+				let { p0,p1,p3,p4 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let base = Math.floor(~~p3/1000+~~p4/1000*card.max.level);
+
+				let content = `${target} | ${p0}回合 | 降低${base}点`;
+				let title = `基础值随等级成长：${p3/1000}+${p4/1000}*等级`;
+
+				return { name: `${show(p1)}`, content: content, title: title };
+			},
+		// 打断
+			STAN: function(card, skill, role, skillFirst) {
+				let { p1 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | 机率${p1}%`;
+
+				return { name: '打断行动', content: content, title: '' };
+			},
+		// 毒
+			POISON: function(card, skill, role, skillFirst) {
+				let { p0,p3,p4,p5,p7 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let base = ~~p3+Math.floor(~~p4*card.max.level/1000);
+
+				let content = `${target} | ${p0}回合 | ${base}+${p5/10}%${show(p7)}`;
+				let title = `基础值随等级成长：${p3}+${p4/1000}*等级`;
+
+				return { name: '毒', content: content, title: title };
+			},
+		// 燃烧
+			BURN: function(card, skill, role, skillFirst) {
+				let { p0,p3,p4,p5,p7 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let base = ~~p3+Math.floor(~~p4*card.max.level/1000);
+
+				let content = `${target} | ${p0}回合 | ${base}+${p5/10}%${show(p7)}`;
+				let title = `基础值随等级成长：${p3}+${p4/1000}*等级`;
+
+				return { name: '燃烧', content: content, title: title };
+			},
+		// 冻结
+			FREEZE: function(card, skill, role, skillFirst) {
+				let { p0,p3,p4,p5,p7 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let base = ~~p3+Math.floor(~~p4*card.max.level/1000);
+
+				let content = `${target} | ${p0}回合 | ${base}+${p5/10}%${show(p7)}`;
+				let title = `基础值随等级成长：${p3}+${p4/1000}*等级`;
+
+				return { name: '冻结', content: content, title: title };
+			},
+		// 裂风
+			BLEED: function(card, skill, role, skillFirst) {
+				let { p0,p3,p4,p5,p7 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let base = ~~p3+Math.floor(~~p4*card.max.level/1000);
+
+				let content = `${target} | ${p0}回合 | ${base}+${p5/10}%${show(p7)}`;
+				let title = `基础值随等级成长：${p3}+${p4/1000}*等级`;
+
+				return { name: '裂风', content: content, title: title };
+			},
+		// 感电
+			ELECTRIC: function(card, skill, role, skillFirst) {
+				let { p0,p3,p4,p5,p7 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let base = ~~p3+Math.floor(~~p4*card.max.level/1000);
+
+				let content = `${target} | ${p0}回合 | ${base}+${p5/10}%${show(p7)}`;
+				let title = `基础值随等级成长：${p3}+${p4/1000}*等级`;
+
+				return { name: '感电', content: content, title: title };
+			},
+		// 封印
+			CARD_SEAL: function(card, skill, role, skillFirst) {
+				let { p0,p1,p2,p3,p4,p6,p7 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+				let turn = (~~p0 == ~~p1) ? `${~~p0}回合` : `${~~p0}~${~~p1}回合`;
+				let num = (~~p2 == ~~p3) ? `${~~p2}张` : `${~~p2}~${~~p3}张`;
+				let cost = (~~p6 == ~~p7) ? `${~~p6}Cost` : `${~~p6}~${~~p7}Cost`;
+
+				let content = `${target} | 封印 | ${show(p4)}类型${show(p4)}元素 | ${cost} | ${turn}${num}`;
+
+				return { name: '封印', content: content, title: '' };
+			},
+		// 标记
+			WEAKNESS: function(card, skill, role, skillFirst) {
+				let { p0,p1, } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | 受到攻击时 | 伤害提升${p1/10}%`;
+
+				return { name: '标记', content: content, title: '' };
+			},
+		// Cost封印
+			COST_BLOCK: function(card, skill, role, skillFirst) {
+				let { p0,p1 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | ${p1}Cost`;
+
+				return { name: 'Cost封印', content: content, title: '' };
+			},
+		// 陷阱
+			CARD_TRAP_DAMAGE: function(card, skill, role, skillFirst) {
+				let { p0,p1,p2,p3,p4,p5,p6, } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let num = (p1 == p2 ? p1: `${p1}~${p2}`);
+
+				if(~~p4 || ~~p5 || ~~p6) L('miao?');
+
+				let content = `${target} | ${p0}回合 | 随机${num}张 | 使用后 | 受到伤害${p3}点`;
+				let title = '受伤时机：我方卡牌全部发动后、敌方行动前';
+
+				return { name: '陷阱', content: content, title: title };
+			},
+		// 元素变换
+			REWRITE: function(card, skill, role, skillFirst) {
+				let { p0,p1 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | ${show(p1)}`;
+				let title = '受伤时机：我方卡牌全部发动后、敌方行动前';
+
+				return { name: '元素变更', content: content, title: title };
+			},
+		// 抽卡
+			DEAL_BONUS: function(card, skill, role, skillFirst) {
+				let { p0 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				return { name: '抽卡', content: `${target} | +${p0}`, title: '' };
+			},
+		// 元素洞察
+			ATTR_SEE: function(card, skill, role, skillFirst) {
+				let target = showTarget(skill, role, skillFirst);
+
+				if(role.params.p0 != 9999) L('New Params Role 61');
+
+				return { name: '元素洞察', content: `${target} | 显示目标元素`, title: '' };
+			},
+		// 异常强化
+			DOT_VALUE_UP: function(card, skill, role, skillFirst) {
+				let { p0,p1,p5 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | 回合+${p0} | 伤害提升${p1}%`;
+				let title = `发动条件：处于${show(p5)}状态`;
+
+				return { name: `${show(p5)}强化`, content: content, title: title };
+			},
+		// 减抽
+			DEAL_PENALTY: function(card, skill, role, skillFirst) {
+				let { p0 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				return { name: '减抽', content: `${target} | -${p0}`, title: ''};
+			},
+		// 减耐
+			ATTR_DEF_DOWN: function(card, skill, role, skillFirst) {
+				let { p0,p3,p4,p5 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let base = Math.floor(~~p3 + ~~p4 / 1000 * card.max.level);
+
+				let content = `${target} | ${p0}回合 | 降低${base}点`;
+				let title = `等级成长：${p3}+${p4/1000}*等级`;
+
+				return { name: `${show(p5)}耐性`, content: content, title: title };
+			},
+		// 耐性
+			ATTR_DEF_UP: function(card, skill, role, skillFirst) {
+				let { p0,p3,p4,p5 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let base = Math.floor(~~p3 + ~~p4 / 1000 * card.max.level);
+
+				let content = `${target} | ${p0}回合 | 提升${base}点`;
+				let title = `等级成长：${p3}+${p4/1000}*等级`;
+
+				return { name: `${show(p5)}耐性`, content: content, title: title };
+			},
+		//反射
+			REFLECTION: function(card, skill, role, skillFirst) {
+				let { p0,p1,p2 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let base = Math.floor(~~p1 / 100 + ~~p2 / 100 * card.max.level);
+
+				let content = `${target} | ${p0}回合 | 所受伤害的${base}点`;
+				let title = `等级成长：${p1/100}+${p2/100}*等级`;
+
+				return { name: '反射伤害', content: content, title: title };
+			},
+		// 伤害强化
+			DAMAGE_BOOST: function(card, skill, role, skillFirst) {
+				let { p0,p1,p5,p6 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | 提升${show(p6)}伤害 | ${p1 / 10}%`;
+				let title = '技能元素等价于卡面显示的元素';
+
+				return { name: `${show(p5) || '任意'}强化`, content: content, title: title };
+			},
+		// 伤害支援强化
+			ATK_UP_BOOST: function(card, skill, role, skillFirst) {
+				let { p0,p3,p5,p6 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | 提升${show(p6)}支援效果 | ${p3 / 10}%`;
+				let title = '技能元素等价于卡面显示的元素';
+
+				return { name: `${show(p5) || '任意'}强化`, content: content, title: title };
+			},
+		// 防御强化
+			DEF_UP_BOOST: function(card, skill, role, skillFirst) {
+				let { p0,p3,p5,p6 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | 提升${show(p6)}效果 | ${p3 / 10}%`;
+				let title = '技能元素等价于卡面显示的元素';
+
+				return { name: `${show(p5) || '任意'}强化`, content: content, title: title };
+			},
+		// 弱化效果
+			ATK_BREAK_BOOST: function(card, skill, role, skillFirst) {
+				let { p0,p3,p5,p6 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | 提升${show(p6)}弱化效果 | ${p3 / 10}%`;
+				let title = '技能元素等价于卡面显示的元素';
+
+				return { name: `${show(p5) || '任意'}强化`, content: content, title: title };
+			},
+		// 防御弱化效果
+			GUARD_BREAK_BOOST: function(card, skill, role, skillFirst) {
+				let { p0,p3,p5,p6 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | 提升${show(p6)}弱化效果 | ${p3 / 10}%`;
+				let title = '技能元素等价于卡面显示的元素';
+
+				return { name: `${show(p5) || '任意'}强化`, content: content, title: title };
+			},
+		// 治疗效果
+			HEAL_BOOST: function(card, skill, role, skillFirst) {
+				let { p0,p3,p5 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | 提升治疗效果 | ${p3 / 10}%`;
+				let title = '技能元素等价于卡面显示的元素';
+
+				return { name: `${show(p5) || '任意'}强化`, content: content, title: title };
+			},
+			CRITICAL_BOOST: function(card, skill, role, skillFirst) {
+				let { p0,p1,p3,p4 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | 提升${show(p4)}伤害暴击率 | ${p1 / 10}%`;
+				let title = '技能元素等价于卡面显示的元素';
+
+				return { name: `${show(p3) || '任意'}强化`, content: content, title: title };
+			},
+			BLESS: function(card, skill, role, skillFirst) {
+				let { p0 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				return { name: '祝福', content: `${target} | ${p0}回合`, title: '' };
+			},
+			BEGINNING_DRAW: function() {
+				return { name: '起始抽牌', content: ' ', title: '' };
+			},
+			BLESS_TURN_UP: function(card, skill, role, skillFirst) {
+				let { p0,p1 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				if(p1[1]) L('New Params Role 143');
+
+				return { name: '祝福回合', content: `${target} | +${p0}`, title: '' };
+			},
+			PARAM_LIMIT_BREAK_FIXED: function(card, skill, role, skillFirst) {
+				let { p0,p1,p3,p4 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let turnText = (skill.style=='BURST_PASSIVE' || skill.style=='PASSIVE') ? '' : ` | ${p0}回合`;
+
+				let base = Math.floor(~~p3/1000+~~p4/1000*card.max.level);
+
+				return `${target}${turnText} | 提高${show(p1)}上限 |\x20
+					<samp title="等级成长：${p3/1000}+${p4/1000}*等级">${base}</samp>点`;
+			},
+			GUTS: function(card, skill, role, skillFirst) {
+				let { p0,p1,p2 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				return `${target} | ${p0}回合 | ${target}死亡时 | 恢复${p2}%HP | 最多${p1}次`;
+			},
+			BURST_GAUGE_QUICK_UP: function(card, skill, role, skillFirst) {
+				let { p0 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				return `${target} | 提升变身进度 | ${p0}%`;
+			},
+			CRITICAL_DAMAGE_BOOST: function(card, skill, role, skillFirst) {
+				let { p0,p1 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				return `${target} | ${p0}回合 | 提升暴击伤害 | ${p1}%`;
+			},
+			NEED_COST_DOWN_BURST : function(card, skill, role, skillFirst) {
+				let { p0,p1 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				if(p0 > 1)
+					L(`card ${card.id} NEED_COST_DOWN_BURST?`);
+
+				return `${target} | ${showHand(skill.hand)} | 减少COST | ${p1}`;
+			},
+			ADD_ATK_OP_PIERCING: function(card, skill, role, skillFirst) {
+				let { p0,p1 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				if(p0 > 1)
+					L('ADD_ATK_OP_PIERCING?');
+
+				return `${target} | ${showHand(skill.hand)} | 无视对应防御 | ${p1}%`;
+			},
+			DISCARD_DRAW : function(card, skill, role, skillFirst) {
+				let { p0 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				return `${target} | 保留最多${showHand(skill.hand)} | 最多抽取${p0}张`;
+			},
+			ATTACK_MULTISTAGE : function(card, skill, role, skillFirst) {
+				let { p1,p2 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				return `${target} | ${showHand(skill.hand)} | 追加${show(p1)}攻击 | ${p2}次`;
+			},
+			DEF_UP_BOOST_ORDER_TRIBAL : function(card, skill, role, skillFirst) {
+				let { p0,p3,p6,p9 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				if(p0 > 1)
+					L('DEF_UP_BOOST_ORDER_TRIBAL?');
+
+				return `${target} | ${showHand(skill.hand)} | 当目标心像为[${show(['tribal', p9])}] | ${show(p6)} | 提升${p3/10}%`;
+			},
+			ATK_UP_BOOST_ORDER_TRIBAL: function(card, skill, role, skillFirst) {
+				let { p0,p3,p6,p9 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				if(p0 > 1)
+					L('ATK_UP_BOOST_ORDER_TRIBAL?');
+
+				return `${target} | ${showHand(skill.hand)} | 当目标心像为[${show(['tribal', p9])}] | ${show(p6)} | 提升${p3/10}%`;
+			},
+			DAMAGE_BOOST_ORDER_TRIBAL: function(card, skill, role, skillFirst) {
+				let { p0,p3,p6,p9 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				if(p0 > 1)
+					L('DAMAGE_BOOST_ORDER_TRIBAL?');
+
+				return `${target} | ${showHand(skill.hand)} | 当目标心像为[${show(['tribal', p9])}] | ${show(p6)} | 提升${p3/10}%`;
+			},
+			PARAM_UP_SKILL_BONUS: function(card, skill, role, skillFirst) {
+				let { p0 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+	// debugger;
+				if(p0 > 1)
+					L('DAMAGE_BOOST_ORDER_TRIBAL?');
+
+				return '';
+			},
+			LIMIT_BREAK_BONUS: function(card, skill, role, skillFirst) {
+				let { p0 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+	// debugger;
+				if(p0 > 1)
+					L('DAMAGE_BOOST_ORDER_TRIBAL?');
+
+				return '';
+			},
+
+		};
 	};
-};

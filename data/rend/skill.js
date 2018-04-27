@@ -98,8 +98,6 @@ module.exports = async(serv, card) => {
 
 			s.prio = `${pvp==pve? pve / 10: `${pve / 10}(${pvp / 10})`}`;
 
-			// if(serv == 'jp' || serv == 'cn') {
-
 			let roleFirst = skill.role[0];
 
 			for(let role of skill.role) {
@@ -110,14 +108,14 @@ module.exports = async(serv, card) => {
 				}
 
 				if(rend instanceof Function) {
-					let chain1 = roleFirst.chain, chain2 = role.chain, chain = chain2 || chain1,
-						text = (await rend(card, skill, role, skillFirst)).replace(/\t|\n/g, '');
+					let content = await rend(card, skill, role, skillFirst);
+//TODO
+					// let chain = role.chain || roleFirst.chain;
+					// if(chain != 20 && chain != 0 && chain != 1)
+					// 	content += ` | ${chain}连携`;
+					// 	// text += ` | <samp title="Chain威力计算规则：\r\n1、影响HP的技能(物理、魔法、治疗)：每Chain增加总数值的${chain}%点\r\n2、影响属性的技能(防御、弱化、支援)：每Chain增加${chain}点\r\n3、基于某一属性计算的技能：每Chain增加${chain}%该属性数值">高连携</> | ${chain}`;
 
-					if(chain != 20 && chain != 0 && chain != 1)
-						text += ` | ${chain}连携`;
-						// text += ` | <samp title="Chain威力计算规则：\r\n1、影响HP的技能(物理、魔法、治疗)：每Chain增加总数值的${chain}%点\r\n2、影响属性的技能(防御、弱化、支援)：每Chain增加${chain}点\r\n3、基于某一属性计算的技能：每Chain增加${chain}%该属性数值">高连携</> | ${chain}`;
-
-					s.content.push(text);
+					s.content.push(content);
 				}
 				else {
 					L('New Role', skillType, 'Card', card.id, 'Skill', skill.id);
@@ -125,29 +123,6 @@ module.exports = async(serv, card) => {
 					s.content.push('~未渲染技能' + skillType);
 				}
 			}
-			// }
-			// else {
-			// 	let chain = skill.info.chain;
-
-			// 	if(st != 'suport3') {
-			// 		if(chain && (chain != 20 && chain != 1))
-			// 			s.content.push(`<samp title="发动等级越低越先发动，相同则按出牌顺序发动">发动等级</samp>&nbsp;| PVE ${pve / 10} PVP ${pvp / 10} | Chain威力 | <samp title="Chain威力计算规则：\r\n1、影响HP的技能(物理、魔法、治疗)：每Chain增加总数值的${chain}%点\r\n2、影响属性的技能(防御、弱化、支援)：每Chain增加${chain}点\r\n3、根据某属性A影响属性的技能：每Chain增加${chain}%该属性数值">${chain}</>`);
-			// 		else
-			// 			s.content.push(`<samp title="发动等级越低越先发动，相同则出牌顺序发动">发动等级</samp>&nbsp;| PVE ${pve / 10} PVP ${pvp / 10}`);
-			// 	}
-
-			// 	for(let role of skill.role) {
-			// 		let skillType = role.type, rend = (await rdrRole(serv))[skillType];
-
-			// 		if(rend instanceof Function)
-			// 			s.content.push((await rend(card, skill, role, skillFirst)).replace(/\t|\n/g, ''));
-			// 		else {
-			// 			L('New Role', skillType, 'Card', card.id, 'Skill', skill.id);
-
-			// 			s.content.push('~未渲染技能' + skillType);
-			// 		}
-			// 	}
-			// }
 
 			ss.push(s);
 		}
@@ -175,7 +150,7 @@ module.exports = async(serv, card) => {
 				let skillType = role.type, rend = (await rdrRole(serv))[skillType];
 
 				if(rend instanceof Function)
-					s.content.push((await rend(card, skill, role, skillFirst)).replace(/\t|\n/g, ''));
+					s.content.push(await rend(card, skill, role, skillFirst));
 				else {
 					L('New Role', skillType, 'Card', card.id, 'Skill', skill.id);
 
@@ -266,7 +241,7 @@ module.exports = async(serv, card) => {
 			let skillType = role.type, rend = (await rdrRole(serv))[skillType];
 
 			if(rend instanceof Function)
-				s.content.push((await rend(card, skill, role, skillFirst)).replace(/\t|\n/g, ''));
+				s.content.push(await rend(card, skill, role, skillFirst));
 			else {
 				L('New Role', skillType, 'Card', card.id, 'Skill', skill.id);
 

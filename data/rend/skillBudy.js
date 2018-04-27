@@ -32,7 +32,7 @@ let rdrPass = async function(serv, card, rdrRole) {
 				let chain2 = role.chain;
 				let chain = chain2 || chain1;
 
-				let text = (await rend(card, skill, role, skillFirst)).replace(/\t|\n/g, '');
+				let text = await rend(card, skill, role, skillFirst);
 
 				if(chain != 20 && chain != 0 && chain != 1)
 					text += ` | ${chain} 连携 | `;
@@ -106,7 +106,7 @@ module.exports = async(serv, card) => {
 					let chain2 = role.chain;
 					let chain = chain2 || chain1;
 
-					let text = (await rend(card, skill, role, skillFirst)).replace(/\t|\n/g, '');
+					let text = await rend(card, skill, role, skillFirst);
 
 					if(chain != 20 && chain != 0 && chain != 1)
 						text += ` | ${chain}连携 | `;

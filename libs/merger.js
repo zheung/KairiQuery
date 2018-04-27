@@ -70,14 +70,19 @@ module.exports = async(serv, resultType = 1, valuer, marker, cards, skils, roles
 			}
 		}
 
+		for(let index in role.params) {
+			role.params['p'+(index-1)] = role.params[index];
+			delete role.params[index];
+		}
+
 		let dict = dictRole[role.id] || (dictRole[role.id] = []);
 
 		dict.push(role);
 	}
 
-	for(let supr of suprs) {
-		if(supr.type) {
-			let rule = dictRule[supr.type];
+	for(let role of suprs) {
+		if(role.type) {
+			let rule = dictRule[role.type];
 
 			for(let index in rule.types) {
 				let type = rule.types[index];
@@ -87,18 +92,23 @@ module.exports = async(serv, resultType = 1, valuer, marker, cards, skils, roles
 				}
 
 				if(type && type != 1)
-					supr.params[index] = [type, valuer[type][supr.params[index]]];
+					role.params[index] = [type, valuer[type][role.params[index]]];
 			}
 		}
 
-		let dict = dictSupr[supr.id] || (dictSupr[supr.id] = []);
+		for(let index in role.params) {
+			role.params['p'+(index-1)] = role.params[index];
+			delete role.params[index];
+		}
 
-		dict.push(supr);
+		let dict = dictSupr[role.id] || (dictSupr[role.id] = []);
+
+		dict.push(role);
 	}
 
-	for(let burr of burrs) {
-		if(burr.type) {
-			let rule = dictRule[burr.type];
+	for(let role of burrs) {
+		if(role.type) {
+			let rule = dictRule[role.type];
 
 			for(let index in rule.types) {
 				let type = rule.types[index];
@@ -108,13 +118,18 @@ module.exports = async(serv, resultType = 1, valuer, marker, cards, skils, roles
 				}
 
 				if(type && type != 1)
-					burr.params[index] = [type, valuer[type][burr.params[index]]];
+					role.params[index] = [type, valuer[type][role.params[index]]];
 			}
 		}
 
-		let dict = dictBurr[burr.id] || (dictBurr[burr.id] = []);
+		for(let index in role.params) {
+			role.params['p'+(index-1)] = role.params[index];
+			delete role.params[index];
+		}
 
-		dict.push(burr);
+		let dict = dictBurr[role.id] || (dictBurr[role.id] = []);
+
+		dict.push(role);
 	}
 
 	for(let skil of skils) {
@@ -125,20 +140,20 @@ module.exports = async(serv, resultType = 1, valuer, marker, cards, skils, roles
 		dict.push(skil);
 	}
 
-	for(let sups of supss) {
-		sups.role = dictSupr[sups.role] || [];
+	for(let skil of supss) {
+		skil.role = dictSupr[skil.role] || [];
 
-		let dict = dictSkil[sups.id] || (dictSkil[sups.id] = []);
+		let dict = dictSkil[skil.id] || (dictSkil[skil.id] = []);
 
-		dict.push(sups);
+		dict.push(skil);
 	}
 
-	for(let burs of burss) {
-		burs.role = dictBurr[burs.role] || [];
+	for(let skil of burss) {
+		skil.role = dictBurr[skil.role] || [];
 
-		let dict = dictSkil[burs.id] || (dictSkil[burs.id] = []);
+		let dict = dictSkil[skil.id] || (dictSkil[skil.id] = []);
 
-		dict.push(burs);
+		dict.push(skil);
 	}
 
 	for(let evol of evols) {
