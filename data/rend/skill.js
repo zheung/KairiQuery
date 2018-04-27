@@ -191,18 +191,33 @@ module.exports = async(serv, card) => {
 			if(rend)
 				s.cond = (await rend(card, skill, skill.cond));
 			else {
-				L('New Cond', condType, 'Card', card.id, 'Skill', skill.id);
+				L('新条件', condType, 'Card', card.id, 'Skill', skill.id);
 
 				s.cond = ['~未渲染条件' + condType];
 			}
 
-			if(rend2)
-				s.cond += '&nbsp;且 ' + (await rend2(card, skill, skill.cond2));
+			if(rend2) {
+				let cond2 = await rend2(card, skill, skill.cond2);
+
+				if(s.cond[0]) {
+					s.cond[0] += ' 且 ' + cond2[0];
+
+					if(cond2[1]) {
+						if(s.cond[1]) {
+							s.cond[1] += '\r\n' + cond2[1];
+						}
+						else {
+							s.cond[1] = cond2[1];
+						}
+					}
+				}
+			}
 			else if(condType2) {
-				L('New Cond2', condType2, 'Card', card.id, 'Skill', skill.id);
+				L('新条件2', condType2, 'Card', card.id, 'Skill', skill.id);
 
 				s.cond = ['~未渲染条件' + condType2];
 			}
+
 		}
 
 		if(delayType) {
@@ -227,7 +242,7 @@ module.exports = async(serv, card) => {
 				}
 			}
 			else {
-				L('New Delay', delayType, 'Card', card.id, 'Skill', skill.id);
+				L('新延迟', delayType, 'Card', card.id, 'Skill', skill.id);
 
 				s.cond = ['~未渲染时机' + delayType];
 			}
