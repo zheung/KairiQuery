@@ -3,7 +3,7 @@
 		<Icon class="inline" :data="card" size="100" :serv="serv"/>
 		<div class="inline" style="margin-left: 10px;">
 			<div class="line">
-				<div class="inline label">{{card.title}}</div><div class="inline content">{{card.name}}</div>
+				<div class="inline label sel ">{{card.title}}</div><div class="inline content sel">{{card.name}}</div>
 			</div>
 			<div class="line">
 				<div class="inline label">血量</div><div class="inline content">{{card.hp}}</div>

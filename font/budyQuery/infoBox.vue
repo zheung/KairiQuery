@@ -3,7 +3,7 @@
 		<Icon class="inline" :data="budy" size="100" :serv="serv"/>
 		<div class="inline" style="margin-left: 10px;">
 			<div class="line">
-				<div class="inline label">传承</div><div class="inline content">{{budy.name}}</div>
+				<div class="inline label">传承</div><div class="inline content sel">{{budy.name}}</div>
 			</div>
 			<div class="line">
 				<div class="inline label">突破等级</div><div class="inline content">{{budy.limit}}</div>
