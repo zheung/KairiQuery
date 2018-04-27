@@ -43,14 +43,16 @@ module.exports = function(serv) {
 		// 分组渲染
 			let groupShow = '';
 
-			if(hand.group[0]) groupShow += ' 或 '+show(['tag', hand.group[0]]);
-			if(hand.group[1]) groupShow += ' 或 '+show(['tag', hand.group[1]]);
-			if(hand.group[2]) groupShow += ' 或 '+show(['tag', hand.group[2]]);
+			if(hand.group[0]) groupShow += ` 或 [${show(['tag', hand.group[0]])}]`;
+			if(hand.group[1]) groupShow += ` 或 [${show(['tag', hand.group[1]])}]`;
+			if(hand.group[2]) groupShow += ` 或 [${show(['tag', hand.group[2]])}]`;
 
-			if(groupShow) groupShow = groupShow.replace(/^ 或/, '分组：');
-			groupShow = `[${groupShow}]`;
+			if(groupShow) {
+				groupShow = groupShow.replace(/^ 或/, '');
+				groupShow = `${groupShow}`;
+			}
 
-			return `选择手牌 | ${hand.num}张${costShow}${attrShow}${kindShow}${groupShow}`;
+			return `${hand.num}张 ${costShow}${attrShow}${kindShow}${groupShow}卡`;
 		};
 	// // 参数监视
 	// 	let monit = function(params, options = [], showText, type) {
@@ -380,7 +382,7 @@ module.exports = function(serv) {
 			BUFF_RELEASE: function(card, skill, role, skillFirst) {
 				let target = showTarget(skill, role, skillFirst);
 
-				if(~~role.params[1] < 100 || ~~role.params[2] > 0)
+				if(~~role.params.p0 != 100 || ~~role.params.p1 > 0)
 					L('New Role Param', role.type, 'Card', card.id, 'Skill', skill.id, 'Role', role.id);
 
 				return { name: '解除状态', content: `${target} | 全部BUFF类状态`, title: '' };
@@ -647,7 +649,7 @@ module.exports = function(serv) {
 
 				return { name: `${show(p5) || '任意'}强化`, content: content, title: title };
 			},
-		// 弱化效果
+		// 弱化效果强化
 			ATK_BREAK_BOOST: function(card, skill, role, skillFirst) {
 				let { p0,p3,p5,p6 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
@@ -657,7 +659,7 @@ module.exports = function(serv) {
 
 				return { name: `${show(p5) || '任意'}强化`, content: content, title: title };
 			},
-		// 防御弱化效果
+		// 防御弱化效果强化
 			GUARD_BREAK_BOOST: function(card, skill, role, skillFirst) {
 				let { p0,p3,p5,p6 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
@@ -677,6 +679,7 @@ module.exports = function(serv) {
 
 				return { name: `${show(p5) || '任意'}强化`, content: content, title: title };
 			},
+		// 暴击率强化
 			CRITICAL_BOOST: function(card, skill, role, skillFirst) {
 				let { p0,p1,p3,p4 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
@@ -686,15 +689,18 @@ module.exports = function(serv) {
 
 				return { name: `${show(p3) || '任意'}强化`, content: content, title: title };
 			},
+		// 祝福
 			BLESS: function(card, skill, role, skillFirst) {
 				let { p0 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
 
 				return { name: '祝福', content: `${target} | ${p0}回合`, title: '' };
 			},
+		// 起始抽牌
 			BEGINNING_DRAW: function() {
 				return { name: '起始抽牌', content: ' ', title: '' };
 			},
+		// 祝福回合增加
 			BLESS_TURN_UP: function(card, skill, role, skillFirst) {
 				let { p0,p1 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
@@ -703,6 +709,7 @@ module.exports = function(serv) {
 
 				return { name: '祝福回合', content: `${target} | +${p0}`, title: '' };
 			},
+		// 上限提升
 			PARAM_LIMIT_BREAK_FIXED: function(card, skill, role, skillFirst) {
 				let { p0,p1,p3,p4 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
@@ -711,27 +718,38 @@ module.exports = function(serv) {
 
 				let base = Math.floor(~~p3/1000+~~p4/1000*card.max.level);
 
-				return `${target}${turnText} | 提高${show(p1)}上限 |\x20
-					<samp title="等级成长：${p3/1000}+${p4/1000}*等级">${base}</samp>点`;
+				let content = `${target}${turnText} | 提升上限${base}点`;
+				let title = `基础值随等级成长：${p3/1000}+${p4/1000}*等级`;
+
+				return { name: `${show(p1)}`, content: content, title: title };
 			},
+		// 奋起
 			GUTS: function(card, skill, role, skillFirst) {
 				let { p0,p1,p2 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
 
-				return `${target} | ${p0}回合 | ${target}死亡时 | 恢复${p2}%HP | 最多${p1}次`;
+				let content = `${target} | ${p0}回合 | 目标死亡时免疫死亡 | 恢复${p2}%HP | 最多${p1}次`;
+
+				return { name: '奋起', content: content, title: '' };
 			},
+		// 解放进度提升
 			BURST_GAUGE_QUICK_UP: function(card, skill, role, skillFirst) {
 				let { p0 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
 
-				return `${target} | 提升变身进度 | ${p0}%`;
+				return { name: '解放进度', content: `${target} | 提升${p0}%`, title: '' };
 			},
+		// 暴击伤害强化
 			CRITICAL_DAMAGE_BOOST: function(card, skill, role, skillFirst) {
 				let { p0,p1 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
 
-				return `${target} | ${p0}回合 | 提升暴击伤害 | ${p1}%`;
+				let content = `${target} | ${p0}回合 | 提升暴击伤害 | ${p1}%`;
+				let title = '技能元素等价于卡面显示的元素';
+
+				return { name: '暴伤强化', content: content, title: title };
 			},
+		// cost减少
 			NEED_COST_DOWN_BURST : function(card, skill, role, skillFirst) {
 				let { p0,p1 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
@@ -739,8 +757,11 @@ module.exports = function(serv) {
 				if(p0 > 1)
 					L(`card ${card.id} NEED_COST_DOWN_BURST?`);
 
-				return `${target} | ${showHand(skill.hand)} | 减少COST | ${p1}`;
+				let content = `${target} | ${showHand(skill.hand)} | 减少${p1}`;
+
+				return { name: 'Cost', content: content, title: '' };
 			},
+		// 防御穿透
 			ADD_ATK_OP_PIERCING: function(card, skill, role, skillFirst) {
 				let { p0,p1 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
@@ -748,20 +769,29 @@ module.exports = function(serv) {
 				if(p0 > 1)
 					L('ADD_ATK_OP_PIERCING?');
 
-				return `${target} | ${showHand(skill.hand)} | 无视对应防御 | ${p1}%`;
+				let content = `${target} | ${showHand(skill.hand)} | 无视对应防御 | ${p1}%`;
+
+				return { name: '穿透', content: content, title: '' };
 			},
+		// 重抽
 			DISCARD_DRAW : function(card, skill, role, skillFirst) {
 				let { p0 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
 
-				return `${target} | 保留最多${showHand(skill.hand)} | 最多抽取${p0}张`;
+				let content = `${target} | 保留最多${showHand(skill.hand)} | 最多${p0}张`;
+
+				return { name: '重抽', content: content, title: '' };
 			},
+		// 段数追加
 			ATTACK_MULTISTAGE : function(card, skill, role, skillFirst) {
 				let { p1,p2 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
 
-				return `${target} | ${showHand(skill.hand)} | 追加${show(p1)}攻击 | ${p2}次`;
+				let content = `${target} | ${showHand(skill.hand)} | 追加${show(p1)}攻击 | ${p2}次`;
+
+				return { name: '段数追加', content: content, title: '追加的攻击面板与原攻击相同' };
 			},
+		// 心像防御
 			DEF_UP_BOOST_ORDER_TRIBAL : function(card, skill, role, skillFirst) {
 				let { p0,p3,p6,p9 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
@@ -769,8 +799,11 @@ module.exports = function(serv) {
 				if(p0 > 1)
 					L('DEF_UP_BOOST_ORDER_TRIBAL?');
 
-				return `${target} | ${showHand(skill.hand)} | 当目标心像为[${show(['tribal', p9])}] | ${show(p6)} | 提升${p3/10}%`;
+				let content = `${target} | ${showHand(skill.hand)} | 目标心像为[${show(['tribal', p9])}] | 提升${p3/10}%`;
+
+				return { name: `${show(p6)}`, content: content, title: '追加的攻击面板与原攻击相同' };
 			},
+		// 心像攻击
 			ATK_UP_BOOST_ORDER_TRIBAL: function(card, skill, role, skillFirst) {
 				let { p0,p3,p6,p9 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
@@ -778,8 +811,11 @@ module.exports = function(serv) {
 				if(p0 > 1)
 					L('ATK_UP_BOOST_ORDER_TRIBAL?');
 
-				return `${target} | ${showHand(skill.hand)} | 当目标心像为[${show(['tribal', p9])}] | ${show(p6)} | 提升${p3/10}%`;
+				let content = `${target} | ${showHand(skill.hand)} | 目标心像为[${show(['tribal', p9])}] | 提升${p3/10}%`;
+
+				return { name: `${show(p6)}支援`, content: content, title: '' };
 			},
+		// 心像攻击
 			DAMAGE_BOOST_ORDER_TRIBAL: function(card, skill, role, skillFirst) {
 				let { p0,p3,p6,p9 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
@@ -787,7 +823,9 @@ module.exports = function(serv) {
 				if(p0 > 1)
 					L('DAMAGE_BOOST_ORDER_TRIBAL?');
 
-				return `${target} | ${showHand(skill.hand)} | 当目标心像为[${show(['tribal', p9])}] | ${show(p6)} | 提升${p3/10}%`;
+					let content = `${target} | ${showHand(skill.hand)} | 目标心像为[${show(['tribal', p9])}] | 提升${p3/10}%`;
+
+					return { name: `${show(p6)}`, content: content, title: '追加的攻击面板与原攻击相同' };
 			},
 			PARAM_UP_SKILL_BONUS: function(card, skill, role, skillFirst) {
 				let { p0 } = role.params;

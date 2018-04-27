@@ -109,11 +109,17 @@ module.exports = async(serv, card) => {
 
 				if(rend instanceof Function) {
 					let content = await rend(card, skill, role, skillFirst);
-//TODO
-					// let chain = role.chain || roleFirst.chain;
-					// if(chain != 20 && chain != 0 && chain != 1)
-					// 	content += ` | ${chain}连携`;
-					// 	// text += ` | <samp title="Chain威力计算规则：\r\n1、影响HP的技能(物理、魔法、治疗)：每Chain增加总数值的${chain}%点\r\n2、影响属性的技能(防御、弱化、支援)：每Chain增加${chain}点\r\n3、基于某一属性计算的技能：每Chain增加${chain}%该属性数值">高连携</> | ${chain}`;
+
+					let chain = role.chain || roleFirst.chain;
+
+					if(chain != 20 && chain != 0 && chain != 1) {
+						content.content += ` | ${chain}连携`;
+
+						if(content.title)
+							content.title += '\r\n';
+
+						content.title = `Chain威力计算规则：\r\n1、影响HP的技能(物理、魔法、治疗)：每Chain增加总数值的${chain}%点\r\n2、影响属性的技能(防御、弱化、支援)：每Chain增加${chain}点\r\n3、基于某一属性计算的技能：每Chain增加${chain}%该属性数值">`;
+					}
 
 					s.content.push(content);
 				}
