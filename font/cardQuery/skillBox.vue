@@ -159,7 +159,7 @@
 
 	.itemsBox {
 		width: 49%;
-		min-width: 550px;
+		min-width: 500px;
 
 		margin-right: 4px;
 
