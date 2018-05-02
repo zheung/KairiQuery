@@ -9,36 +9,36 @@
 
 		<div class="colBox">
 			<div class="title">服务器</div>
-			<ToggleGroup :group="servs" v-model="C.serv">
-				<ToggleButton slot-scope="props"
-					:text="props.val.text" :value="props.val.val"
-					:active="props.val.val == props.value"
-					:dealer="props.dealer"
-				>
-				</ToggleButton>
-			</ToggleGroup>
+			<ScrollGroup :widthBox="190" :widthSlide="2*(50+12)">
+				<ToggleButton class="toggleButton"
+					v-for="(cond, ci) of servs" :key="`cond-serv-${ci}`"
+					:text="cond.text" :value="cond.val"
+					:active="cond.val == C.serv" :dealer="function() { C.serv = cond.val; }"
+				></ToggleButton>
+			</ScrollGroup>
 		</div>
 		<div class="colBox">
-			<div class="title x2">突破</div>
-			<ToggleGroup :group="C.conds.limit" mode>
-				<ToggleButton slot-scope="props"
-					:text="props.val.text" :value="props.val.val" :width="35"
-					:active="props.val.on"
-					:dealer="condDealer(props.val)"
-				>
-				</ToggleButton>
-			</ToggleGroup>
+			<div class="title">突破</div>
+			<ScrollGroup class="scrollGroup" :widthSlide="C.conds.limit ? C.conds.limit.length*(30+12) : 0">
+				<ToggleButton class="toggleButton side"
+					v-for="(cond, ci) of C.conds.limit" :key="`cond-limit-${ci}`"
+					:text="cond.text" :value="cond.val"
+					:active="cond.on" :dealer="condDealer(cond)"
+					width="30"
+				></ToggleButton>
+			</ScrollGroup>
 		</div>
 	</div>
 </template>
 
 <script>
 	import ToggleGroup from '../../_comp/ToggleGroup.vue';
+	import ScrollGroup from '../../_comp/ScrollGroup.vue';
 	import ToggleButton from '../../_comp/ToggleButton.vue';
 	import CondPage from './condPage.vue';
 
 	export default {
-		components: { ToggleGroup, ToggleButton, CondPage },
+		components: { ToggleGroup, ToggleButton, CondPage, ScrollGroup },
 
 		created: async function() {
 			let { C } = this;
@@ -234,5 +234,53 @@
 		padding-left: 5px;
 
 		border-left: 10px solid #0595ff;
+	}
+
+		.toggleButton {
+		display: inline-block;
+
+		height: 20px;
+
+		text-align: center;
+		line-height: 20px;
+
+		color: snow;
+		font-size: 10px;
+
+		cursor: pointer;
+
+		margin: 0px;
+		border: 0px;
+		background-color: #394146;
+		padding: 4px;
+		padding-left: 6px;
+		padding-right: 6px;
+
+		min-width: 16px;
+	}
+	.toggleButton:first-child {
+		border-radius: 4px 0px 0px 4px;
+	}
+	.toggleButton:last-child {
+		border-radius: 0px 4px 4px 0px;
+	}
+	.toggleButton.side:first-child {
+		border-left: 4px solid #0595ff;
+		padding-left: 2px;
+		border-radius: 0px;
+	}
+	.toggleButton.side:last-child {
+		border-right: 4px solid #0595ff;
+		padding-right: 2px;
+		border-radius: 0px;
+	}
+	.toggleButton.active, .toggleButton:hover {
+		background: #2da2c8;
+	}
+
+	.scrollGroup {
+		width: calc(100% - 60px);
+		border: 1px solid #2da1c9;
+		border-radius: 4px;
 	}
 </style>

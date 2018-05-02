@@ -8,6 +8,9 @@
 </template>
 
 <style scoped>
+	.compCondBox {
+		white-space: nowrap;
+	}
 	.text {
 		display: inline-block;
 
@@ -56,10 +59,6 @@
 			conds: { default: function() { return []; } },
 			width: { default: 80 },
 			onChangeServ: { default: function() {} }
-		},
-		mounted: function() {
-		},
-		activated: function() {
 		},
 		data: function() {
 			return {

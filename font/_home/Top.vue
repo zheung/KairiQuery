@@ -16,8 +16,8 @@
 		data: function() {
 			return {
 				cnut: moment('2018-04-09 16:00:00').fromNow().replace(/ /g, ''),
-				jput: moment('2018-04-28 01:00:00').fromNow().replace(/ /g, ''),
-				wsut: moment('2018-04-28 00:01:00').fromNow().replace(/ /g, '')
+				jput: moment('2018-05-02 17:30:00').fromNow().replace(/ /g, ''),
+				wsut: moment('2018-05-02 17:30:00').fromNow().replace(/ /g, '')
 			};
 		}
 	};

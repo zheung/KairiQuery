@@ -3,11 +3,10 @@
 		<div class="item" @mouseover="noticeOver" @mouseout="noticeOutt">D的碎碎念</div>
 		<div class="item" @click="backToTop">回到顶部</div>
 		<div ref="popAbout" class="popAbout trans">
-			《V3.2 传承 来啦！》<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;新模块：传承速查<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;重写了所有技能渲染<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;调整了UI<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;爽啊！<br>
+			《V3.3 控制面板重做》<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;重做：控制面板<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;采用新的设计<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;试试用起来舒服不？<br>
 			<!-- <hr class="hrSnow"> -->
 		</div>
 	</div>

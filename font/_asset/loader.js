@@ -9,6 +9,7 @@ export default async function(type, time = 0) {
 			case 'cardQueryDash': Vue.component(`${type}_${time}`, (await System.import('../cardQuery/dash/_cardQueryDash.vue')).default); break;
 			case 'budyQuery': Vue.component(`${type}_${time}`, (await System.import('../budyQuery/_budyQuery.vue')).default); break;
 			case 'budyQueryDash': Vue.component(`${type}_${time}`, (await System.import('../budyQuery/dash/_budyQueryDash.vue')).default); break;
+			case 'damgCalc': Vue.component(`${type}_${time}`, (await System.import('../damgCalc/_damgCalc.vue')).default); break;
 		}
 	}
 }

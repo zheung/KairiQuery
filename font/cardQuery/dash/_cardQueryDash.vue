@@ -9,80 +9,80 @@
 
 		<div class="colBox">
 			<div class="title">服务器</div>
-			<ToggleGroup :group="servs" v-model="C.serv">
-				<ToggleButton slot-scope="props"
-					:text="props.val.text" :value="props.val.val"
-					:active="props.val.val == props.value"
-					:dealer="props.dealer"
-				>
-				</ToggleButton>
-			</ToggleGroup>
+			<ScrollGroup :widthBox="190" :widthSlide="2*(50+12)">
+				<ToggleButton class="toggleButton"
+					v-for="(cond, ci) of servs" :key="`cond-serv-${ci}`"
+					:text="cond.text" :value="cond.val"
+					:active="cond.val == C.serv" :dealer="function() { C.serv = cond.val; }"
+				></ToggleButton>
+			</ScrollGroup>
 		</div>
 		<div class="colBox">
-			<div class="title x3">稀有</div>
-			<ToggleGroup :group="C.conds.rare" mode>
-				<ToggleButton slot-scope="props"
-					:text="props.val.text" :value="props.val.val"
-					:active="props.val.on"
-					:dealer="condDealer(props.val)"
-				>
-				</ToggleButton>
-			</ToggleGroup>
+			<div class="title">稀有</div>
+			<ScrollGroup class="scrollGroup" :widthSlide="C.conds.rare ? C.conds.rare.length*(30+12) : 0">
+				<ToggleButton class="toggleButton side"
+					v-for="(cond, ci) of C.conds.rare" :key="`cond-rare-${ci}`"
+					:text="cond.text" :value="cond.val"
+					:active="cond.on" :dealer="condDealer(cond)"
+					width="30"
+				></ToggleButton>
+			</ScrollGroup>
 		</div>
 		<div class="colBox">
-			<div class="title x2">职业</div>
-			<ToggleGroup :group="C.conds.job" mode>
-				<ToggleButton slot-scope="props"
-					:text="props.val.text" :value="props.val.val" :width="35"
-					:active="props.val.on"
-					:dealer="condDealer(props.val)"
-				>
-				</ToggleButton>
-			</ToggleGroup>
+			<div class="title">职业</div>
+			<ScrollGroup class="scrollGroup" :widthSlide="C.conds.job ? C.conds.job.length*(30+12) : 0">
+				<ToggleButton class="toggleButton side"
+					v-for="(cond, ci) of C.conds.job" :key="`cond-job-${ci}`"
+					:text="cond.text" :value="cond.val"
+					:active="cond.on" :dealer="condDealer(cond)"
+					width="30"
+				></ToggleButton>
+			</ScrollGroup>
 		</div>
 		<div class="colBox">
-			<div class="title x2">能量</div>
-			<ToggleGroup :group="C.conds.cost" mode>
-				<ToggleButton slot-scope="props"
-					:text="props.val.text" :value="props.val.val" :width="35"
-					:active="props.val.on"
-					:dealer="condDealer(props.val)"
-				>
-				</ToggleButton>
-			</ToggleGroup>
+			<div class="title">能量</div>
+			<ScrollGroup class="scrollGroup" :widthSlide="C.conds.cost ? C.conds.cost.length*(20+12) : 0">
+				<ToggleButton class="toggleButton side"
+					v-for="(cond, ci) of C.conds.cost" :key="`cond-cost-${ci}`"
+					:text="cond.text" :value="cond.val"
+					:active="cond.on" :dealer="condDealer(cond)"
+					width="20"
+				></ToggleButton>
+			</ScrollGroup>
 		</div>
 		<div class="colBox">
-			<div class="title x2">属性</div>
-			<ToggleGroup :group="C.conds.attr" mode>
-				<ToggleButton slot-scope="props"
-					:text="props.val.text" :value="props.val.val" :width="35"
-					:active="props.val.on"
-					:dealer="condDealer(props.val)"
-				>
-				</ToggleButton>
-			</ToggleGroup>
+			<div class="title">属性</div>
+			<ScrollGroup class="scrollGroup" :widthSlide="C.conds.attr ? C.conds.attr.length*(30+12) : 0">
+				<ToggleButton class="toggleButton side"
+					v-for="(cond, ci) of C.conds.attr" :key="`cond-attr-${ci}`"
+					:text="cond.text" :value="cond.val"
+					:active="cond.on" :dealer="condDealer(cond)"
+					width="30"
+				></ToggleButton>
+			</ScrollGroup>
 		</div>
 		<div class="colBox">
-			<div class="title x2">技能</div>
-			<ToggleGroup :group="C.conds.skillKind" mode>
-				<ToggleButton slot-scope="props"
-					:text="props.val.text" :value="props.val.val" :width="35"
-					:active="props.val.on"
-					:dealer="condDealer(props.val)"
-				>
-				</ToggleButton>
-			</ToggleGroup>
+			<div class="title">技能</div>
+			<ScrollGroup class="scrollGroup" :widthSlide="C.conds.skillKind ? C.conds.skillKind.length*(30+12) : 0">
+				<ToggleButton class="toggleButton side"
+					v-for="(cond, ci) of C.conds.skillKind" :key="`cond-skillKind-${ci}`"
+					:text="cond.text" :value="cond.val"
+					:active="cond.on" :dealer="condDealer(cond)"
+					width="30"
+				></ToggleButton>
+			</ScrollGroup>
 		</div>
 	</div>
 </template>
 
 <script>
 	import ToggleGroup from '../../_comp/ToggleGroup.vue';
+	import ScrollGroup from '../../_comp/ScrollGroup.vue';
 	import ToggleButton from '../../_comp/ToggleButton.vue';
 	import CondPage from './condPage.vue';
 
 	export default {
-		components: { ToggleGroup, ToggleButton, CondPage },
+		components: { ToggleGroup, ToggleButton, CondPage, ScrollGroup },
 
 		created: async function() {
 			let { C } = this;
@@ -239,16 +239,22 @@
 
 		color: snow;
 		font-size: 14px;
-		line-height: 24px;
+		line-height: 28px;
 	}
-	.colBox>.title.x2 { line-height: 53px; }
-	.colBox>.title.x3 { line-height: 82px; }
-	.colBox>.title.x4 { line-height: 111px; }
+	.colBox>.title.x2 { line-height: 56px; }
+	.colBox>.title.x3 { line-height: 91px; }
+	.colBox>.title.x4 { line-height: 122px; }
 
-	.colBox>.compToggleGroup {
+	.colBox>.compToggleGroup, .colBox>.inline>.compToggleGroup {
 		display: inline-block;
 
-		width: 180px;
+		border: 1px solid #2da2c8;
+		margin-bottom: 4px;
+
+		border-radius: 4px;
+	}
+	.colBox>.inline {
+		max-width: 182px;
 	}
 
 	.condWord {
@@ -278,5 +284,53 @@
 		padding-left: 5px;
 
 		border-left: 10px solid #0595ff;
+	}
+
+	.toggleButton {
+		display: inline-block;
+
+		height: 20px;
+
+		text-align: center;
+		line-height: 20px;
+
+		color: snow;
+		font-size: 10px;
+
+		cursor: pointer;
+
+		margin: 0px;
+		border: 0px;
+		background-color: #394146;
+		padding: 4px;
+		padding-left: 6px;
+		padding-right: 6px;
+
+		min-width: 16px;
+	}
+	.toggleButton:first-child {
+		border-radius: 4px 0px 0px 4px;
+	}
+	.toggleButton:last-child {
+		border-radius: 0px 4px 4px 0px;
+	}
+	.toggleButton.side:first-child {
+		border-left: 4px solid #0595ff;
+		padding-left: 2px;
+		border-radius: 0px;
+	}
+	.toggleButton.side:last-child {
+		border-right: 4px solid #0595ff;
+		padding-right: 2px;
+		border-radius: 0px;
+	}
+	.toggleButton.active, .toggleButton:hover {
+		background: #2da2c8;
+	}
+
+	.scrollGroup {
+		width: calc(100% - 60px);
+		border: 1px solid #2da1c9;
+		border-radius: 4px;
 	}
 </style>

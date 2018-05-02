@@ -54,9 +54,9 @@ module.exports = {
 		{ on: false, type: 'skillKind', g: 0, x: 4, y: 1, text: '物理' },
 		{ on: false, type: 'skillKind', g: 0, x: 4, y: 2, text: '魔法' },
 		{ on: false, type: 'skillKind', g: 0, x: 4, y: 4, text: '治疗' },
-		{ on: false, type: 'skillKind', g: 0, x: 4, y: 8, text: '支援' },
-		{ on: false, type: 'skillKind', g: 0, x: 4, y: 16, text: '防御' },
-		{ on: false, type: 'skillKind', g: 0, x: 4, y: 32, text: '弱化' }
+		{ on: false, type: 'skillKind', g: 1, x: 4, y: 8, text: '支援' },
+		{ on: false, type: 'skillKind', g: 1, x: 4, y: 16, text: '防御' },
+		{ on: false, type: 'skillKind', g: 1, x: 4, y: 32, text: '弱化' }
 	],
 	common: [
 		{ on: false, type: 'common', g: 0, x: 5, y: 256, text: '圣杯' },

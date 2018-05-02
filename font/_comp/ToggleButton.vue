@@ -24,37 +24,14 @@
 
 <template>
 	<div
-		class="compToggleButton button"
+		class="compToggleButton"
 		:class="{ trans: true, active: active }"
-		:style="{ width: width+'px' }"
 		@click="click($event)"
+		:style="{ width: width+'px' }"
 	>
 		{{text}}
 	</div>
 </template>
 
 <style scoped>
-	.button {
-		display: inline-block;
-
-		height: 20px;
-
-		border: 2px solid #2da2c8;
-
-		margin: 0px 5px 5px 0px;
-
-		border-radius: 5px;
-
-		text-align: center;
-		line-height: 20px;
-
-		color: snow;
-		font-size: 10px;
-
-		cursor: pointer;
-	}
-	.button.active, .button:hover {
-		background: #2da2c8;
-		font-weight: bold;
-	}
 </style>

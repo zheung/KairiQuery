@@ -21,15 +21,11 @@
 		components: { LogoBox, InfoBox },
 
 		data: function() {
-			return window.CSX.init(this.$options.name, { cardNow: false }, {}, {});
+			return window.CSX.init(this.$options.name, { cardNow: false, showAll: false }, {}, {});
 		},
 		methods: {
 			changeCard: function(card) {
 				this.C.cardNow = card;
-
-				// Vue.nextTick(function() {
-				// 	document.getElementById(`cardInfo-${card.id}`).scrollIntoView({block:'center'});
-				// }.bind(this));
 			}
 		}
 	};
