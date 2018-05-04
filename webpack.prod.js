@@ -25,18 +25,18 @@ module.exports = {
 		}, {
 			test: /\.vue$/,
 			loader: 'vue-loader',
-			// options: {
-			// 	loaders: {
-			// 		js: 'babel-loader'
-			// 	}
-			// }
-		// }, {
-		// 	test: /\.js$/,
-		// 	loader: 'babel-loader',
-		// 	include: [
-		// 		path.resolve(D, 'font'),
-		// 		path.resolve(D, 'node_modules/vue-echarts-v3/src')
-		// 	]
+			options: {
+				loaders: {
+					js: 'babel-loader'
+				}
+			}
+		}, {
+			test: /\.js$/,
+			loader: 'babel-loader',
+			include: [
+				path.resolve(D, 'font'),
+				path.resolve(D, 'node_modules/vue-echarts-v3/src')
+			]
 		}, {
 			test: /\.(png|jpg|gif)$/,
 			loader: 'url-loader?limit=1&name=./img/[name].[ext]',
