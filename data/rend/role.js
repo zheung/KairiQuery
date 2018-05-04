@@ -52,7 +52,7 @@ module.exports = function(serv) {
 				groupShow = `${groupShow}`;
 			}
 
-			return `${hand.num}张 ${costShow}${attrShow}${kindShow}${groupShow}卡`;
+			return `${hand.num}张 | ${costShow}${attrShow}${kindShow}${groupShow}卡`;
 		};
 	// // 参数监视
 	// 	let monit = function(params, options = [], showText, type) {
@@ -258,15 +258,24 @@ module.exports = function(serv) {
 			},
 		// 追伤
 			ENCHANT: function(card, skill, role, skillFirst) {
-				let { p0,p1,p4,p5 } = role.params;
+				let { p0,p1,p2,p3,p4,p5 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
 
-				let base = Math.floor(~~p1 + ~~p4 * card.max.level);
+				let base = -1;
+				if (~~p3 == 0) {
+					base = Math.floor(~~p1*~~p2/1000 + ~~p4 * card.max.level);
+				}
+				else if(~~p4 == 0) {
+					base = Math.floor((~~p2 + ~~p3 * card.max.level) / 1000);
+				}
+				else {
+					L('这个追伤有丶问题');
+				}
 
 				let content = `${target} | ${p0}回合 | 每段攻击后 | 追加1段元素攻击 | ${base}点`;
 				let title = `等级成长：${p1}+${p4}*等级\r\n纯元素攻击，不带有[物理][魔法]属性。\r\n不触发物魔防御，触发耐性计算`;
 
-				return { name: `${show(p5)}追伤`, content: content, title: title };
+				return { name: `${show(p5)} 追伤`, content: content, title: title };
 			},
 		// 伤害减免
 			DAMAGE_CUT: function(card, skill, role, skillFirst) {
@@ -287,7 +296,7 @@ module.exports = function(serv) {
 
 				let turnText = (skill.style=='BURST_PASSIVE' || skill.style=='PASSIVE') ? '' : ` | ${p0}回合`;
 
-				let content = `${target}${turnText} | 提升${base}点 + ${p3/10}%${show(p2)}`;
+				let content = `${target}${turnText} | 提升${base}点 +${show(p2)}的${p3/10}%`;
 				let title = `基础值随等级成长：${p4/1000}+${p5}*等级`;
 
 				return { name: `${show(p1)}`, content: content, title: title };
@@ -827,23 +836,57 @@ module.exports = function(serv) {
 
 					return { name: `${show(p6)}`, content: content, title: '追加的攻击面板与原攻击相同' };
 			},
-			PARAM_UP_SKILL_BONUS: function(card, skill, role, skillFirst) {
-				let { p0 } = role.params;
+			PARAM_UP_SKILL_BONUS: async function(card, skill, role, skillFirst) {
+				let { p0,p1,p2,p3,p4,p5 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
-	// debugger;
-				if(p0 > 1)
-					L('DAMAGE_BOOST_ORDER_TRIBAL?');
 
-				return '';
+				if(~~p1 != 5 || ~~p2 != 0 || ~~p3 != 0 || ~~p5 != 0) L('PARAM_UP_SKILL_BONUS1');
+				if(skill.role.length != 2) L('PARAM_UP_SKILL_BONUS2');
+
+				let upRole = skill.role[0] == role ? skill.role[1] : skill.role[0];
+
+				let rend = (await require('./role')(serv))[upRole.type];
+
+				let upCont = (await rend(card, skill, upRole, skillFirst)).content;
+
+				let point = upCont.match(/(提升|降低|提升上限|降低上限)(\d+)/);
+
+				let content = '';
+				if(point.length == 3) {
+					let base = Math.round(point[2]*p1/100);
+					content = `${target} | 主卡组每张 | ${show(p4)}卡 | 额外${point[1]} | ${base}点(${point[2]}的${p1}%)`;
+				}
+				else {
+					L('PARAM_UP_SKILL_BONUS3');
+				}
+
+				return { name: `${show(p0)}`, content: content, title: '该技能本质上是针对单个支援技能的EX技能\r\n根据主卡组符合条件的卡数量提升' };
 			},
-			LIMIT_BREAK_BONUS: function(card, skill, role, skillFirst) {
-				let { p0 } = role.params;
+			LIMIT_BREAK_BONUS: async function(card, skill, role, skillFirst) {
+				let { p0,p1,p2,p3,p4,p5 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
-	// debugger;
-				if(p0 > 1)
-					L('DAMAGE_BOOST_ORDER_TRIBAL?');
 
-				return '';
+				if(~~p1 != 5 || ~~p2 != 0 || ~~p3 != 0 || ~~p5 != 0) L('LIMIT_BREAK_BONUS1');
+				if(skill.role.length != 2) L('LIMIT_BREAK_BONUS2');
+
+				let upRole = skill.role[0] == role ? skill.role[1] : skill.role[0];
+
+				let rend = (await require('./role')(serv))[upRole.type];
+
+				let upCont = (await rend(card, skill, upRole, skillFirst)).content;
+
+				let point = upCont.match(/(提升|降低|提升上限|降低上限)(\d+)/);
+
+				let content = '';
+				if(point && point.length == 3) {
+					let base = Math.round(point[2]*p1/100);
+					content = `${target} | 主卡组每张 | ${show(p4)}卡 | 额外${point[1]} | ${base}点(${point[2]}的${p1}%)`;
+				}
+				else {
+					L('LIMIT_BREAK_BONUS3');
+				}
+
+				return { name: `${show(p0)}`, content: content, title: '该技能本质上是针对单个支援技能的EX技能\r\n根据主卡组符合条件的卡数量提升' };
 			},
 
 		};
