@@ -33,8 +33,10 @@ module.exports = {
 		}, {
 			test: /\.js$/,
 			loader: 'babel-loader',
-			exclude: /node_modules/,
-			// include: [path.resolve('node_modules/vue-echarts-v3/src')]
+			include: [
+				path.resolve(D, 'font'),
+				path.resolve(D, 'node_modules/vue-echarts-v3/src')
+			]
 		}, {
 			test: /\.(png|jpg|gif)$/,
 			loader: 'url-loader?limit=1&name=./img/[name].[ext]',

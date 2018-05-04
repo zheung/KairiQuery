@@ -137,6 +137,9 @@
 	}
 
 	.prio {
+		height: 25px;
+		line-height: 25px;
+
 		float: right;
 
 		position: absolute;

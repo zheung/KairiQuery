@@ -295,7 +295,7 @@
 		line-height: 20px;
 
 		color: snow;
-		font-size: 10px;
+		font-size: 12px;
 
 		cursor: pointer;
 
