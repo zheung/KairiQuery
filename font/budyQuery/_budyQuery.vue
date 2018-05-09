@@ -2,13 +2,13 @@
 	<div ref="box" class="compBudyQuery">
 		<div class="listBox">
 			<LogoBox @click.native="changeBudy(budy)"
-				v-for="(budy, ci) of CSX.comp('budyQueryDash').budys" :key="`logoBox-${ci}`"
-				:budy="budy" :serv="CSX.comp('budyQueryDash').serv"
+				v-for="(budy, ci) of X.comp('budyQueryDash').budys" :key="`logoBox-${ci}`"
+				:budy="budy" :serv="X.comp('budyQueryDash').serv"
 			>
 			</LogoBox>
 		</div>
-		<InfoBox v-for="(budy, ci) of CSX.comp('budyQueryDash').budys" :key="`infoBox-${ci}`" v-if="budy==C.budyNow"
-			:budy="budy" :serv="CSX.comp('budyQueryDash').serv" :id="`budyInfo-${budy.id}`"
+		<InfoBox v-for="(budy, ci) of X.comp('budyQueryDash').budys" :key="`infoBox-${ci}`" v-if="budy==C.budyNow"
+			:budy="budy" :serv="X.comp('budyQueryDash').serv" :id="`budyInfo-${budy.id}`"
 		></InfoBox>
 	</div>
 </template>
@@ -21,7 +21,7 @@
 		components: { LogoBox, InfoBox },
 
 		data: function() {
-			return window.CSX.init(this.$options.name, { budyNow: false }, {}, {});
+			return window.X.init(this.$options.name, { budyNow: false }, {}, {});
 		},
 		methods: {
 			changeBudy: function(budy) {

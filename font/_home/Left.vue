@@ -31,7 +31,7 @@
 		components: { Expand },
 
 		data: function() {
-			return window.CSX.init(this.$options.name,
+			return window.X.init(this.$options.name,
 				{
 					listShow: 'module',
 

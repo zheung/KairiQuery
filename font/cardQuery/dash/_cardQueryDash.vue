@@ -97,7 +97,7 @@
 			this.onQuery(C.word, 1, C.serv, { cond: data.rare[0] });
 		},
 		data: function() {
-			return window.CSX.init(this.$options.name,
+			return window.X.init(this.$options.name,
 				{
 					conds: [],
 
@@ -207,7 +207,7 @@
 				});
 
 				Vue.set(C, 'cards', data[0][0]);
-				Vue.set(CSX.comp('cardQuery'), 'cardNow', data[0][0][0]);
+				Vue.set(X.comp('cardQuery'), 'cardNow', data[0][0][0]);
 				Vue.set(C, 'pageNow', data[0][1]);
 				Vue.set(C, 'pageMax', data[0][2]);
 			}

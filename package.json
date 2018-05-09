@@ -16,7 +16,9 @@
     "url": "https://github.com/zheung/KairiQuery/issues"
   },
   "homepage": "https://github.com/zheung/KairiQuery#readme",
-  "dependencies": {},
+  "dependencies": {
+    "echarts-gl": "^1.1.1"
+  },
   "devDependencies": {
     "@fortawesome/fontawesome": "^1.1.5",
     "@fortawesome/fontawesome-free-brands": "^5.0.10",

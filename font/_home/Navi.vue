@@ -1,6 +1,6 @@
 <template>
 	<div class="naviBox nosel">
-		<div :class="{ navi: true, mini: CSX.comp('homeLeft') && CSX.comp('homeLeft').expand, trans: true }">
+		<div :class="{ navi: true, mini: X.comp('homeLeft') && X.comp('homeLeft').expand, trans: true }">
 			<div class="leftDot" >
 				<Fas icon="ellipsis-v" />
 			</div>
@@ -27,7 +27,7 @@
 <script>
 	export default {
 		data: function() {
-			return window.CSX.init(this.$options.name,
+			return window.X.init(this.$options.name,
 				{
 					left: 20,
 					views: []

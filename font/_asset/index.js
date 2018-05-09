@@ -56,7 +56,7 @@ let main = async function() {
 		throw '解析组件名失败，数据初始化失败';
 	};
 
-	window.CSX = {
+	window.X = {
 		compData: window.BUS.compData,
 		statData: window.BUS.statData,
 
@@ -77,10 +77,10 @@ let main = async function() {
 					Vue.set(B.statData[comp], time, statObj);
 				}
 
-				return Object.assign({ B: window.BUS, C: compObj, S: statObj, CSX: this }, privObj);
+				return Object.assign({ B: window.BUS, C: compObj, S: statObj, X: this }, privObj);
 			}
 
-			return Object.assign({ B: window.BUS, CSX: this }, privObj);
+			return Object.assign({ B: window.BUS, X: this }, privObj);
 		},
 
 		comp: function(name) {
@@ -132,7 +132,7 @@ let main = async function() {
 
 				let result = {
 					frameBox: true,
-					mini: CSX.comp('homeLeft') && CSX.comp('homeLeft').expand,
+					mini: X.comp('homeLeft') && X.comp('homeLeft').expand,
 
 					trans: true
 				};
@@ -161,7 +161,7 @@ let main = async function() {
 
 						await this.setViewNow(type, time);
 
-						CSX.comp('homeNavi').views.push({ type: `${type}_${time}`, name, only, dash, base: type, time});
+						X.comp('homeNavi').views.push({ type: `${type}_${time}`, name, only, dash, base: type, time});
 					}
 					else if(only) {
 						await this.setViewNow(type, time);
@@ -175,11 +175,11 @@ let main = async function() {
 
 					await this.setDashNow(base || type, time);
 
-					CSX.comp('homeLeft').listShow = 'dash';
+					X.comp('homeLeft').listShow = 'dash';
 				}
 				else {
 					await this.setDashNow('empty');
-					CSX.comp('homeLeft').listShow = 'module';
+					X.comp('homeLeft').listShow = 'module';
 				}
 			},
 			setViewNow: async function(typeNow, time) {

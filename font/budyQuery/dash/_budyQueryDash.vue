@@ -53,7 +53,7 @@
 			this.onQuery(C.word, 1, C.serv, { cond: data.limit[0] });
 		},
 		data: function() {
-			return window.CSX.init(this.$options.name,
+			return window.X.init(this.$options.name,
 				{
 					conds: [],
 
@@ -163,7 +163,7 @@
 				});
 
 				Vue.set(C, 'budys', data[0][0]);
-				Vue.set(CSX.comp('budyQuery'), 'budyNow', data[0][0][0]);
+				Vue.set(X.comp('budyQuery'), 'budyNow', data[0][0][0]);
 				Vue.set(C, 'pageNow', data[0][1]);
 				Vue.set(C, 'pageMax', data[0][2]);
 			}

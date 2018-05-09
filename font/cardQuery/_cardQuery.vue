@@ -2,13 +2,13 @@
 	<div ref="box" class="compCardQuery">
 		<div class="listBox">
 			<LogoBox @click.native="changeCard(card)"
-				v-for="(card, ci) of CSX.comp('cardQueryDash').cards" :key="`logoBox-${ci}`"
-				:card="card" :serv="CSX.comp('cardQueryDash').serv"
+				v-for="(card, ci) of X.comp('cardQueryDash').cards" :key="`logoBox-${ci}`"
+				:card="card" :serv="X.comp('cardQueryDash').serv"
 			>
 			</LogoBox>
 		</div>
-		<InfoBox v-for="(card, ci) of CSX.comp('cardQueryDash').cards" :key="`infoBox-${ci}`" v-if="card==C.cardNow"
-			:card="card" :serv="CSX.comp('cardQueryDash').serv" :id="`cardInfo-${card.id}`"
+		<InfoBox v-for="(card, ci) of X.comp('cardQueryDash').cards" :key="`infoBox-${ci}`" v-if="card==C.cardNow"
+			:card="card" :serv="X.comp('cardQueryDash').serv" :id="`cardInfo-${card.id}`"
 		></InfoBox>
 	</div>
 </template>
@@ -21,7 +21,7 @@
 		components: { LogoBox, InfoBox },
 
 		data: function() {
-			return window.CSX.init(this.$options.name, { cardNow: false, showAll: false }, {}, {});
+			return window.X.init(this.$options.name, { cardNow: false, showAll: false }, {}, {});
 		},
 		methods: {
 			changeCard: function(card) {
