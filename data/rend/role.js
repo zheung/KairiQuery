@@ -282,7 +282,7 @@ module.exports = function(serv) {
 				let { p0,p1 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
 
-				let content = `${target} | ${p0}回合 | 减免所受伤害的${p1/10}%`;
+				let content = `${target} | ${p0}回合 | 所受伤害 | 减免${p1/10}%`;
 				let title = '百分比伤害不受减伤影响';
 
 				return { name: '减伤', content: content, title: title };
@@ -356,7 +356,7 @@ module.exports = function(serv) {
 
 				if(p3[1] || p4[1] != 3) L('New Params Role 64');
 
-				let content = `${target} | ${p0}回合 | 减免所受伤害的${p1/10}%`;
+				let content = `${target} | ${p0}回合 | 所受伤害 | 减免${p1/10}%`;
 
 				return { name: '嘲讽', content: content, title: '' };
 			},
@@ -888,6 +888,15 @@ module.exports = function(serv) {
 
 				return { name: `${show(p0)}`, content: content, title: '该技能本质上是针对单个支援技能的EX技能\r\n根据主卡组符合条件的卡数量提升' };
 			},
+		// 伤害减免
+			ATTR_CUT_ATTACK: async function(card, skill, role, skillFirst) {
+				let { p0,p2,p4,p5 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
 
+				let content = `${target} | ${p0}回合 | 受到的[${show(p4)}][${show(p5)}]伤害 | 减免${p2/10}%`;
+				let title = '百分比伤害不受减伤影响';
+
+				return { name: '减伤', content: content, title: title };
+			},
 		};
 	};

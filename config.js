@@ -1,6 +1,6 @@
 module.exports = {
 	servs: [
-		'cn',
+		// 'cn',
 		'jp'
 	],
 	types: [
