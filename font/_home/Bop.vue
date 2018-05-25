@@ -3,11 +3,15 @@
 		<div class="item" @mouseover="noticeOver" @mouseout="noticeOutt">D的碎碎念</div>
 		<div class="item" @click="backToTop">回到顶部</div>
 		<div ref="popAbout" class="popAbout trans">
-			国服很久不更但还是最新的。国服懒你懂的<br>
-			《V3.3 控制面板重做》<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;重做：控制面板<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;采用新的设计<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;试试用起来舒服不？（不<br>
+			有朋友我这个网站好难看懂，我说这太正常了。<br>
+			因为角度不同。<br>
+			其他网站把 游戏的文本 展现出来，当然好理解。<br>
+			我的网站则专注把 游戏的逻辑 还原出来，没有语言归纳，自然是更难懂。<br>
+			<br>
+			我的目标是，当你看不懂技能在说什么的时候，<br>
+			来我这，去理解原始的逻辑，把技能看懂了。<br>
+			<br>
+			BTW，左侧面板正在做。最近的工作太忙太关键，见谅<br>
 			<!-- <hr class="hrSnow"> -->
 		</div>
 	</div>
@@ -94,7 +98,7 @@
 	}
 
 	.popAbout {
-		width: 200px;
+		width: 400px;
 
 		position: absolute;
 
@@ -108,7 +112,7 @@
 
 		padding: 4px;
 
-		font-size: 15px;
+		font-size: 12px;
 		line-height: 30px;
 
 		text-align: left;
