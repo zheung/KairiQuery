@@ -176,7 +176,7 @@ module.exports = async(serv, card) => {
 		L('卧槽被动有多个技能你敢信?');
 
 	for(let skill of skills['pass']) {
-		let s = { prio: prioCount++, content: [], cond: skill.info.name };
+		let s = { prio: prioCount++, content: [], cond: [skill.info.name] };
 
 		let condType = skill.cond.type;
 		let condType2 = skill.cond2 ? skill.cond2.type : undefined;
@@ -184,6 +184,7 @@ module.exports = async(serv, card) => {
 
 		let pve = skill.prio.pve ? skill.prio.pve : skillFirst.prio.pve;
 		let pvp = skill.prio.pvp ? skill.prio.pvp : skillFirst.prio.pvp;
+
 
 		if(condType) {
 			let rend = (await rdrCond(serv))[condType], rend2 = (await rdrCond(serv))[condType2];
