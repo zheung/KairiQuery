@@ -826,15 +826,15 @@ module.exports = function(serv) {
 			},
 		// 心像攻击
 			DAMAGE_BOOST_ORDER_TRIBAL: function(card, skill, role, skillFirst) {
-				let { p0,p3,p6,p9 } = role.params;
+				let { p0,p1,p6,p9 } = role.params;
 				let target = showTarget(skill, role, skillFirst);
 
 				if(p0 > 1)
 					L('DAMAGE_BOOST_ORDER_TRIBAL?');
 
-					let content = `${target} | ${showHand(skill.hand)} | 目标心像为[${show(['tribal', p9])}] | 提升${p3/10}%`;
+					let content = `${target} | ${showHand(skill.hand)} | 目标心像为[${show(['tribal', p9])}] | 提升${p1/10}%`;
 
-					return { name: `${show(p6)}`, content: content, title: '追加的攻击面板与原攻击相同' };
+					return { name: `${show(p6)}伤害`, content: content, title: '追加的攻击面板与原攻击相同' };
 			},
 			PARAM_UP_SKILL_BONUS: async function(card, skill, role, skillFirst) {
 				let { p0,p1,p2,p3,p4,p5 } = role.params;
@@ -898,5 +898,14 @@ module.exports = function(serv) {
 
 				return { name: '减伤', content: content, title: title };
 			},
+			DAMAGE_BOOST_COUNT2: async function(card, skill, role, skillFirst) {
+				let { p0,p1,p2,p4,p5 } = role.params;
+				let target = showTarget(skill, role, skillFirst);
+
+				let content = `${target} | ${p0}回合 | 提升${p1}次[${show(p4)}][${show(p5)}]伤害 | ${p2 / 10}%`;
+				let title = '百分比伤害不受减伤影响';
+
+				return { name: '伤害强化', content: content, title: title };
+			}
 		};
 	};
