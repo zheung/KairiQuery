@@ -3,6 +3,9 @@
 		<div class="item" @mouseover="noticeOver" @mouseout="noticeOutt">D的碎碎念</div>
 		<div class="item" @click="backToTop">回到顶部</div>
 		<div ref="popAbout" class="popAbout trans">
+			不就国服挂了嘛，网易拔吊无情早有心理准备了。我还是会更新日服的啊<br>
+			只是最近正职实在实在实在太忙了，都TM快想死了，再等个一两周。
+			-------忙碌的分界线-------<br>
 			有朋友我这个网站好难看懂，我说这太正常了。<br>
 			因为角度不同。<br>
 			其他网站把【游戏的文本】展现出来，自然好理解。<br>
@@ -10,8 +13,6 @@
 			<br>
 			我的目标是，当你看不懂技能在说什么的时候，<br>
 			来我这，去了解原始的逻辑，把技能看懂了。<br>
-			<br>
-			呵呵猪队友周末骨折，工作量翻倍（摔<br>
 			<!-- <hr class="hrSnow"> -->
 		</div>
 	</div>
