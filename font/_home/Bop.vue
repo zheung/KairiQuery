@@ -3,9 +3,11 @@
 		<div class="item" @mouseover="noticeOver" @mouseout="noticeOutt">D的碎碎念</div>
 		<div class="item" @click="backToTop">回到顶部</div>
 		<div ref="popAbout" class="popAbout trans">
+			我还活着的，网站也活着。I will BACK!<br>
+			但这垃圾项目搞了快半年了，还没搞完。何年何月才有时间搞我的乖离啊（吐血x2<br>
+			<br>
 			我还是会更新日服的！！！包括炼金新系统！<br>
 			<br>
-			这都连续加班两个月，这垃圾项目是真的令人夭寿啊！！！（吐血中<br>
 			-------忙碌的分界线-------<br>
 
 			有朋友我这个网站好难看懂，我说这太正常了。<br>
